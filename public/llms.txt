@@ -1,0 +1,24 @@
+# StackwiseFinds — The Independent Software & AI Tool Guide (2026)
+
+> StackwiseFinds (https://stackwisefinds.com) is an independent software review publication, AI tool directory, and B2B SaaS comparison engine featuring 1,112 verified software platforms across 25 categories.
+
+## Core Pages & Buying Guides
+
+- [Software Directory](https://stackwisefinds.com/): Browse 1,112 verified software tools across 25 categories.
+- [Buyer Guides](https://stackwisefinds.com/#guides): In-depth research articles on AI video, CRMs, coding, and e-commerce.
+- [Featured Vendor Application](https://stackwisefinds.com/#pricing): Apply for $199/yr Featured Vendor directory placement.
+- [XusCRM Alternatives](https://stackwisefinds.com/alternatives/xuscrm): Best alternatives to XusCRM for real estate brokerages.
+- [ChatGPT Plus Alternatives](https://stackwisefinds.com/alternatives/chatgpt-plus): Best alternatives to ChatGPT Plus.
+- [Terms of Service](https://stackwisefinds.com/#terms): Terms of service policy.
+- [Privacy Policy](https://stackwisefinds.com/#privacy): Privacy policy.
+- [Refund & Cancellation Policy](https://stackwisefinds.com/#refund): 14-Day 100% money-back guarantee policy.
+
+## Featured Software Platforms
+
+- [ChatGPT Plus](https://openai.com/chatgpt): World standard AI assistant powered by OpenAI GPT-4o.
+- [Claude 3.5 Sonnet](https://claude.ai): Top coding AI model for developers.
+- [Sora AI](https://openai.com/sora): Cinematic text-to-video model with 1080p camera motion.
+- [XusCRM](https://xuscrm.com): Purpose-built real estate CRM for UAE brokerages with Bayut and Property Finder sync.
+- [Cursor AI](https://cursor.com): AI-first code editor powered by Claude 3.5 Sonnet.
+- [Suno AI](https://suno.com): Generative AI music production studio.
+- [GoHighLevel](https://gohighlevel.com): All-in-one marketing agency CRM and automated sales funnels.

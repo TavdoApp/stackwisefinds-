@@ -1,0 +1,6 @@
+name = "stackwise-indexer-worker"
+main = "worker/index.js"
+compatibility_date = "2026-07-24"
+
+[triggers]
+crons = ["0 */12 * * *"] # Runs automatically 2x daily (every 12 hours) on Cloudflare Edge

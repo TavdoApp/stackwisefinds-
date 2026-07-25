@@ -1,0 +1,21 @@
+name: Stackwise Automated Search Engine Indexing
+
+on:
+  schedule:
+    - cron: '0 */12 * * *' # Runs 2x daily on GitHub's free serverless runners
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+jobs:
+  ping-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Run IndexNow Fast-Pinger
+        run: node scripts/pingIndexNow.cjs
