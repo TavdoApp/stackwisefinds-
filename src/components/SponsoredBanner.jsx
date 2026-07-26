@@ -39,15 +39,17 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
           href="https://xuscrm.com" 
           target="_blank" 
           rel="noopener noreferrer" 
+          aria-label="Explore XusCRM Real Estate Platform"
           style={{ color: '#A0D238', fontWeight: '800', display: 'inline-flex', alignItems: 'center', gap: '2px', textDecoration: 'underline' }}
         >
-          <span>Learn More</span>
+          <span>Explore XusCRM Platform</span>
           <ArrowUpRight size={13} />
         </a>
       </div>
 
       <button
         onClick={onOpenVendorModal}
+        aria-label="Advertise your SaaS tool for $299 a month"
         style={{
           background: 'rgba(255, 255, 255, 0.12)',
           border: '1px solid rgba(255, 255, 255, 0.25)',

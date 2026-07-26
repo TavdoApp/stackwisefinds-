@@ -23,11 +23,11 @@ export default function ToolCard({
     }
   };
 
-  // Primary: Clearbit logo API, Secondary: Google Favicon API
-  const clearbitLogo = `https://logo.clearbit.com/${tool.domain}`;
+  // High-Resolution Google Favicon API (CDN Cached & Lighthouse Audit Safe)
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`;
+  const clearbitLogo = `https://logo.clearbit.com/${tool.domain}`;
 
-  const logoSrc = imgErrorCount === 0 ? clearbitLogo : googleFavicon;
+  const logoSrc = imgErrorCount === 0 ? googleFavicon : clearbitLogo;
 
   return (
     <div 
