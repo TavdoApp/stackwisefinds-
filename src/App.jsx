@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import ToolCard from './components/ToolCard';
 import CategoryNav from './components/CategoryNav';
 import Footer from './components/Footer';
+import SponsoredBanner from './components/SponsoredBanner';
 
 import { saasTools, saasCategories } from './data/saasData.jsx';
 import { highIntentArticles } from './data/articlesData';
@@ -55,6 +56,7 @@ class ErrorBoundary extends React.Component {
 
 export default function App() {
   const [currentView, setCurrentView] = useState('directory');
+  const [currentLang, setCurrentLang] = useState('en');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedVersus, setSelectedVersus] = useState({ toolAId: 'freshbooks', toolBId: 'quickbooks' });
   const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState('freshbooks');
@@ -201,6 +203,9 @@ export default function App() {
       {/* Global Schema.org Ingestion */}
       {injectGlobalOrganizationSchema()}
 
+      {/* Toolify & BetaList Feature: Top Sponsored Banner */}
+      <SponsoredBanner onOpenVendorModal={() => setShowVendorModal(true)} />
+
       {/* Navigation Header */}
       <Navbar
         currentView={currentView}
@@ -213,6 +218,11 @@ export default function App() {
         onOpenCompareModal={() => setShowCompareModal(true)}
         onOpenVendorModal={() => setShowVendorModal(true)}
         onOpenWizardModal={() => setShowWizardModal(true)}
+        currentLang={currentLang}
+        onChangeLang={(langCode) => {
+          setCurrentLang(langCode);
+          document.documentElement.lang = langCode;
+        }}
       />
 
       <ErrorBoundary>

@@ -1,7 +1,29 @@
 import React from 'react';
-import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2 } from 'lucide-react';
+import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe } from 'lucide-react';
 
-export default function Navbar({ currentView, setCurrentView, compareCount, onOpenCompareModal, onOpenVendorModal, onOpenWizardModal }) {
+export default function Navbar({ 
+  currentView, 
+  setCurrentView, 
+  compareCount, 
+  onOpenCompareModal, 
+  onOpenVendorModal, 
+  onOpenWizardModal,
+  currentLang,
+  onChangeLang
+}) {
+  const languages = [
+    { code: 'en', label: 'English 🇺🇸' },
+    { code: 'ar', label: 'العربية 🇦🇪' },
+    { code: 'zh', label: '简体中文 🇨🇳' },
+    { code: 'es', label: 'Español 🇪🇸' },
+    { code: 'de', label: 'Deutsch 🇩🇪' },
+    { code: 'fr', label: 'Français 🇫🇷' },
+    { code: 'ja', label: '日本語 🇯🇵' },
+    { code: 'ko', label: '한국어 🇰🇷' },
+    { code: 'pt', label: 'Português 🇧🇷' },
+    { code: 'vi', label: 'Tiếng Việt 🇻🇳' }
+  ];
+
   return (
     <header className="navbar-sticky" style={{
       position: 'sticky',
@@ -72,6 +94,30 @@ export default function Navbar({ currentView, setCurrentView, compareCount, onOp
 
         {/* Right Actions */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+          {/* Multi-Language Dropdown (Toolify Feature) */}
+          <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+            <Globe size={15} color="var(--text-dark)" style={{ position: 'absolute', left: '10px', pointerEvents: 'none', zIndex: 1 }} />
+            <select
+              value={currentLang || 'en'}
+              onChange={(e) => onChangeLang && onChangeLang(e.target.value)}
+              aria-label="Select Language"
+              style={{
+                padding: '6px 10px 6px 30px',
+                borderRadius: '9999px',
+                border: '1px solid var(--border-color)',
+                background: '#FFFFFF',
+                fontSize: '0.8rem',
+                fontWeight: '700',
+                outline: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              {languages.map(lang => (
+                <option key={lang.code} value={lang.code}>{lang.label}</option>
+              ))}
+            </select>
+          </div>
+
           {/* AI Stack Wizard Quiz Button */}
           <button 
             onClick={onOpenWizardModal}
