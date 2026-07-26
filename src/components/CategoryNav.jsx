@@ -4,6 +4,7 @@ import {
   Share2, Briefcase, Search, FormInput, ShoppingCart, Users, LifeBuoy, Cloud, 
   Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid, Flame
 } from 'lucide-react';
+import { getTranslation } from '../utils/translations';
 
 const categoryIconMap = {
   'all': <Grid size={16} />,
@@ -42,9 +43,11 @@ export default function CategoryNav({
   filterOpenSourceOnly,
   onToggleOpenSourceOnly,
   filterTrendingOnly,
-  onToggleTrendingOnly
+  onToggleTrendingOnly,
+  currentLang = 'en'
 }) {
   const scrollContainerRef = useRef(null);
+  const t = getTranslation(currentLang);
 
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
@@ -59,7 +62,7 @@ export default function CategoryNav({
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', marginBottom: '14px' }}>
         {/* Category Jump Dropdown */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-muted)' }}>Category:</span>
+          <span style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-muted)' }}>{t.categoryLabel}</span>
           <select
             value={selectedCategory}
             onChange={(e) => onSelectCategory(e.target.value)}
@@ -86,7 +89,7 @@ export default function CategoryNav({
 
         {/* Toolify & BetaList Inspired Growth Filter Toggles */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-muted)' }}>Filter:</span>
+          <span style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-muted)' }}>{t.filterLabel}</span>
           
           {/* Toolify Feature: Trending AI Filter */}
           <button
@@ -108,7 +111,7 @@ export default function CategoryNav({
             }}
           >
             <Flame size={13} color={filterTrendingOnly ? '#FFFFFF' : '#82A735'} />
-            <span>Trending AI 2026</span>
+            <span>{t.trendingAiPill}</span>
           </button>
 
           <button
@@ -126,7 +129,7 @@ export default function CategoryNav({
               transition: 'all 0.15s ease'
             }}
           >
-            🎁 Free Tier
+            🎁 {t.freeTierPill}
           </button>
 
           <button
@@ -144,7 +147,7 @@ export default function CategoryNav({
               transition: 'all 0.15s ease'
             }}
           >
-            ⚡ Open Source
+            ⚡ {t.openSourcePill}
           </button>
         </div>
       </div>

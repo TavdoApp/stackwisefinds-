@@ -231,6 +231,7 @@ export default function App() {
             <>
               {/* Hero Section */}
               <Hero
+                currentLang={currentLang}
                 onExploreClick={() => {
                   const el = document.getElementById('directory-section');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -379,6 +380,7 @@ export default function App() {
                       setFilterTrendingOnly(!filterTrendingOnly);
                       setCurrentPage(1);
                     }}
+                    currentLang={currentLang}
                   />
 
                   {/* Directory Paginated List */}
@@ -392,6 +394,7 @@ export default function App() {
                         onOpenReviewModal={(t) => setSelectedReviewTool(t)}
                         onUpvoteTool={handleUpvoteTool}
                         upvotes={upvotesState[tool.id] || 120}
+                        currentLang={currentLang}
                       />
                     ))}
                   </div>

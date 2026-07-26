@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { Star, Check, ArrowUpRight, Scale, Sparkles, MessageSquare, Flame } from 'lucide-react';
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
+import { getTranslation } from '../utils/translations';
 
-export default function ToolCard({ tool, isSelectedForCompare, onToggleCompare, onOpenReviewModal, onUpvoteTool, upvotes }) {
+export default function ToolCard({ 
+  tool, 
+  isSelectedForCompare, 
+  onToggleCompare, 
+  onOpenReviewModal, 
+  onUpvoteTool, 
+  upvotes,
+  currentLang = 'en'
+}) {
   const [imgErrorCount, setImgErrorCount] = useState(0);
   const [hasUpvoted, setHasUpvoted] = useState(false);
+  const t = getTranslation(currentLang);
 
   const handleUpvote = () => {
     if (!hasUpvoted) {
@@ -79,49 +89,50 @@ export default function ToolCard({ tool, isSelectedForCompare, onToggleCompare, 
               <img 
                 src={logoSrc} 
                 alt={`${tool.name} logo`}
-                loading="lazy"
-                decoding="async"
                 onError={() => setImgErrorCount(prev => prev + 1)}
-                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px' }}
+                loading="lazy"
               />
             ) : (
-              <span style={{ fontSize: '1.3rem', fontWeight: '800', color: '#FFFFFF' }}>
-                {tool.name.charAt(0)}
+              <span style={{ color: '#FFFFFF', fontWeight: '800', fontSize: '1.2rem' }}>
+                {tool.name.substring(0, 2).toUpperCase()}
               </span>
             )}
           </div>
 
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)' }}>{tool.name}</h3>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0, letterSpacing: '-0.01em' }}>
+                {tool.name}
+              </h3>
               {tool.badge && (
-                <span style={{
-                  background: 'var(--bg-sage)',
-                  color: 'var(--primary-green-dark)',
-                  fontSize: '0.68rem',
-                  fontWeight: '800',
-                  padding: '3px 8px',
-                  borderRadius: '9999px',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.04em'
-                }}>
+                <span className="tag-sage" style={{ fontSize: '0.65rem' }}>
                   {tool.badge}
                 </span>
               )}
             </div>
 
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', marginBottom: '10px', lineHeight: '1.45' }}>
+            <p style={{
+              fontSize: '0.88rem',
+              color: 'var(--text-muted)',
+              lineHeight: '1.45',
+              margin: '0 0 8px 0',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden'
+            }}>
               {tool.description}
             </p>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '0.82rem', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#141E14', fontWeight: '800' }}>
-                <Star size={14} fill="#82A735" color="#82A735" />
-                <span>{tool.rating}</span>
-                <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount})</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', fontSize: '0.82rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#141E14', fontWeight: '700' }}>
+                <Star size={13} fill="#82A735" color="#82A735" />
+                <span>{tool.rating || 4.8}</span>
+                <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount || 120})</span>
               </div>
-              
-              <div style={{ color: 'var(--primary-green-dark)', fontWeight: '700' }}>
+
+              <div style={{ color: 'var(--text-dark)', fontWeight: '700' }}>
                 {tool.pricing}
               </div>
             </div>
@@ -160,7 +171,7 @@ export default function ToolCard({ tool, isSelectedForCompare, onToggleCompare, 
               title="Write a Review"
             >
               <MessageSquare size={13} color="#82A735" />
-              <span>Review</span>
+              <span>{t.reviewBtn}</span>
             </button>
 
             <button
@@ -177,7 +188,7 @@ export default function ToolCard({ tool, isSelectedForCompare, onToggleCompare, 
               }}
             >
               {isSelectedForCompare ? <Check size={13} color="#82A735" /> : <Scale size={13} />}
-              <span>{isSelectedForCompare ? 'Added' : 'Compare'}</span>
+              <span>{isSelectedForCompare ? 'Added' : t.compareBtn}</span>
             </button>
           </div>
 
@@ -190,7 +201,7 @@ export default function ToolCard({ tool, isSelectedForCompare, onToggleCompare, 
             aria-label={`Visit official website for ${tool.name}`}
             style={{ padding: '10px 18px', fontSize: '0.88rem', minHeight: '44px', textDecoration: 'none' }}
           >
-            <span>Visit Site</span>
+            <span>{t.visitSite}</span>
             <ArrowUpRight size={15} />
           </a>
         </div>

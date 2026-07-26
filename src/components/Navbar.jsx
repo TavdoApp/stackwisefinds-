@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe } from 'lucide-react';
+import { getTranslation } from '../utils/translations';
 
 export default function Navbar({ 
   currentView, 
@@ -8,13 +9,15 @@ export default function Navbar({
   onOpenCompareModal, 
   onOpenVendorModal, 
   onOpenWizardModal,
-  currentLang,
+  currentLang = 'en',
   onChangeLang
 }) {
+  const t = getTranslation(currentLang);
+
   const languages = [
     { code: 'en', label: 'English 🇺🇸' },
-    { code: 'ar', label: 'العربية 🇦🇪' },
     { code: 'zh', label: '简体中文 🇨🇳' },
+    { code: 'ar', label: 'العربية 🇦🇪' },
     { code: 'es', label: 'Español 🇪🇸' },
     { code: 'de', label: 'Deutsch 🇩🇪' },
     { code: 'fr', label: 'Français 🇫🇷' },
@@ -77,7 +80,7 @@ export default function Navbar({
             title="Software Directory"
           >
             <Compass size={14} />
-            <span className="hide-mobile">Directory</span>
+            <span className="hide-mobile">{t.navDirectory}</span>
           </button>
 
           <button 
@@ -88,7 +91,7 @@ export default function Navbar({
             title="Buyer Guides"
           >
             <BookOpen size={14} />
-            <span className="hide-mobile">Guides</span>
+            <span className="hide-mobile">{t.navGuides}</span>
           </button>
         </div>
 
@@ -127,7 +130,7 @@ export default function Navbar({
             title="Find My Software Stack"
           >
             <Wand2 size={14} />
-            <span className="hide-mobile">Find Stack</span>
+            <span className="hide-mobile">{t.navFindStack}</span>
           </button>
 
           {/* Compare Drawer trigger */}
@@ -153,7 +156,7 @@ export default function Navbar({
             title="Submit SaaS Tool"
           >
             <PlusCircle size={14} />
-            <span className="hide-mobile">Submit</span>
+            <span className="hide-mobile">{t.navSubmit}</span>
           </button>
         </div>
 
