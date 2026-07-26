@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { 
   Sparkles, Bot, Video, Music, Palette, Code, Mic, Building2, Receipt, Mail, 
   Share2, Briefcase, Search, FormInput, ShoppingCart, Users, LifeBuoy, Cloud, 
-  Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid
+  Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid, Flame
 } from 'lucide-react';
 
 const categoryIconMap = {
@@ -40,7 +40,9 @@ export default function CategoryNav({
   filterFreeOnly,
   onToggleFreeOnly,
   filterOpenSourceOnly,
-  onToggleOpenSourceOnly
+  onToggleOpenSourceOnly,
+  filterTrendingOnly,
+  onToggleTrendingOnly
 }) {
   const scrollContainerRef = useRef(null);
 
@@ -82,9 +84,33 @@ export default function CategoryNav({
           </select>
         </div>
 
-        {/* Growth Filter Toggles */}
+        {/* Toolify & BetaList Inspired Growth Filter Toggles */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-muted)' }}>Filter:</span>
+          
+          {/* Toolify Feature: Trending AI Filter */}
+          <button
+            onClick={onToggleTrendingOnly}
+            aria-label="Filter trending AI software tools"
+            style={{
+              padding: '6px 14px',
+              borderRadius: '9999px',
+              border: '1px solid var(--border-color)',
+              background: filterTrendingOnly ? '#82A735' : '#FFFFFF',
+              color: filterTrendingOnly ? '#FFFFFF' : 'var(--text-dark)',
+              fontSize: '0.82rem',
+              fontWeight: '700',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            <Flame size={13} color={filterTrendingOnly ? '#FFFFFF' : '#82A735'} />
+            <span>Trending AI 2026</span>
+          </button>
+
           <button
             onClick={onToggleFreeOnly}
             aria-label="Filter free software tools"

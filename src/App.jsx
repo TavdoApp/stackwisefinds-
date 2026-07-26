@@ -79,9 +79,10 @@ export default function App() {
     }));
   };
   
-  // Growth Hack #2 Filters: Free Tier & Open Source
+  // Growth Hack #2 Filters: Free Tier, Open Source & Trending AI
   const [filterFreeOnly, setFilterFreeOnly] = useState(false);
   const [filterOpenSourceOnly, setFilterOpenSourceOnly] = useState(false);
+  const [filterTrendingOnly, setFilterTrendingOnly] = useState(false);
 
   // Sleek Pagination State (20 tools per page)
   const [currentPage, setCurrentPage] = useState(1);
@@ -162,8 +163,9 @@ export default function App() {
     const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
     const matchesFree = !filterFreeOnly || tool.isFreeTier;
     const matchesOpenSource = !filterOpenSourceOnly || tool.isOpenSource;
+    const matchesTrending = !filterTrendingOnly || tool.featured || (tool.badge && tool.badge.includes('TRENDING'));
 
-    return matchesSearch && matchesCategory && matchesFree && matchesOpenSource;
+    return matchesSearch && matchesCategory && matchesFree && matchesOpenSource && matchesTrending;
   });
 
   // Calculate Pagination Slices
@@ -359,6 +361,11 @@ export default function App() {
                     filterOpenSourceOnly={filterOpenSourceOnly}
                     onToggleOpenSourceOnly={() => {
                       setFilterOpenSourceOnly(!filterOpenSourceOnly);
+                      setCurrentPage(1);
+                    }}
+                    filterTrendingOnly={filterTrendingOnly}
+                    onToggleTrendingOnly={() => {
+                      setFilterTrendingOnly(!filterTrendingOnly);
                       setCurrentPage(1);
                     }}
                   />
