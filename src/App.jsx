@@ -163,7 +163,8 @@ export default function App() {
     const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
     const matchesFree = !filterFreeOnly || tool.isFreeTier;
     const matchesOpenSource = !filterOpenSourceOnly || tool.isOpenSource;
-    const matchesTrending = !filterTrendingOnly || tool.featured || (tool.badge && tool.badge.includes('TRENDING'));
+    const isAiTool = tool.category.includes('ai') || tool.name.toLowerCase().includes('ai') || tool.description.toLowerCase().includes('ai');
+    const matchesTrending = !filterTrendingOnly || (isAiTool && (tool.badge?.includes('TRENDING') || tool.badge?.includes('LAUNCH') || tool.badge?.includes('STANDARD') || tool.rating >= 4.8));
 
     return matchesSearch && matchesCategory && matchesFree && matchesOpenSource && matchesTrending;
   });
