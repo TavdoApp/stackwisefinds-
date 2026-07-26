@@ -10,7 +10,7 @@ const SOURCES = {
   productHuntRss: 'https://www.producthunt.com/feed',
   appsumoRss: 'https://appsumo.com/feed/',
   hackerNewsRss: 'https://news.ycombinator.com/showrss',
-  githubTrendingApi: 'https://api.github.com/search/repositories?q=topic:ai-tool+stars:>500&sort=updated&order=desc'
+  githubTrendingApi: 'https://api.github.com/search/repositories?q=topic:ai-tool+stars:>200&sort=updated&order=desc'
 };
 
 // Helper: Fetch text or RSS feed over HTTPS
@@ -52,7 +52,7 @@ function checkDomainHealth(domain) {
 }
 
 async function runAutoIngestion() {
-  console.log('🤖 Running Multi-Source Real-Time Ingestion (Product Hunt + AppSumo Lifetime Deals + GitHub AI)...');
+  console.log('🤖 Running High-Capacity Multi-Source Real-Time Ingestion (Target: 10-15 New Tools Per Run)...');
 
   // Read existing dataset
   let content = fs.readFileSync(saasDataPath, 'utf8');
@@ -68,27 +68,30 @@ async function runAutoIngestion() {
 
   let newDiscoveredTools = [];
 
-  // 1. Fetch AppSumo Lifetime Deals Feed
+  // 1. Fetch AppSumo Lifetime Deals Feed (Top 15 candidates)
   try {
     const appsumoXml = await fetchUrlText(SOURCES.appsumoRss);
     if (appsumoXml) {
       const titleMatches = appsumoXml.match(/<title>(.*?)<\/title>/g) || [];
-      for (let i = 1; i < Math.min(titleMatches.length, 6); i++) {
+      for (let i = 1; i < Math.min(titleMatches.length, 15); i++) {
         const rawTitle = titleMatches[i].replace(/<\/?title>/g, '').replace(/<!\[CDATA\[|\]\]>/g, '').trim();
         if (rawTitle && !rawTitle.includes('AppSumo')) {
           const cleanName = rawTitle.split('-')[0].split('–')[0].trim();
-          newDiscoveredTools.push({
-            name: cleanName,
-            domain: `${cleanName.toLowerCase().replace(/[^a-z0-9]/g, '')}.com`,
-            category: 'ai-content',
-            pricing: '$49 Lifetime Deal',
-            rating: 4.9,
-            reviewsCount: 380,
-            description: `${cleanName} is a top software platform offering an exclusive lifetime deal on AppSumo.`,
-            badge: 'LIFETIME DEAL',
-            isFreeTier: false,
-            isOpenSource: false
-          });
+          const candidateDom = `${cleanName.toLowerCase().replace(/[^a-z0-9]/g, '')}.com`;
+          if (!existingDomains.has(candidateDom)) {
+            newDiscoveredTools.push({
+              name: cleanName,
+              domain: candidateDom,
+              category: 'ai-content',
+              pricing: '$49 Lifetime Deal',
+              rating: 4.9,
+              reviewsCount: 380,
+              description: `${cleanName} is a top software platform offering an exclusive lifetime deal on AppSumo.`,
+              badge: 'LIFETIME DEAL',
+              isFreeTier: false,
+              isOpenSource: false
+            });
+          }
         }
       }
     }
@@ -96,13 +99,13 @@ async function runAutoIngestion() {
     console.log('AppSumo RSS notice:', err.message);
   }
 
-  // 2. Fetch GitHub Trending AI Repositories API
+  // 2. Fetch GitHub Trending AI Repositories API (Top 15 candidates)
   try {
     const ghJsonText = await fetchUrlText(SOURCES.githubTrendingApi);
     if (ghJsonText) {
       const ghData = JSON.parse(ghJsonText);
       if (ghData.items && Array.isArray(ghData.items)) {
-        for (const item of ghData.items.slice(0, 5)) {
+        for (const item of ghData.items.slice(0, 15)) {
           if (item.homepage && item.homepage.startsWith('http')) {
             try {
               const urlObj = new URL(item.homepage);
@@ -130,27 +133,30 @@ async function runAutoIngestion() {
     console.log('GitHub API fetch notice:', err.message);
   }
 
-  // 3. Fetch Product Hunt RSS Items
+  // 3. Fetch Product Hunt RSS Items (Top 15 candidates)
   try {
     const phXml = await fetchUrlText(SOURCES.productHuntRss);
     if (phXml) {
       const titleMatches = phXml.match(/<title>(.*?)<\/title>/g) || [];
-      for (let i = 1; i < Math.min(titleMatches.length, 6); i++) {
+      for (let i = 1; i < Math.min(titleMatches.length, 15); i++) {
         const rawTitle = titleMatches[i].replace(/<\/?title>/g, '').trim();
         if (rawTitle && !rawTitle.includes('Product Hunt')) {
           const cleanName = rawTitle.split('–')[0].split('-')[0].trim();
-          newDiscoveredTools.push({
-            name: cleanName,
-            domain: `${cleanName.toLowerCase().replace(/[^a-z0-9]/g, '')}.com`,
-            category: 'ai-content',
-            pricing: 'Free Tier / Paid',
-            rating: 4.8,
-            reviewsCount: 420,
-            description: `${cleanName} is a newly launched software product featured on Product Hunt.`,
-            badge: 'PRODUCT HUNT LAUNCH',
-            isFreeTier: true,
-            isOpenSource: false
-          });
+          const candidateDom = `${cleanName.toLowerCase().replace(/[^a-z0-9]/g, '')}.com`;
+          if (!existingDomains.has(candidateDom)) {
+            newDiscoveredTools.push({
+              name: cleanName,
+              domain: candidateDom,
+              category: 'ai-content',
+              pricing: 'Free Tier / Paid',
+              rating: 4.8,
+              reviewsCount: 420,
+              description: `${cleanName} is a newly launched software product featured on Product Hunt.`,
+              badge: 'PRODUCT HUNT LAUNCH',
+              isFreeTier: true,
+              isOpenSource: false
+            });
+          }
         }
       }
     }
@@ -225,7 +231,7 @@ export const saasCategories = [
 export const saasTools = ${JSON.stringify(existingTools, null, 2)};
 `;
     fs.writeFileSync(saasDataPath, updatedHeader, 'utf8');
-    console.log(`🎉 Ingestion complete! Total dataset: ${existingTools.length} tools.`);
+    console.log(`🎉 Ingestion complete! Total dataset: ${existingTools.length} tools. Added ${addedCount} new verified live tools.`);
   } else {
     console.log('✨ All discovered feed candidates already exist in the verified dataset.');
   }
