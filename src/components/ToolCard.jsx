@@ -12,6 +12,7 @@ export default function ToolCard({
   upvotes,
   isBookmarked,
   onToggleBookmark,
+  onSelectTool,
   currentLang = 'en'
 }) {
   const [imgErrorCount, setImgErrorCount] = useState(0);
@@ -75,20 +76,24 @@ export default function ToolCard({
       <div className="tool-card-main-content">
         {/* Brand Logo & Meta */}
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', width: '100%' }}>
-          <div style={{
-            width: '52px',
-            height: '52px',
-            borderRadius: '14px',
-            background: imgErrorCount >= 2 ? 'linear-gradient(135deg, #82A735 0%, #141E14 100%)' : '#FFFFFF',
-            border: '1px solid var(--border-color)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexShrink: 0,
-            boxShadow: '0 4px 10px rgba(0,0,0,0.03)',
-            overflow: 'hidden',
-            padding: imgErrorCount >= 2 ? '0' : '6px'
-          }}>
+          <div 
+            onClick={() => onSelectTool && onSelectTool(tool.id)}
+            style={{
+              width: '52px',
+              height: '52px',
+              borderRadius: '14px',
+              background: imgErrorCount >= 2 ? 'linear-gradient(135deg, #82A735 0%, #141E14 100%)' : '#FFFFFF',
+              border: '1px solid var(--border-color)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexShrink: 0,
+              boxShadow: '0 4px 10px rgba(0,0,0,0.03)',
+              overflow: 'hidden',
+              padding: imgErrorCount >= 2 ? '0' : '6px',
+              cursor: 'pointer'
+            }}
+          >
             {imgErrorCount < 2 ? (
               <img 
                 src={logoSrc} 
@@ -106,7 +111,10 @@ export default function ToolCard({
 
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0, letterSpacing: '-0.01em' }}>
+              <h3 
+                onClick={() => onSelectTool && onSelectTool(tool.id)}
+                style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0, letterSpacing: '-0.01em', cursor: 'pointer' }}
+              >
                 {tool.name}
               </h3>
               {tool.badge && (

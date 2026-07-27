@@ -22,6 +22,9 @@ const VersusPage = lazy(() => import('./components/VersusPage'));
 const AlternativesView = lazy(() => import('./components/AlternativesView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
 const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
+const ToolDetailPage = lazy(() => import('./components/ToolDetailPage'));
+const AiNewsSidebar = lazy(() => import('./components/AiNewsSidebar'));
+const FeaturedSidebar = lazy(() => import('./components/FeaturedSidebar'));
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -63,6 +66,7 @@ export default function App() {
   const [selectedVersus, setSelectedVersus] = useState({ toolAId: 'freshbooks', toolBId: 'quickbooks' });
   const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState('freshbooks');
   const [selectedReviewTool, setSelectedReviewTool] = useState(null);
+  const [selectedToolDetailId, setSelectedToolDetailId] = useState('cursor-ai');
   const [legalView, setLegalView] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -421,22 +425,36 @@ export default function App() {
                     currentLang={currentLang}
                   />
 
-                  {/* Directory Paginated List */}
-                  <div>
-                    {paginatedTools.map((tool) => (
-                      <ToolCard
-                        key={tool.id}
-                        tool={tool}
-                        isSelectedForCompare={selectedCompareIds.includes(tool.id)}
-                        onToggleCompare={handleToggleCompare}
-                        onOpenReviewModal={(t) => setSelectedReviewTool(t)}
-                        onUpvoteTool={handleUpvoteTool}
-                        upvotes={upvotesState[tool.id] || 120}
-                        isBookmarked={bookmarkedIds.includes(tool.id)}
-                        onToggleBookmark={handleToggleBookmark}
-                        currentLang={currentLang}
-                      />
-                    ))}
+                  {/* Toolify 3-Column Layout Engine */}
+                  <div className="toolify-3col-layout">
+                    {/* Left Column: Featured Spotlights */}
+                    <div className="toolify-col-left">
+                      <FeaturedSidebar onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }} />
+                    </div>
+
+                    {/* Center Column: Main Directory List */}
+                    <div className="toolify-col-main">
+                      {paginatedTools.map((tool) => (
+                        <ToolCard
+                          key={tool.id}
+                          tool={tool}
+                          isSelectedForCompare={selectedCompareIds.includes(tool.id)}
+                          onToggleCompare={handleToggleCompare}
+                          onOpenReviewModal={(t) => setSelectedReviewTool(t)}
+                          onUpvoteTool={handleUpvoteTool}
+                          upvotes={upvotesState[tool.id] || 120}
+                          isBookmarked={bookmarkedIds.includes(tool.id)}
+                          onToggleBookmark={handleToggleBookmark}
+                          onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }}
+                          currentLang={currentLang}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Right Column: Real-Time AI News Sidebar */}
+                    <div className="toolify-col-right">
+                      <AiNewsSidebar />
+                    </div>
                   </div>
 
                   {/* Sleek Compact Ellipsis Single-Row Pagination Bar */}
@@ -706,6 +724,19 @@ export default function App() {
                   setCurrentView('directory');
                   window.location.hash = '';
                 }}
+              />
+            )}
+
+            {currentView === 'tool-detail' && (
+              <ToolDetailPage
+                toolId={selectedToolDetailId}
+                onBack={() => {
+                  setCurrentView('directory');
+                  window.location.hash = '';
+                }}
+                onOpenReviewModal={(t) => setSelectedReviewTool(t)}
+                onToggleCompare={handleToggleCompare}
+                isSelectedForCompare={selectedCompareIds.includes(selectedToolDetailId)}
               />
             )}
           </Suspense>

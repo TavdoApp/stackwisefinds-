@@ -77,7 +77,7 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
         title="Promote your SaaS product in the top bar"
       >
         <Megaphone size={11} color="#FFFFFF" />
-        <span>Advertise ($299/mo)</span>
+        <span>Advertise ($99/mo)</span>
       </button>
     </div>
   );

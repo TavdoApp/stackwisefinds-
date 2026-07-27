@@ -130,7 +130,7 @@ export default function VendorModal({ onClose }) {
                     FEATURED VENDOR TIER
                   </div>
                   <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)' }}>
-                    $199 <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--text-muted)' }}>/ year</span>
+                    $99 <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--text-muted)' }}>/ year</span>
                   </div>
                 </div>
 
