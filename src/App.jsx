@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ToolCard from './components/ToolCard';
 import CategoryNav from './components/CategoryNav';
+import CategoryGrid from './components/CategoryGrid';
 import Footer from './components/Footer';
 import SponsoredBanner from './components/SponsoredBanner';
 
@@ -20,6 +21,7 @@ const ArticleView = lazy(() => import('./components/ArticleView'));
 const VersusPage = lazy(() => import('./components/VersusPage'));
 const AlternativesView = lazy(() => import('./components/AlternativesView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
+const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -64,6 +66,31 @@ export default function App() {
   const [legalView, setLegalView] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+
+  // Bookmarking / Saved Stack State with LocalStorage Persistence
+  const [showBookmarkDrawer, setShowBookmarkDrawer] = useState(false);
+  const [bookmarkedIds, setBookmarkedIds] = useState(() => {
+    try {
+      const saved = localStorage.getItem('stakdock_bookmarks');
+      return saved ? JSON.parse(saved) : ['cursor-ai', 'claude-ai', 'n8n', 'xuscrm'];
+    } catch {
+      return ['cursor-ai', 'claude-ai', 'n8n', 'xuscrm'];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('stakdock_bookmarks', JSON.stringify(bookmarkedIds));
+    } catch (e) {
+      console.warn('LocalStorage error:', e);
+    }
+  }, [bookmarkedIds]);
+
+  const handleToggleBookmark = (toolId) => {
+    setBookmarkedIds(prev => 
+      prev.includes(toolId) ? prev.filter(id => id !== toolId) : [...prev, toolId]
+    );
+  };
 
   // Upvote Community Tracker
   const [upvotesState, setUpvotesState] = useState({
@@ -218,6 +245,8 @@ export default function App() {
         onOpenCompareModal={() => setShowCompareModal(true)}
         onOpenVendorModal={() => setShowVendorModal(true)}
         onOpenWizardModal={() => setShowWizardModal(true)}
+        bookmarkCount={bookmarkedIds.length}
+        onOpenBookmarkDrawer={() => setShowBookmarkDrawer(true)}
         currentLang={currentLang}
         onChangeLang={(langCode) => {
           setCurrentLang(langCode);
@@ -357,6 +386,15 @@ export default function App() {
                     </div>
                   </div>
 
+                  {/* Toolify Feature: Category Explorer Grid */}
+                  <CategoryGrid
+                    selectedCategory={selectedCategory}
+                    onSelectCategory={(catId) => {
+                      setSelectedCategory(catId);
+                      setCurrentPage(1);
+                    }}
+                  />
+
                   {/* Single-Row Horizontal Category Slider Component */}
                   <CategoryNav
                     categories={saasCategories}
@@ -394,6 +432,8 @@ export default function App() {
                         onOpenReviewModal={(t) => setSelectedReviewTool(t)}
                         onUpvoteTool={handleUpvoteTool}
                         upvotes={upvotesState[tool.id] || 120}
+                        isBookmarked={bookmarkedIds.includes(tool.id)}
+                        onToggleBookmark={handleToggleBookmark}
                         currentLang={currentLang}
                       />
                     ))}
@@ -699,6 +739,14 @@ export default function App() {
             onClose={() => setSelectedReviewTool(null)}
           />
         )}
+
+        <BookmarkDrawer
+          isOpen={showBookmarkDrawer}
+          onClose={() => setShowBookmarkDrawer(false)}
+          bookmarkedIds={bookmarkedIds}
+          onToggleBookmark={handleToggleBookmark}
+          onClearBookmarks={() => setBookmarkedIds([])}
+        />
       </Suspense>
 
       {/* Footer */}

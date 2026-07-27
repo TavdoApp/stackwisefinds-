@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Check, ArrowUpRight, Scale, Sparkles, MessageSquare, Flame } from 'lucide-react';
+import { Star, Check, ArrowUpRight, Scale, Sparkles, MessageSquare, Flame, Eye } from 'lucide-react';
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { getTranslation } from '../utils/translations';
 
@@ -10,6 +10,8 @@ export default function ToolCard({
   onOpenReviewModal, 
   onUpvoteTool, 
   upvotes,
+  isBookmarked,
+  onToggleBookmark,
   currentLang = 'en'
 }) {
   const [imgErrorCount, setImgErrorCount] = useState(0);
@@ -28,6 +30,8 @@ export default function ToolCard({
   const clearbitLogo = `https://logo.clearbit.com/${tool.domain}`;
 
   const logoSrc = imgErrorCount === 0 ? googleFavicon : clearbitLogo;
+
+  const visitsDisplay = tool.monthlyVisits || '180K/mo';
 
   return (
     <div 
@@ -126,12 +130,20 @@ export default function ToolCard({
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', fontSize: '0.82rem' }}>
+              {/* Star Rating */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#141E14', fontWeight: '700' }}>
                 <Star size={13} fill="#82A735" color="#82A735" />
                 <span>{tool.rating || 4.8}</span>
                 <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount || 120})</span>
               </div>
 
+              {/* Toolify Monthly Traffic Telemetry Badge */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '2px 8px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
+                <Eye size={12} color="#82A735" />
+                <span>{visitsDisplay}</span>
+              </div>
+
+              {/* Pricing */}
               <div style={{ color: 'var(--text-dark)', fontWeight: '700' }}>
                 {tool.pricing}
               </div>
@@ -143,6 +155,28 @@ export default function ToolCard({
         <div className="tool-card-actions-wrapper">
           {/* Secondary Action Grid */}
           <div className="tool-card-secondary-actions">
+            {/* Bookmark Stack Button */}
+            <button
+              onClick={() => onToggleBookmark && onToggleBookmark(tool.id)}
+              className="btn-pill-outline"
+              aria-label={`Save ${tool.name} to stack`}
+              style={{
+                padding: '8px 10px',
+                fontSize: '0.8rem',
+                borderColor: isBookmarked ? '#82A735' : 'var(--border-color)',
+                background: isBookmarked ? 'var(--bg-sage)' : '#FFFFFF',
+                justifyContent: 'center',
+                flex: 1
+              }}
+              title="Save to My Stack"
+            >
+              <Star size={13} fill={isBookmarked ? '#82A735' : 'none'} color={isBookmarked ? '#82A735' : '#888'} />
+              <span style={{ fontWeight: '800', color: isBookmarked ? '#82A735' : 'inherit' }}>
+                {isBookmarked ? 'Saved' : 'Save'}
+              </span>
+            </button>
+
+            {/* Upvote Button */}
             <button
               onClick={handleUpvote}
               className="btn-pill-outline"

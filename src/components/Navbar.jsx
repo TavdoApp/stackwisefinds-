@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe } from 'lucide-react';
+import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe, Star } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
 
 export default function Navbar({ 
@@ -9,6 +9,8 @@ export default function Navbar({
   onOpenCompareModal, 
   onOpenVendorModal, 
   onOpenWizardModal,
+  bookmarkCount = 0,
+  onOpenBookmarkDrawer,
   currentLang = 'en',
   onChangeLang
 }) {
@@ -132,6 +134,20 @@ export default function Navbar({
             <Wand2 size={14} />
             <span className="hide-mobile">{t.navFindStack}</span>
           </button>
+
+          {/* Bookmark Stack Drawer trigger */}
+          {bookmarkCount > 0 && (
+            <button 
+              onClick={onOpenBookmarkDrawer}
+              className="btn-pill-outline"
+              style={{ padding: '8px 12px', fontSize: '0.82rem', borderColor: '#82A735', background: 'var(--bg-sage)' }}
+              aria-label={`View ${bookmarkCount} saved tools`}
+              title="View my saved software stack"
+            >
+              <Star size={14} fill="#82A735" color="#82A735" />
+              <span>({bookmarkCount})</span>
+            </button>
+          )}
 
           {/* Compare Drawer trigger */}
           {compareCount > 0 && (
