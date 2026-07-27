@@ -18,28 +18,6 @@ export const highIntentArticles = [
 },
   
   {
-    id: 'best-ai-coding-tools-2026',
-    title: 'Top AI Coding Tools in 2026: Cursor AI vs Claude 3.5 Sonnet vs GitHub Copilot',
-    summary: 'Comparing AI-first code editors on multi-file generation speed, codebase context indexing, and IDE autocompletion.',
-    category: 'AI Coding & Dev',
-    publishDate: 'July 24, 2026',
-    readTime: '5 min read',
-    recommendedToolIds: ['cursor-ai', 'claude-ai', 'github-copilot', 'v0-dev', 'replit-agent'],
-    content: `
-<h3>Software Engineering at 10x Velocity</h3>
-<p>AI coding tools have shifted from simple inline autocompletion to full codebase context reasoning and autonomous multi-file edits.</p>
-
-<h4>1. Cursor AI — Best AI-First Code Editor</h4>
-<p>Cursor replaces VS Code with native inline Cmd+K edits, codebase indexing, and multi-file code editing powered by Claude 3.5 Sonnet and GPT-4o.</p>
-
-<h4>2. Claude 3.5 Sonnet — Best AI Model for Reasoning & Architecture</h4>
-<p>Anthropic Claude 3.5 Sonnet consistently outperforms other LLMs on complex full-stack architecture, zero filler text, and interactive Artifacts canvas.</p>
-
-<h4>3. GitHub Copilot — Industry Standard IDE Completion</h4>
-<p>GitHub Copilot provides seamless real-time autocompletion across VS Code and JetBrains IDEs.</p>
-    `
-  },
-  {
     id: 'best-ai-music-audio-2026',
     title: 'Top Generative AI Music Generators in 2026: Suno AI vs Udio AI',
     summary: 'Testing studio vocal acoustics, arrangement versatility, and commercial licensing for AI music generation.',

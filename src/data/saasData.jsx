@@ -1,106 +1,31 @@
 import React from 'react';
 
 export const saasCategories = [
-  {
-    "id": "all",
-    "label": "All Software"
-  },
-  {
-    "id": "ai-content",
-    "label": "AI Copywriting & Text"
-  },
-  {
-    "id": "trending-video-ai",
-    "label": "AI Video & Motion"
-  },
-  {
-    "id": "ai-music-audio",
-    "label": "AI Music & Audio"
-  },
-  {
-    "id": "design-creative",
-    "label": "AI Image & Design"
-  },
-  {
-    "id": "ai-coding-dev",
-    "label": "AI Coding & Dev Assistants"
-  },
-  {
-    "id": "meeting-ai",
-    "label": "AI Meeting Transcribers"
-  },
-  {
-    "id": "crm",
-    "label": "CRM & Sales Pipelines"
-  },
-  {
-    "id": "invoicing",
-    "label": "Invoicing & Accounting"
-  },
-  {
-    "id": "email-marketing",
-    "label": "Email Marketing & Automation"
-  },
-  {
-    "id": "social-media",
-    "label": "Social Media & Schedulers"
-  },
-  {
-    "id": "project-mgmt",
-    "label": "Project & Work Management"
-  },
-  {
-    "id": "seo-analytics",
-    "label": "SEO & Keyword Research"
-  },
-  {
-    "id": "forms-leadgen",
-    "label": "Forms & Survey Automation"
-  },
-  {
-    "id": "ecommerce-funnels",
-    "label": "E-Commerce & Funnels"
-  },
-  {
-    "id": "hr-payroll",
-    "label": "HR & Global Payroll"
-  },
-  {
-    "id": "customer-support",
-    "label": "Customer Support & Helpdesk"
-  },
-  {
-    "id": "dev-cloud",
-    "label": "Developer & Cloud Hosting"
-  },
-  {
-    "id": "web-builders",
-    "label": "Website Builders & CMS"
-  },
-  {
-    "id": "analytics-heatmaps",
-    "label": "Product Analytics & Heatmaps"
-  },
-  {
-    "id": "publishing-cms",
-    "label": "Publishing & Newsletters"
-  },
-  {
-    "id": "time-productivity",
-    "label": "Time Tracking & Productivity"
-  },
-  {
-    "id": "esign-documents",
-    "label": "Document Automation & E-Sign"
-  },
-  {
-    "id": "security-passwords",
-    "label": "Security & Password Managers"
-  },
-  {
-    "id": "nocode-databases",
-    "label": "No-Code & Relational Databases"
-  }
+  { "id": "all", "label": "All Software" },
+  { "id": "ai-content", "label": "AI Copywriting & Text" },
+  { "id": "trending-video-ai", "label": "AI Video & Motion" },
+  { "id": "ai-music-audio", "label": "AI Music & Audio" },
+  { "id": "design-creative", "label": "AI Image & Design" },
+  { "id": "ai-coding-dev", "label": "AI Coding & Dev Assistants" },
+  { "id": "meeting-ai", "label": "AI Meeting Transcribers" },
+  { "id": "crm", "label": "CRM & Sales Pipelines" },
+  { "id": "invoicing", "label": "Invoicing & Accounting" },
+  { "id": "email-marketing", "label": "Email Marketing & Automation" },
+  { "id": "social-media", "label": "Social Media & Schedulers" },
+  { "id": "project-mgmt", "label": "Project & Work Management" },
+  { "id": "seo-analytics", "label": "SEO & Keyword Research" },
+  { "id": "forms-leadgen", "label": "Forms & Survey Automation" },
+  { "id": "ecommerce-funnels", "label": "E-Commerce & Funnels" },
+  { "id": "hr-payroll", "label": "HR & Global Payroll" },
+  { "id": "customer-support", "label": "Customer Support & Helpdesk" },
+  { "id": "dev-cloud", "label": "Developer & Cloud Hosting" },
+  { "id": "web-builders", "label": "Website Builders & CMS" },
+  { "id": "analytics-heatmaps", "label": "Product Analytics & Heatmaps" },
+  { "id": "publishing-cms", "label": "Publishing & Newsletters" },
+  { "id": "time-productivity", "label": "Time Tracking & Productivity" },
+  { "id": "esign-documents", "label": "Document Automation & E-Sign" },
+  { "id": "security-passwords", "label": "Security & Password Managers" },
+  { "id": "nocode-databases", "label": "No-Code Databases & Workflows" }
 ];
 
 export const saasTools = [
@@ -15437,5 +15362,155 @@ export const saasTools = [
       "Entry tier limits"
     ],
     "bestFor": "Solopreneurs, founders, and growing teams."
+  },
+  {
+    "id": "skillspec",
+    "name": "Skillspec",
+    "domain": "skillspec.sh",
+    "category": "ai-coding-dev",
+    "pricing": "Free / Open-Source",
+    "rating": 4.9,
+    "reviewsCount": 907,
+    "description": "SkillSpec makes agent skills followable, testable, and provable with Doctor risk reports, guided imports, structured contracts, and alignment proof.",
+    "badge": "GITHUB TRENDING",
+    "featured": false,
+    "affiliateUrl": "https://skillspec.sh",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "toonflow-app",
+    "name": "Toonflow App",
+    "domain": "toonflow.net",
+    "category": "ai-coding-dev",
+    "pricing": "Free / Open-Source",
+    "rating": 4.9,
+    "reviewsCount": 12827,
+    "description": "Toonflow 是开源一站��� AI 短剧创作工具，将小说、剧本快速转化为动画短剧。集成 AI 编剧、智能分镜、角色与视频生成，跨平台桌面端轻量部署，助力创作者低成本批量产出视觉内容。Toonflow is an open-source AI tool that turns stories and scripts into animated short dramas. Features AI scriptwriting, storyboarding, character and video generation. A cross-platform desktop app for efficient content creation.",
+    "badge": "GITHUB TRENDING",
+    "featured": false,
+    "affiliateUrl": "https://toonflow.net",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "joinly",
+    "name": "Joinly",
+    "domain": "joinly.ai",
+    "category": "ai-coding-dev",
+    "pricing": "Free / Open-Source",
+    "rating": 4.9,
+    "reviewsCount": 534,
+    "description": "Make your meetings accessible to AI Agents",
+    "badge": "GITHUB TRENDING",
+    "featured": false,
+    "affiliateUrl": "https://joinly.ai",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "heyzoku",
+    "name": "HeyZoku",
+    "domain": "heyzoku.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "HeyZoku is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://heyzoku.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "estera",
+    "name": "Estera",
+    "domain": "estera.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Estera is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://estera.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "robynn-ai",
+    "name": "Robynn AI",
+    "domain": "robynnai.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Robynn AI is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://robynnai.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "tackly",
+    "name": "Tackly",
+    "domain": "tackly.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Tackly is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://tackly.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "illume-labs",
+    "name": "Illume Labs",
+    "domain": "illumelabs.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Illume Labs is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://illumelabs.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "comms",
+    "name": "Comms",
+    "domain": "comms.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Comms is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://comms.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "claude-opus-5",
+    "name": "Claude Opus 5",
+    "domain": "claudeopus5.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Claude Opus 5 is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://claudeopus5.com",
+    "isFreeTier": true,
+    "isOpenSource": false
   }
 ];
