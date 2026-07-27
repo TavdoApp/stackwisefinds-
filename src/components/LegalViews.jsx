@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowLeft, ShieldCheck, FileText, RefreshCw, Lock } from 'lucide-react';
+import { ArrowLeft, Lock, FileText, RefreshCw, ShieldCheck } from 'lucide-react';
 
 export function PrivacyPolicyView({ onBack }) {
   return (
@@ -10,15 +10,15 @@ export function PrivacyPolicyView({ onBack }) {
 
       <div style={{ background: '#FFFFFF', padding: '40px', borderRadius: '24px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-soft)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#82A735', fontWeight: '800', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px' }}>
-          <Lock size={16} /> Legal Compliance
+          <Lock size={16} /> Legal & Privacy
         </div>
         <h1 style={{ fontSize: '2.4rem', fontWeight: '800', marginBottom: '8px' }}>Privacy Policy</h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 24, 2026</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 27, 2026</p>
 
         <div style={{ lineHeight: '1.7', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>1. Information We Collect</h2>
           <p style={{ marginBottom: '16px' }}>
-            At StackwiseFinds (stackwisefinds.com), we respect your privacy. We collect minimal personal information when you use our website, apply for a featured vendor listing, or submit software reviews.
+            At StakDock (stakdock.com), we respect your privacy. We collect minimal personal information when you use our website, apply for a featured vendor listing, or submit software reviews.
           </p>
           <ul style={{ paddingLeft: '20px', marginBottom: '20px' }}>
             <li><strong>Vendor Submissions:</strong> Founder name, software title, domain URL, and email address when applying for featured spots.</li>
@@ -42,7 +42,7 @@ export function PrivacyPolicyView({ onBack }) {
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>5. Contact Us</h2>
           <p>
-            If you have questions regarding this privacy policy, please contact us at <strong>support@stackwisefinds.com</strong>.
+            If you have questions regarding this privacy policy, please contact us at <strong>support@stakdock.com</strong>.
           </p>
         </div>
       </div>
@@ -62,17 +62,17 @@ export function TermsOfServiceView({ onBack }) {
           <FileText size={16} /> Terms & Conditions
         </div>
         <h1 style={{ fontSize: '2.4rem', fontWeight: '800', marginBottom: '8px' }}>Terms of Service</h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 24, 2026</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 27, 2026</p>
 
         <div style={{ lineHeight: '1.7', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>1. Acceptance of Terms</h2>
           <p style={{ marginBottom: '16px' }}>
-            By accessing stackwisefinds.com, you agree to comply with these Terms of Service. If you disagree with any part of these terms, you may not use our services.
+            By accessing stakdock.com, you agree to comply with these Terms of Service. If you disagree with any part of these terms, you may not use our services.
           </p>
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>2. Software Directory Listings & Affiliates</h2>
           <p style={{ marginBottom: '16px' }}>
-            StackwiseFinds provides independent software information, comparison matrices, and buyer guides. Some outgoing links may contain affiliate referral tags. Software ratings represent aggregate community feedback and editorial analysis.
+            StakDock provides independent software information, comparison matrices, and buyer guides. Some outgoing links may contain affiliate referral tags. Software ratings represent aggregate community feedback and editorial analysis.
           </p>
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>3. Featured Vendor Subscriptions</h2>
@@ -87,7 +87,7 @@ export function TermsOfServiceView({ onBack }) {
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>5. Contact</h2>
           <p>
-            For legal inquiries, email <strong>support@stackwisefinds.com</strong>.
+            For legal inquiries, email <strong>support@stakdock.com</strong>.
           </p>
         </div>
       </div>
@@ -107,7 +107,7 @@ export function RefundPolicyView({ onBack }) {
           <RefreshCw size={16} /> Paddle Merchant Policy
         </div>
         <h1 style={{ fontSize: '2.4rem', fontWeight: '800', marginBottom: '8px' }}>Refund & Cancellation Policy</h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 24, 2026</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 27, 2026</p>
 
         <div style={{ lineHeight: '1.7', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
           <div style={{ background: 'var(--bg-sage)', border: '1px solid #82A735', borderRadius: '16px', padding: '20px', marginBottom: '24px' }}>
@@ -121,7 +121,7 @@ export function RefundPolicyView({ onBack }) {
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>1. How to Request a Refund</h2>
           <p style={{ marginBottom: '16px' }}>
-            To request a refund for a Featured Vendor listing, simply send an email to <strong>support@stackwisefinds.com</strong> with your order receipt email address or Paddle Order ID within 14 calendar days of payment.
+            To request a refund for a Featured Vendor listing, simply send an email to <strong>support@stakdock.com</strong> with your order receipt email address or Paddle Order ID within 14 calendar days of payment.
           </p>
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>2. Refund Processing Time</h2>
@@ -131,7 +131,7 @@ export function RefundPolicyView({ onBack }) {
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>3. Cancellations & Renewal Control</h2>
           <p style={{ marginBottom: '16px' }}>
-            Featured Vendor listings are annual subscriptions. You may cancel subscription auto-renewal at any time via the Paddle customer portal link included in your purchase receipt email or by emailing support@stackwisefinds.com.
+            Featured Vendor listings are annual subscriptions. You may cancel subscription auto-renewal at any time via the Paddle customer portal link included in your purchase receipt email or by emailing support@stakdock.com.
           </p>
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>4. Merchant of Record Statement</h2>
@@ -144,9 +144,9 @@ export function RefundPolicyView({ onBack }) {
   );
 }
 
-// Default export wrapper component for React.lazy code splitting compatibility
-export default function LegalViews({ legalView, onBack }) {
-  if (legalView === 'terms') return <TermsOfServiceView onBack={onBack} />;
-  if (legalView === 'refund') return <RefundPolicyView onBack={onBack} />;
+export default function LegalViews({ view, onBack }) {
+  if (view === 'privacy') return <PrivacyPolicyView onBack={onBack} />;
+  if (view === 'terms') return <TermsOfServiceView onBack={onBack} />;
+  if (view === 'refund') return <RefundPolicyView onBack={onBack} />;
   return <PrivacyPolicyView onBack={onBack} />;
 }

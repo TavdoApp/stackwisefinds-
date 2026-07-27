@@ -198,7 +198,7 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
       {/* Disclaimer */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', justifyContent: 'center', color: 'var(--text-light)', fontSize: '0.8rem' }}>
         <ShieldCheck size={16} color="#82A735" />
-        <span>Stackwise is reader-supported. We may earn a commission when you buy software through partner links.</span>
+        <span>StakDock is reader-supported. We may earn a commission when you buy software through partner links.</span>
       </div>
     </div>
   );

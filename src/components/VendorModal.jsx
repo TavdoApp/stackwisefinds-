@@ -92,8 +92,8 @@ export default function VendorModal({ onClose }) {
           <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '8px', color: '#FFFFFF' }}>
             Feature Your SaaS Software
           </h2>
-          <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.8)', margin: 0 }}>
-            Get pinned at the top of StackwiseFinds in front of 50,000+ purchasing managers and founders.
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.5', margin: 0 }}>
+            Get pinned at the top of StakDock in front of 50,000+ purchasing managers and founders.
           </p>
         </div>
 

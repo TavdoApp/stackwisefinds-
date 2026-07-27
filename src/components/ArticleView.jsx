@@ -105,7 +105,7 @@ export default function ArticleView({ article, onBack }) {
       }}>
         <ShieldCheck size={20} color="#82A735" style={{ flexShrink: 0 }} />
         <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
-          <strong>Transparency Disclosure:</strong> Stackwise is reader-supported. When you purchase software through partner links on our site, we may earn an affiliate commission at zero extra cost to you.
+          <strong>Transparency Disclosure:</strong> StakDock is reader-supported. When you purchase software through partner links on our site, we may earn an affiliate commission at zero extra cost to you.
         </p>
       </div>
 

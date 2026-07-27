@@ -148,8 +148,8 @@ export default function ReviewModal({ tool, onClose }) {
           <div style={{ textAlign: 'center', padding: '20px 0' }}>
             <CheckCircle2 size={48} color="#82A735" style={{ margin: '0 auto 16px' }} />
             <h3 style={{ fontSize: '1.6rem', fontWeight: '800', marginBottom: '8px' }}>Thank You for Your Review!</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px', lineHeight: '1.6' }}>
-              Your rating for <strong>{tool.name}</strong> has been verified and added to the Stackwise community score.
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', marginBottom: '24px', lineHeight: '1.5' }}>
+              Your rating for <strong>{tool.name}</strong> has been verified and added to the StakDock community score.
             </p>
             <button onClick={onClose} className="btn-pill-dark" style={{ padding: '10px 24px' }}>
               Done

@@ -21,7 +21,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
   const faqs = [
     {
       question: `Is ${toolA.name} better than ${toolB.name}?`,
-      answer: `It depends on your workflow. ${winner.name} ranks higher overall on Stackwise (${winner.rating}/5) because of its superior user interface and value. However, ${toolA.name} is ideal for ${bestForA}, while ${toolB.name} is best for ${bestForB}.`
+      answer: `It depends on your workflow. ${winner.name} ranks higher overall on StakDock (${winner.rating}/5) because of its superior user interface and value. However, ${toolA.name} is ideal for ${bestForA}, while ${toolB.name} is best for ${bestForB}.`
     },
     {
       question: `Which is cheaper: ${toolA.name} or ${toolB.name}?`,
@@ -89,7 +89,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase' }}>
-              <Award size={16} /> Stackwise Verdict Winner
+              <Award size={16} /> StakDock Verdict Winner
             </div>
             <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)' }}>{winner.name}</h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{bestForWinner}</p>
@@ -132,7 +132,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
           </thead>
           <tbody>
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Stackwise Score</td>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>StakDock Score</td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
                 <Star size={14} fill="#82A735" inline /> {toolA.rating} / 5
               </td>
@@ -222,7 +222,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
       {/* FTC Disclaimer */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-light)', fontSize: '0.8rem', textAlign: 'center', justifyContent: 'center' }}>
         <ShieldCheck size={16} color="#82A735" />
-        <span>Stackwise is reader-supported. We may earn a commission when you buy software through partner links.</span>
+        <span>StakDock is reader-supported. We may earn a commission when you buy software through partner links.</span>
       </div>
     </div>
   );
