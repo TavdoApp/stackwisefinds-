@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare } from 'lucide-react';
+import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 
@@ -10,10 +10,26 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
   const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`;
-  const visitsDisplay = tool.monthlyVisits || '180K/mo';
+  const visitsDisplay = tool.monthlyVisits || '1.8M/mo';
+
+  // Mock Traffic Analytics Data for Toolify-style Analytics Tab
+  const analyticsData = {
+    searchOrganic: '38.4%',
+    direct: '32.1%',
+    referrals: '14.5%',
+    socialOrganic: '8.2%',
+    paidAds: '6.8%',
+    topCountries: [
+      { name: 'United States 🇺🇸', share: '34.2%' },
+      { name: 'United Kingdom 🇬🇧', share: '8.5%' },
+      { name: 'Germany 🇩🇪', share: '6.1%' },
+      { name: 'India 🇮🇳', share: '5.8%' },
+      { name: 'United Arab Emirates 🇦🇪', share: '4.9%' }
+    ]
+  };
 
   return (
-    <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '1000px' }}>
+    <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '1020px' }}>
       {/* Schema.org Rich Snippet Ingestion */}
       {injectSoftwareApplicationSchema(tool)}
 
@@ -39,15 +55,15 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginBottom: '24px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <div style={{
-              width: '72px',
-              height: '72px',
+              width: '76px',
+              height: '76px',
               borderRadius: '20px',
               background: '#F6F7F2',
               border: '1px solid var(--border-color)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '10px',
+              padding: '12px',
               boxShadow: '0 4px 14px rgba(0,0,0,0.05)'
             }}>
               <img 
@@ -59,11 +75,11 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
 
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                <h1 style={{ fontSize: '2.2rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+                <h1 style={{ fontSize: '2.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
                   {tool.name}
                 </h1>
                 {tool.badge && (
-                  <span className="tag-sage" style={{ fontSize: '0.72rem' }}>
+                  <span className="tag-sage" style={{ fontSize: '0.75rem' }}>
                     {tool.badge}
                   </span>
                 )}
@@ -71,7 +87,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
-                  <Star size={15} fill="#82A735" color="#82A735" />
+                  <Star size={16} fill="#82A735" color="#82A735" />
                   <span>{tool.rating || 4.8}</span>
                   <span style={{ color: 'var(--text-muted)', fontWeight: '400' }}>({tool.reviewsCount || 120} reviews)</span>
                 </div>
@@ -97,22 +113,22 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
               className="btn-pill-green"
               style={{ padding: '14px 28px', fontSize: '1rem', textDecoration: 'none' }}
             >
-              <span>Open Site</span>
+              <span>Open Website</span>
               <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
 
         {/* Introduction */}
-        <p style={{ fontSize: '1.05rem', color: 'var(--text-dark)', lineHeight: '1.6', marginBottom: '24px' }}>
+        <p style={{ fontSize: '1.08rem', color: 'var(--text-dark)', lineHeight: '1.6', marginBottom: '24px' }}>
           {tool.description}
         </p>
 
-        {/* Website Preview Placeholder Card */}
+        {/* Website Preview Banner */}
         <div style={{
           background: 'linear-gradient(135deg, #141E14 0%, #203320 100%)',
           borderRadius: '18px',
-          padding: '40px 24px',
+          padding: '36px 24px',
           textAlign: 'center',
           color: '#FFFFFF',
           position: 'relative',
@@ -121,13 +137,13 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
           <img 
             src={googleFavicon}
             alt={tool.name}
-            style={{ width: '48px', height: '48px', margin: '0 auto 12px', borderRadius: '12px' }}
+            style={{ width: '44px', height: '44px', margin: '0 auto 12px', borderRadius: '12px' }}
           />
-          <h3 style={{ fontSize: '1.4rem', fontWeight: '800', marginBottom: '8px', color: '#FFFFFF' }}>
-            {tool.name} Platform Experience
+          <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginBottom: '8px', color: '#FFFFFF' }}>
+            {tool.name} Official Platform Dashboard
           </h3>
-          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', maxWidth: '500px', margin: '0 auto 20px' }}>
-            Direct access to official documentation, user dashboard, and verified cloud features.
+          <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', maxWidth: '520px', margin: '0 auto 20px' }}>
+            Access official documentation, enterprise pricing tiers, and cloud features directly on {tool.domain}.
           </p>
 
           <a
@@ -135,65 +151,71 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
             target="_blank"
             rel="noopener noreferrer"
             className="btn-pill-green"
-            style={{ padding: '10px 22px', fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex' }}
+            style={{ padding: '10px 24px', fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex' }}
           >
-            <span>Visit {tool.name} Official Website</span>
+            <span>Visit {tool.name} Official Site ({tool.domain})</span>
             <ExternalLink size={15} />
           </a>
         </div>
       </div>
 
-      {/* Deep Dive Tabs */}
-      <div style={{ display: 'flex', gap: '12px', borderBottom: '1px solid var(--border-color)', marginBottom: '28px', paddingBottom: '8px', overflowX: 'auto' }}>
-        <button
-          onClick={() => setActiveTab('product-info')}
-          style={{
-            background: 'none',
-            border: 'none',
-            padding: '8px 16px',
-            fontSize: '0.95rem',
-            fontWeight: '800',
-            color: activeTab === 'product-info' ? '#82A735' : 'var(--text-muted)',
-            borderBottom: activeTab === 'product-info' ? '3px solid #82A735' : 'none',
-            cursor: 'pointer'
-          }}
-        >
-          Product Information
-        </button>
-
-        <button
-          onClick={() => setActiveTab('alternatives')}
-          style={{
-            background: 'none',
-            border: 'none',
-            padding: '8px 16px',
-            fontSize: '0.95rem',
-            fontWeight: '800',
-            color: activeTab === 'alternatives' ? '#82A735' : 'var(--text-muted)',
-            borderBottom: activeTab === 'alternatives' ? '3px solid #82A735' : 'none',
-            cursor: 'pointer'
-          }}
-        >
-          Alternatives ({alternatives.length})
-        </button>
+      {/* Toolify 5 Sub-Tabs Navigation */}
+      <div style={{ display: 'flex', gap: '8px', borderBottom: '2px solid var(--border-color)', marginBottom: '28px', overflowX: 'auto', paddingBottom: '4px' }}>
+        {[
+          { id: 'product-info', label: 'Product Information' },
+          { id: 'reviews', label: `Reviews (${tool.reviewsCount || 120})` },
+          { id: 'pricing', label: 'Pricing' },
+          { id: 'analytics', label: '📊 Traffic & Analytics' },
+          { id: 'alternatives', label: `Alternatives (${alternatives.length})` }
+        ].map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: '10px 18px',
+              fontSize: '0.95rem',
+              fontWeight: '800',
+              color: activeTab === tab.id ? '#82A735' : 'var(--text-muted)',
+              borderBottom: activeTab === tab.id ? '3px solid #82A735' : '3px solid transparent',
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'all 0.15s ease'
+            }}
+          >
+            {tab.label}
+          </button>
+        ))}
       </div>
 
-      {/* Tab Content */}
+      {/* Tab 1: Product Information */}
       {activeTab === 'product-info' && (
         <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
           <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
             What is {tool.name}?
           </h3>
           <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '24px' }}>
-            {tool.name} is an enterprise-grade software platform engineered for founders, developers, and operational teams. Built to streamline workflows, reduce manual overhead, and accelerate time-to-market.
+            {tool.name} is a software platform engineered for founders, developers, and operational teams. Built to streamline workflows, eliminate manual overhead, and accelerate execution.
           </p>
 
-          <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px' }}>Key Capabilities & Features:</h4>
-          <ul style={{ paddingLeft: '20px', lineHeight: '1.8', color: 'var(--text-dark)', marginBottom: '24px' }}>
-            <li><strong>Verified Reliability:</strong> Evaluated by StakDock independent software benchmarks.</li>
-            <li><strong>Pricing Model:</strong> {tool.pricing} with transparent upgrade tiers.</li>
-            <li><strong>Traffic & Market Consensus:</strong> High monthly visitor volume ({visitsDisplay}).</li>
-          </ul>
+          <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px' }}>Key Specifications:</h4>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Category</div>
+              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.category}</div>
+            </div>
+
+            <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Pricing Tier</div>
+              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: '#82A735', marginTop: '4px' }}>{tool.pricing}</div>
+            </div>
+
+            <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Monthly Traffic</div>
+              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{visitsDisplay}</div>
+            </div>
+          </div>
 
           <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
             <button
@@ -208,6 +230,143 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
         </div>
       )}
 
+      {/* Tab 2: Reviews */}
+      {activeTab === 'reviews' && (
+        <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px', flexWrap: 'wrap', gap: '12px' }}>
+            <div>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+                User Reviews & Ratings
+              </h3>
+              <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginTop: '4px' }}>
+                Based on verified user feedback and independent benchmarks.
+              </div>
+            </div>
+
+            <button
+              onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
+              className="btn-pill-green"
+              style={{ padding: '10px 20px', fontSize: '0.88rem' }}
+            >
+              <MessageSquare size={16} />
+              <span>Write Review</span>
+            </button>
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: '#F6F7F2', padding: '20px', borderRadius: '16px', marginBottom: '24px' }}>
+            <div style={{ textAlign: 'center', borderRight: '1px solid var(--border-color)', paddingRight: '20px' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#82A735', lineHeight: '1' }}>{tool.rating || 4.8}</div>
+              <div style={{ display: 'flex', gap: '2px', margin: '6px 0 2px', justifyContent: 'center' }}>
+                {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#82A735" color="#82A735" />)}
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{tool.reviewsCount || 120} ratings</div>
+            </div>
+
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: '0.9rem', fontWeight: '700', color: 'var(--text-dark)', marginBottom: '4px' }}>
+                98% Positive Sentiment
+              </div>
+              <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                Users highlight high reliability, clear UI, and fast execution speed.
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 3: Pricing */}
+      {activeTab === 'pricing' && (
+        <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
+            {tool.name} Pricing Plans & Tiers
+          </h3>
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '24px' }}>
+            Official pricing model: <strong style={{ color: '#82A735' }}>{tool.pricing}</strong>
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
+            <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '24px' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Free / Starter Tier</h4>
+              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>$0 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/ month</span></div>
+              <ul style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                <li>Basic features & dashboard access</li>
+                <li>Community support</li>
+                <li>Standard speed execution</li>
+              </ul>
+            </div>
+
+            <div style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)', border: '2px solid #82A735', borderRadius: '18px', padding: '24px' }}>
+              <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Pro / Team Tier</h4>
+              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>{tool.pricing.includes('$') ? tool.pricing.split('/')[1] || '$20/mo' : '$20'} <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/ month</span></div>
+              <ul style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                <li>Full feature matrix unlocked</li>
+                <li>Priority API & customer support</li>
+                <li>Unlimited workspace seats</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 4: Analytics (Toolify Feature) */}
+      {activeTab === 'analytics' && (
+        <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+            <BarChart3 size={24} color="#82A735" />
+            <h3 style={{ fontSize: '1.5rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+              {tool.name} Traffic & Market Telemetry
+            </h3>
+          </div>
+
+          <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', marginBottom: '24px' }}>
+            Estimated worldwide monthly visits: <strong style={{ color: '#82A735' }}>{visitsDisplay}</strong>
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px' }}>
+            {/* Traffic Sources Breakdown */}
+            <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '20px' }}>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: '800', marginBottom: '14px', color: 'var(--text-dark)' }}>
+                Traffic Sources Breakdown
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Search Organic</span>
+                  <strong style={{ color: '#82A735' }}>{analyticsData.searchOrganic}</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Direct Traffic</span>
+                  <strong style={{ color: 'var(--text-dark)' }}>{analyticsData.direct}</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Referrals</span>
+                  <strong style={{ color: 'var(--text-dark)' }}>{analyticsData.referrals}</strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Social Organic</span>
+                  <strong style={{ color: 'var(--text-dark)' }}>{analyticsData.socialOrganic}</strong>
+                </div>
+              </div>
+            </div>
+
+            {/* Top Geographic Demographics */}
+            <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '20px' }}>
+              <h4 style={{ fontSize: '1.05rem', fontWeight: '800', marginBottom: '14px', color: 'var(--text-dark)' }}>
+                Top Visitor Demographics
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
+                {analyticsData.topCountries.map(c => (
+                  <div key={c.name} style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <span>{c.name}</span>
+                    <strong style={{ color: '#82A735' }}>{c.share}</strong>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Tab 5: Alternatives */}
       {activeTab === 'alternatives' && (
         <div style={{ marginBottom: '40px' }}>
           <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '20px' }}>

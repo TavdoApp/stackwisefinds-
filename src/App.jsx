@@ -273,6 +273,13 @@ export default function App() {
               {/* Hero Section */}
               <Hero
                 currentLang={currentLang}
+                searchTerm={searchTerm}
+                onSearchChange={(val) => { setSearchTerm(val); setCurrentPage(1); }}
+                onSearchSubmit={() => {
+                  const el = document.getElementById('directory-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                totalToolsCount={saasTools.length}
                 onExploreClick={() => {
                   const el = document.getElementById('directory-section');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
@@ -454,6 +461,7 @@ export default function App() {
                           isBookmarked={bookmarkedIds.includes(tool.id)}
                           onToggleBookmark={handleToggleBookmark}
                           onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }}
+                          onSelectCategory={(catId) => { setSelectedCategory(catId); setCurrentPage(1); const el = document.getElementById('directory-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
                           currentLang={currentLang}
                         />
                       ))}

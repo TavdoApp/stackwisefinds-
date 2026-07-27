@@ -13,6 +13,7 @@ export default function ToolCard({
   isBookmarked,
   onToggleBookmark,
   onSelectTool,
+  onSelectCategory,
   currentLang = 'en'
 }) {
   const [imgErrorCount, setImgErrorCount] = useState(0);
@@ -136,6 +137,37 @@ export default function ToolCard({
             }}>
               {tool.description}
             </p>
+
+            {/* Toolify Category Hashtag Pills */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginBottom: '8px' }}>
+              <span 
+                onClick={(e) => { e.stopPropagation(); onSelectCategory && onSelectCategory(tool.category); }}
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: '700',
+                  color: '#82A735',
+                  background: '#F6F7F2',
+                  padding: '2px 8px',
+                  borderRadius: '6px',
+                  border: '1px solid var(--border-color)',
+                  cursor: 'pointer'
+                }}
+              >
+                #{tool.category ? tool.category.replace(/-/g, ' ') : 'software'}
+              </span>
+
+              {tool.isOpenSource && (
+                <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 8px', borderRadius: '6px' }}>
+                  #OpenSource
+                </span>
+              )}
+
+              {tool.isFreeTier && (
+                <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 8px', borderRadius: '6px' }}>
+                  #FreeTier
+                </span>
+              )}
+            </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', fontSize: '0.82rem' }}>
               {/* Star Rating */}
