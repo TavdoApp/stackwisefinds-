@@ -51,7 +51,7 @@ export default function Navbar({
           style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}
           role="button"
           tabIndex={0}
-          aria-label="StackwiseFinds Home"
+          aria-label="StakDock Home"
         >
           <div style={{
             width: '34px',
@@ -65,8 +65,8 @@ export default function Navbar({
           }}>
             <Sparkles size={18} color="#82A735" />
           </div>
-          <span style={{ fontSize: '1.3rem', fontWeight: '800', fontFamily: 'var(--font-sans)', color: '#141E14', letterSpacing: '-0.02em' }}>
-            stackwise
+          <span style={{ fontSize: '1.35rem', fontWeight: '800', fontFamily: 'var(--font-sans)', color: '#141E14', letterSpacing: '-0.02em' }}>
+            stak<span style={{ color: '#82A735' }}>dock</span>
           </span>
         </div>
 

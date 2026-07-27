@@ -8,12 +8,12 @@ export function injectGlobalOrganizationSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'StackwiseFinds',
-    'url': 'https://stackwisefinds.com',
-    'logo': 'https://stackwisefinds.com/favicon.svg',
-    'description': 'Independent software review platform and practical buyer guides for freelancers, solopreneurs, and growing teams.',
+    'name': 'StakDock',
+    'url': 'https://stakdock.com',
+    'logo': 'https://stakdock.com/favicon.svg',
+    'description': 'The premier SaaS & AI software launch dock and buyer recommendation platform.',
     'sameAs': [
-      'https://twitter.com/stackwisefinds'
+      'https://twitter.com/stakdock'
     ]
   };
 

@@ -21,16 +21,16 @@ export default function Footer({ onOpenVendorModal, onSelectArticle, onOpenLegal
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '40px', marginBottom: '48px' }}>
           
-          {/* Column 1: Brand & Paddle Merchant Notice */}
+          {/* Column 1: Brand & Merchant Notice */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
               <Sparkles size={20} color="#82A735" />
               <span style={{ fontSize: '1.3rem', fontWeight: '800', fontFamily: 'var(--font-sans)', color: '#141E14' }}>
-                stackwise
+                stak<span style={{ color: '#82A735' }}>dock</span>
               </span>
             </div>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.6', maxWidth: '280px', marginBottom: '12px' }}>
-              Honest software guides and practical recommendations for freelancers, solopreneurs, and growing teams.
+              The software & AI launch dock. Discover, compare, and deploy verified tech stacks with zero fluff.
             </p>
             <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
               Payments & merchant processing secured by <strong>Paddle.com</strong> (Merchant of Record).
@@ -84,7 +84,7 @@ export default function Footer({ onOpenVendorModal, onSelectArticle, onOpenLegal
               SAAS FOUNDERS
             </div>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '16px', lineHeight: '1.5' }}>
-              Get featured in front of thousands of active software buyers.
+              Get featured in front of thousands of active software buyers on StakDock.
             </p>
             <button onClick={onOpenVendorModal} className="btn-pill-dark" style={{ padding: '8px 16px', fontSize: '0.82rem' }}>
               Submit SaaS Product ($199/yr)
@@ -127,7 +127,7 @@ export default function Footer({ onOpenVendorModal, onSelectArticle, onOpenLegal
 
         {/* Clean Copyright Line */}
         <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '0.8rem', color: 'var(--text-light)' }}>
-          <span>© {new Date().getFullYear()} Stackwise. Payments processed securely by Paddle.com.</span>
+          <span>© {new Date().getFullYear()} StakDock.com. All rights reserved. Payments processed securely by Paddle.com.</span>
           <span>Build something real.</span>
         </div>
       </div>

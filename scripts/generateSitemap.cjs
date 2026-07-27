@@ -11,7 +11,7 @@ if (!toolsMatch) {
 }
 
 const saasTools = JSON.parse(toolsMatch[1]);
-const baseUrl = 'https://stackwisefinds.com';
+const baseUrl = 'https://stakdock.com';
 const todayDate = new Date().toISOString().split('T')[0];
 
 let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -104,4 +104,4 @@ sitemapXml += `</urlset>\n`;
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
 
-console.log(`✨ Successfully generated public/sitemap.xml with official sitemaps.org namespace! Total indexed routes: ${saasTools.length + 199}`);
+console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${saasTools.length + 199}`);
