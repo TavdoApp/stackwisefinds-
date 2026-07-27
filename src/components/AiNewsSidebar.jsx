@@ -105,8 +105,10 @@ export default function AiNewsSidebar() {
       padding: '20px',
       boxShadow: 'var(--shadow-soft)',
       position: 'sticky',
-      top: '90px'
-    }}>
+      top: '80px',
+      maxHeight: 'calc(100vh - 100px)',
+      overflowY: 'auto'
+    }} className="hide-scrollbar">
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
         <Newspaper size={18} color="#82A735" />

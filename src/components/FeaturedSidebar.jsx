@@ -1,14 +1,23 @@
 import React from 'react';
-import { Sparkles, ArrowUpRight, Award } from 'lucide-react';
+import { Sparkles, ArrowUpRight } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 
 export default function FeaturedSidebar({ onSelectTool }) {
-  // Select top featured & high-rating tools for left column spotlight feed (8 tools)
-  const featuredList = saasTools.filter(t => t.featured || t.badge || t.isFreeTier || t.isOpenSource).slice(0, 8);
+  // Select top featured & high-rating tools for left column spotlight feed
+  const featuredList = saasTools.filter(t => t.featured || t.badge || t.isFreeTier || t.isOpenSource).slice(0, 10);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', position: 'sticky', top: '90px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+    <div style={{
+      position: 'sticky',
+      top: '80px',
+      maxHeight: 'calc(100vh - 100px)',
+      overflowY: 'auto',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '12px',
+      paddingRight: '4px'
+    }} className="hide-scrollbar">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
         <Sparkles size={14} /> Featured Spotlights
       </div>
 
@@ -20,9 +29,9 @@ export default function FeaturedSidebar({ onSelectTool }) {
             background: tool.featured ? 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)' : '#FFFFFF',
             border: tool.featured ? '2px solid #82A735' : '1px solid var(--border-color)',
             borderRadius: '16px',
-            padding: '14px',
+            padding: '12px 14px',
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.02)',
             transition: 'all 0.15s ease'
           }}
         >
@@ -32,7 +41,7 @@ export default function FeaturedSidebar({ onSelectTool }) {
               alt={tool.name}
               style={{ width: '26px', height: '26px', borderRadius: '6px', objectFit: 'contain' }}
             />
-            <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-dark)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+            <div style={{ fontWeight: '800', fontSize: '0.9rem', color: 'var(--text-dark)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
               {tool.name}
             </div>
             {tool.pricing && tool.pricing.toLowerCase().includes('free') && (
@@ -61,7 +70,7 @@ export default function FeaturedSidebar({ onSelectTool }) {
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
             className="btn-pill-green"
-            style={{ width: '100%', padding: '5px 10px', fontSize: '0.75rem', justifyContent: 'center', minHeight: '32px' }}
+            style={{ width: '100%', padding: '5px 10px', fontSize: '0.75rem', justifyContent: 'center', minHeight: '30px' }}
           >
             <span>Visit Site</span>
             <ArrowUpRight size={12} />
