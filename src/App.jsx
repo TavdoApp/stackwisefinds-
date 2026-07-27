@@ -6,6 +6,9 @@ import CategoryNav from './components/CategoryNav';
 import CategoryGrid from './components/CategoryGrid';
 import Footer from './components/Footer';
 import SponsoredBanner from './components/SponsoredBanner';
+import CategoryGridPage from './components/CategoryGridPage';
+import RankingPage from './components/RankingPage';
+import AdvertisePage from './components/AdvertisePage';
 
 import { saasTools, saasCategories } from './data/saasData.jsx';
 import { highIntentArticles } from './data/articlesData';
@@ -733,9 +736,40 @@ export default function App() {
               />
             )}
 
-            {currentView === 'legal-view' && (
+            {currentView === 'category-grid' && (
+              <CategoryGridPage
+                onSelectCategory={(catId) => {
+                  setSelectedCategory(catId);
+                  setCurrentView('directory');
+                  const el = document.getElementById('directory-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }}
+                onBack={() => setCurrentView('directory')}
+              />
+            )}
+
+            {currentView === 'ranking' && (
+              <RankingPage
+                onSelectTool={(tId) => {
+                  setSelectedToolDetailId(tId);
+                  setCurrentView('tool-detail');
+                }}
+                onSelectCategory={(catId) => {
+                  setSelectedCategory(catId);
+                  setCurrentView('directory');
+                }}
+              />
+            )}
+
+            {currentView === 'advertise' && (
+              <AdvertisePage
+                onOpenVendorModal={() => setShowVendorModal(true)}
+              />
+            )}
+
+            {(currentView === 'privacy' || currentView === 'terms' || currentView === 'disclosure') && (
               <LegalViews
-                legalView={legalView}
+                legalView={currentView}
                 onBack={() => {
                   setCurrentView('directory');
                   window.location.hash = '';
@@ -798,9 +832,10 @@ export default function App() {
 
       {/* Footer */}
       <Footer 
-        onOpenVendorModal={() => setShowVendorModal(true)} 
-        onSelectArticle={handleSelectArticleById}
-        onOpenLegalView={handleOpenLegalView}
+        setCurrentView={setCurrentView}
+        setSelectedCategory={setSelectedCategory}
+        currentLang={currentLang}
+        onChangeLang={setCurrentLang}
       />
     </div>
   );

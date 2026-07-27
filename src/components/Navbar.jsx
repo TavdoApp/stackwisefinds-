@@ -93,20 +93,44 @@ export default function Navbar({
           </div>
 
           {/* Desktop Center Nav Views */}
-          <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: '6px', background: '#F6F7F2', padding: '4px', borderRadius: '9999px', border: '1px solid #E2E6D8' }}>
+          <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#F6F7F2', padding: '4px', borderRadius: '9999px', border: '1px solid #E2E6D8' }}>
             <button 
               onClick={() => setCurrentView('directory')}
               className={currentView === 'directory' ? 'btn-pill-dark' : 'btn-pill-outline'}
-              style={{ border: 'none', padding: '6px 14px', fontSize: '0.82rem' }}
+              style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Software Directory"
             >
               <Compass size={14} />
               <span>{t.navDirectory || 'Directory'}</span>
             </button>
             <button 
+              onClick={() => setCurrentView('category-grid')}
+              className={currentView === 'category-grid' ? 'btn-pill-dark' : 'btn-pill-outline'}
+              style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
+              aria-label="Categories"
+            >
+              <span>Categories</span>
+            </button>
+            <button 
+              onClick={() => setCurrentView('ranking')}
+              className={currentView === 'ranking' ? 'btn-pill-dark' : 'btn-pill-outline'}
+              style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
+              aria-label="Rankings"
+            >
+              <span>Rankings</span>
+            </button>
+            <button 
+              onClick={() => setCurrentView('advertise')}
+              className={currentView === 'advertise' ? 'btn-pill-dark' : 'btn-pill-outline'}
+              style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
+              aria-label="Advertise"
+            >
+              <span>Advertise</span>
+            </button>
+            <button 
               onClick={() => setCurrentView('articles')}
               className={currentView === 'articles' ? 'btn-pill-dark' : 'btn-pill-outline'}
-              style={{ border: 'none', padding: '6px 14px', fontSize: '0.82rem' }}
+              style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Buyer Guides"
             >
               <BookOpen size={14} />

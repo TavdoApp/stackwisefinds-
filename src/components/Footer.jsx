@@ -1,135 +1,176 @@
 import React from 'react';
-import { Sparkles, ShieldCheck, Lock, FileText, RefreshCw } from 'lucide-react';
+import { Sparkles, ArrowUpRight, ShieldCheck, Heart } from 'lucide-react';
+import { saasCategories } from '../data/saasData.jsx';
 
-export default function Footer({ onOpenVendorModal, onSelectArticle, onOpenLegalView }) {
-  const handleArticleClick = (articleId) => {
-    if (onSelectArticle) {
-      onSelectArticle(articleId);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
-  const handleLegalClick = (viewName) => {
-    if (onOpenLegalView) {
-      onOpenLegalView(viewName);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
+export default function Footer({ setCurrentView, setSelectedCategory, onChangeLang, currentLang = 'en' }) {
   return (
-    <footer style={{ background: '#EEF2E6', borderTop: '1px solid var(--border-color)', padding: '60px 0 40px', marginTop: 'auto', position: 'relative', zIndex: 10 }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '40px', marginBottom: '48px' }}>
-          
-          {/* Column 1: Brand & Merchant Notice */}
+    <footer style={{
+      background: '#141E14',
+      color: '#FFFFFF',
+      borderTop: '1px solid #203320',
+      padding: '60px 16px 40px',
+      marginTop: 'auto'
+    }}>
+      <div className="container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
+        
+        {/* 5-Column Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+          gap: '40px',
+          marginBottom: '48px'
+        }}>
+          {/* Col 1: Brand Info */}
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-              <Sparkles size={20} color="#82A735" />
-              <span style={{ fontSize: '1.3rem', fontWeight: '800', fontFamily: 'var(--font-sans)', color: '#141E14' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+              <div style={{
+                width: '32px', height: '32px', borderRadius: '8px',
+                background: '#203320', display: 'flex', alignItems: 'center',
+                justifyContent: 'center', border: '1px solid #2E472E'
+              }}>
+                <Sparkles size={16} color="#82A735" />
+              </div>
+              <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
                 stak<span style={{ color: '#82A735' }}>dock</span>
               </span>
             </div>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.6', maxWidth: '280px', marginBottom: '12px' }}>
-              The software & AI launch dock. Discover, compare, and deploy verified tech stacks with zero fluff.
+
+            <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.7)', lineHeight: '1.6', marginBottom: '20px' }}>
+              The premier software launch dock & AI tools directory. 500+ verified tools updated daily with telemetry traffic stats.
             </p>
-            <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', lineHeight: '1.4' }}>
-              Payments & merchant processing secured by <strong>Paddle.com</strong> (Merchant of Record).
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', color: '#82A735' }}>
+              <ShieldCheck size={14} />
+              <span>Independent & Reader Supported</span>
             </div>
           </div>
 
-          {/* Column 2: Top Guides */}
+          {/* Col 2: Directory Links */}
           <div>
-            <div className="tag-uppercase" style={{ marginBottom: '14px', fontSize: '0.72rem', color: 'var(--text-dark)' }}>
-              TOP GUIDES
-            </div>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem' }}>
+            <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+              Directory Views
+            </h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
               <li>
-                <button 
-                  onClick={() => handleArticleClick('best-ai-video-generators-2026')}
-                  style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', cursor: 'pointer', fontSize: '0.88rem' }}
-                >
-                  Top AI Video Generators 2026
-                </button>
+                <span onClick={() => setCurrentView('directory')} style={{ cursor: 'pointer' }} className="hover:text-white">
+                  All Software Feed
+                </span>
               </li>
               <li>
-                <button 
-                  onClick={() => handleArticleClick('best-real-estate-crms-2026')}
-                  style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', cursor: 'pointer', fontSize: '0.88rem' }}
-                >
-                  Best Real Estate CRMs
-                </button>
+                <span onClick={() => setCurrentView('category-grid')} style={{ cursor: 'pointer' }} className="hover:text-white">
+                  50+ Category Explorer
+                </span>
               </li>
               <li>
-                <button 
-                  onClick={() => handleArticleClick('best-ai-coding-tools-2026')}
-                  style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', cursor: 'pointer', fontSize: '0.88rem' }}
-                >
-                  Top AI Coding Editors
-                </button>
+                <span onClick={() => setCurrentView('ranking')} style={{ cursor: 'pointer' }} className="hover:text-white">
+                  Top Traffic Leaderboards
+                </span>
               </li>
               <li>
-                <button 
-                  onClick={() => handleArticleClick('best-ecommerce-stack-2026')}
-                  style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', cursor: 'pointer', fontSize: '0.88rem' }}
-                >
-                  Ultimate E-Commerce Stack 2026
-                </button>
+                <span onClick={() => setCurrentView('articles')} style={{ cursor: 'pointer' }} className="hover:text-white">
+                  Reddit Buyer Guides
+                </span>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: SaaS Founders */}
+          {/* Col 3: Popular Categories */}
           <div>
-            <div className="tag-uppercase" style={{ marginBottom: '14px', fontSize: '0.72rem', color: 'var(--text-dark)' }}>
-              SAAS FOUNDERS
-            </div>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '16px', lineHeight: '1.5' }}>
-              Get featured in front of thousands of active software buyers on StakDock.
-            </p>
-            <button onClick={onOpenVendorModal} className="btn-pill-dark" style={{ padding: '8px 16px', fontSize: '0.82rem' }}>
-              Submit SaaS Product ($199/yr)
-            </button>
+            <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+              Top Categories
+            </h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
+              {saasCategories.slice(1, 6).map(cat => (
+                <li key={cat.id}>
+                  <span 
+                    onClick={() => {
+                      if (setSelectedCategory) setSelectedCategory(cat.id);
+                      setCurrentView('directory');
+                    }}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {cat.label}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Column 4: Legal & Paddle Compliance */}
+          {/* Col 4: Monetization & Business */}
           <div>
-            <div className="tag-uppercase" style={{ marginBottom: '14px', fontSize: '0.72rem', color: 'var(--text-dark)' }}>
-              LEGAL & POLICIES
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <button
-                onClick={() => handleLegalClick('privacy')}
-                style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', fontSize: '0.88rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
-              >
-                <Lock size={14} color="#82A735" /> Privacy Policy
-              </button>
-              <button
-                onClick={() => handleLegalClick('terms')}
-                style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', fontSize: '0.88rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
-              >
-                <FileText size={14} color="#82A735" /> Terms of Service
-              </button>
-              <button
-                onClick={() => handleLegalClick('refund')}
-                style={{ background: 'none', border: 'none', padding: 0, color: 'var(--text-muted)', textAlign: 'left', fontSize: '0.88rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px' }}
-              >
-                <RefreshCw size={14} color="#82A735" /> Refund & Cancellation Policy
-              </button>
-              
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.82rem', color: '#82A735', fontWeight: '700', marginTop: '6px' }}>
-                <ShieldCheck size={16} />
-                <span>14-Day Guarantee</span>
-              </div>
-            </div>
+            <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+              Sponsors & Business
+            </h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
+              <li>
+                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '800' }}>
+                  Sponsor StakDock ($99)
+                </span>
+              </li>
+              <li>
+                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                  Top Banner Ad ($99/mo)
+                </span>
+              </li>
+              <li>
+                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                  Left Spotlight Vendor ($99/yr)
+                </span>
+              </li>
+              <li>
+                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                  In-Feed Sponsored Badge ($49/mo)
+                </span>
+              </li>
+            </ul>
           </div>
 
+          {/* Col 5: Legal & Language */}
+          <div>
+            <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+              Legal & Language
+            </h4>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
+              <li>
+                <span onClick={() => setCurrentView('privacy')} style={{ cursor: 'pointer' }}>
+                  Privacy Policy
+                </span>
+              </li>
+              <li>
+                <span onClick={() => setCurrentView('terms')} style={{ cursor: 'pointer' }}>
+                  Terms of Service
+                </span>
+              </li>
+              <li>
+                <span onClick={() => setCurrentView('disclosure')} style={{ cursor: 'pointer' }}>
+                  Affiliate Disclosure
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Clean Copyright Line */}
-        <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', fontSize: '0.8rem', color: 'var(--text-light)' }}>
-          <span>© {new Date().getFullYear()} StakDock.com. All rights reserved. Payments processed securely by Paddle.com.</span>
-          <span>Build something real.</span>
+        {/* Bottom Bar */}
+        <div style={{
+          borderTop: '1px solid #203320',
+          paddingTop: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '16px',
+          fontSize: '0.82rem',
+          color: 'rgba(255,255,255,0.5)'
+        }}>
+          <div>
+            © 2026 StakDock. All rights reserved. Registered trademark of StakDock Technologies.
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <span>Built with precision for tech founders & creators worldwide</span>
+          </div>
         </div>
+
       </div>
     </footer>
   );
