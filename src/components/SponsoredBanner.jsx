@@ -4,69 +4,79 @@ import { ArrowUpRight, Megaphone } from 'lucide-react';
 export default function SponsoredBanner({ onOpenVendorModal }) {
   return (
     <div style={{
-      background: 'linear-gradient(90deg, #141E14 0%, #1E301E 50%, #141E14 100%)',
-      color: '#FFFFFF',
-      padding: '8px 16px',
-      fontSize: '0.83rem',
+      background: 'linear-gradient(90deg, #EBF3D8 0%, #E2EECA 50%, #D4E6B3 100%)',
+      color: '#141E14',
+      padding: '7px 14px',
+      fontSize: '0.82rem',
       fontWeight: '600',
-      textAlign: 'center',
-      borderBottom: '1px solid rgba(130, 167, 53, 0.3)',
+      borderBottom: '1px solid #C2DC8E',
       position: 'relative',
       zIndex: 101,
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '12px',
-      flexWrap: 'wrap'
+      gap: '10px',
+      whiteSpace: 'nowrap',
+      overflowX: 'auto',
+      WebkitOverflowScrolling: 'touch'
     }}>
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
         <span style={{
-          background: '#82A735',
-          color: '#FFFFFF',
-          padding: '2px 8px',
-          borderRadius: '9999px',
-          fontSize: '0.7rem',
-          fontWeight: '800',
-          letterSpacing: '0.04em',
-          textTransform: 'uppercase'
+          color: '#4A5D4A',
+          fontSize: '0.78rem',
+          fontWeight: '700'
         }}>
-          Sponsored
+          Sponsored by
         </span>
-        <span>
-          <strong>PoYo AI / XusCRM</strong> — High-concurrency AI API & UAE real estate CRM.
-        </span>
+
         <a 
           href="https://xuscrm.com" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label="Explore XusCRM Real Estate Platform"
-          style={{ color: '#A0D238', fontWeight: '800', display: 'inline-flex', alignItems: 'center', gap: '2px', textDecoration: 'underline' }}
+          aria-label="XusCRM Real Estate Platform"
+          style={{
+            background: '#141E14',
+            color: '#FFFFFF',
+            padding: '2px 10px',
+            borderRadius: '6px',
+            fontWeight: '800',
+            fontSize: '0.78rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '4px',
+            textDecoration: 'none'
+          }}
         >
-          <span>Explore XusCRM Platform</span>
-          <ArrowUpRight size={13} />
+          <span>XusCRM</span>
+          <ArrowUpRight size={13} color="#82A735" />
         </a>
+
+        <span style={{ fontSize: '0.78rem', color: '#4A5D4A', fontWeight: '600' }} className="hide-mobile">
+          — UAE Real Estate CRM & AI Leads
+        </span>
       </div>
 
       <button
         onClick={onOpenVendorModal}
         aria-label="Advertise your SaaS tool for $299 a month"
         style={{
-          background: 'rgba(255, 255, 255, 0.12)',
-          border: '1px solid rgba(255, 255, 255, 0.25)',
+          background: '#82A735',
+          border: 'none',
           color: '#FFFFFF',
           padding: '3px 10px',
           borderRadius: '9999px',
-          fontSize: '0.75rem',
-          fontWeight: '700',
+          fontSize: '0.72rem',
+          fontWeight: '800',
           cursor: 'pointer',
           display: 'inline-flex',
           alignItems: 'center',
           gap: '4px',
-          transition: 'all 0.15s ease'
+          flexShrink: 0,
+          boxShadow: '0 2px 6px rgba(130,167,53,0.3)'
         }}
         title="Promote your SaaS product in the top bar"
       >
-        <Megaphone size={12} color="#A0D238" />
+        <Megaphone size={11} color="#FFFFFF" />
         <span>Advertise ($299/mo)</span>
       </button>
     </div>
