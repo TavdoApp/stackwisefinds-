@@ -35,7 +35,7 @@ class GlobalErrorBoundary extends React.Component {
             StakDock Application Notice
           </h2>
           <p style={{ color: '#536253', marginBottom: '20px', fontSize: '0.95rem', background: '#F6F7F2', padding: '14px', borderRadius: '12px' }}>
-            {this.state.error?.message || this.state.error?.toString() || "A temporary browser rendering state occurred."}
+            {this.state.error?.message || this.state.error?.toString() || "A temporary rendering issue occurred."}
           </p>
           <button 
             onClick={() => {
@@ -64,22 +64,10 @@ class GlobalErrorBoundary extends React.Component {
   }
 }
 
-const mount = () => {
-  const container = document.getElementById('root');
-  if (container) {
-    const root = ReactDOM.createRoot(container);
-    root.render(
-      <React.StrictMode>
-        <GlobalErrorBoundary>
-          <App />
-        </GlobalErrorBoundary>
-      </React.StrictMode>
-    );
-  }
-};
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', mount);
-} else {
-  mount();
-}
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <GlobalErrorBoundary>
+      <App />
+    </GlobalErrorBoundary>
+  </React.StrictMode>
+);
