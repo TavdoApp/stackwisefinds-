@@ -748,7 +748,7 @@ export default function App() {
         {showCompareModal && (
           <ComparisonModal
             tools={compareTools}
-            onClose={() => setShowShowCompareModal(false)}
+            onClose={() => setShowCompareModal(false)}
           />
         )}
 

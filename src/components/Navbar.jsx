@@ -20,12 +20,18 @@ export default function Navbar({
 
   // Lock body scroll when drawer is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+    if (typeof document !== 'undefined') {
+      if (isMobileMenuOpen) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = '';
+      }
+    };
   }, [isMobileMenuOpen]);
 
   const languages = [
@@ -43,223 +49,8 @@ export default function Navbar({
 
   const handleMobileNav = (action) => {
     setIsMobileMenuOpen(false);
-    action();
+    if (typeof action === 'function') action();
   };
-
-  // Mobile Drawer rendered via Portal so it escapes sticky header stacking context
-  const MobileDrawer = () => createPortal(
-    <>
-      {/* Overlay Backdrop */}
-      <div
-        onClick={() => setIsMobileMenuOpen(false)}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(20, 30, 20, 0.5)',
-          zIndex: 99998,
-          backdropFilter: 'blur(4px)',
-          WebkitBackdropFilter: 'blur(4px)',
-        }}
-      />
-      {/* Drawer Panel */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          bottom: 0,
-          width: '85%',
-          maxWidth: '340px',
-          background: '#FFFFFF',
-          zIndex: 99999,
-          overflowY: 'auto',
-          display: 'flex',
-          flexDirection: 'column',
-          boxShadow: '-8px 0 40px rgba(0,0,0,0.15)',
-          animation: 'slideInRight 0.25s ease-out',
-        }}
-      >
-        {/* Drawer Header */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '18px 20px',
-          borderBottom: '1px solid #E2E6D8',
-          background: '#F6F7F2',
-          flexShrink: 0,
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div style={{
-              width: '30px', height: '30px', borderRadius: '8px',
-              background: '#EBF0E1', display: 'flex', alignItems: 'center',
-              justifyContent: 'center', border: '1px solid #E2E6D8'
-            }}>
-              <Sparkles size={16} color="#82A735" />
-            </div>
-            <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#141E14', letterSpacing: '-0.02em' }}>
-              stak<span style={{ color: '#82A735' }}>dock</span>
-            </span>
-          </div>
-          <button
-            onClick={() => setIsMobileMenuOpen(false)}
-            style={{
-              background: 'none', border: 'none', cursor: 'pointer',
-              padding: '6px', display: 'flex', alignItems: 'center',
-              borderRadius: '8px', color: '#536253'
-            }}
-            aria-label="Close Menu"
-          >
-            <X size={22} />
-          </button>
-        </div>
-
-        {/* Drawer Nav Items */}
-        <div style={{ padding: '16px', flex: 1 }}>
-          {/* Main Nav Links */}
-          <div style={{ marginBottom: '8px' }}>
-            <div style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.1em', color: '#7E8E7E', textTransform: 'uppercase', padding: '4px 4px 10px' }}>
-              Navigate
-            </div>
-            {[
-              { label: t.navDirectory || 'Software Directory', icon: <Compass size={18} color="#82A735" />, view: 'directory' },
-              { label: t.navGuides || 'Buyer Guides', icon: <BookOpen size={18} color="#82A735" />, view: 'articles' },
-            ].map(item => (
-              <button
-                key={item.view}
-                onClick={() => handleMobileNav(() => setCurrentView(item.view))}
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '6px',
-                  background: currentView === item.view ? '#EBF0E1' : '#F6F7F2',
-                  border: currentView === item.view ? '1px solid #82A735' : '1px solid transparent',
-                  fontWeight: '700', fontSize: '0.95rem', color: '#141E14', cursor: 'pointer',
-                  transition: 'all 0.15s ease',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  {item.icon}
-                  <span>{item.label}</span>
-                </div>
-                <ChevronRight size={16} color="#82A735" />
-              </button>
-            ))}
-          </div>
-
-          {/* Divider */}
-          <div style={{ height: '1px', background: '#E2E6D8', margin: '12px 0' }} />
-
-          {/* Actions */}
-          <div style={{ marginBottom: '8px' }}>
-            <div style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.1em', color: '#7E8E7E', textTransform: 'uppercase', padding: '4px 4px 10px' }}>
-              Actions
-            </div>
-
-            <button
-              onClick={() => handleMobileNav(onOpenWizardModal)}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '10px',
-                width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
-                background: '#82A735', color: '#FFFFFF', fontWeight: '700',
-                fontSize: '0.95rem', border: 'none', cursor: 'pointer',
-                boxShadow: '0 4px 12px rgba(130,167,53,0.3)',
-              }}
-              aria-label="Find My Stack"
-            >
-              <Wand2 size={18} />
-              <span>{t.navFindStack || 'Find My Stack'}</span>
-            </button>
-
-            <button
-              onClick={() => handleMobileNav(onOpenVendorModal)}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '10px',
-                width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
-                background: '#141E14', color: '#FFFFFF', fontWeight: '700',
-                fontSize: '0.95rem', border: 'none', cursor: 'pointer',
-              }}
-              aria-label="Submit SaaS Tool"
-            >
-              <PlusCircle size={18} />
-              <span>{t.navSubmit || 'Submit Tool'} — $99/yr</span>
-            </button>
-
-            {bookmarkCount > 0 && (
-              <button
-                onClick={() => handleMobileNav(onOpenBookmarkDrawer)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '10px',
-                  width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
-                  background: '#EBF0E1', color: '#141E14', fontWeight: '700',
-                  fontSize: '0.95rem', border: '1px solid #82A735', cursor: 'pointer',
-                }}
-                aria-label={`My Saved Stack: ${bookmarkCount} tools`}
-              >
-                <Star size={18} fill="#82A735" color="#82A735" />
-                <span>My Saved Stack ({bookmarkCount})</span>
-              </button>
-            )}
-
-            {compareCount > 0 && (
-              <button
-                onClick={() => handleMobileNav(onOpenCompareModal)}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '10px',
-                  width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
-                  background: '#EBF0E1', color: '#141E14', fontWeight: '700',
-                  fontSize: '0.95rem', border: '1px solid #82A735', cursor: 'pointer',
-                }}
-                aria-label={`Compare ${compareCount} tools`}
-              >
-                <Scale size={18} color="#82A735" />
-                <span>Compare Tools ({compareCount})</span>
-              </button>
-            )}
-          </div>
-
-          {/* Divider */}
-          <div style={{ height: '1px', background: '#E2E6D8', margin: '12px 0' }} />
-
-          {/* Language Selector */}
-          <div>
-            <div style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.1em', color: '#7E8E7E', textTransform: 'uppercase', padding: '4px 4px 10px' }}>
-              Language
-            </div>
-            <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
-              <Globe size={18} color="#536253" style={{ position: 'absolute', left: '14px', pointerEvents: 'none', zIndex: 1 }} />
-              <select
-                value={currentLang || 'en'}
-                onChange={(e) => { onChangeLang && onChangeLang(e.target.value); setIsMobileMenuOpen(false); }}
-                style={{
-                  width: '100%', padding: '12px 14px 12px 44px',
-                  borderRadius: '12px', border: '1px solid #E2E6D8',
-                  background: '#F6F7F2', fontSize: '0.95rem', fontWeight: '700',
-                  outline: 'none', cursor: 'pointer', color: '#141E14',
-                  appearance: 'none', WebkitAppearance: 'none',
-                }}
-              >
-                {languages.map(lang => (
-                  <option key={lang.code} value={lang.code}>{lang.label}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Slide-in animation */}
-      <style>{`
-        @keyframes slideInRight {
-          from { transform: translateX(100%); }
-          to { transform: translateX(0); }
-        }
-      `}</style>
-    </>,
-    document.body
-  );
 
   return (
     <>
@@ -310,7 +101,7 @@ export default function Navbar({
               aria-label="Software Directory"
             >
               <Compass size={14} />
-              <span>{t.navDirectory}</span>
+              <span>{t.navDirectory || 'Directory'}</span>
             </button>
             <button 
               onClick={() => setCurrentView('articles')}
@@ -319,7 +110,7 @@ export default function Navbar({
               aria-label="Buyer Guides"
             >
               <BookOpen size={14} />
-              <span>{t.navGuides}</span>
+              <span>{t.navGuides || 'Guides'}</span>
             </button>
           </div>
 
@@ -350,7 +141,7 @@ export default function Navbar({
               aria-label="Find My Software Stack"
             >
               <Wand2 size={14} />
-              <span>{t.navFindStack}</span>
+              <span>{t.navFindStack || 'Find Stack'}</span>
             </button>
 
             {bookmarkCount > 0 && (
@@ -384,7 +175,7 @@ export default function Navbar({
               aria-label="Submit SaaS Tool"
             >
               <PlusCircle size={14} />
-              <span>{t.navSubmit}</span>
+              <span>{t.navSubmit || 'Submit'}</span>
             </button>
           </div>
 
@@ -406,24 +197,227 @@ export default function Navbar({
               </button>
             )}
             <button
-              onClick={() => setIsMobileMenuOpen(true)}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               style={{
                 background: '#FFFFFF', border: '1px solid #E2E6D8',
                 padding: '8px 12px', borderRadius: '12px',
                 cursor: 'pointer', display: 'flex', alignItems: 'center',
                 justifyContent: 'center', color: '#141E14',
               }}
-              aria-label="Open Navigation Menu"
+              aria-label="Toggle Navigation Menu"
               aria-expanded={isMobileMenuOpen}
             >
-              <Menu size={22} />
+              {isMobileMenuOpen ? <X size={22} color="#82A735" /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </header>
 
-      {/* Render mobile drawer via portal to escape stacking context */}
-      {isMobileMenuOpen && <MobileDrawer />}
+      {/* Portal Mobile Drawer */}
+      {isMobileMenuOpen && typeof document !== 'undefined' && createPortal(
+        <>
+          {/* Overlay Backdrop */}
+          <div
+            onClick={() => setIsMobileMenuOpen(false)}
+            style={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(20, 30, 20, 0.5)',
+              zIndex: 99998,
+              backdropFilter: 'blur(4px)',
+              WebkitBackdropFilter: 'blur(4px)',
+            }}
+          />
+          {/* Drawer Panel */}
+          <div
+            style={{
+              position: 'fixed',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              width: '85%',
+              maxWidth: '340px',
+              background: '#FFFFFF',
+              zIndex: 99999,
+              overflowY: 'auto',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: '-8px 0 40px rgba(0,0,0,0.15)',
+            }}
+          >
+            {/* Drawer Header */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '18px 20px',
+              borderBottom: '1px solid #E2E6D8',
+              background: '#F6F7F2',
+              flexShrink: 0,
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <div style={{
+                  width: '30px', height: '30px', borderRadius: '8px',
+                  background: '#EBF0E1', display: 'flex', alignItems: 'center',
+                  justifyContent: 'center', border: '1px solid #E2E6D8'
+                }}>
+                  <Sparkles size={16} color="#82A735" />
+                </div>
+                <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#141E14', letterSpacing: '-0.02em' }}>
+                  stak<span style={{ color: '#82A735' }}>dock</span>
+                </span>
+              </div>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{
+                  background: 'none', border: 'none', cursor: 'pointer',
+                  padding: '6px', display: 'flex', alignItems: 'center',
+                  borderRadius: '8px', color: '#536253'
+                }}
+                aria-label="Close Menu"
+              >
+                <X size={22} />
+              </button>
+            </div>
+
+            {/* Drawer Nav Items */}
+            <div style={{ padding: '16px', flex: 1 }}>
+              {/* Main Nav Links */}
+              <div style={{ marginBottom: '8px' }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.1em', color: '#7E8E7E', textTransform: 'uppercase', padding: '4px 4px 10px' }}>
+                  Navigate
+                </div>
+                {[
+                  { label: t.navDirectory || 'Software Directory', icon: <Compass size={18} color="#82A735" />, view: 'directory' },
+                  { label: t.navGuides || 'Buyer Guides', icon: <BookOpen size={18} color="#82A735" />, view: 'articles' },
+                ].map(item => (
+                  <button
+                    key={item.view}
+                    onClick={() => handleMobileNav(() => setCurrentView(item.view))}
+                    style={{
+                      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                      width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '6px',
+                      background: currentView === item.view ? '#EBF0E1' : '#F6F7F2',
+                      border: currentView === item.view ? '1px solid #82A735' : '1px solid transparent',
+                      fontWeight: '700', fontSize: '0.95rem', color: '#141E14', cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </div>
+                    <ChevronRight size={16} color="#82A735" />
+                  </button>
+                ))}
+              </div>
+
+              {/* Divider */}
+              <div style={{ height: '1px', background: '#E2E6D8', margin: '12px 0' }} />
+
+              {/* Actions */}
+              <div style={{ marginBottom: '8px' }}>
+                <div style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.1em', color: '#7E8E7E', textTransform: 'uppercase', padding: '4px 4px 10px' }}>
+                  Actions
+                </div>
+
+                <button
+                  onClick={() => handleMobileNav(onOpenWizardModal)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
+                    background: '#82A735', color: '#FFFFFF', fontWeight: '700',
+                    fontSize: '0.95rem', border: 'none', cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(130,167,53,0.3)',
+                  }}
+                  aria-label="Find My Stack"
+                >
+                  <Wand2 size={18} />
+                  <span>{t.navFindStack || 'Find My Stack'}</span>
+                </button>
+
+                <button
+                  onClick={() => handleMobileNav(onOpenVendorModal)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
+                    background: '#141E14', color: '#FFFFFF', fontWeight: '700',
+                    fontSize: '0.95rem', border: 'none', cursor: 'pointer',
+                  }}
+                  aria-label="Submit SaaS Tool"
+                >
+                  <PlusCircle size={18} />
+                  <span>{t.navSubmit || 'Submit Tool'} — $99/yr</span>
+                </button>
+
+                {bookmarkCount > 0 && (
+                  <button
+                    onClick={() => handleMobileNav(onOpenBookmarkDrawer)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '10px',
+                      width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
+                      background: '#EBF0E1', color: '#141E14', fontWeight: '700',
+                      fontSize: '0.95rem', border: '1px solid #82A735', cursor: 'pointer',
+                    }}
+                    aria-label={`My Saved Stack: ${bookmarkCount} tools`}
+                  >
+                    <Star size={18} fill="#82A735" color="#82A735" />
+                    <span>My Saved Stack ({bookmarkCount})</span>
+                  </button>
+                )}
+
+                {compareCount > 0 && (
+                  <button
+                    onClick={() => handleMobileNav(onOpenCompareModal)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '10px',
+                      width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
+                      background: '#EBF0E1', color: '#141E14', fontWeight: '700',
+                      fontSize: '0.95rem', border: '1px solid #82A735', cursor: 'pointer',
+                    }}
+                    aria-label={`Compare ${compareCount} tools`}
+                  >
+                    <Scale size={18} color="#82A735" />
+                    <span>Compare Tools ({compareCount})</span>
+                  </button>
+                )}
+              </div>
+
+              {/* Divider */}
+              <div style={{ height: '1px', background: '#E2E6D8', margin: '12px 0' }} />
+
+              {/* Language Selector */}
+              <div>
+                <div style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.1em', color: '#7E8E7E', textTransform: 'uppercase', padding: '4px 4px 10px' }}>
+                  Language
+                </div>
+                <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+                  <Globe size={18} color="#536253" style={{ position: 'absolute', left: '14px', pointerEvents: 'none', zIndex: 1 }} />
+                  <select
+                    value={currentLang || 'en'}
+                    onChange={(e) => { onChangeLang && onChangeLang(e.target.value); setIsMobileMenuOpen(false); }}
+                    style={{
+                      width: '100%', padding: '12px 14px 12px 44px',
+                      borderRadius: '12px', border: '1px solid #E2E6D8',
+                      background: '#F6F7F2', fontSize: '0.95rem', fontWeight: '700',
+                      outline: 'none', cursor: 'pointer', color: '#141E14',
+                      appearance: 'none', WebkitAppearance: 'none',
+                    }}
+                  >
+                    {languages.map(lang => (
+                      <option key={lang.code} value={lang.code}>{lang.label}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>,
+        document.body
+      )}
     </>
   );
 }
