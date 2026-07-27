@@ -3,15 +3,21 @@ const path = require('path');
 const https = require('https');
 
 // IndexNow Key details
-const HOST = 'stackwisefinds.com';
+const HOST = 'stakdock.com';
 const INDEXNOW_KEY = '47451ffd1d7c4719abf7737ae720b648';
 const KEY_LOCATION = `https://${HOST}/47451ffd1d7c4719abf7737ae720b648.txt`;
+
+// Ensure IndexNow key file exists in public/
+const keyFilePath = path.join(__dirname, '..', 'public', `${INDEXNOW_KEY}.txt`);
+if (!fs.existsSync(keyFilePath)) {
+  fs.writeFileSync(keyFilePath, INDEXNOW_KEY, 'utf8');
+}
 
 // Read URLs from public/sitemap.xml
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 let sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
 
-const urlRegex = /<loc>(https:\/\/stackwisefinds\.com[^<]+)<\/loc>/g;
+const urlRegex = /<loc>(https:\/\/[^<]+)<\/loc>/g;
 const urlList = [];
 let match;
 
@@ -19,7 +25,7 @@ while ((match = urlRegex.exec(sitemapContent)) !== null) {
   urlList.push(match[1]);
 }
 
-console.log(`🚀 Found ${urlList.length} URLs in sitemap.xml to ping via IndexNow...`);
+console.log(`🚀 Found ${urlList.length} StakDock.com URLs in sitemap.xml to ping via IndexNow...`);
 
 const payload = JSON.stringify({
   host: HOST,
@@ -52,8 +58,8 @@ function sendPing(endpointHost) {
   req.end();
 }
 
-console.log('📡 Pinging api.indexnow.org...');
+console.log('📡 Pinging api.indexnow.org for StakDock.com...');
 sendPing('api.indexnow.org');
 
-console.log('📡 Pinging www.bing.com...');
+console.log('📡 Pinging www.bing.com for StakDock.com...');
 sendPing('www.bing.com');
