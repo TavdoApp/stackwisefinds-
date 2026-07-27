@@ -196,7 +196,6 @@ button {
 .btn-pill-dark:hover {
   background: #2D3E2D;
 }
-
 /* Badges */
 .tag-uppercase {
   font-size: 0.75rem;
@@ -333,34 +332,36 @@ button {
   margin: auto !important;
 }
 
-/* MOBILE RESPONSIVE OVERHAUL (< 640px) */
-@media (max-width: 640px) {
-  .hide-mobile {
-    display: none !important;
-  }
+/* ============================================
+   MOBILE RESPONSIVE OVERHAUL (< 768px)
+   Comprehensive mobile-first redesign
+   ============================================ */
+@media (max-width: 768px) {
 
+  /* Base container */
   .container {
-    padding: 0 12px !important;
+    padding: 0 14px !important;
   }
 
+  /* Hero Section */
   .hero-editorial {
-    padding: 24px 0 16px;
+    padding: 20px 0 14px;
   }
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
 
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 2rem;
     line-height: 1.1;
-    margin: 10px 0 14px;
+    margin: 8px 0 12px;
   }
 
   .hero-subtitle {
-    font-size: 0.92rem;
-    margin-bottom: 18px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
   }
 
   .hero-cta-group {
@@ -370,27 +371,28 @@ button {
   }
 
   .hero-cta-group button {
-    width: 100%;
+    width: 100% !important;
+    justify-content: center !important;
   }
 
   /* Modal Mobile Popup Specs */
   .modal-content-editorial {
-    padding: 20px !important;
-    max-height: 85vh !important;
-    border-radius: 20px !important;
+    padding: 18px !important;
+    max-height: 88vh !important;
+    border-radius: 18px !important;
   }
 
   /* Tool Card Mobile Stack */
   .tool-card-main-content {
     flex-direction: column;
     align-items: stretch;
-    gap: 14px;
+    gap: 12px;
   }
 
   .tool-card-actions-wrapper {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 8px;
   }
 
   .tool-card-secondary-actions {
@@ -403,4 +405,64 @@ button {
     width: 100% !important;
     justify-content: center;
   }
+
+  /* Mobile button sizing — bigger tap targets */
+  .btn-pill-green,
+  .btn-pill-dark,
+  .btn-pill-outline {
+    min-height: 46px;
+    font-size: 0.88rem;
+  }
+
+  /* Hide hero image panel on mobile */
+  .hero-visual-panel {
+    display: none !important;
+  }
+
+  /* Section headings smaller on mobile */
+  h2 {
+    font-size: 1.6rem !important;
+  }
+
+  /* Sponsored banner mobile */
+  .sponsored-banner-text {
+    font-size: 0.75rem !important;
+  }
+
+  /* Alternatives / Versus bar — stack on mobile */
+  .versus-bar-row,
+  .alternatives-bar-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .versus-bar-row select,
+  .alternatives-bar-row select {
+    width: 100% !important;
+  }
+
+  /* Article cards grid — single col */
+  .articles-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Pagination — compact on mobile */
+  .pagination-row {
+    gap: 4px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
 }
+
+/* Extra small phones (< 380px) */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    padding: 0 10px !important;
+  }
+}
+
