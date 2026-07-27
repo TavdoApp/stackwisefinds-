@@ -12,6 +12,9 @@ import { highIntentArticles } from './data/articlesData';
 import { injectGlobalOrganizationSchema } from './utils/schemaMarkup.jsx';
 import { ArrowUpRight, Sparkles, Scale, Search, Layers, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 
+import AiNewsSidebar from './components/AiNewsSidebar';
+import FeaturedSidebar from './components/FeaturedSidebar';
+
 // Lazy Loaded Modal & Detail Views for High Performance & Micro-Bundle Splitting
 const ComparisonModal = lazy(() => import('./components/ComparisonModal'));
 const VendorModal = lazy(() => import('./components/VendorModal'));
@@ -23,8 +26,6 @@ const AlternativesView = lazy(() => import('./components/AlternativesView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
 const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
 const ToolDetailPage = lazy(() => import('./components/ToolDetailPage'));
-const AiNewsSidebar = lazy(() => import('./components/AiNewsSidebar'));
-const FeaturedSidebar = lazy(() => import('./components/FeaturedSidebar'));
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -189,15 +190,22 @@ export default function App() {
 
   // Filter tools logic
   const filteredTools = saasTools.filter((tool) => {
-    const matchesSearch = tool.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          tool.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          (tool.features && tool.features.some(f => f.toLowerCase().includes(searchTerm.toLowerCase())));
+    if (!tool) return false;
+
+    const name = tool.name || '';
+    const desc = tool.description || '';
+    const cat = tool.category || '';
+    const search = searchTerm.toLowerCase();
+
+    const matchesSearch = name.toLowerCase().includes(search) ||
+                          desc.toLowerCase().includes(search) ||
+                          (tool.features && Array.isArray(tool.features) && tool.features.some(f => typeof f === 'string' && f.toLowerCase().includes(search)));
     
-    const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || cat === selectedCategory;
     const matchesFree = !filterFreeOnly || tool.isFreeTier;
     const matchesOpenSource = !filterOpenSourceOnly || tool.isOpenSource;
-    const isAiTool = tool.category.includes('ai') || tool.name.toLowerCase().includes('ai') || tool.description.toLowerCase().includes('ai');
-    const matchesTrending = !filterTrendingOnly || (isAiTool && (tool.badge?.includes('TRENDING') || tool.badge?.includes('LAUNCH') || tool.badge?.includes('STANDARD') || tool.rating >= 4.8));
+    const isAiTool = cat.includes('ai') || name.toLowerCase().includes('ai') || desc.toLowerCase().includes('ai');
+    const matchesTrending = !filterTrendingOnly || (isAiTool && (tool.badge?.includes('TRENDING') || tool.badge?.includes('LAUNCH') || tool.badge?.includes('STANDARD') || (tool.rating || 0) >= 4.8));
 
     return matchesSearch && matchesCategory && matchesFree && matchesOpenSource && matchesTrending;
   });
