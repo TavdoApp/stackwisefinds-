@@ -206,6 +206,20 @@ button {
   color: var(--primary-green-dark);
 }
 
+/* Responsive Helper Classes */
+.hide-desktop {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .hide-desktop {
+    display: flex !important;
+  }
+}
+
 /* Toolify 3-Column Layout Engine */
 .toolify-3col-layout {
   display: grid;
