@@ -1543,5 +1543,35 @@ export const saasTools = [
     "affiliateUrl": "https://estera.com",
     "isFreeTier": true,
     "isOpenSource": false
+  },
+  {
+    "id": "rivault",
+    "name": "Rivault",
+    "domain": "rivault.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Rivault is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://rivault.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "comms",
+    "name": "Comms",
+    "domain": "comms.com",
+    "category": "ai-content",
+    "pricing": "Free Tier / Paid",
+    "rating": 4.8,
+    "reviewsCount": 420,
+    "description": "Comms is a newly launched software product featured on Product Hunt.",
+    "badge": "PRODUCT HUNT LAUNCH",
+    "featured": false,
+    "affiliateUrl": "https://comms.com",
+    "isFreeTier": true,
+    "isOpenSource": false
   }
 ];

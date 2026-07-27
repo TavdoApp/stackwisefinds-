@@ -47,8 +47,8 @@ jobs:
 
       - name: Commit Updated Dataset & Reddit Articles Back to GitHub Repository
         run: |
-          git config --global user.name "Stackwise Bot"
-          git config --global user.email "bot@stackwisefinds.com"
+          git config --global user.name "StakDock Bot"
+          git config --global user.email "bot@stakdock.com"
           git add src/data/saasData.jsx src/data/articlesData.js public/sitemap.xml
           git commit -m "auto(ingest): auto-ingest new tools and generate Reddit buyer guides [skip ci]" || echo "No changes to commit"
           git push
