@@ -37,6 +37,15 @@ function sanitizeText(str) {
   return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/<[^>]*>/g, '').trim();
 }
 
+function cleanTitle(raw) {
+  if (!raw) return 'Top Software Tools & AI Workflow Stacks';
+  let cleaned = raw.replace(/^r\/\w+:\s*/i, '').replace(/search results - /i, '').replace(/search results/i, '').trim();
+  if (cleaned.toLowerCase().includes('music') || cleaned.toLowerCase().includes('saas:') || cleaned.toLowerCase().includes('search') || cleaned.length < 10) {
+    return 'Top Software Tools & AI Workflow Stacks';
+  }
+  return cleaned;
+}
+
 async function mineRedditAndGenerateGuides() {
   console.log('📡 Dynamic Mining of Reddit Feeds for Real-Time Buyer Guides...');
 
@@ -55,9 +64,9 @@ async function mineRedditAndGenerateGuides() {
   const todayStr = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
   const dateSlug = new Date().toISOString().split('T')[0];
 
-  // Pick top mined Reddit question or fallback
-  const rawTopQuestion = rawTitles.length > 0 ? rawTitles[0] : 'Top Recommended AI & Software Stacks for 2026';
-  const cleanTitleQuestion = rawTopQuestion.replace(/^r\/\w+:\s*/i, '').trim();
+  // Pick top mined Reddit question or clean fallback
+  const rawTopQuestion = rawTitles.length > 0 ? rawTitles[0] : 'Top Software Tools & AI Workflow Stacks';
+  const cleanTitleQuestion = cleanTitle(rawTopQuestion);
 
   const newArticle = {
     id: `reddit-mined-${dateSlug}`,
@@ -87,7 +96,7 @@ async function mineRedditAndGenerateGuides() {
 <div class="faq-accordion">
   <div class="faq-item">
     <h5>Q: How often is this community buyer guide updated?</h5>
-    <p>A: Stackwise auto-mines 12 software subreddits every single night at 00:00 UTC to reflect real-time user recommendations and market consensus.</p>
+    <p>A: StakDock auto-mines 12 software subreddits every single night at 00:00 UTC to reflect real-time user recommendations and market consensus.</p>
   </div>
 </div>
     `
@@ -96,16 +105,18 @@ async function mineRedditAndGenerateGuides() {
   // Read existing articlesData.js
   let currentContent = fs.readFileSync(articlesDataPath, 'utf8');
 
-  if (!currentContent.includes(newArticle.id)) {
-    const updatedContent = currentContent.replace(
-      'export const highIntentArticles = [',
-      `export const highIntentArticles = [\n  ${JSON.stringify(newArticle, null, 2)},`
-    );
-    fs.writeFileSync(articlesDataPath, updatedContent, 'utf8');
-    console.log(`✅ Successfully published NEW dynamic Reddit Buyer Guide for ${todayStr} (${newArticle.id})!`);
-  } else {
-    console.log(`ℹ️ Article ${newArticle.id} already published today (${todayStr}).`);
+  // Replace today's article entry cleanly or prepend
+  if (currentContent.includes(newArticle.id)) {
+    const regex = new RegExp(`{\\s*"id":\\s*"${newArticle.id}"[\\s\\S]*?\\n  },?`);
+    currentContent = currentContent.replace(regex, '');
   }
+
+  const updatedContent = currentContent.replace(
+    'export const highIntentArticles = [',
+    `export const highIntentArticles = [\n  ${JSON.stringify(newArticle, null, 2)},`
+  );
+  fs.writeFileSync(articlesDataPath, updatedContent, 'utf8');
+  console.log(`✅ Successfully published NEW dynamic Reddit Buyer Guide for ${todayStr} (${newArticle.id})!`);
 }
 
 mineRedditAndGenerateGuides();
