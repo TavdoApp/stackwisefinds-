@@ -2,10 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-// IndexNow Key details
+// Official Bing Webmaster Tools IndexNow Key
 const HOST = 'stakdock.com';
-const INDEXNOW_KEY = '47451ffd1d7c4719abf7737ae720b648';
-const KEY_LOCATION = `https://${HOST}/47451ffd1d7c4719abf7737ae720b648.txt`;
+const INDEXNOW_KEY = 'a53d32fd83994486a386b673385325ac';
+const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`;
 
 // Ensure IndexNow key file exists in public/
 const keyFilePath = path.join(__dirname, '..', 'public', `${INDEXNOW_KEY}.txt`);
