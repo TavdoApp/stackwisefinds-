@@ -27,12 +27,11 @@ export default function ToolCard({
     }
   };
 
-  // High-Resolution Google Favicon API (CDN Cached & Lighthouse Audit Safe)
+  // High-Resolution Google Favicon API
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`;
   const clearbitLogo = `https://logo.clearbit.com/${tool.domain}`;
 
   const logoSrc = imgErrorCount === 0 ? googleFavicon : clearbitLogo;
-
   const visitsDisplay = tool.monthlyVisits || '180K/mo';
 
   return (
@@ -42,241 +41,183 @@ export default function ToolCard({
         border: tool.featured ? '2px solid #82A735' : '1px solid var(--border-color)',
         background: tool.featured ? 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)' : '#FFFFFF',
         position: 'relative',
-        borderRadius: '20px',
-        padding: '20px',
-        marginBottom: '16px'
+        borderRadius: '12px',
+        padding: '12px 16px',
+        marginBottom: '8px',
+        boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
       }}
     >
       {/* Schema.org Rich Snippet Ingestion */}
       {injectSoftwareApplicationSchema(tool)}
 
-      {/* Featured Vendor Highlight Tag */}
-      {tool.featured && (
-        <div style={{
-          position: 'absolute',
-          top: '-12px',
-          left: '20px',
-          background: '#82A735',
-          color: '#FFFFFF',
-          fontSize: '0.65rem',
-          fontWeight: '800',
-          padding: '2px 10px',
-          borderRadius: '9999px',
-          textTransform: 'uppercase',
-          letterSpacing: '0.06em',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '4px',
-          zIndex: 2
-        }}>
-          <Sparkles size={11} /> Featured Vendor
+      {/* Compact Main Layout */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '100%', flexWrap: 'wrap' }}>
+        
+        {/* Brand Logo */}
+        <div 
+          onClick={() => onSelectTool && onSelectTool(tool.id)}
+          style={{
+            width: '36px',
+            height: '36px',
+            borderRadius: '8px',
+            background: imgErrorCount >= 2 ? 'linear-gradient(135deg, #82A735 0%, #141E14 100%)' : '#FFFFFF',
+            border: '1px solid var(--border-color)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0,
+            overflow: 'hidden',
+            padding: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          {imgErrorCount < 2 ? (
+            <img 
+              src={logoSrc} 
+              alt={`${tool.name} logo`}
+              onError={() => setImgErrorCount(prev => prev + 1)}
+              style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '4px' }}
+              loading="lazy"
+            />
+          ) : (
+            <span style={{ color: '#FFFFFF', fontWeight: '800', fontSize: '0.9rem' }}>
+              {tool.name.substring(0, 2).toUpperCase()}
+            </span>
+          )}
         </div>
-      )}
 
-      {/* Main Tool Content Layout */}
-      <div className="tool-card-main-content">
-        {/* Brand Logo & Meta */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px', width: '100%' }}>
-          <div 
-            onClick={() => onSelectTool && onSelectTool(tool.id)}
-            style={{
-              width: '52px',
-              height: '52px',
-              borderRadius: '14px',
-              background: imgErrorCount >= 2 ? 'linear-gradient(135deg, #82A735 0%, #141E14 100%)' : '#FFFFFF',
-              border: '1px solid var(--border-color)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexShrink: 0,
-              boxShadow: '0 4px 10px rgba(0,0,0,0.03)',
-              overflow: 'hidden',
-              padding: imgErrorCount >= 2 ? '0' : '6px',
-              cursor: 'pointer'
-            }}
-          >
-            {imgErrorCount < 2 ? (
-              <img 
-                src={logoSrc} 
-                alt={`${tool.name} logo`}
-                onError={() => setImgErrorCount(prev => prev + 1)}
-                style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '8px' }}
-                loading="lazy"
-              />
-            ) : (
-              <span style={{ color: '#FFFFFF', fontWeight: '800', fontSize: '1.2rem' }}>
-                {tool.name.substring(0, 2).toUpperCase()}
+        {/* Core Tool Info */}
+        <div style={{ flex: '1 1 240px', minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginBottom: '2px' }}>
+            <h3 
+              onClick={() => onSelectTool && onSelectTool(tool.id)}
+              style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0, letterSpacing: '-0.01em', cursor: 'pointer' }}
+            >
+              {tool.name}
+            </h3>
+            {tool.featured && (
+              <span style={{ fontSize: '0.6rem', fontWeight: '800', background: '#82A735', color: '#FFFFFF', padding: '1px 6px', borderRadius: '4px' }}>
+                Featured
+              </span>
+            )}
+            {tool.badge && (
+              <span className="tag-sage" style={{ fontSize: '0.6rem', padding: '1px 6px' }}>
+                {tool.badge}
               </span>
             )}
           </div>
 
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
-              <h3 
-                onClick={() => onSelectTool && onSelectTool(tool.id)}
-                style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0, letterSpacing: '-0.01em', cursor: 'pointer' }}
-              >
-                {tool.name}
-              </h3>
-              {tool.badge && (
-                <span className="tag-sage" style={{ fontSize: '0.65rem' }}>
-                  {tool.badge}
-                </span>
-              )}
-            </div>
+          <p style={{
+            fontSize: '0.8rem',
+            color: 'var(--text-muted)',
+            lineHeight: '1.3',
+            margin: '0 0 4px 0',
+            display: '-webkit-box',
+            WebkitLineClamp: 1,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden'
+          }}>
+            {tool.description}
+          </p>
 
-            <p style={{
-              fontSize: '0.88rem',
-              color: 'var(--text-muted)',
-              lineHeight: '1.45',
-              margin: '0 0 8px 0',
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden'
-            }}>
-              {tool.description}
-            </p>
+          {/* Hashtag Pills & Telemetry */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', fontSize: '0.75rem' }}>
+            <span 
+              onClick={(e) => { e.stopPropagation(); onSelectCategory && onSelectCategory(tool.category); }}
+              style={{
+                fontSize: '0.68rem',
+                fontWeight: '700',
+                color: '#82A735',
+                background: '#F6F7F2',
+                padding: '1px 6px',
+                borderRadius: '4px',
+                border: '1px solid var(--border-color)',
+                cursor: 'pointer'
+              }}
+            >
+              #{tool.category ? tool.category.replace(/-/g, ' ') : 'software'}
+            </span>
 
-            {/* Toolify Category Hashtag Pills */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginBottom: '8px' }}>
-              <span 
-                onClick={(e) => { e.stopPropagation(); onSelectCategory && onSelectCategory(tool.category); }}
-                style={{
-                  fontSize: '0.72rem',
-                  fontWeight: '700',
-                  color: '#82A735',
-                  background: '#F6F7F2',
-                  padding: '2px 8px',
-                  borderRadius: '6px',
-                  border: '1px solid var(--border-color)',
-                  cursor: 'pointer'
-                }}
-              >
-                #{tool.category ? tool.category.replace(/-/g, ' ') : 'software'}
+            {tool.isOpenSource && (
+              <span style={{ fontSize: '0.68rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '1px 6px', borderRadius: '4px' }}>
+                #OpenSource
               </span>
+            )}
 
-              {tool.isOpenSource && (
-                <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 8px', borderRadius: '6px' }}>
-                  #OpenSource
-                </span>
-              )}
+            {tool.isFreeTier && (
+              <span style={{ fontSize: '0.68rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '1px 6px', borderRadius: '4px' }}>
+                #FreeTier
+              </span>
+            )}
 
-              {tool.isFreeTier && (
-                <span style={{ fontSize: '0.72rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 8px', borderRadius: '6px' }}>
-                  #FreeTier
-                </span>
-              )}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#141E14', fontWeight: '700', marginLeft: 'auto' }}>
+              <Star size={11} fill="#82A735" color="#82A735" />
+              <span>{tool.rating || 4.8}</span>
+              <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount || 120})</span>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap', fontSize: '0.82rem' }}>
-              {/* Star Rating */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#141E14', fontWeight: '700' }}>
-                <Star size={13} fill="#82A735" color="#82A735" />
-                <span>{tool.rating || 4.8}</span>
-                <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount || 120})</span>
-              </div>
-
-              {/* Toolify Monthly Traffic Telemetry Badge */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '2px 8px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-                <Eye size={12} color="#82A735" />
-                <span>{visitsDisplay}</span>
-              </div>
-
-              {/* Pricing */}
-              <div style={{ color: 'var(--text-dark)', fontWeight: '700' }}>
-                {tool.pricing}
-              </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '1px 6px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
+              <Eye size={10} color="#82A735" />
+              <span>{visitsDisplay}</span>
             </div>
           </div>
         </div>
 
         {/* Action CTAs */}
-        <div className="tool-card-actions-wrapper">
-          {/* Secondary Action Grid */}
-          <div className="tool-card-secondary-actions">
-            {/* Bookmark Stack Button */}
-            <button
-              onClick={() => onToggleBookmark && onToggleBookmark(tool.id)}
-              className="btn-pill-outline"
-              aria-label={`Save ${tool.name} to stack`}
-              style={{
-                padding: '8px 10px',
-                fontSize: '0.8rem',
-                borderColor: isBookmarked ? '#82A735' : 'var(--border-color)',
-                background: isBookmarked ? 'var(--bg-sage)' : '#FFFFFF',
-                justifyContent: 'center',
-                flex: 1
-              }}
-              title="Save to My Stack"
-            >
-              <Star size={13} fill={isBookmarked ? '#82A735' : 'none'} color={isBookmarked ? '#82A735' : '#888'} />
-              <span style={{ fontWeight: '800', color: isBookmarked ? '#82A735' : 'inherit' }}>
-                {isBookmarked ? 'Saved' : 'Save'}
-              </span>
-            </button>
-
-            {/* Upvote Button */}
-            <button
-              onClick={handleUpvote}
-              className="btn-pill-outline"
-              aria-label={`Upvote ${tool.name}`}
-              style={{
-                padding: '8px 10px',
-                fontSize: '0.8rem',
-                borderColor: hasUpvoted ? '#82A735' : 'var(--border-color)',
-                background: hasUpvoted ? 'var(--bg-sage)' : '#FFFFFF',
-                justifyContent: 'center',
-                flex: 1
-              }}
-              title="Upvote Software"
-            >
-              <Flame size={13} color={hasUpvoted ? '#82A735' : '#888'} />
-              <span style={{ fontWeight: '800', color: hasUpvoted ? '#82A735' : 'inherit' }}>
-                {upvotes || 120}
-              </span>
-            </button>
-
-            <button
-              onClick={() => onOpenReviewModal(tool)}
-              className="btn-pill-outline"
-              aria-label={`Write review for ${tool.name}`}
-              style={{ padding: '8px 10px', fontSize: '0.8rem', justifyContent: 'center', flex: 1 }}
-              title="Write a Review"
-            >
-              <MessageSquare size={13} color="#82A735" />
-              <span>{t.reviewBtn}</span>
-            </button>
-
-            <button
-              onClick={() => onToggleCompare(tool.id)}
-              className="btn-pill-outline"
-              aria-label={`Compare ${tool.name}`}
-              style={{
-                padding: '8px 10px',
-                fontSize: '0.8rem',
-                borderColor: isSelectedForCompare ? '#82A735' : 'var(--border-color)',
-                background: isSelectedForCompare ? 'var(--bg-sage)' : '#FFFFFF',
-                justifyContent: 'center',
-                flex: 1
-              }}
-            >
-              {isSelectedForCompare ? <Check size={13} color="#82A735" /> : <Scale size={13} />}
-              <span>{isSelectedForCompare ? 'Added' : t.compareBtn}</span>
-            </button>
-          </div>
-
-          {/* Direct Native Link Anchor for Instant First-Tap Execution on Mobile */}
-          <a 
-            href={tool.affiliateUrl} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="btn-pill-green tool-card-primary-btn" 
-            aria-label={`Visit official website for ${tool.name}`}
-            style={{ padding: '10px 18px', fontSize: '0.88rem', minHeight: '44px', textDecoration: 'none' }}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginLeft: 'auto', flexWrap: 'nowrap' }}>
+          <button
+            onClick={() => onToggleBookmark && onToggleBookmark(tool.id)}
+            className="btn-pill-outline"
+            aria-label={`Save ${tool.name} to stack`}
+            style={{
+              padding: '5px 10px',
+              fontSize: '0.75rem',
+              borderColor: isBookmarked ? '#82A735' : 'var(--border-color)',
+              background: isBookmarked ? 'var(--bg-sage)' : '#FFFFFF'
+            }}
+            title="Save to My Stack"
           >
-            <span>{t.visitSite}</span>
-            <ArrowUpRight size={15} />
+            <Star size={12} fill={isBookmarked ? '#82A735' : 'none'} color={isBookmarked ? '#82A735' : '#888'} />
+            <span style={{ fontWeight: '700', color: isBookmarked ? '#82A735' : 'inherit' }}>
+              {isBookmarked ? 'Saved' : 'Save'}
+            </span>
+          </button>
+
+          <button
+            onClick={handleUpvote}
+            className="btn-pill-outline"
+            aria-label={`Upvote ${tool.name}`}
+            style={{
+              padding: '5px 10px',
+              fontSize: '0.75rem',
+              borderColor: hasUpvoted ? '#82A735' : 'var(--border-color)',
+              background: hasUpvoted ? 'var(--bg-sage)' : '#FFFFFF'
+            }}
+          >
+            <Flame size={12} color={hasUpvoted ? '#82A735' : '#888'} />
+            <span style={{ fontWeight: '700' }}>{(upvotes || 342) + (hasUpvoted ? 1 : 0)}</span>
+          </button>
+
+          <button
+            onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
+            className="btn-pill-outline"
+            aria-label={`Review ${tool.name}`}
+            style={{ padding: '5px 10px', fontSize: '0.75rem' }}
+          >
+            <MessageSquare size={12} />
+            <span>Review</span>
+          </button>
+
+          <a
+            href={tool.affiliateUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="btn-pill-green"
+            style={{ padding: '6px 14px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
+          >
+            <span>Visit Site</span>
+            <ArrowUpRight size={13} />
           </a>
         </div>
       </div>

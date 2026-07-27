@@ -228,6 +228,13 @@ button {
   margin-top: 24px;
 }
 
+.toolify-col-left,
+.toolify-col-right {
+  align-self: start;
+  position: sticky;
+  top: 90px;
+}
+
 @media (max-width: 1200px) {
   .toolify-3col-layout {
     grid-template-columns: 1fr 310px;

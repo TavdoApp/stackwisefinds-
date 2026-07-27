@@ -8,7 +8,7 @@ export default function AiNewsSidebar() {
     {
       id: 1,
       number: 1,
-      title: "HarmonyOS Zhixing Rolls Out Summer OTA for Shangjie Lineup, Adding City Driving...",
+      title: "HarmonyOS Zhixing Rolls Out Summer OTA for Shangjie Lineup...",
       source: "TechCrunch",
       date: "July 27, 2026",
       summary: "Autonomous driving updates hit Asian markets with upgraded city navigation, automated parking assist, and neural computer vision modules.",
@@ -17,7 +17,7 @@ export default function AiNewsSidebar() {
     {
       id: 2,
       number: 2,
-      title: "Nvidia and Microsoft launch open-source AI security alliance without OpenAI or Google...",
+      title: "Nvidia and Microsoft launch open-source AI security alliance...",
       source: "Techmeme",
       date: "July 27, 2026",
       summary: "Major tech infrastructure providers announced a unified cybersecurity standard for LLM deployment and model weight protection.",
@@ -26,7 +26,7 @@ export default function AiNewsSidebar() {
     {
       id: 3,
       number: 3,
-      title: "Nvidia Bets on Ilya Sutskever's New AI Lab to Expand Its Compute Reach",
+      title: "Nvidia Bets on Ilya Sutskever's New AI Lab to Expand Compute...",
       source: "Hacker News",
       date: "July 27, 2026",
       summary: "Safe Superintelligence Inc received hardware allocation priority for next-generation GPU clusters to accelerate reasoning models.",
@@ -35,7 +35,7 @@ export default function AiNewsSidebar() {
     {
       id: 4,
       number: 4,
-      title: "Enigma raises $70M to make robot control as easy as adjusting the volume",
+      title: "Enigma raises $70M to make robot control as easy as volume",
       source: "ArXiv AI",
       date: "July 27, 2026",
       summary: "A novel robotics foundation model simplifies spatial dexterity and physical manipulation for industrial automation.",
@@ -44,7 +44,7 @@ export default function AiNewsSidebar() {
     {
       id: 5,
       number: 5,
-      title: "South Korean companies adopt foreign AI models and add token quotas to rein in costs",
+      title: "South Korean companies adopt foreign AI models & token quotas",
       source: "Nikkei Asia",
       date: "July 27, 2026",
       summary: "Enterprise IT departments in Seoul implemented API gateway routing to minimize token expenditure across customer support teams.",
@@ -53,7 +53,7 @@ export default function AiNewsSidebar() {
     {
       id: 6,
       number: 6,
-      title: "Spain-based Multiverse Computing raises $570M Series C at a $1.7B valuation",
+      title: "Spain Multiverse Computing raises $570M Series C at $1.7B",
       source: "TechCrunch",
       date: "July 27, 2026",
       summary: "Quantum software pioneer Multiverse Computing announced a $570M Series C funding round to scale specialized AI models across Europe.",
@@ -62,38 +62,11 @@ export default function AiNewsSidebar() {
     {
       id: 7,
       number: 7,
-      title: "Google indexed Claude share links, exposing private chat content",
+      title: "Google indexed Claude share links, exposing private chats",
       source: "Techmeme",
       date: "July 27, 2026",
       summary: "Security researchers identified public indexing of shared Claude AI conversation links. Anthropic deployed robots.txt blocks to protect user privacy.",
       url: "https://www.techmeme.com"
-    },
-    {
-      id: 8,
-      number: 8,
-      title: "SoftBank's $40 Billion Loan for OpenAI Stake Draws 21 New Lenders",
-      source: "Bloomberg",
-      date: "July 27, 2026",
-      summary: "Global investment consortia closed syndicate financing for frontier model infrastructure development.",
-      url: "https://bloomberg.com"
-    },
-    {
-      id: 9,
-      number: 9,
-      title: "Way Security raises $20M seed to automate IAM deployment with AI agents",
-      source: "VentureBeat",
-      date: "July 27, 2026",
-      summary: "Cloud access security platform automates zero-trust permissions and role-based policy generation.",
-      url: "https://venturebeat.com"
-    },
-    {
-      id: 10,
-      number: 10,
-      title: "Douyin upgrades age-appropriate recommendation algorithm for 100M users",
-      source: "Hacker News",
-      date: "July 27, 2026",
-      summary: "ByteDance's Chinese domestic app released major algorithmic safety updates enforcing strict content filters.",
-      url: "https://news.ycombinator.com"
     }
   ];
 
@@ -101,27 +74,23 @@ export default function AiNewsSidebar() {
     <div style={{
       background: '#FFFFFF',
       border: '1px solid var(--border-color)',
-      borderRadius: '24px',
-      padding: '20px',
-      boxShadow: 'var(--shadow-soft)',
-      position: 'sticky',
-      top: '80px',
-      maxHeight: 'calc(100vh - 100px)',
-      overflowY: 'auto'
-    }} className="hide-scrollbar">
+      borderRadius: '16px',
+      padding: '16px',
+      boxShadow: 'var(--shadow-soft)'
+    }}>
       {/* Header */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
-        <Newspaper size={18} color="#82A735" />
-        <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', borderBottom: '1px solid var(--border-color)', paddingBottom: '10px' }}>
+        <Newspaper size={16} color="#82A735" />
+        <h3 style={{ fontSize: '1rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
           AI News
         </h3>
-        <span style={{ fontSize: '0.65rem', background: '#82A735', color: '#FFFFFF', padding: '1px 6px', borderRadius: '9999px', fontWeight: '800', marginLeft: 'auto' }}>
+        <span style={{ fontSize: '0.62rem', background: '#82A735', color: '#FFFFFF', padding: '1px 6px', borderRadius: '9999px', fontWeight: '800', marginLeft: 'auto' }}>
           LIVE
         </span>
       </div>
 
       {/* News List */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         {newsItems.map(item => (
           <div
             key={item.id}
@@ -129,27 +98,27 @@ export default function AiNewsSidebar() {
             style={{
               display: 'flex',
               alignItems: 'flex-start',
-              gap: '10px',
+              gap: '8px',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
-              padding: '8px',
-              borderRadius: '12px',
+              padding: '6px 8px',
+              borderRadius: '10px',
               background: '#F6F7F2'
             }}
           >
             <span style={{
               fontWeight: '800',
-              fontSize: '0.92rem',
+              fontSize: '0.85rem',
               color: '#82A735',
               lineHeight: '1.2',
               flexShrink: 0,
-              width: '18px'
+              width: '14px'
             }}>
               {item.number}
             </span>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{
-                fontSize: '0.82rem',
+                fontSize: '0.78rem',
                 fontWeight: '700',
                 color: 'var(--text-dark)',
                 lineHeight: '1.3',
@@ -160,7 +129,7 @@ export default function AiNewsSidebar() {
               }}>
                 {item.title}
               </div>
-              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '3px' }}>
+              <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '2px' }}>
                 {item.source}
               </div>
             </div>
