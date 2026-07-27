@@ -8,47 +8,92 @@ export default function AiNewsSidebar() {
     {
       id: 1,
       number: 1,
-      title: "Spain-based Multiverse Computing raises $570M Series C at a $1.7B valuation",
+      title: "HarmonyOS Zhixing Rolls Out Summer OTA for Shangjie Lineup, Adding City Driving...",
       source: "TechCrunch",
       date: "July 27, 2026",
-      summary: "Quantum software pioneer Multiverse Computing announced a $570M Series C funding round to scale specialized AI models and enterprise optimization engines across Europe and global markets.",
+      summary: "Autonomous driving updates hit Asian markets with upgraded city navigation, automated parking assist, and neural computer vision modules.",
       url: "https://techcrunch.com"
     },
     {
       id: 2,
       number: 2,
-      title: "Google indexed Claude share links, exposing private chat content",
+      title: "Nvidia and Microsoft launch open-source AI security alliance without OpenAI or Google...",
       source: "Techmeme",
       date: "July 27, 2026",
-      summary: "Security researchers identified public indexing of shared Claude AI conversation links across search engines. Anthropic has deployed robots.txt indexation blocks to safeguard user privacy.",
+      summary: "Major tech infrastructure providers announced a unified cybersecurity standard for LLM deployment and model weight protection.",
       url: "https://www.techmeme.com"
     },
     {
       id: 3,
       number: 3,
-      title: "Douyin upgrades age-appropriate recommendation algorithm for 100M users",
+      title: "Nvidia Bets on Ilya Sutskever's New AI Lab to Expand Its Compute Reach",
       source: "Hacker News",
       date: "July 27, 2026",
-      summary: "ByteDance's Chinese domestic app Douyin released major algorithmic safety updates enforcing strict screen-time boundaries and educational content filters for adolescent users.",
+      summary: "Safe Superintelligence Inc received hardware allocation priority for next-generation GPU clusters to accelerate reasoning models.",
       url: "https://news.ycombinator.com"
     },
     {
       id: 4,
       number: 4,
-      title: "Spectral Prior Method aims to reduce exposure bias in Diffusion Models",
+      title: "Enigma raises $70M to make robot control as easy as adjusting the volume",
       source: "ArXiv AI",
       date: "July 27, 2026",
-      summary: "A novel paper introduces Spectral Prior regularizers for generative image and video models, dramatically reducing artifact distortion during continuous inference sampling.",
+      summary: "A novel robotics foundation model simplifies spatial dexterity and physical manipulation for industrial automation.",
       url: "https://arxiv.org"
     },
     {
       id: 5,
       number: 5,
-      title: "XusCRM launches instant Bayut & Property Finder WhatsApp lead sync for UAE real estate",
-      source: "StakDock Tech Radar",
+      title: "South Korean companies adopt foreign AI models and add token quotas to rein in costs",
+      source: "Nikkei Asia",
       date: "July 27, 2026",
-      summary: "UAE real estate platform XusCRM announced zero-latency lead routing, delivering automated property brochures to WhatsApp leads in under 3 seconds.",
-      url: "https://xuscrm.com"
+      summary: "Enterprise IT departments in Seoul implemented API gateway routing to minimize token expenditure across customer support teams.",
+      url: "https://asia.nikkei.com"
+    },
+    {
+      id: 6,
+      number: 6,
+      title: "Spain-based Multiverse Computing raises $570M Series C at a $1.7B valuation",
+      source: "TechCrunch",
+      date: "July 27, 2026",
+      summary: "Quantum software pioneer Multiverse Computing announced a $570M Series C funding round to scale specialized AI models across Europe.",
+      url: "https://techcrunch.com"
+    },
+    {
+      id: 7,
+      number: 7,
+      title: "Google indexed Claude share links, exposing private chat content",
+      source: "Techmeme",
+      date: "July 27, 2026",
+      summary: "Security researchers identified public indexing of shared Claude AI conversation links. Anthropic deployed robots.txt blocks to protect user privacy.",
+      url: "https://www.techmeme.com"
+    },
+    {
+      id: 8,
+      number: 8,
+      title: "SoftBank's $40 Billion Loan for OpenAI Stake Draws 21 New Lenders",
+      source: "Bloomberg",
+      date: "July 27, 2026",
+      summary: "Global investment consortia closed syndicate financing for frontier model infrastructure development.",
+      url: "https://bloomberg.com"
+    },
+    {
+      id: 9,
+      number: 9,
+      title: "Way Security raises $20M seed to automate IAM deployment with AI agents",
+      source: "VentureBeat",
+      date: "July 27, 2026",
+      summary: "Cloud access security platform automates zero-trust permissions and role-based policy generation.",
+      url: "https://venturebeat.com"
+    },
+    {
+      id: 10,
+      number: 10,
+      title: "Douyin upgrades age-appropriate recommendation algorithm for 100M users",
+      source: "Hacker News",
+      date: "July 27, 2026",
+      summary: "ByteDance's Chinese domestic app released major algorithmic safety updates enforcing strict content filters.",
+      url: "https://news.ycombinator.com"
     }
   ];
 
@@ -66,7 +111,7 @@ export default function AiNewsSidebar() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
         <Newspaper size={18} color="#82A735" />
         <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
-          AI & Tech News
+          AI News
         </h3>
         <span style={{ fontSize: '0.65rem', background: '#82A735', color: '#FFFFFF', padding: '1px 6px', borderRadius: '9999px', fontWeight: '800', marginLeft: 'auto' }}>
           LIVE
@@ -74,7 +119,7 @@ export default function AiNewsSidebar() {
       </div>
 
       {/* News List */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         {newsItems.map(item => (
           <div
             key={item.id}
@@ -92,20 +137,20 @@ export default function AiNewsSidebar() {
           >
             <span style={{
               fontWeight: '800',
-              fontSize: '1rem',
+              fontSize: '0.92rem',
               color: '#82A735',
               lineHeight: '1.2',
               flexShrink: 0,
-              width: '16px'
+              width: '18px'
             }}>
               {item.number}
             </span>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{
-                fontSize: '0.85rem',
+                fontSize: '0.82rem',
                 fontWeight: '700',
                 color: 'var(--text-dark)',
-                lineHeight: '1.35',
+                lineHeight: '1.3',
                 display: '-webkit-box',
                 WebkitLineClamp: 2,
                 WebkitBoxOrient: 'vertical',
@@ -113,15 +158,15 @@ export default function AiNewsSidebar() {
               }}>
                 {item.title}
               </div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '4px' }}>
-                {item.source} • {item.date}
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '3px' }}>
+                {item.source}
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* News Modal Summary (Keeps Visitors on StakDock!) */}
+      {/* News Modal Summary */}
       {selectedNews && (
         <div style={{
           position: 'fixed',
