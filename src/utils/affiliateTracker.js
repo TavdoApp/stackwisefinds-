@@ -1,7 +1,7 @@
 /**
- * Local Click Instrumentation (Client-Side Telemetry)
- * Logs outbound affiliate button clicks to sessionStorage for local debugging/instrumentation.
- * NOTE: This is client-side local instrumentation only and does NOT deliver events to a server-side analytics reporting backend.
+ * Privacy-Compliant Affiliate Click Telemetry & Outbound Link Tracker
+ * Sends click events to Worker API (/api/click) and fallback sessionStorage logging.
+ * Stores zero PII, IP addresses, or tracking cookies.
  */
 
 export function trackAffiliateClick(toolId, affiliateDestination) {
@@ -14,6 +14,19 @@ export function trackAffiliateClick(toolId, affiliateDestination) {
     referrer: typeof document !== 'undefined' ? document.referrer || 'direct' : 'direct'
   };
 
+  // 1. Dispatch beacon to Worker API endpoint asynchronously
+  try {
+    fetch('/api/click', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(eventData),
+      keepalive: true
+    }).catch(() => {});
+  } catch {
+    // Ignore network error
+  }
+
+  // 2. Fallback local session storage logging
   try {
     const existingClicks = JSON.parse(sessionStorage.getItem('stakdock_affiliate_clicks') || '[]');
     existingClicks.push(eventData);
