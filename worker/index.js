@@ -1,3 +1,4 @@
+// StakDock Worker Engine v1.0.1
 const canonicalHost = 'stakdock.com';
 
 export default {
