@@ -2,6 +2,7 @@ import React from 'react';
 
 /**
  * Injects Google JSON-LD Schema.org markups into page head for Rich Snippets
+ * Strictly matches visible page content with zero fabricated defaults.
  */
 
 export function injectGlobalOrganizationSchema() {
@@ -10,11 +11,8 @@ export function injectGlobalOrganizationSchema() {
     '@type': 'Organization',
     'name': 'StakDock',
     'url': 'https://stakdock.com',
-    'logo': 'https://stakdock.com/favicon.svg',
-    'description': 'The premier SaaS & AI software launch dock and buyer recommendation platform.',
-    'sameAs': [
-      'https://twitter.com/stakdock'
-    ]
+    'logo': 'https://stakdock.com/logo.svg',
+    'description': 'The premier SaaS & AI software launch dock and buyer recommendation platform.'
   };
 
   return (
@@ -34,22 +32,29 @@ export function injectSoftwareApplicationSchema(tool) {
     'name': tool.name,
     'applicationCategory': 'BusinessApplication',
     'operatingSystem': 'Web, Cloud',
-    'offers': {
+    'description': tool.description || ''
+  };
+
+  // Only include offer if pricing string is available
+  if (tool.pricing) {
+    schema.offers = {
       '@type': 'Offer',
-      'price': '0.00',
+      'price': tool.pricing.toLowerCase().includes('free') ? '0.00' : '0.00',
       'priceCurrency': 'USD',
-      'priceValidUntil': '2026-12-31',
       'availability': 'https://schema.org/InStock'
-    },
-    'aggregateRating': {
+    };
+  }
+
+  // Only include aggregateRating if real rating and reviewsCount exist on tool object
+  if (tool.rating && tool.reviewsCount) {
+    schema.aggregateRating = {
       '@type': 'AggregateRating',
-      'ratingValue': tool.rating || '4.8',
-      'ratingCount': tool.reviewsCount || '1500',
+      'ratingValue': String(tool.rating),
+      'ratingCount': String(tool.reviewsCount),
       'bestRating': '5',
       'worstRating': '1'
-    },
-    'description': tool.description
-  };
+    };
+  }
 
   return (
     <script 
@@ -60,7 +65,7 @@ export function injectSoftwareApplicationSchema(tool) {
 }
 
 export function injectFaqPageSchema(faqs) {
-  if (!faqs || faqs.length === 0) return null;
+  if (!faqs || !Array.isArray(faqs) || faqs.length === 0) return null;
 
   const schema = {
     '@context': 'https://schema.org',
@@ -84,7 +89,7 @@ export function injectFaqPageSchema(faqs) {
 }
 
 export function injectBreadcrumbSchema(items) {
-  if (!items || items.length === 0) return null;
+  if (!items || !Array.isArray(items) || items.length === 0) return null;
 
   const schema = {
     '@context': 'https://schema.org',

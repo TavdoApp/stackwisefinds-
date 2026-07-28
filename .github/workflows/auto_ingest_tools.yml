@@ -32,7 +32,7 @@ jobs:
       - name: Ping Search Engines (Bing & IndexNow)
         env:
           INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-        run: node scripts/pingIndexNow.cjs || true
+        run: node scripts/pingIndexNow.cjs
 
       - name: Build Production Bundle
         run: npm run build
