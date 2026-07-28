@@ -91,6 +91,13 @@ function isValidUrl(urlString) {
 }
 
 async function handleRecordClick(request, env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ success: false, error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
   try {
     const body = await request.json();
     const toolId = sanitizeText(body.toolId);
@@ -101,25 +108,34 @@ async function handleRecordClick(request, env, corsHeaders) {
       return new Response(JSON.stringify({ error: 'Invalid payload or URL format' }), { status: 400, headers: corsHeaders });
     }
 
-    if (env.DB) {
-      await env.DB.prepare(
-        'INSERT INTO affiliate_clicks (tool_id, affiliate_destination, referrer) VALUES (?, ?, ?)'
-      ).bind(toolId, destination, referrer).run();
+    const res = await env.DB.prepare(
+      'INSERT INTO affiliate_clicks (tool_id, affiliate_destination, referrer) VALUES (?, ?, ?)'
+    ).bind(toolId, destination, referrer).run();
+
+    if (!res.success) {
+      throw new Error('Database write unconfirmed');
     }
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, confirmedWrite: true }), {
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
-  } catch {
-    return new Response(JSON.stringify({ success: true, note: 'Processed' }), {
-      status: 200,
+  } catch (error) {
+    return new Response(JSON.stringify({ success: false, error: error.message || 'Database write failed' }), {
+      status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   }
 }
 
 async function handleVendorSubmission(request, env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ success: false, error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
   try {
     const body = await request.json();
 
@@ -145,18 +161,20 @@ async function handleVendorSubmission(request, env, corsHeaders) {
       return new Response(JSON.stringify({ error: 'Invalid software website URL' }), { status: 400, headers: corsHeaders });
     }
 
-    if (env.DB) {
-      await env.DB.prepare(
-        'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, status) VALUES (?, ?, ?, ?, ?)'
-      ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, 'pending').run();
+    const res = await env.DB.prepare(
+      'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, status) VALUES (?, ?, ?, ?, ?)'
+    ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, 'pending').run();
+
+    if (!res.success) {
+      throw new Error('Database submission write unconfirmed');
     }
 
-    return new Response(JSON.stringify({ success: true, status: 'pending', message: 'Submitted for editorial review' }), {
+    return new Response(JSON.stringify({ success: true, status: 'pending', confirmedWrite: true, message: 'Submitted for editorial review' }), {
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
-  } catch {
-    return new Response(JSON.stringify({ success: false, error: 'Submission failed' }), {
+  } catch (error) {
+    return new Response(JSON.stringify({ success: false, error: error.message || 'Submission failed' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
