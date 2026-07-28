@@ -222,9 +222,9 @@ button {
 /* Toolify 3-Column Layout Engine */
 .toolify-3col-layout {
   display: grid;
-  grid-template-columns: 230px 1fr 310px;
+  grid-template-columns: 230px minmax(0, 1fr) 310px;
   gap: 20px;
-  align-items: start;
+  align-items: stretch;
   margin-top: 24px;
 }
 
@@ -232,7 +232,22 @@ button {
 .toolify-col-right {
   align-self: start;
   position: sticky;
-  top: 90px;
+  top: 72px;
+  height: calc(100vh - 88px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+  padding-bottom: 24px;
+}
+
+.toolify-col-left {
+  border-right: 1px solid var(--border-color);
+  padding-right: 16px;
+}
+
+.toolify-col-right {
+  border-left: 1px solid var(--border-color);
+  padding-left: 16px;
 }
 
 @media (max-width: 1200px) {
