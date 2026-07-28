@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Trophy, Star, Eye, ArrowUpRight, Flame, Sparkles, Filter } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
+import { extractDomain } from '../utils/logoHelper.js';
 
 export default function RankingPage({ onSelectTool, onSelectCategory }) {
   const [rankingFilter, setRankingFilter] = useState('traffic');
@@ -128,9 +129,10 @@ export default function RankingPage({ onSelectTool, onSelectCategory }) {
 
               {/* Logo */}
               <img
-                src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`}
+                src={`https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`}
                 alt={tool.name}
                 style={{ width: '40px', height: '40px', borderRadius: '10px', objectFit: 'contain', flexShrink: 0 }}
+                loading="lazy"
               />
 
               {/* Info */}

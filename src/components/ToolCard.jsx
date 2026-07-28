@@ -3,6 +3,7 @@ import { Star, Check, ArrowUpRight, Scale, Sparkles, MessageSquare, Flame, Eye }
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { getTranslation } from '../utils/translations';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
+import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function ToolCard({ 
   tool, 
@@ -28,9 +29,9 @@ export default function ToolCard({
     }
   };
 
-  // High-Resolution Google Favicon API
-  const googleFavicon = `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`;
-  const clearbitLogo = `https://logo.clearbit.com/${tool.domain}`;
+  const domain = extractDomain(tool);
+  const googleFavicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+  const clearbitLogo = `https://logo.clearbit.com/${domain}`;
 
   const logoSrc = imgErrorCount === 0 ? googleFavicon : clearbitLogo;
   const visitsDisplay = tool.monthlyVisits || null;
@@ -82,8 +83,8 @@ export default function ToolCard({
               loading="lazy"
             />
           ) : (
-            <span style={{ color: '#FFFFFF', fontWeight: '800', fontSize: '0.9rem' }}>
-              {tool.name.substring(0, 2).toUpperCase()}
+            <span style={{ color: '#FFFFFF', fontWeight: '800', fontSize: '0.85rem' }}>
+              {getFallbackInitials(tool.name)}
             </span>
           )}
         </div>

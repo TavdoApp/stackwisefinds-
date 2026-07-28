@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
-import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
+import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare }) {
   const [activeTab, setActiveTab] = useState('product-info');
@@ -9,7 +9,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
   const tool = saasTools.find(t => t.id === toolId) || saasTools[0];
   const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
-  const googleFavicon = `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`;
+  const googleFavicon = `https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`;
   const visitsDisplay = tool.monthlyVisits || null;
   const hasRating = Number.isFinite(tool.rating) && Number.isFinite(tool.reviewsCount);
 
