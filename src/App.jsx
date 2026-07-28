@@ -120,6 +120,7 @@ export default function App() {
   const [filterFreeOnly, setFilterFreeOnly] = useState(false);
   const [filterOpenSourceOnly, setFilterOpenSourceOnly] = useState(false);
   const [filterTrendingOnly, setFilterTrendingOnly] = useState(false);
+  const [sortBy, setSortBy] = useState('popular');
 
   // Sleek Pagination State (20 tools per page)
   const [currentPage, setCurrentPage] = useState(1);
@@ -213,10 +214,16 @@ export default function App() {
     return matchesSearch && matchesCategory && matchesFree && matchesOpenSource && matchesTrending;
   });
 
+  const sortedTools = [...filteredTools].sort((a, b) => {
+    if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
+    if (sortBy === 'name') return (a.name || '').localeCompare(b.name || '');
+    return (b.reviewsCount || 0) - (a.reviewsCount || 0);
+  });
+
   // Calculate Pagination Slices
-  const totalPages = Math.ceil(filteredTools.length / itemsPerPage);
+  const totalPages = Math.ceil(sortedTools.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedTools = filteredTools.slice(startIndex, startIndex + itemsPerPage);
+  const paginatedTools = sortedTools.slice(startIndex, startIndex + itemsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -383,28 +390,51 @@ export default function App() {
                       <h2 style={{ fontSize: '2.4rem', fontWeight: '800' }}>Explore Worldwide Software</h2>
                     </div>
 
-                    {/* Search Bar */}
-                    <div style={{ position: 'relative', minWidth: '260px' }}>
-                      <Search size={18} color="var(--text-light)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
-                      <input
-                        type="text"
-                        placeholder="Search tools..."
-                        value={searchTerm}
-                        aria-label="Search software tools"
-                        onChange={(e) => {
-                          setSearchTerm(e.target.value);
-                          setCurrentPage(1);
-                        }}
+                    {/* Search Bar & Sort Controls */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                      <div style={{ position: 'relative', minWidth: '240px' }}>
+                        <Search size={18} color="var(--text-light)" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
+                        <input
+                          type="text"
+                          placeholder="Search tools..."
+                          value={searchTerm}
+                          aria-label="Search software tools"
+                          onChange={(e) => {
+                            setSearchTerm(e.target.value);
+                            setCurrentPage(1);
+                          }}
+                          style={{
+                            width: '100%',
+                            padding: '10px 14px 10px 42px',
+                            borderRadius: '9999px',
+                            border: '1px solid var(--border-color)',
+                            background: '#F6F7F2',
+                            fontSize: '0.9rem',
+                            outline: 'none'
+                          }}
+                        />
+                      </div>
+
+                      <select
+                        value={sortBy}
+                        onChange={(e) => { setSortBy(e.target.value); setCurrentPage(1); }}
+                        aria-label="Sort software tools"
                         style={{
-                          width: '100%',
-                          padding: '10px 14px 10px 42px',
+                          padding: '10px 16px',
                           borderRadius: '9999px',
                           border: '1px solid var(--border-color)',
-                          background: '#F6F7F2',
-                          fontSize: '0.9rem',
+                          background: '#FFFFFF',
+                          fontSize: '0.85rem',
+                          fontWeight: '700',
+                          color: 'var(--text-dark)',
+                          cursor: 'pointer',
                           outline: 'none'
                         }}
-                      />
+                      >
+                        <option value="popular">Sort: Most Popular</option>
+                        <option value="rating">Sort: Top Rated</option>
+                        <option value="name">Sort: Name (A-Z)</option>
+                      </select>
                     </div>
                   </div>
 
