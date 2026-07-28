@@ -3,6 +3,9 @@ const path = require('path');
 const { readAllTools } = require('./toolData.cjs');
 
 const saasTools = readAllTools();
+const answerDataPath = path.join(__dirname, '..', 'data', 'auto-published-answers.json');
+const answerData = fs.existsSync(answerDataPath) ? JSON.parse(fs.readFileSync(answerDataPath, 'utf8')) : { answers: [] };
+const autoPublishedAnswers = Array.isArray(answerData.answers) ? answerData.answers : [];
 const baseUrl = 'https://stakdock.com';
 const todayDate = new Date().toISOString().split('T')[0];
 
@@ -68,6 +71,16 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
   </url>
 `;
 
+// Add real static URLs for automated answer pages.
+autoPublishedAnswers.forEach((answer) => {
+  if (!answer.canonicalUrl || !/^https:\/\/stakdock\.com\/guides\//.test(answer.canonicalUrl)) return;
+  sitemapXml += `  <url>
+    <loc>${answer.canonicalUrl}</loc>
+    <lastmod>${(answer.publishedAt || todayDate).slice(0, 10)}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>\n`;
+});
 // Add dedicated /alternatives/ hubs for all tools
 saasTools.forEach(t => {
   sitemapXml += `  <url>

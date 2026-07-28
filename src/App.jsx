@@ -179,6 +179,10 @@ export default function App() {
 
   const handleSelectArticleById = (articleId) => {
     const found = highIntentArticles.find(a => a.id === articleId) || highIntentArticles[0];
+    if (found?.canonicalUrl) {
+      window.location.assign(new URL(found.canonicalUrl).pathname);
+      return;
+    }
     setSelectedArticle(found);
     setCurrentView('article-detail');
     window.location.hash = `guide-${found.id}`;

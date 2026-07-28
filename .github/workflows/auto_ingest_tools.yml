@@ -32,6 +32,12 @@ jobs:
       - name: Collect Reddit Research Drafts for Editorial Review
         run: node scripts/mineRedditQuestions.cjs
 
+      - name: Publish Original Reddit-Inspired Answer Pages
+        run: node scripts/publishRedditAnswers.cjs
+
+      - name: Generate Static Answer Pages
+        run: node scripts/generateAnswerPages.cjs
+
       - name: Rebuild SEO Sitemap
         run: node scripts/generateSitemap.cjs
 
@@ -54,6 +60,6 @@ jobs:
         run: |
           git config --global user.name "StakDock Bot"
           git config --global user.email "bot@stakdock.com"
-          git add data/ingestion-candidates.json data/auto-published-tools.json data/reddit-content-drafts.json public/sitemap.xml
-          git commit -m "auto(ingest): qualify tools and collect editorial drafts [skip ci]" || echo "No changes to commit"
+          git add data/ingestion-candidates.json data/auto-published-tools.json data/reddit-content-drafts.json data/auto-published-answers.json public/guides public/sitemap.xml
+          git commit -m "auto(ingest): publish qualified tools and answer pages [skip ci]" || echo "No changes to commit"
           git push

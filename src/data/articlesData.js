@@ -1,4 +1,6 @@
-export const highIntentArticles = [
+import autoPublishedAnswerData from '../../data/auto-published-answers.json';
+
+export const staticHighIntentArticles = [
   {
   "id": "reddit-mined-2026-07-28",
   "title": "Reddit Community Q&A: Top Software Tools & AI Workflow Stacks (July 28, 2026)",
@@ -75,4 +77,9 @@ export const highIntentArticles = [
 <p>Deel handles international contractor payroll compliance across 150+ countries.</p>
     `
   }
+];
+
+export const highIntentArticles = [
+  ...(Array.isArray(autoPublishedAnswerData.answers) ? autoPublishedAnswerData.answers : []),
+  ...staticHighIntentArticles
 ];
