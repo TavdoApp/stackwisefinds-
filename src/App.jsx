@@ -18,6 +18,8 @@ import { ArrowUpRight, Sparkles, Scale, Search, Layers, ChevronLeft, ChevronRigh
 import AiNewsSidebar from './components/AiNewsSidebar';
 import FeaturedSidebar from './components/FeaturedSidebar';
 
+import ToolDetailPage from './components/ToolDetailPage';
+
 // Lazy Loaded Modal & Detail Views for High Performance & Micro-Bundle Splitting
 const ComparisonModal = lazy(() => import('./components/ComparisonModal'));
 const VendorModal = lazy(() => import('./components/VendorModal'));
@@ -28,7 +30,6 @@ const VersusPage = lazy(() => import('./components/VersusPage'));
 const AlternativesView = lazy(() => import('./components/AlternativesView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
 const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
-const ToolDetailPage = lazy(() => import('./components/ToolDetailPage'));
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
