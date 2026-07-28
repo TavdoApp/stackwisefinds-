@@ -1,74 +1,87 @@
-/**
- * Stackwise Cloudflare Cron Worker
- * Runs automatically 2x daily on Cloudflare's serverless edge network
- * Pings IndexNow API for instant search engine indexation (0% VPS footprint)
- */
+const canonicalHost = 'stakdock.com';
 
 export default {
-  // Scheduled Cron Trigger Handler
   async scheduled(event, env, ctx) {
-    ctx.waitUntil(handleScheduledPing());
+    ctx.waitUntil(handleScheduledPing(env));
   },
 
-  // HTTP Handler for manual testing
-  async fetch(request, env, ctx) {
-    const res = await handleScheduledPing();
-    return new Response(JSON.stringify(res), {
-      headers: { 'Content-Type': 'application/json' }
+  async fetch(request, env) {
+    if (request.method !== 'POST' || !isAuthorized(request, env)) {
+      return new Response('Not found', { status: 404 });
+    }
+
+    const result = await handleScheduledPing(env);
+    return Response.json(result, {
+      headers: {
+        'Cache-Control': 'no-store',
+        'X-Content-Type-Options': 'nosniff'
+      }
     });
   }
 };
 
-async function handleScheduledPing() {
-  const HOST = 'stackwisefinds.com';
-  const INDEXNOW_KEY = '47451ffd1d7c4719abf7737ae720b648';
-  const KEY_LOCATION = `https://${HOST}/47451ffd1d7c4719abf7737ae720b648.txt`;
+function isAuthorized(request, env) {
+  const expectedToken = env.MANUAL_TRIGGER_TOKEN;
+  const authorization = request.headers.get('Authorization');
+
+  return Boolean(expectedToken) && authorization === `Bearer ${expectedToken}`;
+}
+
+async function handleScheduledPing(env) {
+  const indexNowKey = env.INDEXNOW_KEY;
+
+  if (!indexNowKey) {
+    return { success: false, error: 'IndexNow is not configured.' };
+  }
 
   try {
-    // 1. Fetch live sitemap XML
-    const sitemapRes = await fetch(`https://${HOST}/sitemap.xml`);
-    const xmlText = await sitemapRes.text();
+    const sitemapResponse = await fetch(`https://${canonicalHost}/sitemap.xml`);
+    if (!sitemapResponse.ok) {
+      throw new Error('Sitemap request failed.');
+    }
 
-    // 2. Extract all URLs
-    const urlRegex = /<loc>(https:\/\/stackwisefinds\.com[^<]+)<\/loc>/g;
+    const sitemap = await sitemapResponse.text();
+    const urlRegex = /<loc>(https:\/\/stakdock\.com[^<]+)<\/loc>/g;
     const urlList = [];
     let match;
 
-    while ((match = urlRegex.exec(xmlText)) !== null) {
+    while ((match = urlRegex.exec(sitemap)) !== null) {
       urlList.push(match[1]);
     }
 
+    if (urlList.length === 0) {
+      throw new Error('No canonical sitemap URLs were found.');
+    }
+
     const payload = {
-      host: HOST,
-      key: INDEXNOW_KEY,
-      keyLocation: KEY_LOCATION,
-      urlList: urlList
+      host: canonicalHost,
+      key: indexNowKey,
+      keyLocation: `https://${canonicalHost}/${indexNowKey}.txt`,
+      urlList
     };
 
-    // 3. Ping IndexNow endpoints via Cloudflare Edge fetch
-    const indexNowRes = await fetch('https://api.indexnow.org/indexnow', {
+    const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json; charset=utf-8' },
       body: JSON.stringify(payload)
-    });
+    };
 
-    const bingRes = await fetch('https://www.bing.com/indexnow', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
-      body: JSON.stringify(payload)
-    });
+    const [indexNowResponse, bingResponse] = await Promise.all([
+      fetch('https://api.indexnow.org/indexnow', requestOptions),
+      fetch('https://www.bing.com/indexnow', requestOptions)
+    ]);
 
     return {
-      success: true,
+      success: indexNowResponse.ok && bingResponse.ok,
       urlsPingedCount: urlList.length,
-      indexNowStatus: indexNowRes.status,
-      bingStatus: bingRes.status,
+      indexNowStatus: indexNowResponse.status,
+      bingStatus: bingResponse.status,
       timestamp: new Date().toISOString()
     };
-  } catch (err) {
+  } catch {
     return {
       success: false,
-      error: err.message,
+      error: 'IndexNow ping failed.',
       timestamp: new Date().toISOString()
     };
   }

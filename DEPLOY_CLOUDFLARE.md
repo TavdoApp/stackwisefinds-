@@ -1,41 +1,38 @@
-# Stackwise — Cloudflare Pages Deployment & Custom Domain Guide
+# StakDock — Cloudflare Pages and Worker Deployment
 
-This document explains how to deploy **Stackwise** to **Cloudflare Pages** for 100% free, unlimited bandwidth hosting with automatic SSL.
+StakDock is deployed through Cloudflare Pages and GitHub Actions only. No VPS is required.
 
----
+## Cloudflare Pages
 
-## Method 1: Instant Deployment via Cloudflare Dashboard (Recommended)
+The existing Pages project identifier is `stackwisefinds`; its public canonical domain must remain `https://stakdock.com`.
 
-1. **Push your repository to GitHub** (or connect your git account).
-2. Log into your [Cloudflare Dashboard](https://dash.cloudflare.com/).
-3. Navigate to **Workers & Pages** → **Create Application** → **Pages** tab → **Connect to Git**.
-4. Select your **`stackwise`** repository.
-5. Set the Build Settings:
-   - **Framework Preset**: `Vite`
-   - **Build Command**: `npm run build`
-   - **Build Output Directory**: `dist`
-6. Click **Save and Deploy**.
-   - Cloudflare will build and publish your website globally in under 45 seconds!
+1. In Cloudflare, connect the GitHub repository to the existing Pages project.
+2. Set the build command to `npm run build` and output directory to `dist`.
+3. Attach `stakdock.com` as the primary custom domain.
+4. Keep `stackwisefinds.com` and `www.stackwisefinds.com` as permanent redirects to `https://stakdock.com/:splat`.
 
----
+## GitHub Actions secrets
 
-## Method 2: Direct CLI Deployment (No Git Required)
+Configure these repository secrets before enabling the scheduled workflows:
 
-If you want to deploy straight from your computer using the command line:
+- `CLOUDFLARE_API_TOKEN`
+- `CLOUDFLARE_ACCOUNT_ID`
+- `INDEXNOW_KEY`
+
+The IndexNow key must match the public verification text file already hosted at `https://stakdock.com/{key}.txt`.
+
+## Cloudflare Worker secrets
+
+The scheduled IndexNow Worker requires two encrypted Cloudflare Worker secrets:
 
 ```bash
-# 1. Build the production files
-cmd /c npm run build
-
-# 2. Deploy dist folder to Cloudflare Pages
-npx wrangler pages deploy dist --project-name=stackwise
+npx wrangler secret put INDEXNOW_KEY
+npx wrangler secret put MANUAL_TRIGGER_TOKEN
+npx wrangler deploy
 ```
 
----
+`MANUAL_TRIGGER_TOKEN` protects the optional manual Worker trigger. The cron schedule continues to run without an HTTP request.
 
-## Connecting Your Custom Domain (e.g. GetStackWise.com)
+## Candidate discovery
 
-1. In your Cloudflare Dashboard, go to **Workers & Pages** → **stackwise** → **Custom Domains**.
-2. Click **Set up a Custom Domain**.
-3. Enter your domain name (e.g. `getstackwise.com` or `stackwise.co`).
-4. Cloudflare will automatically configure the CNAME and DNS records and issue a free SSL/HTTPS certificate within 60 seconds!
+The six-hour GitHub Actions workflow only collects candidates into `data/ingestion-candidates.json`. It does not add tools or publish Reddit pages automatically. A candidate must pass website, duplicate, content-quality, and source-terms checks before becoming a public listing.

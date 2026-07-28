@@ -1,4 +1,4 @@
-name: Stackwise Automated Search Engine Indexing
+name: StakDock Automated Search Engine Indexing
 
 on:
   schedule:
@@ -18,4 +18,6 @@ jobs:
           node-version: '20'
 
       - name: Run IndexNow Fast-Pinger
+        env:
+          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
         run: node scripts/pingIndexNow.cjs
