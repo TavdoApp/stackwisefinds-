@@ -41,6 +41,11 @@ jobs:
       - name: Monitor Tool & Page Health (Quarantine Failures)
         run: node scripts/monitorToolHealth.cjs
 
+      - name: Sync Real Domain Authority Scores (OpenPageRank API)
+        env:
+          OPENPAGERANK_API_KEY: ${{ secrets.OPENPAGERANK_API_KEY }}
+        run: node scripts/fetchOpenPageRank.cjs
+
       - name: Rebuild SEO Sitemap
         run: node scripts/generateSitemap.cjs
 
