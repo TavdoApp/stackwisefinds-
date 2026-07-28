@@ -6,7 +6,7 @@ const autoPublishedPath = path.join(__dirname, '..', 'data', 'auto-published-too
 
 function readStaticTools() {
   const source = fs.readFileSync(staticDataPath, 'utf8');
-  const match = source.match(/export const staticSaasTools = (\[[\s\S]*?\n\]);\n\nexport const saasTools/);
+  const match = source.match(/export const staticSaasTools = (\[[\s\S]*?\n\]);\n\nconst isLegacySyntheticTool/);
   if (!match) throw new Error('Could not parse the static tool dataset.');
   return JSON.parse(match[1]);
 }
@@ -22,7 +22,14 @@ function writeAutoPublishedData(data) {
 }
 
 function readAllTools() {
-  return [...readStaticTools(), ...readAutoPublishedData().tools];
+  const seenNames = new Set();
+  return [...readStaticTools(), ...readAutoPublishedData().tools].filter((tool) => {
+    if (/-\d+$/.test(tool.id) && !tool.autoQualifiedAt) return false;
+    const key = tool.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (!key || seenNames.has(key)) return false;
+    seenNames.add(key);
+    return true;
+  });
 }
 
 module.exports = { readAllTools, readAutoPublishedData, writeAutoPublishedData };

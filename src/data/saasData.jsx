@@ -15621,7 +15621,18 @@ export const staticSaasTools = [
   }
 ];
 
-export const saasTools = [
+const isLegacySyntheticTool = (tool) => /-\d+$/.test(tool.id) && !tool.autoQualifiedAt;
+const uniqueByName = (tools) => {
+  const seen = new Set();
+  return tools.filter((tool) => {
+    const key = tool.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
+export const saasTools = uniqueByName([
   ...staticSaasTools,
   ...(Array.isArray(autoPublishedToolData.tools) ? autoPublishedToolData.tools : [])
-];
+].filter((tool) => !isLegacySyntheticTool(tool)));

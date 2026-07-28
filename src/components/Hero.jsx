@@ -40,7 +40,7 @@ export default function Hero({
 
         {/* Toolify-Style Live Telemetry Subtitle */}
         <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)', color: 'var(--text-muted)', lineHeight: '1.6', maxWidth: '680px', margin: '0 auto 28px' }}>
-          <strong style={{ color: '#82A735' }}>{totalToolsCount}+ Verified Tools</strong> and <strong style={{ color: 'var(--text-dark)' }}>25 categories</strong> in the premier software launch dock. Updated daily with zero fluff.
+          <strong style={{ color: '#82A735' }}>{totalToolsCount} quality-checked tools</strong> across <strong style={{ color: 'var(--text-dark)' }}>25 categories</strong>. Discover, compare, and verify software before you commit.
         </p>
 
         {/* Toolify Prominent Hero Search Bar */}
