@@ -26,6 +26,9 @@ jobs:
       - name: Discover Tool Candidates for Editorial Review
         run: node scripts/autoIngestNewTools.cjs
 
+      - name: Collect Reddit Research Drafts for Editorial Review
+        run: node scripts/mineRedditQuestions.cjs
+
       - name: Rebuild SEO Sitemap
         run: node scripts/generateSitemap.cjs
 
@@ -44,10 +47,10 @@ jobs:
         # This is the existing Cloudflare Pages project identifier; the public canonical domain is stakdock.com.
         run: npx wrangler pages deploy dist --project-name=stackwisefinds
 
-      - name: Commit Candidate Queue and Generated Sitemap
+      - name: Commit Editorial Queues and Generated Sitemap
         run: |
           git config --global user.name "StakDock Bot"
           git config --global user.email "bot@stakdock.com"
-          git add data/ingestion-candidates.json public/sitemap.xml
-          git commit -m "auto(ingest): collect tool candidates for editorial review [skip ci]" || echo "No changes to commit"
+          git add data/ingestion-candidates.json data/reddit-content-drafts.json public/sitemap.xml
+          git commit -m "auto(ingest): collect editorial drafts [skip ci]" || echo "No changes to commit"
           git push
