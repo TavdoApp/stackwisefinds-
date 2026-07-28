@@ -1,0 +1,13 @@
+{
+  "openai.com": { "rankDecimal": 8.85, "rankInteger": 8, "globalRank": "112" },
+  "chatgpt.com": { "rankDecimal": 8.72, "rankInteger": 8, "globalRank": "145" },
+  "anthropic.com": { "rankDecimal": 7.94, "rankInteger": 7, "globalRank": "1420" },
+  "claude.ai": { "rankDecimal": 7.82, "rankInteger": 7, "globalRank": "1850" },
+  "google.com": { "rankDecimal": 10.0, "rankInteger": 10, "globalRank": "1" },
+  "github.com": { "rankDecimal": 9.65, "rankInteger": 9, "globalRank": "12" },
+  "canva.com": { "rankDecimal": 8.92, "rankInteger": 8, "globalRank": "95" },
+  "figma.com": { "rankDecimal": 8.45, "rankInteger": 8, "globalRank": "412" },
+  "notion.so": { "rankDecimal": 8.31, "rankInteger": 8, "globalRank": "520" },
+  "n8n.io": { "rankDecimal": 6.84, "rankInteger": 6, "globalRank": "12450" },
+  "xuscrm.com": { "rankDecimal": 5.20, "rankInteger": 5, "globalRank": "98420" }
+}
