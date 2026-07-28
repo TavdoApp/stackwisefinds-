@@ -166,6 +166,10 @@ export default function Footer({ setCurrentView, setSelectedCategory, onChangeLa
             © 2026 StakDock. All rights reserved. Registered trademark of StakDock Technologies.
           </div>
 
+          <p style={{ width: '100%', fontSize: '0.78rem', color: 'rgba(255,255,255,0.65)', margin: '12px 0 0 0', lineHeight: '1.5', borderTop: '1px solid #203320', paddingTop: '16px' }}>
+            <strong>Affiliate Referral Disclosure:</strong> StakDock contains affiliate referral links. When you purchase software through links on our site, we may earn an affiliate commission at zero additional cost to you. Guidance is provided for general disclosure purposes.
+          </p>
+
           <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
             <span>Built with precision for tech founders & creators worldwide</span>
           </div>

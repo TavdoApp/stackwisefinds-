@@ -1,6 +1,7 @@
 /**
- * Privacy-Compliant Affiliate Click Telemetry & Outbound Link Tracker
- * Tracks tool referral clicks without storing PII, cookies, or invasive user data.
+ * Local Click Instrumentation (Client-Side Telemetry)
+ * Logs outbound affiliate button clicks to sessionStorage for local debugging/instrumentation.
+ * NOTE: This is client-side local instrumentation only and does NOT deliver events to a server-side analytics reporting backend.
  */
 
 export function trackAffiliateClick(toolId, affiliateDestination) {
@@ -14,13 +15,11 @@ export function trackAffiliateClick(toolId, affiliateDestination) {
   };
 
   try {
-    // Store lightweight session event for analytical readiness
     const existingClicks = JSON.parse(sessionStorage.getItem('stakdock_affiliate_clicks') || '[]');
     existingClicks.push(eventData);
-    // Keep last 50 events in session storage
     if (existingClicks.length > 50) existingClicks.shift();
     sessionStorage.setItem('stakdock_affiliate_clicks', JSON.stringify(existingClicks));
   } catch {
-    // Silent fallback if storage is restricted
+    // Silent fallback
   }
 }
