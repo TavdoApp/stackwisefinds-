@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Star, Check, ArrowUpRight, Scale, Sparkles, MessageSquare, Flame, Eye } from 'lucide-react';
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { getTranslation } from '../utils/translations';
+import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
 export default function ToolCard({ 
   tool, 
@@ -212,7 +213,10 @@ export default function ToolCard({
             href={tool.affiliateUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              trackAffiliateClick(tool.id, tool.affiliateUrl);
+            }}
             className="btn-pill-green"
             style={{ padding: '6px 14px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
           >
