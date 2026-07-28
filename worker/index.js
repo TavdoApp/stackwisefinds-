@@ -182,34 +182,30 @@ async function handleVendorSubmission(request, env, corsHeaders) {
 }
 
 async function handleGetReports(env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
   try {
-    let clicksByTool = [];
-    let clicksByDate = [];
-    let submissionStatus = [];
-
-    if (env.DB) {
-      const toolRes = await env.DB.prepare(
-        'SELECT tool_id, COUNT(*) as count FROM affiliate_clicks GROUP BY tool_id ORDER BY count DESC LIMIT 20'
-      ).all();
-      clicksByTool = toolRes.results || [];
-
-      const dateRes = await env.DB.prepare(
-        'SELECT DATE(created_at) as date, COUNT(*) as count FROM affiliate_clicks GROUP BY DATE(created_at) ORDER BY date DESC LIMIT 30'
-      ).all();
-      clicksByDate = dateRes.results || [];
-
-      const statusRes = await env.DB.prepare(
-        'SELECT status, COUNT(*) as count FROM vendor_submissions GROUP BY status'
-      ).all();
-      submissionStatus = statusRes.results || [];
-    }
+    const toolRes = await env.DB.prepare(
+      'SELECT tool_id, COUNT(*) as count FROM affiliate_clicks GROUP BY tool_id ORDER BY count DESC LIMIT 20'
+    ).all();
+    const dateRes = await env.DB.prepare(
+      'SELECT DATE(created_at) as date, COUNT(*) as count FROM affiliate_clicks GROUP BY DATE(created_at) ORDER BY date DESC LIMIT 30'
+    ).all();
+    const statusRes = await env.DB.prepare(
+      'SELECT status, COUNT(*) as count FROM vendor_submissions GROUP BY status'
+    ).all();
 
     return new Response(JSON.stringify({
       success: true,
       reports: {
-        clicksByTool,
-        clicksByDate,
-        submissionStatus
+        clicksByTool: toolRes.results || [],
+        clicksByDate: dateRes.results || [],
+        submissionStatus: statusRes.results || []
       },
       timestamp: new Date().toISOString()
     }), {
@@ -222,6 +218,13 @@ async function handleGetReports(env, corsHeaders) {
 }
 
 async function handleReviewVendor(request, env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
   try {
     const body = await request.json();
     const submissionId = Number(body.submissionId);
@@ -233,9 +236,27 @@ async function handleReviewVendor(request, env, corsHeaders) {
       return new Response(JSON.stringify({ error: 'Invalid review decision enum' }), { status: 400, headers: corsHeaders });
     }
 
-    if (env.DB) {
-      await env.DB.prepare('UPDATE vendor_submissions SET status = ? WHERE id = ?').bind(decision, submissionId).run();
-      await env.DB.prepare('INSERT INTO editorial_reviews (submission_id, reviewer_notes, decision) VALUES (?, ?, ?)').bind(submissionId, notes, decision).run();
+    const updateResult = await env.DB.prepare(
+      'UPDATE vendor_submissions SET status = ? WHERE id = ?'
+    ).bind(decision, submissionId).run();
+
+    if (!updateResult.success) {
+      throw new Error('Database review update unconfirmed');
+    }
+
+    if (updateResult.meta?.changes !== 1) {
+      return new Response(JSON.stringify({ error: 'Vendor submission not found' }), {
+        status: 404,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+      });
+    }
+
+    const reviewResult = await env.DB.prepare(
+      'INSERT INTO editorial_reviews (submission_id, reviewer_notes, decision) VALUES (?, ?, ?)'
+    ).bind(submissionId, notes, decision).run();
+
+    if (!reviewResult.success) {
+      throw new Error('Database review write unconfirmed');
     }
 
     return new Response(JSON.stringify({ success: true, submissionId, status: decision }), {
