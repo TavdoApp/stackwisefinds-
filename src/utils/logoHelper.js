@@ -1,25 +1,19 @@
 /**
  * High-Reliability Logo & Favicon Resolver
- * Guarantees zero broken image icons across all browsers, adblockers, and networks.
+ * Guarantees crisp high-resolution logos across all tools with zero broken images.
  */
 
-const KNOWN_BRAND_LOGOS = {
-  'openai.com': 'https://icons.duckduckgo.com/ip3/openai.com.ico',
-  'chatgpt.com': 'https://icons.duckduckgo.com/ip3/openai.com.ico',
-  'anthropic.com': 'https://icons.duckduckgo.com/ip3/anthropic.com.ico',
-  'claude.ai': 'https://icons.duckduckgo.com/ip3/anthropic.com.ico',
-  'gemini.google.com': 'https://icons.duckduckgo.com/ip3/google.com.ico',
-  'google.com': 'https://icons.duckduckgo.com/ip3/google.com.ico',
-  'jasper.ai': 'https://icons.duckduckgo.com/ip3/jasper.ai.ico',
-  'suno.com': 'https://icons.duckduckgo.com/ip3/suno.com.ico',
-  'suno.ai': 'https://icons.duckduckgo.com/ip3/suno.ai.ico',
-  'lumalabs.ai': 'https://icons.duckduckgo.com/ip3/lumalabs.ai.ico',
-  'midjourney.com': 'https://icons.duckduckgo.com/ip3/midjourney.com.ico',
-  'elevenlabs.io': 'https://icons.duckduckgo.com/ip3/elevenlabs.io.ico',
-  'notion.so': 'https://icons.duckduckgo.com/ip3/notion.so.ico',
-  'canva.com': 'https://icons.duckduckgo.com/ip3/canva.com.ico',
-  'figma.com': 'https://icons.duckduckgo.com/ip3/figma.com.ico',
-  'github.com': 'https://icons.duckduckgo.com/ip3/github.com.ico'
+const HIGH_RES_LOGOS = {
+  'openai.com': 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
+  'chatgpt.com': 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
+  'anthropic.com': 'https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg',
+  'claude.ai': 'https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg',
+  'google.com': 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg',
+  'gemini.google.com': 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg',
+  'notion.so': 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg',
+  'canva.com': 'https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg',
+  'figma.com': 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
+  'github.com': 'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'
 };
 
 export function extractDomain(tool) {
@@ -43,18 +37,22 @@ export function extractDomain(tool) {
 export function getLogoUrl(tool, attempt = 0) {
   const domain = extractDomain(tool);
 
-  // Attempt 0: Known Brand Logo or DuckDuckGo Favicon (Highest reliability, unblocked globally)
-  if (attempt === 0) {
-    if (KNOWN_BRAND_LOGOS[domain]) return KNOWN_BRAND_LOGOS[domain];
-    return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+  // High-Res Wikipedia SVG override
+  if (attempt === 0 && HIGH_RES_LOGOS[domain]) {
+    return HIGH_RES_LOGOS[domain];
   }
 
-  // Attempt 1: Google Favicon API sz=128
-  if (attempt === 1) {
+  // Attempt 0: Google Favicon API sz=128 (Industry Standard)
+  if (attempt === 0) {
     return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
   }
 
-  // Attempt 2: Icon Horse API
+  // Attempt 1: DuckDuckGo Favicon Engine
+  if (attempt === 1) {
+    return `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+  }
+
+  // Attempt 2: Unpkg / IconHorse API
   if (attempt === 2) {
     return `https://icon.horse/icon/${domain}`;
   }

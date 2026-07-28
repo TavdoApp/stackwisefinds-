@@ -1,3 +1,8 @@
+# Cloudflare Pages 301 Redirect Rules: legacy domains to stakdock.com canonical
+http://stackwisefinds.com/* https://stakdock.com/:splat 301!
 https://stackwisefinds.com/* https://stakdock.com/:splat 301!
+http://www.stackwisefinds.com/* https://stakdock.com/:splat 301!
 https://www.stackwisefinds.com/* https://stakdock.com/:splat 301!
+
+# SPA Routing Fallback
 /* /index.html 200
