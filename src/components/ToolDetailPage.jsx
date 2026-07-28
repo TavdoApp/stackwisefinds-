@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
+import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare }) {
