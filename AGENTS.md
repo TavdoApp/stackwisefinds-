@@ -26,7 +26,7 @@ These rules apply to the entire StakDock repository.
 
 ## Product and Content Integrity
 
-- Do not auto-publish discovered tools, vendor submissions, Reddit-derived content, or sponsored listings.
+- Do not auto-publish vendor submissions, Reddit-derived content, or sponsored listings. Discovered tools may publish only through the documented automated qualification gate with source, domain, duplicate, and reachability checks.
 - Require editorial review, official-site verification, duplicate checking, and content-quality review before publishing.
 - Do not fabricate ratings, reviews, pricing, tool ownership, traffic, rankings, testimonials, or FAQs.
 - Mark sponsored and affiliate content clearly and keep affiliate disclosure visible.

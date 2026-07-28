@@ -35,12 +35,12 @@ export function injectSoftwareApplicationSchema(tool) {
     'description': tool.description || ''
   };
 
-  // Only include offer if pricing string is available
-  if (tool.pricing) {
+  // Include a price only when verified numeric pricing exists in visible tool data.
+  if (Number.isFinite(tool.price)) {
     schema.offers = {
       '@type': 'Offer',
-      'price': tool.pricing.toLowerCase().includes('free') ? '0.00' : '0.00',
-      'priceCurrency': 'USD',
+      'price': String(tool.price),
+      'priceCurrency': tool.priceCurrency || 'USD',
       'availability': 'https://schema.org/InStock'
     };
   }

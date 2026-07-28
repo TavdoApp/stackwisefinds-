@@ -10,7 +10,8 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
   const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`;
-  const visitsDisplay = tool.monthlyVisits || '1.8M/mo';
+  const visitsDisplay = tool.monthlyVisits || null;
+  const hasRating = Number.isFinite(tool.rating) && Number.isFinite(tool.reviewsCount);
 
   // Mock Traffic Analytics Data for Toolify-style Analytics Tab
   const analyticsData = {
@@ -28,6 +29,29 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
     ]
   };
 
+  if (tool.autoQualifiedAt) {
+    return (
+      <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '900px' }}>
+        {injectSoftwareApplicationSchema(tool)}
+        <button onClick={onBack} className="btn-pill-outline" style={{ marginBottom: '24px' }} aria-label="Back to Directory">
+          <ArrowLeft size={16} /> Back to Directory
+        </button>
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', boxShadow: 'var(--shadow-soft)' }}>
+          <p className="tag-sage" style={{ display: 'inline-block', margin: '0 0 12px' }}>Newly added</p>
+          <h1 style={{ fontSize: '2.2rem', fontWeight: '800', margin: '0 0 12px', color: 'var(--text-dark)' }}>{tool.name}</h1>
+          <p style={{ color: 'var(--text-muted)', lineHeight: '1.7', margin: '0 0 20px' }}>{tool.description}</p>
+          <dl style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', margin: '0 0 24px' }}>
+            <div><dt style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase' }}>Category</dt><dd style={{ margin: '4px 0 0', fontWeight: '700' }}>{tool.category}</dd></div>
+            <div><dt style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase' }}>Pricing</dt><dd style={{ margin: '4px 0 0', fontWeight: '700' }}>Check the website</dd></div>
+          </dl>
+          <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Automated checks confirmed a GitHub source and a reachable HTTPS website. Pricing, ratings, traffic, and reviews are not displayed until independently verified.</p>
+          <a href={tool.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ display: 'inline-flex', marginTop: '12px', textDecoration: 'none' }}>
+            Visit {tool.name} <ArrowUpRight size={16} />
+          </a>
+        </section>
+      </div>
+    );
+  }
   return (
     <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '1020px' }}>
       {/* Schema.org Rich Snippet Ingestion */}
@@ -86,16 +110,20 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
-                  <Star size={16} fill="#82A735" color="#82A735" />
-                  <span>{tool.rating || 4.8}</span>
-                  <span style={{ color: 'var(--text-muted)', fontWeight: '400' }}>({tool.reviewsCount || 120} reviews)</span>
-                </div>
+                {hasRating && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
+                    <Star size={16} fill="#82A735" color="#82A735" />
+                    <span>{tool.rating}</span>
+                    <span style={{ color: 'var(--text-muted)', fontWeight: '400' }}>({tool.reviewsCount} reviews)</span>
+                  </div>
+                )}
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '3px 10px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-                  <Eye size={13} color="#82A735" />
-                  <span>{visitsDisplay} monthly visits</span>
-                </div>
+                {visitsDisplay && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '3px 10px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
+                    <Eye size={13} color="#82A735" />
+                    <span>{visitsDisplay} monthly visits</span>
+                  </div>
+                )}
 
                 <div style={{ fontWeight: '700', color: 'var(--text-dark)' }}>
                   Pricing: {tool.pricing}

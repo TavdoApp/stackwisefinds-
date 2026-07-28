@@ -1,4 +1,5 @@
 import React from 'react';
+import autoPublishedToolData from '../../data/auto-published-tools.json';
 
 export const saasCategories = [
   { "id": "all", "label": "All Software" },
@@ -28,7 +29,7 @@ export const saasCategories = [
   { "id": "nocode-databases", "label": "No-Code Databases & Workflows" }
 ];
 
-export const saasTools = [
+export const staticSaasTools = [
   {
     "id": "chatgpt-plus",
     "name": "ChatGPT Plus",
@@ -15618,4 +15619,9 @@ export const saasTools = [
     "isFreeTier": true,
     "isOpenSource": false
   }
+];
+
+export const saasTools = [
+  ...staticSaasTools,
+  ...(Array.isArray(autoPublishedToolData.tools) ? autoPublishedToolData.tools : [])
 ];

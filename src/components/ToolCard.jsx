@@ -33,7 +33,8 @@ export default function ToolCard({
   const clearbitLogo = `https://logo.clearbit.com/${tool.domain}`;
 
   const logoSrc = imgErrorCount === 0 ? googleFavicon : clearbitLogo;
-  const visitsDisplay = tool.monthlyVisits || '180K/mo';
+  const visitsDisplay = tool.monthlyVisits || null;
+  const hasRating = Number.isFinite(tool.rating) && Number.isFinite(tool.reviewsCount);
 
   return (
     <div 
@@ -151,16 +152,20 @@ export default function ToolCard({
               </span>
             )}
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#141E14', fontWeight: '700', marginLeft: 'auto' }}>
-              <Star size={11} fill="#82A735" color="#82A735" />
-              <span>{tool.rating || 4.8}</span>
-              <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount || 120})</span>
-            </div>
+            {hasRating && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#141E14', fontWeight: '700', marginLeft: 'auto' }}>
+                <Star size={11} fill="#82A735" color="#82A735" />
+                <span>{tool.rating}</span>
+                <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount})</span>
+              </div>
+            )}
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '1px 6px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-              <Eye size={10} color="#82A735" />
-              <span>{visitsDisplay}</span>
-            </div>
+            {visitsDisplay && (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '1px 6px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
+                <Eye size={10} color="#82A735" />
+                <span>{visitsDisplay}</span>
+              </div>
+            )}
           </div>
         </div>
 

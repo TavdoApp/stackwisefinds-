@@ -1,16 +1,8 @@
 const fs = require('fs');
 const path = require('path');
+const { readAllTools } = require('./toolData.cjs');
 
-const saasDataPath = path.join(__dirname, '..', 'src', 'data', 'saasData.jsx');
-const saasDataContent = fs.readFileSync(saasDataPath, 'utf8');
-
-const toolsMatch = saasDataContent.match(/export const saasTools = (\[[\s\S]*\]);/);
-if (!toolsMatch) {
-  console.error('Could not match saasTools');
-  process.exit(1);
-}
-
-const saasTools = JSON.parse(toolsMatch[1]);
+const saasTools = readAllTools();
 const baseUrl = 'https://stakdock.com';
 const todayDate = new Date().toISOString().split('T')[0];
 

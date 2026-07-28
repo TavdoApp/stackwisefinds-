@@ -2,6 +2,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 const https = require('https');
 const path = require('path');
+const { readAllTools } = require('./toolData.cjs');
 
 const dataPath = path.join(__dirname, '..', 'src', 'data', 'saasData.jsx');
 const queuePath = path.join(__dirname, '..', 'data', 'ingestion-candidates.json');
@@ -72,14 +73,7 @@ function candidateId(source, name) {
 }
 
 function readExistingTools() {
-  const source = fs.readFileSync(dataPath, 'utf8');
-  const match = source.match(/export const saasTools = (\[[\s\S]*\]);/);
-
-  if (!match) {
-    throw new Error('Could not parse the current tool dataset.');
-  }
-
-  return JSON.parse(match[1]);
+  return readAllTools();
 }
 
 function readQueue() {
@@ -117,7 +111,13 @@ function extractGitHubCandidates(source, payload) {
         name: normalizeName(repository.name.replace(/[-_]/g, ' ')),
         description: repository.description ? decodeText(repository.description).slice(0, 280) : null,
         proposedWebsite: repository.homepage && /^https:\/\//i.test(repository.homepage) ? repository.homepage : null,
-        sourceUrl: repository.html_url || source.url
+        sourceUrl: repository.html_url || source.url,
+        repository: {
+          stars: repository.stargazers_count,
+          archived: Boolean(repository.archived),
+          license: repository.license?.spdx_id || null,
+          updatedAt: repository.updated_at || null
+        }
       }));
   } catch {
     return [];
@@ -191,6 +191,7 @@ async function run() {
         proposedWebsite,
         proposedDomain,
         categorySuggestion: source.categorySuggestion,
+        repository: candidate.repository || null,
         review: {
           officialWebsiteConfirmed: false,
           duplicateChecked: false,
@@ -212,7 +213,7 @@ async function run() {
   queue.updatedAt = discoveredAt;
   queue.candidates = [...additions, ...queue.candidates].slice(0, 1000);
   fs.writeFileSync(queuePath, `${JSON.stringify(queue, null, 2)}\n`, 'utf8');
-  console.log(`Queued ${additions.length} tool candidates for editorial review. No listings were published automatically.`);
+  console.log(`Queued ${additions.length} tool candidates for qualification. Only candidates passing all quality gates can publish automatically.`);
 }
 
 run().catch((error) => {
