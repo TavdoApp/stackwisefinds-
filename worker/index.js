@@ -8,6 +8,12 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // 301 Permanent Domain Redirect Guard: stackwisefinds.com -> stakdock.com
+    if (url.hostname.includes('stackwisefinds.com')) {
+      url.hostname = canonicalHost;
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Strict CORS & Security Headers
     const corsHeaders = {
       'Access-Control-Allow-Origin': 'https://stakdock.com',
