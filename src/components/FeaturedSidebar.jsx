@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Sparkles, ArrowUpRight } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
-import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
+import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function FeaturedSidebar({ onSelectTool }) {
   const [failedImgs, setFailedImgs] = useState({});
@@ -20,8 +20,8 @@ export default function FeaturedSidebar({ onSelectTool }) {
       </div>
 
       {featuredList.map(tool => {
-        const domain = extractDomain(tool);
-        const hasFailed = failedImgs[tool.id];
+        const attempt = failedImgs[tool.id] || 0;
+        const logoSrc = getLogoUrl(tool, attempt);
 
         return (
           <div
@@ -38,11 +38,11 @@ export default function FeaturedSidebar({ onSelectTool }) {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-              {!hasFailed ? (
+              {logoSrc && attempt < 3 ? (
                 <img 
-                  src={`https://www.google.com/s2/favicons?domain=${domain}&sz=128`}
+                  src={logoSrc}
                   alt={tool.name}
-                  onError={() => setFailedImgs(prev => ({ ...prev, [tool.id]: true }))}
+                  onError={() => setFailedImgs(prev => ({ ...prev, [tool.id]: attempt + 1 }))}
                   style={{ width: '22px', height: '22px', borderRadius: '4px', objectFit: 'contain' }}
                   loading="lazy"
                 />

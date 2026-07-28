@@ -3,7 +3,7 @@ import { Star, Check, ArrowUpRight, Scale, Sparkles, MessageSquare, Flame, Eye }
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { getTranslation } from '../utils/translations';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
-import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
+import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function ToolCard({ 
   tool, 
@@ -29,11 +29,7 @@ export default function ToolCard({
     }
   };
 
-  const domain = extractDomain(tool);
-  const googleFavicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
-  const clearbitLogo = `https://logo.clearbit.com/${domain}`;
-
-  const logoSrc = imgErrorCount === 0 ? googleFavicon : clearbitLogo;
+  const logoSrc = getLogoUrl(tool, imgErrorCount);
   const visitsDisplay = tool.monthlyVisits || null;
   const hasRating = Number.isFinite(tool.rating) && Number.isFinite(tool.reviewsCount);
 
@@ -63,7 +59,7 @@ export default function ToolCard({
             width: '36px',
             height: '36px',
             borderRadius: '8px',
-            background: imgErrorCount >= 2 ? 'linear-gradient(135deg, #82A735 0%, #141E14 100%)' : '#FFFFFF',
+            background: (!logoSrc || imgErrorCount >= 3) ? 'linear-gradient(135deg, #82A735 0%, #141E14 100%)' : '#FFFFFF',
             border: '1px solid var(--border-color)',
             display: 'flex',
             alignItems: 'center',
@@ -74,7 +70,7 @@ export default function ToolCard({
             cursor: 'pointer'
           }}
         >
-          {imgErrorCount < 2 ? (
+          {logoSrc && imgErrorCount < 3 ? (
             <img 
               src={logoSrc} 
               alt={`${tool.name} logo`}
