@@ -8,29 +8,36 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    // CORS Headers for browser requests
+    // Strict CORS & Security Headers
     const corsHeaders = {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://stakdock.com',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'X-Content-Type-Options': 'nosniff'
+      'X-Content-Type-Options': 'nosniff',
+      'Content-Security-Policy': "default-src 'none'"
     };
 
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: corsHeaders });
     }
 
-    // Route 1: POST /api/click — Record affiliate click telemetry (Privacy-Safe, No PII)
+    // Payload Size Guard (Max 10KB)
+    const contentLength = Number(request.headers.get('Content-Length') || 0);
+    if (contentLength > 10240) {
+      return new Response(JSON.stringify({ error: 'Payload too large' }), { status: 413, headers: corsHeaders });
+    }
+
+    // Route 1: POST /api/click — Record affiliate click telemetry
     if (url.pathname === '/api/click' && request.method === 'POST') {
       return handleRecordClick(request, env, corsHeaders);
     }
 
-    // Route 2: POST /api/submit-vendor — Vendor software submission with honeypot & pending status
+    // Route 2: POST /api/submit-vendor — Vendor software submission
     if (url.pathname === '/api/submit-vendor' && request.method === 'POST') {
       return handleVendorSubmission(request, env, corsHeaders);
     }
 
-    // Route 3: GET /api/admin/reports — Admin-protected reporting endpoint
+    // Route 3: GET /api/admin/reports — Admin-protected reporting
     if (url.pathname === '/api/admin/reports' && request.method === 'GET') {
       if (!isAuthorized(request, env)) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: corsHeaders });
@@ -38,7 +45,7 @@ export default {
       return handleGetReports(env, corsHeaders);
     }
 
-    // Route 4: POST /api/admin/review-vendor — Admin-protected review state updater
+    // Route 4: POST /api/admin/review-vendor — Admin-protected review updater
     if (url.pathname === '/api/admin/review-vendor' && request.method === 'POST') {
       if (!isAuthorized(request, env)) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: corsHeaders });
@@ -46,7 +53,7 @@ export default {
       return handleReviewVendor(request, env, corsHeaders);
     }
 
-    // Route 5: POST / — Trigger IndexNow scheduled pings
+    // Route 5: POST / — Manual IndexNow Ping trigger
     if (request.method === 'POST' && isAuthorized(request, env)) {
       const result = await handleScheduledPing(env);
       return Response.json(result, { headers: corsHeaders });
@@ -70,6 +77,19 @@ function sanitizeText(str) {
   return str.replace(/<[^>]*>/g, '').trim();
 }
 
+function isValidEmail(email) {
+  return typeof email === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) && email.length <= 254;
+}
+
+function isValidUrl(urlString) {
+  try {
+    const parsed = new URL(urlString);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
 async function handleRecordClick(request, env, corsHeaders) {
   try {
     const body = await request.json();
@@ -77,8 +97,8 @@ async function handleRecordClick(request, env, corsHeaders) {
     const destination = sanitizeText(body.affiliateDestination);
     const referrer = sanitizeText(body.referrer || 'direct');
 
-    if (!toolId || !destination) {
-      return new Response(JSON.stringify({ error: 'Invalid payload' }), { status: 400, headers: corsHeaders });
+    if (!toolId || !destination || !isValidUrl(destination)) {
+      return new Response(JSON.stringify({ error: 'Invalid payload or URL format' }), { status: 400, headers: corsHeaders });
     }
 
     if (env.DB) {
@@ -92,7 +112,7 @@ async function handleRecordClick(request, env, corsHeaders) {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
   } catch {
-    return new Response(JSON.stringify({ success: true, warning: 'Recorded without D1 persistence' }), {
+    return new Response(JSON.stringify({ success: true, note: 'Processed' }), {
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
@@ -103,7 +123,7 @@ async function handleVendorSubmission(request, env, corsHeaders) {
   try {
     const body = await request.json();
 
-    // Honeypot check (bot_trap must be empty for human submissions)
+    // Honeypot check
     if (body.bot_trap) {
       return new Response(JSON.stringify({ error: 'Spam detected' }), { status: 400, headers: corsHeaders });
     }
@@ -115,6 +135,14 @@ async function handleVendorSubmission(request, env, corsHeaders) {
 
     if (!vendorName || !softwareName || !softwareWebsite || !vendorEmail) {
       return new Response(JSON.stringify({ error: 'All fields are required' }), { status: 400, headers: corsHeaders });
+    }
+
+    if (!isValidEmail(vendorEmail)) {
+      return new Response(JSON.stringify({ error: 'Invalid email address' }), { status: 400, headers: corsHeaders });
+    }
+
+    if (!isValidUrl(softwareWebsite)) {
+      return new Response(JSON.stringify({ error: 'Invalid software website URL' }), { status: 400, headers: corsHeaders });
     }
 
     if (env.DB) {
@@ -179,11 +207,12 @@ async function handleReviewVendor(request, env, corsHeaders) {
   try {
     const body = await request.json();
     const submissionId = Number(body.submissionId);
-    const decision = sanitizeText(body.decision); // approved, rejected, needs_changes
+    const decision = sanitizeText(body.decision);
     const notes = sanitizeText(body.notes || '');
 
-    if (!submissionId || !['approved', 'rejected', 'needs_changes'].includes(decision)) {
-      return new Response(JSON.stringify({ error: 'Invalid review payload' }), { status: 400, headers: corsHeaders });
+    const validDecisions = ['approved', 'rejected', 'needs_changes'];
+    if (!submissionId || !validDecisions.includes(decision)) {
+      return new Response(JSON.stringify({ error: 'Invalid review decision enum' }), { status: 400, headers: corsHeaders });
     }
 
     if (env.DB) {
