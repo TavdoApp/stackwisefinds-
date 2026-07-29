@@ -336,6 +336,7 @@ export default function App() {
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
                 onOpenWizardClick={() => setShowWizardModal(true)}
+                onOpenSubmitClick={() => setShowVendorModal(true)}
               />
 
               {/* Growth Hack #1 Bar: Alternatives To [Software] */}

@@ -1,0 +1,24 @@
+{
+  "sequenceName": "StakDock Founder Backlink & Listing Outreach",
+  "version": "1.0",
+  "templates": [
+    {
+      "step": 1,
+      "name": "Initial Invitation — Claim Free Verified Listing",
+      "subject": "Found {{softwareName}} on Product Hunt — Claim your free listing on StakDock",
+      "body": "Hey {{founderName}},\n\nCongrats on launching {{softwareName}}!\n\nI came across {{softwareName}} and featured it in our software directory, StakDock (https://stakdock.com).\n\nYour tool is indexed under our AI & SaaS directory with an OpenPageRank domain score of {{openPageRankScore}}/10.\n\nYou can claim your free verified listing and grab your official 2026 Founder Badge here:\nhttps://stakdock.com/#pricing\n\nKeep up the great work!\n\nBest,\nOssama | Founder, StakDock"
+    },
+    {
+      "step": 2,
+      "name": "Follow-Up 1 — Embeddable Backlink Badge",
+      "subject": "Quick question about {{softwareName}}'s badge on StakDock",
+      "body": "Hey {{founderName}},\n\nQuick follow-up — we just published the official 2026 Verified Badge for {{softwareName}} on StakDock.\n\nYou can grab the do-follow SVG embed code for your landing page or docs footer here:\nhttps://stakdock.com/badge.svg\n\nIt takes 10 seconds to add and helps build instant social proof for new visitors.\n\nLet me know if you'd like me to feature {{softwareName}} in our top weekly spotlight banner!\n\nBest,\nOssama"
+    },
+    {
+      "step": 3,
+      "name": "Follow-Up 2 — Featured Spotlight Offer",
+      "subject": "Top spot for {{softwareName}} on StakDock?",
+      "body": "Hey {{founderName}},\n\nFinal quick note! We have 1 remaining top category spotlight spot open for {{softwareName}} on StakDock this month.\n\nFeatured listings get pinned at the top of category feeds and receive direct do-follow backlinks and priority telemetry tracking.\n\nYou can check out the featured listing options here:\nhttps://stakdock.com/#pricing\n\nCheers,\nOssama"
+    }
+  ]
+}

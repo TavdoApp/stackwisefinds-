@@ -6,6 +6,7 @@ export default function Hero({
   onExploreClick, 
   onReadGuidesClick, 
   onOpenWizardClick, 
+  onOpenSubmitClick,
   searchTerm = '',
   onSearchChange,
   onSearchSubmit,
@@ -94,7 +95,7 @@ export default function Hero({
         </div>
 
         {/* Action CTAs */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '20px' }}>
           <button onClick={onOpenWizardClick} className="btn-pill-green" style={{ padding: '12px 24px', fontSize: '0.92rem' }}>
             <Wand2 size={16} />
             <span>{t.heroRunWizard}</span>
@@ -105,6 +106,15 @@ export default function Hero({
             <span>{t.heroExploreTools}</span>
           </button>
         </div>
+
+        {/* Founder Claim Callout Banner */}
+        {onOpenSubmitClick && (
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(130, 167, 53, 0.1)', border: '1px solid rgba(130, 167, 53, 0.3)', borderRadius: '9999px', padding: '6px 16px', cursor: 'pointer' }} onClick={onOpenSubmitClick}>
+            <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--primary-green-dark)' }}>
+              ⚡ Building software or an AI app? Submit your tool for Free directory listing &rarr;
+            </span>
+          </div>
+        )}
 
       </div>
     </section>
