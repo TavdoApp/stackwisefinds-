@@ -2,7 +2,7 @@ import React from 'react';
 import { Sparkles, ArrowUpRight, ShieldCheck, Heart } from 'lucide-react';
 import { saasCategories } from '../data/saasData.jsx';
 
-export default function Footer({ setCurrentView, setSelectedCategory, onChangeLang, currentLang = 'en' }) {
+export default function Footer({ setCurrentView, setSelectedCategory, onChangeLang, currentLang = 'en', onOpenBadgeModal }) {
   return (
     <footer style={{
       background: '#141E14',
