@@ -25,15 +25,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Discover Tool Candidates for Editorial Review
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
-        run: node scripts/autoIngestNewTools.cjs
-
-      - name: Auto-Qualify High-Confidence Tool Candidates
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
-        run: node scripts/qualifyAndPublishTools.cjs
+      # Automated tool discovery & publishing stopped per owner directive. Tools are submitted via vendor form or manually curated.
 
       - name: Collect Reddit Research Drafts for Editorial Review
         run: node scripts/mineRedditQuestions.cjs
