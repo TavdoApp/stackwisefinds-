@@ -139,7 +139,18 @@ export default function App() {
       const hash = window.location.hash.toLowerCase().replace('#', '');
       const search = window.location.search.toLowerCase();
 
-      if (hash.startsWith('guide-') || search.includes('article=')) {
+      if (hash.startsWith('vs-')) {
+        const vsSlug = hash.replace('vs-', '');
+        const parts = vsSlug.split('-vs-');
+        if (parts.length === 2) {
+          setSelectedVersus({ toolAId: parts[0], toolBId: parts[1] });
+          setCurrentView('versus-detail');
+        }
+      } else if (hash.startsWith('alternatives-')) {
+        const altId = hash.replace('alternatives-', '').replace('-alternatives', '');
+        setSelectedAlternativeToolId(altId);
+        setCurrentView('alternatives-detail');
+      } else if (hash.startsWith('guide-') || search.includes('article=')) {
         const artId = hash.replace('guide-', '').trim();
         const found = highIntentArticles.find(a => a.id === artId);
         if (found) {

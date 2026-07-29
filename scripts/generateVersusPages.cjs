@@ -67,7 +67,8 @@ const alternativePages = [
   }
 ];
 
-function generateHtml({ title, description, canonicalUrl, heading, subheading }) {
+function generateHtml({ title, description, canonicalUrl, targetUrl, heading, subheading }) {
+  const linkUrl = targetUrl || canonicalUrl;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +100,7 @@ function generateHtml({ title, description, canonicalUrl, heading, subheading })
     <h1>${heading}</h1>
     <p>${subheading}</p>
     <p>${description}</p>
-    <a href="${canonicalUrl}" class="btn">View Live Interactive Comparison on StakDock &rarr;</a>
+    <a href="${linkUrl}" class="btn">View Live Interactive Comparison on StakDock &rarr;</a>
   </div>
 </body>
 </html>`;
@@ -113,6 +114,7 @@ for (const page of versusPages) {
     title: page.title,
     description: page.description,
     canonicalUrl: `https://stakdock.com/vs/${page.slug}`,
+    targetUrl: `https://stakdock.com/#vs-${page.slug}`,
     heading: page.title,
     subheading: `Detailed side-by-side analysis of ${page.toolA} vs ${page.toolB}.`
   });
@@ -127,6 +129,7 @@ for (const page of alternativePages) {
     title: page.title,
     description: page.description,
     canonicalUrl: `https://stakdock.com/alternatives/${page.slug}`,
+    targetUrl: `https://stakdock.com/#alternatives-${page.slug}`,
     heading: page.title,
     subheading: `Top alternatives and competitors to ${page.toolName} verified by StakDock.`
   });
