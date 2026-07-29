@@ -30,6 +30,7 @@ const VersusPage = lazy(() => import('./components/VersusPage'));
 const AlternativesView = lazy(() => import('./components/AlternativesView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
 const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
+const BadgeEmbedModal = lazy(() => import('./components/BadgeEmbedModal'));
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -132,6 +133,7 @@ export default function App() {
   const [showCompareModal, setShowCompareModal] = useState(false);
   const [showVendorModal, setShowVendorModal] = useState(false);
   const [showWizardModal, setShowWizardModal] = useState(false);
+  const [showBadgeModal, setShowBadgeModal] = useState(false);
 
   // Listen to URL Hash / Query Parameter for direct deep linking & article subroutes
   useEffect(() => {
@@ -886,6 +888,12 @@ export default function App() {
           />
         )}
 
+        {showBadgeModal && (
+          <BadgeEmbedModal
+            onClose={() => setShowBadgeModal(false)}
+          />
+        )}
+
         <BookmarkDrawer
           isOpen={showBookmarkDrawer}
           onClose={() => setShowBookmarkDrawer(false)}
@@ -901,6 +909,7 @@ export default function App() {
         setSelectedCategory={setSelectedCategory}
         currentLang={currentLang}
         onChangeLang={setCurrentLang}
+        onOpenBadgeModal={() => setShowBadgeModal(true)}
       />
     </div>
   );

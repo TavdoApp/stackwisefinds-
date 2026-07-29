@@ -103,7 +103,12 @@ export default function Footer({ setCurrentView, setSelectedCategory, onChangeLa
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
               <li>
-                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '800' }}>
+                <span onClick={onOpenBadgeModal} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span>⭐ Get Embeddable Badge</span>
+                </span>
+              </li>
+              <li>
+                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
                   Sponsor StakDock ($99)
                 </span>
               </li>
