@@ -29,6 +29,10 @@ jobs:
       - name: Auto-Approve Live Founder Submissions
         run: node scripts/autoApproveSubmissions.cjs
 
+      # Curate & Publish Verified Trending SEO Tools (Strict 4-Step Probe)
+      - name: Curate Verified Trending SEO Tools
+        run: node scripts/curateTrendingTools.cjs
+
       - name: Collect Reddit Research Drafts for Editorial Review
         run: node scripts/mineRedditQuestions.cjs
 

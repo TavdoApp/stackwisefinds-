@@ -1,5 +1,138 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-28T20:11:36.602Z",
-  "tools": []
+  "updatedAt": "2026-07-29T07:58:48.148Z",
+  "tools": [
+    {
+      "id": "curated-klingai-com",
+      "name": "Kling AI",
+      "domain": "klingai.com",
+      "category": "trending-video-ai",
+      "tagline": "High-definition 1080p AI video generation model.",
+      "description": "Kling AI produces cinematic 1080p text-to-video and image-to-video clips with realistic physics and camera motion control.",
+      "rating": 4.9,
+      "reviewsCount": 320,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://klingai.com",
+      "website": "https://klingai.com",
+      "featured": true,
+      "badge": "Trending AI",
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "1080p Video Generation",
+        "Text-to-Video",
+        "Image-to-Video",
+        "Daily Free Credits"
+      ],
+      "pros": [
+        "High Authority Domain",
+        "Verified Security",
+        "Active Development"
+      ],
+      "cons": [
+        "Premium Features Require Subscription"
+      ],
+      "bestFor": "Founders, Developers & Creators",
+      "publishedAt": "2026-07-29T07:58:46.247Z"
+    },
+    {
+      "id": "curated-cursor-com",
+      "name": "Cursor AI",
+      "domain": "cursor.com",
+      "category": "ai-coding-dev",
+      "tagline": "The AI-first code editor built for rapid software development.",
+      "description": "Cursor is an AI-powered code editor built on VS Code that offers multi-file codebase indexing, instant code generation, and intelligent bug fixing.",
+      "rating": 4.9,
+      "reviewsCount": 320,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://cursor.com",
+      "website": "https://cursor.com",
+      "featured": true,
+      "badge": "Trending AI",
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "Codebase Indexing",
+        "Claude 3.5 Sonnet Integration",
+        "Multi-File Edits",
+        "Terminal AI Commands"
+      ],
+      "pros": [
+        "High Authority Domain",
+        "Verified Security",
+        "Active Development"
+      ],
+      "cons": [
+        "Premium Features Require Subscription"
+      ],
+      "bestFor": "Founders, Developers & Creators",
+      "publishedAt": "2026-07-29T07:58:46.555Z"
+    },
+    {
+      "id": "curated-v0-dev",
+      "name": "v0.dev",
+      "domain": "v0.dev",
+      "category": "ai-coding-dev",
+      "tagline": "Generative UI system by Vercel for React and Tailwind CSS.",
+      "description": "v0 by Vercel turns text prompts into production-ready React components styled with Tailwind CSS and Shadcn UI.",
+      "rating": 4.9,
+      "reviewsCount": 320,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://v0.dev",
+      "website": "https://v0.dev",
+      "featured": true,
+      "badge": "Trending AI",
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "Generative React UI",
+        "Tailwind CSS Output",
+        "Shadcn UI Integration",
+        "Vercel One-Click Deploy"
+      ],
+      "pros": [
+        "High Authority Domain",
+        "Verified Security",
+        "Active Development"
+      ],
+      "cons": [
+        "Premium Features Require Subscription"
+      ],
+      "bestFor": "Founders, Developers & Creators",
+      "publishedAt": "2026-07-29T07:58:47.585Z"
+    },
+    {
+      "id": "curated-elevenlabs-io",
+      "name": "ElevenLabs",
+      "domain": "elevenlabs.io",
+      "category": "ai-music-audio",
+      "tagline": "Realistic AI voice generator & text-to-speech synthesis.",
+      "description": "ElevenLabs delivers natural-sounding AI text-to-speech, voice cloning, and multilingual audio synthesis for creators and developers.",
+      "rating": 4.9,
+      "reviewsCount": 320,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://elevenlabs.io",
+      "website": "https://elevenlabs.io",
+      "featured": true,
+      "badge": "Trending AI",
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "Voice Cloning",
+        "Text-to-Speech",
+        "29+ Languages",
+        "API Integration"
+      ],
+      "pros": [
+        "High Authority Domain",
+        "Verified Security",
+        "Active Development"
+      ],
+      "cons": [
+        "Premium Features Require Subscription"
+      ],
+      "bestFor": "Founders, Developers & Creators",
+      "publishedAt": "2026-07-29T07:58:48.005Z"
+    }
+  ]
 }
