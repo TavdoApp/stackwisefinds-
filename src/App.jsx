@@ -139,6 +139,25 @@ export default function App() {
       const hash = window.location.hash.toLowerCase().replace('#', '');
       const search = window.location.search.toLowerCase();
 
+      const pathname = window.location.pathname.toLowerCase();
+      if (pathname.startsWith('/vs/')) {
+        const vsSlug = pathname.replace('/vs/', '').replace(/\/$/, '');
+        const parts = vsSlug.split('-vs-');
+        if (parts.length === 2) {
+          setSelectedVersus({ toolAId: parts[0], toolBId: parts[1] });
+          setCurrentView('versus-detail');
+          return;
+        }
+      }
+
+      if (pathname.startsWith('/alternatives/')) {
+        const altSlug = pathname.replace('/alternatives/', '').replace(/\/$/, '');
+        const baseId = altSlug.replace('-alternatives', '');
+        setSelectedAlternativeToolId(baseId);
+        setCurrentView('alternatives-detail');
+        return;
+      }
+
       if (hash.startsWith('vs-')) {
         const vsSlug = hash.replace('vs-', '');
         const parts = vsSlug.split('-vs-');
