@@ -31,11 +31,17 @@ const sources = [
 
 function fetchText(url) {
   return new Promise((resolve) => {
+    const headers = {
+      Accept: 'application/xml, text/xml, application/json, */*',
+      'User-Agent': 'StakDockCandidateCollector/1.0 (+https://stakdock.com)'
+    };
+    const token = process.env.GH_TOKEN || process.env.GITHUB_TOKEN;
+    if (token && url.includes('api.github.com')) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
     const request = https.get(url, {
-      headers: {
-        Accept: 'application/xml, text/xml, application/json, */*',
-        'User-Agent': 'StakDockCandidateCollector/1.0 (+https://stakdock.com)'
-      },
+      headers,
       timeout: 8000
     }, (response) => {
       let body = '';

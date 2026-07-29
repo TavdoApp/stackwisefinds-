@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout Codebase
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js Environment
         uses: actions/setup-node@v4
@@ -24,9 +26,13 @@ jobs:
         run: npm ci
 
       - name: Discover Tool Candidates for Editorial Review
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/autoIngestNewTools.cjs
 
       - name: Auto-Qualify High-Confidence Tool Candidates
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
         run: node scripts/qualifyAndPublishTools.cjs
 
       - name: Collect Reddit Research Drafts for Editorial Review
@@ -68,6 +74,6 @@ jobs:
         run: |
           git config --global user.name "StakDock Bot"
           git config --global user.email "bot@stakdock.com"
-          git add data/ingestion-candidates.json data/auto-published-tools.json data/reddit-content-drafts.json data/auto-published-answers.json public/sitemap.xml
+          git add data/ingestion-candidates.json data/auto-published-tools.json data/openpagerank-cache.json data/reddit-content-drafts.json data/auto-published-answers.json public/sitemap.xml
           git commit -m "auto(ingest): collect candidates, health-check, and publish answer guides [skip ci]" || echo "No changes to commit"
-          git push
+          git push || echo "Git push skipped"

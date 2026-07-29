@@ -6,8 +6,8 @@ const host = 'stakdock.com';
 const indexNowKey = process.env.INDEXNOW_KEY;
 
 if (!indexNowKey) {
-  console.error('INDEXNOW_KEY is not configured.');
-  process.exit(1);
+  console.log('[IndexNow] INDEXNOW_KEY environment secret missing. Skipping live search engine ping.');
+  process.exit(0);
 }
 
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');

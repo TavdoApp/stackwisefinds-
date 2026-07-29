@@ -1,5 +1,362 @@
 {
   "schemaVersion": 1,
-  "updatedAt": null,
-  "drafts": []
+  "updatedAt": "2026-07-28T20:11:36.670Z",
+  "drafts": [
+    {
+      "id": "da52a0b0536ef0ac",
+      "status": "pending_review",
+      "question": "I read 3,022 one-to-three-star reviews across 15 competitor apps to figure out what to build. Here's what I found.",
+      "suggestedSlug": "i-read-3-022-one-to-three-star-reviews-across-15-competitor-apps-to-figure-out-w",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v94eim/i_read_3022_onetothreestar_reviews_across_15/",
+      "sourcePublishedAt": "2026-07-28T17:02:33+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "1710b0d548e43122",
+      "status": "auto_published",
+      "question": "Technical founder asking: Is a purely commission-based affiliate model realistic for early-stage SaaS?",
+      "suggestedSlug": "technical-founder-asking-is-a-purely-commission-based-affiliate-model-realistic-",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v89f1w/technical_founder_asking_is_a_purely/",
+      "sourcePublishedAt": "2026-07-27T18:49:36+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-28T20:11:39.120Z",
+        "canonicalUrl": "https://stakdock.com/guides/technical-founder-asking-is-a-purely-commission-based-affiliate-model-realistic-for-early--1710b0d5/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "91ae8dc008b81c66",
+      "status": "pending_review",
+      "question": "Built a tool for a problem I had, now stuck on who to actually sell it to",
+      "suggestedSlug": "built-a-tool-for-a-problem-i-had-now-stuck-on-who-to-actually-sell-it-to",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7tn4i/built_a_tool_for_a_problem_i_had_now_stuck_on_who/",
+      "sourcePublishedAt": "2026-07-27T07:44:19+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "4ac1d09f5fb425b2",
+      "status": "auto_published",
+      "question": "Would you use a simpler alternative to Canny for collecting feature requests?",
+      "suggestedSlug": "would-you-use-a-simpler-alternative-to-canny-for-collecting-feature-requests",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7jvs5/would_you_use_a_simpler_alternative_to_canny_for/",
+      "sourcePublishedAt": "2026-07-26T23:38:54+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-28T20:11:39.120Z",
+        "canonicalUrl": "https://stakdock.com/guides/would-you-use-a-simpler-alternative-to-canny-for-collecting-feature-requests-4ac1d09f/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "0c64d699e1c3f52f",
+      "status": "pending_review",
+      "question": "Built my SaaS last month, now completely lost on how to get users. Any tips?",
+      "suggestedSlug": "built-my-saas-last-month-now-completely-lost-on-how-to-get-users-any-tips",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v6rotl/built_my_saas_last_month_now_completely_lost_on/",
+      "sourcePublishedAt": "2026-07-26T02:55:28+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "3e7253a1f7b638f4",
+      "status": "pending_review",
+      "question": "Built a cheaper alternative to Vanta for answering vendor security questionnaires, curious if this is actually needed at small company size.",
+      "suggestedSlug": "built-a-cheaper-alternative-to-vanta-for-answering-vendor-security-questionnaire",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v64apw/built_a_cheaper_alternative_to_vanta_for/",
+      "sourcePublishedAt": "2026-07-25T10:05:16+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "761a27672bd9ac28",
+      "status": "pending_review",
+      "question": "Validating an idea: A lightweight Slack-to-Salesforce integration for sales teams. Is it worth building?",
+      "suggestedSlug": "validating-an-idea-a-lightweight-slack-to-salesforce-integration-for-sales-teams",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v5ru8h/validating_an_idea_a_lightweight/",
+      "sourcePublishedAt": "2026-07-24T23:37:42+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "72be3d43e879c500",
+      "status": "pending_review",
+      "question": "AI crawlers are already reading our guides and use-case pages, not just our website. Anyone else tracking this?",
+      "suggestedSlug": "ai-crawlers-are-already-reading-our-guides-and-use-case-pages-not-just-our-websi",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v557ib/ai_crawlers_are_already_reading_our_guides_and/",
+      "sourcePublishedAt": "2026-07-24T08:16:57+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "efab9a31172c1564",
+      "status": "pending_review",
+      "question": "I am looking for a best stripe alternative as a Non Resident US LLC",
+      "suggestedSlug": "i-am-looking-for-a-best-stripe-alternative-as-a-non-resident-us-llc",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v3jlf5/i_am_looking_for_a_best_stripe_alternative_as_a/",
+      "sourcePublishedAt": "2026-07-22T15:34:14+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "1ad65fc6b99f4dc6",
+      "status": "pending_review",
+      "question": "Is there any alternatives of mojo auth?",
+      "suggestedSlug": "is-there-any-alternatives-of-mojo-auth",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v3c04l/is_there_any_alternatives_of_mojo_auth/",
+      "sourcePublishedAt": "2026-07-22T10:18:55+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "6a254388968faecf",
+      "status": "pending_review",
+      "question": "I am trying to make affordable alternative to Google Maps API.",
+      "suggestedSlug": "i-am-trying-to-make-affordable-alternative-to-google-maps-api",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v2ggh9/i_am_trying_to_make_affordable_alternative_to/",
+      "sourcePublishedAt": "2026-07-21T12:03:59+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "1b9e6a792b1d57d8",
+      "status": "pending_review",
+      "question": "How to promote a product to video editors?",
+      "suggestedSlug": "how-to-promote-a-product-to-video-editors",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v1idbb/how_to_promote_a_product_to_video_editors/",
+      "sourcePublishedAt": "2026-07-20T11:05:38+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "d620e5c819de795a",
+      "status": "pending_review",
+      "question": "Anyone here actually sold their SaaS on TrustMRR? Looking for real experiences",
+      "suggestedSlug": "anyone-here-actually-sold-their-saas-on-trustmrr-looking-for-real-experiences",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v0ra4i/anyone_here_actually_sold_their_saas_on_trustmrr/",
+      "sourcePublishedAt": "2026-07-19T13:57:32+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "6b39df03c2d39707",
+      "status": "pending_review",
+      "question": "What SaaS would you build if you had a serious amount of cheap x86 hardware?",
+      "suggestedSlug": "what-saas-would-you-build-if-you-had-a-serious-amount-of-cheap-x86-hardware",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v0k3x4/what_saas_would_you_build_if_you_had_a_serious/",
+      "sourcePublishedAt": "2026-07-19T07:35:06+00:00",
+      "discoveredAt": "2026-07-28T20:11:36.670Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    }
+  ]
 }

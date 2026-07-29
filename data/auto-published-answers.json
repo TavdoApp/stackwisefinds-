@@ -1,5 +1,82 @@
 {
   "schemaVersion": 1,
-  "updatedAt": null,
-  "answers": []
+  "updatedAt": "2026-07-28T20:11:39.120Z",
+  "answers": [
+    {
+      "id": "answer-4ac1d09f5fb425b2",
+      "slug": "would-you-use-a-simpler-alternative-to-canny-for-collecting-feature-requests-4ac1d09f",
+      "title": "How to evaluate: Would you use a simpler alternative to Canny for collecting feature requests?",
+      "question": "Would you use a simpler alternative to Canny for collecting feature requests?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "alternatives",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7jvs5/would_you_use_a_simpler_alternative_to_canny_for/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-07-28T20:11:39.120Z",
+      "canonicalUrl": "https://stakdock.com/guides/would-you-use-a-simpler-alternative-to-canny-for-collecting-feature-requests-4ac1d09f/",
+      "sections": [
+        {
+          "heading": "Define what must improve",
+          "body": "For an alternative, identify the current limitation first: price, integrations, reporting, support, data export, or performance. A replacement only helps when it solves that specific constraint."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-1710b0d548e43122",
+      "slug": "technical-founder-asking-is-a-purely-commission-based-affiliate-model-realistic-for-early--1710b0d5",
+      "title": "How to evaluate: Technical founder asking: Is a purely commission-based affiliate model realistic for early-stage SaaS?",
+      "question": "Technical founder asking: Is a purely commission-based affiliate model realistic for early-stage SaaS?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "ai-tools",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v89f1w/technical_founder_asking_is_a_purely/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-07-28T20:11:39.120Z",
+      "canonicalUrl": "https://stakdock.com/guides/technical-founder-asking-is-a-purely-commission-based-affiliate-model-realistic-for-early--1710b0d5/",
+      "sections": [
+        {
+          "heading": "Set boundaries for AI use",
+          "body": "Define acceptable inputs, privacy requirements, review steps, and the quality standard for outputs. Test representative tasks rather than relying on broad product claims."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    }
+  ]
 }
