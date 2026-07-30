@@ -260,7 +260,7 @@
     },
     {
       "id": "72be3d43e879c500",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "AI crawlers are already reading our guides and use-case pages, not just our website. Anyone else tracking this?",
       "suggestedSlug": "ai-crawlers-are-already-reading-our-guides-and-use-case-pages-not-just-our-websi",
       "intent": "ai-tools",
@@ -280,6 +280,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T08:06:21.294Z",
+        "canonicalUrl": "https://stakdock.com/guides/ai-crawlers-are-already-reading-our-guides-and-use-case-pages-not-just-our-website-anyone--72be3d43/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
@@ -308,7 +318,7 @@
     },
     {
       "id": "1ad65fc6b99f4dc6",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Is there any alternatives of mojo auth?",
       "suggestedSlug": "is-there-any-alternatives-of-mojo-auth",
       "intent": "alternatives",
@@ -328,6 +338,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T08:06:21.294Z",
+        "canonicalUrl": "https://stakdock.com/guides/is-there-any-alternatives-of-mojo-auth-1ad65fc6/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
