@@ -45,22 +45,25 @@ export default function Hero({
         </p>
 
         {/* Toolify Prominent Hero Search Bar */}
-        <div style={{
-          maxWidth: '620px',
-          margin: '0 auto 32px',
-          position: 'relative',
-          display: 'flex',
-          alignItems: 'center',
-          background: '#FFFFFF',
-          borderRadius: '9999px',
-          padding: '6px 6px 6px 20px',
-          boxShadow: '0 10px 30px rgba(20, 30, 20, 0.08)',
-          border: '2px solid #82A735'
-        }}>
-          <Search size={20} color="var(--text-light)" style={{ marginRight: '10px', flexShrink: 0 }} />
+        <div 
+          className="hero-search-container"
+          style={{
+            maxWidth: '620px',
+            margin: '0 auto 32px',
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center',
+            background: '#FFFFFF',
+            borderRadius: '9999px',
+            padding: '6px 6px 6px 18px',
+            boxShadow: '0 10px 30px rgba(20, 30, 20, 0.08)',
+            border: '2px solid #82A735'
+          }}
+        >
+          <Search size={20} color="#82A735" style={{ marginRight: '10px', flexShrink: 0 }} />
           <input
             type="text"
-            placeholder={t.searchPlaceholder || "Search by tool name, e.g. Video AI, CRM, Copywriting..."}
+            placeholder={t.searchPlaceholder || "Search by tool name, e.g. Video AI, CRM..."}
             value={searchTerm}
             onChange={(e) => onSearchChange && onSearchChange(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -69,10 +72,11 @@ export default function Hero({
               flex: 1,
               border: 'none',
               outline: 'none',
-              fontSize: '1rem',
+              fontSize: '0.96rem',
               fontWeight: '600',
               color: 'var(--text-dark)',
-              background: 'transparent'
+              background: 'transparent',
+              minWidth: 0
             }}
           />
           <button
@@ -82,15 +86,14 @@ export default function Hero({
             }}
             className="btn-pill-green"
             style={{
-              padding: '10px 22px',
-              fontSize: '0.9rem',
+              padding: '10px 20px',
+              fontSize: '0.88rem',
               borderRadius: '9999px',
               flexShrink: 0
             }}
             aria-label="Submit Search"
           >
             <span>Search</span>
-            <Search size={16} />
           </button>
         </div>
 

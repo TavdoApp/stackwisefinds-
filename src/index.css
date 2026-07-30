@@ -428,11 +428,28 @@ button {
     justify-content: center;
   }
 
+  /* Mobile Search Bar Optimization */
+  .hero-search-container {
+    padding: 4px 4px 4px 14px !important;
+    border-width: 1.5px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-search-container input {
+    font-size: 0.88rem !important;
+  }
+
+  .hero-search-container .btn-pill-green {
+    min-height: 36px !important;
+    padding: 6px 14px !important;
+    font-size: 0.82rem !important;
+  }
+
   /* Mobile button sizing — bigger tap targets */
   .btn-pill-green,
   .btn-pill-dark,
   .btn-pill-outline {
-    min-height: 46px;
+    min-height: 42px;
     font-size: 0.88rem;
   }
 
