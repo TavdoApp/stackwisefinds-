@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T08:06:21.294Z",
+  "updatedAt": "2026-07-30T08:36:02.007Z",
   "answers": [
+    {
+      "id": "answer-d620e5c819de795a",
+      "slug": "anyone-here-actually-sold-their-saas-on-trustmrr-looking-for-real-experiences-d620e5c8",
+      "title": "How to evaluate: Anyone here actually sold their SaaS on TrustMRR? Looking for real experiences",
+      "question": "Anyone here actually sold their SaaS on TrustMRR? Looking for real experiences",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v0ra4i/anyone_here_actually_sold_their_saas_on_trustmrr/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-07-30T08:36:02.007Z",
+      "canonicalUrl": "https://stakdock.com/guides/anyone-here-actually-sold-their-saas-on-trustmrr-looking-for-real-experiences-d620e5c8/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-1b9e6a792b1d57d8",
+      "slug": "how-to-promote-a-product-to-video-editors-1b9e6a79",
+      "title": "How to evaluate: How to promote a product to video editors?",
+      "question": "How to promote a product to video editors?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v1idbb/how_to_promote_a_product_to_video_editors/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-07-30T08:36:02.007Z",
+      "canonicalUrl": "https://stakdock.com/guides/how-to-promote-a-product-to-video-editors-1b9e6a79/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-1ad65fc6b99f4dc6",
       "slug": "is-there-any-alternatives-of-mojo-auth-1ad65fc6",

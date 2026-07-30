@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T07:59:59.190Z",
+  "updatedAt": "2026-07-30T08:36:00.774Z",
   "drafts": [
     {
       "id": "9648f7a0cc684732",
@@ -376,7 +376,7 @@
     },
     {
       "id": "1b9e6a792b1d57d8",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "How to promote a product to video editors?",
       "suggestedSlug": "how-to-promote-a-product-to-video-editors",
       "intent": "tool-selection",
@@ -396,11 +396,21 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T08:36:02.007Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-to-promote-a-product-to-video-editors-1b9e6a79/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
       "id": "d620e5c819de795a",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Anyone here actually sold their SaaS on TrustMRR? Looking for real experiences",
       "suggestedSlug": "anyone-here-actually-sold-their-saas-on-trustmrr-looking-for-real-experiences",
       "intent": "tool-selection",
@@ -420,6 +430,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T08:36:02.007Z",
+        "canonicalUrl": "https://stakdock.com/guides/anyone-here-actually-sold-their-saas-on-trustmrr-looking-for-real-experiences-d620e5c8/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
