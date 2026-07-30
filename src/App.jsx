@@ -160,6 +160,35 @@ export default function App() {
         return;
       }
 
+      if (pathname === '/privacy' || hash === 'privacy' || search.includes('page=privacy')) {
+        setLegalView('privacy');
+        setCurrentView('privacy');
+        return;
+      }
+
+      if (pathname === '/terms' || hash === 'terms' || search.includes('page=terms')) {
+        setLegalView('terms');
+        setCurrentView('terms');
+        return;
+      }
+
+      if (pathname === '/refund' || hash === 'refund' || search.includes('page=refund')) {
+        setLegalView('refund');
+        setCurrentView('refund');
+        return;
+      }
+
+      if (pathname === '/disclosure' || hash === 'disclosure' || search.includes('page=disclosure')) {
+        setLegalView('disclosure');
+        setCurrentView('disclosure');
+        return;
+      }
+
+      if (pathname === '/pricing' || hash === 'pricing' || search.includes('page=pricing')) {
+        setShowVendorModal(true);
+        return;
+      }
+
       if (hash.startsWith('vs-')) {
         const vsSlug = hash.replace('vs-', '');
         const parts = vsSlug.split('-vs-');
@@ -178,17 +207,6 @@ export default function App() {
           setSelectedArticle(found);
           setCurrentView('article-detail');
         }
-      } else if (hash === 'terms' || search.includes('page=terms')) {
-        setLegalView('terms');
-        setCurrentView('legal-view');
-      } else if (hash === 'refund' || search.includes('page=refund')) {
-        setLegalView('refund');
-        setCurrentView('legal-view');
-      } else if (hash === 'privacy' || search.includes('page=privacy')) {
-        setLegalView('privacy');
-        setCurrentView('legal-view');
-      } else if (hash === 'pricing' || search.includes('page=pricing')) {
-        setShowVendorModal(true);
       }
     };
 
@@ -835,12 +853,13 @@ export default function App() {
               />
             )}
 
-            {(currentView === 'privacy' || currentView === 'terms' || currentView === 'disclosure') && (
+            {(currentView === 'privacy' || currentView === 'terms' || currentView === 'refund' || currentView === 'disclosure' || currentView === 'legal-view') && (
               <LegalViews
-                legalView={currentView}
+                view={legalView || currentView}
                 onBack={() => {
                   setCurrentView('directory');
                   window.location.hash = '';
+                  window.history.pushState(null, '', '/');
                 }}
               />
             )}

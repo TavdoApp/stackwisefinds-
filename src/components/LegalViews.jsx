@@ -144,9 +144,50 @@ export function RefundPolicyView({ onBack }) {
   );
 }
 
-export default function LegalViews({ view, onBack }) {
-  if (view === 'privacy') return <PrivacyPolicyView onBack={onBack} />;
-  if (view === 'terms') return <TermsOfServiceView onBack={onBack} />;
-  if (view === 'refund') return <RefundPolicyView onBack={onBack} />;
+export function AffiliateDisclosureView({ onBack }) {
+  return (
+    <div className="container" style={{ padding: '60px 16px', maxWidth: '800px' }}>
+      <button onClick={onBack} className="btn-pill-outline" style={{ marginBottom: '24px' }}>
+        <ArrowLeft size={16} /> Back to Directory
+      </button>
+
+      <div style={{ background: '#FFFFFF', padding: '40px', borderRadius: '24px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-soft)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#82A735', fontWeight: '800', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px' }}>
+          <ShieldCheck size={16} /> Reader Transparency
+        </div>
+        <h1 style={{ fontSize: '2.4rem', fontWeight: '800', marginBottom: '8px' }}>Affiliate Referral Disclosure</h1>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Last updated: July 27, 2026</p>
+
+        <div style={{ lineHeight: '1.7', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>1. Independent Editorial Analysis</h2>
+          <p style={{ marginBottom: '16px' }}>
+            StakDock is an independent software directory and AI tool comparison platform. We publish reviews, comparison matrices, and buyer guides to help creators and businesses choose the right tools.
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>2. Affiliate Referral Links</h2>
+          <p style={{ marginBottom: '16px' }}>
+            Some outgoing links on our site contain affiliate tracking tags. If you click a software link and purchase a paid plan, we may receive a small referral commission at <strong>zero additional cost to you</strong>.
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>3. Editorial Integrity Guarantee</h2>
+          <p style={{ marginBottom: '16px' }}>
+            Affiliate compensation does not influence our editorial ratings or comparison criteria. Our rankings are calculated using verified web traffic telemetry, OpenPageRank authority scores, and community reviews.
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>4. Questions</h2>
+          <p>
+            If you have any questions regarding our affiliate partnerships, please email <strong>support@stakdock.com</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function LegalViews({ view, legalView, onBack }) {
+  const activeView = view || legalView;
+  if (activeView === 'terms') return <TermsOfServiceView onBack={onBack} />;
+  if (activeView === 'refund') return <RefundPolicyView onBack={onBack} />;
+  if (activeView === 'disclosure') return <AffiliateDisclosureView onBack={onBack} />;
   return <PrivacyPolicyView onBack={onBack} />;
 }

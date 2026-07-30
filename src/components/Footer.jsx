@@ -137,22 +137,22 @@ export default function Footer({ setCurrentView, setLegalView, setSelectedCatego
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
               <li>
-                <span onClick={() => setCurrentView('privacy')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { if (setLegalView) setLegalView('privacy'); setCurrentView('privacy'); window.history.pushState(null, '', '/privacy'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   Privacy Policy
                 </span>
               </li>
               <li>
-                <span onClick={() => setCurrentView('terms')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { if (setLegalView) setLegalView('terms'); setCurrentView('terms'); window.history.pushState(null, '', '/terms'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   Terms of Service
                 </span>
               </li>
               <li>
-                <span onClick={() => { setLegalView && setLegalView('refund'); setCurrentView('legal-view'); }} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '700' }}>
+                <span onClick={() => { if (setLegalView) setLegalView('refund'); setCurrentView('refund'); window.history.pushState(null, '', '/refund'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '700' }}>
                   Refund & Cancellation Policy
                 </span>
               </li>
               <li>
-                <span onClick={() => setCurrentView('disclosure')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { if (setLegalView) setLegalView('disclosure'); setCurrentView('disclosure'); window.history.pushState(null, '', '/disclosure'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   Affiliate Disclosure
                 </span>
               </li>
