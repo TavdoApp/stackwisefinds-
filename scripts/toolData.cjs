@@ -6,7 +6,7 @@ const autoPublishedPath = path.join(__dirname, '..', 'data', 'auto-published-too
 
 function readStaticTools() {
   const source = fs.readFileSync(staticDataPath, 'utf8');
-  const match = source.match(/export const staticSaasTools = (\[[\s\S]*?\n\]);\n\nconst isLegacySyntheticTool/);
+  const match = source.match(/export const staticSaasTools = (\[[\s\S]*?\n\]);/);
   if (!match) throw new Error('Could not parse the static tool dataset.');
   return JSON.parse(match[1]);
 }
