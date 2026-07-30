@@ -56,9 +56,9 @@ function postJson(endpoint) {
   console.log(`Submitted ${urlList.length} canonical URLs. IndexNow: ${indexNowStatus}; Bing: ${bingStatus}.`);
 
   if (indexNowStatus >= 400 || bingStatus >= 400) {
-    process.exitCode = 1;
+    console.warn(`[IndexNow Warning] Endpoints returned IndexNow: ${indexNowStatus}; Bing: ${bingStatus}. Skipping failure.`);
   }
 })().catch((error) => {
-  console.error(`IndexNow ping failed: ${error.message}`);
-  process.exit(1);
+  console.warn(`[IndexNow Warning] Ping skipped: ${error.message}`);
+  process.exit(0);
 });

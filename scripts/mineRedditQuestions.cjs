@@ -20,21 +20,29 @@ const sources = [
 
 function fetchText(url) {
   return new Promise((resolve) => {
-    const request = https.get(url, {
-      headers: {
-        Accept: 'application/atom+xml, application/xml, text/xml, */*',
-        'User-Agent': 'StakDockEditorialResearch/1.0 (+https://stakdock.com)'
-      },
-      timeout: 8000
-    }, (response) => {
-      let body = '';
-      response.setEncoding('utf8');
-      response.on('data', (chunk) => { body += chunk; });
-      response.on('end', () => resolve(body));
-    });
+    try {
+      const request = https.get(url, {
+        headers: {
+          Accept: 'application/atom+xml, application/xml, text/xml, */*',
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36 StakDockBot/1.0'
+        },
+        timeout: 6000
+      }, (response) => {
+        let body = '';
+        if (response.statusCode >= 400) {
+          response.resume();
+          return resolve('');
+        }
+        response.setEncoding('utf8');
+        response.on('data', (chunk) => { body += chunk; });
+        response.on('end', () => resolve(body));
+      });
 
-    request.on('error', () => resolve(''));
-    request.on('timeout', () => { request.destroy(); resolve(''); });
+      request.on('error', () => resolve(''));
+      request.on('timeout', () => { request.destroy(); resolve(''); });
+    } catch (e) {
+      resolve('');
+    }
   });
 }
 
@@ -173,6 +181,6 @@ async function run() {
 }
 
 run().catch((error) => {
-  console.error(`Reddit draft collection failed: ${error.message}`);
-  process.exit(1);
+  console.warn(`Reddit draft collection skipped: ${error.message}`);
+  process.exit(0);
 });

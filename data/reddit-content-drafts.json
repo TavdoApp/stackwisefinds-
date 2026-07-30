@@ -1,7 +1,55 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-28T20:11:36.670Z",
+  "updatedAt": "2026-07-30T07:59:59.190Z",
   "drafts": [
+    {
+      "id": "9648f7a0cc684732",
+      "status": "pending_review",
+      "question": "Is Blogging on Shopify Dead?💀",
+      "suggestedSlug": "is-blogging-on-shopify-dead",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vadi14/is_blogging_on_shopify_dead/",
+      "sourcePublishedAt": "2026-07-30T00:01:26+00:00",
+      "discoveredAt": "2026-07-30T07:59:59.190Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "3a1749da804a255e",
+      "status": "pending_review",
+      "question": "Why cheaper AI tokens are exploding enterprise budgets (The Jevons Paradox in 2026)",
+      "suggestedSlug": "why-cheaper-ai-tokens-are-exploding-enterprise-budgets-the-jevons-paradox-in-202",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v9ts9z/why_cheaper_ai_tokens_are_exploding_enterprise/",
+      "sourcePublishedAt": "2026-07-29T11:43:40+00:00",
+      "discoveredAt": "2026-07-30T07:59:59.190Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "da52a0b0536ef0ac",
       "status": "pending_review",
@@ -120,7 +168,7 @@
     },
     {
       "id": "0c64d699e1c3f52f",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Built my SaaS last month, now completely lost on how to get users. Any tips?",
       "suggestedSlug": "built-my-saas-last-month-now-completely-lost-on-how-to-get-users-any-tips",
       "intent": "tool-selection",
@@ -140,6 +188,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T08:00:19.676Z",
+        "canonicalUrl": "https://stakdock.com/guides/built-my-saas-last-month-now-completely-lost-on-how-to-get-users-any-tips-0c64d699/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
@@ -168,7 +226,7 @@
     },
     {
       "id": "761a27672bd9ac28",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Validating an idea: A lightweight Slack-to-Salesforce integration for sales teams. Is it worth building?",
       "suggestedSlug": "validating-an-idea-a-lightweight-slack-to-salesforce-integration-for-sales-teams",
       "intent": "tool-selection",
@@ -188,6 +246,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T08:00:19.676Z",
+        "canonicalUrl": "https://stakdock.com/guides/validating-an-idea-a-lightweight-slack-to-salesforce-integration-for-sales-teams-is-it-wor-761a2767/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
