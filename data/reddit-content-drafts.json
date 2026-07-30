@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T14:15:11.161Z",
+  "updatedAt": "2026-07-30T19:41:07.774Z",
   "drafts": [
+    {
+      "id": "35634a2fccc388ec",
+      "status": "auto_published",
+      "question": "Starting a Business Process Improvement / Operations Optimization business - should I niche down? and can I use custom video audits to win clients?",
+      "suggestedSlug": "starting-a-business-process-improvement-operations-optimization-business-should-",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vawzm0/starting_a_business_process_improvement/",
+      "sourcePublishedAt": "2026-07-30T15:33:44+00:00",
+      "discoveredAt": "2026-07-30T19:41:07.774Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T19:41:09.222Z",
+        "canonicalUrl": "https://stakdock.com/guides/starting-a-business-process-improvement-operations-optimization-business-should-i-niche-do-35634a2f/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "9648f7a0cc684732",
       "status": "pending_review",

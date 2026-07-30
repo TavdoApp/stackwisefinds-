@@ -1,7 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T14:15:12.379Z",
+  "updatedAt": "2026-07-30T19:41:09.222Z",
   "answers": [
+    {
+      "id": "answer-35634a2fccc388ec",
+      "slug": "starting-a-business-process-improvement-operations-optimization-business-should-i-niche-do-35634a2f",
+      "title": "How to evaluate: Starting a Business Process Improvement / Operations Optimization business - should I niche down? and can I use custom video audits to win clients?",
+      "question": "Starting a Business Process Improvement / Operations Optimization business - should I niche down? and can I use custom video audits to win clients?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vawzm0/starting_a_business_process_improvement/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-07-30T19:41:09.222Z",
+      "canonicalUrl": "https://stakdock.com/guides/starting-a-business-process-improvement-operations-optimization-business-should-i-niche-do-35634a2f/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-6b39df03c2d39707",
       "slug": "what-saas-would-you-build-if-you-had-a-serious-amount-of-cheap-x86-hardware-6b39df03",
