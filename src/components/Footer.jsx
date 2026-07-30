@@ -2,7 +2,7 @@ import React from 'react';
 import { Sparkles, ArrowUpRight, ShieldCheck, Heart } from 'lucide-react';
 import { saasCategories } from '../data/saasData.jsx';
 
-export default function Footer({ setCurrentView, setSelectedCategory, onChangeLang, currentLang = 'en', onOpenBadgeModal }) {
+export default function Footer({ setCurrentView, setLegalView, setSelectedCategory, onChangeLang, currentLang = 'en', onOpenBadgeModal }) {
   return (
     <footer style={{
       background: '#141E14',
@@ -144,6 +144,11 @@ export default function Footer({ setCurrentView, setSelectedCategory, onChangeLa
               <li>
                 <span onClick={() => setCurrentView('terms')} style={{ cursor: 'pointer' }}>
                   Terms of Service
+                </span>
+              </li>
+              <li>
+                <span onClick={() => { setLegalView && setLegalView('refund'); setCurrentView('legal-view'); }} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '700' }}>
+                  Refund & Cancellation Policy
                 </span>
               </li>
               <li>

@@ -907,6 +907,7 @@ export default function App() {
       {/* Footer */}
       <Footer 
         setCurrentView={setCurrentView}
+        setLegalView={setLegalView}
         setSelectedCategory={setSelectedCategory}
         currentLang={currentLang}
         onChangeLang={setCurrentLang}
