@@ -1,29 +1,158 @@
 import React from 'react';
-import { ShieldCheck, Sparkles, SearchCheck, ExternalLink } from 'lucide-react';
+import { ShieldCheck, Sparkles, TrendingUp, BookOpen, ExternalLink, Award, Star } from 'lucide-react';
+import { saasTools } from '../data/saasData.jsx';
+import { highIntentArticles } from '../data/articlesData.js';
+import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
-export default function AiNewsSidebar() {
-  const checks = [
-    ['Source checks', 'New listings must have a traceable public source.'],
-    ['Website checks', 'Automated listings require a reachable HTTPS website.'],
-    ['Duplicate checks', 'Repeated names and synthetic template records are hidden.']
-  ];
+export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
+  // Top 5 Trending Tools by rating & reviews
+  const topTrending = saasTools
+    .filter(t => t.rating >= 4.8)
+    .slice(0, 5);
+
+  const topGuides = highIntentArticles.slice(0, 4);
 
   return (
-    <aside style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '16px', padding: '16px', boxShadow: 'var(--shadow-soft)' }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px', borderBottom: '1px solid var(--border-color)', paddingBottom: '10px' }}>
-        <ShieldCheck size={17} color="#82A735" />
-        <h3 style={{ fontSize: '1rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>Directory quality</h3>
-      </div>
-      <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.5', marginBottom: '14px' }}>StakDock does not show invented traffic, ratings, or news as facts.</p>
-      <div style={{ display: 'grid', gap: '10px' }}>
-        {checks.map(([title, description]) => (
-          <div key={title} style={{ background: '#F6F7F2', borderRadius: '10px', padding: '10px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', fontWeight: '800', color: 'var(--text-dark)' }}><SearchCheck size={13} color="#82A735" />{title}</div>
-            <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '5px 0 0' }}>{description}</p>
+    <aside style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      
+      {/* Widget 1: Top 5 Trending Leaderboard */}
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '16px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          marginBottom: '12px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid var(--border-color)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <TrendingUp size={16} color="#82A735" />
+            <h3 style={{ fontSize: '0.92rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+              Top Traffic Gainers
+            </h3>
           </div>
-        ))}
+          <span style={{ fontSize: '0.65rem', background: '#EBF0E1', color: '#82A735', fontWeight: '800', padding: '2px 6px', borderRadius: '4px' }}>
+            Weekly
+          </span>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {topTrending.map((tool, index) => (
+            <div
+              key={tool.id}
+              onClick={() => onSelectTool && onSelectTool(tool.id)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 8px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                background: '#F6F7F2',
+                transition: 'all 0.15s ease'
+              }}
+            >
+              <span style={{
+                fontSize: '0.72rem',
+                fontWeight: '900',
+                color: index === 0 ? '#FFB800' : index === 1 ? '#94A3B8' : '#CBD5E1',
+                width: '14px'
+              }}>
+                #{index + 1}
+              </span>
+
+              <div style={{ fontWeight: '700', fontSize: '0.8rem', color: 'var(--text-dark)', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                {tool.name}
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '2px', fontSize: '0.72rem', fontWeight: '800', color: '#82A735' }}>
+                <Star size={11} fill="#82A735" color="#82A735" />
+                <span>{tool.rating}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <a href="#guides-section" className="btn-pill-outline" style={{ width: '100%', marginTop: '14px', padding: '7px 10px', fontSize: '0.74rem' }}><Sparkles size={13} />Browse buyer guides<ExternalLink size={12} /></a>
+
+      {/* Widget 2: Popular Buyer Guides & Alternatives */}
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '16px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          marginBottom: '12px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid var(--border-color)'
+        }}>
+          <BookOpen size={16} color="#82A735" />
+          <h3 style={{ fontSize: '0.92rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Buyer Comparison Guides
+          </h3>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          {topGuides.map(art => (
+            <div
+              key={art.id}
+              onClick={() => {
+                if (onSelectArticle) onSelectArticle(art);
+                else window.location.hash = `guide-${art.id}`;
+              }}
+              style={{
+                cursor: 'pointer',
+                padding: '8px 10px',
+                borderRadius: '10px',
+                background: '#F6F7F2',
+                transition: 'all 0.15s ease'
+              }}
+            >
+              <div style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-dark)', lineHeight: '1.3', marginBottom: '3px' }}>
+                {art.title}
+              </div>
+              <div style={{ fontSize: '0.68rem', color: '#82A735', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <span>Read Analysis</span>
+                <ExternalLink size={10} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Widget 3: Directory Quality Guarantee */}
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '16px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+          <ShieldCheck size={17} color="#82A735" />
+          <h3 style={{ fontSize: '0.9rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Directory Quality Guarantee
+          </h3>
+        </div>
+        <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 10px 0' }}>
+          Every tool on StakDock undergoes HTTPS SSL verification, OpenPageRank domain scoring, and duplicate filtering.
+        </p>
+        <div style={{ background: '#F6F7F2', borderRadius: '8px', padding: '8px 10px', fontSize: '0.72rem', color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Award size={14} color="#82A735" />
+          <span>Independent & Reader Supported</span>
+        </div>
+      </div>
+
     </aside>
   );
 }

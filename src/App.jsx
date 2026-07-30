@@ -554,7 +554,10 @@ export default function App() {
                   <div className="toolify-3col-layout">
                     {/* Left Column: Featured Spotlights */}
                     <div className="toolify-col-left">
-                      <FeaturedSidebar onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }} />
+                      <FeaturedSidebar 
+                        onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }} 
+                        onOpenVendorModal={() => setShowVendorModal(true)}
+                      />
                     </div>
 
                     {/* Center Column: Main Directory List */}
@@ -577,9 +580,12 @@ export default function App() {
                       ))}
                     </div>
 
-                    {/* Right Column: Real-Time AI News Sidebar */}
+                    {/* Right Column: Real-Time AI News & Leaderboard Sidebar */}
                     <div className="toolify-col-right">
-                      <AiNewsSidebar />
+                      <AiNewsSidebar 
+                        onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }}
+                        onSelectArticle={(art) => { setSelectedArticle(art); setCurrentView('article-detail'); }}
+                      />
                     </div>
                   </div>
 
