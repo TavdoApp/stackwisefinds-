@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T08:36:00.774Z",
+  "updatedAt": "2026-07-30T14:15:11.161Z",
   "drafts": [
     {
       "id": "9648f7a0cc684732",
@@ -444,7 +444,7 @@
     },
     {
       "id": "6b39df03c2d39707",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "What SaaS would you build if you had a serious amount of cheap x86 hardware?",
       "suggestedSlug": "what-saas-would-you-build-if-you-had-a-serious-amount-of-cheap-x86-hardware",
       "intent": "tool-selection",
@@ -464,6 +464,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-30T14:15:12.379Z",
+        "canonicalUrl": "https://stakdock.com/guides/what-saas-would-you-build-if-you-had-a-serious-amount-of-cheap-x86-hardware-6b39df03/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     }
   ]
