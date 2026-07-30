@@ -108,22 +108,22 @@ export default function Footer({ setCurrentView, setLegalView, setSelectedCatego
                 </span>
               </li>
               <li>
-                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   Sponsor StakDock ($99)
                 </span>
               </li>
               <li>
-                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   Top Banner Ad ($99/mo)
                 </span>
               </li>
               <li>
-                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   Left Spotlight Vendor ($99/yr)
                 </span>
               </li>
               <li>
-                <span onClick={() => setCurrentView('advertise')} style={{ cursor: 'pointer' }}>
+                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
                   In-Feed Sponsored Badge ($49/mo)
                 </span>
               </li>

@@ -95,7 +95,7 @@ export default function Navbar({
           {/* Desktop Center Nav Views */}
           <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: '4px', background: '#F6F7F2', padding: '4px', borderRadius: '9999px', border: '1px solid #E2E6D8' }}>
             <button 
-              onClick={() => setCurrentView('directory')}
+              onClick={() => { setCurrentView('directory'); window.history.pushState(null, '', '/'); window.scrollTo(0, 0); }}
               className={currentView === 'directory' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Software Directory"
@@ -104,7 +104,7 @@ export default function Navbar({
               <span>{t.navDirectory || 'Directory'}</span>
             </button>
             <button 
-              onClick={() => setCurrentView('category-grid')}
+              onClick={() => { setCurrentView('category-grid'); window.history.pushState(null, '', '/categories'); window.scrollTo(0, 0); }}
               className={currentView === 'category-grid' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Categories"
@@ -112,7 +112,7 @@ export default function Navbar({
               <span>Categories</span>
             </button>
             <button 
-              onClick={() => setCurrentView('ranking')}
+              onClick={() => { setCurrentView('ranking'); window.history.pushState(null, '', '/ranking'); window.scrollTo(0, 0); }}
               className={currentView === 'ranking' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Rankings"
@@ -120,7 +120,7 @@ export default function Navbar({
               <span>Rankings</span>
             </button>
             <button 
-              onClick={() => setCurrentView('advertise')}
+              onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }}
               className={currentView === 'advertise' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Advertise"
@@ -128,7 +128,7 @@ export default function Navbar({
               <span>Advertise</span>
             </button>
             <button 
-              onClick={() => setCurrentView('articles')}
+              onClick={() => { setCurrentView('articles'); window.history.pushState(null, '', '/guides'); window.scrollTo(0, 0); }}
               className={currentView === 'articles' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
               aria-label="Buyer Guides"

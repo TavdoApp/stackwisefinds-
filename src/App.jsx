@@ -140,8 +140,8 @@ export default function App() {
     const handleUrlRouting = () => {
       const hash = window.location.hash.toLowerCase().replace('#', '');
       const search = window.location.search.toLowerCase();
-
       const pathname = window.location.pathname.toLowerCase();
+
       if (pathname.startsWith('/vs/')) {
         const vsSlug = pathname.replace('/vs/', '').replace(/\/$/, '');
         const parts = vsSlug.split('-vs-');
@@ -184,8 +184,23 @@ export default function App() {
         return;
       }
 
-      if (pathname === '/pricing' || hash === 'pricing' || search.includes('page=pricing')) {
-        setShowVendorModal(true);
+      if (pathname === '/pricing' || pathname === '/advertise' || hash === 'pricing' || hash === 'advertise' || search.includes('page=pricing')) {
+        setCurrentView('advertise');
+        return;
+      }
+
+      if (pathname === '/ranking' || hash === 'ranking') {
+        setCurrentView('ranking');
+        return;
+      }
+
+      if (pathname === '/categories' || hash === 'categories') {
+        setCurrentView('category-grid');
+        return;
+      }
+
+      if (pathname === '/guides' || hash === 'guides') {
+        setCurrentView('articles');
         return;
       }
 
@@ -207,12 +222,18 @@ export default function App() {
           setSelectedArticle(found);
           setCurrentView('article-detail');
         }
+      } else if (pathname === '/' || pathname === '') {
+        setCurrentView('directory');
       }
     };
 
     handleUrlRouting();
     window.addEventListener('hashchange', handleUrlRouting);
-    return () => window.removeEventListener('hashchange', handleUrlRouting);
+    window.addEventListener('popstate', handleUrlRouting);
+    return () => {
+      window.removeEventListener('hashchange', handleUrlRouting);
+      window.removeEventListener('popstate', handleUrlRouting);
+    };
   }, []);
 
   // Toggle compare item
