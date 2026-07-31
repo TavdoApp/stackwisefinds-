@@ -1,7 +1,65 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T19:41:07.774Z",
+  "updatedAt": "2026-07-31T03:29:27.069Z",
   "drafts": [
+    {
+      "id": "04eb503d9d50ef1a",
+      "status": "pending_review",
+      "question": "Zendesk & Intercom alternatives?",
+      "suggestedSlug": "zendesk-intercom-alternatives",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vb5ryz/zendesk_intercom_alternatives/",
+      "sourcePublishedAt": "2026-07-30T20:47:25+00:00",
+      "discoveredAt": "2026-07-31T03:29:27.069Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "d46f9759d6e3d12d",
+      "status": "auto_published",
+      "question": "How much of your LLM traffic actually needs a frontier model?",
+      "suggestedSlug": "how-much-of-your-llm-traffic-actually-needs-a-frontier-model",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vb5lz7/how_much_of_your_llm_traffic_actually_needs_a/",
+      "sourcePublishedAt": "2026-07-30T20:41:16+00:00",
+      "discoveredAt": "2026-07-31T03:29:27.069Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-07-31T03:29:28.271Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-much-of-your-llm-traffic-actually-needs-a-frontier-model-d46f9759/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "35634a2fccc388ec",
       "status": "auto_published",

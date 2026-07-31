@@ -1,7 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-30T19:41:09.222Z",
+  "updatedAt": "2026-07-31T03:29:28.271Z",
   "answers": [
+    {
+      "id": "answer-d46f9759d6e3d12d",
+      "slug": "how-much-of-your-llm-traffic-actually-needs-a-frontier-model-d46f9759",
+      "title": "How to evaluate: How much of your LLM traffic actually needs a frontier model?",
+      "question": "How much of your LLM traffic actually needs a frontier model?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "ai-tools",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vb5lz7/how_much_of_your_llm_traffic_actually_needs_a/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-07-31T03:29:28.271Z",
+      "canonicalUrl": "https://stakdock.com/guides/how-much-of-your-llm-traffic-actually-needs-a-frontier-model-d46f9759/",
+      "sections": [
+        {
+          "heading": "Set boundaries for AI use",
+          "body": "Define acceptable inputs, privacy requirements, review steps, and the quality standard for outputs. Test representative tasks rather than relying on broad product claims."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-35634a2fccc388ec",
       "slug": "starting-a-business-process-improvement-operations-optimization-business-should-i-niche-do-35634a2f",
