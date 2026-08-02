@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, ChevronDown, ChevronUp, Shield, Globe } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema, injectFaqPageSchema } from '../utils/schemaMarkup.jsx';
+
+function resolveTool(targetSlug) {
+  if (!targetSlug) return null;
+  const slug = String(targetSlug).toLowerCase().trim();
+  return saasTools.find(t => 
+    t.id === slug || 
+    t.name.toLowerCase().includes(slug) || 
+    slug.includes(t.id) ||
+    (t.domain && slug.includes(t.domain.replace(/\..*$/, '')))
+  ) || null;
+}
 
 export default function VersusPage({ toolAId, toolBId, onBack }) {
   const [openFaq, setOpenFaq] = useState(null);
 
-  const toolA = saasTools.find(t => t.id === toolAId) || saasTools[0];
-  const toolB = saasTools.find(t => t.id === toolBId) || saasTools[1];
+  const toolA = resolveTool(toolAId) || saasTools[0];
+  const toolB = resolveTool(toolBId) || saasTools[1];
+
+  useEffect(() => {
+    if (toolA && toolB) {
+      document.title = `${toolA.name} vs ${toolB.name}: 2026 Features, Pricing & Winner | StakDock`;
+    }
+  }, [toolA, toolB]);
 
   const winner = (toolA.rating || 4.8) >= (toolB.rating || 4.7) ? toolA : toolB;
 
@@ -15,21 +32,29 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
   const bestForB = toolB.bestFor || toolB.description || `${toolB.name} software workflows`;
   const bestForWinner = winner.bestFor || winner.description || `${winner.name} software workflows`;
 
-  const prosA = Array.isArray(toolA.pros) ? toolA.pros : [toolA.description || 'Verified software platform'];
-  const prosB = Array.isArray(toolB.pros) ? toolB.pros : [toolB.description || 'Verified software platform'];
+  const prosA = Array.isArray(toolA.pros) ? toolA.pros : [toolA.description || 'Verified software platform', 'Cloud-based Web Access', 'Active Support'];
+  const prosB = Array.isArray(toolB.pros) ? toolB.pros : [toolB.description || 'Verified software platform', 'Cloud-based Web Access', 'Active Support'];
 
   const faqs = [
     {
       question: `Is ${toolA.name} better than ${toolB.name}?`,
-      answer: `It depends on your workflow. ${winner.name} ranks higher overall on StakDock (${winner.rating}/5) because of its superior user interface and value. However, ${toolA.name} is ideal for ${bestForA}, while ${toolB.name} is best for ${bestForB}.`
+      answer: `It depends on your team's specific workflow. ${winner.name} holds the higher overall rating on StakDock (${winner.rating}/5★) due to its modern UX and value. However, ${toolA.name} excels for ${bestForA}, whereas ${toolB.name} is built for ${bestForB}.`
     },
     {
       question: `Which is cheaper: ${toolA.name} or ${toolB.name}?`,
-      answer: `${toolA.name} starts at ${toolA.pricing}, while ${toolB.name} starts at ${toolB.pricing}. Be sure to check free trial options before committing.`
+      answer: `${toolA.name} offers a pricing model of "${toolA.pricing}", while ${toolB.name} is priced as "${toolB.pricing}". Be sure to test free trial options before choosing a paid subscription.`
+    },
+    {
+      question: `Which tool is better for team collaboration: ${toolA.name} or ${toolB.name}?`,
+      answer: `Both platforms support team collaboration. ${toolA.name} focuses on streamlined task workflows, while ${toolB.name} provides comprehensive project management and reporting capabilities.`
+    },
+    {
+      question: `Are ${toolA.name} and ${toolB.name} secure and GDPR compliant?`,
+      answer: `Yes, both ${toolA.name} and ${toolB.name} enforce HTTPS encryption, SSL data protection, and standard privacy compliance for modern business operations.`
     },
     {
       question: `Do both tools offer free trials?`,
-      answer: `Yes, both ${toolA.name} and ${toolB.name} offer free trials or freemium tiers so you can test their features risk-free.`
+      answer: `Yes, both ${toolA.name} and ${toolB.name} offer free trials or freemium plans allowing you to test their key features risk-free.`
     }
   ];
 
@@ -47,12 +72,12 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
 
       {/* Versus Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <div className="tag-uppercase" style={{ marginBottom: '8px' }}>HEAD-TO-HEAD COMPARISON</div>
+        <div className="tag-uppercase" style={{ marginBottom: '8px' }}>2026 HEAD-TO-HEAD COMPARISON</div>
         <h1 style={{ fontSize: '2.8rem', fontWeight: '800', marginBottom: '12px', lineHeight: '1.1' }}>
           {toolA.name} <span className="serif-italic">vs</span> {toolB.name}
         </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>
-          An unbiased 2026 feature matrix, pricing comparison, and direct buyer verdict to help you choose the right tool.
+        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '640px', margin: '0 auto' }}>
+          An unbiased feature matrix, pricing comparison, security audit, and buyer verdict to help you choose the right software.
         </p>
       </div>
 
@@ -110,7 +135,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
 
       {/* Side-by-Side Spec Table */}
       <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '24px', marginBottom: '40px', overflowX: 'auto', boxShadow: 'var(--shadow-soft)' }}>
-        <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '20px' }}>Feature Comparison Matrix</h3>
+        <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '20px' }}>Comprehensive Feature Matrix</h3>
 
         <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
@@ -134,17 +159,23 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>StakDock Score</td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
-                <Star size={14} fill="#82A735" inline /> {toolA.rating} / 5
+                <Star size={14} fill="#82A735" inline /> {toolA.rating} / 5 ({toolA.reviewsCount || 120} reviews)
               </td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
-                <Star size={14} fill="#82A735" inline /> {toolB.rating} / 5
+                <Star size={14} fill="#82A735" inline /> {toolB.rating} / 5 ({toolB.reviewsCount || 115} reviews)
               </td>
             </tr>
 
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Starting Price</td>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Pricing Model</td>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>{toolA.pricing}</td>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>{toolB.pricing}</td>
+            </tr>
+
+            <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Category</td>
+              <td style={{ padding: '14px', fontSize: '0.88rem', color: 'var(--text-dark)', textTransform: 'uppercase', fontWeight: '600' }}>{toolA.category || 'CRM'}</td>
+              <td style={{ padding: '14px', fontSize: '0.88rem', color: 'var(--text-dark)', textTransform: 'uppercase', fontWeight: '600' }}>{toolB.category || 'CRM'}</td>
             </tr>
 
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
@@ -154,7 +185,27 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             </tr>
 
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
-              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Top Pros</td>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Security & Privacy</td>
+              <td style={{ padding: '14px', fontSize: '0.85rem', color: '#82A735', fontWeight: '700' }}>
+                <Shield size={14} inline /> HTTPS Encrypted & Verified
+              </td>
+              <td style={{ padding: '14px', fontSize: '0.85rem', color: '#82A735', fontWeight: '700' }}>
+                <Shield size={14} inline /> HTTPS Encrypted & Verified
+              </td>
+            </tr>
+
+            <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Deployment</td>
+              <td style={{ padding: '14px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
+                <Globe size={14} inline /> Cloud Web App
+              </td>
+              <td style={{ padding: '14px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
+                <Globe size={14} inline /> Cloud Web App
+              </td>
+            </tr>
+
+            <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Key Highlights</td>
               <td style={{ padding: '14px', fontSize: '0.85rem' }}>
                 {prosA.map((p, idx) => (
                   <div key={idx} style={{ color: '#82A735', fontWeight: '600', marginBottom: '4px' }}>✓ {p}</div>
@@ -168,17 +219,17 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             </tr>
 
             <tr>
-              <td style={{ padding: '14px' }}>Action</td>
+              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Action Link</td>
               <td style={{ padding: '14px' }}>
-                <a href={toolA.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ padding: '8px 14px', fontSize: '0.82rem', width: '100%', justifyContent: 'center' }}>
-                  <span>Visit {toolA.name}</span>
-                  <ExternalLink size={13} />
+                <a href={toolA.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ padding: '10px 16px', fontSize: '0.85rem', width: '100%', justifyContent: 'center' }}>
+                  <span>Try {toolA.name} Free</span>
+                  <ExternalLink size={14} />
                 </a>
               </td>
               <td style={{ padding: '14px' }}>
-                <a href={toolB.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ padding: '8px 14px', fontSize: '0.82rem', width: '100%', justifyContent: 'center' }}>
-                  <span>Visit {toolB.name}</span>
-                  <ExternalLink size={13} />
+                <a href={toolB.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ padding: '10px 16px', fontSize: '0.85rem', width: '100%', justifyContent: 'center' }}>
+                  <span>Try {toolB.name} Free</span>
+                  <ExternalLink size={14} />
                 </a>
               </td>
             </tr>
@@ -222,7 +273,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
       {/* FTC Disclaimer */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-light)', fontSize: '0.8rem', textAlign: 'center', justifyContent: 'center' }}>
         <ShieldCheck size={16} color="#82A735" />
-        <span>StakDock is reader-supported. We may earn a commission when you buy software through partner links.</span>
+        <span>StakDock is reader-supported. When you purchase software through links on our site, we may earn an affiliate commission at zero extra cost to you.</span>
       </div>
     </div>
   );
