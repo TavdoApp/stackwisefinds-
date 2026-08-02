@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T10:00:53.097Z",
+  "updatedAt": "2026-08-02T12:05:30.394Z",
   "drafts": [
     {
       "id": "5589ece9c7d538bc",
@@ -380,7 +380,7 @@
     },
     {
       "id": "5176683980c9f2f0",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "20M from India, switched from software development to marketing, now considering sales. Which type of sales would fit me best?",
       "suggestedSlug": "20m-from-india-switched-from-software-development-to-marketing-now-considering-s",
       "intent": "tool-selection",
@@ -400,11 +400,21 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T12:05:33.550Z",
+        "canonicalUrl": "https://stakdock.com/guides/20m-from-india-switched-from-software-development-to-marketing-now-considering-sales-which-51766839/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
       "id": "09736c31a07e6ac8",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Has the “modern SaaS stack” changed in 2026 ?",
       "suggestedSlug": "has-the-modern-saas-stack-changed-in-2026",
       "intent": "tool-selection",
@@ -424,6 +434,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T12:05:33.550Z",
+        "canonicalUrl": "https://stakdock.com/guides/has-the-modern-saas-stack-changed-in-2026-09736c31/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
