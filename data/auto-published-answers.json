@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-01T19:16:52.833Z",
+  "updatedAt": "2026-08-02T03:28:00.973Z",
   "answers": [
+    {
+      "id": "answer-32b7f4a7ea512b7f",
+      "slug": "is-it-normal-for-people-to-ask-for-25-50-of-a-project-just-for-introductions-32b7f4a7",
+      "title": "How to evaluate: Is it normal for people to ask for 25–50% of a project just for introductions?",
+      "question": "Is it normal for people to ask for 25–50% of a project just for introductions?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vaqkgs/is_it_normal_for_people_to_ask_for_2550_of_a/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-02T03:28:00.973Z",
+      "canonicalUrl": "https://stakdock.com/guides/is-it-normal-for-people-to-ask-for-25-50-of-a-project-just-for-introductions-32b7f4a7/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-a122cb47e24f2fd1",
+      "slug": "should-i-build-a-saas-with-ai-coding-tools-while-learning-or-focus-only-on-becoming-a-bett-a122cb47",
+      "title": "How to evaluate: Should I build a SaaS with AI coding tools while learning, or focus only on becoming a better engineer first?",
+      "question": "Should I build a SaaS with AI coding tools while learning, or focus only on becoming a better engineer first?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "ai-tools",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vbwkau/should_i_build_a_saas_with_ai_coding_tools_while/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-02T03:28:00.973Z",
+      "canonicalUrl": "https://stakdock.com/guides/should-i-build-a-saas-with-ai-coding-tools-while-learning-or-focus-only-on-becoming-a-bett-a122cb47/",
+      "sections": [
+        {
+          "heading": "Set boundaries for AI use",
+          "body": "Define acceptable inputs, privacy requirements, review steps, and the quality standard for outputs. Test representative tasks rather than relying on broad product claims."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-d46f9759d6e3d12d",
       "slug": "how-much-of-your-llm-traffic-actually-needs-a-frontier-model-d46f9759",

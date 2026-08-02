@@ -1,7 +1,435 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-01T19:16:52.206Z",
+  "updatedAt": "2026-08-02T03:27:59.863Z",
   "drafts": [
+    {
+      "id": "5589ece9c7d538bc",
+      "status": "pending_review",
+      "question": "What I've learned about getting the users for SaaS",
+      "suggestedSlug": "what-i-ve-learned-about-getting-the-users-for-saas",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vcv2hr/what_ive_learned_about_getting_the_users_for_saas/",
+      "sourcePublishedAt": "2026-08-01T18:38:41+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "f48f83203f9c590b",
+      "status": "pending_review",
+      "question": "We checked what AI says about a few SaaS categories. The biggest problem wasn't ranking. It was being understood.",
+      "suggestedSlug": "we-checked-what-ai-says-about-a-few-saas-categories-the-biggest-problem-wasn-t-r",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vcioq9/we_checked_what_ai_says_about_a_few_saas/",
+      "sourcePublishedAt": "2026-08-01T09:25:20+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "efde603e3b526095",
+      "status": "pending_review",
+      "question": "70% of my visitors complete my free tool. Stop my Reddit posts and the traffic goes to zero.",
+      "suggestedSlug": "70-of-my-visitors-complete-my-free-tool-stop-my-reddit-posts-and-the-traffic-goe",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vcffrb/70_of_my_visitors_complete_my_free_tool_stop_my/",
+      "sourcePublishedAt": "2026-08-01T06:20:07+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "a122cb47e24f2fd1",
+      "status": "auto_published",
+      "question": "Should I build a SaaS with AI coding tools while learning, or focus only on becoming a better engineer first?",
+      "suggestedSlug": "should-i-build-a-saas-with-ai-coding-tools-while-learning-or-focus-only-on-becom",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vbwkau/should_i_build_a_saas_with_ai_coding_tools_while/",
+      "sourcePublishedAt": "2026-07-31T16:55:42+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T03:28:00.973Z",
+        "canonicalUrl": "https://stakdock.com/guides/should-i-build-a-saas-with-ai-coding-tools-while-learning-or-focus-only-on-becoming-a-bett-a122cb47/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "225f6358aa044c8a",
+      "status": "pending_review",
+      "question": "Built a tool that predicts how your specific Shopify customers will respond before you make a change, now with a public demo, no signup required",
+      "suggestedSlug": "built-a-tool-that-predicts-how-your-specific-shopify-customers-will-respond-befo",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vb5x0t/built_a_tool_that_predicts_how_your_specific/",
+      "sourcePublishedAt": "2026-07-30T20:52:36+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "32b7f4a7ea512b7f",
+      "status": "auto_published",
+      "question": "Is it normal for people to ask for 25–50% of a project just for introductions?",
+      "suggestedSlug": "is-it-normal-for-people-to-ask-for-25-50-of-a-project-just-for-introductions",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vaqkgs/is_it_normal_for_people_to_ask_for_2550_of_a/",
+      "sourcePublishedAt": "2026-07-30T11:09:05+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T03:28:00.973Z",
+        "canonicalUrl": "https://stakdock.com/guides/is-it-normal-for-people-to-ask-for-25-50-of-a-project-just-for-introductions-32b7f4a7/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "fe056feda31cc626",
+      "status": "pending_review",
+      "question": "My team tested how four AI systems recommend developer tools across 100 queries",
+      "suggestedSlug": "my-team-tested-how-four-ai-systems-recommend-developer-tools-across-100-queries",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vabz1g/my_team_tested_how_four_ai_systems_recommend/",
+      "sourcePublishedAt": "2026-07-29T22:58:12+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "efec3b171904e003",
+      "status": "pending_review",
+      "question": "how the big players ask for feedback",
+      "suggestedSlug": "how-the-big-players-ask-for-feedback",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vaa4l7/how_the_big_players_ask_for_feedback/",
+      "sourcePublishedAt": "2026-07-29T21:45:53+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "e20d3c104793f74c",
+      "status": "pending_review",
+      "question": "Helpful Feedback Please?",
+      "suggestedSlug": "helpful-feedback-please",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1va6n0v/helpful_feedback_please/",
+      "sourcePublishedAt": "2026-07-29T19:37:52+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "b34c1853d674aa9e",
+      "status": "pending_review",
+      "question": "Do you ever want to go out but have no idea what to do?",
+      "suggestedSlug": "do-you-ever-want-to-go-out-but-have-no-idea-what-to-do",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1va1laf/do_you_ever_want_to_go_out_but_have_no_idea_what/",
+      "sourcePublishedAt": "2026-07-29T16:41:57+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "04c4558816deb7da",
+      "status": "pending_review",
+      "question": "Where to Host My site????",
+      "suggestedSlug": "where-to-host-my-site",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v935i2/where_to_host_my_site/",
+      "sourcePublishedAt": "2026-07-28T16:18:03+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "483dffa04fb33ed3",
+      "status": "pending_review",
+      "question": "I tested what AI actually recommends when buyers ask for software. It recommended a product that doesn't exist.",
+      "suggestedSlug": "i-tested-what-ai-actually-recommends-when-buyers-ask-for-software-it-recommended",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v8zpsl/i_tested_what_ai_actually_recommends_when_buyers/",
+      "sourcePublishedAt": "2026-07-28T14:13:18+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "8ed83eb0c9b8e162",
+      "status": "pending_review",
+      "question": "Best way to send SMS & WhatsApp links internationally?",
+      "suggestedSlug": "best-way-to-send-sms-whatsapp-links-internationally",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v8yk2b/best_way_to_send_sms_whatsapp_links/",
+      "sourcePublishedAt": "2026-07-28T13:29:16+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "8ae19a393e8366bf",
+      "status": "pending_review",
+      "question": "Which idea has more potential ?",
+      "suggestedSlug": "which-idea-has-more-potential",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v8t60i/which_idea_has_more_potential/",
+      "sourcePublishedAt": "2026-07-28T09:23:59+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "5176683980c9f2f0",
+      "status": "pending_review",
+      "question": "20M from India, switched from software development to marketing, now considering sales. Which type of sales would fit me best?",
+      "suggestedSlug": "20m-from-india-switched-from-software-development-to-marketing-now-considering-s",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7z1e8/20m_from_india_switched_from_software_development/",
+      "sourcePublishedAt": "2026-07-27T12:31:19+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "09736c31a07e6ac8",
+      "status": "pending_review",
+      "question": "Has the “modern SaaS stack” changed in 2026 ?",
+      "suggestedSlug": "has-the-modern-saas-stack-changed-in-2026",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7w77c/has_the_modern_saas_stack_changed_in_2026/",
+      "sourcePublishedAt": "2026-07-27T10:12:44+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "8662e8be5b99366f",
+      "status": "pending_review",
+      "question": "Solo iOS devs: how do you handle App Store optimization?",
+      "suggestedSlug": "solo-ios-devs-how-do-you-handle-app-store-optimization",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "recommendations"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7w3q8/solo_ios_devs_how_do_you_handle_app_store/",
+      "sourcePublishedAt": "2026-07-27T10:07:33+00:00",
+      "discoveredAt": "2026-08-02T03:27:59.863Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "04eb503d9d50ef1a",
       "status": "pending_review",
