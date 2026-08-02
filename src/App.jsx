@@ -19,6 +19,7 @@ import AiNewsSidebar from './components/AiNewsSidebar';
 import FeaturedSidebar from './components/FeaturedSidebar';
 
 import ToolDetailPage from './components/ToolDetailPage';
+import ToolSearchInput from './components/ToolSearchInput';
 
 // Lazy Loaded Modal & Detail Views for High Performance & Micro-Bundle Splitting
 const ComparisonModal = lazy(() => import('./components/ComparisonModal'));
@@ -409,19 +410,23 @@ export default function App() {
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
                     <span style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Alternatives to:</span>
-                    <select
-                      value={selectedAlternativeToolId}
-                      onChange={(e) => setSelectedAlternativeToolId(e.target.value)}
-                      aria-label="Select tool to view alternatives"
-                      style={{ padding: '8px 14px', borderRadius: '12px', border: '1px solid var(--border-color)', background: '#FFFFFF', fontWeight: '700', fontSize: '0.88rem', outline: 'none' }}
-                    >
-                      {saasTools.slice(0, 100).map(t => (
-                        <option key={t.id} value={t.id}>{t.name}</option>
-                      ))}
-                    </select>
+                    
+                    <ToolSearchInput
+                      selectedTool={saasTools.find(t => t.id === selectedAlternativeToolId) || saasTools[0]}
+                      onSelectTool={(tool) => tool && setSelectedAlternativeToolId(tool.id)}
+                      tools={saasTools}
+                      placeholder="Type tool name (e.g. Claude, Notion)..."
+                      ariaLabel="Select tool to view alternatives"
+                    />
 
                     <button 
-                      onClick={() => setCurrentView('alternatives-detail')} 
+                      onClick={() => {
+                        const targetId = selectedAlternativeToolId || (saasTools[0] && saasTools[0].id);
+                        if (targetId) {
+                          window.history.pushState(null, '', `/alternatives/${targetId}`);
+                          setCurrentView('alternatives-detail');
+                        }
+                      }} 
                       className="btn-pill-green"
                       style={{ padding: '8px 18px', fontSize: '0.85rem' }}
                       aria-label="View Alternatives"
@@ -442,32 +447,33 @@ export default function App() {
                   </div>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-                    <select
-                      value={selectedVersus.toolAId}
-                      onChange={(e) => setSelectedVersus({ ...selectedVersus, toolAId: e.target.value })}
-                      aria-label="Select first tool for pairwise comparison"
-                      style={{ padding: '8px 14px', borderRadius: '12px', border: '1px solid var(--border-color)', background: '#F6F7F2', fontWeight: '700', fontSize: '0.88rem', outline: 'none' }}
-                    >
-                      {saasTools.slice(0, 100).map(t => (
-                        <option key={t.id} value={t.id}>{t.name}</option>
-                      ))}
-                    </select>
+                    <ToolSearchInput
+                      selectedTool={saasTools.find(t => t.id === selectedVersus.toolAId) || saasTools[0]}
+                      onSelectTool={(tool) => tool && setSelectedVersus({ ...selectedVersus, toolAId: tool.id })}
+                      tools={saasTools}
+                      placeholder="Tool 1 (e.g. Basecamp)..."
+                      ariaLabel="Select first tool for pairwise comparison"
+                    />
 
                     <span style={{ fontWeight: '800', color: 'var(--primary-green-dark)' }}>VS</span>
 
-                    <select
-                      value={selectedVersus.toolBId}
-                      onChange={(e) => setSelectedVersus({ ...selectedVersus, toolBId: e.target.value })}
-                      aria-label="Select second tool for pairwise comparison"
-                      style={{ padding: '8px 14px', borderRadius: '12px', border: '1px solid var(--border-color)', background: '#F6F7F2', fontWeight: '700', fontSize: '0.88rem', outline: 'none' }}
-                    >
-                      {saasTools.slice(0, 100).map(t => (
-                        <option key={t.id} value={t.id}>{t.name}</option>
-                      ))}
-                    </select>
+                    <ToolSearchInput
+                      selectedTool={saasTools.find(t => t.id === selectedVersus.toolBId) || saasTools[1]}
+                      onSelectTool={(tool) => tool && setSelectedVersus({ ...selectedVersus, toolBId: tool.id })}
+                      tools={saasTools}
+                      placeholder="Tool 2 (e.g. Clarizen)..."
+                      ariaLabel="Select second tool for pairwise comparison"
+                    />
 
                     <button 
-                      onClick={() => setCurrentView('versus-detail')} 
+                      onClick={() => {
+                        const tA = selectedVersus.toolAId || (saasTools[0] && saasTools[0].id);
+                        const tB = selectedVersus.toolBId || (saasTools[1] && saasTools[1].id);
+                        if (tA && tB) {
+                          window.history.pushState(null, '', `/vs/${tA}-vs-${tB}`);
+                          setCurrentView('versus-detail');
+                        }
+                      }} 
                       className="btn-pill-green"
                       style={{ padding: '8px 18px', fontSize: '0.85rem' }}
                       aria-label="Compare tools now"
