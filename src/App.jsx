@@ -415,7 +415,8 @@ export default function App() {
                       selectedTool={saasTools.find(t => t.id === selectedAlternativeToolId) || saasTools[0]}
                       onSelectTool={(tool) => tool && setSelectedAlternativeToolId(tool.id)}
                       tools={saasTools}
-                      placeholder="Type tool name (e.g. Claude, Notion)..."
+                      placeholder="Select Tool..."
+                      background="#FFFFFF"
                       ariaLabel="Select tool to view alternatives"
                     />
 
@@ -451,7 +452,8 @@ export default function App() {
                       selectedTool={saasTools.find(t => t.id === selectedVersus.toolAId) || saasTools[0]}
                       onSelectTool={(tool) => tool && setSelectedVersus({ ...selectedVersus, toolAId: tool.id })}
                       tools={saasTools}
-                      placeholder="Tool 1 (e.g. Basecamp)..."
+                      placeholder="Tool 1..."
+                      background="#F6F7F2"
                       ariaLabel="Select first tool for pairwise comparison"
                     />
 
@@ -461,7 +463,8 @@ export default function App() {
                       selectedTool={saasTools.find(t => t.id === selectedVersus.toolBId) || saasTools[1]}
                       onSelectTool={(tool) => tool && setSelectedVersus({ ...selectedVersus, toolBId: tool.id })}
                       tools={saasTools}
-                      placeholder="Tool 2 (e.g. Clarizen)..."
+                      placeholder="Tool 2..."
+                      background="#F6F7F2"
                       ariaLabel="Select second tool for pairwise comparison"
                     />
 
