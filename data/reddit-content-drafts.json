@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T03:27:59.863Z",
+  "updatedAt": "2026-08-02T10:00:53.097Z",
   "drafts": [
     {
       "id": "5589ece9c7d538bc",
@@ -240,7 +240,7 @@
     },
     {
       "id": "b34c1853d674aa9e",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Do you ever want to go out but have no idea what to do?",
       "suggestedSlug": "do-you-ever-want-to-go-out-but-have-no-idea-what-to-do",
       "intent": "tool-selection",
@@ -260,6 +260,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T10:00:53.788Z",
+        "canonicalUrl": "https://stakdock.com/guides/do-you-ever-want-to-go-out-but-have-no-idea-what-to-do-b34c1853/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
@@ -312,7 +322,7 @@
     },
     {
       "id": "8ed83eb0c9b8e162",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Best way to send SMS & WhatsApp links internationally?",
       "suggestedSlug": "best-way-to-send-sms-whatsapp-links-internationally",
       "intent": "tool-selection",
@@ -332,6 +342,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T10:00:53.788Z",
+        "canonicalUrl": "https://stakdock.com/guides/best-way-to-send-sms-whatsapp-links-internationally-8ed83eb0/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
