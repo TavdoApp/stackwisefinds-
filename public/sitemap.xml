@@ -137,6 +137,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/alternatives/splitmatepro</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/alternatives/jotform</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4235,6 +4241,120 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-jotform</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-tally</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-surveymonkey</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-formstack</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-qualtrics-xm</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-paperform</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-feathery</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-cognito-forms</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-microsoft-forms</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-formbrick</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-alchemer-formerly-surveygizmo</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-wufoo-by-surveymonkey</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-123formbuilder</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-deformity-reform</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-tripetto</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-kobotoolbox</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-formik</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-react-hook-form</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/splitmatepro-vs-zonka-feedback</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/vs/jotform-vs-tally</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4343,12 +4463,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/tally-vs-surveymonkey</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4451,12 +4565,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/surveymonkey-vs-formstack</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4553,12 +4661,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/formstack-vs-qualtrics-xm</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4649,12 +4751,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/qualtrics-xm-vs-paperform</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4739,12 +4835,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/paperform-vs-feathery</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4823,12 +4913,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/feathery-vs-cognito-forms</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4901,12 +4985,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/cognito-forms-vs-microsoft-forms</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -4973,12 +5051,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/microsoft-forms-vs-formbrick</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5039,12 +5111,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/formbrick-vs-alchemer-formerly-surveygizmo</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5099,12 +5165,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-wufoo-by-surveymonkey</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5153,12 +5213,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-123formbuilder</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5201,12 +5255,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/123formbuilder-vs-deformity-reform</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5243,12 +5291,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/deformity-reform-vs-tripetto</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5279,12 +5321,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/deformity-reform-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/tripetto-vs-kobotoolbox</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5309,12 +5345,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tripetto-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/kobotoolbox-vs-formik</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5333,12 +5363,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/kobotoolbox-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/formik-vs-react-hook-form</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -5351,25 +5375,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formik-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/react-hook-form-vs-zonka-feedback</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://stakdock.com/vs/react-hook-form-vs-delighted-by-qualtrics</loc>
-    <lastmod>2026-08-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://stakdock.com/vs/zonka-feedback-vs-delighted-by-qualtrics</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

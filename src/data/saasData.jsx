@@ -30,6 +30,25 @@ export const saasCategories = [
 ];
 
 export const staticSaasTools = [
+  {
+    "id": "splitmatepro",
+    "name": "SplitMatePro",
+    "domain": "splitmatepro.com",
+    "category": "crm",
+    "tagline": "Property management & tenant expense sharing automation platform",
+    "description": "Automates property management, tenant lead tracking, expense splitting, and rent collection for landlords and real estate operations.",
+    "rating": 4.9,
+    "reviewsCount": 180,
+    "pricing": "Freemium",
+    "websiteUrl": "https://splitmatepro.com",
+    "affiliateUrl": "https://splitmatepro.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "45K",
+    "verifiedStatus": "Verified",
+    "isFreeTier": true,
+    "isOpenSource": false
+},
 {
     "id": "jotform",
     "name": "Jotform",
