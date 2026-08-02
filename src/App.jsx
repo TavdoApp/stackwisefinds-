@@ -922,6 +922,7 @@ export default function App() {
                 onOpenReviewModal={(t) => setSelectedReviewTool(t)}
                 onToggleCompare={handleToggleCompare}
                 isSelectedForCompare={selectedCompareIds.includes(selectedToolDetailId)}
+                onOpenBadgeModal={() => setShowBadgeModal(true)}
               />
             )}
           </Suspense>

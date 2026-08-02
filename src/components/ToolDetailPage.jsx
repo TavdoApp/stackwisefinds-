@@ -3,8 +3,9 @@ import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame,
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
+import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
-export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare }) {
+export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
   const [activeTab, setActiveTab] = useState('product-info');
 
   const tool = saasTools.find(t => t.id === toolId) || saasTools[0];
@@ -30,7 +31,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
             <div><dt style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase' }}>Pricing</dt><dd style={{ margin: '4px 0 0', fontWeight: '700' }}>Check the website</dd></div>
           </dl>
           <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Automated checks confirmed a GitHub source and a reachable HTTPS website. Pricing, ratings, traffic, and reviews are not displayed until independently verified.</p>
-          <a href={tool.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ display: 'inline-flex', marginTop: '12px', textDecoration: 'none' }}>
+          <a href={tool.affiliateUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl)} className="btn-pill-green" style={{ display: 'inline-flex', marginTop: '12px', textDecoration: 'none' }}>
             Visit {tool.name} <ArrowUpRight size={16} />
           </a>
         </section>
@@ -123,6 +124,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
               href={tool.affiliateUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl)}
               className="btn-pill-green"
               style={{ padding: '14px 28px', fontSize: '1rem', textDecoration: 'none' }}
             >
@@ -163,6 +165,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
             href={tool.affiliateUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl)}
             className="btn-pill-green"
             style={{ padding: '10px 24px', fontSize: '0.88rem', textDecoration: 'none', display: 'inline-flex' }}
           >
@@ -230,7 +233,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
             </div>
           </div>
 
-          <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '24px', flexWrap: 'wrap' }}>
             <button
               onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
               className="btn-pill-outline"
@@ -239,6 +242,17 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
               <MessageSquare size={16} color="#82A735" />
               <span>Write a Community Review</span>
             </button>
+
+            {onOpenBadgeModal && (
+              <button
+                onClick={onOpenBadgeModal}
+                className="btn-pill-green"
+                style={{ padding: '10px 18px', fontSize: '0.88rem' }}
+              >
+                <Sparkles size={16} />
+                <span>Claim Embeddable Founder Badge</span>
+              </button>
+            )}
           </div>
         </div>
       )}

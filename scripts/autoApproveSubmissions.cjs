@@ -175,6 +175,15 @@ async function runAutoApprovalProcess() {
     // Write back candidates status
     fs.writeFileSync(candidatesPath, `${JSON.stringify(candidatesData, null, 2)}\n`, 'utf8');
     console.log(`[StakDock Auto-Approval] Successfully auto-approved and published ${newlyApproved.length} verified tools.`);
+
+    // Trigger instant sitemap update & IndexNow instant ping
+    try {
+      const { execSync } = require('child_process');
+      execSync('node scripts/generateSitemap.cjs && node scripts/pingIndexNow.cjs', { stdio: 'inherit' });
+      console.log('[IndexNow Auto-Trigger] Instant IndexNow search engine ping sent for newly approved tools!');
+    } catch (err) {
+      console.warn('[IndexNow Auto-Trigger Warning] IndexNow ping skipped or failed:', err.message);
+    }
   } else {
     console.log('[StakDock Auto-Approval] Process complete. 0 submissions approved in this cycle.');
   }
