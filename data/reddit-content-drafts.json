@@ -1,7 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T16:03:18.317Z",
+  "updatedAt": "2026-08-02T18:02:15.067Z",
   "drafts": [
+    {
+      "id": "dfdc87127ff89d77",
+      "status": "pending_review",
+      "question": "I burned through my AI builder credits in one afternoon, so I spent two months building a free alternative",
+      "suggestedSlug": "i-burned-through-my-ai-builder-credits-in-one-afternoon-so-i-spent-two-months-bu",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vdnvns/i_burned_through_my_ai_builder_credits_in_one/",
+      "sourcePublishedAt": "2026-08-02T17:23:23+00:00",
+      "discoveredAt": "2026-08-02T18:02:15.067Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "5589ece9c7d538bc",
       "status": "pending_review",
