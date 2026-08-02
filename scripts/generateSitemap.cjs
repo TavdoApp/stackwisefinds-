@@ -110,9 +110,10 @@ for (let i = 0; i < topToolsForCompare.length; i++) {
   }
 }
 
+const totalUrlsCount = (sitemapXml.match(/<loc>/g) || []).length;
 sitemapXml += `</urlset>\n`;
 
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
 
-console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${saasTools.length + 199}`);
+console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${totalUrlsCount}`);
