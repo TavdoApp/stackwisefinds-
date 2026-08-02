@@ -81,8 +81,14 @@ autoPublishedAnswers.forEach((answer) => {
     <priority>0.6</priority>
   </url>\n`;
 });
-// Add dedicated /alternatives/ hubs for all tools
+// Add dedicated /software/ individual tool pages & /alternatives/ hubs for all tools
 saasTools.forEach(t => {
+  sitemapXml += `  <url>
+    <loc>${baseUrl}/software/${t.id}</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>\n`;
   sitemapXml += `  <url>
     <loc>${baseUrl}/alternatives/${t.id}</loc>
     <lastmod>${todayDate}</lastmod>

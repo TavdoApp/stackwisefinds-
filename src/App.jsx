@@ -135,12 +135,33 @@ export default function App() {
   const [showWizardModal, setShowWizardModal] = useState(false);
   const [showBadgeModal, setShowBadgeModal] = useState(false);
 
+  const handleSelectToolDetail = (tId) => {
+    setSelectedToolDetailId(tId);
+    setCurrentView('tool-detail');
+    window.history.pushState(null, '', `/software/${tId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   // Listen to URL Hash / Query Parameter for direct deep linking & article subroutes
   useEffect(() => {
     const handleUrlRouting = () => {
       const hash = window.location.hash.toLowerCase().replace('#', '');
       const search = window.location.search.toLowerCase();
       const pathname = window.location.pathname.toLowerCase();
+
+      if (pathname.startsWith('/software/')) {
+        const toolSlug = pathname.replace('/software/', '').replace(/\/$/, '');
+        setSelectedToolDetailId(toolSlug);
+        setCurrentView('tool-detail');
+        return;
+      }
+
+      if (pathname.startsWith('/tool/')) {
+        const toolSlug = pathname.replace('/tool/', '').replace(/\/$/, '');
+        setSelectedToolDetailId(toolSlug);
+        setCurrentView('tool-detail');
+        return;
+      }
 
       if (pathname.startsWith('/vs/')) {
         const vsSlug = pathname.replace('/vs/', '').replace(/\/$/, '');
@@ -555,7 +576,7 @@ export default function App() {
                     {/* Left Column: Featured Spotlights */}
                     <div className="toolify-col-left">
                       <FeaturedSidebar 
-                        onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }} 
+                        onSelectTool={handleSelectToolDetail} 
                         onOpenVendorModal={() => setShowVendorModal(true)}
                       />
                     </div>
@@ -573,7 +594,7 @@ export default function App() {
                           upvotes={upvotesState[tool.id] || 120}
                           isBookmarked={bookmarkedIds.includes(tool.id)}
                           onToggleBookmark={handleToggleBookmark}
-                          onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }}
+                          onSelectTool={handleSelectToolDetail}
                           onSelectCategory={(catId) => { setSelectedCategory(catId); setCurrentPage(1); const el = document.getElementById('directory-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
                           currentLang={currentLang}
                         />
@@ -583,7 +604,7 @@ export default function App() {
                     {/* Right Column: Real-Time AI News & Leaderboard Sidebar */}
                     <div className="toolify-col-right">
                       <AiNewsSidebar 
-                        onSelectTool={(tId) => { setSelectedToolDetailId(tId); setCurrentView('tool-detail'); }}
+                        onSelectTool={handleSelectToolDetail}
                         onSelectArticle={(art) => { setSelectedArticle(art); setCurrentView('article-detail'); }}
                       />
                     </div>
