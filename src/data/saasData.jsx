@@ -48,8 +48,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "jotform",
     "name": "Jotform",
     "domain": "jotform.com",
@@ -67,8 +67,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "tally",
     "name": "Tally",
     "domain": "tally.so",
@@ -86,8 +86,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "surveymonkey",
     "name": "SurveyMonkey",
     "domain": "surveymonkey.com",
@@ -105,8 +105,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formstack",
     "name": "Formstack",
     "domain": "formstack.com",
@@ -124,8 +124,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "qualtrics-xm",
     "name": "Qualtrics XM",
     "domain": "qualtrics.com",
@@ -143,8 +143,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "paperform",
     "name": "Paperform",
     "domain": "paperform.co",
@@ -162,8 +162,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "feathery",
     "name": "Feathery",
     "domain": "feathery.io",
@@ -181,8 +181,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "cognito-forms",
     "name": "Cognito Forms",
     "domain": "cognitoforms.com",
@@ -200,8 +200,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "microsoft-forms",
     "name": "Microsoft Forms",
     "domain": "forms.office.com",
@@ -219,8 +219,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formbrick",
     "name": "Formbrick",
     "domain": "formbricks.com",
@@ -238,8 +238,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "alchemer-formerly-surveygizmo",
     "name": "Alchemer (formerly SurveyGizmo)",
     "domain": "alchemer.com",
@@ -257,8 +257,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "wufoo-by-surveymonkey",
     "name": "Wufoo by SurveyMonkey",
     "domain": "wufoo.com",
@@ -276,8 +276,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "123formbuilder",
     "name": "123FormBuilder",
     "domain": "123formbuilder.com",
@@ -295,8 +295,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "deformity-reform",
     "name": "Deformity / Reform",
     "domain": "reform.app",
@@ -314,8 +314,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "tripetto",
     "name": "Tripetto",
     "domain": "tripetto.com",
@@ -333,8 +333,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kobotoolbox",
     "name": "KoboToolbox",
     "domain": "kobotoolbox.org",
@@ -352,8 +352,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formik",
     "name": "Formik",
     "domain": "formik.org",
@@ -371,8 +371,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "react-hook-form",
     "name": "React Hook Form",
     "domain": "react-hook-form.com",
@@ -390,8 +390,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "zonka-feedback",
     "name": "Zonka Feedback",
     "domain": "zonkafeedback.com",
@@ -409,8 +409,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "delighted-by-qualtrics",
     "name": "Delighted by Qualtrics",
     "domain": "delighted.com",
@@ -428,8 +428,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "survicate",
     "name": "Survicate",
     "domain": "survicate.com",
@@ -447,8 +447,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "micromodal-usabilla-getfeedback",
     "name": "MicroModal / Usabilla (GetFeedback)",
     "domain": "getfeedback.com",
@@ -466,8 +466,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "refiner",
     "name": "Refiner",
     "domain": "refiner.io",
@@ -485,8 +485,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "proprofs-survey-maker",
     "name": "ProProfs Survey Maker",
     "domain": "proprofs.com",
@@ -504,8 +504,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "involve-me",
     "name": "Involve.me",
     "domain": "involve.me",
@@ -523,8 +523,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "outgrow",
     "name": "Outgrow",
     "domain": "outgrow.co",
@@ -542,8 +542,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "interact-tryinteract",
     "name": "Interact (TryInteract)",
     "domain": "tryinteract.com",
@@ -561,8 +561,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "scoreapp",
     "name": "ScoreApp",
     "domain": "scoreapp.com",
@@ -580,8 +580,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "pointerpro-formerly-survey-anyplace",
     "name": "Pointerpro (formerly Survey Anyplace)",
     "domain": "pointerpro.com",
@@ -599,8 +599,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "feathery-logic-youform",
     "name": "Feathery Logic / Youform",
     "domain": "youform.com",
@@ -618,8 +618,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formcarry",
     "name": "Formcarry",
     "domain": "formcarry.com",
@@ -637,8 +637,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formspree",
     "name": "Formspree",
     "domain": "formspree.io",
@@ -656,8 +656,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formkeep",
     "name": "Formkeep",
     "domain": "formkeep.com",
@@ -675,8 +675,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "getform",
     "name": "Getform",
     "domain": "getform.io",
@@ -694,8 +694,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "web3forms",
     "name": "Web3Forms",
     "domain": "web3forms.com",
@@ -713,8 +713,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gravity-forms",
     "name": "Gravity Forms",
     "domain": "gravityforms.com",
@@ -732,8 +732,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "wpforms",
     "name": "WPForms",
     "domain": "wpforms.com",
@@ -751,8 +751,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "ninja-forms",
     "name": "Ninja Forms",
     "domain": "ninjaforms.com",
@@ -770,8 +770,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "formidable-forms",
     "name": "Formidable Forms",
     "domain": "formidableforms.com",
@@ -789,8 +789,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "devicemagic-gocanvas",
     "name": "DeviceMagic / GoCanvas",
     "domain": "gocanvas.com",
@@ -808,8 +808,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "fastfield-forms",
     "name": "FastField Forms",
     "domain": "fastfieldforms.com",
@@ -827,8 +827,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "fulcrum",
     "name": "Fulcrum",
     "domain": "fulcrumapp.com",
@@ -846,8 +846,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "sogosurvey-sogolytics",
     "name": "SogoSurvey / Sogolytics",
     "domain": "sogolytics.com",
@@ -865,8 +865,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "limesurvey",
     "name": "LimeSurvey",
     "domain": "limesurvey.org",
@@ -884,8 +884,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "blocksurvey",
     "name": "BlockSurvey",
     "domain": "blocksurvey.io",
@@ -903,8 +903,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "crowdsignal",
     "name": "Crowdsignal",
     "domain": "crowdsignal.com",
@@ -922,8 +922,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "poll-maker-slido",
     "name": "Poll Maker / Slido",
     "domain": "slido.com",
@@ -941,8 +941,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "medium",
     "name": "Medium",
     "domain": "medium.com",
@@ -960,8 +960,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "curated",
     "name": "Curated",
     "domain": "curated.co",
@@ -979,8 +979,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "letterdrop",
     "name": "Letterdrop",
     "domain": "letterdrop.com",
@@ -998,8 +998,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "hashnode",
     "name": "Hashnode",
     "domain": "hashnode.com",
@@ -1017,8 +1017,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "dev-to",
     "name": "Dev.to",
     "domain": "dev.to",
@@ -1036,8 +1036,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "sailthru-by-marigold",
     "name": "Sailthru by Marigold",
     "domain": "sailthru.com",
@@ -1055,8 +1055,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "revue-historical-archive",
     "name": "Revue (Historical Archive)",
     "domain": "getrevue.co",
@@ -1074,8 +1074,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "scribe-mirror-xyz",
     "name": "Scribe / Mirror.xyz",
     "domain": "mirror.xyz",
@@ -1093,8 +1093,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "substack-notes-paragraph",
     "name": "Substack Notes / Paragraph",
     "domain": "paragraph.xyz",
@@ -1112,8 +1112,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "issuu",
     "name": "Issuu",
     "domain": "issuu.com",
@@ -1131,8 +1131,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "joomag",
     "name": "Joomag",
     "domain": "joomag.com",
@@ -1150,8 +1150,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "yumpu",
     "name": "Yumpu",
     "domain": "yumpu.com",
@@ -1169,8 +1169,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "flipsnack",
     "name": "Flipsnack",
     "domain": "flipsnack.com",
@@ -1188,8 +1188,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "magloft",
     "name": "MagLoft",
     "domain": "magloft.com",
@@ -1207,8 +1207,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "patreon",
     "name": "Patreon",
     "domain": "patreon.com",
@@ -1226,8 +1226,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "memberful",
     "name": "Memberful",
     "domain": "memberful.com",
@@ -1245,8 +1245,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "steady",
     "name": "Steady",
     "domain": "steadyhq.com",
@@ -1264,8 +1264,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "supercast",
     "name": "Supercast",
     "domain": "supercast.com",
@@ -1283,8 +1283,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "liveintent",
     "name": "LiveIntent",
     "domain": "liveintent.com",
@@ -1302,8 +1302,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "paved",
     "name": "Paved",
     "domain": "paved.com",
@@ -1321,8 +1321,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "sponsorgap-letterwell",
     "name": "SponsorGap / Letterwell",
     "domain": "letterwell.co",
@@ -1340,8 +1340,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "swapstack",
     "name": "Swapstack",
     "domain": "swapstack.co",
@@ -1359,8 +1359,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "passendo",
     "name": "Passendo",
     "domain": "passendo.com",
@@ -1378,8 +1378,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "goodbits",
     "name": "Goodbits",
     "domain": "goodbits.io",
@@ -1397,8 +1397,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "newsletter-glue",
     "name": "Newsletter Glue",
     "domain": "newsletterglue.com",
@@ -1416,8 +1416,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "eco-craft-do",
     "name": "Eco / Craft.do",
     "domain": "craft.do",
@@ -1435,8 +1435,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "telegraph",
     "name": "Telegraph",
     "domain": "telegra.ph",
@@ -1454,8 +1454,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "bear-blog",
     "name": "Bear Blog",
     "domain": "bearblog.dev",
@@ -1473,8 +1473,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "write-as",
     "name": "Write.as",
     "domain": "write.as",
@@ -1492,8 +1492,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "blot-im",
     "name": "Blot.im",
     "domain": "blot.im",
@@ -1511,8 +1511,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "readymag",
     "name": "Readymag",
     "domain": "readymag.com",
@@ -1530,8 +1530,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "shorthand",
     "name": "Shorthand",
     "domain": "shorthand.com",
@@ -1549,8 +1549,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "atavist",
     "name": "Atavist",
     "domain": "atavist.com",
@@ -1568,8 +1568,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "storychief",
     "name": "StoryChief",
     "domain": "storychief.io",
@@ -1587,8 +1587,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "indesign-publish-online",
     "name": "InDesign Publish Online",
     "domain": "adobe.com",
@@ -1606,8 +1606,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "publishdrive",
     "name": "PublishDrive",
     "domain": "publishdrive.com",
@@ -1625,8 +1625,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "draft2digital",
     "name": "Draft2Digital",
     "domain": "draft2digital.com",
@@ -1644,8 +1644,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kdp-kindle-direct-publishing",
     "name": "KDP (Kindle Direct Publishing)",
     "domain": "kdp.amazon.com",
@@ -1663,8 +1663,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "ingramspark",
     "name": "IngramSpark",
     "domain": "ingramspark.com",
@@ -1682,8 +1682,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "lulu",
     "name": "Lulu",
     "domain": "lulu.com",
@@ -1701,8 +1701,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gumroad-publishing",
     "name": "Gumroad Publishing",
     "domain": "gumroad.com",
@@ -1720,8 +1720,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "flodesk",
     "name": "Flodesk",
     "domain": "flodesk.com",
@@ -1739,8 +1739,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "intercom",
     "name": "Intercom",
     "domain": "intercom.com",
@@ -1758,8 +1758,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "help-scout",
     "name": "Help Scout",
     "domain": "helpscout.com",
@@ -1777,8 +1777,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gorgias",
     "name": "Gorgias",
     "domain": "gorgias.com",
@@ -1796,8 +1796,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "front",
     "name": "Front",
     "domain": "front.com",
@@ -1815,8 +1815,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "crisp",
     "name": "Crisp",
     "domain": "crisp.chat",
@@ -1834,8 +1834,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "tidio",
     "name": "Tidio",
     "domain": "tidio.com",
@@ -1853,8 +1853,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kayako",
     "name": "Kayako",
     "domain": "kayako.com",
@@ -1872,8 +1872,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "groove",
     "name": "Groove",
     "domain": "groovehq.com",
@@ -1891,8 +1891,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "livechat",
     "name": "LiveChat",
     "domain": "livechat.com",
@@ -1910,8 +1910,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "chatwoot",
     "name": "Chatwoot",
     "domain": "chatwoot.com",
@@ -1929,8 +1929,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kustomer",
     "name": "Kustomer",
     "domain": "kustomer.com",
@@ -1948,8 +1948,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gladly",
     "name": "Gladly",
     "domain": "gladly.com",
@@ -1967,8 +1967,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "happyfox",
     "name": "HappyFox",
     "domain": "happyfox.com",
@@ -1986,8 +1986,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "desku",
     "name": "Desku",
     "domain": "desku.io",
@@ -2005,8 +2005,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "supportbee",
     "name": "SupportBee",
     "domain": "supportbee.com",
@@ -2024,8 +2024,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "solarwinds-service-desk",
     "name": "SolarWinds Service Desk",
     "domain": "solarwinds.com",
@@ -2043,8 +2043,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "sysaid",
     "name": "SysAid",
     "domain": "sysaid.com",
@@ -2062,8 +2062,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "spiceworks-cloud-help-desk",
     "name": "Spiceworks Cloud Help Desk",
     "domain": "spiceworks.com",
@@ -2081,8 +2081,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "zendesk-sunshine-gorgias-ai",
     "name": "Zendesk Sunshine / Gorgias AI",
     "domain": "fin.com",
@@ -2100,8 +2100,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "ada",
     "name": "Ada",
     "domain": "ada.cx",
@@ -2119,8 +2119,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "forethought",
     "name": "Forethought",
     "domain": "forethought.ai",
@@ -2138,8 +2138,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "inbenta",
     "name": "Inbenta",
     "domain": "inbenta.com",
@@ -2157,8 +2157,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "uservoice",
     "name": "UserVoice",
     "domain": "uservoice.com",
@@ -2176,8 +2176,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "canny",
     "name": "Canny",
     "domain": "canny.io",
@@ -2195,8 +2195,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "document360",
     "name": "Document360",
     "domain": "document360.com",
@@ -2214,8 +2214,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gitbook",
     "name": "GitBook",
     "domain": "gitbook.com",
@@ -2233,8 +2233,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "helpjuice",
     "name": "Helpjuice",
     "domain": "helpjuice.com",
@@ -2252,8 +2252,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "stonly",
     "name": "Stonly",
     "domain": "stonly.com",
@@ -2271,8 +2271,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "tawk-to",
     "name": "Tawk.to",
     "domain": "tawk.to",
@@ -2290,8 +2290,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "drift",
     "name": "Drift",
     "domain": "drift.com",
@@ -2309,8 +2309,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "olark",
     "name": "Olark",
     "domain": "olark.com",
@@ -2328,8 +2328,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "userlike",
     "name": "Userlike",
     "domain": "userlike.com",
@@ -2347,8 +2347,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "reamaze",
     "name": "Reamaze",
     "domain": "reamaze.com",
@@ -2366,8 +2366,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "helpshift",
     "name": "Helpshift",
     "domain": "helpshift.com",
@@ -2385,8 +2385,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "liveagent",
     "name": "LiveAgent",
     "domain": "liveagent.com",
@@ -2404,8 +2404,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "proprofs-help-desk",
     "name": "ProProfs Help Desk",
     "domain": "proprofsdesk.com",
@@ -2423,8 +2423,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "osticket",
     "name": "Osticket",
     "domain": "osticket.com",
@@ -2442,8 +2442,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "zammad",
     "name": "Zammad",
     "domain": "zammad.org",
@@ -2461,8 +2461,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "freescout",
     "name": "Freescout",
     "domain": "freescout.net",
@@ -2480,8 +2480,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "klaus-kustomer-qa-zendesk-qa",
     "name": "Klaus (Kustomer QA / Zendesk QA)",
     "domain": "klausapp.com",
@@ -2499,8 +2499,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "maestroqa",
     "name": "MaestroQA",
     "domain": "maestroqa.com",
@@ -2518,8 +2518,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kaizo",
     "name": "Kaizo",
     "domain": "kaizo.ai",
@@ -2537,8 +2537,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "asana",
     "name": "Asana",
     "domain": "asana.com",
@@ -2556,8 +2556,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "notion",
     "name": "Notion",
     "domain": "notion.so",
@@ -2575,8 +2575,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "linear",
     "name": "Linear",
     "domain": "linear.app",
@@ -2594,8 +2594,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "jira-by-atlassian",
     "name": "Jira by Atlassian",
     "domain": "atlassian.com",
@@ -2613,8 +2613,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "trello",
     "name": "Trello",
     "domain": "trello.com",
@@ -2632,8 +2632,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "smartsheet",
     "name": "Smartsheet",
     "domain": "smartsheet.com",
@@ -2651,8 +2651,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "basecamp",
     "name": "Basecamp",
     "domain": "basecamp.com",
@@ -2670,8 +2670,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "wrike",
     "name": "Wrike",
     "domain": "wrike.com",
@@ -2689,8 +2689,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "height",
     "name": "Height",
     "domain": "height.app",
@@ -2708,8 +2708,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "plane",
     "name": "Plane",
     "domain": "plane.so",
@@ -2727,8 +2727,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "teamwork",
     "name": "Teamwork",
     "domain": "teamwork.com",
@@ -2746,8 +2746,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "hive",
     "name": "Hive",
     "domain": "hive.com",
@@ -2765,8 +2765,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "planview-leankit-clarizen",
     "name": "Planview (Leankit / Clarizen)",
     "domain": "planview.com",
@@ -2784,8 +2784,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "meistertask",
     "name": "MeisterTask",
     "domain": "meistertask.com",
@@ -2803,8 +2803,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "paymo",
     "name": "Paymo",
     "domain": "paymoapp.com",
@@ -2822,8 +2822,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "redmine",
     "name": "Redmine",
     "domain": "redmine.org",
@@ -2841,8 +2841,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "shortcut-formerly-clubhouse",
     "name": "Shortcut (formerly Clubhouse)",
     "domain": "shortcut.com",
@@ -2860,8 +2860,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kanten-kanbanflow",
     "name": "Kanten (KanbanFlow)",
     "domain": "kanbanflow.com",
@@ -2879,8 +2879,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "youtrack-by-jetbrains",
     "name": "YouTrack by JetBrains",
     "domain": "jetbrains.com",
@@ -2898,8 +2898,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "proofhub",
     "name": "ProofHub",
     "domain": "proofhub.com",
@@ -2917,8 +2917,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "scrumwise",
     "name": "Scrumwise",
     "domain": "scrumwise.com",
@@ -2936,8 +2936,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "activecollab",
     "name": "ActiveCollab",
     "domain": "activecollab.com",
@@ -2955,8 +2955,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "freedcamp",
     "name": "Freedcamp",
     "domain": "freedcamp.com",
@@ -2974,8 +2974,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "productboard",
     "name": "ProductBoard",
     "domain": "productboard.com",
@@ -2993,8 +2993,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "craft-io",
     "name": "Craft.io",
     "domain": "craft.io",
@@ -3012,8 +3012,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "chanty",
     "name": "Chanty",
     "domain": "chanty.com",
@@ -3031,8 +3031,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "flow",
     "name": "Flow",
     "domain": "getflow.com",
@@ -3050,8 +3050,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "breeze",
     "name": "Breeze",
     "domain": "breeze.pm",
@@ -3069,8 +3069,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "fibery",
     "name": "Fibery",
     "domain": "fibery.io",
@@ -3088,8 +3088,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "taskade",
     "name": "Taskade",
     "domain": "taskade.com",
@@ -3107,8 +3107,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "todoist",
     "name": "Todoist",
     "domain": "todoist.com",
@@ -3126,8 +3126,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "ticktick",
     "name": "TickTick",
     "domain": "ticktick.com",
@@ -3145,8 +3145,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "any-do",
     "name": "Any.do",
     "domain": "any.do",
@@ -3164,8 +3164,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "ganttpro",
     "name": "GanttPRO",
     "domain": "ganttpro.com",
@@ -3183,8 +3183,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "teamgantt",
     "name": "TeamGantt",
     "domain": "teamgantt.com",
@@ -3202,8 +3202,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "liquidplanner",
     "name": "LiquidPlanner",
     "domain": "liquidplanner.com",
@@ -3221,8 +3221,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "runn",
     "name": "Runn",
     "domain": "runn.io",
@@ -3240,8 +3240,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "float",
     "name": "Float",
     "domain": "float.com",
@@ -3259,8 +3259,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "resource-guru",
     "name": "Resource Guru",
     "domain": "resourceguruapp.com",
@@ -3278,8 +3278,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "forecast",
     "name": "Forecast",
     "domain": "forecast.app",
@@ -3297,8 +3297,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "vivifyscrum",
     "name": "VivifyScrum",
     "domain": "vivifyscrum.com",
@@ -3316,8 +3316,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "openproject",
     "name": "OpenProject",
     "domain": "openproject.org",
@@ -3335,8 +3335,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "taiga",
     "name": "Taiga",
     "domain": "taiga.io",
@@ -3354,8 +3354,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": true
-},
-{
+  },
+  {
     "id": "orangescrum",
     "name": "Orangescrum",
     "domain": "orangescrum.com",
@@ -3373,8 +3373,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "projulio-zenhub",
     "name": "Projulio / ZenHub",
     "domain": "zenhub.com",
@@ -3392,8 +3392,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "otter-ai",
     "name": "Otter.ai",
     "domain": "otter.ai",
@@ -3411,8 +3411,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "fireflies-ai",
     "name": "Fireflies.ai",
     "domain": "fireflies.ai",
@@ -3430,8 +3430,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gong",
     "name": "Gong",
     "domain": "gong.io",
@@ -3449,8 +3449,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "chorus-ai-by-zoominfo",
     "name": "Chorus.ai by ZoomInfo",
     "domain": "chorus.ai",
@@ -3468,8 +3468,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "fathom",
     "name": "Fathom",
     "domain": "fathom.video",
@@ -3487,8 +3487,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "read-ai",
     "name": "Read AI",
     "domain": "read.ai",
@@ -3506,8 +3506,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "avoma",
     "name": "Avoma",
     "domain": "avoma.com",
@@ -3525,27 +3525,27 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "krisp",
     "name": "Krisp",
     "domain": "krisp.ai",
-    "category": "meeting-ai",
-    "tagline": "AI noise cancellation, accent localization, and meeting transcription app",
-    "description": "Cancels background voices and noise during online meetings while providing automated transcription and meeting summaries.",
-    "rating": 4.6,
-    "reviewsCount": 28758,
+    "category": "ai-music-audio",
+    "tagline": "AI noise cancellation and background voice suppression app",
+    "description": "Krisp runs locally on desktop devices to mute background noise and echo during live calls in real time. It is designed for remote professionals, call centers, and podcasters wanting pristine audio.",
+    "rating": 4.8,
+    "reviewsCount": 950,
     "pricing": "Freemium",
     "websiteUrl": "https://krisp.ai",
-    "affiliateUrl": "https://krisp.ai?utm_source=stakdock",
+    "affiliateUrl": "https://krisp.ai",
     "badge": "Verified Tool",
     "featured": false,
-    "monthlyVisits": "791K",
+    "monthlyVisits": "3.8M",
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "supernormal",
     "name": "Supernormal",
     "domain": "supernormal.com",
@@ -3563,8 +3563,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "limitless-rewind",
     "name": "Limitless (Rewind)",
     "domain": "limitless.ai",
@@ -3582,8 +3582,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "fellow-app",
     "name": "Fellow.app",
     "domain": "fellow.app",
@@ -3601,8 +3601,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "tl-dv",
     "name": "Tl;dv",
     "domain": "tldv.io",
@@ -3620,8 +3620,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "circleback",
     "name": "Circleback",
     "domain": "circleback.ai",
@@ -3639,8 +3639,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "grain",
     "name": "Grain",
     "domain": "grain.com",
@@ -3658,8 +3658,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "krisp-ai-jamie",
     "name": "Krisp AI / Jamie",
     "domain": "meetjamie.ai",
@@ -3677,8 +3677,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "tactiq",
     "name": "Tactiq",
     "domain": "tactiq.io",
@@ -3696,8 +3696,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "equal-time",
     "name": "Equal Time",
     "domain": "equaltime.io",
@@ -3715,8 +3715,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "syllaby-meetgeek",
     "name": "Syllaby / MeetGeek",
     "domain": "meetgeek.ai",
@@ -3734,8 +3734,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "nyota",
     "name": "Nyota",
     "domain": "nyota.ai",
@@ -3753,8 +3753,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "vowel-zoom-ai-companion",
     "name": "Vowel / Zoom AI Companion",
     "domain": "zoom.us",
@@ -3772,8 +3772,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "microsoft-teams-copilot",
     "name": "Microsoft Teams Copilot",
     "domain": "microsoft.com",
@@ -3791,8 +3791,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "colibri-ai",
     "name": "Colibri AI",
     "domain": "colibri.ai",
@@ -3810,8 +3810,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "syllable-spinach-ai",
     "name": "Syllable / Spinach AI",
     "domain": "spinach.ai",
@@ -3829,8 +3829,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "granola",
     "name": "Granola",
     "domain": "granola.ai",
@@ -3848,8 +3848,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "bluedot",
     "name": "Bluedot",
     "domain": "extension.app",
@@ -3867,8 +3867,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "airgram",
     "name": "Airgram",
     "domain": "airgram.io",
@@ -3886,8 +3886,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "notta",
     "name": "Notta",
     "domain": "notta.ai",
@@ -3905,8 +3905,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "sybill",
     "name": "Sybill",
     "domain": "sybill.ai",
@@ -3924,8 +3924,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "reflect-ai-metaview",
     "name": "Reflect AI / Metaview",
     "domain": "metaview.ai",
@@ -3943,8 +3943,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "laxis",
     "name": "Laxis",
     "domain": "laxis.tech",
@@ -3962,8 +3962,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "rewatch",
     "name": "Rewatch",
     "domain": "rewatch.com",
@@ -3981,8 +3981,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "vocaroo-wave-ai",
     "name": "Vocaroo / Wave AI",
     "domain": "wave.ai",
@@ -4000,8 +4000,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "claap",
     "name": "Claap",
     "domain": "claap.io",
@@ -4019,8 +4019,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "sonix",
     "name": "Sonix",
     "domain": "sonix.ai",
@@ -4038,8 +4038,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "verbit",
     "name": "Verbit",
     "domain": "verbit.ai",
@@ -4057,8 +4057,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "trint",
     "name": "Trint",
     "domain": "trint.com",
@@ -4076,8 +4076,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "happy-scribe",
     "name": "Happy Scribe",
     "domain": "happyscribe.com",
@@ -4095,8 +4095,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "equaltime-wordly",
     "name": "EqualTime / Wordly",
     "domain": "wordly.ai",
@@ -4114,8 +4114,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "kudo",
     "name": "KUDO",
     "domain": "kudoway.com",
@@ -4133,8 +4133,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "rask-ai",
     "name": "Rask AI",
     "domain": "rask.ai",
@@ -4152,8 +4152,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "mindstamp",
     "name": "Mindstamp",
     "domain": "mindstamp.io",
@@ -4171,8 +4171,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "speak-ai",
     "name": "Speak AI",
     "domain": "speakai.co",
@@ -4190,8 +4190,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "poda-assemblyai",
     "name": "Poda / AssemblyAI",
     "domain": "assemblyai.com",
@@ -4209,8 +4209,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "deepgram",
     "name": "Deepgram",
     "domain": "deepgram.com",
@@ -4228,8 +4228,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": false,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "gladia",
     "name": "Gladia",
     "domain": "gladia.io",
@@ -4247,8 +4247,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "vowel",
     "name": "Vowel",
     "domain": "vowel.com",
@@ -4266,8 +4266,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "huddleiq",
     "name": "HuddleIQ",
     "domain": "huddleiq.com",
@@ -4285,8 +4285,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "notesbyai-scribe",
     "name": "NotesByAI / Scribe",
     "domain": "scribehow.com",
@@ -4304,8 +4304,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "lucidspark-ai",
     "name": "Lucidspark AI",
     "domain": "lucidspark.com",
@@ -4323,8 +4323,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "miro-ai",
     "name": "Miro AI",
     "domain": "miro.com",
@@ -4342,8 +4342,8 @@ export const staticSaasTools = [
     "verifiedStatus": "Verified",
     "isFreeTier": true,
     "isOpenSource": false
-},
-{
+  },
+  {
     "id": "adcreative-ai",
     "name": "AdCreative.ai",
     "domain": "adcreative.ai",
@@ -4358,13 +4358,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "creatify",
     "name": "Creatify",
     "domain": "creatify.ai",
@@ -4379,13 +4379,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "motion",
     "name": "Motion",
     "domain": "motionapp.com",
@@ -4400,13 +4400,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "creatopy",
     "name": "Creatopy",
     "domain": "creatopy.com",
@@ -4421,13 +4421,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "pencil",
     "name": "Pencil",
     "domain": "trypencil.com",
@@ -4442,13 +4442,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "arcads",
     "name": "Arcads",
     "domain": "arcads.ai",
@@ -4463,13 +4463,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "magic-brief",
     "name": "Magic Brief",
     "domain": "magicbrief.com",
@@ -4484,13 +4484,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "topview-ai",
     "name": "Topview AI",
     "domain": "topview.ai",
@@ -4505,13 +4505,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "foreplay",
     "name": "Foreplay",
     "domain": "foreplay.co",
@@ -4526,13 +4526,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "predis-ai",
     "name": "Predis.ai",
     "domain": "predis.ai",
@@ -4547,13 +4547,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "shhots-ai",
     "name": "Shhots AI",
     "domain": "shhots.ai",
@@ -4568,13 +4568,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adlegends",
     "name": "AdLegends",
     "domain": "adlegends.ai",
@@ -4589,13 +4589,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "bannerflow",
     "name": "Bannerflow",
     "domain": "bannerflow.com",
@@ -4610,13 +4610,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "marpipe",
     "name": "Marpipe",
     "domain": "marpipe.com",
@@ -4631,13 +4631,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "smartly-io",
     "name": "Smartly.io",
     "domain": "smartly.io",
@@ -4652,13 +4652,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "admake-ai",
     "name": "AdMake AI",
     "domain": "admakeai.com",
@@ -4673,13 +4673,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adespresso",
     "name": "AdEspresso",
     "domain": "adespresso.com",
@@ -4694,13 +4694,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "revealbot",
     "name": "Revealbot",
     "domain": "revealbot.com",
@@ -4715,13 +4715,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "vidyard-ad-studio",
     "name": "Vidyard Ad Studio",
     "domain": "vidyard.com",
@@ -4736,13 +4736,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "anyword",
     "name": "Anyword",
     "domain": "anyword.com",
@@ -4757,13 +4757,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "viddyoze",
     "name": "Viddyoze",
     "domain": "viddyoze.com",
@@ -4778,13 +4778,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "offeo",
     "name": "Offeo",
     "domain": "offeo.com",
@@ -4799,13 +4799,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "waymark",
     "name": "Waymark",
     "domain": "waymark.com",
@@ -4820,13 +4820,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "postermywall",
     "name": "Postermywall",
     "domain": "postermywall.com",
@@ -4841,13 +4841,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "snappa",
     "name": "Snappa",
     "domain": "snappa.com",
@@ -4862,13 +4862,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "biteable",
     "name": "Biteable",
     "domain": "biteable.com",
@@ -4883,13 +4883,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "promo-com",
     "name": "Promo.com",
     "domain": "promo.com",
@@ -4904,13 +4904,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adstellar",
     "name": "AdStellar",
     "domain": "adstellar.ai",
@@ -4925,13 +4925,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "tight-studio",
     "name": "Tight Studio",
     "domain": "tight.studio",
@@ -4946,13 +4946,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "deevid-ai",
     "name": "DeeVid AI",
     "domain": "deevid.ai",
@@ -4967,13 +4967,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "synter",
     "name": "Synter",
     "domain": "syntermedia.ai",
@@ -4988,13 +4988,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adflex",
     "name": "AdFlex",
     "domain": "adflex.io",
@@ -5009,13 +5009,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "bigspy",
     "name": "BigSpy",
     "domain": "bigspy.com",
@@ -5030,13 +5030,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "anstrex",
     "name": "Anstrex",
     "domain": "anstrex.com",
@@ -5051,13 +5051,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adspy",
     "name": "AdSpy",
     "domain": "adspy.com",
@@ -5072,13 +5072,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adinspirer",
     "name": "AdInspirer",
     "domain": "adinspirer.com",
@@ -5093,13 +5093,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "adbeat",
     "name": "AdBeat",
     "domain": "adbeat.com",
@@ -5114,13 +5114,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "minea",
     "name": "Minea",
     "domain": "minea.com",
@@ -5135,13 +5135,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Ad Creative Generation",
-        "A/B Variant Testing",
-        "Competitor Spy Library",
-        "Multi-Format Export"
+      "Ad Creative Generation",
+      "A/B Variant Testing",
+      "Competitor Spy Library",
+      "Multi-Format Export"
     ]
-},
-{
+  },
+  {
     "id": "sage-intacct",
     "name": "Sage Intacct",
     "domain": "sage.com",
@@ -5156,13 +5156,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "chargebee",
     "name": "Chargebee",
     "domain": "chargebee.com",
@@ -5177,13 +5177,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "recurly",
     "name": "Recurly",
     "domain": "recurly.com",
@@ -5198,13 +5198,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "maxio",
     "name": "Maxio",
     "domain": "maxio.com",
@@ -5219,13 +5219,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "invoicely",
     "name": "Invoicely",
     "domain": "invoicely.com",
@@ -5240,13 +5240,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "invoice-ninja",
     "name": "Invoice Ninja",
     "domain": "invoiceninja.com",
@@ -5261,13 +5261,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "bonsai",
     "name": "Bonsai",
     "domain": "hellobonsai.com",
@@ -5282,13 +5282,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "hiveage",
     "name": "Hiveage",
     "domain": "hiveage.com",
@@ -5303,13 +5303,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "square-invoicing",
     "name": "Square Invoicing",
     "domain": "squareup.com",
@@ -5324,13 +5324,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "invoice-simple",
     "name": "Invoice Simple",
     "domain": "invoicesimple.com",
@@ -5345,13 +5345,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "bill-com",
     "name": "Bill.com",
     "domain": "bill.com",
@@ -5366,13 +5366,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "ramp",
     "name": "Ramp",
     "domain": "ramp.com",
@@ -5387,13 +5387,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "brex",
     "name": "Brex",
     "domain": "brex.com",
@@ -5408,13 +5408,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "expensify",
     "name": "Expensify",
     "domain": "expensify.com",
@@ -5429,13 +5429,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "tipalti",
     "name": "Tipalti",
     "domain": "tipalti.com",
@@ -5450,13 +5450,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "avidxchange",
     "name": "AvidXchange",
     "domain": "avidxchange.com",
@@ -5471,13 +5471,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "plooto",
     "name": "Plooto",
     "domain": "plooto.com",
@@ -5492,13 +5492,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "melio",
     "name": "Melio",
     "domain": "meliopayments.com",
@@ -5513,13 +5513,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "dualentry",
     "name": "DualEntry",
     "domain": "dualentry.com",
@@ -5534,13 +5534,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "kashflow",
     "name": "KashFlow",
     "domain": "kashflow.com",
@@ -5555,13 +5555,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "freeagent",
     "name": "FreeAgent",
     "domain": "freeagent.com",
@@ -5576,13 +5576,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "quaderno",
     "name": "Quaderno",
     "domain": "quaderno.io",
@@ -5597,13 +5597,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "taxjar",
     "name": "TaxJar",
     "domain": "taxjar.com",
@@ -5618,13 +5618,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "anrok",
     "name": "Anrok",
     "domain": "anrok.com",
@@ -5639,13 +5639,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "orb",
     "name": "Orb",
     "domain": "withorb.com",
@@ -5660,13 +5660,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "lago",
     "name": "Lago",
     "domain": "getlago.com",
@@ -5681,13 +5681,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "metronome",
     "name": "Metronome",
     "domain": "metronome.com",
@@ -5702,13 +5702,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "toggl-track",
     "name": "Toggl Track",
     "domain": "toggl.com",
@@ -5723,13 +5723,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "harvest",
     "name": "Harvest",
     "domain": "getharvest.com",
@@ -5744,13 +5744,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "payhawk",
     "name": "Payhawk",
     "domain": "payhawk.com",
@@ -5765,13 +5765,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "pleo",
     "name": "Pleo",
     "domain": "pleo.io",
@@ -5786,13 +5786,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "outseta",
     "name": "Outseta",
     "domain": "outseta.com",
@@ -5807,13 +5807,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "vayu",
     "name": "Vayu",
     "domain": "withvayu.com",
@@ -5828,13 +5828,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "younium",
     "name": "Younium",
     "domain": "younium.com",
@@ -5849,13 +5849,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "order-co",
     "name": "Order.co",
     "domain": "order.co",
@@ -5870,13 +5870,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "precoro",
     "name": "Precoro",
     "domain": "precoro.com",
@@ -5891,13 +5891,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "zip",
     "name": "Zip",
     "domain": "ziphq.com",
@@ -5912,13 +5912,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "vic-ai",
     "name": "Vic.ai",
     "domain": "vic.ai",
@@ -5933,13 +5933,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "rossum",
     "name": "Rossum",
     "domain": "rossum.ai",
@@ -5954,13 +5954,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "docuclipper",
     "name": "DocuClipper",
     "domain": "docuclipper.com",
@@ -5975,13 +5975,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "spendflo",
     "name": "Spendflo",
     "domain": "spendflo.com",
@@ -5996,13 +5996,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "billomat",
     "name": "Billomat",
     "domain": "billomat.com",
@@ -6017,13 +6017,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Invoicing & Billing",
-        "Expense Tracking",
-        "Financial Analytics",
-        "Tax & Payment Sync"
+      "Invoicing & Billing",
+      "Expense Tracking",
+      "Financial Analytics",
+      "Tax & Payment Sync"
     ]
-},
-{
+  },
+  {
     "id": "wix",
     "name": "Wix",
     "domain": "wix.com",
@@ -6038,13 +6038,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "squarespace",
     "name": "Squarespace",
     "domain": "squarespace.com",
@@ -6059,13 +6059,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "wordpress-com",
     "name": "WordPress.com",
     "domain": "wordpress.com",
@@ -6080,13 +6080,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "hostinger-website-builder",
     "name": "Hostinger Website Builder",
     "domain": "hostinger.com",
@@ -6101,13 +6101,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "elementor",
     "name": "Elementor",
     "domain": "elementor.com",
@@ -6122,13 +6122,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "carrd",
     "name": "Carrd",
     "domain": "carrd.co",
@@ -6143,13 +6143,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "typedream",
     "name": "Typedream",
     "domain": "typedream.com",
@@ -6164,13 +6164,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "dorik",
     "name": "Dorik",
     "domain": "dorik.com",
@@ -6185,13 +6185,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "duda",
     "name": "Duda",
     "domain": "duda.co",
@@ -6206,13 +6206,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "webnode",
     "name": "Webnode",
     "domain": "webnode.com",
@@ -6227,13 +6227,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "weebly",
     "name": "Weebly",
     "domain": "weebly.com",
@@ -6248,13 +6248,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "jimdo",
     "name": "Jimdo",
     "domain": "jimdo.com",
@@ -6269,13 +6269,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "site123",
     "name": "SITE123",
     "domain": "site123.com",
@@ -6290,13 +6290,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "unbounce",
     "name": "Unbounce",
     "domain": "unbounce.com",
@@ -6311,13 +6311,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "instapage",
     "name": "Instapage",
     "domain": "instapage.com",
@@ -6332,13 +6332,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "leadpages",
     "name": "Leadpages",
     "domain": "leadpages.com",
@@ -6353,13 +6353,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "strikingly",
     "name": "Strikingly",
     "domain": "strikingly.com",
@@ -6374,13 +6374,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "brizy",
     "name": "Brizy",
     "domain": "brizy.io",
@@ -6395,13 +6395,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "bigcommerce",
     "name": "BigCommerce",
     "domain": "bigcommerce.com",
@@ -6416,13 +6416,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "ecwid-by-lightspeed",
     "name": "Ecwid by Lightspeed",
     "domain": "ecwid.com",
@@ -6437,13 +6437,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "vev",
     "name": "Vev",
     "domain": "vev.design",
@@ -6458,13 +6458,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "sanity",
     "name": "Sanity",
     "domain": "sanity.io",
@@ -6479,13 +6479,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "strapi",
     "name": "Strapi",
     "domain": "strapi.io",
@@ -6500,13 +6500,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "builder-io",
     "name": "Builder.io",
     "domain": "builder.io",
@@ -6521,13 +6521,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "divi-by-elegant-themes",
     "name": "Divi by Elegant Themes",
     "domain": "elegantthemes.com",
@@ -6542,13 +6542,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "systeme-io",
     "name": "Systeme.io",
     "domain": "systeme.io",
@@ -6563,13 +6563,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "kartra",
     "name": "Kartra",
     "domain": "kartra.com",
@@ -6584,13 +6584,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "kajabi",
     "name": "Kajabi",
     "domain": "kajabi.com",
@@ -6605,13 +6605,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "podia",
     "name": "Podia",
     "domain": "podia.com",
@@ -6626,13 +6626,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "clickfunnels",
     "name": "ClickFunnels",
     "domain": "clickfunnels.com",
@@ -6647,13 +6647,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "weblium",
     "name": "Weblium",
     "domain": "weblium.com",
@@ -6668,13 +6668,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "super-so",
     "name": "Super.so",
     "domain": "super.so",
@@ -6689,13 +6689,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "fruition",
     "name": "Fruition",
     "domain": "fruition.site",
@@ -6710,13 +6710,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "softr",
     "name": "Softr",
     "domain": "softr.io",
@@ -6731,13 +6731,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "glide",
     "name": "Glide",
     "domain": "glideapps.com",
@@ -6752,13 +6752,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "bubble",
     "name": "Bubble",
     "domain": "bubble.io",
@@ -6773,13 +6773,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "pagefly",
     "name": "PageFly",
     "domain": "pagefly.io",
@@ -6794,13 +6794,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "shogun",
     "name": "Shogun",
     "domain": "getshogun.com",
@@ -6815,13 +6815,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "ukit",
     "name": "uKit",
     "domain": "ukit.com",
@@ -6836,13 +6836,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "spreadsimple",
     "name": "SpreadSimple",
     "domain": "spreadsimple.com",
@@ -6857,13 +6857,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "b12",
     "name": "B12",
     "domain": "b12.io",
@@ -6878,13 +6878,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "payload-cms",
     "name": "Payload CMS",
     "domain": "payloadcms.com",
@@ -6899,13 +6899,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Visual Page Builder",
-        "SEO Optimization",
-        "Responsive Mobile Presets",
-        "Custom Domain Hosting"
+      "Visual Page Builder",
+      "SEO Optimization",
+      "Responsive Mobile Presets",
+      "Custom Domain Hosting"
     ]
-},
-{
+  },
+  {
     "id": "adobe-firefly",
     "name": "Adobe Firefly",
     "domain": "firefly.adobe.com",
@@ -6920,13 +6920,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "recraft",
     "name": "Recraft",
     "domain": "recraft.ai",
@@ -6941,13 +6941,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "ideogram",
     "name": "Ideogram",
     "domain": "ideogram.ai",
@@ -6962,13 +6962,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "flux-by-black-forest-labs",
     "name": "FLUX by Black Forest Labs",
     "domain": "blackforestlabs.ai",
@@ -6983,13 +6983,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "kittl",
     "name": "Kittl",
     "domain": "kittl.com",
@@ -7004,13 +7004,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "galileo-ai",
     "name": "Galileo AI",
     "domain": "usegalileo.ai",
@@ -7025,13 +7025,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "uizard",
     "name": "Uizard",
     "domain": "uizard.io",
@@ -7046,13 +7046,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "visily",
     "name": "Visily",
     "domain": "visily.ai",
@@ -7067,13 +7067,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "relume",
     "name": "Relume",
     "domain": "relume.io",
@@ -7088,13 +7088,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "looka",
     "name": "Looka",
     "domain": "looka.com",
@@ -7109,13 +7109,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "brandmark",
     "name": "Brandmark",
     "domain": "brandmark.io",
@@ -7130,13 +7130,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "khroma",
     "name": "Khroma",
     "domain": "khroma.co",
@@ -7151,13 +7151,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "photoroom",
     "name": "Photoroom",
     "domain": "photoroom.com",
@@ -7172,13 +7172,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "clipdrop",
     "name": "Clipdrop",
     "domain": "clipdrop.co",
@@ -7193,13 +7193,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "designs-ai",
     "name": "Designs.ai",
     "domain": "designs.ai",
@@ -7214,13 +7214,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "vectorizer-ai",
     "name": "Vectorizer.AI",
     "domain": "vectorizer.ai",
@@ -7235,13 +7235,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "illustroke",
     "name": "Illustroke",
     "domain": "illustroke.com",
@@ -7256,13 +7256,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "stylar-ai",
     "name": "Stylar AI",
     "domain": "stylar.ai",
@@ -7277,13 +7277,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "visual-electric",
     "name": "Visual Electric",
     "domain": "visualelectric.com",
@@ -7298,13 +7298,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "playground",
     "name": "Playground",
     "domain": "playground.com",
@@ -7319,13 +7319,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "remove-bg",
     "name": "Remove.bg",
     "domain": "remove.bg",
@@ -7340,13 +7340,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "vanceai",
     "name": "VanceAI",
     "domain": "vanceai.com",
@@ -7361,13 +7361,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "topaz-gigapixel",
     "name": "Topaz Gigapixel",
     "domain": "topazlabs.com",
@@ -7382,13 +7382,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "pixelcut",
     "name": "Pixelcut",
     "domain": "pixelcut.ai",
@@ -7403,13 +7403,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "pebblely",
     "name": "Pebblely",
     "domain": "pebblely.com",
@@ -7424,13 +7424,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "flair-ai",
     "name": "Flair AI",
     "domain": "flair.ai",
@@ -7445,13 +7445,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "mokker-ai",
     "name": "Mokker AI",
     "domain": "mokker.ai",
@@ -7466,13 +7466,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "spline-3d",
     "name": "Spline 3D",
     "domain": "spline.design",
@@ -7487,13 +7487,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "meshy",
     "name": "Meshy",
     "domain": "meshy.ai",
@@ -7508,13 +7508,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "tripo3d",
     "name": "Tripo3D",
     "domain": "tripo3d.ai",
@@ -7529,13 +7529,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "artbreeder",
     "name": "Artbreeder",
     "domain": "artbreeder.com",
@@ -7550,13 +7550,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "nightcafe",
     "name": "NightCafe",
     "domain": "nightcafe.studio",
@@ -7571,13 +7571,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "seaart",
     "name": "SeaArt",
     "domain": "seaart.ai",
@@ -7592,13 +7592,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "tensor-art",
     "name": "Tensor.Art",
     "domain": "tensor.art",
@@ -7613,13 +7613,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "civitai",
     "name": "Civitai",
     "domain": "civitai.com",
@@ -7634,13 +7634,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "autodraw",
     "name": "Autodraw",
     "domain": "autodraw.com",
@@ -7655,13 +7655,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "patterned-ai",
     "name": "Patterned AI",
     "domain": "patterned.ai",
@@ -7676,13 +7676,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "sivi-ai",
     "name": "Sivi AI",
     "domain": "sivi.ai",
@@ -7697,13 +7697,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "microsoft-designer",
     "name": "Microsoft Designer",
     "domain": "designer.microsoft.com",
@@ -7718,13 +7718,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "let-s-enhance",
     "name": "Let's Enhance",
     "domain": "letsenhance.io",
@@ -7739,13 +7739,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "deep-art-effects",
     "name": "Deep Art Effects",
     "domain": "deeparteffects.com",
@@ -7760,13 +7760,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "magic-studio",
     "name": "Magic Studio",
     "domain": "magicstudio.com",
@@ -7781,13 +7781,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Image Generation",
-        "Vector & SVG Export",
-        "Canvas Editing",
-        "High-Res Upscaling"
+      "AI Image Generation",
+      "Vector & SVG Export",
+      "Canvas Editing",
+      "High-Res Upscaling"
     ]
-},
-{
+  },
+  {
     "id": "moz-pro",
     "name": "Moz Pro",
     "domain": "moz.com",
@@ -7802,13 +7802,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "screaming-frog-seo-spider",
     "name": "Screaming Frog SEO Spider",
     "domain": "screamingfrog.co.uk",
@@ -7823,13 +7823,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "se-ranking",
     "name": "SE Ranking",
     "domain": "seranking.com",
@@ -7844,13 +7844,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "clearscope",
     "name": "Clearscope",
     "domain": "clearscope.io",
@@ -7865,13 +7865,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "frase",
     "name": "Frase",
     "domain": "frase.io",
@@ -7886,13 +7886,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "marketmuse",
     "name": "MarketMuse",
     "domain": "marketmuse.com",
@@ -7907,13 +7907,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "yoast-seo",
     "name": "Yoast SEO",
     "domain": "yoast.com",
@@ -7928,13 +7928,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "rank-math",
     "name": "Rank Math",
     "domain": "rankmath.com",
@@ -7949,13 +7949,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "mangools",
     "name": "Mangools",
     "domain": "mangools.com",
@@ -7970,13 +7970,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "ubersuggest",
     "name": "Ubersuggest",
     "domain": "neilpatel.com",
@@ -7991,13 +7991,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "spyfu",
     "name": "SpyFu",
     "domain": "spyfu.com",
@@ -8012,13 +8012,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "serpstat",
     "name": "Serpstat",
     "domain": "serpstat.com",
@@ -8033,13 +8033,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "majestic",
     "name": "Majestic",
     "domain": "majestic.com",
@@ -8054,13 +8054,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "sitebulb",
     "name": "Sitebulb",
     "domain": "sitebulb.com",
@@ -8075,13 +8075,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "accuranker",
     "name": "AccuRanker",
     "domain": "accuranker.com",
@@ -8096,13 +8096,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "nightwatch",
     "name": "Nightwatch",
     "domain": "nightwatch.io",
@@ -8117,13 +8117,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "buzzsumo",
     "name": "BuzzSumo",
     "domain": "buzzsumo.com",
@@ -8138,13 +8138,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "answerthepublic",
     "name": "AnswerThePublic",
     "domain": "answerthepublic.com",
@@ -8159,13 +8159,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "keywords-everywhere",
     "name": "Keywords Everywhere",
     "domain": "keywordseverywhere.com",
@@ -8180,13 +8180,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "lowfruits",
     "name": "LowFruits",
     "domain": "lowfruits.io",
@@ -8201,13 +8201,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "keysearch",
     "name": "Keysearch",
     "domain": "keysearch.co",
@@ -8222,13 +8222,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "rankiq",
     "name": "RankIQ",
     "domain": "rankiq.com",
@@ -8243,13 +8243,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "respona",
     "name": "Respona",
     "domain": "respona.com",
@@ -8264,13 +8264,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "pitchbox",
     "name": "Pitchbox",
     "domain": "pitchbox.com",
@@ -8285,13 +8285,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "hunter-io",
     "name": "Hunter.io",
     "domain": "hunter.io",
@@ -8306,13 +8306,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "ninjaoutreach",
     "name": "NinjaOutreach",
     "domain": "ninjaoutreach.com",
@@ -8327,13 +8327,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "search-atlas",
     "name": "Search Atlas",
     "domain": "searchatlas.com",
@@ -8348,13 +8348,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "scalenut",
     "name": "Scalenut",
     "domain": "scalenut.com",
@@ -8369,13 +8369,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "neuronwriter",
     "name": "NeuronWriter",
     "domain": "neuronwriter.com",
@@ -8390,13 +8390,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "growthbar",
     "name": "GrowthBar",
     "domain": "growthbarseo.com",
@@ -8411,13 +8411,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "schema-app",
     "name": "Schema App",
     "domain": "schemaapp.com",
@@ -8432,13 +8432,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "inlinks",
     "name": "InLinks",
     "domain": "inlinks.com",
@@ -8453,13 +8453,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "keyword-tool",
     "name": "Keyword Tool",
     "domain": "keywordtool.io",
@@ -8474,13 +8474,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "all-in-one-seo-aioseo",
     "name": "All in One SEO (AIOSEO)",
     "domain": "aioseo.com",
@@ -8495,13 +8495,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "seopress",
     "name": "SEOPress",
     "domain": "seopress.org",
@@ -8516,13 +8516,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "link-whisper",
     "name": "Link Whisper",
     "domain": "linkwhisper.com",
@@ -8537,13 +8537,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "lumar-formerly-deepcrawl",
     "name": "Lumar (formerly Deepcrawl)",
     "domain": "lumar.io",
@@ -8558,13 +8558,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "botify",
     "name": "Botify",
     "domain": "botify.com",
@@ -8579,13 +8579,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "seoclarity",
     "name": "seoClarity",
     "domain": "seoclarity.net",
@@ -8600,13 +8600,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "conductor",
     "name": "Conductor",
     "domain": "conductor.com",
@@ -8621,13 +8621,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "brightlocal",
     "name": "BrightLocal",
     "domain": "brightlocal.com",
@@ -8642,13 +8642,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "whitespark",
     "name": "Whitespark",
     "domain": "whitespark.ca",
@@ -8663,13 +8663,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "proranktracker",
     "name": "ProRankTracker",
     "domain": "proranktracker.com",
@@ -8684,13 +8684,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "honeyb",
     "name": "Honeyb",
     "domain": "honeyb.ai",
@@ -8705,13 +8705,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "otterly-ai",
     "name": "Otterly AI",
     "domain": "otterly.ai",
@@ -8726,13 +8726,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "indexly",
     "name": "Indexly",
     "domain": "indexly.ai",
@@ -8747,13 +8747,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "dataforseo",
     "name": "DataForSEO",
     "domain": "dataforseo.com",
@@ -8768,13 +8768,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Keyword Research",
-        "SERP Rank Tracking",
-        "Site Audit",
-        "Competitor Intelligence"
+      "Keyword Research",
+      "SERP Rank Tracking",
+      "Site Audit",
+      "Competitor Intelligence"
     ]
-},
-{
+  },
+  {
     "id": "hootsuite",
     "name": "Hootsuite",
     "domain": "hootsuite.com",
@@ -8789,13 +8789,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "sprout-social",
     "name": "Sprout Social",
     "domain": "sproutsocial.com",
@@ -8810,13 +8810,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "later",
     "name": "Later",
     "domain": "later.com",
@@ -8831,13 +8831,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "metricool",
     "name": "Metricool",
     "domain": "metricool.com",
@@ -8852,13 +8852,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "socialpilot",
     "name": "SocialPilot",
     "domain": "socialpilot.co",
@@ -8873,13 +8873,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "taplio",
     "name": "Taplio",
     "domain": "taplio.com",
@@ -8894,13 +8894,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "agorapulse",
     "name": "Agorapulse",
     "domain": "agorapulse.com",
@@ -8915,13 +8915,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "planoly",
     "name": "Planoly",
     "domain": "planoly.com",
@@ -8936,13 +8936,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "loomly",
     "name": "Loomly",
     "domain": "loomly.com",
@@ -8957,13 +8957,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "brand24",
     "name": "Brand24",
     "domain": "brand24.com",
@@ -8978,13 +8978,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "linktree",
     "name": "Linktree",
     "domain": "linktr.ee",
@@ -8999,13 +8999,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "authoredup",
     "name": "AuthoredUp",
     "domain": "authoredup.com",
@@ -9020,13 +9020,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "feedhive",
     "name": "Feedhive",
     "domain": "feedhive.io",
@@ -9041,13 +9041,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "publer",
     "name": "Publer",
     "domain": "publer.io",
@@ -9062,13 +9062,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "sendible",
     "name": "Sendible",
     "domain": "sendible.com",
@@ -9083,13 +9083,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "meetedgar",
     "name": "MeetEdgar",
     "domain": "meetedgar.com",
@@ -9104,13 +9104,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "coschedule",
     "name": "CoSchedule",
     "domain": "coschedule.com",
@@ -9125,13 +9125,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "flick",
     "name": "Flick",
     "domain": "flick.social",
@@ -9146,13 +9146,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "mention",
     "name": "Mention",
     "domain": "mention.com",
@@ -9167,13 +9167,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "hypeauditor",
     "name": "HypeAuditor",
     "domain": "hypeauditor.com",
@@ -9188,13 +9188,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "modash",
     "name": "Modash",
     "domain": "modash.io",
@@ -9209,13 +9209,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "bazaarvoice",
     "name": "Bazaarvoice",
     "domain": "bazaarvoice.com",
@@ -9230,13 +9230,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "contentstudio",
     "name": "ContentStudio",
     "domain": "contentstudio.io",
@@ -9251,13 +9251,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "supergrow",
     "name": "Supergrow",
     "domain": "supergrow.ai",
@@ -9272,13 +9272,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "tweethunter",
     "name": "TweetHunter",
     "domain": "tweethunter.io",
@@ -9293,13 +9293,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "hypefury",
     "name": "Hypefury",
     "domain": "hypefury.com",
@@ -9314,13 +9314,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "typefully",
     "name": "Typefully",
     "domain": "typefully.com",
@@ -9335,13 +9335,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "keyhole",
     "name": "Keyhole",
     "domain": "keyhole.co",
@@ -9356,13 +9356,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "postfity",
     "name": "Postfity",
     "domain": "postfity.com",
@@ -9377,13 +9377,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "brandwatch",
     "name": "Brandwatch",
     "domain": "brandwatch.com",
@@ -9398,13 +9398,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "socialbee",
     "name": "SocialBee",
     "domain": "socialbee.com",
@@ -9419,13 +9419,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "ocoya",
     "name": "Ocoya",
     "domain": "ocoya.com",
@@ -9440,13 +9440,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "vistasocial",
     "name": "VistaSocial",
     "domain": "vistasocial.com",
@@ -9461,13 +9461,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "shortstack",
     "name": "ShortStack",
     "domain": "shortstack.com",
@@ -9482,13 +9482,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "woobox",
     "name": "Woobox",
     "domain": "woobox.com",
@@ -9503,13 +9503,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "beacons",
     "name": "Beacons",
     "domain": "beacons.ai",
@@ -9524,13 +9524,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "sprinklr",
     "name": "Sprinklr",
     "domain": "sprinklr.com",
@@ -9545,13 +9545,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "napoleoncat",
     "name": "NapoleonCat",
     "domain": "napoleoncat.com",
@@ -9566,13 +9566,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "sked-social",
     "name": "Sked Social",
     "domain": "skedsocial.com",
@@ -9587,13 +9587,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "crowdfire",
     "name": "Crowdfire",
     "domain": "crowdfireapp.com",
@@ -9608,13 +9608,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "iconosquare",
     "name": "Iconosquare",
     "domain": "iconosquare.com",
@@ -9629,13 +9629,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "postplanner",
     "name": "Postplanner",
     "domain": "postplanner.com",
@@ -9650,13 +9650,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "plann",
     "name": "Plann",
     "domain": "plannthat.com",
@@ -9671,13 +9671,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "tailwind",
     "name": "Tailwind",
     "domain": "tailwindapp.com",
@@ -9692,13 +9692,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "sotrender",
     "name": "Sotrender",
     "domain": "sotrender.com",
@@ -9713,13 +9713,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "hopper-hq",
     "name": "Hopper HQ",
     "domain": "hopperhq.com",
@@ -9734,13 +9734,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "smarterqueue",
     "name": "SmarterQueue",
     "domain": "smarterqueue.com",
@@ -9755,13 +9755,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Social Scheduling",
-        "Multi-Platform Publishing",
-        "Analytics Dashboard",
-        "Content Planner"
+      "Social Scheduling",
+      "Multi-Platform Publishing",
+      "Analytics Dashboard",
+      "Content Planner"
     ]
-},
-{
+  },
+  {
     "id": "klaviyo",
     "name": "Klaviyo",
     "domain": "klaviyo.com",
@@ -9776,13 +9776,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "convertkit-kit",
     "name": "ConvertKit (Kit)",
     "domain": "kit.com",
@@ -9797,13 +9797,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "instantly",
     "name": "Instantly",
     "domain": "instantly.ai",
@@ -9818,13 +9818,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "smartlead",
     "name": "Smartlead",
     "domain": "smartlead.ai",
@@ -9839,13 +9839,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "resend",
     "name": "Resend",
     "domain": "resend.com",
@@ -9860,13 +9860,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "substack",
     "name": "Substack",
     "domain": "substack.com",
@@ -9881,13 +9881,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "lemlist",
     "name": "Lemlist",
     "domain": "lemlist.com",
@@ -9902,13 +9902,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "postmark",
     "name": "Postmark",
     "domain": "postmarkapp.com",
@@ -9923,13 +9923,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "sendgrid",
     "name": "SendGrid",
     "domain": "sendgrid.com",
@@ -9944,13 +9944,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "customer-io",
     "name": "Customer.io",
     "domain": "customer.io",
@@ -9965,13 +9965,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "drip",
     "name": "Drip",
     "domain": "drip.com",
@@ -9986,13 +9986,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mailerlite",
     "name": "MailerLite",
     "domain": "mailerlite.com",
@@ -10007,13 +10007,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "omnisend",
     "name": "Omnisend",
     "domain": "omnisend.com",
@@ -10028,13 +10028,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "apollo-io",
     "name": "Apollo.io",
     "domain": "apollo.io",
@@ -10049,13 +10049,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "woodpecker",
     "name": "Woodpecker",
     "domain": "woodpecker.co",
@@ -10070,13 +10070,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mailgun",
     "name": "Mailgun",
     "domain": "mailgun.com",
@@ -10091,13 +10091,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "aweber",
     "name": "AWeber",
     "domain": "aweber.com",
@@ -10112,13 +10112,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "getresponser",
     "name": "GetResponser",
     "domain": "getresponse.com",
@@ -10133,13 +10133,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "campaign-monitor",
     "name": "Campaign Monitor",
     "domain": "campaignmonitor.com",
@@ -10154,13 +10154,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "moosend",
     "name": "Moosend",
     "domain": "moosend.com",
@@ -10175,13 +10175,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mailtrap",
     "name": "Mailtrap",
     "domain": "mailtrap.io",
@@ -10196,13 +10196,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "bouncify",
     "name": "Bouncify",
     "domain": "bouncify.io",
@@ -10217,13 +10217,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "zerobounce",
     "name": "ZeroBounce",
     "domain": "zerobounce.net",
@@ -10238,13 +10238,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "neverbounce",
     "name": "NeverBounce",
     "domain": "neverbounce.com",
@@ -10259,13 +10259,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "warmup-inbox",
     "name": "Warmup Inbox",
     "domain": "warmupinbox.com",
@@ -10280,13 +10280,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "folderly",
     "name": "Folderly",
     "domain": "folderly.com",
@@ -10301,13 +10301,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "quickmail",
     "name": "QuickMail",
     "domain": "quickmail.io",
@@ -10322,13 +10322,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "saleshandy",
     "name": "Saleshandy",
     "domain": "saleshandy.com",
@@ -10343,13 +10343,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mailshake",
     "name": "Mailshake",
     "domain": "mailshake.com",
@@ -10364,13 +10364,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "snov-io",
     "name": "Snov.io",
     "domain": "snov.io",
@@ -10385,13 +10385,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "reply-io",
     "name": "Reply.io",
     "domain": "reply.io",
@@ -10406,13 +10406,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "benchmark-email",
     "name": "Benchmark Email",
     "domain": "benchmarkemail.com",
@@ -10427,13 +10427,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "constant-contact",
     "name": "Constant Contact",
     "domain": "constantcontact.com",
@@ -10448,13 +10448,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "emailoctopus",
     "name": "EmailOctopus",
     "domain": "emailoctopus.com",
@@ -10469,13 +10469,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "glockapps",
     "name": "GlockApps",
     "domain": "glockapps.com",
@@ -10490,13 +10490,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mailpoet",
     "name": "MailPoet",
     "domain": "mailpoet.com",
@@ -10511,13 +10511,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "buttondown",
     "name": "Buttondown",
     "domain": "buttondown.email",
@@ -10532,13 +10532,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "gmass",
     "name": "GMass",
     "domain": "gmass.co",
@@ -10553,13 +10553,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "yamm-yet-another-mail-merge",
     "name": "YAMM (Yet Another Mail Merge)",
     "domain": "yamm.com",
@@ -10574,13 +10574,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mixmax",
     "name": "Mixmax",
     "domain": "mixmax.com",
@@ -10595,13 +10595,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "mailster",
     "name": "Mailster",
     "domain": "mailster.co",
@@ -10616,13 +10616,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "campaigner",
     "name": "Campaigner",
     "domain": "campaigner.com",
@@ -10637,13 +10637,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "activeer-activetrail",
     "name": "Activeer (ActiveTrail)",
     "domain": "activetrail.com",
@@ -10658,13 +10658,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "vbout",
     "name": "Vbout",
     "domain": "vbout.com",
@@ -10679,13 +10679,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Email Campaigns",
-        "Visual Automation",
-        "Deliverability Tracking",
-        "Audience Segmentation"
+      "Email Campaigns",
+      "Visual Automation",
+      "Deliverability Tracking",
+      "Audience Segmentation"
     ]
-},
-{
+  },
+  {
     "id": "hailuo-ai",
     "name": "Hailuo AI",
     "domain": "hailuoai.com",
@@ -10700,13 +10700,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "haiper-ai",
     "name": "Haiper AI",
     "domain": "haiper.ai",
@@ -10721,13 +10721,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "colossyan",
     "name": "Colossyan",
     "domain": "colossyan.com",
@@ -10742,13 +10742,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "fliki",
     "name": "Fliki",
     "domain": "fliki.ai",
@@ -10763,13 +10763,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "veed-io",
     "name": "Veed.io",
     "domain": "veed.io",
@@ -10784,13 +10784,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "pictory",
     "name": "Pictory",
     "domain": "pictory.ai",
@@ -10805,13 +10805,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "elai-io",
     "name": "Elai.io",
     "domain": "elai.io",
@@ -10826,13 +10826,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "deepbrain-ai",
     "name": "DeepBrain AI",
     "domain": "deepbrain.io",
@@ -10847,13 +10847,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "hour-one",
     "name": "Hour One",
     "domain": "hourone.ai",
@@ -10868,13 +10868,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "munch",
     "name": "Munch",
     "domain": "getmunch.com",
@@ -10889,13 +10889,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "klap",
     "name": "Klap",
     "domain": "klap.app",
@@ -10910,13 +10910,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "vizard",
     "name": "Vizard",
     "domain": "vizard.ai",
@@ -10931,13 +10931,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "vidyo-ai",
     "name": "Vidyo.ai",
     "domain": "vidyo.ai",
@@ -10952,13 +10952,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "submagic",
     "name": "Submagic",
     "domain": "submagic.co",
@@ -10973,13 +10973,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "tavus",
     "name": "Tavus",
     "domain": "tavus.io",
@@ -10994,13 +10994,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "bhuman",
     "name": "BHuman",
     "domain": "bhuman.ai",
@@ -11015,13 +11015,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "gan-ai",
     "name": "Gan.ai",
     "domain": "gan.ai",
@@ -11036,13 +11036,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "kaiber",
     "name": "Kaiber",
     "domain": "kaiber.ai",
@@ -11057,13 +11057,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "viggle",
     "name": "Viggle",
     "domain": "viggle.ai",
@@ -11078,13 +11078,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "domoai",
     "name": "DomoAI",
     "domain": "domoai.app",
@@ -11099,13 +11099,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "pixverse",
     "name": "PixVerse",
     "domain": "pixverse.ai",
@@ -11120,13 +11120,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "ltx-studio",
     "name": "LTX Studio",
     "domain": "ltx.studio",
@@ -11141,13 +11141,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "steve-ai",
     "name": "Steve.ai",
     "domain": "steve.ai",
@@ -11162,13 +11162,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "lumen5",
     "name": "Lumen5",
     "domain": "lumen5.com",
@@ -11183,13 +11183,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "visla",
     "name": "Visla",
     "domain": "visla.us",
@@ -11204,13 +11204,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "capcut",
     "name": "CapCut",
     "domain": "capcut.com",
@@ -11225,13 +11225,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "clipchamp",
     "name": "Clipchamp",
     "domain": "clipchamp.com",
@@ -11246,13 +11246,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "flexclip",
     "name": "FlexClip",
     "domain": "flexclip.com",
@@ -11267,13 +11267,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "raw-shorts",
     "name": "Raw Shorts",
     "domain": "rawshorts.com",
@@ -11288,13 +11288,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "typeframe",
     "name": "Typeframe",
     "domain": "typeframe.com",
@@ -11309,13 +11309,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "autopod",
     "name": "AutoPod",
     "domain": "autopod.fm",
@@ -11330,13 +11330,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "morph-studio",
     "name": "Morph Studio",
     "domain": "morphstudio.com",
@@ -11351,13 +11351,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "quickvid",
     "name": "QuickVid",
     "domain": "quickvid.ai",
@@ -11372,13 +11372,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "synthesys",
     "name": "Synthesys",
     "domain": "synthesys.io",
@@ -11393,13 +11393,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "rephrase-ai",
     "name": "Rephrase.ai",
     "domain": "rephrase.ai",
@@ -11414,13 +11414,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "wondershare-virbo",
     "name": "Wondershare Virbo",
     "domain": "wondershare.com",
@@ -11435,13 +11435,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "animatediff",
     "name": "AnimateDiff",
     "domain": "animatediff.org",
@@ -11456,13 +11456,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": true,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "deepbrain-ai-human",
     "name": "DeepBrain AI Human",
     "domain": "aistudios.com",
@@ -11477,13 +11477,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Text to Video",
-        "AI Avatars",
-        "Auto Captions",
-        "4K Render Export"
+      "Text to Video",
+      "AI Avatars",
+      "Auto Captions",
+      "4K Render Export"
     ]
-},
-{
+  },
+  {
     "id": "anthropic-claude",
     "name": "Anthropic Claude",
     "domain": "claude.ai",
@@ -11498,13 +11498,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "midjourney",
     "name": "Midjourney",
     "domain": "midjourney.com",
@@ -11519,13 +11519,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "runway",
     "name": "Runway",
     "domain": "runwayml.com",
@@ -11540,34 +11540,37 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "elevenlabs",
     "name": "ElevenLabs",
     "domain": "elevenlabs.io",
     "category": "ai-music-audio",
-    "tagline": "AI voice generator and realistic text-to-speech engine",
-    "description": "High-fidelity voice synthesis platform capable of voice cloning, dubbing in 30+ languages, and emotional speech control.",
-    "rating": 4.8,
-    "reviewsCount": 3913,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://elevenlabs.io?aff=stakdock",
-    "featured": false,
+    "tagline": "Realistic AI voice generator, text-to-speech, and sound effect studio",
+    "description": "ElevenLabs offers hyper-realistic AI voice synthesis, voice cloning, and text-to-speech capabilities in dozens of languages. It is widely used by developers, audio creators, and video editors worldwide.",
+    "rating": 4.9,
+    "reviewsCount": 2100,
+    "pricing": "Freemium",
+    "affiliateUrl": "https://elevenlabs.io",
+    "featured": true,
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
-    ]
-},
-{
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
+    ],
+    "websiteUrl": "https://elevenlabs.io",
+    "badge": "Verified Tool",
+    "monthlyVisits": "22.4M"
+  },
+  {
     "id": "replit-agent",
     "name": "Replit Agent",
     "domain": "replit.com",
@@ -11582,13 +11585,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "lovable",
     "name": "Lovable",
     "domain": "lovable.dev",
@@ -11603,13 +11606,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "synthesia",
     "name": "Synthesia",
     "domain": "synthesia.io",
@@ -11624,13 +11627,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "heygen",
     "name": "HeyGen",
     "domain": "heygen.com",
@@ -11645,34 +11648,37 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "descript",
     "name": "Descript",
     "domain": "descript.com",
-    "category": "trending-video-ai",
-    "tagline": "Text-based video and podcast editing powered by AI",
-    "description": "Edits media files like text documents, providing automated transcription, studio sound enhancement, and voice cloning.",
-    "rating": 4.7,
-    "reviewsCount": 9300,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://descript.com?aff=stakdock",
-    "featured": false,
+    "category": "ai-music-audio",
+    "tagline": "Text-based video and audio editing with voice cloning and cleanup",
+    "description": "Descript transcribes audio and video files so users can edit media simply by editing the text transcript. It features AI filler word removal, audio enhancement, and custom voice regeneration.",
+    "rating": 4.8,
+    "reviewsCount": 1400,
+    "pricing": "Freemium",
+    "affiliateUrl": "https://descript.com",
+    "featured": true,
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
-    ]
-},
-{
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
+    ],
+    "websiteUrl": "https://descript.com",
+    "badge": "Verified Tool",
+    "monthlyVisits": "6.1M"
+  },
+  {
     "id": "otter-ai",
     "name": "Otter.ai",
     "domain": "otter.ai",
@@ -11687,13 +11693,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "fireflies-ai",
     "name": "Fireflies.ai",
     "domain": "fireflies.ai",
@@ -11708,34 +11714,37 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "udio",
     "name": "Udio",
     "domain": "udio.com",
     "category": "ai-music-audio",
-    "tagline": "AI music creation engine for custom audio tracks",
-    "description": "Produces high-fidelity music compositions with precise genre controls, custom lyrics, and audio extensions.",
-    "rating": 4.8,
-    "reviewsCount": 8653,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://udio.com?aff=stakdock",
-    "featured": false,
+    "tagline": "Advanced AI music generation engine with high-fidelity control",
+    "description": "Udio produces high-fidelity music tracks across diverse genres with nuanced control over arrangement and lyrics. It serves music producers and content creators seeking professional-grade audio generation.",
+    "rating": 4.7,
+    "reviewsCount": 890,
+    "pricing": "Freemium",
+    "affiliateUrl": "https://udio.com",
+    "featured": true,
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
-    ]
-},
-{
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
+    ],
+    "websiteUrl": "https://udio.com",
+    "badge": "Verified Tool",
+    "monthlyVisits": "9.2M"
+  },
+  {
     "id": "phind",
     "name": "Phind",
     "domain": "phind.com",
@@ -11750,13 +11759,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "leonardo-ai",
     "name": "Leonardo.Ai",
     "domain": "leonardo.ai",
@@ -11771,13 +11780,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "stability-ai",
     "name": "Stability AI",
     "domain": "stability.ai",
@@ -11792,13 +11801,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "pika",
     "name": "Pika",
     "domain": "pika.art",
@@ -11813,13 +11822,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "krea-ai",
     "name": "Krea AI",
     "domain": "krea.ai",
@@ -11834,13 +11843,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "magnific-ai",
     "name": "Magnific AI",
     "domain": "magnific.ai",
@@ -11855,13 +11864,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "gamma",
     "name": "Gamma",
     "domain": "gamma.app",
@@ -11876,13 +11885,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "consensus",
     "name": "Consensus",
     "domain": "consensus.app",
@@ -11897,13 +11906,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "elicit",
     "name": "Elicit",
     "domain": "elicit.com",
@@ -11918,13 +11927,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "scite",
     "name": "Scite",
     "domain": "scite.ai",
@@ -11939,13 +11948,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "limitless",
     "name": "Limitless",
     "domain": "limitless.ai",
@@ -11960,13 +11969,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "voiceflow",
     "name": "Voiceflow",
     "domain": "voiceflow.com",
@@ -11981,13 +11990,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "chatbase",
     "name": "Chatbase",
     "domain": "chatbase.co",
@@ -12002,13 +12011,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "customgpt",
     "name": "CustomGPT",
     "domain": "customgpt.ai",
@@ -12023,13 +12032,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "poe",
     "name": "Poe",
     "domain": "poe.com",
@@ -12044,13 +12053,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "hugging-face",
     "name": "Hugging Face",
     "domain": "huggingface.co",
@@ -12065,13 +12074,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "replicate",
     "name": "Replicate",
     "domain": "replicate.com",
@@ -12086,13 +12095,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "together-ai",
     "name": "Together AI",
     "domain": "together.ai",
@@ -12107,13 +12116,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "groq",
     "name": "Groq",
     "domain": "groq.com",
@@ -12128,13 +12137,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "cohere",
     "name": "Cohere",
     "domain": "cohere.com",
@@ -12149,13 +12158,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "mistral-ai",
     "name": "Mistral AI",
     "domain": "mistral.ai",
@@ -12170,13 +12179,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "deepl",
     "name": "DeepL",
     "domain": "deepl.com",
@@ -12191,34 +12200,37 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "murf-ai",
     "name": "Murf AI",
     "domain": "murf.ai",
     "category": "ai-music-audio",
-    "tagline": "Versatile AI voice generator for voiceovers and presentations",
-    "description": "Studio-quality voiceover builder for e-learning materials, marketing videos, podcasts, and presentations.",
-    "rating": 4.9,
-    "reviewsCount": 14908,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://murf.ai?aff=stakdock",
+    "tagline": "Versatile AI voiceover studio for presentations and video creators",
+    "description": "Murf AI converts text into natural-sounding voiceovers for e-learning videos, corporate presentations, and marketing ads. It includes precise timing adjustments, pitch controls, and background music overlays.",
+    "rating": 4.7,
+    "reviewsCount": 780,
+    "pricing": "Freemium",
+    "affiliateUrl": "https://murf.ai",
     "featured": false,
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
-    ]
-},
-{
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
+    ],
+    "websiteUrl": "https://murf.ai",
+    "badge": "Verified Tool",
+    "monthlyVisits": "2.8M"
+  },
+  {
     "id": "invideo-ai",
     "name": "InVideo AI",
     "domain": "invideo.io",
@@ -12233,13 +12245,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "opusclip",
     "name": "OpusClip",
     "domain": "opus.pro",
@@ -12254,13 +12266,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "captions",
     "name": "Captions",
     "domain": "captions.ai",
@@ -12275,34 +12287,37 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "speechify",
     "name": "Speechify",
     "domain": "speechify.com",
     "category": "ai-music-audio",
-    "tagline": "AI voice reader for web articles, PDFs, and books",
-    "description": "Converts written text into natural-sounding audio across desktop, mobile, and browser extensions.",
-    "rating": 4.6,
-    "reviewsCount": 3084,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://speechify.com?aff=stakdock",
+    "tagline": "AI text-to-speech reader for web pages, PDFs, and books",
+    "description": "Speechify reads written text out loud using natural, fluid AI voice engines across desktop and mobile devices. It is widely used by Dyslexic readers, students, and professionals to consume content faster.",
+    "rating": 4.8,
+    "reviewsCount": 1650,
+    "pricing": "Freemium",
+    "affiliateUrl": "https://speechify.com",
     "featured": false,
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
-    ]
-},
-{
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
+    ],
+    "websiteUrl": "https://speechify.com",
+    "badge": "Verified Tool",
+    "monthlyVisits": "8.4M"
+  },
+  {
     "id": "d-id",
     "name": "D-ID",
     "domain": "d-id.com",
@@ -12317,13 +12332,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "playht",
     "name": "PlayHT",
     "domain": "play.ht",
@@ -12338,13 +12353,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "AI Generation",
-        "API Access",
-        "Cloud Speed",
-        "Modern Interface"
+      "AI Generation",
+      "API Access",
+      "Cloud Speed",
+      "Modern Interface"
     ]
-},
-{
+  },
+  {
     "id": "salesforce",
     "name": "Salesforce",
     "domain": "salesforce.com",
@@ -12359,13 +12374,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "hubspot-crm",
     "name": "HubSpot CRM",
     "domain": "hubspot.com",
@@ -12380,13 +12395,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "pipedrive",
     "name": "Pipedrive",
     "domain": "pipedrive.com",
@@ -12401,13 +12416,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "zoho-crm",
     "name": "Zoho CRM",
     "domain": "zoho.com",
@@ -12422,13 +12437,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "freshsales",
     "name": "Freshsales",
     "domain": "freshworks.com",
@@ -12443,13 +12458,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "microsoft-dynamics-365",
     "name": "Microsoft Dynamics 365",
     "domain": "dynamics.microsoft.com",
@@ -12464,13 +12479,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "close",
     "name": "Close",
     "domain": "close.com",
@@ -12485,13 +12500,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "copper",
     "name": "Copper",
     "domain": "copper.com",
@@ -12506,13 +12521,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "insightly",
     "name": "Insightly",
     "domain": "insightly.com",
@@ -12527,13 +12542,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "capsule-crm",
     "name": "Capsule CRM",
     "domain": "capsulecrm.com",
@@ -12548,13 +12563,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "streak",
     "name": "Streak",
     "domain": "streak.com",
@@ -12569,13 +12584,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "keap",
     "name": "Keap",
     "domain": "keap.com",
@@ -12590,13 +12605,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "nimble",
     "name": "Nimble",
     "domain": "nimble.com",
@@ -12611,13 +12626,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "bitrix24",
     "name": "Bitrix24",
     "domain": "bitrix24.com",
@@ -12632,13 +12647,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "zendesk-sell",
     "name": "Zendesk Sell",
     "domain": "zendesk.com",
@@ -12653,13 +12668,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "activecampaign",
     "name": "ActiveCampaign",
     "domain": "activecampaign.com",
@@ -12674,13 +12689,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "sugarcrm",
     "name": "SugarCRM",
     "domain": "sugarcrm.com",
@@ -12695,13 +12710,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "apptivo",
     "name": "Apptivo",
     "domain": "apptivo.com",
@@ -12716,13 +12731,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "nutshell",
     "name": "Nutshell",
     "domain": "nutshell.com",
@@ -12737,13 +12752,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "creatio",
     "name": "Creatio",
     "domain": "creatio.com",
@@ -12758,13 +12773,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "less-annoying-crm",
     "name": "Less Annoying CRM",
     "domain": "lessannoyingcrm.com",
@@ -12779,13 +12794,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "folk",
     "name": "Folk",
     "domain": "folk.app",
@@ -12800,13 +12815,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "attio",
     "name": "Attio",
     "domain": "attio.com",
@@ -12821,13 +12836,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "pipeline-crm",
     "name": "Pipeline CRM",
     "domain": "pipelinecrm.com",
@@ -12842,13 +12857,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "agile-crm",
     "name": "Agile CRM",
     "domain": "agilecrm.com",
@@ -12863,13 +12878,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "vtiger-crm",
     "name": "Vtiger CRM",
     "domain": "vtiger.com",
@@ -12884,13 +12899,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "salesflare",
     "name": "Salesflare",
     "domain": "salesflare.com",
@@ -12905,13 +12920,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "bigin-by-zoho",
     "name": "Bigin by Zoho",
     "domain": "bigin.com",
@@ -12926,13 +12941,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "engagebay",
     "name": "EngageBay",
     "domain": "engagebay.com",
@@ -12947,13 +12962,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "onepagecrm",
     "name": "OnePageCRM",
     "domain": "onepagecrm.com",
@@ -12968,13 +12983,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "leadsquared",
     "name": "LeadSquared",
     "domain": "leadsquared.com",
@@ -12989,13 +13004,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "ontraport",
     "name": "Ontraport",
     "domain": "ontraport.com",
@@ -13010,13 +13025,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "brevo-crm",
     "name": "Brevo CRM",
     "domain": "brevo.com",
@@ -13031,13 +13046,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "maximizer",
     "name": "Maximizer",
     "domain": "maximizer.com",
@@ -13052,13 +13067,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "benchmarkone",
     "name": "BenchmarkONE",
     "domain": "benchmarkone.com",
@@ -13073,13 +13088,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "netsuite-crm",
     "name": "NetSuite CRM",
     "domain": "netsuite.com",
@@ -13094,13 +13109,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "act",
     "name": "Act!",
     "domain": "act.com",
@@ -13115,13 +13130,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "inspirip",
     "name": "Inspirip",
     "domain": "pipeliner-crm.com",
@@ -13136,13 +13151,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "civicrm",
     "name": "CiviCRM",
     "domain": "civicrm.org",
@@ -13157,13 +13172,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": true,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "twenty",
     "name": "Twenty",
     "domain": "twenty.com",
@@ -13178,13 +13193,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": true,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "breakcold",
     "name": "Breakcold",
     "domain": "breakcold.com",
@@ -13199,13 +13214,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "daylite",
     "name": "Daylite",
     "domain": "marketcircle.com",
@@ -13220,13 +13235,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "salesmate",
     "name": "Salesmate",
     "domain": "salesmate.io",
@@ -13241,13 +13256,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "spiro",
     "name": "Spiro",
     "domain": "spiro.ai",
@@ -13262,13 +13277,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "flowlu",
     "name": "Flowlu",
     "domain": "flowlu.com",
@@ -13283,13 +13298,13 @@ export const staticSaasTools = [
     "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "nethunt-crm",
     "name": "NetHunt CRM",
     "domain": "nethunt.com",
@@ -13304,13 +13319,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "lead-crm",
     "name": "Lead CRM",
     "domain": "leadcrm.com",
@@ -13325,13 +13340,13 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
-{
+  },
+  {
     "id": "highlevel",
     "name": "HighLevel",
     "domain": "gohighlevel.com",
@@ -13346,12 +13361,12 @@ export const staticSaasTools = [
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-        "Pipeline Management",
-        "Lead Tracking",
-        "Email Sequences",
-        "CRM Analytics"
+      "Pipeline Management",
+      "Lead Tracking",
+      "Email Sequences",
+      "CRM Analytics"
     ]
-},
+  },
   {
     "id": "chatgpt-plus",
     "name": "ChatGPT Plus",
@@ -28938,6 +28953,798 @@ export const staticSaasTools = [
     "badge": "PRODUCT HUNT LAUNCH",
     "featured": false,
     "affiliateUrl": "https://subwave.com",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "domain": "suno.com",
+    "category": "ai-music-audio",
+    "tagline": "Generative AI music platform turning text prompts into full songs",
+    "description": "Suno allows users to create full-length songs complete with vocals, instrumentation, and lyrics using simple text prompts. It is designed for creators, musicians, and hobbyists looking to produce high-quality original tracks instantly.",
+    "rating": 4.8,
+    "reviewsCount": 1250,
+    "pricing": "Freemium",
+    "websiteUrl": "https://suno.com",
+    "affiliateUrl": "https://suno.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "18.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "soundraw",
+    "name": "Soundraw",
+    "domain": "soundraw.io",
+    "category": "ai-music-audio",
+    "tagline": "AI music generator for creators with customizable arrangements",
+    "description": "Soundraw enables creators to generate royalty-free background music and customize intro length, chorus position, and tempo. It is tailored for YouTubers, podcasters, and video producers.",
+    "rating": 4.6,
+    "reviewsCount": 420,
+    "pricing": "Freemium",
+    "websiteUrl": "https://soundraw.io",
+    "affiliateUrl": "https://soundraw.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "mubert",
+    "name": "Mubert",
+    "domain": "mubert.com",
+    "category": "ai-music-audio",
+    "tagline": "Real-time AI generative audio for content creators and apps",
+    "description": "Mubert generates real-time streaming AI soundtracks for videos, podcasts, and mobile apps. It offers an extensive API for developers alongside a direct studio interface for video creators.",
+    "rating": 4.5,
+    "reviewsCount": 380,
+    "pricing": "Freemium",
+    "websiteUrl": "https://mubert.com",
+    "affiliateUrl": "https://mubert.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "boomy",
+    "name": "Boomy",
+    "domain": "boomy.com",
+    "category": "ai-music-audio",
+    "tagline": "Create original songs in seconds and publish to streaming platforms",
+    "description": "Boomy allows users with no musical background to create complete songs using AI algorithms in seconds. Users can release their creations directly to streaming services like Spotify and Apple Music.",
+    "rating": 4.4,
+    "reviewsCount": 310,
+    "pricing": "Freemium",
+    "websiteUrl": "https://boomy.com",
+    "affiliateUrl": "https://boomy.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "850K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "lalal-ai",
+    "name": "LALAL.AI",
+    "domain": "lalal.ai",
+    "category": "ai-music-audio",
+    "tagline": "High-precision AI vocal remover and music stem splitter",
+    "description": "LALAL.AI uses neural networks to extract vocals, drums, bass, guitar, and piano from any audio or video file. It is built for DJs, music producers, and audio engineers seeking clean stem isolation.",
+    "rating": 4.8,
+    "reviewsCount": 650,
+    "pricing": "Freemium",
+    "websiteUrl": "https://lalal.ai",
+    "affiliateUrl": "https://lalal.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "3.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "play-ht",
+    "name": "PlayHT",
+    "domain": "play.ht",
+    "category": "ai-music-audio",
+    "tagline": "Conversational AI voice generator and low-latency voice cloning",
+    "description": "PlayHT generates ultra-realistic text-to-speech audio and real-time voice clones for narrative content and interactive AI agents. It serves e-learning creators, podcasters, and enterprise applications.",
+    "rating": 4.6,
+    "reviewsCount": 510,
+    "pricing": "Freemium",
+    "websiteUrl": "https://play.ht",
+    "affiliateUrl": "https://play.ht",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "2.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "adobe-podcast",
+    "name": "Adobe Podcast",
+    "domain": "podcast.adobe.com",
+    "category": "ai-music-audio",
+    "tagline": "AI-powered web audio recording, editing, and speech enhancement",
+    "description": "Adobe Podcast offers AI speech enhancement tools that eliminate background noise and optimize mic frequencies to sound like a studio setup. It provides browser-based recording and transcript-based editing.",
+    "rating": 4.7,
+    "reviewsCount": 830,
+    "pricing": "Freemium",
+    "websiteUrl": "https://podcast.adobe.com",
+    "affiliateUrl": "https://podcast.adobe.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "aiva",
+    "name": "AIVA",
+    "domain": "aiva.ai",
+    "category": "ai-music-audio",
+    "tagline": "AI soundtrack composer for films, video games, and commercials",
+    "description": "AIVA composes original classical, cinematic, and electronic music scores based on predefined style profiles. It provides full MIDI and audio export options for music directors and game developers.",
+    "rating": 4.6,
+    "reviewsCount": 290,
+    "pricing": "Freemium",
+    "websiteUrl": "https://aiva.ai",
+    "affiliateUrl": "https://aiva.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "620K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "beatoven-ai",
+    "name": "Beatoven.ai",
+    "domain": "beatoven.ai",
+    "category": "ai-music-audio",
+    "tagline": "Royalty-free mood-based background music generator for video and podcasts",
+    "description": "Beatoven.ai uses advanced AI music generation techniques to compose unique mood-based background tracks. It helps content creators tailor audio tracks to fit specific scene moods and durations.",
+    "rating": 4.5,
+    "reviewsCount": 210,
+    "pricing": "Freemium",
+    "websiteUrl": "https://beatoven.ai",
+    "affiliateUrl": "https://beatoven.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "510K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "voice-ai",
+    "name": "Voice.ai",
+    "domain": "voice.ai",
+    "category": "ai-music-audio",
+    "tagline": "Real-time AI voice changer for gaming, streaming, and content creation",
+    "description": "Voice.ai provides a real-time voice changer engine powered by deep learning algorithms. Gamers, streamers, and VTubers use it to transform their voice live during online calls or gaming sessions.",
+    "rating": 4.4,
+    "reviewsCount": 480,
+    "pricing": "Freemium",
+    "websiteUrl": "https://voice.ai",
+    "affiliateUrl": "https://voice.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.9M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "voicemod",
+    "name": "Voicemod",
+    "domain": "voicemod.net",
+    "category": "ai-music-audio",
+    "tagline": "Real-time AI voice modifier and soundboard for desktop applications",
+    "description": "Voicemod modifies live voice input with custom AI voice filters, pitch modulation, and built-in sound effects. It integrates into Discord, OBS, Twitch, and major online multiplayer games.",
+    "rating": 4.7,
+    "reviewsCount": 1100,
+    "pricing": "Freemium",
+    "websiteUrl": "https://voicemod.net",
+    "affiliateUrl": "https://voicemod.net",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "6.7M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "auphonic",
+    "name": "Auphonic",
+    "domain": "auphonic.com",
+    "category": "ai-music-audio",
+    "tagline": "Automated AI audio mastering and leveling tool for podcasters",
+    "description": "Auphonic uses AI algorithms to handle loudness normalization, noise reduction, and automatic levelling for spoken audio. It is an industry favorite for podcasters, broadcasters, and radio producers.",
+    "rating": 4.7,
+    "reviewsCount": 340,
+    "pricing": "Freemium",
+    "websiteUrl": "https://auphonic.com",
+    "affiliateUrl": "https://auphonic.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "480K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "ripx-daw",
+    "name": "RipX DAW",
+    "domain": "hit-shaper.com",
+    "category": "ai-music-audio",
+    "tagline": "AI-powered stem separation DAW for audio editing and remixing",
+    "description": "RipX separates mixed audio files into fully editable notes, vocals, and instrument stems inside a visual DAW. It empowers remixers, educators, and producers to manipulate existing audio tracks.",
+    "rating": 4.6,
+    "reviewsCount": 190,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://hit-shaper.com",
+    "affiliateUrl": "https://hit-shaper.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "230K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "lovo-ai",
+    "name": "Lovo.ai",
+    "domain": "lovo.ai",
+    "category": "ai-music-audio",
+    "tagline": "Award-winning AI voice generator and text-to-speech platform",
+    "description": "Lovo.ai delivers realistic AI voiceovers with emotional depth and fine-tuned pitch controls for marketing and video content. It features Genny, an all-in-one AI voiceover and video creation tool.",
+    "rating": 4.6,
+    "reviewsCount": 430,
+    "pricing": "Freemium",
+    "websiteUrl": "https://lovo.ai",
+    "affiliateUrl": "https://lovo.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "respeecher",
+    "name": "Respeecher",
+    "domain": "respeecher.com",
+    "category": "ai-music-audio",
+    "tagline": "Hollywood-grade AI voice cloning for film, TV, and game development",
+    "description": "Respeecher allows voice actors to sound like another person, historical figure, or younger version of themselves using advanced AI cloning. It is utilized in major film studios and game projects.",
+    "rating": 4.8,
+    "reviewsCount": 160,
+    "pricing": "Paid",
+    "websiteUrl": "https://respeecher.com",
+    "affiliateUrl": "https://respeecher.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "180K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "splitter-ai",
+    "name": "Splitter.ai",
+    "domain": "splitter.ai",
+    "category": "ai-music-audio",
+    "tagline": "AI audio stem isolation and vocal extraction engine",
+    "description": "Splitter.ai uses machine learning models to split songs into individual tracks like drums, vocals, bass, and piano. It is heavily relied upon by music producers, sample diggers, and audio technicians.",
+    "rating": 4.5,
+    "reviewsCount": 270,
+    "pricing": "Freemium",
+    "websiteUrl": "https://splitter.ai",
+    "affiliateUrl": "https://splitter.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "690K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "soundful",
+    "name": "Soundful",
+    "domain": "soundful.com",
+    "category": "ai-music-audio",
+    "tagline": "AI royalty-free background music generator for producers and brands",
+    "description": "Soundful uses AI to instantly generate royalty-free background tracks for videos, streams, and podcasts. Users can adjust BPM, key, and instrument layers to customize tracks.",
+    "rating": 4.6,
+    "reviewsCount": 330,
+    "pricing": "Freemium",
+    "websiteUrl": "https://soundful.com",
+    "affiliateUrl": "https://soundful.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "820K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "landr",
+    "name": "LANDR",
+    "domain": "landr.com",
+    "category": "ai-music-audio",
+    "tagline": "AI automated music mastering, distribution, and plugin suite",
+    "description": "LANDR provides automated AI music mastering that instantly analyzes tracks and applies custom EQ and compression. It also offers digital music distribution, plugins, and sample libraries for musicians.",
+    "rating": 4.7,
+    "reviewsCount": 920,
+    "pricing": "Freemium",
+    "websiteUrl": "https://landr.com",
+    "affiliateUrl": "https://landr.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "3.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "ecrett-music",
+    "name": "Ecrett Music",
+    "domain": "ecrettmusic.com",
+    "category": "ai-music-audio",
+    "tagline": "Intuitive AI music composer for video creators and game developers",
+    "description": "Ecrett Music allows creators to generate custom soundtracks based on scene mood and video category. Its intuitive interface lets users quickly rearrange instrument structures and track lengths.",
+    "rating": 4.4,
+    "reviewsCount": 180,
+    "pricing": "Paid",
+    "websiteUrl": "https://ecrettmusic.com",
+    "affiliateUrl": "https://ecrettmusic.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "210K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "cyanite-ai",
+    "name": "Cyanite.ai",
+    "domain": "cyanite.ai",
+    "category": "ai-music-audio",
+    "tagline": "AI music tagging, mood analysis, and audio search engine",
+    "description": "Cyanite.ai automatically analyzes and tags large music catalogs with key metadata like mood, genre, and instrumentation. It helps music publishers and sync agencies search audio libraries efficiently.",
+    "rating": 4.6,
+    "reviewsCount": 140,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://cyanite.ai",
+    "affiliateUrl": "https://cyanite.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "120K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "emastered",
+    "name": "eMastered",
+    "domain": "emastered.com",
+    "category": "ai-music-audio",
+    "tagline": "Instant online AI audio mastering built by Grammy-winning engineers",
+    "description": "eMastered leverages machine learning to master audio tracks automatically in a web browser within seconds. Producers can upload reference tracks to achieve professional commercial loudness and balance.",
+    "rating": 4.5,
+    "reviewsCount": 410,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://emastered.com",
+    "affiliateUrl": "https://emastered.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "650K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "audiocraft",
+    "name": "AudioCraft (Meta)",
+    "domain": "github.com/facebookresearch/audiocraft",
+    "category": "ai-music-audio",
+    "tagline": "Open-source generative AI framework for music and audio research",
+    "description": "AudioCraft is an open-source generative audio library created by Meta containing models like MusicGen and AudioGen. It enables developers and researchers to generate high-quality audio locally.",
+    "rating": 4.8,
+    "reviewsCount": 560,
+    "pricing": "Free",
+    "websiteUrl": "https://github.com/facebookresearch/audiocraft",
+    "affiliateUrl": "https://github.com/facebookresearch/audiocraft",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.1M",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "musicfy",
+    "name": "Musicfy",
+    "domain": "musicfy.lol",
+    "category": "ai-music-audio",
+    "tagline": "Create custom AI voice models and transform vocals instantly",
+    "description": "Musicfy allows users to clone their own voice or select AI voice models to sing any song or text input. It features AI text-to-music capabilities and stem separation features.",
+    "rating": 4.5,
+    "reviewsCount": 310,
+    "pricing": "Freemium",
+    "websiteUrl": "https://musicfy.lol",
+    "affiliateUrl": "https://musicfy.lol",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "950K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "kits-ai",
+    "name": "Kits AI",
+    "domain": "kits.ai",
+    "category": "ai-music-audio",
+    "tagline": "AI voice platform designed specifically for music creators and producers",
+    "description": "Kits AI provides royalty-free AI voice models, vocal conversion tools, and custom voice model training for musicians. It empowers producers to generate professional studio vocal takes instantly.",
+    "rating": 4.7,
+    "reviewsCount": 390,
+    "pricing": "Freemium",
+    "websiteUrl": "https://kits.ai",
+    "affiliateUrl": "https://kits.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.3M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "vocal-remover",
+    "name": "VocalRemover.media",
+    "domain": "vocalremover.media",
+    "category": "ai-music-audio",
+    "tagline": "Free browser-based AI vocal remover and karaoke track creator",
+    "description": "VocalRemover uses AI algorithms to separate voice tracks from musical instruments directly in web browsers. It includes extra utilities like pitch shifters, BPM finders, and audio joiners.",
+    "rating": 4.6,
+    "reviewsCount": 720,
+    "pricing": "Free",
+    "websiteUrl": "https://vocalremover.media",
+    "affiliateUrl": "https://vocalremover.media",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "5.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "moises-ai",
+    "name": "Moises.ai",
+    "domain": "moises.ai",
+    "category": "ai-music-audio",
+    "tagline": "The ultimate AI app for practicing musicians and stem separation",
+    "description": "Moises allows musicians to isolate instruments, detect key and tempo, and slow down tracks for practice. Its mobile and desktop apps assist music students, band practice, and vocal rehearsal.",
+    "rating": 4.8,
+    "reviewsCount": 1850,
+    "pricing": "Freemium",
+    "websiteUrl": "https://moises.ai",
+    "affiliateUrl": "https://moises.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "revocalize-ai",
+    "name": "Revocalize AI",
+    "domain": "revocalize.ai",
+    "category": "ai-music-audio",
+    "tagline": "AI vocal synthesis, voice transformation, and pitch tuning engine",
+    "description": "Revocalize AI transforms existing vocal tracks into custom studio-grade voice models without pitch artifacting. It helps sound designers and record labels adjust vocal tracks dynamically.",
+    "rating": 4.5,
+    "reviewsCount": 170,
+    "pricing": "Freemium",
+    "websiteUrl": "https://revocalize.ai",
+    "affiliateUrl": "https://revocalize.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "260K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "izotope-ozone",
+    "name": "iZotope Ozone",
+    "domain": "izotope.com",
+    "category": "ai-music-audio",
+    "tagline": "Industry-leading AI-assisted audio mastering plugin suite",
+    "description": "iZotope Ozone utilizes intelligent Master Assistant AI to suggest optimal EQ, dynamic control, and loudness targets for tracks. It is an industry standard across professional recording studios.",
+    "rating": 4.9,
+    "reviewsCount": 1120,
+    "pricing": "Paid",
+    "websiteUrl": "https://izotope.com",
+    "affiliateUrl": "https://izotope.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "1.7M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "so-vits-svc",
+    "name": "So-VITS-SVC",
+    "domain": "github.com/svc-develop-team/so-vits-svc",
+    "category": "ai-music-audio",
+    "tagline": "Open-source singing voice conversion neural network framework",
+    "description": "So-VITS-SVC is an open-source deep learning framework designed to convert singing voice audio into target trained voices. It is widely used in music research communities and specialized audio development.",
+    "rating": 4.7,
+    "reviewsCount": 490,
+    "pricing": "Free",
+    "websiteUrl": "https://github.com/svc-develop-team/so-vits-svc",
+    "affiliateUrl": "https://github.com/svc-develop-team/so-vits-svc",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "820K",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "rvc-beta",
+    "name": "Retrieval-based Voice Conversion (RVC)",
+    "domain": "github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+    "category": "ai-music-audio",
+    "tagline": "Fast, open-source real-time voice conversion framework",
+    "description": "RVC is an open-source web UI framework that trains voice models rapidly with minimal audio data. It supports real-time singing and speaking voice transformations locally on desktop GPUs.",
+    "rating": 4.8,
+    "reviewsCount": 890,
+    "pricing": "Free",
+    "websiteUrl": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+    "affiliateUrl": "https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.4M",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "sonix-ai",
+    "name": "Sonix",
+    "domain": "sonix.ai",
+    "category": "ai-music-audio",
+    "tagline": "Automated audio transcription, translation, and speech-to-text platform",
+    "description": "Sonix uses machine learning to transcribe audio files, generate captions, and translate transcripts in over 40 languages. It serves journalists, podcasters, and media production companies.",
+    "rating": 4.7,
+    "reviewsCount": 540,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://sonix.ai",
+    "affiliateUrl": "https://sonix.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.1M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "wavtool",
+    "name": "WavTool",
+    "domain": "wavtool.com",
+    "category": "ai-music-audio",
+    "tagline": "Browser-based DAW featuring built-in AI assistant for music production",
+    "description": "WavTool is a complete web-based digital audio workstation equipped with an integrated AI assistant named Conductor. It helps producers generate MIDI melodies, synthesize instruments, and edit audio.",
+    "rating": 4.6,
+    "reviewsCount": 230,
+    "pricing": "Freemium",
+    "websiteUrl": "https://wavtool.com",
+    "affiliateUrl": "https://wavtool.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "340K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "stable-audio",
+    "name": "Stable Audio",
+    "domain": "stableaudio.com",
+    "category": "ai-music-audio",
+    "tagline": "Generative AI music and sound effects generator by Stability AI",
+    "description": "Stable Audio produces high-quality multi-track audio and sound effects from text descriptions. Built on diffusion models, it provides royalty-free audio for sound designers and music creators.",
+    "rating": 4.7,
+    "reviewsCount": 610,
+    "pricing": "Freemium",
+    "websiteUrl": "https://stableaudio.com",
+    "affiliateUrl": "https://stableaudio.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "2.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "soundtrap-storytellers",
+    "name": "Soundtrap by Spotify",
+    "domain": "soundtrap.com",
+    "category": "ai-music-audio",
+    "tagline": "Collaborative online studio with smart transcription and vocal tools",
+    "description": "Soundtrap provides a cloud-based recording studio equipped with smart voice cleanup, auto-tune, and interactive podcast transcription. It enables real-time collaboration for musicians and podcasters.",
+    "rating": 4.6,
+    "reviewsCount": 880,
+    "pricing": "Freemium",
+    "websiteUrl": "https://soundtrap.com",
+    "affiliateUrl": "https://soundtrap.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "3.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "aimi-fm",
+    "name": "Aimi.fm",
+    "domain": "aimi.fm",
+    "category": "ai-music-audio",
+    "tagline": "Continuous generative AI music playback and interactive listening",
+    "description": "Aimi.fm generates continuous, non-repeating ambient and electronic music streams powered by AI. Listeners can interact with music elements in real time to alter beat dynamics and mood intensity.",
+    "rating": 4.5,
+    "reviewsCount": 130,
+    "pricing": "Freemium",
+    "websiteUrl": "https://aimi.fm",
+    "affiliateUrl": "https://aimi.fm",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "150K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "sound-search-audiostrip",
+    "name": "AudioStrip",
+    "domain": "audiostrip.com",
+    "category": "ai-music-audio",
+    "tagline": "Fast online AI vocal isolation and instrumental separation",
+    "description": "AudioStrip allows music producers to quickly separate vocals from instrumental backing tracks using deep learning. It offers clean stem exports for bootlegs, remixes, and practice tracks.",
+    "rating": 4.5,
+    "reviewsCount": 260,
+    "pricing": "Freemium",
+    "websiteUrl": "https://audiostrip.com",
+    "affiliateUrl": "https://audiostrip.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "580K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "matchering",
+    "name": "Matchering",
+    "domain": "github.com/sergree/matchering",
+    "category": "ai-music-audio",
+    "tagline": "Open-source reference-based AI audio mastering container",
+    "description": "Matchering is an open-source audio processing framework that matches the target track's tone and RMS balance to a reference file. It provides automated mastering for independent audio developers.",
+    "rating": 4.7,
+    "reviewsCount": 210,
+    "pricing": "Free",
+    "websiteUrl": "https://github.com/sergree/matchering",
+    "affiliateUrl": "https://github.com/sergree/matchering",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "190K",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "deepdub-ai",
+    "name": "Deepdub",
+    "domain": "deepdub.ai",
+    "category": "ai-music-audio",
+    "tagline": "AI-powered entertainment dubbing, voice translation, and localization",
+    "description": "Deepdub localizes film, TV, and gaming content across global languages using expressively cloned AI voices. It preserves original actor dynamics while matching regional dubbing standards.",
+    "rating": 4.6,
+    "reviewsCount": 110,
+    "pricing": "Paid",
+    "websiteUrl": "https://deepdub.ai",
+    "affiliateUrl": "https://deepdub.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "140K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "audiobox-meta",
+    "name": "Audiobox (Meta)",
+    "domain": "audiobox.metademolab.com",
+    "category": "ai-music-audio",
+    "tagline": "Meta's generative AI model for custom audio synthesis and voice prompts",
+    "description": "Audiobox generates custom voice clips, sound effects, and musical textures using combined text and voice prompts. It pushes research boundaries in multi-modal generative audio creation.",
+    "rating": 4.8,
+    "reviewsCount": 380,
+    "pricing": "Free",
+    "websiteUrl": "https://audiobox.metademolab.com",
+    "affiliateUrl": "https://audiobox.metademolab.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "620K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "voicefixer",
+    "name": "VoiceFixer",
+    "domain": "github.com/haoheliu/voicefixer",
+    "category": "ai-music-audio",
+    "tagline": "Open-source neural network for restoring degraded speech audio",
+    "description": "VoiceFixer is an open-source deep learning tool that restores corrupted, clipped, or low-quality speech audio files. It recovers missing frequency bands and suppresses background noise automatically.",
+    "rating": 4.6,
+    "reviewsCount": 150,
+    "pricing": "Free",
+    "websiteUrl": "https://github.com/haoheliu/voicefixer",
+    "affiliateUrl": "https://github.com/haoheliu/voicefixer",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "110K",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "neutone",
+    "name": "Neutone",
+    "domain": "neutone.space",
+    "category": "ai-music-audio",
+    "tagline": "Real-time AI audio processing VST plugin for sound designers",
+    "description": "Neutone bridges neural network models with traditional digital audio workstations via a custom VST plugin. Sound designers can run real-time generative audio transformation models during production.",
+    "rating": 4.7,
+    "reviewsCount": 180,
+    "pricing": "Free",
+    "websiteUrl": "https://neutone.space",
+    "affiliateUrl": "https://neutone.space",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "95K",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "voicemaker-in",
+    "name": "Voicemaker",
+    "domain": "voicemaker.in",
+    "category": "ai-music-audio",
+    "tagline": "Web-based AI text-to-speech converter supporting SSML controls",
+    "description": "Voicemaker generates natural voiceover MP3 files from text with detailed SSML tags, pitch, speed, and emphasis adjustments. It is popular for commercial advertisement voiceovers and YouTube videos.",
+    "rating": 4.5,
+    "reviewsCount": 420,
+    "pricing": "Freemium",
+    "websiteUrl": "https://voicemaker.in",
+    "affiliateUrl": "https://voicemaker.in",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "2.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "cleanvoice-ai",
+    "name": "Cleanvoice AI",
+    "domain": "cleanvoice.ai",
+    "category": "ai-music-audio",
+    "tagline": "Automated podcast audio editing tool that removes filler words and mouth sounds",
+    "description": "Cleanvoice AI automatically detects and removes stuttering, filler words, hesitation sounds, and dead air from podcast recordings. It saves editors hours of manual audio cutting.",
+    "rating": 4.7,
+    "reviewsCount": 290,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://cleanvoice.ai",
+    "affiliateUrl": "https://cleanvoice.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "420K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "podcastle",
+    "name": "Podcastle",
+    "domain": "podcastle.ai",
+    "category": "ai-music-audio",
+    "tagline": "All-in-one AI audio recording, editing, and voice cloning platform",
+    "description": "Podcastle provides studio-quality remote multi-track recording, automated voice cloning, and AI speech enhancement. It serves podcasters, educators, and storytellers seeking simplified audio creation.",
+    "rating": 4.8,
+    "reviewsCount": 670,
+    "pricing": "Freemium",
+    "websiteUrl": "https://podcastle.ai",
+    "affiliateUrl": "https://podcastle.ai",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "2.7M",
     "isFreeTier": true,
     "isOpenSource": false
   }
