@@ -291,32 +291,80 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
       {activeTab === 'pricing' && (
         <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
           <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
-            {tool.name} Pricing Plans & Tiers
+            {tool.name} Pricing Tiers & Subscription Model
           </h3>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '24px' }}>
-            Official pricing model: <strong style={{ color: '#82A735' }}>{tool.pricing}</strong>
+            Official pricing classification: <strong style={{ color: '#82A735' }}>{tool.pricing}</strong>
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
-            <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '24px' }}>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Free / Starter Tier</h4>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>$0 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/ month</span></div>
-              <ul style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.8', paddingLeft: '18px' }}>
-                <li>Basic features & dashboard access</li>
-                <li>Community support</li>
-                <li>Standard speed execution</li>
-              </ul>
-            </div>
+            {/custom|demo|quote/i.test(tool.pricing || '') ? (
+              <>
+                <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '24px' }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Free Demo & Consultation</h4>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>Request Demo</div>
+                  <ul style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                    <li>1-on-1 Product walkthrough</li>
+                    <li>Workflow & API feasibility evaluation</li>
+                    <li>Tailored implementation timeline</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)', border: '2px solid #82A735', borderRadius: '18px', padding: '24px' }}>
-              <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Pro / Team Tier</h4>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>{tool.pricing.includes('$') ? tool.pricing.split('/')[1] || '$20/mo' : '$20'} <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/ month</span></div>
-              <ul style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.8', paddingLeft: '18px' }}>
-                <li>Full feature matrix unlocked</li>
-                <li>Priority API & customer support</li>
-                <li>Unlimited workspace seats</li>
-              </ul>
-            </div>
+                <div style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)', border: '2px solid #82A735', borderRadius: '18px', padding: '24px' }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Enterprise & Custom Quote</h4>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>Custom Tier</div>
+                  <ul style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                    <li>Dedicated server & workspace setup</li>
+                    <li>Custom SLA & priority customer support</li>
+                    <li>Custom seat licensing & data security</li>
+                  </ul>
+                </div>
+              </>
+            ) : /freemium|free/i.test(tool.pricing || '') ? (
+              <>
+                <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '24px' }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Free / Starter Tier</h4>
+                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>$0 <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>/ month</span></div>
+                  <ul style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                    <li>Free core features & dashboard access</li>
+                    <li>Standard community & self-serve support</li>
+                    <li>No credit card required to start</li>
+                  </ul>
+                </div>
+
+                <div style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)', border: '2px solid #82A735', borderRadius: '18px', padding: '24px' }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Pro / Team Tier</h4>
+                  <div style={{ fontSize: '1.3rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>See {tool.domain}</div>
+                  <ul style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                    <li>Full feature set & API integrations</li>
+                    <li>Priority customer support & higher limits</li>
+                    <li>Direct subscription on official site</li>
+                  </ul>
+                </div>
+              </>
+            ) : (
+              <>
+                <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '24px' }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Commercial Subscription</h4>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>{tool.pricing}</div>
+                  <ul style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                    <li>Official commercial plan pricing</li>
+                    <li>Direct access to full platform features</li>
+                    <li>Billing managed directly via {tool.domain}</li>
+                  </ul>
+                </div>
+
+                <div style={{ background: 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)', border: '2px solid #82A735', borderRadius: '18px', padding: '24px' }}>
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '8px' }}>Enterprise Tier</h4>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '800', color: '#82A735', marginBottom: '12px' }}>Custom Quote</div>
+                  <ul style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.8', paddingLeft: '18px' }}>
+                    <li>Custom team licensing & SLA support</li>
+                    <li>Dedicated account manager & training</li>
+                    <li>Enhanced security & compliance controls</li>
+                  </ul>
+                </div>
+              </>
+            )}
           </div>
         </div>
       )}
