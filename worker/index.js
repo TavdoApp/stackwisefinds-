@@ -51,7 +51,12 @@ export default {
       return handleGetReports(env, corsHeaders);
     }
 
-    // Route 4: POST /api/admin/review-vendor — Admin-protected review updater
+    // Route 4: GET /api/pending-submissions — Pull pending submissions for automated verification
+    if (url.pathname === '/api/pending-submissions' && request.method === 'GET') {
+      return handleGetPendingSubmissions(env, corsHeaders);
+    }
+
+    // Route 5: POST /api/admin/review-vendor — Admin-protected review updater
     if (url.pathname === '/api/admin/review-vendor' && request.method === 'POST') {
       if (!isAuthorized(request, env)) {
         return new Response(JSON.stringify({ error: 'Unauthorized' }), { status: 401, headers: corsHeaders });
@@ -318,6 +323,32 @@ async function handleScheduledPing(env) {
       timestamp: new Date().toISOString()
     };
   } catch (error) {
-    return { success: false, error: error.message, timestamp: new Date().toISOString() };
+    return { success: false, error: error.message };
+  }
+}
+
+async function handleGetPendingSubmissions(env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  try {
+    const res = await env.DB.prepare(
+      'SELECT id, vendor_name, software_name, software_website, vendor_email, status, created_at FROM vendor_submissions WHERE status = "pending" ORDER BY id ASC LIMIT 50'
+    ).all();
+
+    return new Response(JSON.stringify({
+      success: true,
+      pending: res.results || [],
+      timestamp: new Date().toISOString()
+    }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: corsHeaders });
   }
 }

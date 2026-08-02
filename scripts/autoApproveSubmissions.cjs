@@ -71,6 +71,30 @@ function checkDomainHealth(url, redirects = 0) {
   });
 }
 
+async function fetchLivePendingSubmissions() {
+  return new Promise((resolve) => {
+    https.get('https://stakdock.com/api/pending-submissions', { timeout: 5000 }, (res) => {
+      let raw = '';
+      res.on('data', chunk => raw += chunk);
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(raw);
+          if (parsed && parsed.success && Array.isArray(parsed.pending)) {
+            return resolve(parsed.pending.map(item => ({
+              id: `vendor-${item.id}`,
+              name: item.software_name || item.vendor_name,
+              softwareWebsite: item.software_website,
+              category: 'crm',
+              status: 'pending'
+            })));
+          }
+        } catch {}
+        resolve([]);
+      });
+    }).on('error', () => resolve([]));
+  });
+}
+
 async function runAutoApprovalProcess() {
   console.log('[StakDock Auto-Approval] Starting live URL health verification for founder submissions...');
 
@@ -83,12 +107,15 @@ async function runAutoApprovalProcess() {
     }
   }
 
-  const pending = Array.isArray(candidatesData.candidates)
+  const livePending = await fetchLivePendingSubmissions();
+  const localPending = Array.isArray(candidatesData.candidates)
     ? candidatesData.candidates.filter(c => c.status === 'pending_review' || c.status === 'pending')
     : [];
 
+  const pending = [...localPending, ...livePending];
+
   if (pending.length === 0) {
-    console.log('[StakDock Auto-Approval] No pending submissions in local queue.');
+    console.log('[StakDock Auto-Approval] No pending submissions in queue.');
     return;
   }
 
