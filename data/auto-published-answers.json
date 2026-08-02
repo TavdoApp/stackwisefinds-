@@ -1,7 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T12:05:33.550Z",
+  "updatedAt": "2026-08-02T14:37:51.795Z",
   "answers": [
+    {
+      "id": "answer-8662e8be5b99366f",
+      "slug": "solo-ios-devs-how-do-you-handle-app-store-optimization-8662e8be",
+      "title": "How to evaluate: Solo iOS devs: how do you handle App Store optimization?",
+      "question": "Solo iOS devs: how do you handle App Store optimization?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1v7w3q8/solo_ios_devs_how_do_you_handle_app_store/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-02T14:37:51.795Z",
+      "canonicalUrl": "https://stakdock.com/guides/solo-ios-devs-how-do-you-handle-app-store-optimization-8662e8be/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-09736c31a07e6ac8",
       "slug": "has-the-modern-saas-stack-changed-in-2026-09736c31",

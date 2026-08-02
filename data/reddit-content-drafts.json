@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T12:05:30.394Z",
+  "updatedAt": "2026-08-02T14:37:51.168Z",
   "drafts": [
     {
       "id": "5589ece9c7d538bc",
@@ -448,7 +448,7 @@
     },
     {
       "id": "8662e8be5b99366f",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Solo iOS devs: how do you handle App Store optimization?",
       "suggestedSlug": "solo-ios-devs-how-do-you-handle-app-store-optimization",
       "intent": "tool-selection",
@@ -468,6 +468,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-02T14:37:51.795Z",
+        "canonicalUrl": "https://stakdock.com/guides/solo-ios-devs-how-do-you-handle-app-store-optimization-8662e8be/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
