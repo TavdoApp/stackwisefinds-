@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T21:08:07.542Z",
+  "updatedAt": "2026-08-03T23:05:47.440Z",
   "drafts": [
     {
       "id": "4fb0e251add8a8a1",
@@ -72,7 +72,7 @@
     },
     {
       "id": "21ec283f63842b20",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "What are the best alternatives to The SaaS Playbook?",
       "suggestedSlug": "what-are-the-best-alternatives-to-the-saas-playbook",
       "intent": "alternatives",
@@ -92,6 +92,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T23:05:48.641Z",
+        "canonicalUrl": "https://stakdock.com/guides/what-are-the-best-alternatives-to-the-saas-playbook-21ec283f/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
@@ -416,7 +426,7 @@
     },
     {
       "id": "59f982d7de26812b",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Doing ABM Direct Mail - Struggling with Company Address Accuracy. Any Tools You Recommend?",
       "suggestedSlug": "doing-abm-direct-mail-struggling-with-company-address-accuracy-any-tools-you-rec",
       "intent": "ai-tools",
@@ -436,6 +446,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T23:05:48.641Z",
+        "canonicalUrl": "https://stakdock.com/guides/doing-abm-direct-mail-struggling-with-company-address-accuracy-any-tools-you-recommend-59f982d7/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
