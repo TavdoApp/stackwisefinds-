@@ -116,7 +116,7 @@ const newTools = [
     "domain": "lever.co",
     "category": "hr-payroll",
     "tagline": "Complete talent acquisition suite combining ATS and candidate CRM",
-    "description": "Lever unifies candidate sourcing, applicant tracking, and recruitment analytics into a single collaborative platform. It serves talent teams scaling their candidate sourcing and talent relationships.",
+    "description": "Lever unifies candidate sourcing, applicant tracking, and recruitment analytics into a single collaborative platform. It serves talent teams scaling candidate sourcing and talent relationships.",
     "rating": 4.5,
     "reviewsCount": 1420,
     "pricing": "Paid",
@@ -507,7 +507,7 @@ const newTools = [
     "isOpenSource": false
   },
   {
-    "id": "hibob",
+    "id": "hiBob",
     "name": "Bob (hiBob)",
     "domain": "hibob.com",
     "category": "hr-payroll",
@@ -633,7 +633,7 @@ const newTools = [
     "isOpenSource": false
   },
   {
-    "id": "pinpoint",
+    "id": "pinpoint-hq",
     "name": "Pinpoint",
     "domain": "pinpointhq.com",
     "category": "hr-payroll",
