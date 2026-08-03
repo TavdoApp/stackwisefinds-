@@ -1,7 +1,459 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T07:32:10.893Z",
+  "updatedAt": "2026-08-03T11:29:59.476Z",
   "drafts": [
+    {
+      "id": "79bae98f3cc613f6",
+      "status": "pending_review",
+      "question": "I built the alternative to Surferseo and better but I have no users",
+      "suggestedSlug": "i-built-the-alternative-to-surferseo-and-better-but-i-have-no-users",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1ve9c6o/i_built_the_alternative_to_surferseo_and_better/",
+      "sourcePublishedAt": "2026-08-03T10:11:50+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "0dfaee222d818996",
+      "status": "auto_published",
+      "question": "Has anyone used CrowdReply? Honest opinions?",
+      "suggestedSlug": "has-anyone-used-crowdreply-honest-opinions",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1ve9bnv/has_anyone_used_crowdreply_honest_opinions/",
+      "sourcePublishedAt": "2026-08-03T10:11:03+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T11:30:00.432Z",
+        "canonicalUrl": "https://stakdock.com/guides/has-anyone-used-crowdreply-honest-opinions-0dfaee22/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "50ff99010fe11600",
+      "status": "auto_published",
+      "question": "Healthcare Marketing CRM Pipelines, What Do You All Recommend?",
+      "suggestedSlug": "healthcare-marketing-crm-pipelines-what-do-you-all-recommend",
+      "intent": "crm-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1sxqz2s/healthcare_marketing_crm_pipelines_what_do_you/",
+      "sourcePublishedAt": "2026-04-28T04:24:03+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T11:30:00.432Z",
+        "canonicalUrl": "https://stakdock.com/guides/healthcare-marketing-crm-pipelines-what-do-you-all-recommend-50ff9901/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "4e4a871e18e4256a",
+      "status": "pending_review",
+      "question": "Data & tools for measuring MarComm-derived revenue?",
+      "suggestedSlug": "data-tools-for-measuring-marcomm-derived-revenue",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1r3svor/data_tools_for_measuring_marcommderived_revenue/",
+      "sourcePublishedAt": "2026-02-13T15:56:31+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "831af2cfc0d5505b",
+      "status": "pending_review",
+      "question": "Is marketing getting too automated?",
+      "suggestedSlug": "is-marketing-getting-too-automated",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1oq755y/is_marketing_getting_too_automated/",
+      "sourcePublishedAt": "2025-11-06T18:41:56+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "8e84301abb762352",
+      "status": "pending_review",
+      "question": "How are you handling lead enrichment in the EU without running into GDPR issues?",
+      "suggestedSlug": "how-are-you-handling-lead-enrichment-in-the-eu-without-running-into-gdpr-issues",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1obfjwo/how_are_you_handling_lead_enrichment_in_the_eu/",
+      "sourcePublishedAt": "2025-10-20T09:39:10+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "f8d3bc6200e94a2a",
+      "status": "pending_review",
+      "question": "The best marketing automation software isn’t the biggest name. Prove me wrong!",
+      "suggestedSlug": "the-best-marketing-automation-software-isn-t-the-biggest-name-prove-me-wrong",
+      "intent": "automation",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1nkcl7w/the_best_marketing_automation_software_isnt_the/",
+      "sourcePublishedAt": "2025-09-18T16:12:56+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "b6df2e9cd75e8385",
+      "status": "pending_review",
+      "question": "How many modern marketers are AI-lliterate?",
+      "suggestedSlug": "how-many-modern-marketers-are-ai-lliterate",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1nju0lr/how_many_modern_marketers_are_ailliterate/",
+      "sourcePublishedAt": "2025-09-18T00:28:49+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "9d04986b67620392",
+      "status": "pending_review",
+      "question": "[Feedback Needed] Is this tech stack solid for casino marketing? Would love suggestions from folks who've done this before",
+      "suggestedSlug": "feedback-needed-is-this-tech-stack-solid-for-casino-marketing-would-love-suggest",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1meratm/feedback_needed_is_this_tech_stack_solid_for/",
+      "sourcePublishedAt": "2025-08-01T08:49:58+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "59f982d7de26812b",
+      "status": "pending_review",
+      "question": "Doing ABM Direct Mail - Struggling with Company Address Accuracy. Any Tools You Recommend?",
+      "suggestedSlug": "doing-abm-direct-mail-struggling-with-company-address-accuracy-any-tools-you-rec",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1m83wdv/doing_abm_direct_mail_struggling_with_company/",
+      "sourcePublishedAt": "2025-07-24T13:05:46+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "f0f2674f763582c1",
+      "status": "pending_review",
+      "question": "Using AI in marketing feels less like automation, more like augmentation lately",
+      "suggestedSlug": "using-ai-in-marketing-feels-less-like-automation-more-like-augmentation-lately",
+      "intent": "automation",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1m82uk4/using_ai_in_marketing_feels_less_like_automation/",
+      "sourcePublishedAt": "2025-07-24T12:18:32+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "312a4afd180adf26",
+      "status": "pending_review",
+      "question": "How do you push back when leadership wants AI-driven quantity over quality in social engagement?",
+      "suggestedSlug": "how-do-you-push-back-when-leadership-wants-ai-driven-quantity-over-quality-in-so",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1m74po0/how_do_you_push_back_when_leadership_wants/",
+      "sourcePublishedAt": "2025-07-23T09:32:39+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "5dce744cbfd1cf8a",
+      "status": "pending_review",
+      "question": "How marketing team tripled campaign efficiency",
+      "suggestedSlug": "how-marketing-team-tripled-campaign-efficiency",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1lgjfth/how_marketing_team_tripled_campaign_efficiency/",
+      "sourcePublishedAt": "2025-06-21T00:24:47+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "f88d25ca04f73f62",
+      "status": "pending_review",
+      "question": "How Can I Increase Booking Rates For My Client?",
+      "suggestedSlug": "how-can-i-increase-booking-rates-for-my-client",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1l7leqn/how_can_i_increase_booking_rates_for_my_client/",
+      "sourcePublishedAt": "2025-06-10T00:40:46+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "6951e3411035db68",
+      "status": "pending_review",
+      "question": "Anyone using AI to automate video ads for e-commerce?",
+      "suggestedSlug": "anyone-using-ai-to-automate-video-ads-for-e-commerce",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1kweesb/anyone_using_ai_to_automate_video_ads_for/",
+      "sourcePublishedAt": "2025-05-27T04:25:07+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "07d34c932c6ce434",
+      "status": "pending_review",
+      "question": "Career Pivot to Data Analytics/Visualization from Marketing: Outsourcing Risks, Job Prospects & Skill Depth? (North America)",
+      "suggestedSlug": "career-pivot-to-data-analytics-visualization-from-marketing-outsourcing-risks-jo",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1kw57l6/career_pivot_to_data_analyticsvisualization_from/",
+      "sourcePublishedAt": "2025-05-26T20:51:56+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "7c88584995c384fa",
+      "status": "pending_review",
+      "question": "Reporting and AI Automation Tools",
+      "suggestedSlug": "reporting-and-ai-automation-tools",
+      "intent": "automation",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1kttc0b/reporting_and_ai_automation_tools/",
+      "sourcePublishedAt": "2025-05-23T20:12:18+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "3bf112b33439169a",
+      "status": "pending_review",
+      "question": "Product Manufacturer Going B2B → D2C/B2C – Best Practices & What to Outsource?",
+      "suggestedSlug": "product-manufacturer-going-b2b-d2c-b2c-best-practices-what-to-outsource",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "marketing",
+        "searchQuery": "automation tool"
+      },
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1ktbxsb/product_manufacturer_going_b2b_d2cb2c_best/",
+      "sourcePublishedAt": "2025-05-23T05:36:00+00:00",
+      "discoveredAt": "2026-08-03T11:29:59.476Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "058d667965cf4d5b",
       "status": "auto_published",

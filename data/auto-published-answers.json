@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T07:32:11.869Z",
+  "updatedAt": "2026-08-03T11:30:00.432Z",
   "answers": [
+    {
+      "id": "answer-50ff99010fe11600",
+      "slug": "healthcare-marketing-crm-pipelines-what-do-you-all-recommend-50ff9901",
+      "title": "How to evaluate: Healthcare Marketing CRM Pipelines, What Do You All Recommend?",
+      "question": "Healthcare Marketing CRM Pipelines, What Do You All Recommend?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "crm-selection",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1sxqz2s/healthcare_marketing_crm_pipelines_what_do_you/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-03T11:30:00.432Z",
+      "canonicalUrl": "https://stakdock.com/guides/healthcare-marketing-crm-pipelines-what-do-you-all-recommend-50ff9901/",
+      "sections": [
+        {
+          "heading": "Map the sales process",
+          "body": "Document lead sources, qualification stages, ownership rules, reporting needs, and required integrations. A CRM should match the real operating process before it is configured."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-0dfaee222d818996",
+      "slug": "has-anyone-used-crowdreply-honest-opinions-0dfaee22",
+      "title": "How to evaluate: Has anyone used CrowdReply? Honest opinions?",
+      "question": "Has anyone used CrowdReply? Honest opinions?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1ve9bnv/has_anyone_used_crowdreply_honest_opinions/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-03T11:30:00.432Z",
+      "canonicalUrl": "https://stakdock.com/guides/has-anyone-used-crowdreply-honest-opinions-0dfaee22/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-058d667965cf4d5b",
       "slug": "b2b-saas-do-you-keep-orgs-memberships-and-base-roles-in-your-own-db-or-let-the-auth-provid-058d6679",
