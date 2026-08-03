@@ -1,7 +1,99 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T19:43:18.782Z",
+  "updatedAt": "2026-08-03T21:08:07.542Z",
   "drafts": [
+    {
+      "id": "4fb0e251add8a8a1",
+      "status": "auto_published",
+      "question": "Apollo.io/Hunter.io but free?(validation post)",
+      "suggestedSlug": "apollo-io-hunter-io-but-free-validation-post",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1veook3/apolloiohunterio_but_freevalidation_post/",
+      "sourcePublishedAt": "2026-08-03T20:17:30+00:00",
+      "discoveredAt": "2026-08-03T21:08:07.542Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T21:08:08.389Z",
+        "canonicalUrl": "https://stakdock.com/guides/apollo-io-hunter-io-but-free-validation-post-4fb0e251/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "95e2cca2f5b4bc85",
+      "status": "auto_published",
+      "question": "SaaS payments without a registered business?",
+      "suggestedSlug": "saas-payments-without-a-registered-business",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1veofhd/saas_payments_without_a_registered_business/",
+      "sourcePublishedAt": "2026-08-03T20:08:17+00:00",
+      "discoveredAt": "2026-08-03T21:08:07.542Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T21:08:08.389Z",
+        "canonicalUrl": "https://stakdock.com/guides/saas-payments-without-a-registered-business-95e2cca2/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "21ec283f63842b20",
+      "status": "pending_review",
+      "question": "What are the best alternatives to The SaaS Playbook?",
+      "suggestedSlug": "what-are-the-best-alternatives-to-the-saas-playbook",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1veno2v/what_are_the_best_alternatives_to_the_saas/",
+      "sourcePublishedAt": "2026-08-03T19:40:35+00:00",
+      "discoveredAt": "2026-08-03T21:08:07.542Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "6fdc9476a9e823af",
       "status": "auto_published",
