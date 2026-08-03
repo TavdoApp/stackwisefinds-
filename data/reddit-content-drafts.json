@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T23:02:58.916Z",
+  "updatedAt": "2026-08-03T03:23:17.524Z",
   "drafts": [
+    {
+      "id": "058d667965cf4d5b",
+      "status": "auto_published",
+      "question": "B2B SaaS: do you keep orgs, memberships and base roles in your own DB, or let the auth provider own them?",
+      "suggestedSlug": "b2b-saas-do-you-keep-orgs-memberships-and-base-roles-in-your-own-db-or-let-the-a",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vdy4e1/b2b_saas_do_you_keep_orgs_memberships_and_base/",
+      "sourcePublishedAt": "2026-08-03T00:20:20+00:00",
+      "discoveredAt": "2026-08-03T03:23:17.524Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T03:23:18.865Z",
+        "canonicalUrl": "https://stakdock.com/guides/b2b-saas-do-you-keep-orgs-memberships-and-base-roles-in-your-own-db-or-let-the-auth-provid-058d6679/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "dfdc87127ff89d77",
       "status": "pending_review",

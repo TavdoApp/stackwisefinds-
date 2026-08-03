@@ -1,7 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-02T23:02:59.508Z",
+  "updatedAt": "2026-08-03T03:23:18.865Z",
   "answers": [
+    {
+      "id": "answer-058d667965cf4d5b",
+      "slug": "b2b-saas-do-you-keep-orgs-memberships-and-base-roles-in-your-own-db-or-let-the-auth-provid-058d6679",
+      "title": "How to evaluate: B2B SaaS: do you keep orgs, memberships and base roles in your own DB, or let the auth provider own them?",
+      "question": "B2B SaaS: do you keep orgs, memberships and base roles in your own DB, or let the auth provider own them?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vdy4e1/b2b_saas_do_you_keep_orgs_memberships_and_base/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-03T03:23:18.865Z",
+      "canonicalUrl": "https://stakdock.com/guides/b2b-saas-do-you-keep-orgs-memberships-and-base-roles-in-your-own-db-or-let-the-auth-provid-058d6679/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-8662e8be5b99366f",
       "slug": "solo-ios-devs-how-do-you-handle-app-store-optimization-8662e8be",
