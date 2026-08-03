@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T14:48:23.251Z",
+  "updatedAt": "2026-08-03T17:11:25.275Z",
   "answers": [
+    {
+      "id": "answer-b6df2e9cd75e8385",
+      "slug": "how-many-modern-marketers-are-ai-lliterate-b6df2e9c",
+      "title": "How to evaluate: How many modern marketers are AI-lliterate?",
+      "question": "How many modern marketers are AI-lliterate?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "ai-tools",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1nju0lr/how_many_modern_marketers_are_ailliterate/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-03T17:11:25.275Z",
+      "canonicalUrl": "https://stakdock.com/guides/how-many-modern-marketers-are-ai-lliterate-b6df2e9c/",
+      "sections": [
+        {
+          "heading": "Set boundaries for AI use",
+          "body": "Define acceptable inputs, privacy requirements, review steps, and the quality standard for outputs. Test representative tasks rather than relying on broad product claims."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-8e84301abb762352",
+      "slug": "how-are-you-handling-lead-enrichment-in-the-eu-without-running-into-gdpr-issues-8e84301a",
+      "title": "How to evaluate: How are you handling lead enrichment in the EU without running into GDPR issues?",
+      "question": "How are you handling lead enrichment in the EU without running into GDPR issues?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1obfjwo/how_are_you_handling_lead_enrichment_in_the_eu/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-03T17:11:25.275Z",
+      "canonicalUrl": "https://stakdock.com/guides/how-are-you-handling-lead-enrichment-in-the-eu-without-running-into-gdpr-issues-8e84301a/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-831af2cfc0d5505b",
       "slug": "is-marketing-getting-too-automated-831af2cf",

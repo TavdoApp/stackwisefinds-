@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T14:48:22.003Z",
+  "updatedAt": "2026-08-03T17:11:24.445Z",
   "drafts": [
     {
       "id": "79bae98f3cc613f6",
@@ -164,7 +164,7 @@
     },
     {
       "id": "8e84301abb762352",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "How are you handling lead enrichment in the EU without running into GDPR issues?",
       "suggestedSlug": "how-are-you-handling-lead-enrichment-in-the-eu-without-running-into-gdpr-issues",
       "intent": "tool-selection",
@@ -184,6 +184,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T17:11:25.275Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-are-you-handling-lead-enrichment-in-the-eu-without-running-into-gdpr-issues-8e84301a/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
@@ -212,7 +222,7 @@
     },
     {
       "id": "b6df2e9cd75e8385",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "How many modern marketers are AI-lliterate?",
       "suggestedSlug": "how-many-modern-marketers-are-ai-lliterate",
       "intent": "ai-tools",
@@ -232,6 +242,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T17:11:25.275Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-many-modern-marketers-are-ai-lliterate-b6df2e9c/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
