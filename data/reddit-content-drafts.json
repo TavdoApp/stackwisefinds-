@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T11:29:59.476Z",
+  "updatedAt": "2026-08-03T14:48:22.003Z",
   "drafts": [
     {
       "id": "79bae98f3cc613f6",
@@ -96,7 +96,7 @@
     },
     {
       "id": "4e4a871e18e4256a",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Data & tools for measuring MarComm-derived revenue?",
       "suggestedSlug": "data-tools-for-measuring-marcomm-derived-revenue",
       "intent": "tool-selection",
@@ -116,11 +116,21 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T14:48:23.251Z",
+        "canonicalUrl": "https://stakdock.com/guides/data-tools-for-measuring-marcomm-derived-revenue-4e4a871e/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
       "id": "831af2cfc0d5505b",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Is marketing getting too automated?",
       "suggestedSlug": "is-marketing-getting-too-automated",
       "intent": "tool-selection",
@@ -140,6 +150,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T14:48:23.251Z",
+        "canonicalUrl": "https://stakdock.com/guides/is-marketing-getting-too-automated-831af2cf/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {

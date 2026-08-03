@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T11:30:00.432Z",
+  "updatedAt": "2026-08-03T14:48:23.251Z",
   "answers": [
+    {
+      "id": "answer-831af2cfc0d5505b",
+      "slug": "is-marketing-getting-too-automated-831af2cf",
+      "title": "How to evaluate: Is marketing getting too automated?",
+      "question": "Is marketing getting too automated?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1oq755y/is_marketing_getting_too_automated/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-03T14:48:23.251Z",
+      "canonicalUrl": "https://stakdock.com/guides/is-marketing-getting-too-automated-831af2cf/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-4e4a871e18e4256a",
+      "slug": "data-tools-for-measuring-marcomm-derived-revenue-4e4a871e",
+      "title": "How to evaluate: Data & tools for measuring MarComm-derived revenue?",
+      "question": "Data & tools for measuring MarComm-derived revenue?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1r3svor/data_tools_for_measuring_marcommderived_revenue/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-03T14:48:23.251Z",
+      "canonicalUrl": "https://stakdock.com/guides/data-tools-for-measuring-marcomm-derived-revenue-4e4a871e/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-50ff99010fe11600",
       "slug": "healthcare-marketing-crm-pipelines-what-do-you-all-recommend-50ff9901",
