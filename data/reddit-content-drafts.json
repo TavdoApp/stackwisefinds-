@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T17:11:24.445Z",
+  "updatedAt": "2026-08-03T19:43:18.782Z",
   "drafts": [
+    {
+      "id": "6fdc9476a9e823af",
+      "status": "auto_published",
+      "question": "Do people actually want a privacy-first alternative to bank-connected subscription trackers?",
+      "suggestedSlug": "do-people-actually-want-a-privacy-first-alternative-to-bank-connected-subscripti",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1veke5i/do_people_actually_want_a_privacyfirst/",
+      "sourcePublishedAt": "2026-08-03T17:42:15+00:00",
+      "discoveredAt": "2026-08-03T19:43:18.782Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T19:43:19.418Z",
+        "canonicalUrl": "https://stakdock.com/guides/do-people-actually-want-a-privacy-first-alternative-to-bank-connected-subscription-tracker-6fdc9476/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "79bae98f3cc613f6",
       "status": "pending_review",
@@ -256,7 +290,7 @@
     },
     {
       "id": "9d04986b67620392",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "[Feedback Needed] Is this tech stack solid for casino marketing? Would love suggestions from folks who've done this before",
       "suggestedSlug": "feedback-needed-is-this-tech-stack-solid-for-casino-marketing-would-love-suggest",
       "intent": "tool-selection",
@@ -276,6 +310,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-03T19:43:19.418Z",
+        "canonicalUrl": "https://stakdock.com/guides/feedback-needed-is-this-tech-stack-solid-for-casino-marketing-would-love-suggestions-from--9d04986b/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {

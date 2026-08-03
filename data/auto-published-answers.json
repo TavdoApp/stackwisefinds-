@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T17:11:25.275Z",
+  "updatedAt": "2026-08-03T19:43:19.418Z",
   "answers": [
+    {
+      "id": "answer-9d04986b67620392",
+      "slug": "feedback-needed-is-this-tech-stack-solid-for-casino-marketing-would-love-suggestions-from--9d04986b",
+      "title": "How to evaluate: [Feedback Needed] Is this tech stack solid for casino marketing? Would love suggestions from folks who've done this before",
+      "question": "[Feedback Needed] Is this tech stack solid for casino marketing? Would love suggestions from folks who've done this before",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1meratm/feedback_needed_is_this_tech_stack_solid_for/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-03T19:43:19.418Z",
+      "canonicalUrl": "https://stakdock.com/guides/feedback-needed-is-this-tech-stack-solid-for-casino-marketing-would-love-suggestions-from--9d04986b/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-6fdc9476a9e823af",
+      "slug": "do-people-actually-want-a-privacy-first-alternative-to-bank-connected-subscription-tracker-6fdc9476",
+      "title": "How to evaluate: Do people actually want a privacy-first alternative to bank-connected subscription trackers?",
+      "question": "Do people actually want a privacy-first alternative to bank-connected subscription trackers?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "alternatives",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1veke5i/do_people_actually_want_a_privacyfirst/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-03T19:43:19.418Z",
+      "canonicalUrl": "https://stakdock.com/guides/do-people-actually-want-a-privacy-first-alternative-to-bank-connected-subscription-tracker-6fdc9476/",
+      "sections": [
+        {
+          "heading": "Define what must improve",
+          "body": "For an alternative, identify the current limitation first: price, integrations, reporting, support, data export, or performance. A replacement only helps when it solves that specific constraint."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-b6df2e9cd75e8385",
       "slug": "how-many-modern-marketers-are-ai-lliterate-b6df2e9c",
