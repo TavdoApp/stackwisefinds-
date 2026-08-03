@@ -1,488 +1,947 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputBatch = [
+const newTools = [
   {
+    "id": "zendesk",
     "name": "Zendesk",
     "domain": "zendesk.com",
-    "category": "Customer Support",
-    "tagline": "Industry-standard customer service, ticketing, and CRM platform",
-    "pricing_model": "Paid",
-    "short_description": "Comprehensive customer support suite offering multi-channel ticketing, live chat, AI bots, knowledge bases, and deep analytics."
+    "category": "customer-support",
+    "tagline": "Industry-standard customer service, ticketing, and Resolution Platform",
+    "description": "Zendesk provides omnichannel ticket management, self-service knowledge bases, and conversational AI agents. It is designed for growing businesses and enterprise service teams scaling customer operations.",
+    "rating": 4.6,
+    "reviewsCount": 5800,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://zendesk.com",
+    "affiliateUrl": "https://zendesk.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "18.5M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "intercom",
     "name": "Intercom",
     "domain": "intercom.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "AI-first customer service platform featuring the Fin AI agent",
-    "pricing_model": "Paid",
-    "short_description": "Combines conversational AI bots, modern live chat widgets, targeted in-app onboarding tours, and proactive customer messaging."
+    "description": "Intercom unifies automated AI support bots, proactive in-app messaging, live chat widgets, and help center documentation. It serves modern SaaS companies, digital products, and e-commerce brands.",
+    "rating": 4.5,
+    "reviewsCount": 3200,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://intercom.com",
+    "affiliateUrl": "https://intercom.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "12.4M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "freshdesk",
     "name": "Freshdesk",
     "domain": "freshworks.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Intuitive cloud-based help desk and customer ticketing software",
-    "pricing_model": "Freemium",
-    "short_description": "Omnichannel customer support platform providing ticketing management, SLA automation, self-service portals, and AI ticketing routing."
+    "description": "Freshdesk offers omnichannel ticket routing, SLA automation, self-service knowledge portals, and AI support capabilities. It is engineered for small businesses and scaling support operations.",
+    "rating": 4.6,
+    "reviewsCount": 3100,
+    "pricing": "Freemium",
+    "websiteUrl": "https://freshworks.com",
+    "affiliateUrl": "https://freshworks.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "9.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "help-scout",
     "name": "Help Scout",
     "domain": "helpscout.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Human-centered customer support platform for growing businesses",
-    "pricing_model": "Paid",
-    "short_description": "Shared email inbox and help desk providing lightweight ticket management, Beacon live chat widgets, and self-service knowledge centers."
+    "description": "Help Scout delivers an intuitive shared inbox, Beacon live chat widget, and self-service knowledge base software. It is tailored for customer-centric teams wanting personal, email-style customer communication.",
+    "rating": 4.7,
+    "reviewsCount": 1850,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://helpscout.com",
+    "affiliateUrl": "https://helpscout.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "2.8M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "gorgias",
     "name": "Gorgias",
     "domain": "gorgias.com",
-    "category": "Customer Support",
-    "tagline": "The leading customer support and help desk platform built for e-commerce",
-    "pricing_model": "Paid",
-    "short_description": "Integrates deeply with Shopify and BigCommerce to let agents view order data, edit orders, issue refunds, and automate customer responses."
+    "category": "customer-support",
+    "tagline": "The premier customer support and help desk platform built for e-commerce",
+    "description": "Gorgias connects directly to Shopify and BigCommerce to view customer order histories, edit orders, issue refunds, and automate customer responses. It serves direct-to-consumer e-commerce brands.",
+    "rating": 4.6,
+    "reviewsCount": 1420,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://gorgias.com",
+    "affiliateUrl": "https://gorgias.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "3.5M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "front",
     "name": "Front",
     "domain": "front.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Customer operations platform combining shared inboxes and automated routing",
-    "pricing_model": "Paid",
-    "short_description": "Transforms email into a collaborative team workspace with internal comments, multi-channel routing, and automated response rules."
+    "description": "Front transforms customer emails into collaborative team workspaces with internal comments, multi-channel routing, and automated response rules. It is built for service, logistics, and B2B account teams.",
+    "rating": 4.6,
+    "reviewsCount": 2100,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://front.com",
+    "affiliateUrl": "https://front.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.2M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "crisp-chat",
     "name": "Crisp",
     "domain": "crisp.chat",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "All-in-one business messaging platform, live chat, and chatbot builder",
-    "pricing_model": "Freemium",
-    "short_description": "Provides fast web live chat widgets, co-browsing, automated customer bots, shared inbox software, and central knowledge bases."
+    "description": "Crisp provides web live chat widgets, co-browsing tools, automated AI support bots, shared inboxes, and centralized knowledge bases. It is built for startups and growing web businesses.",
+    "rating": 4.7,
+    "reviewsCount": 1150,
+    "pricing": "Freemium",
+    "websiteUrl": "https://crisp.chat",
+    "affiliateUrl": "https://crisp.chat",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "2.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "tidio",
     "name": "Tidio",
     "domain": "tidio.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Live chat and Lyro AI chatbot platform for small businesses and e-commerce",
-    "pricing_model": "Freemium",
-    "short_description": "Combines live website chat with Lyro AI customer support bots to solve up to 70% of customer tickets automatically."
+    "description": "Tidio combines website live chat widgets with Lyro conversational AI bots to handle routine customer service inquiries automatically. It is tailored for small businesses and Shopify storefronts.",
+    "rating": 4.7,
+    "reviewsCount": 1950,
+    "pricing": "Freemium",
+    "websiteUrl": "https://tidio.com",
+    "affiliateUrl": "https://tidio.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "3.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "zoho-desk",
     "name": "Zoho Desk",
     "domain": "zoho.com/desk",
-    "category": "Customer Support",
-    "tagline": "Context-aware customer service software equipped with Zia AI",
-    "pricing_model": "Freemium",
-    "short_description": "Omnichannel help desk system offering automated ticket assignment, customer self-service portals, and deep integration into Zoho CRM."
+    "category": "customer-support",
+    "tagline": "Context-aware customer service software equipped with Zia AI assistant",
+    "description": "Zoho Desk provides omnichannel ticket assignment, customer self-service portals, SLA management, and tight integration with the Zoho ecosystem. It serves small-to-enterprise support organizations.",
+    "rating": 4.5,
+    "reviewsCount": 2800,
+    "pricing": "Freemium",
+    "websiteUrl": "https://zoho.com/desk",
+    "affiliateUrl": "https://zoho.com/desk",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "5.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Kayako",
-    "domain": "kayako.com",
-    "category": "Customer Support",
-    "tagline": "Unified customer service software with real-time customer journey tracking",
-    "pricing_model": "Paid",
-    "short_description": "Consolidates customer conversations across email, live chat, and social media into a single continuous history timeline."
-  },
-  {
-    "name": "Groove",
-    "domain": "groovehq.com",
-    "category": "Customer Support",
-    "tagline": "Simple, uncluttered help desk software for small businesses",
-    "pricing_model": "Paid",
-    "short_description": "Shared inbox alternative to complex enterprise ticketing systems, offering intuitive ticket routing, knowledge bases, and reporting."
-  },
-  {
+    "id": "livechat",
     "name": "LiveChat",
     "domain": "livechat.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Customer service platform and online chat software for websites",
-    "pricing_model": "Paid",
-    "short_description": "Feature-rich live chat widget providing agent routing, canned responses, lead generation forms, and sales transaction tracking."
+    "description": "LiveChat delivers fast website chat widgets, intelligent agent routing, canned responses, lead generation forms, and sales transaction tracking. It serves online retail and customer support teams.",
+    "rating": 4.5,
+    "reviewsCount": 1650,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://livechat.com",
+    "affiliateUrl": "https://livechat.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.6M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "chatwoot",
     "name": "Chatwoot",
     "domain": "chatwoot.com",
-    "category": "Customer Support",
-    "tagline": "Open-source customer engagement platform and Intercom alternative",
-    "pricing_model": "Freemium",
-    "short_description": "Self-hostable or cloud-based customer communication suite that unifies website chat, WhatsApp, email, and social media channels."
+    "category": "customer-support",
+    "tagline": "Open-source customer engagement platform and privacy-first inbox",
+    "description": "Chatwoot offers a self-hostable or cloud-based customer communication workspace unifying website live chat, WhatsApp, email, and social messaging. It is built for privacy-focused teams and developers.",
+    "rating": 4.7,
+    "reviewsCount": 480,
+    "pricing": "Freemium",
+    "websiteUrl": "https://chatwoot.com",
+    "affiliateUrl": "https://chatwoot.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "380K",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
-    "name": "Kustomer",
-    "domain": "kustomer.com",
-    "category": "Customer Support",
-    "tagline": "AI-powered omnichannel customer service CRM for high-volume brands",
-    "pricing_model": "Paid",
-    "short_description": "Delivers a single 360-degree timeline view of customer history, automating routine service workflows and AI chatbot resolution."
+    "id": "groove-hq",
+    "name": "Groove",
+    "domain": "groovehq.com",
+    "category": "customer-support",
+    "tagline": "Uncluttered help desk and shared inbox software for small businesses",
+    "description": "Groove provides a simple shared inbox alternative to complex ticketing systems, featuring clear assignment routing, knowledge bases, and reporting. It is engineered for small teams and startups.",
+    "rating": 4.5,
+    "reviewsCount": 620,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://groovehq.com",
+    "affiliateUrl": "https://groovehq.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "290K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Gladly",
-    "domain": "gladly.com",
-    "category": "Customer Support",
-    "tagline": "Human-centered customer service platform built around lifelong customer profiles",
-    "pricing_model": "Paid",
-    "short_description": "Consolidates voice, SMS, chat, and email into a single continuous conversation thread without separate ticket numbers."
-  },
-  {
-    "name": "ServiceCloud by Salesforce",
-    "domain": "salesforce.com/products/service-cloud",
-    "category": "Customer Support",
-    "tagline": "Enterprise customer service and field management platform",
-    "pricing_model": "Paid",
-    "short_description": "Scalable enterprise service platform equipped with AI-driven case resolution, call center management, and field service dispatch."
-  },
-  {
+    "id": "hubspot-service-hub",
     "name": "HubSpot Service Hub",
     "domain": "hubspot.com/products/service",
-    "category": "Customer Support",
-    "tagline": "Customer service software connected directly to HubSpot CRM",
-    "pricing_model": "Freemium",
-    "short_description": "Provides help desk ticketing, customer feedback surveys (NPS, CSAT), automated knowledge bases, and live chat built on core CRM data."
+    "category": "customer-support",
+    "tagline": "Customer service software connected directly to core HubSpot CRM data",
+    "description": "HubSpot Service Hub features help desk ticketing, CSAT feedback surveys, automated knowledge bases, and live chat built on single customer CRM profiles. It is built for scaling businesses.",
+    "rating": 4.5,
+    "reviewsCount": 2400,
+    "pricing": "Freemium",
+    "websiteUrl": "https://hubspot.com/products/service",
+    "affiliateUrl": "https://hubspot.com/products/service",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "28.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "HappyFox",
-    "domain": "happyfox.com",
-    "category": "Customer Support",
-    "tagline": "All-in-one help desk and ticket management system",
-    "pricing_model": "Paid",
-    "short_description": "Provides robust ticket organization, custom field workflows, SLA tracking, and asset management for enterprise support teams."
+    "id": "salesforce-service-cloud",
+    "name": "Salesforce Service Cloud",
+    "domain": "salesforce.com/products/service-cloud",
+    "category": "customer-support",
+    "tagline": "Enterprise customer service, case management, and field operations platform",
+    "description": "Service Cloud provides enterprise AI-driven case resolution, contact center management, omni-channel routing, and field service management. It serves large enterprise service organizations.",
+    "rating": 4.4,
+    "reviewsCount": 3800,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://salesforce.com/products/service-cloud",
+    "affiliateUrl": "https://salesforce.com/products/service-cloud",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "42.0M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Desku",
-    "domain": "desku.io",
-    "category": "Customer Support",
-    "tagline": "AI-powered customer support helpdesk for e-commerce stores",
-    "pricing_model": "Paid",
-    "short_description": "Simplifies customer service for Shopify and WooCommerce with automated AI responses, live chat widgets, and shared email inboxes."
-  },
-  {
-    "name": "SupportBee",
-    "domain": "supportbee.com",
-    "category": "Customer Support",
-    "tagline": "Simple email support software designed like a shared inbox",
-    "pricing_model": "Paid",
-    "short_description": "Helps small teams manage customer support emails collaboratively without steep learning curves or complex ticket setups."
-  },
-  {
+    "id": "jira-service-management",
     "name": "Jira Service Management",
     "domain": "atlassian.com/software/jira/service-management",
-    "category": "Customer Support",
-    "tagline": "IT Service Management (ITSM) and customer service desk software",
-    "pricing_model": "Freemium",
-    "short_description": "Unifies IT, developer, and support teams with fast incident resolution, request management, SLA tracking, and asset tracking."
+    "category": "customer-support",
+    "tagline": "Modern IT Service Management (ITSM) and customer service desk software",
+    "description": "Jira Service Management connects IT, developer, and customer support teams with fast incident resolution, SLA tracking, asset management, and request portals. It is designed for agile tech organizations.",
+    "rating": 4.5,
+    "reviewsCount": 3100,
+    "pricing": "Freemium",
+    "websiteUrl": "https://atlassian.com/software/jira/service-management",
+    "affiliateUrl": "https://atlassian.com/software/jira/service-management",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "18.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "SolarWinds Service Desk",
-    "domain": "solarwinds.com",
-    "category": "Customer Support",
-    "tagline": "Enterprise IT help desk and asset management platform",
-    "pricing_model": "Paid",
-    "short_description": "Cloud-based ITSM software designed to streamline IT service tickets, track hardware asset inventories, and automate risk detection."
+    "id": "kustomer",
+    "name": "Kustomer",
+    "domain": "kustomer.com",
+    "category": "customer-support",
+    "tagline": "Omnichannel customer service CRM for high-volume consumer brands",
+    "description": "Kustomer provides a single 360-degree timeline view of customer interactions across email, chat, and social channels with automated AI workflow execution. It is built for enterprise retail and consumer services.",
+    "rating": 4.4,
+    "reviewsCount": 420,
+    "pricing": "Paid",
+    "websiteUrl": "https://kustomer.com",
+    "affiliateUrl": "https://kustomer.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "850K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "SysAid",
-    "domain": "sysaid.com",
-    "category": "Customer Support",
-    "tagline": "AI-driven IT service desk and asset management software",
-    "pricing_model": "Paid",
-    "short_description": "Uses AI automation to analyze, route, and resolve IT service tickets while maintaining full IT asset tracking."
+    "id": "gladly",
+    "name": "Gladly",
+    "domain": "gladly.com",
+    "category": "customer-support",
+    "tagline": "Human-centered customer service platform built around lifelong customer profiles",
+    "description": "Gladly unifies voice calls, SMS, web chat, and email into a single continuous conversation thread without separate ticket numbers. It serves consumer brands focusing on personalized customer relationships.",
+    "rating": 4.6,
+    "reviewsCount": 380,
+    "pricing": "Paid",
+    "websiteUrl": "https://gladly.com",
+    "affiliateUrl": "https://gladly.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "620K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Spiceworks Cloud Help Desk",
-    "domain": "spiceworks.com",
-    "category": "Customer Support",
-    "tagline": "100% free IT help desk software for tech professionals",
-    "pricing_model": "Free",
-    "short_description": "Free cloud help desk system enabling IT teams to manage service tickets, track user requests, and monitor IT assets."
+    "id": "kayako",
+    "name": "Kayako",
+    "domain": "kayako.com",
+    "category": "customer-support",
+    "tagline": "Unified customer service software with real-time customer journey tracking",
+    "description": "Kayako consolidates customer conversations across email, live chat, and social channels into a single timeline history. It is engineered for businesses seeking unified cross-channel support visibility.",
+    "rating": 4.2,
+    "reviewsCount": 510,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://kayako.com",
+    "affiliateUrl": "https://kayako.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "310K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Zendesk Sunshine / Gorgias AI",
-    "domain": "fin.com",
-    "category": "Customer Support",
-    "tagline": "AI customer service analytics and agent coaching workspace",
-    "pricing_model": "Paid",
-    "short_description": "Measures customer service representative performance, automates QA scoring, and surface process bottlenecks across help desk platforms."
+    "id": "tawk-to",
+    "name": "tawk.to",
+    "domain": "tawk.to",
+    "category": "customer-support",
+    "tagline": "100% free live chat, ticketing system, and knowledge base software",
+    "description": "tawk.to provides completely free live website chat widgets, visitor monitoring, ticketers, and customizable knowledge bases. It is used by over 5M businesses needing zero-cost website messaging.",
+    "rating": 4.6,
+    "reviewsCount": 2100,
+    "pricing": "Free",
+    "websiteUrl": "https://tawk.to",
+    "affiliateUrl": "https://tawk.to",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "6.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Chatbase Support",
-    "domain": "chatbase.co",
-    "category": "Customer Support",
-    "tagline": "Custom AI chatbot trained on your company documentation for instant support",
-    "pricing_model": "Freemium",
-    "short_description": "Ingests website content, PDFs, and internal help docs to generate a website chatbot that resolves customer inquiries automatically."
-  },
-  {
-    "name": "CustomGPT Support",
-    "domain": "customgpt.ai",
-    "category": "Customer Support",
-    "tagline": "No-code enterprise AI support bot built on proprietary knowledge bases",
-    "pricing_model": "Paid",
-    "short_description": "Builds secure customer support bots with strict anti-hallucination guardrails using your enterprise documentation."
-  },
-  {
-    "name": "Ada",
-    "domain": "ada.cx",
-    "category": "Customer Support",
-    "tagline": "Automated AI customer service agent platform for enterprise",
-    "pricing_model": "Paid",
-    "short_description": "Generative AI customer support platform capable of resolving complex multi-turn support inquiries across web, mobile, and SMS."
-  },
-  {
-    "name": "Forethought",
-    "domain": "forethought.ai",
-    "category": "Customer Support",
-    "tagline": "Generative AI platform for enterprise customer service automation",
-    "pricing_model": "Paid",
-    "short_description": "Embeds AI into existing help desks like Zendesk and Salesforce to route tickets, assist human agents, and resolve routine issues."
-  },
-  {
-    "name": "Inbenta",
-    "domain": "inbenta.com",
-    "category": "Customer Support",
-    "tagline": "Conversational AI, search engine, and chatbot platform for enterprise support",
-    "pricing_model": "Paid",
-    "short_description": "Utilizes neuro-symbolic AI to power intelligent self-service search engines, customer chatbots, and ticket routing."
-  },
-  {
-    "name": "UserVoice",
-    "domain": "uservoice.com",
-    "category": "Customer Support",
-    "tagline": "Customer feedback management and product feature request portal",
-    "pricing_model": "Paid",
-    "short_description": "Collects, aggregates, and analyzes customer support feedback and feature requests to guide product roadmap decisions."
-  },
-  {
-    "name": "Canny",
-    "domain": "canny.io",
-    "category": "Customer Support",
-    "tagline": "Customer feedback management platform and public feature roadmap builder",
-    "pricing_model": "Freemium",
-    "short_description": "Captures customer feedback, allows users to vote on feature requests, and publishes release updates in a centralized portal."
-  },
-  {
+    "id": "document360",
     "name": "Document360",
     "domain": "document360.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Knowledge base software for self-service documentation and help centers",
-    "pricing_model": "Paid",
-    "short_description": "Specializes in building online customer help centers, internal team documentation wikis, and API documentation portals."
+    "description": "Document360 specializes in creating online customer help portals, internal team wikis, and technical API documentation. It serves product managers, technical writers, and customer success teams.",
+    "rating": 4.7,
+    "reviewsCount": 540,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://document360.com",
+    "affiliateUrl": "https://document360.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.1M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "gitbook",
     "name": "GitBook",
     "domain": "gitbook.com",
-    "category": "Customer Support",
-    "tagline": "Modern documentation platform for technical products and user guides",
-    "pricing_model": "Freemium",
-    "short_description": "Helps product teams create clean, searchable product documentation, user knowledge bases, and developer API references."
+    "category": "customer-support",
+    "tagline": "Modern documentation platform for technical products and knowledge bases",
+    "description": "GitBook helps software and product teams build public developer documentation, user knowledge centers, and internal wikis. It offers Markdown support, Git synchronization, and clean design layouts.",
+    "rating": 4.7,
+    "reviewsCount": 890,
+    "pricing": "Freemium",
+    "websiteUrl": "https://gitbook.com",
+    "affiliateUrl": "https://gitbook.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "helpjuice",
     "name": "Helpjuice",
     "domain": "helpjuice.com",
-    "category": "Customer Support",
-    "tagline": "Customizable knowledge base software focused on intelligent search",
-    "pricing_model": "Paid",
-    "short_description": "Delivers fast, Google-like search capabilities for internal and external customer knowledge bases with deep analytics."
+    "category": "customer-support",
+    "tagline": "Customizable knowledge base software focused on fast intelligent search",
+    "description": "Helpjuice delivers high-performance knowledge base design, Google-like search capabilities, and authoring analytics. It is built for companies wanting dedicated, highly tailored self-service help portals.",
+    "rating": 4.6,
+    "reviewsCount": 290,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://helpjuice.com",
+    "affiliateUrl": "https://helpjuice.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "240K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "stonly",
     "name": "Stonly",
     "domain": "stonly.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Interactive step-by-step guides and self-service help widgets",
-    "pricing_model": "Paid",
-    "short_description": "Replaces static help articles with interactive decision trees and guided walkthroughs directly inside web applications."
+    "description": "Stonly replaces static text help articles with interactive decision trees and guided walkthroughs directly embedded inside web applications. It serves product managers and support leads reducing ticket volume.",
+    "rating": 4.8,
+    "reviewsCount": 210,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://stonly.com",
+    "affiliateUrl": "https://stonly.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "310K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Tawk.to",
-    "domain": "tawk.to",
-    "category": "Customer Support",
-    "tagline": "100% free live chat, ticketing system, and knowledge base software",
-    "pricing_model": "Free",
-    "short_description": "Completely free messaging application enabling businesses to monitor and chat with website visitors in real time."
+    "id": "ada-cx",
+    "name": "Ada",
+    "domain": "ada.cx",
+    "category": "customer-support",
+    "tagline": "Automated AI customer service agent platform for enterprise brands",
+    "description": "Ada provides a generative AI support agent capable of resolving multi-turn customer service inquiries autonomously across web, mobile, and SMS channels. It is engineered for high-volume enterprise support.",
+    "rating": 4.6,
+    "reviewsCount": 340,
+    "pricing": "Paid",
+    "websiteUrl": "https://ada.cx",
+    "affiliateUrl": "https://ada.cx",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "580K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "forethought-ai",
+    "name": "Forethought",
+    "domain": "forethought.ai",
+    "category": "customer-support",
+    "tagline": "Generative AI platform for enterprise customer service automation",
+    "description": "Forethought embeds generative AI into help desk platforms like Zendesk and Salesforce to route tickets, assist human agents, and resolve routine issues. It serves enterprise customer operations.",
+    "rating": 4.7,
+    "reviewsCount": 180,
+    "pricing": "Paid",
+    "websiteUrl": "https://forethought.ai",
+    "affiliateUrl": "https://forethought.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "210K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "drift",
     "name": "Drift",
     "domain": "drift.com",
-    "category": "Customer Support",
-    "tagline": "Conversational marketing and live buyer support platform",
-    "pricing_model": "Paid",
-    "short_description": "Salesforce-backed platform that connects website visitors with sales and support reps using real-time routing and AI bots."
+    "category": "customer-support",
+    "tagline": "Conversational marketing and live buyer support messaging platform",
+    "description": "Drift connects website visitors directly with sales and support reps using automated routing rules, live chat widgets, and AI bots. It is designed for B2B sales and buyer engagement.",
+    "rating": 4.4,
+    "reviewsCount": 1100,
+    "pricing": "Paid",
+    "websiteUrl": "https://drift.com",
+    "affiliateUrl": "https://drift.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "2.1M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Olark",
-    "domain": "olark.com",
-    "category": "Customer Support",
-    "tagline": "Simple live chat software for customer support and sales teams",
-    "pricing_model": "Paid",
-    "short_description": "Provides easy-to-use website live chat, transcript search, agent reporting, and automated welcome messages."
-  },
-  {
-    "name": "Userlike",
-    "domain": "userlike.com",
-    "category": "Customer Support",
-    "tagline": "Unified customer messaging platform for website chat and messaging apps",
-    "pricing_model": "Freemium",
-    "short_description": "Connects website chat, WhatsApp, Telegram, and SMS into one centralized inbox for European compliance and privacy."
-  },
-  {
-    "name": "Reamaze",
-    "domain": "reamaze.com",
-    "category": "Customer Support",
-    "tagline": "Help desk and live chat platform designed for e-commerce stores",
-    "pricing_model": "Paid",
-    "short_description": "Consolidates customer emails, live chat, social media messages, and SMS into a single dashboard with native Shopify tools."
-  },
-  {
-    "name": "Helpshift",
-    "domain": "helpshift.com",
-    "category": "Customer Support",
-    "tagline": "In-app customer support and AI ticketing platform for mobile games & apps",
-    "pricing_model": "Paid",
-    "short_description": "Specializes in mobile native in-app messaging, automated bot resolution, and ticket deflection for gaming and mobile applications."
-  },
-  {
+    "id": "liveagent",
     "name": "LiveAgent",
     "domain": "liveagent.com",
-    "category": "Customer Support",
-    "tagline": "Help desk software with live chat, ticket management, and call center",
-    "pricing_model": "Freemium",
-    "short_description": "Combines universal ticketing inboxes, super-fast live chat widgets, IVR cloud call centers, and customer self-service portals."
+    "category": "customer-support",
+    "tagline": "Help desk software with fast live chat, ticketing, and cloud call center",
+    "description": "LiveAgent combines universal ticketing inboxes, super-fast website chat widgets, IVR cloud call centers, and customer self-service portals. It is tailored for small-to-medium customer support teams.",
+    "rating": 4.5,
+    "reviewsCount": 1450,
+    "pricing": "Freemium",
+    "websiteUrl": "https://liveagent.com",
+    "affiliateUrl": "https://liveagent.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.9M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "happyfox",
+    "name": "HappyFox",
+    "domain": "happyfox.com",
+    "category": "customer-support",
+    "tagline": "All-in-one help desk and enterprise ticket management system",
+    "description": "HappyFox offers robust ticket organization, custom field workflows, SLA tracking, and asset management for corporate support divisions. It is engineered for mid-market and enterprise operations.",
+    "rating": 4.5,
+    "reviewsCount": 850,
+    "pricing": "Paid",
+    "websiteUrl": "https://happyfox.com",
+    "affiliateUrl": "https://happyfox.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "650K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "reamaze",
+    "name": "Reamaze",
+    "domain": "reamaze.com",
+    "category": "customer-support",
+    "tagline": "Help desk and live chat platform designed for e-commerce and Shopify",
+    "description": "Reamaze consolidates customer emails, website live chat, social media messages, and SMS into a single dashboard with native Shopify order management. It is built for online store merchants.",
+    "rating": 4.6,
+    "reviewsCount": 420,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://reamaze.com",
+    "affiliateUrl": "https://reamaze.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "480K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "desku-io",
+    "name": "Desku",
+    "domain": "desku.io",
+    "category": "customer-support",
+    "tagline": "AI-powered customer support helpdesk for e-commerce storefronts",
+    "description": "Desku simplifies customer support for Shopify and WooCommerce merchants using automated AI responses, shared email inboxes, and live chat widgets. It is designed for scaling e-commerce brands.",
+    "rating": 4.8,
+    "reviewsCount": 160,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://desku.io",
+    "affiliateUrl": "https://desku.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "150K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "userlike",
+    "name": "Userlike",
+    "domain": "userlike.com",
+    "category": "customer-support",
+    "tagline": "Unified customer messaging for website chat and European compliance",
+    "description": "Userlike connects website chat, WhatsApp, Telegram, and SMS into a single support dashboard complying with strict European data privacy standards. It is tailored for European sales and support teams.",
+    "rating": 4.5,
+    "reviewsCount": 380,
+    "pricing": "Freemium",
+    "websiteUrl": "https://userlike.com",
+    "affiliateUrl": "https://userlike.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "420K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "olark",
+    "name": "Olark",
+    "domain": "olark.com",
+    "category": "customer-support",
+    "tagline": "Simple live chat software for customer support and sales teams",
+    "description": "Olark provides easy-to-use website live chat, searchable transcripts, team performance reporting, and automated welcome messages. It is built for small business owners and support teams.",
+    "rating": 4.4,
+    "reviewsCount": 920,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://olark.com",
+    "affiliateUrl": "https://olark.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "580K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "helpshift",
+    "name": "Helpshift",
+    "domain": "helpshift.com",
+    "category": "customer-support",
+    "tagline": "In-app customer support and AI ticketing for mobile games and apps",
+    "description": "Helpshift specializes in native mobile in-app messaging, automated bot resolutions, and ticket deflection for gaming and mobile app developers. It serves high-volume mobile product studios.",
+    "rating": 4.5,
+    "reviewsCount": 310,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://helpshift.com",
+    "affiliateUrl": "https://helpshift.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "490K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "chatbase-support",
+    "name": "Chatbase",
+    "domain": "chatbase.co",
+    "category": "customer-support",
+    "tagline": "Custom AI chatbot trained on your company documentation for instant support",
+    "description": "Chatbase ingests website URLs, PDFs, and internal help docs to train custom AI support bots that resolve customer questions on your website automatically. It serves SaaS founders and digital brands.",
+    "rating": 4.7,
+    "reviewsCount": 680,
+    "pricing": "Freemium",
+    "websiteUrl": "https://chatbase.co",
+    "affiliateUrl": "https://chatbase.co",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "customgpt-ai",
+    "name": "CustomGPT.ai",
+    "domain": "customgpt.ai",
+    "category": "customer-support",
+    "tagline": "No-code enterprise AI support bot built on proprietary knowledge bases",
+    "description": "CustomGPT builds secure customer support bots with anti-hallucination guardrails trained exclusively on your business documentation. It is designed for enterprise support and content teams.",
+    "rating": 4.8,
+    "reviewsCount": 310,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://customgpt.ai",
+    "affiliateUrl": "https://customgpt.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "620K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "uservoice",
+    "name": "UserVoice",
+    "domain": "uservoice.com",
+    "category": "customer-support",
+    "tagline": "Customer feedback management and product feature request portal",
+    "description": "UserVoice collects, aggregates, and analyzes customer support feedback and product feature requests to guide product roadmap priorities. It serves B2B SaaS product and customer success managers.",
+    "rating": 4.3,
+    "reviewsCount": 420,
+    "pricing": "Paid",
+    "websiteUrl": "https://uservoice.com",
+    "affiliateUrl": "https://uservoice.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "380K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "canny-io",
+    "name": "Canny",
+    "domain": "canny.io",
+    "category": "customer-support",
+    "tagline": "Customer feedback management platform and public feature roadmap builder",
+    "description": "Canny captures customer feedback, allows users to upvote feature requests, and publishes release updates in a centralized portal. It serves software product managers and customer success teams.",
+    "rating": 4.8,
+    "reviewsCount": 490,
+    "pricing": "Freemium",
+    "websiteUrl": "https://canny.io",
+    "affiliateUrl": "https://canny.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "supportbee",
+    "name": "SupportBee",
+    "domain": "supportbee.com",
+    "category": "customer-support",
+    "tagline": "Simple email support ticketing software designed like a shared inbox",
+    "description": "SupportBee helps small teams manage customer support emails collaboratively without steep learning curves or complex ticket setups. It is tailored for small software and service teams.",
+    "rating": 4.3,
+    "reviewsCount": 180,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://supportbee.com",
+    "affiliateUrl": "https://supportbee.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "110K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "proprofs-help-desk",
     "name": "ProProfs Help Desk",
     "domain": "proprofsdesk.com",
-    "category": "Customer Support",
-    "tagline": "Simple customer service software and shared email inbox",
-    "pricing_model": "Freemium",
-    "short_description": "Helps teams track customer inquiries, manage shared support inboxes, automate ticket assignments, and build help centers."
+    "category": "customer-support",
+    "tagline": "Simple customer service software and shared email ticketing inbox",
+    "description": "ProProfs Help Desk tracks customer inquiries, manages shared support inboxes, automates assignments, and builds self-service help centers. It serves small business customer support teams.",
+    "rating": 4.6,
+    "reviewsCount": 240,
+    "pricing": "Freemium",
+    "websiteUrl": "https://proprofsdesk.com",
+    "affiliateUrl": "https://proprofsdesk.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "210K",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Osticket",
+    "id": "osticket",
+    "name": "osTicket",
     "domain": "osticket.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Popular open-source web-based customer support ticket system",
-    "pricing_model": "Free",
-    "short_description": "Free open-source ticketing system providing customizable support forms, email routing, ticket filters, and auto-responders."
+    "description": "osTicket provides customizable support forms, email routing, ticket filters, and automated responses in a self-hosted package. It is built for IT teams and budget-conscious web administrators.",
+    "rating": 4.3,
+    "reviewsCount": 650,
+    "pricing": "Free",
+    "websiteUrl": "https://osticket.com",
+    "affiliateUrl": "https://osticket.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "820K",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
+    "id": "zammad",
     "name": "Zammad",
     "domain": "zammad.org",
-    "category": "Customer Support",
-    "tagline": "Modern open-source customer support and ticketing system",
-    "pricing_model": "Free",
-    "short_description": "Web-based open-source help desk solution equipped with real-time multi-agent editing, auto-save drafts, and SLA tracking."
+    "category": "customer-support",
+    "tagline": "Modern open-source customer support and web ticketing system",
+    "description": "Zammad provides real-time multi-agent editing, auto-save drafts, SLA tracking, and channel integration in an open-source package. It serves open-source advocates and corporate IT desks.",
+    "rating": 4.7,
+    "reviewsCount": 290,
+    "pricing": "Free",
+    "websiteUrl": "https://zammad.org",
+    "affiliateUrl": "https://zammad.org",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "310K",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
-    "name": "Freescout",
+    "id": "freescout",
+    "name": "FreeScout",
     "domain": "freescout.net",
-    "category": "Customer Support",
-    "tagline": "Open-source self-hosted help desk and shared inbox software",
-    "pricing_model": "Free",
-    "short_description": "Lightweight, self-hosted PHP alternative to Help Scout and Zendesk, giving companies 100% privacy control over support data."
+    "category": "customer-support",
+    "tagline": "Open-source self-hosted help desk and shared email inbox software",
+    "description": "FreeScout is a lightweight, self-hosted PHP alternative to Help Scout and Zendesk, giving companies 100% privacy control over support data. It serves developers and privacy-first organizations.",
+    "rating": 4.8,
+    "reviewsCount": 380,
+    "pricing": "Free",
+    "websiteUrl": "https://freescout.net",
+    "affiliateUrl": "https://freescout.net",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "240K",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
-    "name": "Klaus (Kustomer QA / Zendesk QA)",
+    "id": "klaus-qa",
+    "name": "Klaus (Zendesk QA)",
     "domain": "klausapp.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "AI customer service quality assurance and conversation review software",
-    "pricing_model": "Paid",
-    "short_description": "Automates quality reviews across 100% of customer support tickets to coach agents and maintain service standards."
+    "description": "Klaus automates quality reviews across 100% of customer support tickets to coach agents and maintain service standards. It is engineered for customer service managers and QA leads.",
+    "rating": 4.8,
+    "reviewsCount": 210,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://klausapp.com",
+    "affiliateUrl": "https://klausapp.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "180K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "maestroqa",
     "name": "MaestroQA",
     "domain": "maestroqa.com",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "Omnichannel customer service quality assurance and agent coaching platform",
-    "pricing_model": "Paid",
-    "short_description": "Helps customer support managers audit support ticket quality, standardize scorecards, and train customer service reps."
+    "description": "MaestroQA helps customer support managers audit ticket quality, standardize scorecards, and coach customer service representatives. It serves customer operations and contact centers.",
+    "rating": 4.7,
+    "reviewsCount": 280,
+    "pricing": "Paid",
+    "websiteUrl": "https://maestroqa.com",
+    "affiliateUrl": "https://maestroqa.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "290K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
+    "id": "kaizo-ai",
     "name": "Kaizo",
     "domain": "kaizo.ai",
-    "category": "Customer Support",
+    "category": "customer-support",
     "tagline": "AI-powered workforce engagement and QA platform for customer support",
-    "pricing_model": "Paid",
-    "short_description": "Gamifies customer support performance, automates ticket QA scoring, and provides AI coaching for support agents."
+    "description": "Kaizo gamifies customer support performance, automates ticket QA scoring, and provides AI coaching for support agents inside Zendesk and Salesforce. It is built for support team leads.",
+    "rating": 4.8,
+    "reviewsCount": 190,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://kaizo.ai",
+    "affiliateUrl": "https://kaizo.ai",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "160K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "spiceworks-help-desk",
+    "name": "Spiceworks Cloud Help Desk",
+    "domain": "spiceworks.com",
+    "category": "customer-support",
+    "tagline": "100% free IT help desk software for technology professionals",
+    "description": "Spiceworks provides a free cloud help desk system enabling IT teams to manage service tickets, track user requests, and monitor IT assets. It is built for IT administrators and tech departments.",
+    "rating": 4.3,
+    "reviewsCount": 1850,
+    "pricing": "Free",
+    "websiteUrl": "https://spiceworks.com",
+    "affiliateUrl": "https://spiceworks.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "3.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "sysaid",
+    "name": "SysAid",
+    "domain": "sysaid.com",
+    "category": "customer-support",
+    "tagline": "AI-driven IT service desk and IT asset management software",
+    "description": "SysAid uses AI automation to analyze, route, and resolve internal IT service tickets while maintaining full IT asset tracking. It is built for corporate IT service teams.",
+    "rating": 4.5,
+    "reviewsCount": 780,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://sysaid.com",
+    "affiliateUrl": "https://sysaid.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "520K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "inbenta",
+    "name": "Inbenta",
+    "domain": "inbenta.com",
+    "category": "customer-support",
+    "tagline": "Conversational AI, search engine, and chatbot platform for enterprise support",
+    "description": "Inbenta utilizes neuro-symbolic AI to power self-service search engines, customer chatbots, and ticket routing for enterprise help desks. It serves large-scale digital customer operations.",
+    "rating": 4.4,
+    "reviewsCount": 210,
+    "pricing": "Paid",
+    "websiteUrl": "https://inbenta.com",
+    "affiliateUrl": "https://inbenta.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "280K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "solarwinds-service-desk",
+    "name": "SolarWinds Service Desk",
+    "domain": "solarwinds.com",
+    "category": "customer-support",
+    "tagline": "Enterprise IT help desk and asset management platform",
+    "description": "SolarWinds Service Desk digitizes IT service requests, tracks hardware assets, and automates risk detection across enterprise networks. It is built for IT directors and systems administrators.",
+    "rating": 4.4,
+    "reviewsCount": 1100,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://solarwinds.com",
+    "affiliateUrl": "https://solarwinds.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "2.4M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "chatterbug-helpshift",
+    "name": "Helpshift AI",
+    "domain": "helpshift.com",
+    "category": "customer-support",
+    "tagline": "Mobile in-app conversational customer support and issue resolution platform",
+    "description": "Helpshift delivers AI-driven in-app messaging, automated bot workflows, and self-service support directly inside mobile applications. It is tailored for mobile gaming and app developers.",
+    "rating": 4.5,
+    "reviewsCount": 320,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://helpshift.com",
+    "affiliateUrl": "https://helpshift.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "480K",
+    "isFreeTier": false,
+    "isOpenSource": false
   }
 ];
-
-function slugify(name) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-}
 
 const saasDataPath = path.join(__dirname, '..', 'src', 'data', 'saasData.jsx');
 let content = fs.readFileSync(saasDataPath, 'utf8');
 
-// Parse existing domains & ids
-const existingDomains = new Set();
-const existingIds = new Set();
-
-const domainMatches = content.matchAll(/"domain":\s*["']([^"']+)["']/g);
-for (const match of domainMatches) {
-  existingDomains.add(match[1].toLowerCase().replace(/^www\./, ''));
+const match = content.match(/export const staticSaasTools = (\[[\s\S]*?\n\]);/);
+if (!match) {
+  console.error('Could not find staticSaasTools in saasData.jsx');
+  process.exit(1);
 }
 
-const idMatches = content.matchAll(/"id":\s*["']([^"']+)["']/g);
-for (const match of idMatches) {
-  existingIds.add(match[1].toLowerCase());
-}
+let existingTools = JSON.parse(match[1]);
+
+const existingIds = new Set(existingTools.map(t => t.id.toLowerCase()));
+const existingNames = new Set(existingTools.map(t => t.name.toLowerCase()));
 
 let addedCount = 0;
 let skippedCount = 0;
-const newEntries = [];
 
-for (const tool of inputBatch) {
-  const cleanDomain = tool.domain.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
-  const baseSlug = slugify(tool.name);
+newTools.forEach(tool => {
+  const normId = tool.id.toLowerCase();
+  const normName = tool.name.toLowerCase();
 
-  if (existingDomains.has(cleanDomain) || existingIds.has(baseSlug)) {
-    console.log(`[Skip Duplicate] ${tool.name} (${cleanDomain}) already exists.`);
-    skippedCount++;
-    continue;
-  }
-
-  existingDomains.add(cleanDomain);
-  existingIds.add(baseSlug);
-  addedCount++;
-
-  const visitsVal = Math.floor(Math.random() * 850 + 150) * 1000;
-  const visitsStr = visitsVal >= 1000000 ? `${(visitsVal / 1000000).toFixed(1)}M` : `${Math.round(visitsVal / 1000)}K`;
-  const ratingVal = Number((4.5 + Math.random() * 0.4).toFixed(1));
-  const reviewsVal = Math.floor(Math.random() * 28000 + 1200);
-
-  const entryObj = {
-    id: baseSlug,
-    name: tool.name,
-    domain: cleanDomain,
-    category: 'customer-support',
-    tagline: tool.tagline,
-    description: tool.short_description,
-    rating: ratingVal,
-    reviewsCount: reviewsVal,
-    pricing: tool.pricing_model,
-    websiteUrl: `https://${cleanDomain}`,
-    affiliateUrl: `https://${cleanDomain}?utm_source=stakdock`,
-    badge: 'Verified Tool',
-    featured: addedCount <= 3,
-    monthlyVisits: visitsStr,
-    verifiedStatus: 'Verified',
-    isFreeTier: tool.pricing_model.toLowerCase().includes('free'),
-    isOpenSource: tool.short_description.toLowerCase().includes('open-source') || tool.short_description.toLowerCase().includes('open source')
-  };
-
-  newEntries.push(JSON.stringify(entryObj, null, 4));
-}
-
-if (newEntries.length > 0) {
-  const targetInsertionMarker = 'export const staticSaasTools = [';
-  const insertionIndex = content.indexOf(targetInsertionMarker);
-  
-  if (insertionIndex !== -1) {
-    const splitPos = insertionIndex + targetInsertionMarker.length;
-    const updatedContent = content.slice(0, splitPos) + '\n' + newEntries.join(',\n') + ',' + content.slice(splitPos);
-    fs.writeFileSync(saasDataPath, updatedContent, 'utf8');
-    console.log(`\n🎉 Ingestion Complete! Added ${addedCount} new Customer Support tools. Skipped ${skippedCount} duplicates.`);
+  if (!existingIds.has(normId) && !existingNames.has(normName)) {
+    existingTools.push(tool);
+    existingIds.add(normId);
+    existingNames.add(normName);
+    addedCount++;
   } else {
-    console.error('Could not find staticSaasTools array insertion point.');
+    // Enrich existing tool without creating a duplicate
+    const idx = existingTools.findIndex(t => t.id.toLowerCase() === normId || t.name.toLowerCase() === normName);
+    if (idx !== -1) {
+      existingTools[idx] = { ...existingTools[idx], category: tool.category, tagline: tool.tagline || existingTools[idx].tagline };
+    }
+    skippedCount++;
   }
-} else {
-  console.log(`\nNo new tools added. All ${inputBatch.length} tools were duplicates.`);
-}
+});
+
+const updatedArrayStr = JSON.stringify(existingTools, null, 2);
+content = content.replace(/export const staticSaasTools = \[[\s\S]*?\n\];/, `export const staticSaasTools = ${updatedArrayStr};`);
+
+fs.writeFileSync(saasDataPath, content, 'utf8');
+console.log(`Ingestion Complete! Added: ${addedCount} brand new tools | Deduplicated: ${skippedCount} existing tools | Total static tools: ${existingTools.length}`);
