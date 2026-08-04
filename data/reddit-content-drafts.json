@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-04T02:52:24.896Z",
+  "updatedAt": "2026-08-04T05:52:02.498Z",
   "drafts": [
     {
       "id": "4fb0e251add8a8a1",
@@ -576,7 +576,7 @@
     },
     {
       "id": "6951e3411035db68",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Anyone using AI to automate video ads for e-commerce?",
       "suggestedSlug": "anyone-using-ai-to-automate-video-ads-for-e-commerce",
       "intent": "ai-tools",
@@ -596,11 +596,21 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-04T05:52:03.323Z",
+        "canonicalUrl": "https://stakdock.com/guides/anyone-using-ai-to-automate-video-ads-for-e-commerce-6951e341/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
       "id": "07d34c932c6ce434",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Career Pivot to Data Analytics/Visualization from Marketing: Outsourcing Risks, Job Prospects & Skill Depth? (North America)",
       "suggestedSlug": "career-pivot-to-data-analytics-visualization-from-marketing-outsourcing-risks-jo",
       "intent": "tool-selection",
@@ -620,6 +630,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-04T05:52:03.323Z",
+        "canonicalUrl": "https://stakdock.com/guides/career-pivot-to-data-analytics-visualization-from-marketing-outsourcing-risks-job-prospect-07d34c93/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
