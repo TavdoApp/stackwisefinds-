@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-04T11:27:26.045Z",
+  "updatedAt": "2026-08-04T14:25:05.587Z",
   "drafts": [
+    {
+      "id": "08a7ea365dcd64cc",
+      "status": "auto_published",
+      "question": "Tired of overpriced feedback tools locking basic features? I built an alternative",
+      "suggestedSlug": "tired-of-overpriced-feedback-tools-locking-basic-features-i-built-an-alternative",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vfbjgk/tired_of_overpriced_feedback_tools_locking_basic/",
+      "sourcePublishedAt": "2026-08-04T14:13:25+00:00",
+      "discoveredAt": "2026-08-04T14:25:05.587Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-04T14:25:06.730Z",
+        "canonicalUrl": "https://stakdock.com/guides/tired-of-overpriced-feedback-tools-locking-basic-features-i-built-an-alternative-08a7ea36/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "a51b15110800fbfd",
       "status": "pending_review",
