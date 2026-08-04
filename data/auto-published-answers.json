@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T23:05:48.641Z",
+  "updatedAt": "2026-08-04T02:52:25.496Z",
   "answers": [
+    {
+      "id": "answer-f88d25ca04f73f62",
+      "slug": "how-can-i-increase-booking-rates-for-my-client-f88d25ca",
+      "title": "How to evaluate: How Can I Increase Booking Rates For My Client?",
+      "question": "How Can I Increase Booking Rates For My Client?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1l7leqn/how_can_i_increase_booking_rates_for_my_client/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-04T02:52:25.496Z",
+      "canonicalUrl": "https://stakdock.com/guides/how-can-i-increase-booking-rates-for-my-client-f88d25ca/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-312a4afd180adf26",
+      "slug": "how-do-you-push-back-when-leadership-wants-ai-driven-quantity-over-quality-in-social-engag-312a4afd",
+      "title": "How to evaluate: How do you push back when leadership wants AI-driven quantity over quality in social engagement?",
+      "question": "How do you push back when leadership wants AI-driven quantity over quality in social engagement?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "ai-tools",
+      "sourceUrl": "https://www.reddit.com/r/marketing/comments/1m74po0/how_do_you_push_back_when_leadership_wants/",
+      "sourceSubreddit": "marketing",
+      "publishedAt": "2026-08-04T02:52:25.496Z",
+      "canonicalUrl": "https://stakdock.com/guides/how-do-you-push-back-when-leadership-wants-ai-driven-quantity-over-quality-in-social-engag-312a4afd/",
+      "sections": [
+        {
+          "heading": "Set boundaries for AI use",
+          "body": "Define acceptable inputs, privacy requirements, review steps, and the quality standard for outputs. Test representative tasks rather than relying on broad product claims."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-59f982d7de26812b",
       "slug": "doing-abm-direct-mail-struggling-with-company-address-accuracy-any-tools-you-recommend-59f982d7",

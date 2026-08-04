@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-03T23:05:47.440Z",
+  "updatedAt": "2026-08-04T02:52:24.896Z",
   "drafts": [
     {
       "id": "4fb0e251add8a8a1",
@@ -484,7 +484,7 @@
     },
     {
       "id": "312a4afd180adf26",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "How do you push back when leadership wants AI-driven quantity over quality in social engagement?",
       "suggestedSlug": "how-do-you-push-back-when-leadership-wants-ai-driven-quantity-over-quality-in-so",
       "intent": "ai-tools",
@@ -504,6 +504,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-04T02:52:25.496Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-do-you-push-back-when-leadership-wants-ai-driven-quantity-over-quality-in-social-engag-312a4afd/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
@@ -532,7 +542,7 @@
     },
     {
       "id": "f88d25ca04f73f62",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "How Can I Increase Booking Rates For My Client?",
       "suggestedSlug": "how-can-i-increase-booking-rates-for-my-client",
       "intent": "tool-selection",
@@ -552,6 +562,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-04T02:52:25.496Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-can-i-increase-booking-rates-for-my-client-f88d25ca/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
