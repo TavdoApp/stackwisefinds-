@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-04T05:52:02.498Z",
+  "updatedAt": "2026-08-04T08:44:01.998Z",
   "drafts": [
     {
       "id": "4fb0e251add8a8a1",
@@ -668,7 +668,7 @@
     },
     {
       "id": "3bf112b33439169a",
-      "status": "pending_review",
+      "status": "auto_published",
       "question": "Product Manufacturer Going B2B → D2C/B2C – Best Practices & What to Outsource?",
       "suggestedSlug": "product-manufacturer-going-b2b-d2c-b2c-best-practices-what-to-outsource",
       "intent": "tool-selection",
@@ -688,6 +688,16 @@
         "reviewer": null,
         "reviewedAt": null,
         "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-04T08:44:02.623Z",
+        "canonicalUrl": "https://stakdock.com/guides/product-manufacturer-going-b2b-d2c-b2c-best-practices-what-to-outsource-3bf112b3/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
       }
     },
     {
