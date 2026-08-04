@@ -1,7 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-04T08:44:01.998Z",
+  "updatedAt": "2026-08-04T11:27:26.045Z",
   "drafts": [
+    {
+      "id": "a51b15110800fbfd",
+      "status": "pending_review",
+      "question": "made a cheaper instantly alternative for small teams, need people to beta test",
+      "suggestedSlug": "made-a-cheaper-instantly-alternative-for-small-teams-need-people-to-beta-test",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vf61px/made_a_cheaper_instantly_alternative_for_small/",
+      "sourcePublishedAt": "2026-08-04T10:04:12+00:00",
+      "discoveredAt": "2026-08-04T11:27:26.045Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "4fb0e251add8a8a1",
       "status": "auto_published",
