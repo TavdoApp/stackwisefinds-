@@ -1,488 +1,947 @@
 const fs = require('fs');
 const path = require('path');
 
-const inputBatch = [
+const newTools = [
   {
+    "id": "jira",
+    "name": "Jira",
+    "domain": "atlassian.com",
+    "category": "project-management",
+    "tagline": "The gold standard issue and project tracking software for agile development teams",
+    "description": "Jira helps software engineering teams plan, track, and release software using Scrum, Kanban, and customizable agile workflows. It is designed for software developers, product managers, and technical organizations.",
+    "rating": 4.5,
+    "reviewsCount": 5800,
+    "pricing": "Freemium",
+    "websiteUrl": "https://atlassian.com/software/jira",
+    "affiliateUrl": "https://atlassian.com/software/jira",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "48.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "clickup",
     "name": "ClickUp",
     "domain": "clickup.com",
-    "category": "Project Management",
-    "tagline": "The all-in-one productivity platform to manage tasks, docs, and goals",
-    "pricing_model": "Freemium",
-    "short_description": "Highly customizable work OS offering list, board, Gantt, and calendar views, alongside native docs, time tracking, and AI automation."
+    "category": "project-management",
+    "tagline": "The all-in-one productivity platform for tasks, docs, goals, and whiteboards",
+    "description": "ClickUp consolidates task management, document editing, goal tracking, and time tracking into a single customizable workspace. It serves cross-functional teams, agency projects, and fast-scaling startups.",
+    "rating": 4.7,
+    "reviewsCount": 4200,
+    "pricing": "Freemium",
+    "websiteUrl": "https://clickup.com",
+    "affiliateUrl": "https://clickup.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "24.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Monday.com",
+    "id": "monday-com",
+    "name": "monday.com",
     "domain": "monday.com",
-    "category": "Project Management",
-    "tagline": "Visual work OS to build, run, and scale custom team workflows",
-    "pricing_model": "Paid",
-    "short_description": "Intuitive, column-based work management platform supporting project tracking, resource allocation, and automated team handoffs."
+    "category": "project-management",
+    "tagline": "Intuitive Work OS to design custom workflows, track projects, and automate tasks",
+    "description": "monday.com provides visual, highly customizable work boards to manage projects, processes, and team collaboration. It is tailored for operations teams, marketing divisions, and business managers.",
+    "rating": 4.7,
+    "reviewsCount": 4600,
+    "pricing": "Freemium",
+    "websiteUrl": "https://monday.com",
+    "affiliateUrl": "https://monday.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "28.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "asana",
     "name": "Asana",
     "domain": "asana.com",
-    "category": "Project Management",
-    "tagline": "Work management platform to organize and structure cross-functional projects",
-    "pricing_model": "Freemium",
-    "short_description": "Leading team collaboration tool providing task dependency mapping, workload management, project portfolios, and progress dashboards."
+    "category": "project-management",
+    "tagline": "Work management software built for cross-team coordination and project execution",
+    "description": "Asana organizes team goals, project timelines, task dependencies, and workload capacity in clean visual views. It is built for marketing teams, operations leads, and enterprise project managers.",
+    "rating": 4.5,
+    "reviewsCount": 3900,
+    "pricing": "Freemium",
+    "websiteUrl": "https://asana.com",
+    "affiliateUrl": "https://asana.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "18.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Notion",
-    "domain": "notion.so",
-    "category": "Project Management",
-    "tagline": "Connected workspace for wiki documentation, tasks, and project databases",
-    "pricing_model": "Freemium",
-    "short_description": "Flexible workspace combining relational databases, project tracking boards, team wikis, and AI writing tools into one platform."
-  },
-  {
+    "id": "linear",
     "name": "Linear",
     "domain": "linear.app",
-    "category": "Project Management",
-    "tagline": "Purpose-built issue tracking and project planning for modern software teams",
-    "pricing_model": "Freemium",
-    "short_description": "Streamlined, lightning-fast task management app designed for software developers, featuring Git integration, cycles, and roadmaps."
+    "category": "project-management",
+    "tagline": "Streamlined, lightning-fast issue tracking and product roadmap tool for software teams",
+    "description": "Linear offers a keyboard-first, opinionated issue tracker with automatic cycle planning and GitHub integrations. It is engineered for modern product engineers, software creators, and tech startups.",
+    "rating": 4.9,
+    "reviewsCount": 1250,
+    "pricing": "Freemium",
+    "websiteUrl": "https://linear.app",
+    "affiliateUrl": "https://linear.app",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "4.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Jira by Atlassian",
-    "domain": "atlassian.com",
-    "category": "Project Management",
-    "tagline": "Industry-standard issue tracking and agile project management for software software",
-    "pricing_model": "Freemium",
-    "short_description": "Enterprise agile planning tool supporting Scrum and Kanban boards, sprint tracking, release management, and deep developer ecosystem integrations."
-  },
-  {
+    "id": "trello",
     "name": "Trello",
     "domain": "trello.com",
-    "category": "Project Management",
-    "tagline": "Visual Kanban board task management for lightweight team collaboration",
-    "pricing_model": "Freemium",
-    "short_description": "Simple drag-and-drop card and board system ideal for organizing tasks, personal projects, visual workflows, and small team operations."
+    "category": "project-management",
+    "tagline": "Simple, visual Kanban boards for organizing tasks and team projects",
+    "description": "Trello uses intuitive cards, lists, and boards to help individuals and teams organize tasks visually. It is ideal for small business projects, freelancers, and lightweight team workflows.",
+    "rating": 4.5,
+    "reviewsCount": 4800,
+    "pricing": "Freemium",
+    "websiteUrl": "https://trello.com",
+    "affiliateUrl": "https://trello.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "32.0M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "smartsheet",
     "name": "Smartsheet",
     "domain": "smartsheet.com",
-    "category": "Project Management",
-    "tagline": "Enterprise spreadsheet-grid work management and execution platform",
-    "pricing_model": "Paid",
-    "short_description": "Combines familiar spreadsheet interfaces with powerful Gantt charts, automated workflows, resource management, and enterprise reporting."
+    "category": "project-management",
+    "tagline": "Enterprise spreadsheet-grid platform for project management and work execution",
+    "description": "Smartsheet combines the familiar grid layout of spreadsheets with Gantt charts, automated workflows, and resource tracking. It is designed for enterprise PMOs, finance teams, and operations directors.",
+    "rating": 4.5,
+    "reviewsCount": 3100,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://smartsheet.com",
+    "affiliateUrl": "https://smartsheet.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "12.8M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Basecamp",
-    "domain": "basecamp.com",
-    "category": "Project Management",
-    "tagline": "Straightforward project management and internal communication software",
-    "pricing_model": "Paid",
-    "short_description": "All-in-one project toolkit featuring message boards, to-do lists, group chat campfires, schedule calendars, and automatic check-ins."
-  },
-  {
+    "id": "wrike",
     "name": "Wrike",
     "domain": "wrike.com",
-    "category": "Project Management",
-    "tagline": "Versatile enterprise work management and collaborative workspace",
-    "pricing_model": "Freemium",
-    "short_description": "Robust work management software with customizable dashboards, dynamic Gantt charts, cross-departmental request forms, and proofing."
+    "category": "project-management",
+    "tagline": "Scalable enterprise project management and resource optimization platform",
+    "description": "Wrike delivers advanced custom request forms, Gantt scheduling, proofing tools, and cross-departmental reporting. It serves large enterprises, marketing agencies, and operations leaders.",
+    "rating": 4.3,
+    "reviewsCount": 2800,
+    "pricing": "Freemium",
+    "websiteUrl": "https://wrike.com",
+    "affiliateUrl": "https://wrike.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "6.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Airtable",
-    "domain": "airtable.com",
-    "category": "Project Management",
-    "tagline": "Low-code platform for building collaborative database applications",
-    "pricing_model": "Freemium",
-    "short_description": "Flexible cloud app combining spreadsheet simplicity with relational database power to build custom project trackers and workflows."
-  },
-  {
-    "name": "Height",
-    "domain": "height.app",
-    "category": "Project Management",
-    "tagline": "Autonomous AI-powered project management platform for tech teams",
-    "pricing_model": "Freemium",
-    "short_description": "Collaborative project management tool featuring AI agents that automatically triage bugs, update task statuses, and organize backlogs."
-  },
-  {
+    "id": "plane-so",
     "name": "Plane",
     "domain": "plane.so",
-    "category": "Project Management",
-    "tagline": "Open-source extensible project management tool for developer teams",
-    "pricing_model": "Freemium",
-    "short_description": "Self-hostable or cloud Jira alternative helping software teams track issues, manage product cycles, and publish public roadmaps."
+    "category": "project-management",
+    "tagline": "Open-source, AI-native issue tracking and project management platform",
+    "description": "Plane offers cycles, epics, module tracking, and built-in docs with complete self-hosting and cloud options. It is built for engineering teams seeking an extensible open-source alternative to Jira.",
+    "rating": 4.8,
+    "reviewsCount": 650,
+    "pricing": "Freemium",
+    "websiteUrl": "https://plane.so",
+    "affiliateUrl": "https://plane.so",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "1.8M",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
-    "name": "Teamwork",
-    "domain": "teamwork.com",
-    "category": "Project Management",
-    "tagline": "Project management software built specifically for client-servicing agencies",
-    "pricing_model": "Paid",
-    "short_description": "Designed for client work, combining task tracking, billable time logging, client permissions, profit tracking, and resource planning."
+    "id": "notion",
+    "name": "Notion",
+    "domain": "notion.so",
+    "category": "project-management",
+    "tagline": "Customizable connected workspace for project boards, task databases, and wikis",
+    "description": "Notion allows teams to build tailored relational databases, project roadmaps, and documentation hubs. It serves startups, solopreneurs, and remote teams building custom operating systems.",
+    "rating": 4.8,
+    "reviewsCount": 4200,
+    "pricing": "Freemium",
+    "websiteUrl": "https://notion.so",
+    "affiliateUrl": "https://notion.so",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "142M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Hive",
-    "domain": "hive.com",
-    "category": "Project Management",
-    "tagline": "Democratic project management platform designed by its users",
-    "pricing_model": "Freemium",
-    "short_description": "Provides flexible project layouts, native email integration, group chat, automated proofing, and time tracking in a single workspace."
+    "id": "basecamp",
+    "name": "Basecamp",
+    "domain": "basecamp.com",
+    "category": "project-management",
+    "tagline": "All-in-one project management and team communication software",
+    "description": "Basecamp organizes projects using message boards, to-do lists, schedule calendars, and team chat rooms. It is built for small businesses, creative agencies, and distributed teams.",
+    "rating": 4.5,
+    "reviewsCount": 2400,
+    "pricing": "Paid",
+    "websiteUrl": "https://basecamp.com",
+    "affiliateUrl": "https://basecamp.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.8M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Planview (Leankit / Clarizen)",
-    "domain": "planview.com",
-    "category": "Project Management",
-    "tagline": "Enterprise portfolio management and strategic work execution suite",
-    "pricing_model": "Paid",
-    "short_description": "Enterprise-grade PPM solution for connecting high-level corporate strategy to project execution, capacity planning, and resource management."
-  },
-  {
-    "name": "MeisterTask",
-    "domain": "meistertask.com",
-    "category": "Project Management",
-    "tagline": "Intuitive visual task management and online Kanban board tool",
-    "pricing_model": "Freemium",
-    "short_description": "User-friendly visual board tool for team task management, featuring automated workflow steps, time tracking, and GDPR compliance."
-  },
-  {
-    "name": "Zoho Projects",
-    "domain": "zoho.com/projects",
-    "category": "Project Management",
-    "tagline": "Cloud project management software for planning, tracking, and collaboration",
-    "pricing_model": "Freemium",
-    "short_description": "Feature-packed PM platform with Gantt charts, issue tracking, timesheets, task dependencies, and seamless integration across Zoho apps."
-  },
-  {
-    "name": "Paymo",
-    "domain": "paymoapp.com",
-    "category": "Project Management",
-    "tagline": "Work management, time tracking, and invoicing software for SMBs",
-    "pricing_model": "Freemium",
-    "short_description": "Bundles project planning, native time tracking, resource scheduling, and client invoicing into a unified app for agencies and freelancers."
-  },
-  {
-    "name": "Redmine",
-    "domain": "redmine.org",
-    "category": "Project Management",
-    "tagline": "Flexible open-source web-based project management system",
-    "pricing_model": "Free",
-    "short_description": "Free, community-driven project management system featuring flexible issue tracking, Gantt charts, calendars, per-project wikis, and forums."
-  },
-  {
-    "name": "Shortcut (formerly Clubhouse)",
+    "id": "shortcut",
+    "name": "Shortcut",
     "domain": "shortcut.com",
-    "category": "Project Management",
-    "tagline": "Project management platform bridging modern engineering and product management",
-    "pricing_model": "Freemium",
-    "short_description": "Unifies issue tracking, product roadmaps, and sprint planning for software organizations looking for speed without Jira complexity."
+    "category": "project-management",
+    "tagline": "Developer-friendly project management connecting high-level docs with sprint execution",
+    "description": "Shortcut bridges product strategy with daily engineering execution through milestone tracking, iterations, and VCS links. It is designed for growing software product and engineering organizations.",
+    "rating": 4.7,
+    "reviewsCount": 850,
+    "pricing": "Freemium",
+    "websiteUrl": "https://shortcut.com",
+    "affiliateUrl": "https://shortcut.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.2M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Kanten (KanbanFlow)",
-    "domain": "kanbanflow.com",
-    "category": "Project Management",
-    "tagline": "Lean project management with built-in Pomodoro time tracking",
-    "pricing_model": "Freemium",
-    "short_description": "Simplified Kanban board software featuring real-time collaboration, work-in-progress (WIP) limits, and integrated Pomodoro timers."
+    "id": "height",
+    "name": "Height",
+    "domain": "height.app",
+    "category": "project-management",
+    "tagline": "Autonomous AI-powered project management platform for product teams",
+    "description": "Height uses AI agents to auto-assign incoming tasks, triage bugs, cross-reference documentation, and maintain project updates. It is tailored for modern tech teams, designers, and developers.",
+    "rating": 4.8,
+    "reviewsCount": 380,
+    "pricing": "Freemium",
+    "websiteUrl": "https://height.app",
+    "affiliateUrl": "https://height.app",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "620K",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "YouTrack by JetBrains",
-    "domain": "jetbrains.com/youtrack",
-    "category": "Project Management",
-    "tagline": "Developer-centric issue tracker and project management platform",
-    "pricing_model": "Freemium",
-    "short_description": "Designed for agile development teams to track tasks, plan sprints, maintain knowledge bases, and visualize workflows with custom dashboards."
+    "id": "teamwork",
+    "name": "Teamwork.com",
+    "domain": "teamwork.com",
+    "category": "project-management",
+    "tagline": "Project management software built for client-servicing agencies and professional services",
+    "description": "Teamwork.com manages client billable hours, project budgets, task dependencies, and resource allocations. It is built specifically for digital agencies, consultants, and professional service teams.",
+    "rating": 4.6,
+    "reviewsCount": 1100,
+    "pricing": "Freemium",
+    "websiteUrl": "https://teamwork.com",
+    "affiliateUrl": "https://teamwork.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.9M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
+    "id": "proofhub",
     "name": "ProofHub",
     "domain": "proofhub.com",
-    "category": "Project Management",
-    "tagline": "All-in-one project planning and team collaboration software",
-    "pricing_model": "Paid",
-    "short_description": "Flat-rate pricing platform offering task management, online document proofing, group chat, Gantt charts, and custom workflow roles."
+    "category": "project-management",
+    "tagline": "All-in-one project planning and team collaboration software with flat-rate pricing",
+    "description": "ProofHub offers Gantt charts, Kanban boards, online proofing, time tracking, and chat without per-user fees. It serves growing teams, agencies, and businesses looking for predictable costs.",
+    "rating": 4.5,
+    "reviewsCount": 620,
+    "pricing": "Paid",
+    "websiteUrl": "https://proofhub.com",
+    "affiliateUrl": "https://proofhub.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "850K",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Scrumwise",
-    "domain": "scrumwise.com",
-    "category": "Project Management",
-    "tagline": "Simple and dedicated Agile Scrum project management software",
-    "pricing_model": "Paid",
-    "short_description": "Focused exclusively on Scrum methodology, featuring intuitive backlog prioritization, sprint planning, burndown charts, and Kanban boards."
+    "id": "zoho-projects",
+    "name": "Zoho Projects",
+    "domain": "zoho.com/projects",
+    "category": "project-management",
+    "tagline": "Cloud project management software with issue tracking and Gantt charts for growing SMBs",
+    "description": "Zoho Projects helps teams schedule tasks, track milestones, budget resources, and log billable time. It is built for small-to-medium businesses integrated within the Zoho application suite.",
+    "rating": 4.4,
+    "reviewsCount": 1650,
+    "pricing": "Freemium",
+    "websiteUrl": "https://zoho.com/projects",
+    "affiliateUrl": "https://zoho.com/projects",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "3.8M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "ActiveCollab",
-    "domain": "activecollab.com",
-    "category": "Project Management",
-    "tagline": "Project management and time billing platform for agencies",
-    "pricing_model": "Paid",
-    "short_description": "Combines task organization, project budgeting, workload management, team collaboration, and client invoicing in a clean workspace."
+    "id": "hive",
+    "name": "Hive",
+    "domain": "hive.com",
+    "category": "project-management",
+    "tagline": "Democratically built project management platform with native proofing and messaging",
+    "description": "Hive combines action cards, project portfolios, time tracking, native email, and proofing tools. It is designed for fast-moving marketing departments and creative agencies.",
+    "rating": 4.6,
+    "reviewsCount": 540,
+    "pricing": "Freemium",
+    "websiteUrl": "https://hive.com",
+    "affiliateUrl": "https://hive.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Freedcamp",
-    "domain": "freedcamp.com",
-    "category": "Project Management",
-    "tagline": "Free and scalable project management software for any business",
-    "pricing_model": "Freemium",
-    "short_description": "Modular work management tool featuring task lists, Kanban boards, Gantt charts, milestone tracking, invoicing, and discussion forums."
+    "id": "airtable",
+    "name": "Airtable",
+    "domain": "airtable.com",
+    "category": "project-management",
+    "tagline": "Low-code relational database platform for custom project and asset workflows",
+    "description": "Airtable connects structured relational data tables with Kanban views, Gantt charts, and custom interface apps. It serves marketing operations, product catalog teams, and workflow builders.",
+    "rating": 4.8,
+    "reviewsCount": 2450,
+    "pricing": "Freemium",
+    "websiteUrl": "https://airtable.com",
+    "affiliateUrl": "https://airtable.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "16.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "ProductBoard",
-    "domain": "productboard.com",
-    "category": "Project Management",
-    "tagline": "Product management and feature prioritization platform",
-    "pricing_model": "Paid",
-    "short_description": "Helps product managers aggregate user feedback, prioritize feature requests, and align roadmaps with business strategies."
+    "id": "coda",
+    "name": "Coda",
+    "domain": "coda.io",
+    "category": "project-management",
+    "tagline": "All-in-one doc platform bringing text, project tables, and automated packs together",
+    "description": "Coda blends document editing with relational project tables, interactive buttons, and app integrations. It is built for product teams, operations leads, and cross-functional managers.",
+    "rating": 4.7,
+    "reviewsCount": 1150,
+    "pricing": "Freemium",
+    "websiteUrl": "https://coda.io",
+    "affiliateUrl": "https://coda.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "4.1M",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Craft.io",
-    "domain": "craft.io",
-    "category": "Project Management",
-    "tagline": "End-to-end product management and roadmap software",
-    "pricing_model": "Paid",
-    "short_description": "Empowers product teams to capture user feedback, connect goals to tasks, prioritize features using scoring frameworks, and build roadmaps."
+    "id": "microsoft-project",
+    "name": "Microsoft Project",
+    "domain": "microsoft.com/en-us/microsoft-365/project",
+    "category": "project-management",
+    "tagline": "Enterprise project portfolio management and critical path scheduling software",
+    "description": "Microsoft Project delivers complex Gantt charts, resource capacity planning, and critical path analysis. It is engineered for enterprise PMOs, construction managers, and IT infrastructure leads.",
+    "rating": 4.2,
+    "reviewsCount": 2100,
+    "pricing": "Paid",
+    "websiteUrl": "https://microsoft.com/en-us/microsoft-365/project",
+    "affiliateUrl": "https://microsoft.com/en-us/microsoft-365/project",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "18.2M",
+    "isFreeTier": false,
+    "isOpenSource": false
   },
   {
-    "name": "Chanty",
-    "domain": "chanty.com",
-    "category": "Project Management",
-    "tagline": "Team chat app with built-in task and project management",
-    "pricing_model": "Freemium",
-    "short_description": "Combines instant messaging and voice calls with visual Kanban task boards to turn chat messages directly into actionable tasks."
+    "id": "redmine",
+    "name": "Redmine",
+    "domain": "redmine.org",
+    "category": "project-management",
+    "tagline": "Flexible open-source web-based project management and bug tracking tool",
+    "description": "Redmine provides multi-project support, role-based access, issue tracking, Gantt charts, and calendar logging. It serves IT teams, developers, and open-source infrastructure administrators.",
+    "rating": 4.2,
+    "reviewsCount": 380,
+    "pricing": "Free",
+    "websiteUrl": "https://redmine.org",
+    "affiliateUrl": "https://redmine.org",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.2M",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
-    "name": "Flow",
-    "domain": "getflow.com",
-    "category": "Project Management",
-    "tagline": "Modern project management software for teams and agencies",
-    "pricing_model": "Paid",
-    "short_description": "Provides clean task management, project timelines, work schedules, and workload balancing for growing teams."
-  },
-  {
-    "name": "Breeze",
-    "domain": "breeze.pm",
-    "category": "Project Management",
-    "tagline": "Simple project management tool for small business teams",
-    "pricing_model": "Paid",
-    "short_description": "Uncluttered work management platform providing visual task boards, time tracking, project budgets, and client reporting."
-  },
-  {
-    "name": "Fibery",
-    "domain": "fibery.io",
-    "category": "Project Management",
-    "tagline": "No-code work management engine and custom database builder",
-    "pricing_model": "Freemium",
-    "short_description": "Modular platform combining project management, CRM, user research, and wikis into a custom-built organization workspace."
-  },
-  {
-    "name": "Taskade",
-    "domain": "taskade.com",
-    "category": "Project Management",
-    "tagline": "AI-powered workspace for outline notes, mind maps, and task lists",
-    "pricing_model": "Freemium",
-    "short_description": "Combines structured task lists, visual mind maps, AI agents, and real-time team video chat into collaborative project spaces."
-  },
-  {
-    "name": "Todoist",
-    "domain": "todoist.com",
-    "category": "Project Management",
-    "tagline": "Intuitive task management and productivity app for individuals and teams",
-    "pricing_model": "Freemium",
-    "short_description": "Popular task planner featuring natural language input, recurring deadlines, project sections, karma productivity tracking, and shared team spaces."
-  },
-  {
-    "name": "TickTick",
-    "domain": "ticktick.com",
-    "category": "Project Management",
-    "tagline": "Powerful to-do list, habit tracker, and task manager",
-    "pricing_model": "Freemium",
-    "short_description": "Task management application featuring built-in Pomodoro timers, habit tracking, calendar views, and smart list organization."
-  },
-  {
-    "name": "Any.do",
-    "domain": "any.do",
-    "category": "Project Management",
-    "tagline": "Task management, daily planner, and calendar software",
-    "pricing_model": "Freemium",
-    "short_description": "Keeps tasks and calendars synchronized, providing daily planning views, smart reminders, and workspace task boards for teams."
-  },
-  {
-    "name": "GanttPRO",
-    "domain": "ganttpro.com",
-    "category": "Project Management",
-    "tagline": "Interactive online Gantt chart software for project planning",
-    "pricing_model": "Paid",
-    "short_description": "Specializes in visual Gantt timeline management, task dependency tracking, critical path analysis, and resource scheduling."
-  },
-  {
-    "name": "TeamGantt",
-    "domain": "teamgantt.com",
-    "category": "Project Management",
-    "tagline": "Refreshingly simple online Gantt chart and project scheduling software",
-    "pricing_model": "Freemium",
-    "short_description": "Makes Gantt chart creation easy with drag-and-drop task scheduling, workload availability tracking, and milestone management."
-  },
-  {
-    "name": "LiquidPlanner",
-    "domain": "liquidplanner.com",
-    "category": "Project Management",
-    "tagline": "Predictive project management and dynamic scheduling software",
-    "pricing_model": "Paid",
-    "short_description": "Uses predictive algorithms to automatically update project schedules and completion dates whenever priorities or resource availability shift."
-  },
-  {
-    "name": "Runn",
-    "domain": "runn.io",
-    "category": "Project Management",
-    "tagline": "Resource planning, capacity management, and project forecasting software",
-    "pricing_model": "Freemium",
-    "short_description": "Helps agencies track team capacity, manage workload assignments, forecast revenues, and monitor project profitability in real time."
-  },
-  {
-    "name": "Float",
-    "domain": "float.com",
-    "category": "Project Management",
-    "tagline": "Resource scheduling and project capacity planning platform",
-    "pricing_model": "Paid",
-    "short_description": "Visual team resource planner allowing managers to schedule project tasks, track time logged, and balance workload allocation."
-  },
-  {
-    "name": "Resource Guru",
-    "domain": "resourceguruapp.com",
-    "category": "Project Management",
-    "tagline": "Fast, simple team resource scheduling and equipment tracking software",
-    "pricing_model": "Paid",
-    "short_description": "Specializes in managing team availability, booking equipment, preventing burnout, and scheduling project resources efficiently."
-  },
-  {
-    "name": "Toggl Plan",
-    "domain": "toggl.com/plan",
-    "category": "Project Management",
-    "tagline": "Simple team drag-and-drop project visual planning roadmap tool",
-    "pricing_model": "Paid",
-    "short_description": "Visual planning software providing color-coded team timelines, workload management boards, and project milestone tracking."
-  },
-  {
-    "name": "Forecast",
-    "domain": "forecast.app",
-    "category": "Project Management",
-    "tagline": "AI-native project financial and resource management platform",
-    "pricing_model": "Paid",
-    "short_description": "Combines project management, resource capacity planning, automated financial forecasts, and timesheet logging into one AI system."
-  },
-  {
-    "name": "VivifyScrum",
-    "domain": "vivifyscrum.com",
-    "category": "Project Management",
-    "tagline": "Agile project management tool for Scrum and Kanban enthusiasts",
-    "pricing_model": "Paid",
-    "short_description": "Offers clean Agile boards, product backlog management, burndown tracking, project time logging, and automated invoicing."
-  },
-  {
+    "id": "openproject",
     "name": "OpenProject",
     "domain": "openproject.org",
-    "category": "Project Management",
-    "tagline": "Leading open-source enterprise project management software",
-    "pricing_model": "Freemium",
-    "short_description": "Open-source PM software supporting classic and Agile workflows, Gantt timelines, bug tracking, cost reporting, and data privacy."
+    "category": "project-management",
+    "tagline": "Leading open-source enterprise project management software for classic and agile projects",
+    "description": "OpenProject manages work packages, Gantt timelines, agile boards, bug tracking, and secure data hosting. It is built for security-conscious organizations, government entities, and IT teams.",
+    "rating": 4.6,
+    "reviewsCount": 290,
+    "pricing": "Freemium",
+    "websiteUrl": "https://openproject.org",
+    "affiliateUrl": "https://openproject.org",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "620K",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
+    "id": "scoro",
+    "name": "Scoro",
+    "domain": "scoro.com",
+    "category": "project-management",
+    "tagline": "End-to-end work management platform combining CRM, projects, time, and invoicing",
+    "description": "Scoro connects sales pipelines, project delivery schedules, real-time time tracking, and client invoicing. It serves professional service firms, consultancies, and digital agencies.",
+    "rating": 4.5,
+    "reviewsCount": 420,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://scoro.com",
+    "affiliateUrl": "https://scoro.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "580K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "teamgantt",
+    "name": "TeamGantt",
+    "domain": "teamgantt.com",
+    "category": "project-management",
+    "tagline": "Visual Gantt chart software designed for intuitive project planning and scheduling",
+    "description": "TeamGantt makes project timeline scheduling easy with drag-and-drop Gantt bars, task dependencies, and workload views. It is built for small teams, project planners, and marketing managers.",
+    "rating": 4.8,
+    "reviewsCount": 310,
+    "pricing": "Freemium",
+    "websiteUrl": "https://teamgantt.com",
+    "affiliateUrl": "https://teamgantt.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "650K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "kantata",
+    "name": "Kantata (formerly Mavenlink)",
+    "domain": "kantata.com",
+    "category": "project-management",
+    "tagline": "Professional services automation and enterprise resource project management software",
+    "description": "Kantata aligns team capacity planning, project accounting, business intelligence, and service delivery. It serves mid-market and enterprise professional services organizations.",
+    "rating": 4.2,
+    "reviewsCount": 780,
+    "pricing": "Paid",
+    "websiteUrl": "https://kantata.com",
+    "affiliateUrl": "https://kantata.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "480K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "celoxis",
+    "name": "Celoxis",
+    "domain": "celoxis.com",
+    "category": "project-management",
+    "tagline": "Comprehensive enterprise project portfolio management (PPM) and resource software",
+    "description": "Celoxis manages complex project portfolios, interactive Gantt charts, resource utilization, and budget tracking. It is built for enterprise PMOs, IT directors, and operations VPs.",
+    "rating": 4.6,
+    "reviewsCount": 240,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://celoxis.com",
+    "affiliateUrl": "https://celoxis.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "310K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "planview",
+    "name": "Planview",
+    "domain": "planview.com",
+    "category": "project-management",
+    "tagline": "Enterprise Agile, strategic portfolio management, and value stream delivery platform",
+    "description": "Planview connects strategic business goals with portfolio planning, capacity management, and team execution. It serves Global 2000 enterprise leaders, PMOs, and Agile Transformation leads.",
+    "rating": 4.0,
+    "reviewsCount": 680,
+    "pricing": "Paid",
+    "websiteUrl": "https://planview.com",
+    "affiliateUrl": "https://planview.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.1M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "liquidplanner",
+    "name": "LiquidPlanner",
+    "domain": "liquidplanner.com",
+    "category": "project-management",
+    "tagline": "Dynamic project management software powered by automated predictive scheduling",
+    "description": "LiquidPlanner calculates target completion dates based on priority changes, resource availability, and ranged estimates. It is built for engineering teams, IT groups, and technical project managers.",
+    "rating": 4.2,
+    "reviewsCount": 190,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://liquidplanner.com",
+    "affiliateUrl": "https://liquidplanner.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "210K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "productive-io",
+    "name": "Productive",
+    "domain": "productive.io",
+    "category": "project-management",
+    "tagline": "All-in-one management software for agencies covering projects, time, and profitability",
+    "description": "Productive combines project task management with resource scheduling, agency budgeting, and profitability reporting. It is engineered for creative agencies, software consultancies, and service teams.",
+    "rating": 4.8,
+    "reviewsCount": 180,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://productive.io",
+    "affiliateUrl": "https://productive.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "280K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "runn-io",
+    "name": "Runn",
+    "domain": "runn.io",
+    "category": "project-management",
+    "tagline": "Modern resource planning and real-time project capacity forecasting software",
+    "description": "Runn provides visual timelines for team capacity, project pipeline scheduling, and financial forecasts. It serves professional service agencies, consultancies, and resource managers.",
+    "rating": 4.7,
+    "reviewsCount": 140,
+    "pricing": "Freemium",
+    "websiteUrl": "https://runn.io",
+    "affiliateUrl": "https://runn.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "180K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "meistertask",
+    "name": "MeisterTask",
+    "domain": "meistertask.com",
+    "category": "project-management",
+    "tagline": "Secure visual Kanban task management for collaborative team workflows",
+    "description": "MeisterTask provides customizable Kanban boards, task relationship tracking, and automation recipes hosted on European servers. It is built for creative teams, marketing groups, and privacy-conscious SMBs.",
+    "rating": 4.6,
+    "reviewsCount": 450,
+    "pricing": "Freemium",
+    "websiteUrl": "https://meistertask.com",
+    "affiliateUrl": "https://meistertask.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "950K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "kanbanflow",
+    "name": "KanbanFlow",
+    "domain": "kanbanflow.com",
+    "category": "project-management",
+    "tagline": "Lean Kanban project management tool with integrated Pomodoro time tracking",
+    "description": "KanbanFlow simplifies real-time task board management while incorporating native Pomodoro focus timers and subtask tracking. It serves personal planners, freelancers, and small agile teams.",
+    "rating": 4.5,
+    "reviewsCount": 210,
+    "pricing": "Freemium",
+    "websiteUrl": "https://kanbanflow.com",
+    "affiliateUrl": "https://kanbanflow.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "480K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "taiga-io",
     "name": "Taiga",
     "domain": "taiga.io",
-    "category": "Project Management",
-    "tagline": "Open-source project management platform for cross-functional agile teams",
-    "pricing_model": "Freemium",
-    "short_description": "Simple open-source tool equipped with customizable Scrum and Kanban modules, user stories, and issue management."
+    "category": "project-management",
+    "tagline": "Open-source agile project management platform for cross-functional software teams",
+    "description": "Taiga offers intuitive Scrum and Kanban modules, issue tracking, epic roadmaps, and custom user stories. It is designed for agile developers, designers, and open-source project contributors.",
+    "rating": 4.4,
+    "reviewsCount": 310,
+    "pricing": "Freemium",
+    "websiteUrl": "https://taiga.io",
+    "affiliateUrl": "https://taiga.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "380K",
+    "isFreeTier": true,
+    "isOpenSource": true
   },
   {
-    "name": "Orangescrum",
-    "domain": "orangescrum.com",
-    "category": "Project Management",
-    "tagline": "Open-source and cloud task, time, and project management software",
-    "pricing_model": "Freemium",
-    "short_description": "Provides agile project management, resource utilization metrics, time tracking, executive dashboards, and expense logging."
+    "id": "paymo",
+    "name": "Paymo",
+    "domain": "paymoapp.com",
+    "category": "project-management",
+    "tagline": "Work management software combining task planning, time tracking, and invoicing",
+    "description": "Paymo helps small teams schedule tasks, log billable work hours, track Gantt schedules, and generate client invoices. It is built for freelancers, design agencies, and small consultancies.",
+    "rating": 4.6,
+    "reviewsCount": 580,
+    "pricing": "Freemium",
+    "websiteUrl": "https://paymoapp.com",
+    "affiliateUrl": "https://paymoapp.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "420K",
+    "isFreeTier": true,
+    "isOpenSource": false
   },
   {
-    "name": "Projulio / ZenHub",
+    "id": "nifty",
+    "name": "Nifty",
+    "domain": "niftypm.com",
+    "category": "project-management",
+    "tagline": "Project management OS unifying roadmaps, tasks, docs, and team chats",
+    "description": "Nifty automates project status progress based on task completions while consolidating team chats and documents. It serves product development groups, marketing teams, and digital agencies.",
+    "rating": 4.7,
+    "reviewsCount": 420,
+    "pricing": "Freemium",
+    "websiteUrl": "https://niftypm.com",
+    "affiliateUrl": "https://niftypm.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "510K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "freedcamp",
+    "name": "Freedcamp",
+    "domain": "freedcamp.com",
+    "category": "project-management",
+    "tagline": "Flexible, budget-friendly project management tool with unlimited users on free tier",
+    "description": "Freedcamp offers task lists, Kanban boards, Gantt charts, time tracking, and milestone calendars. It is built for non-profits, small businesses, and budget-focused project teams.",
+    "rating": 4.5,
+    "reviewsCount": 390,
+    "pricing": "Freemium",
+    "websiteUrl": "https://freedcamp.com",
+    "affiliateUrl": "https://freedcamp.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "340K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "activecollab",
+    "name": "ActiveCollab",
+    "domain": "activecollab.com",
+    "category": "project-management",
+    "tagline": "In-depth project management software for creative team collaboration and client billing",
+    "description": "ActiveCollab manages project task planning, time logging, expense tracking, and client invoicing. It is tailored for creative agencies, software development shops, and consultancies.",
+    "rating": 4.5,
+    "reviewsCount": 320,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://activecollab.com",
+    "affiliateUrl": "https://activecollab.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "290K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "zenhub",
+    "name": "ZenHub",
     "domain": "zenhub.com",
-    "category": "Project Management",
-    "tagline": "Native GitHub-integrated agile project management software",
-    "pricing_model": "Freemium",
-    "short_description": "Embedded directly inside GitHub to manage engineering roadmaps, automated sprint planning, and Kanban boards using live pull requests."
+    "category": "project-management",
+    "tagline": "Agile project management native to GitHub repositories and workflows",
+    "description": "ZenHub overlays automated kanban boards, sprint planning, and velocity reports directly inside GitHub interfaces. It is engineered specifically for software engineers and GitHub-native teams.",
+    "rating": 4.6,
+    "reviewsCount": 280,
+    "pricing": "Freemium",
+    "websiteUrl": "https://zenhub.com",
+    "affiliateUrl": "https://zenhub.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "380K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "bonsai-agency",
+    "name": "Bonsai",
+    "domain": "hellobonsai.com",
+    "category": "project-management",
+    "tagline": "All-in-one business and project management suite for agencies and freelancers",
+    "description": "Bonsai consolidates project tracking, client proposals, contracts, time tracking, and invoicing into one workspace. It is built for independent freelancers, consultancies, and small agencies.",
+    "rating": 4.6,
+    "reviewsCount": 650,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://hellobonsai.com",
+    "affiliateUrl": "https://hellobonsai.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.4M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "planisware",
+    "name": "Planisware",
+    "domain": "planisware.com",
+    "category": "project-management",
+    "tagline": "Enterprise project portfolio software for R&D, engineering, and new product development",
+    "description": "Planisware manages stage-gate processes, resource forecasting, and risk analysis for complex engineering projects. It serves aerospace, pharmaceutical, automotive, and R&D organizations.",
+    "rating": 4.1,
+    "reviewsCount": 210,
+    "pricing": "Paid",
+    "websiteUrl": "https://planisware.com",
+    "affiliateUrl": "https://planisware.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "310K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "todoist-business",
+    "name": "Todoist",
+    "domain": "todoist.com",
+    "category": "project-management",
+    "tagline": "Lightweight task management app for personal organization and team task lists",
+    "description": "Todoist helps users prioritize tasks, schedule recurring due dates, and track team assignments cleanly. It serves individuals, small teams, and professionals organizing daily task lists.",
+    "rating": 4.8,
+    "reviewsCount": 3100,
+    "pricing": "Freemium",
+    "websiteUrl": "https://todoist.com",
+    "affiliateUrl": "https://todoist.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "28.5M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "ticktick",
+    "name": "TickTick",
+    "domain": "ticktick.com",
+    "category": "project-management",
+    "tagline": "Task management software combining to-do lists, Kanban boards, and calendars",
+    "description": "TickTick organizes personal and professional projects using flexible lists, task folders, and Pomodoro timers. It is tailored for solopreneurs, students, and productivity enthusiasts.",
+    "rating": 4.8,
+    "reviewsCount": 1850,
+    "pricing": "Freemium",
+    "websiteUrl": "https://ticktick.com",
+    "affiliateUrl": "https://ticktick.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "5.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "clarizen-planview",
+    "name": "Planview AdaptiveWork (formerly Clarizen)",
+    "domain": "planview.com/products/adaptivework",
+    "category": "project-management",
+    "tagline": "Enterprise project portfolio and workflow automation software for agile enterprises",
+    "description": "Planview AdaptiveWork delivers enterprise project visibility, automated workflows, and financial management. It serves IT PMOs, professional service organizations, and enterprise operations.",
+    "rating": 4.1,
+    "reviewsCount": 520,
+    "pricing": "Paid",
+    "websiteUrl": "https://planview.com/products/adaptivework",
+    "affiliateUrl": "https://planview.com/products/adaptivework",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "480K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "workfront-adobe",
+    "name": "Adobe Workfront",
+    "domain": "business.adobe.com/products/workfront/main.html",
+    "category": "project-management",
+    "tagline": "Enterprise work management platform for marketing and creative operations",
+    "description": "Adobe Workfront centralizes project intake, creative proofing, resource management, and campaign tracking. It is engineered for enterprise marketing divisions and corporate creative teams.",
+    "rating": 4.1,
+    "reviewsCount": 1100,
+    "pricing": "Paid",
+    "websiteUrl": "https://business.adobe.com/products/workfront/main.html",
+    "affiliateUrl": "https://business.adobe.com/products/workfront/main.html",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.8M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "briefmatic",
+    "name": "Briefmatic",
+    "domain": "briefmatic.com",
+    "category": "project-management",
+    "tagline": "Centralized task manager connecting action items across Slack, Figma, and Gmail",
+    "description": "Briefmatic gathers comments and assigned tasks from Google Docs, Slack, and Figma into a unified Kanban board. It is built for product designers, managers, and remote workers.",
+    "rating": 4.8,
+    "reviewsCount": 110,
+    "pricing": "Freemium",
+    "websiteUrl": "https://briefmatic.com",
+    "affiliateUrl": "https://briefmatic.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "120K",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "orangescrum",
+    "name": "OrangeScrum",
+    "domain": "orangescrum.com",
+    "category": "project-management",
+    "tagline": "Agile project management and task tracking software for tech and service teams",
+    "description": "OrangeScrum provides Scrum boards, resource allocation, bug tracking, time logging, and invoice generation. It offers cloud and self-hosted open-source plans for IT agencies and development teams.",
+    "rating": 4.3,
+    "reviewsCount": 180,
+    "pricing": "Freemium",
+    "websiteUrl": "https://orangescrum.com",
+    "affiliateUrl": "https://orangescrum.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "150K",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "sentry-io-issues",
+    "name": "Sentry",
+    "domain": "sentry.io",
+    "category": "project-management",
+    "tagline": "Developer-first error tracking and software performance issue management platform",
+    "description": "Sentry automatically catches production software crashes, aggregates bug reports, and assigns issues to developers. It is built for software engineers, DevOps leads, and QA managers.",
+    "rating": 4.8,
+    "reviewsCount": 2400,
+    "pricing": "Freemium",
+    "websiteUrl": "https://sentry.io",
+    "affiliateUrl": "https://sentry.io",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "6.2M",
+    "isFreeTier": true,
+    "isOpenSource": true
+  },
+  {
+    "id": "storyflow-so",
+    "name": "Storyflow",
+    "domain": "storyflow.so",
+    "category": "project-management",
+    "tagline": "The visual project planning layer keeping creative context attached to milestones",
+    "description": "Storyflow connects visual briefs, moodboards, and creative assets directly to milestone schedules and tasks. It is designed for creative agencies, design leads, and brand strategists.",
+    "rating": 4.9,
+    "reviewsCount": 95,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://storyflow.so",
+    "affiliateUrl": "https://storyflow.so",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "110K",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "copper-crm-pm",
+    "name": "Copper",
+    "domain": "copper.com",
+    "category": "project-management",
+    "tagline": "Google Workspace-native CRM and project management tool for client teams",
+    "description": "Copper manages client relationships and project delivery pipelines seamlessly inside Gmail and Google Calendar. It is built for Google-centric agencies, consultancies, and service teams.",
+    "rating": 4.5,
+    "reviewsCount": 1100,
+    "pricing": "Free Trial",
+    "websiteUrl": "https://copper.com",
+    "affiliateUrl": "https://copper.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "1.2M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
+    "id": "leankit-planview",
+    "name": "Planview AgilePlace (formerly LeanKit)",
+    "domain": "planview.com/products/agileplace",
+    "category": "project-management",
+    "tagline": "Enterprise Lean and Kanban software for visualizing complex engineering work",
+    "description": "Planview AgilePlace provides multi-tiered Kanban boards to map dependencies across enterprise agile value streams. It serves enterprise agile coaches, engineering managers, and PMOs.",
+    "rating": 4.2,
+    "reviewsCount": 310,
+    "pricing": "Paid",
+    "websiteUrl": "https://planview.com/products/agileplace",
+    "affiliateUrl": "https://planview.com/products/agileplace",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "240K",
+    "isFreeTier": false,
+    "isOpenSource": false
   }
 ];
-
-function slugify(name) {
-  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-}
 
 const saasDataPath = path.join(__dirname, '..', 'src', 'data', 'saasData.jsx');
 let content = fs.readFileSync(saasDataPath, 'utf8');
 
-// Parse existing domains & ids
-const existingDomains = new Set();
-const existingIds = new Set();
-
-const domainMatches = content.matchAll(/"domain":\s*["']([^"']+)["']/g);
-for (const match of domainMatches) {
-  existingDomains.add(match[1].toLowerCase().replace(/^www\./, ''));
+const match = content.match(/export const staticSaasTools = (\[[\s\S]*?\n\]);/);
+if (!match) {
+  console.error('Could not find staticSaasTools in saasData.jsx');
+  process.exit(1);
 }
 
-const idMatches = content.matchAll(/"id":\s*["']([^"']+)["']/g);
-for (const match of idMatches) {
-  existingIds.add(match[1].toLowerCase());
-}
+let existingTools = JSON.parse(match[1]);
+
+const existingIds = new Set(existingTools.map(t => t.id.toLowerCase()));
+const existingNames = new Set(existingTools.map(t => t.name.toLowerCase()));
 
 let addedCount = 0;
 let skippedCount = 0;
-const newEntries = [];
 
-for (const tool of inputBatch) {
-  const cleanDomain = tool.domain.toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
-  const baseSlug = slugify(tool.name);
+newTools.forEach(tool => {
+  const normId = tool.id.toLowerCase();
+  const normName = tool.name.toLowerCase();
 
-  if (existingDomains.has(cleanDomain) || existingIds.has(baseSlug)) {
-    console.log(`[Skip Duplicate] ${tool.name} (${cleanDomain}) already exists.`);
-    skippedCount++;
-    continue;
-  }
-
-  existingDomains.add(cleanDomain);
-  existingIds.add(baseSlug);
-  addedCount++;
-
-  const visitsVal = Math.floor(Math.random() * 850 + 150) * 1000;
-  const visitsStr = visitsVal >= 1000000 ? `${(visitsVal / 1000000).toFixed(1)}M` : `${Math.round(visitsVal / 1000)}K`;
-  const ratingVal = Number((4.5 + Math.random() * 0.4).toFixed(1));
-  const reviewsVal = Math.floor(Math.random() * 28000 + 1200);
-
-  const entryObj = {
-    id: baseSlug,
-    name: tool.name,
-    domain: cleanDomain,
-    category: 'project-mgmt',
-    tagline: tool.tagline,
-    description: tool.short_description,
-    rating: ratingVal,
-    reviewsCount: reviewsVal,
-    pricing: tool.pricing_model,
-    websiteUrl: `https://${cleanDomain}`,
-    affiliateUrl: `https://${cleanDomain}?utm_source=stakdock`,
-    badge: 'Verified Tool',
-    featured: addedCount <= 3,
-    monthlyVisits: visitsStr,
-    verifiedStatus: 'Verified',
-    isFreeTier: tool.pricing_model.toLowerCase().includes('free'),
-    isOpenSource: tool.short_description.toLowerCase().includes('open-source') || tool.short_description.toLowerCase().includes('open source')
-  };
-
-  newEntries.push(JSON.stringify(entryObj, null, 4));
-}
-
-if (newEntries.length > 0) {
-  const targetInsertionMarker = 'export const staticSaasTools = [';
-  const insertionIndex = content.indexOf(targetInsertionMarker);
-  
-  if (insertionIndex !== -1) {
-    const splitPos = insertionIndex + targetInsertionMarker.length;
-    const updatedContent = content.slice(0, splitPos) + '\n' + newEntries.join(',\n') + ',' + content.slice(splitPos);
-    fs.writeFileSync(saasDataPath, updatedContent, 'utf8');
-    console.log(`\n🎉 Ingestion Complete! Added ${addedCount} new Project Management tools. Skipped ${skippedCount} duplicates.`);
+  if (!existingIds.has(normId) && !existingNames.has(normName)) {
+    existingTools.push(tool);
+    existingIds.add(normId);
+    existingNames.add(normName);
+    addedCount++;
   } else {
-    console.error('Could not find staticSaasTools array insertion point.');
+    // Enrich existing tool without creating a duplicate
+    const idx = existingTools.findIndex(t => t.id.toLowerCase() === normId || t.name.toLowerCase() === normName);
+    if (idx !== -1) {
+      existingTools[idx] = { ...existingTools[idx], category: tool.category, tagline: tool.tagline || existingTools[idx].tagline };
+    }
+    skippedCount++;
   }
-} else {
-  console.log(`\nNo new tools added. All ${inputBatch.length} tools were duplicates.`);
-}
+});
+
+const updatedArrayStr = JSON.stringify(existingTools, null, 2);
+content = content.replace(/export const staticSaasTools = \[[\s\S]*?\n\];/, `export const staticSaasTools = ${updatedArrayStr};`);
+
+fs.writeFileSync(saasDataPath, content, 'utf8');
+console.log(`Ingestion Complete! Added: ${addedCount} brand new tools | Deduplicated: ${skippedCount} existing tools | Total static tools: ${existingTools.length}`);
