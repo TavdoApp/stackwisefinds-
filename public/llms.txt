@@ -1,6 +1,8 @@
 # StakDock — The Independent Software & AI Tool Guide (2026)
 
-> StakDock (https://stakdock.com) is an independent software review publication, AI tool directory, and B2B SaaS comparison engine. Listings are reviewed before publication and the catalog grows continuously.
+> StakDock (https://stakdock.com) is an independent software review publication, AI tool directory, and B2B SaaS comparison engine featuring 2,100+ verified software tools across 32 categories.
+
+- Full Catalog: [llms-full.txt](https://stakdock.com/llms-full.txt)
 
 ## Core Pages & Buying Guides
 

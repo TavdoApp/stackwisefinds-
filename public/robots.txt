@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
 
 # GEO (Generative Engine Optimization) - Explicit AI Search Engine Authorization
 User-agent: GPTBot
@@ -29,5 +31,5 @@ Allow: /
 User-agent: Cohere-ai
 Allow: /
 
-# Canonical XML Sitemap
+# Canonical XML Sitemap & LLM Specs
 Sitemap: https://stakdock.com/sitemap.xml

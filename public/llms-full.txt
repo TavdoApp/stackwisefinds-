@@ -1,0 +1,57 @@
+# StakDock — Full Software & AI Tools Directory (2026)
+
+> StakDock (https://stakdock.com) is a global B2B SaaS directory and AI software review platform indexing 2,100+ verified software tools across 32 software categories.
+
+## Software Categories
+
+- [AI Copywriting & Text](https://stakdock.com/#category-ai-content)
+- [AI Video & Motion](https://stakdock.com/#category-trending-video-ai)
+- [AI Music & Audio](https://stakdock.com/#category-ai-music-audio)
+- [AI Image & Design](https://stakdock.com/#category-design-creative)
+- [AI Coding & Dev Assistants](https://stakdock.com/#category-ai-coding-dev)
+- [AI Meeting Transcribers](https://stakdock.com/#category-meeting-ai)
+- [CRM & Sales Pipelines](https://stakdock.com/#category-crm)
+- [Invoicing & Accounting](https://stakdock.com/#category-invoicing)
+- [Email Marketing & Automation](https://stakdock.com/#category-email-marketing)
+- [Social Media & Schedulers](https://stakdock.com/#category-social-media)
+- [Project & Work Management](https://stakdock.com/#category-project-mgmt)
+- [SEO & Keyword Research](https://stakdock.com/#category-seo-analytics)
+- [Forms & Survey Automation](https://stakdock.com/#category-forms-leadgen)
+- [E-Commerce & Funnels](https://stakdock.com/#category-ecommerce-funnels)
+- [HR & Global Payroll](https://stakdock.com/#category-hr-payroll)
+- [Customer Support & Helpdesk](https://stakdock.com/#category-customer-support)
+- [Developer & Cloud Hosting](https://stakdock.com/#category-dev-cloud)
+- [Website Builders & CMS](https://stakdock.com/#category-web-builders)
+- [Product Analytics & Heatmaps](https://stakdock.com/#category-analytics-heatmaps)
+- [Publishing & Newsletters](https://stakdock.com/#category-publishing-cms)
+- [Time Tracking & Productivity](https://stakdock.com/#category-time-productivity)
+- [Document Automation & E-Sign](https://stakdock.com/#category-esign-documents)
+- [Security & Password Managers](https://stakdock.com/#category-security-passwords)
+- [No-Code Databases & Workflows](https://stakdock.com/#category-nocode-databases)
+- [Ad Tech, Retargeting & PPC Analytics](https://stakdock.com/#category-ad-tech-ppc)
+- [Video Hosting, Streaming & Screen Recording](https://stakdock.com/#category-video-tools)
+- [Hosting, Multi-Cloud & Bare Metal Compute](https://stakdock.com/#category-hosting-cloud)
+- [Open-Source & Self-Hosted Stack Alternatives](https://stakdock.com/#category-open-source-self-hosted)
+- [Security, Identity & Password Management](https://stakdock.com/#category-security-identity)
+- [Testing, Quality Assurance & Monitoring](https://stakdock.com/#category-testing-qa)
+- [API Management, Gateways & Integration Platforms](https://stakdock.com/#category-api-management)
+- [DevOps, Infrastructure as Code & CI/CD Pipelines](https://stakdock.com/#category-devops-infrastructure)
+- [Business Intelligence, Data Warehousing & ETL Platforms](https://stakdock.com/#category-bi-data-analytics)
+
+## Key Alternative Routes
+
+- [XusCRM Alternatives](https://stakdock.com/alternatives/xuscrm)
+- [ChatGPT Plus Alternatives](https://stakdock.com/alternatives/chatgpt-plus)
+- [FreshBooks Alternatives](https://stakdock.com/alternatives/freshbooks)
+- [Postiz Alternatives](https://stakdock.com/alternatives/postiz)
+- [Telegraph Alternatives](https://stakdock.com/alternatives/telegraph)
+
+## Featured Platforms
+
+- [ChatGPT Plus](https://openai.com/chatgpt): World standard AI assistant powered by OpenAI GPT-4o.
+- [Claude 3.5 Sonnet](https://claude.ai): Top coding AI model for developers.
+- [Sora AI](https://openai.com/sora): Cinematic text-to-video model with 1080p camera motion.
+- [XusCRM](https://xuscrm.com): Purpose-built real estate CRM for UAE brokerages with Bayut and Property Finder sync.
+- [Cursor AI](https://cursor.com): AI-first code editor powered by Claude 3.5 Sonnet.
+- [Suno AI](https://suno.com): Generative AI music production studio.
+- [GoHighLevel](https://gohighlevel.com): All-in-one marketing agency CRM and automated sales funnels.
