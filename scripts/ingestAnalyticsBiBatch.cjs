@@ -597,7 +597,7 @@ const newTools = [
     "isOpenSource": false
   },
   {
-    "id": "chartio-alternative-preset",
+    "id": "preset",
     "name": "Preset",
     "domain": "preset.io",
     "category": "analytics-bi",
@@ -868,7 +868,7 @@ const newTools = [
   },
   {
     "id": "gooddata-cloud",
-    "name": "GoodData",
+    "name": "GoodData Cloud",
     "domain": "gooddata.com",
     "category": "analytics-bi",
     "tagline": "Cloud-native semantic layer and scalable analytics engine",

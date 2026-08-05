@@ -34892,7 +34892,7 @@ export const staticSaasTools = [
     "name": "GoodData",
     "domain": "gooddata.com",
     "category": "analytics-bi",
-    "tagline": "Cloud-native semantic layer and scalable analytics engine",
+    "tagline": "Composable cloud analytics and embeddable business intelligence platform",
     "description": "GoodData provides headless analytics infrastructure that embeds real-time dashboards and metrics into software applications. It is tailored for enterprise software vendors and product development teams.",
     "rating": 4.3,
     "reviewsCount": 320,
@@ -39978,6 +39978,24 @@ export const staticSaasTools = [
     "badge": "Verified Tool",
     "featured": false,
     "monthlyVisits": "2.4M",
+    "isFreeTier": true,
+    "isOpenSource": false
+  },
+  {
+    "id": "gooddata-cloud",
+    "name": "GoodData Cloud",
+    "domain": "gooddata.com",
+    "category": "analytics-bi",
+    "tagline": "Cloud-native semantic layer and scalable analytics engine",
+    "description": "GoodData delivers real-time business intelligence dashboards connected to cloud data warehouses via custom semantic models. It serves enterprise data leaders and application developers.",
+    "rating": 4.4,
+    "reviewsCount": 310,
+    "pricing": "Freemium",
+    "websiteUrl": "https://gooddata.com",
+    "affiliateUrl": "https://gooddata.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "280K",
     "isFreeTier": true,
     "isOpenSource": false
   }
