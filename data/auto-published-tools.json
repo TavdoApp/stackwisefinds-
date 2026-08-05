@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-07-29T07:58:48.148Z",
+  "updatedAt": "2026-08-05T00:07:34.704Z",
   "tools": [
     {
       "id": "curated-klingai-com",
@@ -100,39 +100,6 @@
       ],
       "bestFor": "Founders, Developers & Creators",
       "publishedAt": "2026-07-29T07:58:47.585Z"
-    },
-    {
-      "id": "curated-elevenlabs-io",
-      "name": "ElevenLabs",
-      "domain": "elevenlabs.io",
-      "category": "ai-music-audio",
-      "tagline": "Realistic AI voice generator & text-to-speech synthesis.",
-      "description": "ElevenLabs delivers natural-sounding AI text-to-speech, voice cloning, and multilingual audio synthesis for creators and developers.",
-      "rating": 4.9,
-      "reviewsCount": 320,
-      "pricing": "Freemium",
-      "affiliateUrl": "https://elevenlabs.io",
-      "website": "https://elevenlabs.io",
-      "featured": true,
-      "badge": "Trending AI",
-      "isFreeTier": true,
-      "isOpenSource": false,
-      "features": [
-        "Voice Cloning",
-        "Text-to-Speech",
-        "29+ Languages",
-        "API Integration"
-      ],
-      "pros": [
-        "High Authority Domain",
-        "Verified Security",
-        "Active Development"
-      ],
-      "cons": [
-        "Premium Features Require Subscription"
-      ],
-      "bestFor": "Founders, Developers & Creators",
-      "publishedAt": "2026-07-29T07:58:48.005Z"
     }
   ]
 }
