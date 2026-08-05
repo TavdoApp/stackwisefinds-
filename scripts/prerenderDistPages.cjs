@@ -155,4 +155,73 @@ for (let i = 0; i < topTools.length; i++) {
   }
 }
 
-console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, and ${vsCount} /vs/ full SPA static HTML pages into dist/!`);
+// 4. Generate dist/guides/:slug/index.html for all auto & static guides
+const guidesDir = path.join(distDir, 'guides');
+if (!fs.existsSync(guidesDir)) fs.mkdirSync(guidesDir, { recursive: true });
+
+let guideCount = 0;
+const answersPath = path.join(__dirname, '..', 'data', 'auto-published-answers.json');
+const autoAnswers = fs.existsSync(answersPath) ? (JSON.parse(fs.readFileSync(answersPath, 'utf8')).answers || []) : [];
+
+const staticArticles = [
+  {
+    id: 'reddit-mined-2026-07-28',
+    slug: 'reddit-mined-2026-07-28',
+    title: 'Reddit Community Q&A: Top Software Tools & AI Workflow Stacks (July 28, 2026)',
+    summary: 'Real-time Reddit consensus mined from r/SaaS, r/webdev, and r/AI: Breakdown of top recommended software tools, workflows, and alternative platforms for July 28, 2026.'
+  },
+  {
+    id: 'reddit-mined-2026-07-27',
+    slug: 'reddit-mined-2026-07-27',
+    title: 'Reddit Community Q&A: Top Software Tools & AI Workflow Stacks (July 27, 2026)',
+    summary: 'Real-time Reddit consensus mined from r/SaaS, r/webdev, and r/AI: Breakdown of top recommended software tools, workflows, and alternative platforms for July 27, 2026.'
+  },
+  {
+    id: 'best-ai-music-audio-2026',
+    slug: 'best-ai-music-audio-2026',
+    title: 'Top Generative AI Music Generators in 2026: Suno AI vs Udio AI',
+    summary: 'Testing studio vocal acoustics, arrangement versatility, and commercial licensing for AI music generation.'
+  },
+  {
+    id: 'best-ecommerce-stack-2026',
+    slug: 'best-ecommerce-stack-2026',
+    title: 'The Ultimate E-Commerce SaaS Stack 2026: Shopify + Klaviyo + Deel + Stripe',
+    summary: 'How D2C brands scale from $0 to $1M ARR with automated checkout conversion, predictive SMS flows, and global contractor payroll.'
+  }
+];
+
+const allGuides = [...autoAnswers, ...staticArticles];
+
+allGuides.forEach(guide => {
+  const guideSlug = guide.slug || guide.id;
+  if (!guideSlug) return;
+
+  const targetFolder = path.join(guidesDir, guideSlug);
+  if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
+
+  const guideTitle = guide.title || guide.question || 'Buyer Guide';
+  const guideDesc = guide.summary || 'Software buyer guide and evaluation framework on StakDock.';
+  const canonicalUrl = guide.canonicalUrl || `https://stakdock.com/guides/${guideSlug}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": guideTitle,
+    "description": guideDesc,
+    "url": canonicalUrl,
+    "author": { "@type": "Organization", "name": "StakDock", "url": "https://stakdock.com" },
+    "publisher": { "@type": "Organization", "name": "StakDock", "url": "https://stakdock.com" }
+  };
+
+  const pageHtml = buildSeoPage({
+    title: guideTitle,
+    description: guideDesc,
+    canonicalUrl,
+    jsonLd
+  });
+
+  fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
+  guideCount++;
+});
+
+console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, ${vsCount} /vs/, and ${guideCount} /guides/ full SPA static HTML pages into dist/!`);

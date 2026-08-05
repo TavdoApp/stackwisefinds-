@@ -117,6 +117,28 @@ export default function ArticleView({ article, onBack }) {
         />
       )}
 
+      {/* Render sections if present (e.g. from Reddit auto-published answers) */}
+      {Array.isArray(article.sections) && article.sections.length > 0 && (
+        <div className="article-body" style={{ marginTop: '24px' }}>
+          {article.sections.map((sec, idx) => (
+            <section key={idx} style={{ marginBottom: '28px' }}>
+              <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginBottom: '10px', color: 'var(--text-dark)' }}>
+                {sec.heading}
+              </h3>
+              <p style={{ fontSize: '0.98rem', lineHeight: '1.65', color: 'var(--text-muted)' }}>
+                {sec.body}
+              </p>
+            </section>
+          ))}
+
+          {article.sourceUrl && (
+            <div style={{ marginTop: '32px', paddingTop: '20px', borderTop: '1px solid var(--border-color)', fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+              <p><strong>Source and methodology:</strong> This buyer evaluation guide uses public community discussions as research input. <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-green-dark)', fontWeight: '700' }}>View original community discussion source ↗</a></p>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Recommended Tools Spec Cards inside Article */}
       {recommendedTools.length > 0 && (
         <div style={{ marginTop: '48px' }}>

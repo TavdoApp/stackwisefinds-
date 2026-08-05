@@ -221,6 +221,26 @@ export default function App() {
         return;
       }
 
+      if (pathname.startsWith('/guides/')) {
+        const rawSlug = pathname.replace('/guides/', '').replace(/\/$/, '');
+        const normSlug = decodeURIComponent(rawSlug).toLowerCase();
+        const found = highIntentArticles.find(a => {
+          if (!a) return false;
+          const aId = (a.id || '').toLowerCase();
+          const aSlug = (a.slug || '').toLowerCase();
+          const aCanon = (a.canonicalUrl || '').toLowerCase();
+          return aSlug === normSlug || aId === normSlug || aId === `guide-${normSlug}` || (aCanon && aCanon.includes(`/guides/${normSlug}`));
+        });
+        if (found) {
+          setSelectedArticle(found);
+          setCurrentView('article-detail');
+          return;
+        } else {
+          setCurrentView('articles');
+          return;
+        }
+      }
+
       if (pathname === '/guides' || hash === 'guides') {
         setCurrentView('articles');
         return;
@@ -238,8 +258,8 @@ export default function App() {
         setSelectedAlternativeToolId(altId);
         setCurrentView('alternatives-detail');
       } else if (hash.startsWith('guide-') || search.includes('article=')) {
-        const artId = hash.replace('guide-', '').trim();
-        const found = highIntentArticles.find(a => a.id === artId);
+        const artId = hash.replace('guide-', '').trim().toLowerCase();
+        const found = highIntentArticles.find(a => (a.id || '').toLowerCase() === artId || (a.slug || '').toLowerCase() === artId);
         if (found) {
           setSelectedArticle(found);
           setCurrentView('article-detail');
@@ -272,14 +292,13 @@ export default function App() {
   };
 
   const handleSelectArticleById = (articleId) => {
-    const found = highIntentArticles.find(a => a.id === articleId) || highIntentArticles[0];
-    if (found?.canonicalUrl) {
-      window.location.assign(new URL(found.canonicalUrl).pathname);
-      return;
-    }
+    const found = highIntentArticles.find(a => a.id === articleId || a.slug === articleId) || highIntentArticles[0];
+    const targetSlug = found.slug || found.id;
+    const targetPath = found.canonicalUrl ? new URL(found.canonicalUrl).pathname : `/guides/${targetSlug}`;
+
     setSelectedArticle(found);
     setCurrentView('article-detail');
-    window.location.hash = `guide-${found.id}`;
+    window.history.pushState(null, '', targetPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
