@@ -5,12 +5,12 @@ import { highIntentArticles } from '../data/articlesData.js';
 import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
-  // Top 5 Trending Tools by rating & reviews
+  // Top 8 Trending Tools by rating & reviews
   const topTrending = saasTools
     .filter(t => t.rating >= 4.8)
-    .slice(0, 5);
+    .slice(0, 8);
 
-  const topGuides = highIntentArticles.slice(0, 4);
+  const topGuides = highIntentArticles.slice(0, 6);
 
   return (
     <aside style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
