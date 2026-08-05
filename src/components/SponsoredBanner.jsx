@@ -26,7 +26,7 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
           fontSize: '0.78rem',
           fontWeight: '700'
         }}>
-          Partnered with
+          Sponsored by
         </span>
 
         <a 
@@ -58,7 +58,7 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
 
       <button
         onClick={onOpenVendorModal}
-        aria-label="Vendor Portal & Verified Badge"
+        aria-label="Advertise your SaaS tool for $99 a month"
         style={{
           background: '#82A735',
           border: 'none',
@@ -74,10 +74,10 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
           flexShrink: 0,
           boxShadow: '0 2px 6px rgba(130,167,53,0.3)'
         }}
-        title="Claim your verified vendor profile"
+        title="Promote your SaaS product in the top bar"
       >
         <Megaphone size={11} color="#FFFFFF" />
-        <span>Vendor Portal ($99/mo)</span>
+        <span>Advertise ($99/mo)</span>
       </button>
     </div>
   );

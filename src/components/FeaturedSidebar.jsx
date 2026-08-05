@@ -33,7 +33,7 @@ export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
           <Sparkles size={14} /> Featured Spotlights
         </div>
         <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontWeight: '700' }}>
-          Verified
+          Sponsored
         </span>
       </div>
 

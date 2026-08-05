@@ -191,7 +191,7 @@ export default function VendorModal({ onClose }) {
                 >
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
                     <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Zap size={12} /> Verified Vendor Portal
+                      <Zap size={12} /> Featured Premium
                     </div>
                     {packageType === 'premium' && <CheckCircle2 size={16} color="#82A735" />}
                   </div>
@@ -199,9 +199,9 @@ export default function VendorModal({ onClose }) {
                     $99 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ year</span>
                   </div>
                   <ul style={{ fontSize: '0.78rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.6', paddingLeft: '14px', margin: 0 }}>
-                    <li>⚡ Priority Verification Status</li>
-                    <li>⭐️ Official Verified Badge</li>
-                    <li>Telemetry Analytics Access</li>
+                    <li>⚡ Top #1 Spot Guarantee</li>
+                    <li>⭐️ Featured Green Badge</li>
+                    <li>Express 24-Hour Review</li>
                   </ul>
                 </div>
 

@@ -62,16 +62,16 @@ export default function AdvertisePage({ onOpenVendorModal }) {
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--bg-sage)', border: '1px solid var(--border-color)', borderRadius: '9999px', padding: '6px 16px', marginBottom: '20px' }}>
           <Sparkles size={16} color="#82A735" />
           <span style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-            VENDOR VERIFICATION & PLANS
+            SPONSORSHIP & ADVERTISING
           </span>
         </div>
 
         <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.6rem)', fontWeight: '800', lineHeight: '1.08', marginBottom: '18px', color: 'var(--text-dark)' }}>
-          Verify & Feature Your Software For <span style={{ color: '#82A735' }}>100K+ Tech Founders</span>
+          Promote Your Software To <span style={{ color: '#82A735' }}>100K+ Tech Founders</span>
         </h1>
 
         <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-          StakDock connects active software buyers, founders, and developers searching for verified SaaS & AI tools daily.
+          StakDock reaches active software buyers, founders, and developers searching for verified SaaS & AI tools daily.
         </p>
       </div>
 
