@@ -1,7 +1,89 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-05T04:13:37.213Z",
+  "updatedAt": "2026-08-05T07:43:02.765Z",
   "drafts": [
+    {
+      "id": "20eee2525e96d403",
+      "status": "pending_review",
+      "question": "How we steal customers from a $100M+ saas competitor, ethically",
+      "suggestedSlug": "how-we-steal-customers-from-a-100m-saas-competitor-ethically",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vg06m1/how_we_steal_customers_from_a_100m_saas/",
+      "sourcePublishedAt": "2026-08-05T07:16:01+00:00",
+      "discoveredAt": "2026-08-05T07:43:02.765Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "5e236380ab0eafe7",
+      "status": "auto_published",
+      "question": "Looking for good Linktree alternative what are you all using?",
+      "suggestedSlug": "looking-for-good-linktree-alternative-what-are-you-all-using",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vfzbna/looking_for_good_linktree_alternative_what_are/",
+      "sourcePublishedAt": "2026-08-05T06:28:19+00:00",
+      "discoveredAt": "2026-08-05T07:43:02.765Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-05T07:43:03.893Z",
+        "canonicalUrl": "https://stakdock.com/guides/looking-for-good-linktree-alternative-what-are-you-all-using-5e236380/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "d081de7e3b1a0023",
+      "status": "pending_review",
+      "question": "Why I built a self hosted alternative to Apollo style prospecting tools",
+      "suggestedSlug": "why-i-built-a-self-hosted-alternative-to-apollo-style-prospecting-tools",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vfyqax/why_i_built_a_self_hosted_alternative_to_apollo/",
+      "sourcePublishedAt": "2026-08-05T05:56:04+00:00",
+      "discoveredAt": "2026-08-05T07:43:02.765Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "08a7ea365dcd64cc",
       "status": "auto_published",
