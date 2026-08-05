@@ -1,7 +1,75 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-05T07:43:02.765Z",
+  "updatedAt": "2026-08-05T10:40:09.745Z",
   "drafts": [
+    {
+      "id": "bd23e7a8ed5c9903",
+      "status": "auto_published",
+      "question": "Comment savoir si oui ou non votre produit auras un public pottentiel pour votre saas ?",
+      "suggestedSlug": "comment-savoir-si-oui-ou-non-votre-produit-auras-un-public-pottentiel-pour-votre",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vg29rg/comment_savoir_si_oui_ou_non_votre_produit_auras/",
+      "sourcePublishedAt": "2026-08-05T09:19:00+00:00",
+      "discoveredAt": "2026-08-05T10:40:09.745Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-05T10:40:10.454Z",
+        "canonicalUrl": "https://stakdock.com/guides/comment-savoir-si-oui-ou-non-votre-produit-auras-un-public-pottentiel-pour-votre-saas-bd23e7a8/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
+    {
+      "id": "b77f926ffc4c9a4d",
+      "status": "auto_published",
+      "question": "how do you handle open-sourced alternatives of your product?",
+      "suggestedSlug": "how-do-you-handle-open-sourced-alternatives-of-your-product",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vg1a6k/how_do_you_handle_opensourced_alternatives_of/",
+      "sourcePublishedAt": "2026-08-05T08:20:33+00:00",
+      "discoveredAt": "2026-08-05T10:40:09.745Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-05T10:40:10.454Z",
+        "canonicalUrl": "https://stakdock.com/guides/how-do-you-handle-open-sourced-alternatives-of-your-product-b77f926f/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "20eee2525e96d403",
       "status": "pending_review",
