@@ -1,7 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-05T21:15:48.422Z",
+  "updatedAt": "2026-08-05T23:03:56.402Z",
   "answers": [
+    {
+      "id": "answer-36b8b7b8baed80ae",
+      "slug": "what-are-yours-repetitive-saas-functionalities-36b8b7b8",
+      "title": "How to evaluate: What are yours repetitive SaaS functionalities?",
+      "question": "What are yours repetitive SaaS functionalities?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vgjyop/what_are_yours_repetitive_saas_functionalities/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-05T23:03:56.402Z",
+      "canonicalUrl": "https://stakdock.com/guides/what-are-yours-repetitive-saas-functionalities-36b8b7b8/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-2fecbe022572391f",
       "slug": "stripe-and-paypal-alternatives-for-saas-subscriptions-business-2fecbe02",

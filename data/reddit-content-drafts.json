@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-05T21:15:47.797Z",
+  "updatedAt": "2026-08-05T23:03:55.414Z",
   "drafts": [
+    {
+      "id": "36b8b7b8baed80ae",
+      "status": "auto_published",
+      "question": "What are yours repetitive SaaS functionalities?",
+      "suggestedSlug": "what-are-yours-repetitive-saas-functionalities",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vgjyop/what_are_yours_repetitive_saas_functionalities/",
+      "sourcePublishedAt": "2026-08-05T21:03:32+00:00",
+      "discoveredAt": "2026-08-05T23:03:55.414Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-05T23:03:56.402Z",
+        "canonicalUrl": "https://stakdock.com/guides/what-are-yours-repetitive-saas-functionalities-36b8b7b8/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "2fecbe022572391f",
       "status": "auto_published",
