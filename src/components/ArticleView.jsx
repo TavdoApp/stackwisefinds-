@@ -5,9 +5,40 @@ import { saasTools } from '../data/saasData.jsx';
 export default function ArticleView({ article, onBack }) {
   if (!article) return null;
 
-  const recommendedIds = article.recommendedToolIds || [];
-  const recommendedTools = saasTools.filter(t => recommendedIds.includes(t.id));
-  const topWinner = recommendedTools[0] || saasTools[0];
+  const recommendedTools = (() => {
+    if (Array.isArray(article.recommendedToolIds) && article.recommendedToolIds.length > 0) {
+      return saasTools.filter(t => article.recommendedToolIds.includes(t.id));
+    }
+    
+    const textToMatch = `${article.title || ''} ${article.question || ''} ${article.category || ''}`.toLowerCase();
+    
+    const matches = saasTools.filter(t => {
+      if (!t) return false;
+      const toolName = (t.name || '').toLowerCase();
+      const toolId = (t.id || '').toLowerCase();
+      const toolCat = (t.category || '').toLowerCase();
+
+      if (toolName.length > 3 && textToMatch.includes(toolName)) return true;
+      if (toolId.length > 3 && textToMatch.includes(toolId)) return true;
+      
+      if (textToMatch.includes('analytics') && toolCat.includes('analytics')) return true;
+      if (textToMatch.includes('video') && toolCat.includes('video')) return true;
+      if (textToMatch.includes('crm') && toolCat.includes('crm')) return true;
+      if (textToMatch.includes('design') && toolCat.includes('design')) return true;
+      if (textToMatch.includes('seo') && toolCat.includes('seo')) return true;
+      if (textToMatch.includes('code') || textToMatch.includes('dev') || textToMatch.includes('python') || textToMatch.includes('javascript')) {
+        if (toolCat.includes('developer') || toolCat.includes('code')) return true;
+      }
+      if (textToMatch.includes('linktree') && (toolName.includes('link') || toolId.includes('link') || toolCat.includes('marketing'))) return true;
+      if (textToMatch.includes('feedback') && (toolName.includes('feedback') || toolCat.includes('customer') || toolCat.includes('project'))) return true;
+
+      return false;
+    });
+
+    return matches.slice(0, 3);
+  })();
+
+  const topWinner = recommendedTools.length > 0 ? recommendedTools[0] : null;
 
   return (
     <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '900px' }}>
