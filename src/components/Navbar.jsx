@@ -123,9 +123,9 @@ export default function Navbar({
               onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }}
               className={currentView === 'advertise' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
-              aria-label="Advertise"
+              aria-label="Vendor Portal"
             >
-              <span>Advertise</span>
+              <span>Vendor Portal</span>
             </button>
             <button 
               onClick={() => { setCurrentView('articles'); window.history.pushState(null, '', '/guides'); window.scrollTo(0, 0); }}
