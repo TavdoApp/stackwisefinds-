@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-05T19:40:52.053Z",
+  "updatedAt": "2026-08-05T21:15:47.797Z",
   "drafts": [
+    {
+      "id": "2fecbe022572391f",
+      "status": "auto_published",
+      "question": "Stripe and PayPal alternatives for SaaS subscriptions business?",
+      "suggestedSlug": "stripe-and-paypal-alternatives-for-saas-subscriptions-business",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vgjnaf/stripe_and_paypal_alternatives_for_saas/",
+      "sourcePublishedAt": "2026-08-05T20:51:30+00:00",
+      "discoveredAt": "2026-08-05T21:15:47.797Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-05T21:15:48.422Z",
+        "canonicalUrl": "https://stakdock.com/guides/stripe-and-paypal-alternatives-for-saas-subscriptions-business-2fecbe02/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "bd23e7a8ed5c9903",
       "status": "auto_published",
