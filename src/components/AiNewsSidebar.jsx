@@ -5,9 +5,20 @@ import { highIntentArticles } from '../data/articlesData.js';
 import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
-  // Top 8 Trending Tools by rating & reviews
-  const topTrending = saasTools
-    .filter(t => t.rating >= 4.8)
+  // Helper to parse monthlyVisits (e.g. "140.0M" -> 140000000)
+  const parseVisits = (v) => {
+    if (!v) return 0;
+    const num = parseFloat(v);
+    if (isNaN(num)) return 0;
+    const str = String(v).toUpperCase();
+    if (str.includes('M')) return num * 1000000;
+    if (str.includes('K')) return num * 1000;
+    return num;
+  };
+
+  // Top 8 Trending Tools by real monthly web traffic
+  const topTrending = [...saasTools]
+    .sort((a, b) => parseVisits(b.monthlyVisits) - parseVisits(a.monthlyVisits))
     .slice(0, 8);
 
   const topGuides = highIntentArticles.slice(0, 6);
