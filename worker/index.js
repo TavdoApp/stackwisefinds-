@@ -43,6 +43,11 @@ export default {
       return handleVendorSubmission(request, env, corsHeaders);
     }
 
+    // Route 2.5: POST /api/create-checkout — Instant Dodo Payments checkout generator
+    if (url.pathname === '/api/create-checkout' && request.method === 'POST') {
+      return handleCreateCheckout(request, env, corsHeaders);
+    }
+
     // Route 3: GET /api/admin/reports — Admin-protected reporting
     if (url.pathname === '/api/admin/reports' && request.method === 'GET') {
       if (!isAuthorized(request, env)) {
@@ -350,5 +355,55 @@ async function handleGetPendingSubmissions(env, corsHeaders) {
     });
   } catch (error) {
     return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: corsHeaders });
+  }
+}
+
+async function handleCreateCheckout(request, env, corsHeaders) {
+  try {
+    const body = await request.json();
+    const { softwareName, softwareWebsite, vendorEmail, packageType, productId } = body;
+    
+    const apiKey = env.DODO_PAYMENTS_API_KEY;
+    if (!apiKey) {
+      return new Response(JSON.stringify({
+        success: false,
+        error: 'Payment gateway API key environment variable not configured'
+      }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    }
+
+    const isLive = apiKey.startsWith('live_');
+    const baseUrl = isLive ? 'https://live.dodopayments.com' : 'https://test.dodopayments.com';
+
+    const response = await fetch(`${baseUrl}/payments`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        product_id: productId || (packageType === 'premium' ? 'p_featured_sponsor' : 'p_standard'),
+        quantity: 1,
+        billing: {
+          email: vendorEmail || 'vendor@stakdock.com',
+          name: softwareName || 'Valued SaaS Vendor'
+        },
+        return_url: 'https://stakdock.com/?payment=success',
+        metadata: {
+          softwareName,
+          softwareWebsite,
+          vendorEmail,
+          packageType
+        }
+      })
+    });
+
+    const data = await response.json();
+    return new Response(JSON.stringify({
+      success: response.ok,
+      checkoutUrl: data.payment_link || data.checkout_url || null,
+      message: data.message || null
+    }), { status: response.ok ? 200 : 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+  } catch (err) {
+    return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   }
 }
