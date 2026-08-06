@@ -1,7 +1,55 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-06T05:53:45.907Z",
+  "updatedAt": "2026-08-06T08:43:19.123Z",
   "drafts": [
+    {
+      "id": "2f2b635cb53f63d5",
+      "status": "pending_review",
+      "question": "Any alternative to Claude code?",
+      "suggestedSlug": "any-alternative-to-claude-code",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vgy8kf/any_alternative_to_claude_code/",
+      "sourcePublishedAt": "2026-08-06T08:21:55+00:00",
+      "discoveredAt": "2026-08-06T08:43:19.123Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
+    {
+      "id": "595f3da198e6238a",
+      "status": "pending_review",
+      "question": "Took us about 4 failed ideas and over 18 months. We made an email marketing platform. Alternative to Mailchimp, beehiv, kit, Klaviyo.",
+      "suggestedSlug": "took-us-about-4-failed-ideas-and-over-18-months-we-made-an-email-marketing-platf",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vgy7yy/took_us_about_4_failed_ideas_and_over_18_months/",
+      "sourcePublishedAt": "2026-08-06T08:20:54+00:00",
+      "discoveredAt": "2026-08-06T08:43:19.123Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "36b8b7b8baed80ae",
       "status": "auto_published",

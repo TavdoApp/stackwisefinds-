@@ -311,6 +311,534 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/software/lancedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/lancedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/vespa</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/vespa</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/dragonfly</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/dragonfly</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/valkey</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/valkey</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/surrealdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/surrealdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/faunadb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/faunadb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/scylladb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/scylladb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/timescaledb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/timescaledb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/opensearch</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/opensearch</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/meilisearch</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/meilisearch</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/typesense</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/typesense</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/elasticsearch</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/elasticsearch</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/memgraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/memgraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/arangodb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/arangodb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/tigergraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/tigergraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/couchbase</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/couchbase</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/influxdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/influxdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/questdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/questdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/turbopuffer</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/turbopuffer</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/marqo</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/marqo</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/convex</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/convex</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/yugabyte-db</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/yugabyte-db</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/tidb-pingcap</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/tidb-pingcap</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/dgraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/dgraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/gel-edgedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/gel-edgedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/janusgraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/janusgraph</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/terminusdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/terminusdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/rocksdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/rocksdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/aerospike</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/aerospike</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/cassandra</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/cassandra</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/astradb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/astradb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/zilliz-cloud</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/zilliz-cloud</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/keydb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/keydb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/kuzu-db</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/kuzu-db</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/greptimedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/greptimedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/victoriametrics</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/victoriametrics</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/cratedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/cratedb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/faiss-fb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/faiss-fb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/pgvector-ext</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/pgvector-ext</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/foundationdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/foundationdb</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/tikv-cncf</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/tikv-cncf</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/garnet-ms</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/garnet-ms</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/quickwit</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/quickwit</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/software/tantivy-engine</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/tantivy-engine</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/software/splitmatepro</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -19871,1141 +20399,1141 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-jotform</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-vespa</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-tally</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-dragonfly</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-valkey</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-formstack</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-surrealdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-qualtrics-xm</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-faunadb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-paperform</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-scylladb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-formik</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/splitmatepro-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/lancedb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-tally</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-dragonfly</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-valkey</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-formstack</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-surrealdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-qualtrics-xm</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-faunadb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-paperform</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-scylladb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-formik</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/jotform-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/vespa-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-valkey</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-formstack</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-surrealdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-qualtrics-xm</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-faunadb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-paperform</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-scylladb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-formik</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tally-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/dragonfly-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-formstack</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-surrealdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-qualtrics-xm</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-faunadb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-paperform</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-scylladb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-formik</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/surveymonkey-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/valkey-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-qualtrics-xm</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-faunadb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-paperform</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-scylladb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-formik</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formstack-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/surrealdb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-paperform</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-scylladb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-formik</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualtrics-xm-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/faunadb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-feathery</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-timescaledb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-formik</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/paperform-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/scylladb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-cognito-forms</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-opensearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-formik</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/feathery-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/timescaledb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-microsoft-forms</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-meilisearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-formik</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/cognito-forms-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/opensearch-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-formbrick</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-typesense</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-formik</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/microsoft-forms-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/meilisearch-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-alchemer-formerly-surveygizmo</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-elasticsearch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-formik</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formbrick-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/typesense-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-wufoo-by-surveymonkey</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-memgraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-formik</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/alchemer-formerly-surveygizmo-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/elasticsearch-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-123formbuilder</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-arangodb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-formik</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/wufoo-by-surveymonkey-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/memgraph-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-deformity-reform</loc>
+    <loc>https://stakdock.com/vs/arangodb-vs-tigergraph</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/arangodb-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/arangodb-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-formik</loc>
+    <loc>https://stakdock.com/vs/arangodb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/arangodb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/123formbuilder-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/arangodb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/deformity-reform-vs-tripetto</loc>
+    <loc>https://stakdock.com/vs/tigergraph-vs-couchbase</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/deformity-reform-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/tigergraph-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/deformity-reform-vs-formik</loc>
+    <loc>https://stakdock.com/vs/tigergraph-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/deformity-reform-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/tigergraph-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/deformity-reform-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/tigergraph-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tripetto-vs-kobotoolbox</loc>
+    <loc>https://stakdock.com/vs/couchbase-vs-influxdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tripetto-vs-formik</loc>
+    <loc>https://stakdock.com/vs/couchbase-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tripetto-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/couchbase-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tripetto-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/couchbase-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/kobotoolbox-vs-formik</loc>
+    <loc>https://stakdock.com/vs/influxdb-vs-questdb</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/kobotoolbox-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/influxdb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/kobotoolbox-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/influxdb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formik-vs-react-hook-form</loc>
+    <loc>https://stakdock.com/vs/questdb-vs-turbopuffer</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/formik-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/questdb-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/react-hook-form-vs-zonka-feedback</loc>
+    <loc>https://stakdock.com/vs/turbopuffer-vs-marqo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
