@@ -161,10 +161,10 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>StakDock Score</td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
-                <Star size={14} fill="#82A735" inline /> {toolA.rating} / 5 ({toolA.reviewsCount || 120} reviews)
+                <Star size={14} fill="#82A735" style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> {toolA.rating} / 5 ({toolA.reviewsCount || 120} reviews)
               </td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
-                <Star size={14} fill="#82A735" inline /> {toolB.rating} / 5 ({toolB.reviewsCount || 115} reviews)
+                <Star size={14} fill="#82A735" style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> {toolB.rating} / 5 ({toolB.reviewsCount || 115} reviews)
               </td>
             </tr>
 
@@ -189,20 +189,20 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Security & Privacy</td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: '#82A735', fontWeight: '700' }}>
-                <Shield size={14} inline /> HTTPS Encrypted & Verified
+                <Shield size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> HTTPS Encrypted & Verified
               </td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: '#82A735', fontWeight: '700' }}>
-                <Shield size={14} inline /> HTTPS Encrypted & Verified
+                <Shield size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> HTTPS Encrypted & Verified
               </td>
             </tr>
 
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Deployment</td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
-                <Globe size={14} inline /> Cloud Web App
+                <Globe size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> Cloud Web App
               </td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
-                <Globe size={14} inline /> Cloud Web App
+                <Globe size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> Cloud Web App
               </td>
             </tr>
 

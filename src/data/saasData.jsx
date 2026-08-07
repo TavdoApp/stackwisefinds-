@@ -33195,6 +33195,24 @@ export const staticSaasTools = [
     "isOpenSource": false
   },
   {
+    "id": "quickbooks-online",
+    "name": "QuickBooks Online",
+    "domain": "quickbooks.intuit.com",
+    "category": "invoicing",
+    "tagline": "Industry-standard small business accounting, invoicing, expense tracking, and payroll",
+    "description": "QuickBooks Online handles invoicing, expense tracking, payroll, and financial reporting in one unified dashboard. It is designed for small business owners, accountants, and growing startups.",
+    "rating": 4.7,
+    "reviewsCount": 3840,
+    "pricing": "Paid",
+    "websiteUrl": "https://quickbooks.intuit.com",
+    "affiliateUrl": "https://quickbooks.intuit.com",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "18.4M",
+    "isFreeTier": false,
+    "isOpenSource": false
+  },
+  {
     "id": "wave",
     "name": "Wave",
     "domain": "waveapps.com",
