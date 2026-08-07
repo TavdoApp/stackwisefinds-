@@ -42,6 +42,8 @@ export default function ArticleView({ article, onBack }) {
     const isCrmTopic = /crm|sales pipeline|real estate|client management/i.test(textToMatch);
     const isOpenSourceTopic = /open-source|open-sourced|self-hosted/i.test(textToMatch);
     const isBuilderTopic = /lovable|builder|v0|bolt|no-code|nocode|web-builder/i.test(textToMatch);
+    const isVideoAdTopic = /video|vid|video ad|ad creative|reels|shorts|commercial|tiktok ad/i.test(textToMatch);
+    const isEcommerceTopic = /ecommerce|e-commerce|shopify|storefront|d2c|product ad/i.test(textToMatch);
 
     const keywordMatches = [];
     
@@ -72,6 +74,20 @@ export default function ArticleView({ article, onBack }) {
       // Exact name/ID match (only if not an alternatives query for that specific tool)
       if (tName.length > 3 && textToMatch.includes(tName) && !isAlternativesQuery) score += 12;
       if (tId.length > 3 && textToMatch.includes(tId) && !isAlternativesQuery) score += 12;
+
+      // Video Ads & Commercial AI Motion
+      if (isVideoAdTopic) {
+        if (tCat === 'ad-creative' || tCat === 'trending-video-ai' || tCat === 'ai-video-motion' || tId.includes('video') || tId.includes('creatify') || tId.includes('synthesia') || tId.includes('heygen')) {
+          score += 15;
+        }
+      }
+
+      // E-Commerce & Shopping Funnels
+      if (isEcommerceTopic) {
+        if (tCat === 'ecommerce-funnels' || tCat === 'ad-creative' || tId === 'shopify' || tId === 'klaviyo') {
+          score += 10;
+        }
+      }
 
       // Payments & Subscriptions
       if (isPaymentTopic) {
@@ -127,6 +143,16 @@ export default function ArticleView({ article, onBack }) {
     }
 
     // High quality default fallback per topic type
+    if (isVideoAdTopic) {
+      const videoDefaults = saasTools.filter(t => (t.category === 'ad-creative' || t.category === 'trending-video-ai' || t.category === 'ai-video-motion') && !excludedToolIds.has(t.id));
+      if (videoDefaults.length > 0) return videoDefaults.slice(0, 3);
+    }
+
+    if (isEcommerceTopic) {
+      const ecomDefaults = saasTools.filter(t => ['shopify', 'klaviyo', 'creatify-ai', 'invideo-ai', 'stripe'].includes(t.id) && !excludedToolIds.has(t.id));
+      if (ecomDefaults.length > 0) return ecomDefaults.slice(0, 3);
+    }
+
     if (isPaymentTopic) {
       const paymentDefaults = saasTools.filter(t => ['paddle', 'lemonsqueezy', 'chargebee', 'fastspring', 'recurly'].includes(t.id) && !excludedToolIds.has(t.id));
       if (paymentDefaults.length > 0) return paymentDefaults.slice(0, 3);
