@@ -94,17 +94,19 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
         flexWrap: 'wrap',
         gap: '20px'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: '1 1 280px', minWidth: 0 }}>
           <div style={{
-            width: '56px',
-            height: '56px',
+            width: '60px',
+            height: '60px',
             borderRadius: '16px',
             background: '#FFFFFF',
+            border: '1px solid var(--border-color)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '6px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.06)'
+            padding: '8px',
+            boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
+            flexShrink: 0
           }}>
             <img 
               src={`https://www.google.com/s2/favicons?domain=${winner.domain}&sz=128`} 
@@ -113,11 +115,11 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             />
           </div>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '4px' }}>
               <Award size={16} /> StakDock Verdict Winner
             </div>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)' }}>{winner.name}</h3>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{bestForWinner}</p>
+            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 6px' }}>{winner.name}</h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>{bestForWinner}</p>
           </div>
         </div>
 
