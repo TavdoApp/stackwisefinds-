@@ -137,7 +137,24 @@ export const saasCategories = [
 ];
 
 export const staticSaasTools = [
-{
+  {
+    "id": "zebracat-ai",
+    "name": "Zebracat",
+    "domain": "zebracat.ai",
+    "category": "trending-video-ai",
+    "tagline": "AI video generator that turns text, blog posts, and scripts into impactful viral video ads",
+    "description": "Zebracat is an AI-powered video creation platform designed for marketers and content creators to turn text prompts, scripts, and audio into high-converting video ads and social media clips automatically.",
+    "rating": 4.9,
+    "reviewsCount": 310,
+    "pricing": "Freemium / Paid",
+    "websiteUrl": "https://www.zebracat.ai",
+    "affiliateUrl": "https://www.zebracat.ai",
+    "badge": "Verified Tool",
+    "featured": true,
+    "monthlyVisits": "420K",
+    "isOpenSource": false
+  },
+  {
     "id": "onelogin-iam",
     "name": "OneLogin",
     "domain": "onelogin.com",

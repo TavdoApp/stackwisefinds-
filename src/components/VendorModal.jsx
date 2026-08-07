@@ -187,50 +187,102 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     border: packageType === 'free' ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: packageType === 'free' ? '#F9FBF5' : '#FFFFFF',
                     borderRadius: '16px',
-                    padding: '16px',
+                    padding: '14px',
                     cursor: 'pointer',
                     position: 'relative'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
                     <div style={{ fontSize: '0.78rem', fontWeight: '800', color: 'var(--text-dark)', textTransform: 'uppercase' }}>
                       Standard Listing
                     </div>
                     {packageType === 'free' && <CheckCircle2 size={16} color="#82A735" />}
                   </div>
-                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '8px' }}>
-                    $0 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ free</span>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '800', color: '#82A735', marginBottom: '6px' }}>
+                    $0 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ free</span>
                   </div>
-                  <ul style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.6', paddingLeft: '14px', margin: 0 }}>
+                  <ul style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.5', paddingLeft: '14px', margin: 0 }}>
                     <li>Directory Indexing</li>
                     <li>Automated Checks</li>
-                    <li>Category Tagging</li>
                   </ul>
                 </div>
 
-                {/* Package 2: Featured Premium */}
+                {/* Package 2: In-Feed Sponsor */}
+                <div
+                  onClick={() => setPackageType('in-feed')}
+                  style={{
+                    border: packageType === 'in-feed' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: packageType === 'in-feed' ? '#F9FBF5' : '#FFFFFF',
+                    borderRadius: '16px',
+                    padding: '14px',
+                    cursor: 'pointer',
+                    position: 'relative'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
+                    <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Zap size={12} /> In-Feed Sponsor
+                    </div>
+                    {packageType === 'in-feed' && <CheckCircle2 size={16} color="#82A735" />}
+                  </div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '6px' }}>
+                    $49 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ month</span>
+                  </div>
+                  <ul style={{ fontSize: '0.75rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.5', paddingLeft: '14px', margin: 0 }}>
+                    <li>⭐️ Feed Card Highlight</li>
+                    <li>⚡ Priority Category Rank</li>
+                  </ul>
+                </div>
+
+                {/* Package 3: Top Banner Sponsor */}
+                <div
+                  onClick={() => setPackageType('top-banner')}
+                  style={{
+                    border: packageType === 'top-banner' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: packageType === 'top-banner' ? '#F9FBF5' : '#FFFFFF',
+                    borderRadius: '16px',
+                    padding: '14px',
+                    cursor: 'pointer',
+                    position: 'relative'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
+                    <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Zap size={12} /> Top Banner Sponsor
+                    </div>
+                    {packageType === 'top-banner' && <CheckCircle2 size={16} color="#82A735" />}
+                  </div>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '6px' }}>
+                    $99 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ month</span>
+                  </div>
+                  <ul style={{ fontSize: '0.75rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.5', paddingLeft: '14px', margin: 0 }}>
+                    <li>🚀 Top Header Site Banner</li>
+                    <li>🔥 #1 Spot Across Pages</li>
+                  </ul>
+                </div>
+
+                {/* Package 4: Annual Featured */}
                 <div
                   onClick={() => setPackageType('premium')}
                   style={{
                     border: packageType === 'premium' ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: packageType === 'premium' ? '#F9FBF5' : '#FFFFFF',
                     borderRadius: '16px',
-                    padding: '16px',
+                    padding: '14px',
                     cursor: 'pointer',
                     position: 'relative'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
                     <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Zap size={12} /> Featured Premium
+                      <Zap size={12} /> Featured Annual
                     </div>
                     {packageType === 'premium' && <CheckCircle2 size={16} color="#82A735" />}
                   </div>
-                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
-                    $99 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ year</span>
+                  <div style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '6px' }}>
+                    $99 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ year</span>
                   </div>
-                  <ul style={{ fontSize: '0.78rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.6', paddingLeft: '14px', margin: 0 }}>
-                    <li>⚡ Top #1 Spot Guarantee</li>
+                  <ul style={{ fontSize: '0.75rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.5', paddingLeft: '14px', margin: 0 }}>
                     <li>⭐️ Featured Green Badge</li>
                     <li>Express 24-Hour Review</li>
                   </ul>
