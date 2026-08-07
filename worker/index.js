@@ -381,7 +381,7 @@ async function handleCreateCheckout(request, env, corsHeaders) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        product_id: productId || (packageType === 'premium' ? 'p_featured_sponsor' : 'p_standard'),
+        product_id: productId || (packageType === 'premium' ? 'pdt_0NksUHnFhOrLcWvnGrz5R' : 'pdt_0NksUTrDVDvUmZ0eDGxNz'),
         quantity: 1,
         billing: {
           email: vendorEmail || 'vendor@stakdock.com',

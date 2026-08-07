@@ -8,6 +8,7 @@ export default function AdvertisePage({ onOpenVendorModal }) {
     {
       id: 'top-banner',
       title: 'Top Banner Sponsor',
+      productId: 'pdt_0NksTosz02Ins84wJV7ku',
       price: '$99',
       period: 'per month',
       popular: false,
@@ -24,6 +25,7 @@ export default function AdvertisePage({ onOpenVendorModal }) {
     {
       id: 'spotlight',
       title: 'Featured Left Spotlight',
+      productId: 'pdt_0NksUHnFhOrLcWvnGrz5R',
       price: '$99',
       period: 'per year',
       popular: true,
@@ -40,6 +42,7 @@ export default function AdvertisePage({ onOpenVendorModal }) {
     {
       id: 'in-feed',
       title: 'In-Feed Sponsored Listing',
+      productId: 'pdt_0NksUTrDVDvUmZ0eDGxNz',
       price: '$49',
       period: 'per month',
       popular: false,
@@ -150,9 +153,15 @@ export default function AdvertisePage({ onOpenVendorModal }) {
             </div>
 
             <button
-              onClick={() => onOpenVendorModal && onOpenVendorModal()}
+              onClick={() => {
+                if (plan.productId) {
+                  window.location.href = `https://checkout.dodopayments.com/buy/${plan.productId}`;
+                } else if (onOpenVendorModal) {
+                  onOpenVendorModal();
+                }
+              }}
               className="btn-pill-green"
-              style={{ width: '100%', padding: '14px 20px', fontSize: '0.95rem', justifyContent: 'center' }}
+              style={{ width: '100%', padding: '14px 20px', fontSize: '0.95rem', justifyContent: 'center', cursor: 'pointer' }}
             >
               <span>Get Sponsored Spot</span>
               <ArrowRight size={16} />

@@ -57,7 +57,9 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
       </div>
 
       <button
-        onClick={onOpenVendorModal}
+        onClick={() => {
+          window.location.href = 'https://checkout.dodopayments.com/buy/pdt_0NksTosz02Ins84wJV7ku';
+        }}
         aria-label="Advertise your SaaS tool for $99 a month"
         style={{
           background: '#82A735',

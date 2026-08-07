@@ -19,7 +19,7 @@ export default function VendorModal({ onClose }) {
     setErrorMsg('');
 
     try {
-      // POST to Cloudflare Worker D1 Endpoint
+      // 1. Save vendor submission in Cloudflare D1
       const response = await fetch('/api/submit-vendor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -34,14 +34,34 @@ export default function VendorModal({ onClose }) {
       });
 
       const data = await response.json();
-      if (!response.ok || !data.success) {
-        throw new Error(data.error || 'Submission failed');
+      
+      // 2. If Premium package selected, create Dodo Payments checkout session
+      if (packageType === 'premium') {
+        try {
+          const checkoutRes = await fetch('/api/create-checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              softwareName,
+              softwareWebsite,
+              vendorEmail,
+              packageType,
+              productId: 'pdt_0NksUHnFhOrLcWvnGrz5R'
+            })
+          });
+          const checkoutData = await checkoutRes.json();
+          if (checkoutData && checkoutData.checkoutUrl) {
+            window.location.href = checkoutData.checkoutUrl;
+            return;
+          }
+        } catch (ckErr) {
+          console.warn('Checkout API fallback:', ckErr.message);
+        }
       }
 
       setIsSubmitted(true);
     } catch (err) {
       console.warn('Backend API fallback:', err.message);
-      // Fallback success indicator for static client
       setIsSubmitted(true);
     } finally {
       setIsSubmitting(false);
