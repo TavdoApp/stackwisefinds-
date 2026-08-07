@@ -230,7 +230,7 @@ button {
 .toolify-col-right {
   align-self: start;
   position: sticky;
-  top: calc(100vh - 100% - 24px);
+  top: 80px;
 }
 
 .toolify-col-left {
