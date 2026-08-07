@@ -1,7 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T17:51:12.966Z",
+  "updatedAt": "2026-08-07T19:02:35.572Z",
   "drafts": [
+    {
+      "id": "701aff11cb5c8c2f",
+      "status": "pending_review",
+      "question": "Stop brainstorming SaaS ideas in a vacuum: Why complaint-mining yields 10x higher validation rates",
+      "suggestedSlug": "stop-brainstorming-saas-ideas-in-a-vacuum-why-complaint-mining-yields-10x-higher",
+      "intent": "ai-tools",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vi8ox0/stop_brainstorming_saas_ideas_in_a_vacuum_why/",
+      "sourcePublishedAt": "2026-08-07T18:29:51+00:00",
+      "discoveredAt": "2026-08-07T19:02:35.572Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "a0c358e86903e6f8",
       "status": "auto_published",
