@@ -88,6 +88,7 @@ export default function App() {
     return 'directory';
   });
   const [currentLang, setCurrentLang] = useState('en');
+  const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState('freshbooks');
   const [selectedReviewTool, setSelectedReviewTool] = useState(null);
   const [selectedToolDetailId, setSelectedToolDetailId] = useState('cursor-ai');
@@ -163,6 +164,15 @@ export default function App() {
     setSelectedToolDetailId(tId);
     setCurrentView('tool-detail');
     window.history.pushState(null, '', `/software/${tId}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectArticle = (art) => {
+    if (!art) return;
+    setSelectedArticle(art);
+    setCurrentView('article-detail');
+    const slug = art.slug || art.id;
+    window.history.pushState(null, '', `/guides/${slug}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -656,7 +666,7 @@ export default function App() {
                     <div className="toolify-col-right">
                       <AiNewsSidebar 
                         onSelectTool={handleSelectToolDetail}
-                        onSelectArticle={(art) => { setSelectedArticle(art); setCurrentView('article-detail'); }}
+                        onSelectArticle={(art) => handleSelectArticle(art)}
                       />
                     </div>
                   </div>
@@ -762,7 +772,7 @@ export default function App() {
                     {highIntentArticles.map((art) => (
                       <div 
                         key={art.id}
-                        onClick={() => handleSelectArticleById(art.id)}
+                        onClick={() => handleSelectArticle(art)}
                         style={{ 
                           background: '#FFFFFF', 
                           border: '1px solid var(--border-color)', 
