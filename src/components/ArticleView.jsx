@@ -15,8 +15,16 @@ export default function ArticleView({ article, onBack }) {
     }
     
     const textToMatch = `${article.title || ''} ${article.question || ''} ${article.summary || ''} ${article.category || ''}`.toLowerCase();
+    const isSecurityTopic = /security|cyber|identity|vulnerability|ssh|k8s|sast|dast|pam|threat|firewall|ids|siem|compliance/i.test(textToMatch);
     
-    // Keyword to Category / Tool ID Mappings
+    // Topic Flags
+    const isBookingTopic = /booking|schedule|appointment|calendar|meeting/i.test(textToMatch);
+    const isLeadGenTopic = /lead|leadgen|form|survey|funnel|capture|conversion|landing/i.test(textToMatch);
+    const isPaymentTopic = /stripe|paypal|payment|checkout|subscription|billing/i.test(textToMatch);
+    const isCrmTopic = /crm|sales pipeline|real estate|client management/i.test(textToMatch);
+    const isOpenSourceTopic = /open-source|open-sourced|self-hosted/i.test(textToMatch);
+    const isBuilderTopic = /lovable|builder|v0|bolt|no-code|nocode|web-builder/i.test(textToMatch);
+
     const keywordMatches = [];
     
     saasTools.forEach(t => {
@@ -26,31 +34,53 @@ export default function ArticleView({ article, onBack }) {
       const tCat = (t.category || '').toLowerCase();
       const tDesc = (t.description || '').toLowerCase();
 
+      // If NOT a security topic, skip specialized cybersecurity tools to prevent odd matches
+      if (!isSecurityTopic && (tCat.includes('cybersecurity') || tCat.includes('security-passwords') || tId.includes('qualys') || tId.includes('caldera') || tId.includes('semgrep') || tId.includes('checkov') || tId.includes('kube'))) {
+        return;
+      }
+
       let score = 0;
 
       // Exact name/ID match
-      if (tName.length > 3 && textToMatch.includes(tName)) score += 10;
-      if (tId.length > 3 && textToMatch.includes(tId)) score += 10;
+      if (tName.length > 3 && textToMatch.includes(tName)) score += 12;
+      if (tId.length > 3 && textToMatch.includes(tId)) score += 12;
 
-      // Special Topics
-      if ((textToMatch.includes('lovable') || textToMatch.includes('builder') || textToMatch.includes('no-code')) && 
-          (tId.includes('lovable') || tId.includes('v0') || tId.includes('bolt') || tId.includes('replit') || tCat.includes('web') || tCat.includes('code'))) {
-        score += 5;
+      // Booking & Scheduling
+      if (isBookingTopic) {
+        if (tId === 'cal-com' || tId === 'calendly' || tId === 'acuity-scheduling' || tId === 'tidycal' || tId.includes('schedule') || tName.includes('calendar') || tName.includes('booking')) {
+          score += 15;
+        } else if (tCat === 'meeting-ai' || tCat === 'forms-leadgen' || tCat === 'crm') {
+          score += 8;
+        }
       }
 
-      if ((textToMatch.includes('stripe') || textToMatch.includes('paypal') || textToMatch.includes('subscription') || textToMatch.includes('payment')) &&
-          (tId.includes('stripe') || tId.includes('paddle') || tId.includes('lemon') || tCat.includes('finance') || tCat.includes('invoicing'))) {
-        score += 5;
+      // Lead Generation & Forms
+      if (isLeadGenTopic) {
+        if (tCat.includes('forms') || tCat.includes('leadgen') || tId.includes('form') || tId.includes('typeform') || tId.includes('tally')) score += 8;
       }
 
-      if ((textToMatch.includes('open-source') || textToMatch.includes('open-sourced') || textToMatch.includes('self-hosted') || textToMatch.includes('alternative')) &&
-          (t.isOpenSource || tCat.includes('open-source') || tCat.includes('no-code') || tId.includes('n8n') || tId.includes('supabase') || tId.includes('postiz'))) {
-        score += 5;
+      // CRM & Sales
+      if (isCrmTopic) {
+        if (tCat.includes('crm') || tId.includes('crm') || tId.includes('hubspot') || tId.includes('zoho')) score += 8;
+      }
+
+      // Payments & Subscriptions
+      if (isPaymentTopic) {
+        if (tId.includes('stripe') || tId.includes('paddle') || tId.includes('lemon') || tCat.includes('finance') || tCat.includes('invoicing')) score += 8;
+      }
+
+      // Open Source / Self Hosted
+      if (isOpenSourceTopic) {
+        if (t.isOpenSource || tCat.includes('open-source') || tId.includes('n8n') || tId.includes('supabase') || tId.includes('postiz') || tId.includes('plausible')) score += 7;
+      }
+
+      // AI Builders
+      if (isBuilderTopic) {
+        if (tId.includes('lovable') || tId.includes('v0') || tId.includes('bolt') || tId.includes('replit') || tCat.includes('web') || tCat.includes('code')) score += 8;
       }
 
       if (textToMatch.includes('linktree') && (tId.includes('link') || tCat.includes('social') || tCat.includes('marketing'))) score += 5;
       if (textToMatch.includes('feedback') && (tName.includes('feedback') || tCat.includes('support') || tCat.includes('project'))) score += 5;
-      if (textToMatch.includes('crm') && tCat.includes('crm')) score += 5;
       if (textToMatch.includes('analytics') && tCat.includes('analytics')) score += 5;
       if (textToMatch.includes('database') && tCat.includes('database')) score += 5;
 
@@ -64,7 +94,12 @@ export default function ArticleView({ article, onBack }) {
       return keywordMatches.map(m => m.tool).slice(0, 3);
     }
 
-    // High quality default fallback: top rated featured tools
+    // High quality default fallback per topic type
+    if (isBookingTopic) {
+      const bookingDefaults = saasTools.filter(t => ['typeform-forms', 'hubspot', 'xuscrm', 'fillout-forms', 'n8n'].includes(t.id));
+      if (bookingDefaults.length > 0) return bookingDefaults.slice(0, 3);
+    }
+
     const topFeaturedDefaults = ['cursor-ai', 'claude-ai', 'n8n', 'lovable', 'xuscrm', 'supabase', 'postiz'];
     const defaults = saasTools.filter(t => topFeaturedDefaults.includes(t.id));
     return defaults.length > 0 ? defaults.slice(0, 3) : saasTools.slice(0, 3);
