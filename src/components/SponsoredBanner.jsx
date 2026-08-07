@@ -33,10 +33,9 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '10px',
-      whiteSpace: 'nowrap',
-      overflowX: 'auto',
-      WebkitOverflowScrolling: 'touch'
+      gap: '8px',
+      flexWrap: 'wrap',
+      maxWidth: '100vw'
     }}>
       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
         <span style={{
