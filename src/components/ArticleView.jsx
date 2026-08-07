@@ -15,12 +15,30 @@ export default function ArticleView({ article, onBack }) {
     }
     
     const textToMatch = `${article.title || ''} ${article.question || ''} ${article.summary || ''} ${article.category || ''}`.toLowerCase();
+    
+    // Alternatives Intent Check & Named Tool Exclusion
+    const isAlternativesQuery = /alternative|alternatives|vs|instead of|replace|competitor/i.test(textToMatch);
+    const excludedToolIds = new Set();
+
+    if (isAlternativesQuery) {
+      saasTools.forEach(t => {
+        if (!t) return;
+        const tName = (t.name || '').toLowerCase();
+        const tId = (t.id || '').toLowerCase();
+        if (tName.length >= 3 && textToMatch.includes(tName)) {
+          excludedToolIds.add(t.id);
+        } else if (tId.length >= 3 && textToMatch.includes(tId)) {
+          excludedToolIds.add(t.id);
+        }
+      });
+    }
+
     const isSecurityTopic = /security|cyber|identity|vulnerability|ssh|k8s|sast|dast|pam|threat|firewall|ids|siem|compliance/i.test(textToMatch);
     
     // Topic Flags
     const isBookingTopic = /booking|schedule|appointment|calendar|meeting/i.test(textToMatch);
     const isLeadGenTopic = /lead|leadgen|form|survey|funnel|capture|conversion|landing/i.test(textToMatch);
-    const isPaymentTopic = /stripe|paypal|payment|checkout|subscription|billing/i.test(textToMatch);
+    const isPaymentTopic = /stripe|paypal|payment|checkout|subscription|billing|merchant|gateway/i.test(textToMatch);
     const isCrmTopic = /crm|sales pipeline|real estate|client management/i.test(textToMatch);
     const isOpenSourceTopic = /open-source|open-sourced|self-hosted/i.test(textToMatch);
     const isBuilderTopic = /lovable|builder|v0|bolt|no-code|nocode|web-builder/i.test(textToMatch);
@@ -34,6 +52,16 @@ export default function ArticleView({ article, onBack }) {
       const tCat = (t.category || '').toLowerCase();
       const tDesc = (t.description || '').toLowerCase();
 
+      // Skip tools explicitly named as target to be replaced in an Alternatives article
+      if (isAlternativesQuery && excludedToolIds.has(t.id)) {
+        return;
+      }
+
+      // Filter out non-B2B payment niche tools like SplitMatePro from SaaS gateway recommendations
+      if (isPaymentTopic && (tId === 'splitmatepro' || tDesc.includes('roommate') || tDesc.includes('tenant expense'))) {
+        return;
+      }
+
       // If NOT a security topic, skip specialized cybersecurity tools to prevent odd matches
       if (!isSecurityTopic && (tCat.includes('cybersecurity') || tCat.includes('security-passwords') || tId.includes('qualys') || tId.includes('caldera') || tId.includes('semgrep') || tId.includes('checkov') || tId.includes('kube'))) {
         return;
@@ -41,9 +69,18 @@ export default function ArticleView({ article, onBack }) {
 
       let score = 0;
 
-      // Exact name/ID match
-      if (tName.length > 3 && textToMatch.includes(tName)) score += 12;
-      if (tId.length > 3 && textToMatch.includes(tId)) score += 12;
+      // Exact name/ID match (only if not an alternatives query for that specific tool)
+      if (tName.length > 3 && textToMatch.includes(tName) && !isAlternativesQuery) score += 12;
+      if (tId.length > 3 && textToMatch.includes(tId) && !isAlternativesQuery) score += 12;
+
+      // Payments & Subscriptions
+      if (isPaymentTopic) {
+        if (['paddle', 'lemonsqueezy', 'chargebee', 'fastspring', 'recurly', 'adyen', 'stripe', 'paypal', '2checkout'].includes(tId)) {
+          score += 15;
+        } else if (tCat === 'invoicing' || tCat === 'finance-payments' || tCat === 'finance-accounting') {
+          score += 6;
+        }
+      }
 
       // Booking & Scheduling
       if (isBookingTopic) {
@@ -62,11 +99,6 @@ export default function ArticleView({ article, onBack }) {
       // CRM & Sales
       if (isCrmTopic) {
         if (tCat.includes('crm') || tId.includes('crm') || tId.includes('hubspot') || tId.includes('zoho')) score += 8;
-      }
-
-      // Payments & Subscriptions
-      if (isPaymentTopic) {
-        if (tId.includes('stripe') || tId.includes('paddle') || tId.includes('lemon') || tCat.includes('finance') || tCat.includes('invoicing')) score += 8;
       }
 
       // Open Source / Self Hosted
@@ -95,14 +127,19 @@ export default function ArticleView({ article, onBack }) {
     }
 
     // High quality default fallback per topic type
+    if (isPaymentTopic) {
+      const paymentDefaults = saasTools.filter(t => ['paddle', 'lemonsqueezy', 'chargebee', 'fastspring', 'recurly'].includes(t.id) && !excludedToolIds.has(t.id));
+      if (paymentDefaults.length > 0) return paymentDefaults.slice(0, 3);
+    }
+
     if (isBookingTopic) {
-      const bookingDefaults = saasTools.filter(t => ['typeform-forms', 'hubspot', 'xuscrm', 'fillout-forms', 'n8n'].includes(t.id));
+      const bookingDefaults = saasTools.filter(t => ['typeform-forms', 'hubspot', 'xuscrm', 'fillout-forms', 'n8n'].includes(t.id) && !excludedToolIds.has(t.id));
       if (bookingDefaults.length > 0) return bookingDefaults.slice(0, 3);
     }
 
     const topFeaturedDefaults = ['cursor-ai', 'claude-ai', 'n8n', 'lovable', 'xuscrm', 'supabase', 'postiz'];
-    const defaults = saasTools.filter(t => topFeaturedDefaults.includes(t.id));
-    return defaults.length > 0 ? defaults.slice(0, 3) : saasTools.slice(0, 3);
+    const defaults = saasTools.filter(t => topFeaturedDefaults.includes(t.id) && !excludedToolIds.has(t.id));
+    return defaults.length > 0 ? defaults.slice(0, 3) : saasTools.filter(t => !excludedToolIds.has(t.id)).slice(0, 3);
   })();
 
   const topWinner = recommendedTools.length > 0 ? recommendedTools[0] : null;
