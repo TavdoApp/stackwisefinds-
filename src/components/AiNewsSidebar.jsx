@@ -1,191 +1,169 @@
-import React, { useState } from 'react';
-import { Newspaper, ExternalLink, X, Sparkles } from 'lucide-react';
+import React from 'react';
+import { ShieldCheck, Sparkles, TrendingUp, BookOpen, ExternalLink, Award, Star } from 'lucide-react';
+import { saasTools } from '../data/saasData.jsx';
+import { highIntentArticles } from '../data/articlesData.js';
+import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
-const newsItems = [
-  {
-    id: 1,
-    number: '1',
-    title: 'OpenAI Releases Sora 1.5 with Real-Time Video Generation & Audio Sync',
-    source: 'TechCrunch',
-    date: 'Today',
-    summary: 'OpenAI has officially launched Sora 1.5, allowing developers and video creators to generate 60-second 1080p video clips with integrated audio track synchronization in real-time.',
-    url: 'https://techcrunch.com'
-  },
-  {
-    id: 2,
-    number: '2',
-    title: 'Anthropic Unveils Claude 3.5 Sonnet Artifacts for Team Enterprise Workflows',
-    source: 'VentureBeat',
-    date: 'Today',
-    summary: 'Anthropic introduced real-time interactive canvas artifacts inside Claude 3.5, enabling live code execution, UI previewing, and collaborative markdown editing.',
-    url: 'https://venturebeat.com'
-  },
-  {
-    id: 3,
-    number: '3',
-    title: 'n8n Raises $40M Series B as Open-Source Workflow Automation Explodes',
-    source: 'Reuters',
-    date: 'Yesterday',
-    summary: 'Self-hosted automation platform n8n surpassed 100,000 active instances worldwide as enterprises seek private, self-hosted alternatives to Zapier and Make.',
-    url: 'https://reuters.com'
-  },
-  {
-    id: 4,
-    number: '4',
-    title: 'Cursor AI Reaches $2.5B Valuation Driven by Independent Developer Adoption',
-    source: 'The Information',
-    date: 'Yesterday',
-    summary: 'An-based AI code editor Cursor has grown past $50M ARR as software teams replace traditional IDE setups with autonomous code generation workflows.',
-    url: 'https://theinformation.com'
-  },
-  {
-    id: 5,
-    number: '5',
-    title: 'XusCRM Ingests Real Estate Leads via WhatsApp & Bayut Webhooks in UAE',
-    source: 'SaaS Weekly',
-    date: '3d ago',
-    summary: 'XusCRM introduced real-time automated lead qualification for Dubai real estate brokers with instant WhatsApp routing and Bayut CRM webhooks.',
-    url: 'https://xuscrm.com'
-  }
-];
+export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
+  // Helper to parse monthlyVisits (e.g. "140.0M" -> 140000000)
+  const parseVisits = (v) => {
+    if (!v) return 0;
+    const num = parseFloat(v);
+    if (isNaN(num)) return 0;
+    const str = String(v).toUpperCase();
+    if (str.includes('M')) return num * 1000000;
+    if (str.includes('K')) return num * 1000;
+    return num;
+  };
 
-export default function AiNewsSidebar() {
-  const [selectedNews, setSelectedNews] = useState(null);
+  // Top 8 Trending Tools by real monthly web traffic
+  const topTrending = [...saasTools]
+    .sort((a, b) => parseVisits(b.monthlyVisits) - parseVisits(a.monthlyVisits))
+    .slice(0, 8);
+
+  const topGuides = highIntentArticles.slice(0, 6);
 
   return (
-    <div style={{
-      background: '#FFFFFF',
-      border: '1px solid var(--border-color)',
-      borderRadius: '24px',
-      padding: '20px',
-      boxShadow: 'var(--shadow-soft)',
-      position: 'sticky',
-      top: '90px'
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
-        <Newspaper size={18} color="#82A735" />
-        <h3 style={{ fontSize: '0.98rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
-          AI & Tech News
-        </h3>
-        <span style={{ fontSize: '0.65rem', background: '#82A735', color: '#FFFFFF', padding: '1px 6px', borderRadius: '9999px', fontWeight: '800', marginLeft: 'auto' }}>
-          LIVE
-        </span>
-      </div>
-
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-        {newsItems.map(item => (
-          <div
-            key={item.id}
-            onClick={() => setSelectedNews(item)}
-            style={{
-              display: 'flex',
-              alignItems: 'flex-start',
-              gap: '10px',
-              cursor: 'pointer',
-              transition: 'all 0.15s ease',
-              padding: '8px',
-              borderRadius: '12px',
-              background: '#F6F7F2'
-            }}
-          >
-            <span style={{
-              fontWeight: '800',
-              fontSize: '1rem',
-              color: '#82A735',
-              lineHeight: '1.2',
-              flexShrink: 0,
-              width: '16px'
-            }}>
-              {item.number}
-            </span>
-            <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{
-                fontSize: '0.85rem',
-                fontWeight: '700',
-                color: 'var(--text-dark)',
-                lineHeight: '1.35',
-                display: '-webkit-box',
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden'
-              }}>
-                {item.title}
-              </div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '4px' }}>
-                {item.source} • {item.date}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {selectedNews && (
+    <aside style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      
+      {/* Widget 1: Top 5 Trending Leaderboard */}
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '16px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
         <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(20, 30, 20, 0.7)',
-          backdropFilter: 'blur(6px)',
-          zIndex: 10000,
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          padding: '20px'
+          justifyContent: 'space-between',
+          marginBottom: '12px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid var(--border-color)'
         }}>
-          <div style={{
-            background: '#FFFFFF',
-            borderRadius: '24px',
-            maxWidth: '500px',
-            width: '100%',
-            padding: '28px',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-            position: 'relative'
-          }}>
-            <button
-              onClick={() => setSelectedNews(null)}
-              aria-label="Close news modal"
-              style={{ position: 'absolute', top: '18px', right: '18px', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)' }}
-            >
-              <X size={20} />
-            </button>
-
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '8px' }}>
-              <Sparkles size={14} /> {selectedNews.source} • {selectedNews.date}
-            </div>
-
-            <h3 style={{ fontSize: '1.3rem', fontWeight: '800', marginBottom: '14px', color: 'var(--text-dark)', lineHeight: '1.3' }}>
-              {selectedNews.title}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <TrendingUp size={16} color="#82A735" />
+            <h3 style={{ fontSize: '0.92rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+              Top Traffic Gainers
             </h3>
-
-            <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: '1.6', marginBottom: '24px' }}>
-              {selectedNews.summary}
-            </p>
-
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <a
-                href={selectedNews.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill-green"
-                style={{ flex: 1, padding: '10px 16px', fontSize: '0.85rem', justifyContent: 'center' }}
-              >
-                <span>Read Original Story</span>
-                <ExternalLink size={14} />
-              </a>
-
-              <button
-                onClick={() => setSelectedNews(null)}
-                className="btn-pill-outline"
-                style={{ padding: '10px 16px', fontSize: '0.85rem' }}
-              >
-                Close
-              </button>
-            </div>
           </div>
+          <span style={{ fontSize: '0.65rem', background: '#EBF0E1', color: '#82A735', fontWeight: '800', padding: '2px 6px', borderRadius: '4px' }}>
+            Weekly
+          </span>
         </div>
-      )}
-    </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {topTrending.map((tool, index) => (
+            <div
+              key={tool.id}
+              onClick={() => onSelectTool && onSelectTool(tool.id)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 8px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                background: '#F6F7F2',
+                transition: 'all 0.15s ease'
+              }}
+            >
+              <span style={{
+                fontSize: '0.72rem',
+                fontWeight: '900',
+                color: index === 0 ? '#FFB800' : index === 1 ? '#94A3B8' : '#CBD5E1',
+                width: '14px'
+              }}>
+                #{index + 1}
+              </span>
+
+              <div style={{ fontWeight: '700', fontSize: '0.8rem', color: 'var(--text-dark)', flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                {tool.name}
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '2px', fontSize: '0.72rem', fontWeight: '800', color: '#82A735' }}>
+                <Star size={11} fill="#82A735" color="#82A735" />
+                <span>{tool.rating}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Widget 2: Popular Buyer Guides & Alternatives */}
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '16px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+          marginBottom: '12px',
+          paddingBottom: '8px',
+          borderBottom: '1px solid var(--border-color)'
+        }}>
+          <BookOpen size={16} color="#82A735" />
+          <h3 style={{ fontSize: '0.92rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Buyer Comparison Guides
+          </h3>
+        </div>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+          {topGuides.map(art => (
+            <div
+              key={art.id}
+              onClick={() => {
+                if (onSelectArticle) onSelectArticle(art);
+                else window.location.hash = `guide-${art.id}`;
+              }}
+              style={{
+                cursor: 'pointer',
+                padding: '8px 10px',
+                borderRadius: '10px',
+                background: '#F6F7F2',
+                transition: 'all 0.15s ease'
+              }}
+            >
+              <div style={{ fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-dark)', lineHeight: '1.3', marginBottom: '3px' }}>
+                {art.title}
+              </div>
+              <div style={{ fontSize: '0.68rem', color: '#82A735', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <span>Read Analysis</span>
+                <ExternalLink size={10} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Widget 3: Directory Quality Guarantee */}
+      <div style={{
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
+        borderRadius: '16px',
+        padding: '16px',
+        boxShadow: 'var(--shadow-soft)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+          <ShieldCheck size={17} color="#82A735" />
+          <h3 style={{ fontSize: '0.9rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Directory Quality Guarantee
+          </h3>
+        </div>
+        <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 10px 0' }}>
+          Every tool on StakDock undergoes HTTPS SSL verification, OpenPageRank domain scoring, and duplicate filtering.
+        </p>
+        <div style={{ background: '#F6F7F2', borderRadius: '8px', padding: '8px 10px', fontSize: '0.72rem', color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <Award size={14} color="#82A735" />
+          <span>Independent & Reader Supported</span>
+        </div>
+      </div>
+
+    </aside>
   );
 }
