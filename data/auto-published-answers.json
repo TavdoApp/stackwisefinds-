@@ -1,7 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T05:43:26.352Z",
+  "updatedAt": "2026-08-07T07:22:09.290Z",
   "answers": [
+    {
+      "id": "answer-a0c358e86903e6f8",
+      "slug": "is-it-a-dumb-idea-to-build-a-lovable-alternative-for-small-businesses-a0c358e8",
+      "title": "How to evaluate: Is it a dumb idea to build a Lovable alternative for small businesses?",
+      "question": "Is it a dumb idea to build a Lovable alternative for small businesses?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "alternatives",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vhsdig/is_it_a_dumb_idea_to_build_a_lovable_alternative/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-07T07:22:09.290Z",
+      "canonicalUrl": "https://stakdock.com/guides/is-it-a-dumb-idea-to-build-a-lovable-alternative-for-small-businesses-a0c358e8/",
+      "sections": [
+        {
+          "heading": "Define what must improve",
+          "body": "For an alternative, identify the current limitation first: price, integrations, reporting, support, data export, or performance. A replacement only helps when it solves that specific constraint."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-36b8b7b8baed80ae",
       "slug": "what-are-yours-repetitive-saas-functionalities-36b8b7b8",

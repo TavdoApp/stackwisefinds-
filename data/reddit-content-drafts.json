@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T05:43:25.812Z",
+  "updatedAt": "2026-08-07T07:22:08.422Z",
   "drafts": [
+    {
+      "id": "a0c358e86903e6f8",
+      "status": "auto_published",
+      "question": "Is it a dumb idea to build a Lovable alternative for small businesses?",
+      "suggestedSlug": "is-it-a-dumb-idea-to-build-a-lovable-alternative-for-small-businesses",
+      "intent": "alternatives",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vhsdig/is_it_a_dumb_idea_to_build_a_lovable_alternative/",
+      "sourcePublishedAt": "2026-08-07T06:04:15+00:00",
+      "discoveredAt": "2026-08-07T07:22:08.422Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-07T07:22:09.290Z",
+        "canonicalUrl": "https://stakdock.com/guides/is-it-a-dumb-idea-to-build-a-lovable-alternative-for-small-businesses-a0c358e8/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "2f2b635cb53f63d5",
       "status": "pending_review",
