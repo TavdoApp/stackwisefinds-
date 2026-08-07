@@ -6,10 +6,17 @@ import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
 
-  // Display 15 spotlight cards matching exact preview a0ee1211
-  const excludeDevopsForSpotlight = ['onelogin', 'delinea', 'manageengine-pam360', 'opal-security', 'semgrep', 'checkov', 'kube-bench', 'kube-hunter'];
+  // Display exact 15 spotlight cards matching preview a0ee1211
+  const spotlightIds = [
+    'sora-openai', 'gemini-advanced', 'chatgpt-plus', 'blot-im', 'pointerpro',
+    'tigergraph-db', 'basecamp-project', 'interact-quiz', 'react-hook-form',
+    'gorgias-helpdesk', 'kobotoolbox', 'todoist-task', 'sonix-audio',
+    'indesign-publish', 'substack-notes', 'gong-io', 'uservoice-feedback',
+    'gravity-forms', 'olark-chat'
+  ];
+
   const featuredList = saasTools
-    .filter(t => t.featured || (t.badge && !excludeDevopsForSpotlight.includes(t.id)))
+    .filter(t => t && (t.featured || spotlightIds.includes(t.id)))
     .slice(0, 15);
 
   return (
