@@ -8,16 +8,14 @@ export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
 
   // Display exact 15 spotlight cards matching preview a0ee1211
   const spotlightIds = [
-    'sora-openai', 'gemini-advanced', 'chatgpt-plus', 'blot-im', 'pointerpro',
-    'tigergraph-db', 'basecamp-project', 'interact-quiz', 'react-hook-form',
-    'gorgias-helpdesk', 'kobotoolbox', 'todoist-task', 'sonix-audio',
-    'indesign-publish', 'substack-notes', 'gong-io', 'uservoice-feedback',
-    'gravity-forms', 'olark-chat'
+    'lancedb', 'vespa', 'dragonfly', 'valkey', 'surrealdb',
+    'fauna', 'scylladb', 'timescaledb', 'opensearch', 'meilisearch',
+    'typesense', 'elasticsearch', 'memgraph', 'arangodb', 'tigergraph-db'
   ];
 
   const featuredList = saasTools
-    .filter(t => t && (t.featured || spotlightIds.includes(t.id)))
-    .slice(0, 15);
+    .filter(t => t && spotlightIds.includes(t.id))
+    .sort((a, b) => spotlightIds.indexOf(a.id) - spotlightIds.indexOf(b.id));
 
   return (
     <div style={{
