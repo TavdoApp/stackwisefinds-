@@ -86,7 +86,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
 
             <div style={{ minWidth: 0, flex: 1 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                <h1 className="tool-detail-title" style={{ fontSize: '2.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
+                <h1 className="tool-detail-title" style={{ fontSize: '2.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)', overflowWrap: 'anywhere' }}>
                   {tool.name}
                 </h1>
                 {tool.badge && (
