@@ -5,35 +5,69 @@ import { saasTools } from '../data/saasData.jsx';
 export default function ArticleView({ article, onBack }) {
   if (!article) return null;
 
+  const isAlternativeIntent = (article.title || '').toLowerCase().includes('alternative') || 
+                              (article.question || '').toLowerCase().includes('alternative') || 
+                              article.intent === 'alternatives';
+
+  const formattedDate = (() => {
+    if (article.publishDate) return article.publishDate;
+    if (article.publishedAt) {
+      try {
+        const d = new Date(article.publishedAt);
+        if (!isNaN(d.getTime())) {
+          return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        }
+      } catch (e) {
+        // Fallback below
+      }
+    }
+    return 'August 7, 2026';
+  })();
+
   const recommendedTools = (() => {
     if (Array.isArray(article.recommendedToolIds) && article.recommendedToolIds.length > 0) {
       return saasTools.filter(t => article.recommendedToolIds.includes(t.id));
     }
     
     const textToMatch = `${article.title || ''} ${article.question || ''} ${article.category || ''}`.toLowerCase();
+
+    // Identify subject tool if this is an "alternatives to X" query
+    let excludedSubjectToolId = null;
+    if (isAlternativeIntent) {
+      const subject = saasTools.find(t => {
+        const name = (t.name || '').toLowerCase();
+        const id = (t.id || '').toLowerCase();
+        return (name.length > 3 && textToMatch.includes(name)) || (id.length > 3 && textToMatch.includes(id));
+      });
+      if (subject) excludedSubjectToolId = subject.id;
+    }
     
-    const matches = saasTools.filter(t => {
+    let matches = saasTools.filter(t => {
       if (!t) return false;
+      if (excludedSubjectToolId && t.id === excludedSubjectToolId) return false;
+
       const toolName = (t.name || '').toLowerCase();
       const toolId = (t.id || '').toLowerCase();
       const toolCat = (t.category || '').toLowerCase();
 
-      if (toolName.length > 3 && textToMatch.includes(toolName)) return true;
-      if (toolId.length > 3 && textToMatch.includes(toolId)) return true;
+      if (!isAlternativeIntent && toolName.length > 3 && textToMatch.includes(toolName)) return true;
       
+      if (textToMatch.includes('lovable') || textToMatch.includes('bolt') || textToMatch.includes('v0') || textToMatch.includes('web builder') || textToMatch.includes('no-code')) {
+        if (toolCat.includes('code') || toolCat.includes('developer') || toolCat.includes('ai') || toolId.includes('v0') || toolId.includes('cursor') || toolId.includes('replit')) return true;
+      }
+      if (textToMatch.includes('stripe') || textToMatch.includes('paypal') || textToMatch.includes('billing')) {
+        if (toolCat.includes('payment') || toolCat.includes('billing') || toolCat.includes('finance')) return true;
+      }
       if (textToMatch.includes('analytics') && toolCat.includes('analytics')) return true;
-      if (textToMatch.includes('video') && toolCat.includes('video')) return true;
       if (textToMatch.includes('crm') && toolCat.includes('crm')) return true;
       if (textToMatch.includes('design') && toolCat.includes('design')) return true;
-      if (textToMatch.includes('seo') && toolCat.includes('seo')) return true;
-      if (textToMatch.includes('code') || textToMatch.includes('dev') || textToMatch.includes('python') || textToMatch.includes('javascript')) {
-        if (toolCat.includes('developer') || toolCat.includes('code')) return true;
-      }
-      if (textToMatch.includes('linktree') && (toolName.includes('link') || toolId.includes('link') || toolCat.includes('marketing'))) return true;
-      if (textToMatch.includes('feedback') && (toolName.includes('feedback') || toolCat.includes('customer') || toolCat.includes('project'))) return true;
 
       return false;
     });
+
+    if (matches.length === 0) {
+      matches = saasTools.filter(t => t.featured && t.id !== excludedSubjectToolId);
+    }
 
     return matches.slice(0, 3);
   })();
@@ -61,7 +95,7 @@ export default function ArticleView({ article, onBack }) {
             <User size={14} color="#82A735" /> <span>{article.author || 'Ossama Tbili'}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Calendar size={14} color="#82A735" /> <span>{article.publishDate || 'July 24, 2026'}</span>
+            <Calendar size={14} color="#82A735" /> <span>{formattedDate}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <Clock size={14} color="#82A735" /> <span>{article.readTime || '6 min read'}</span>
@@ -104,7 +138,7 @@ export default function ArticleView({ article, onBack }) {
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.75rem', textTransform: 'uppercase' }}>
-                <Award size={14} /> #1 Top Overall Recommendation
+                <Award size={14} /> {isAlternativeIntent ? '#1 Top Rated Alternative Pick' : '#1 Top Overall Recommendation'}
               </div>
               <h3 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)' }}>{topWinner.name}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{topWinner.description}</p>
