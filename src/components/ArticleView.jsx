@@ -5,40 +5,88 @@ import { saasTools } from '../data/saasData.jsx';
 export default function ArticleView({ article, onBack }) {
   if (!article) return null;
 
+  // Smart Contextual Tool Recommendation System
   const recommendedTools = (() => {
+    if (!saasTools || saasTools.length === 0) return [];
+
     if (Array.isArray(article.recommendedToolIds) && article.recommendedToolIds.length > 0) {
-      return saasTools.filter(t => article.recommendedToolIds.includes(t.id));
+      const explicit = saasTools.filter(t => article.recommendedToolIds.includes(t.id));
+      if (explicit.length > 0) return explicit.slice(0, 4);
     }
     
-    const textToMatch = `${article.title || ''} ${article.question || ''} ${article.category || ''}`.toLowerCase();
+    const textToMatch = `${article.title || ''} ${article.question || ''} ${article.summary || ''} ${article.category || ''}`.toLowerCase();
     
-    const matches = saasTools.filter(t => {
-      if (!t) return false;
-      const toolName = (t.name || '').toLowerCase();
-      const toolId = (t.id || '').toLowerCase();
-      const toolCat = (t.category || '').toLowerCase();
+    // Keyword to Category / Tool ID Mappings
+    const keywordMatches = [];
+    
+    saasTools.forEach(t => {
+      if (!t) return;
+      const tName = (t.name || '').toLowerCase();
+      const tId = (t.id || '').toLowerCase();
+      const tCat = (t.category || '').toLowerCase();
+      const tDesc = (t.description || '').toLowerCase();
 
-      if (toolName.length > 3 && textToMatch.includes(toolName)) return true;
-      if (toolId.length > 3 && textToMatch.includes(toolId)) return true;
-      
-      if (textToMatch.includes('analytics') && toolCat.includes('analytics')) return true;
-      if (textToMatch.includes('video') && toolCat.includes('video')) return true;
-      if (textToMatch.includes('crm') && toolCat.includes('crm')) return true;
-      if (textToMatch.includes('design') && toolCat.includes('design')) return true;
-      if (textToMatch.includes('seo') && toolCat.includes('seo')) return true;
-      if (textToMatch.includes('code') || textToMatch.includes('dev') || textToMatch.includes('python') || textToMatch.includes('javascript')) {
-        if (toolCat.includes('developer') || toolCat.includes('code')) return true;
+      let score = 0;
+
+      // Exact name/ID match
+      if (tName.length > 3 && textToMatch.includes(tName)) score += 10;
+      if (tId.length > 3 && textToMatch.includes(tId)) score += 10;
+
+      // Special Topics
+      if ((textToMatch.includes('lovable') || textToMatch.includes('builder') || textToMatch.includes('no-code')) && 
+          (tId.includes('lovable') || tId.includes('v0') || tId.includes('bolt') || tId.includes('replit') || tCat.includes('web') || tCat.includes('code'))) {
+        score += 5;
       }
-      if (textToMatch.includes('linktree') && (toolName.includes('link') || toolId.includes('link') || toolCat.includes('marketing'))) return true;
-      if (textToMatch.includes('feedback') && (toolName.includes('feedback') || toolCat.includes('customer') || toolCat.includes('project'))) return true;
 
-      return false;
+      if ((textToMatch.includes('stripe') || textToMatch.includes('paypal') || textToMatch.includes('subscription') || textToMatch.includes('payment')) &&
+          (tId.includes('stripe') || tId.includes('paddle') || tId.includes('lemon') || tCat.includes('finance') || tCat.includes('invoicing'))) {
+        score += 5;
+      }
+
+      if ((textToMatch.includes('open-source') || textToMatch.includes('open-sourced') || textToMatch.includes('self-hosted') || textToMatch.includes('alternative')) &&
+          (t.isOpenSource || tCat.includes('open-source') || tCat.includes('no-code') || tId.includes('n8n') || tId.includes('supabase') || tId.includes('postiz'))) {
+        score += 5;
+      }
+
+      if (textToMatch.includes('linktree') && (tId.includes('link') || tCat.includes('social') || tCat.includes('marketing'))) score += 5;
+      if (textToMatch.includes('feedback') && (tName.includes('feedback') || tCat.includes('support') || tCat.includes('project'))) score += 5;
+      if (textToMatch.includes('crm') && tCat.includes('crm')) score += 5;
+      if (textToMatch.includes('analytics') && tCat.includes('analytics')) score += 5;
+      if (textToMatch.includes('database') && tCat.includes('database')) score += 5;
+
+      if (score > 0) {
+        keywordMatches.push({ tool: t, score });
+      }
     });
 
-    return matches.slice(0, 3);
+    if (keywordMatches.length > 0) {
+      keywordMatches.sort((a, b) => b.score - a.score);
+      return keywordMatches.map(m => m.tool).slice(0, 3);
+    }
+
+    // High quality default fallback: top rated featured tools
+    const topFeaturedDefaults = ['cursor-ai', 'claude-ai', 'n8n', 'lovable', 'xuscrm', 'supabase', 'postiz'];
+    const defaults = saasTools.filter(t => topFeaturedDefaults.includes(t.id));
+    return defaults.length > 0 ? defaults.slice(0, 3) : saasTools.slice(0, 3);
   })();
 
   const topWinner = recommendedTools.length > 0 ? recommendedTools[0] : null;
+
+  // Format Date cleanly
+  const formattedDate = (() => {
+    if (article.publishDate) return article.publishDate;
+    if (article.publishedAt) {
+      try {
+        const d = new Date(article.publishedAt);
+        if (!isNaN(d.getTime())) {
+          return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        }
+      } catch {
+        // fallback
+      }
+    }
+    return 'August 7, 2026';
+  })();
 
   return (
     <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '900px' }}>
@@ -61,7 +109,7 @@ export default function ArticleView({ article, onBack }) {
             <User size={14} color="#82A735" /> <span>{article.author || 'Ossama Tbili'}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <Calendar size={14} color="#82A735" /> <span>{article.publishDate || 'July 24, 2026'}</span>
+            <Calendar size={14} color="#82A735" /> <span>{formattedDate}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <Clock size={14} color="#82A735" /> <span>{article.readTime || '6 min read'}</span>
