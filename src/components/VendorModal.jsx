@@ -420,15 +420,30 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     marginTop: '6px'
                   }}
                 >
-                  {packageType === 'free' ? (
+                  {packageType === 'free' && (
                     <>
                       <Check size={18} />
                       <span>{isSubmitting ? 'Submitting Free Listing...' : 'Submit Free Software Listing ($0)'}</span>
                     </>
-                  ) : (
+                  )}
+                  {packageType === 'top-banner' && (
                     <>
                       <CreditCard size={18} />
-                      <span>{isSubmitting ? 'Processing Application...' : 'Proceed to Featured Listing ($99/yr)'}</span>
+                      <span>{isSubmitting ? 'Processing Checkout...' : 'Proceed to Top Banner Sponsor ($99/mo)'}</span>
+                      <ArrowRight size={16} />
+                    </>
+                  )}
+                  {packageType === 'in-feed' && (
+                    <>
+                      <CreditCard size={18} />
+                      <span>{isSubmitting ? 'Processing Checkout...' : 'Proceed to In-Feed Sponsor ($49/mo)'}</span>
+                      <ArrowRight size={16} />
+                    </>
+                  )}
+                  {packageType === 'premium' && (
+                    <>
+                      <CreditCard size={18} />
+                      <span>{isSubmitting ? 'Processing Checkout...' : 'Proceed to Featured Annual ($99/yr)'}</span>
                       <ArrowRight size={16} />
                     </>
                   )}
