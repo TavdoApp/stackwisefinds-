@@ -8,7 +8,28 @@ import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
   const [activeTab, setActiveTab] = useState('product-info');
 
-  const tool = saasTools.find(t => t.id === toolId) || saasTools[0];
+  const resolveTool = (rawId) => {
+    if (!rawId) return saasTools[0];
+    const decoded = decodeURIComponent(String(rawId)).toLowerCase().trim();
+    const slugified = decoded.replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+    return saasTools.find(t => {
+      if (!t) return false;
+      const tid = String(t.id || '').toLowerCase();
+      const tname = String(t.name || '').toLowerCase();
+      const tdom = String(t.domain || '').toLowerCase();
+
+      return (
+        tid === decoded ||
+        tid === slugified ||
+        tname === decoded ||
+        tname.replace(/\s+/g, '-') === slugified ||
+        (tdom && (decoded.includes(tdom.replace(/\..*$/, '')) || slugified.includes(tdom.replace(/\..*$/, ''))))
+      );
+    }) || saasTools[0];
+  };
+
+  const tool = resolveTool(toolId);
   const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`;

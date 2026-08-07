@@ -7,16 +7,22 @@ export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
 
   // Display 15 spotlight cards to fill left column continuously
+  // Display top featured spotlight cards
   const featuredList = saasTools
-    .filter(t => t.featured || t.badge || t.rating >= 4.8)
-    .slice(0, 15);
+    .filter(t => t.featured)
+    .slice(0, 6);
 
   return (
     <div style={{
+      position: 'sticky',
+      top: '80px',
+      maxHeight: 'calc(100vh - 100px)',
+      overflowY: 'auto',
       display: 'flex',
       flexDirection: 'column',
-      gap: '10px'
-    }}>
+      gap: '10px',
+      paddingRight: '4px'
+    }} className="hide-scrollbar">
       <div style={{
         display: 'flex',
         alignItems: 'center',

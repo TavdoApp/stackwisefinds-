@@ -873,6 +873,20 @@ export default function App() {
               </section>
             )}
 
+            {currentView === 'tool-detail' && (
+              <ToolDetailPage
+                toolId={selectedToolDetailId}
+                onBack={() => {
+                  setCurrentView('directory');
+                  window.location.hash = '';
+                }}
+                onOpenReviewModal={(t) => setSelectedReviewTool(t)}
+                onToggleCompare={handleToggleCompare}
+                isSelectedForCompare={selectedCompareIds.includes(selectedToolDetailId)}
+                onOpenBadgeModal={() => setShowBadgeModal(true)}
+              />
+            )}
+
             {currentView === 'article-detail' && selectedArticle && (
               <ArticleView
                 article={selectedArticle}
