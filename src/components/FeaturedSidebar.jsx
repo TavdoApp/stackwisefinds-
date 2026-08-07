@@ -6,21 +6,17 @@ import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
 
-  // Display 22 spotlight cards to fill left column continuously alongside 20 main feed tools
+  // Display 15 spotlight cards to fill left column continuously
   const featuredList = saasTools
     .filter(t => t.featured || t.badge || t.rating >= 4.8)
-    .slice(0, 22);
+    .slice(0, 15);
 
   return (
-    <div 
-      style={{
-        position: 'sticky',
-        top: '80px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '10px'
-      }}
-    >
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '10px'
+    }}>
       <div style={{
         display: 'flex',
         alignItems: 'center',

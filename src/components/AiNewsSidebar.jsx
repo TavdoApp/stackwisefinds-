@@ -16,24 +16,15 @@ export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
     return num;
   };
 
-  // Top 12 Trending Tools by real monthly web traffic
+  // Top 8 Trending Tools by real monthly web traffic
   const topTrending = [...saasTools]
     .sort((a, b) => parseVisits(b.monthlyVisits) - parseVisits(a.monthlyVisits))
-    .slice(0, 12);
+    .slice(0, 8);
 
-  // Top 15 Buyer Comparison Guides
-  const topGuides = highIntentArticles.slice(0, 15);
+  const topGuides = highIntentArticles.slice(0, 6);
 
   return (
-    <aside 
-      style={{
-        position: 'sticky',
-        top: '80px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px'
-      }}
-    >
+    <aside style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       
       {/* Widget 1: Top 5 Trending Leaderboard */}
       <div style={{
