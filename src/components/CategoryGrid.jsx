@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { saasCategories, saasTools } from '../data/saasData.jsx';
-import { Sparkles, Grid } from 'lucide-react';
+import { Grid, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function CategoryGrid({ onSelectCategory, selectedCategory }) {
+  const [showAll, setShowAll] = useState(false);
+
   // Count tools per category
   const countsMap = {};
   saasTools.forEach(t => {
     countsMap[t.category] = (countsMap[t.category] || 0) + 1;
   });
 
-  const categoriesToShow = saasCategories.filter(c => c.id !== 'all').slice(0, 12);
+  const allCategories = saasCategories.filter(c => c.id !== 'all');
+  const categoriesToShow = showAll ? allCategories : allCategories.slice(0, 12);
 
   return (
     <div style={{ marginBottom: '40px' }}>
@@ -17,9 +20,30 @@ export default function CategoryGrid({ onSelectCategory, selectedCategory }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Grid size={18} color="#82A735" />
           <h3 style={{ fontSize: '1.2rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
-            Explore SaaS Categories
+            Explore SaaS Categories ({allCategories.length})
           </h3>
         </div>
+        <button
+          onClick={() => setShowAll(!showAll)}
+          style={{
+            background: 'none',
+            border: 'none',
+            color: '#82A735',
+            fontWeight: '700',
+            fontSize: '0.85rem',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            padding: '4px 8px'
+          }}
+        >
+          {showAll ? (
+            <>Show Less <ChevronUp size={16} /></>
+          ) : (
+            <>View All {allCategories.length} Categories <ChevronDown size={16} /></>
+          )}
+        </button>
       </div>
 
       <div style={{
@@ -63,3 +87,4 @@ export default function CategoryGrid({ onSelectCategory, selectedCategory }) {
     </div>
   );
 }
+
