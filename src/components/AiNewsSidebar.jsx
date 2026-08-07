@@ -25,16 +25,12 @@ export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
 
   return (
     <aside 
-      className="hide-scrollbar"
       style={{
         position: 'sticky',
-        top: '80px',
-        maxHeight: 'calc(100vh - 95px)',
-        overflowY: 'auto',
+        top: 'calc(100vh - 100% - 24px)',
         display: 'flex',
         flexDirection: 'column',
-        gap: '16px',
-        paddingRight: '2px'
+        gap: '16px'
       }}
     >
       

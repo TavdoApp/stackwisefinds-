@@ -226,6 +226,13 @@ button {
   margin-top: 24px;
 }
 
+.toolify-col-left,
+.toolify-col-right {
+  align-self: start;
+  position: sticky;
+  top: calc(100vh - 100% - 24px);
+}
+
 .toolify-col-left {
   border-right: 1px solid var(--border-color);
   padding-right: 16px;
