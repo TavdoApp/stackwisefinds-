@@ -12,11 +12,19 @@ export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
     .slice(0, 15);
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '10px'
-    }}>
+    <div 
+      className="hide-scrollbar"
+      style={{
+        position: 'sticky',
+        top: '80px',
+        maxHeight: 'calc(100vh - 95px)',
+        overflowY: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        paddingRight: '4px'
+      }}
+    >
       <div style={{
         display: 'flex',
         alignItems: 'center',

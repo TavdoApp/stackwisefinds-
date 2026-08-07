@@ -222,16 +222,8 @@ button {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr) 310px;
   gap: 20px;
-  align-items: stretch;
+  align-items: start;
   margin-top: 24px;
-}
-
-.toolify-col-left,
-.toolify-col-right {
-  align-self: start;
-  position: sticky;
-  top: 80px;
-  padding-bottom: 24px;
 }
 
 .toolify-col-left {

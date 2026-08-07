@@ -24,7 +24,19 @@ export default function AiNewsSidebar({ onSelectTool, onSelectArticle }) {
   const topGuides = highIntentArticles.slice(0, 6);
 
   return (
-    <aside style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+    <aside 
+      className="hide-scrollbar"
+      style={{
+        position: 'sticky',
+        top: '80px',
+        maxHeight: 'calc(100vh - 95px)',
+        overflowY: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        paddingRight: '2px'
+      }}
+    >
       
       {/* Widget 1: Top 5 Trending Leaderboard */}
       <div style={{
