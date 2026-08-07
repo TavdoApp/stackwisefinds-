@@ -67,10 +67,27 @@ class ErrorBoundary extends React.Component {
 }
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('directory');
+  const [selectedVersus, setSelectedVersus] = useState(() => {
+    if (typeof window === 'undefined') return { toolAId: 'freshbooks', toolBId: 'quickbooks' };
+    const p = window.location.pathname.toLowerCase();
+    if (p.startsWith('/vs/')) {
+      const parts = p.replace('/vs/', '').replace(/\/$/, '').split('-vs-');
+      if (parts.length === 2) return { toolAId: parts[0], toolBId: parts[1] };
+    }
+    return { toolAId: 'freshbooks', toolBId: 'quickbooks' };
+  });
+
+  const [currentView, setCurrentView] = useState(() => {
+    if (typeof window === 'undefined') return 'directory';
+    const p = window.location.pathname.toLowerCase();
+    if (p.startsWith('/vs/')) return 'versus-detail';
+    if (p.startsWith('/software/') || p.startsWith('/tool/')) return 'tool-detail';
+    if (p.startsWith('/alternatives/')) return 'alternatives-detail';
+    if (p.startsWith('/guides/')) return 'article-detail';
+    if (p === '/categories') return 'category-grid';
+    return 'directory';
+  });
   const [currentLang, setCurrentLang] = useState('en');
-  const [selectedArticle, setSelectedArticle] = useState(null);
-  const [selectedVersus, setSelectedVersus] = useState({ toolAId: 'freshbooks', toolBId: 'quickbooks' });
   const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState('freshbooks');
   const [selectedReviewTool, setSelectedReviewTool] = useState(null);
   const [selectedToolDetailId, setSelectedToolDetailId] = useState('cursor-ai');
