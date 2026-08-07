@@ -317,6 +317,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/software/zebracat-ai</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/zebracat-ai</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/software/onelogin-iam</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -21461,6 +21473,120 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-onelogin-iam</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-delinea-pam</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-manageengine-pam360</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-opal-security</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-sysdig-secure</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-aws-guardduty</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-aws-security-hub</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-trendmicro-cloud-one</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-tenable-io</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-qualys-cloud-platform</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-rapid7-insightvm</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-semgrep-sast</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-checkov-bridgecrew</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-kube-bench</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-kube-hunter</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-defectdojo</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-openvas-greenbone</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-nuclei-projectdiscovery</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/zebracat-ai-vs-subfinder-projectdiscovery</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/vs/onelogin-iam-vs-delinea-pam</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -21569,12 +21695,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/onelogin-iam-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/delinea-pam-vs-manageengine-pam360</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -21677,12 +21797,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/delinea-pam-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/manageengine-pam360-vs-opal-security</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -21779,12 +21893,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/manageengine-pam360-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/opal-security-vs-sysdig-secure</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -21875,12 +21983,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/opal-security-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/sysdig-secure-vs-aws-guardduty</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -21965,12 +22067,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/sysdig-secure-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/aws-guardduty-vs-aws-security-hub</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22049,12 +22145,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/aws-guardduty-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/aws-security-hub-vs-trendmicro-cloud-one</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22127,12 +22217,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/aws-security-hub-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/trendmicro-cloud-one-vs-tenable-io</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22199,12 +22283,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/trendmicro-cloud-one-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/tenable-io-vs-qualys-cloud-platform</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22265,12 +22343,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/tenable-io-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/qualys-cloud-platform-vs-rapid7-insightvm</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22325,12 +22397,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/qualys-cloud-platform-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/rapid7-insightvm-vs-semgrep-sast</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22379,12 +22445,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/rapid7-insightvm-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/semgrep-sast-vs-checkov-bridgecrew</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22427,12 +22487,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/semgrep-sast-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/checkov-bridgecrew-vs-kube-bench</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22469,12 +22523,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/checkov-bridgecrew-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/kube-bench-vs-kube-hunter</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22505,12 +22553,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/kube-bench-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/kube-hunter-vs-defectdojo</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22535,12 +22577,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/kube-hunter-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/defectdojo-vs-openvas-greenbone</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22559,12 +22595,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/defectdojo-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/openvas-greenbone-vs-nuclei-projectdiscovery</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -22577,25 +22607,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://stakdock.com/vs/openvas-greenbone-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://stakdock.com/vs/nuclei-projectdiscovery-vs-subfinder-projectdiscovery</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://stakdock.com/vs/nuclei-projectdiscovery-vs-owasp-amass</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://stakdock.com/vs/subfinder-projectdiscovery-vs-owasp-amass</loc>
     <lastmod>2026-08-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
