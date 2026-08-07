@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { X, Sparkles, CheckCircle2, ShieldCheck, CreditCard, ArrowRight, Star, Check, Zap } from 'lucide-react';
 import { saasCategories } from '../data/saasData.jsx';
 
-export default function VendorModal({ onClose }) {
-  const [packageType, setPackageType] = useState('free'); // 'free' | 'premium'
+export default function VendorModal({ onClose, initialPackage = 'free' }) {
+  const [packageType, setPackageType] = useState(initialPackage); // 'free' | 'premium' | 'top-banner' | 'in-feed'
   const [vendorName, setVendorName] = useState('');
   const [softwareName, setSoftwareName] = useState('');
   const [softwareWebsite, setSoftwareWebsite] = useState('');
@@ -12,6 +12,12 @@ export default function VendorModal({ onClose }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+
+  const dodoProductMap = {
+    'top-banner': 'pdt_0NksTosz02Ins84wJV7ku',
+    'premium': 'pdt_0NksUHnFhOrLcWvnGrz5R',
+    'in-feed': 'pdt_0NksUTrDVDvUmZ0eDGxNz'
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,10 +39,9 @@ export default function VendorModal({ onClose }) {
         })
       });
 
-      const data = await response.json();
-      
-      // 2. If Premium package selected, create Dodo Payments checkout session
-      if (packageType === 'premium') {
+      // 2. If paid package selected, trigger Dodo Payments checkout session
+      const selectedProductId = dodoProductMap[packageType];
+      if (selectedProductId) {
         try {
           const checkoutRes = await fetch('/api/create-checkout', {
             method: 'POST',
@@ -46,16 +51,22 @@ export default function VendorModal({ onClose }) {
               softwareWebsite,
               vendorEmail,
               packageType,
-              productId: 'pdt_0NksUHnFhOrLcWvnGrz5R'
+              productId: selectedProductId
             })
           });
           const checkoutData = await checkoutRes.json();
           if (checkoutData && checkoutData.checkoutUrl) {
             window.location.href = checkoutData.checkoutUrl;
             return;
+          } else {
+            // Direct Dodo payment link fallback
+            window.location.href = `https://checkout.dodopayments.com/buy/${selectedProductId}`;
+            return;
           }
         } catch (ckErr) {
           console.warn('Checkout API fallback:', ckErr.message);
+          window.location.href = `https://checkout.dodopayments.com/buy/${selectedProductId}`;
+          return;
         }
       }
 

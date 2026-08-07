@@ -154,10 +154,11 @@ export default function AdvertisePage({ onOpenVendorModal }) {
 
             <button
               onClick={() => {
-                if (plan.productId) {
+                const pkg = plan.id === 'spotlight' ? 'premium' : plan.id;
+                if (onOpenVendorModal) {
+                  onOpenVendorModal(pkg);
+                } else if (plan.productId) {
                   window.location.href = `https://checkout.dodopayments.com/buy/${plan.productId}`;
-                } else if (onOpenVendorModal) {
-                  onOpenVendorModal();
                 }
               }}
               className="btn-pill-green"

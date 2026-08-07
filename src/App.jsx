@@ -133,8 +133,14 @@ export default function App() {
   const [selectedCompareIds, setSelectedCompareIds] = useState([]);
   const [showCompareModal, setShowCompareModal] = useState(false);
   const [showVendorModal, setShowVendorModal] = useState(false);
+  const [vendorModalPackage, setVendorModalPackage] = useState('free');
   const [showWizardModal, setShowWizardModal] = useState(false);
   const [showBadgeModal, setShowBadgeModal] = useState(false);
+
+  const handleOpenVendorModal = (pkg = 'free') => {
+    setVendorModalPackage(typeof pkg === 'string' ? pkg : 'free');
+    setShowVendorModal(true);
+  };
 
   const handleSelectToolDetail = (tId) => {
     setSelectedToolDetailId(tId);
@@ -925,7 +931,7 @@ export default function App() {
 
             {currentView === 'advertise' && (
               <AdvertisePage
-                onOpenVendorModal={() => setShowVendorModal(true)}
+                onOpenVendorModal={handleOpenVendorModal}
               />
             )}
 
@@ -968,6 +974,7 @@ export default function App() {
 
         {showVendorModal && (
           <VendorModal
+            initialPackage={vendorModalPackage}
             onClose={() => setShowVendorModal(false)}
           />
         )}

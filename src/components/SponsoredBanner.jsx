@@ -58,7 +58,11 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
 
       <button
         onClick={() => {
-          window.location.href = 'https://checkout.dodopayments.com/buy/pdt_0NksTosz02Ins84wJV7ku';
+          if (onOpenVendorModal) {
+            onOpenVendorModal('top-banner');
+          } else {
+            window.location.href = 'https://checkout.dodopayments.com/buy/pdt_0NksTosz02Ins84wJV7ku';
+          }
         }}
         aria-label="Advertise your SaaS tool for $99 a month"
         style={{
