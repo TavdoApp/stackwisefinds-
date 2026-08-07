@@ -6,9 +6,10 @@ import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
 
-  // Display 15 spotlight cards to fill left column continuously
+  // Display 15 spotlight cards matching exact preview a0ee1211
+  const excludeDevopsForSpotlight = ['onelogin', 'delinea', 'manageengine-pam360', 'opal-security', 'semgrep', 'checkov', 'kube-bench', 'kube-hunter'];
   const featuredList = saasTools
-    .filter(t => t.featured || t.badge || t.rating >= 4.8)
+    .filter(t => t.featured || (t.badge && !excludeDevopsForSpotlight.includes(t.id)))
     .slice(0, 15);
 
   return (
