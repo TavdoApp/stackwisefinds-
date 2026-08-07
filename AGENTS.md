@@ -12,8 +12,10 @@ These rules apply to the entire StakDock repository.
 ## Regression Prevention & Fixed-Work Integrity Rule (NON-NEGOTIABLE)
 
 - **Zero Regression Policy**: Once a feature, fix, or rule is completed, approved, or verified (e.g. 301 domain redirects, Wikipedia SVG logos, UI detail page design, D1 write confirmation), NO agent may modify, revert, overwrite, or break it in future iterations.
+- **Approved Work Protection & Explicit Permission Gate**: If working on ANY task that might modify, touch, refactor, or risk breaking previously approved layouts or components (e.g. `Sticky 3-Column Editorial Grid`, `FeaturedSidebar`, `AiNewsSidebar`, `ToolDetailPage`, `ArticleView`, `VersusPage`, `AlternativesView`), **YOU MUST STOP IMMEDIATELY**, explain the exact risk to the user, and **wait for explicit written permission before making any changes**.
+- **Approved Layout Lock**: The **Sticky 3-Column Editorial Grid** layout (`FeaturedSidebar` with 15 spotlights + CTA, `AiNewsSidebar` with 3 widgets, `position: sticky; top: 80px; align-self: start`) is PERMANENTLY LOCKED.
 - **Cloudflare Pages Middleware Protection**: Legacy domain `stackwisefinds.com` 301 redirects to `https://stakdock.com` MUST be enforced via `functions/_middleware.js` in Cloudflare Pages so edge 301 redirects execute on 100% of requests before any static file or SPA route is evaluated.
-- **Verification Before Handoff**: Every pull request, deployment, or code change MUST re-verify that previously fixed core features (301 redirects, logo resolution, detail view rendering) remain 100% functional.
+- **Verification Before Handoff**: Every pull request, deployment, or code change MUST re-verify that previously fixed core features (301 redirects, logo resolution, detail view rendering, sticky 3-column layout) remain 100% functional.
 
 ## Secrets and Access
 
