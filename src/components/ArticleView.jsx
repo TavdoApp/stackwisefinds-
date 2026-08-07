@@ -294,27 +294,85 @@ export default function ArticleView({ article, onBack }) {
         />
       )}
 
-      {/* Render sections if present (e.g. from Reddit auto-published answers) */}
-      {Array.isArray(article.sections) && article.sections.length > 0 && (
-        <div className="article-body" style={{ marginTop: '24px' }}>
-          {article.sections.map((sec, idx) => (
-            <section key={idx} style={{ marginBottom: '28px' }}>
-              <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginBottom: '10px', color: 'var(--text-dark)' }}>
-                {sec.heading}
-              </h3>
-              <p style={{ fontSize: '0.98rem', lineHeight: '1.65', color: 'var(--text-muted)' }}>
-                {sec.body}
-              </p>
-            </section>
-          ))}
+      {/* Dynamic Topic-Specific Content Synthesizer */}
+      {(() => {
+        const toolNames = recommendedTools.map(t => t.name).join(', ');
+        
+        let customLeadSections = [];
+        if (isVideoAdTopic) {
+          customLeadSections = [
+            {
+              heading: 'Evaluating AI Video Ad Automation & Creative Generation',
+              body: `When selecting AI video ad generators like ${toolNames || 'AdCreative.ai and Creatify'}, prioritize video rendering speed, avatar realism, product URL-to-video generation, and multi-platform aspect ratio exports (9:16 vertical reels for TikTok/Instagram vs 1:1 feed banners).`
+            },
+            {
+              heading: 'Key Metrics for E-Commerce Ad Creatives',
+              body: 'High-performing video ad platforms offer predictive CTR scoring, automated AI scriptwriting, and instant A/B variation generation to rapidly test winning ad hooks before scaling ad spend.'
+            }
+          ];
+        } else if (isPaymentTopic) {
+          customLeadSections = [
+            {
+              heading: 'Evaluating SaaS Subscription Gateways & Payment Infrastructure',
+              body: `When evaluating payment options like ${toolNames || 'Chargebee, Recurly, and Paddle'}, compare global payment method coverage, automated dunning/churn recovery, multi-currency invoicing, and tax compliance (Merchant of Record vs standalone gateway).`
+            },
+            {
+              heading: 'Revenue Operations & Billing Flexibility',
+              body: 'Ensure the platform supports usage-based, tiered, or seat-based billing with robust developer APIs and seamless webhook sync into your accounting tools.'
+            }
+          ];
+        } else if (isBookingTopic) {
+          customLeadSections = [
+            {
+              heading: 'Selecting High-Converting Booking & Scheduling Software',
+              body: `When choosing booking tools like ${toolNames || 'CoSchedule, Cal.com, and Jotform'}, evaluate calendar synchronization speed, automated email/SMS reminders, time-zone conversion, and intake form customization.`
+            },
+            {
+              heading: 'Optimizing Client Conversion & Show-Up Rates',
+              body: 'Reduce scheduling friction with 1-click booking pages, deposit collections, and automated calendar holds to increase client conversion.'
+            }
+          ];
+        } else if (isCrmTopic) {
+          customLeadSections = [
+            {
+              heading: 'Evaluating Lead Management & CRM Platforms',
+              body: `When evaluating CRM software like ${toolNames || 'XusCRM and HubSpot'}, analyze sales pipeline customization, instant lead notifications (e.g. WhatsApp/SMS), and activity tracking.`
+            }
+          ];
+        } else if (isLeadGenTopic) {
+          customLeadSections = [
+            {
+              heading: 'Comparing Form Builders & Lead Capture Engines',
+              body: `When selecting lead capture tools like ${toolNames || 'Typeform and Fillout'}, evaluate conditional logic branching, mobile responsiveness, and direct integration with your tech stack.`
+            }
+          ];
+        }
 
-          {article.sourceUrl && (
-            <div style={{ marginTop: '32px', paddingTop: '20px', borderTop: '1px solid var(--border-color)', fontSize: '0.88rem', color: 'var(--text-muted)' }}>
-              <p><strong>Source and methodology:</strong> This buyer evaluation guide uses public community discussions as research input. <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-green-dark)', fontWeight: '700' }}>View original community discussion source ↗</a></p>
-            </div>
-          )}
-        </div>
-      )}
+        const sectionsToRender = [...customLeadSections, ...(Array.isArray(article.sections) ? article.sections : [])];
+
+        if (sectionsToRender.length === 0) return null;
+
+        return (
+          <div className="article-body" style={{ marginTop: '24px' }}>
+            {sectionsToRender.map((sec, idx) => (
+              <section key={idx} style={{ marginBottom: '28px' }}>
+                <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginBottom: '10px', color: 'var(--text-dark)' }}>
+                  {sec.heading}
+                </h3>
+                <p style={{ fontSize: '0.98rem', lineHeight: '1.65', color: 'var(--text-muted)' }}>
+                  {sec.body}
+                </p>
+              </section>
+            ))}
+
+            {article.sourceUrl && (
+              <div style={{ marginTop: '32px', paddingTop: '20px', borderTop: '1px solid var(--border-color)', fontSize: '0.88rem', color: 'var(--text-muted)' }}>
+                <p><strong>Source and methodology:</strong> This buyer evaluation guide uses public community discussions as research input. <a href={article.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-green-dark)', fontWeight: '700' }}>View original community discussion source ↗</a></p>
+              </div>
+            )}
+          </div>
+        );
+      })()}
 
       {/* Recommended Tools Spec Cards inside Article */}
       {recommendedTools.length > 0 && (
