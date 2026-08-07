@@ -177,111 +177,63 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
             </div>
           ) : (
             <>
-              {/* Package Selector (4 Options Grid) */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '10px', marginBottom: '20px' }}>
+              {/* Package Selector */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '20px' }}>
                 
-                {/* Package 1: Standard Free Listing */}
+                {/* Package 1: Free Listing */}
                 <div
                   onClick={() => setPackageType('free')}
                   style={{
                     border: packageType === 'free' ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: packageType === 'free' ? '#F9FBF5' : '#FFFFFF',
-                    borderRadius: '12px',
-                    padding: '12px',
+                    borderRadius: '16px',
+                    padding: '16px',
                     cursor: 'pointer',
                     position: 'relative'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                    <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'var(--text-dark)', textTransform: 'uppercase' }}>
-                      Standard
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                    <div style={{ fontSize: '0.78rem', fontWeight: '800', color: 'var(--text-dark)', textTransform: 'uppercase' }}>
+                      Standard Listing
                     </div>
-                    {packageType === 'free' && <CheckCircle2 size={14} color="#82A735" />}
+                    {packageType === 'free' && <CheckCircle2 size={16} color="#82A735" />}
                   </div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#82A735', marginBottom: '4px' }}>
-                    $0 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ free</span>
+                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#82A735', marginBottom: '8px' }}>
+                    $0 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ free</span>
                   </div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', lineHeight: '1.3' }}>
-                    Directory Indexing
-                  </div>
+                  <ul style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: '1.6', paddingLeft: '14px', margin: 0 }}>
+                    <li>Directory Indexing</li>
+                    <li>Automated Checks</li>
+                    <li>Category Tagging</li>
+                  </ul>
                 </div>
 
-                {/* Package 2: Top Banner Sponsor */}
-                <div
-                  onClick={() => setPackageType('top-banner')}
-                  style={{
-                    border: packageType === 'top-banner' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                    background: packageType === 'top-banner' ? '#F9FBF5' : '#FFFFFF',
-                    borderRadius: '12px',
-                    padding: '12px',
-                    cursor: 'pointer',
-                    position: 'relative'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                    <div style={{ fontSize: '0.72rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '3px' }}>
-                      <Zap size={11} /> Top Banner
-                    </div>
-                    {packageType === 'top-banner' && <CheckCircle2 size={14} color="#82A735" />}
-                  </div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '4px' }}>
-                    $99 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ mo</span>
-                  </div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.3' }}>
-                    Sticky Top Bar Placement
-                  </div>
-                </div>
-
-                {/* Package 3: Featured Left Spotlight */}
+                {/* Package 2: Featured Premium */}
                 <div
                   onClick={() => setPackageType('premium')}
                   style={{
                     border: packageType === 'premium' ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: packageType === 'premium' ? '#F9FBF5' : '#FFFFFF',
-                    borderRadius: '12px',
-                    padding: '12px',
+                    borderRadius: '16px',
+                    padding: '16px',
                     cursor: 'pointer',
                     position: 'relative'
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                    <div style={{ fontSize: '0.72rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '3px' }}>
-                      <Star size={11} /> Spotlight
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                    <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Zap size={12} /> Featured Premium
                     </div>
-                    {packageType === 'premium' && <CheckCircle2 size={14} color="#82A735" />}
+                    {packageType === 'premium' && <CheckCircle2 size={16} color="#82A735" />}
                   </div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '4px' }}>
-                    $99 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ yr</span>
+                  <div style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
+                    $99 <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ year</span>
                   </div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.3' }}>
-                    Featured Left Sidebar
-                  </div>
-                </div>
-
-                {/* Package 4: In-Feed Sponsored Listing */}
-                <div
-                  onClick={() => setPackageType('in-feed')}
-                  style={{
-                    border: packageType === 'in-feed' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                    background: packageType === 'in-feed' ? '#F9FBF5' : '#FFFFFF',
-                    borderRadius: '12px',
-                    padding: '12px',
-                    cursor: 'pointer',
-                    position: 'relative'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '4px' }}>
-                    <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'var(--text-dark)', textTransform: 'uppercase' }}>
-                      In-Feed
-                    </div>
-                    {packageType === 'in-feed' && <CheckCircle2 size={14} color="#82A735" />}
-                  </div>
-                  <div style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '4px' }}>
-                    $49 <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ mo</span>
-                  </div>
-                  <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', lineHeight: '1.3' }}>
-                    Pinned Category Card
-                  </div>
+                  <ul style={{ fontSize: '0.78rem', color: 'var(--text-dark)', fontWeight: '600', lineHeight: '1.6', paddingLeft: '14px', margin: 0 }}>
+                    <li>⚡ Top #1 Spot Guarantee</li>
+                    <li>⭐️ Featured Green Badge</li>
+                    <li>Express 24-Hour Review</li>
+                  </ul>
                 </div>
 
               </div>
@@ -421,22 +373,10 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <Check size={18} />
                       <span>{isSubmitting ? 'Submitting Free Listing...' : 'Submit Free Software Listing ($0)'}</span>
                     </>
-                  ) : packageType === 'top-banner' ? (
-                    <>
-                      <Zap size={18} />
-                      <span>{isSubmitting ? 'Processing Application...' : 'Proceed to Top Banner Sponsor ($99/mo)'}</span>
-                      <ArrowRight size={16} />
-                    </>
-                  ) : packageType === 'in-feed' ? (
-                    <>
-                      <CreditCard size={18} />
-                      <span>{isSubmitting ? 'Processing Application...' : 'Proceed to In-Feed Listing ($49/mo)'}</span>
-                      <ArrowRight size={16} />
-                    </>
                   ) : (
                     <>
-                      <Star size={18} />
-                      <span>{isSubmitting ? 'Processing Application...' : 'Proceed to Featured Spotlight ($99/yr)'}</span>
+                      <CreditCard size={18} />
+                      <span>{isSubmitting ? 'Processing Application...' : 'Proceed to Featured Listing ($99/yr)'}</span>
                       <ArrowRight size={16} />
                     </>
                   )}

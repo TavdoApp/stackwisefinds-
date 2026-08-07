@@ -6,16 +6,10 @@ import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
 
-  // Display exact 15 spotlight cards matching preview a0ee1211
-  const spotlightIds = [
-    'lancedb', 'vespa', 'dragonfly', 'valkey', 'surrealdb',
-    'fauna', 'scylladb', 'timescaledb', 'opensearch', 'meilisearch',
-    'typesense', 'elasticsearch', 'memgraph', 'arangodb', 'tigergraph-db'
-  ];
-
+  // Display 15 spotlight cards to fill left column continuously
   const featuredList = saasTools
-    .filter(t => t && spotlightIds.includes(t.id))
-    .sort((a, b) => spotlightIds.indexOf(a.id) - spotlightIds.indexOf(b.id));
+    .filter(t => t.featured || t.badge || t.rating >= 4.8)
+    .slice(0, 15);
 
   return (
     <div style={{

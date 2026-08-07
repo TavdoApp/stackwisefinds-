@@ -94,19 +94,17 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
         flexWrap: 'wrap',
         gap: '20px'
       }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: '1 1 280px', minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <div style={{
-            width: '60px',
-            height: '60px',
+            width: '56px',
+            height: '56px',
             borderRadius: '16px',
             background: '#FFFFFF',
-            border: '1px solid var(--border-color)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '8px',
-            boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
-            flexShrink: 0
+            padding: '6px',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.06)'
           }}>
             <img 
               src={`https://www.google.com/s2/favicons?domain=${winner.domain}&sz=128`} 
@@ -115,11 +113,11 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             />
           </div>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '4px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase' }}>
               <Award size={16} /> StakDock Verdict Winner
             </div>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 6px' }}>{winner.name}</h3>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>{bestForWinner}</p>
+            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)' }}>{winner.name}</h3>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{bestForWinner}</p>
           </div>
         </div>
 
@@ -161,10 +159,10 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>StakDock Score</td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
-                <Star size={14} fill="#82A735" style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> {toolA.rating} / 5 ({toolA.reviewsCount || 120} reviews)
+                <Star size={14} fill="#82A735" inline /> {toolA.rating} / 5 ({toolA.reviewsCount || 120} reviews)
               </td>
               <td style={{ padding: '14px', fontWeight: '800', color: '#82A735' }}>
-                <Star size={14} fill="#82A735" style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> {toolB.rating} / 5 ({toolB.reviewsCount || 115} reviews)
+                <Star size={14} fill="#82A735" inline /> {toolB.rating} / 5 ({toolB.reviewsCount || 115} reviews)
               </td>
             </tr>
 
@@ -189,20 +187,20 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Security & Privacy</td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: '#82A735', fontWeight: '700' }}>
-                <Shield size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> HTTPS Encrypted & Verified
+                <Shield size={14} inline /> HTTPS Encrypted & Verified
               </td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: '#82A735', fontWeight: '700' }}>
-                <Shield size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> HTTPS Encrypted & Verified
+                <Shield size={14} inline /> HTTPS Encrypted & Verified
               </td>
             </tr>
 
             <tr style={{ borderBottom: '1px solid var(--border-color)' }}>
               <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-muted)', fontSize: '0.88rem' }}>Deployment</td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
-                <Globe size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> Cloud Web App
+                <Globe size={14} inline /> Cloud Web App
               </td>
               <td style={{ padding: '14px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
-                <Globe size={14} style={{ display: 'inline', verticalAlign: 'middle', marginRight: '4px' }} /> Cloud Web App
+                <Globe size={14} inline /> Cloud Web App
               </td>
             </tr>
 

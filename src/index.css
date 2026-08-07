@@ -41,7 +41,6 @@ html, body {
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 /* Enforce Modern Sans-Serif Typography Across All Elements */
@@ -485,24 +484,6 @@ button {
     gap: 4px !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
-  }
-
-  /* Tool Detail Page Mobile Responsiveness */
-  .tool-detail-card {
-    padding: 24px 18px !important;
-    border-radius: 20px !important;
-  }
-
-  .tool-detail-header-flex {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 16px !important;
-  }
-
-  .tool-detail-title {
-    font-size: 1.75rem !important;
-    line-height: 1.2 !important;
-    overflow-wrap: anywhere !important;
   }
 }
 

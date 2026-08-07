@@ -8,28 +8,7 @@ import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
   const [activeTab, setActiveTab] = useState('product-info');
 
-  const resolveTool = (rawId) => {
-    if (!rawId) return saasTools[0];
-    const decoded = decodeURIComponent(String(rawId)).toLowerCase().trim();
-    const slugified = decoded.replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-
-    return saasTools.find(t => {
-      if (!t) return false;
-      const tid = String(t.id || '').toLowerCase();
-      const tname = String(t.name || '').toLowerCase();
-      const tdom = String(t.domain || '').toLowerCase();
-
-      return (
-        tid === decoded ||
-        tid === slugified ||
-        tname === decoded ||
-        tname.replace(/\s+/g, '-') === slugified ||
-        (tdom && (decoded.includes(tdom.replace(/\..*$/, '')) || slugified.includes(tdom.replace(/\..*$/, ''))))
-      );
-    }) || saasTools[0];
-  };
-
-  const tool = resolveTool(toolId);
+  const tool = saasTools.find(t => t.id === toolId) || saasTools[0];
   const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`;
@@ -75,7 +54,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
       </button>
 
       {/* Main Detail Header Card */}
-      <div className="tool-detail-card" style={{
+      <div style={{
         background: '#FFFFFF',
         border: '1px solid var(--border-color)',
         borderRadius: '24px',
@@ -83,8 +62,8 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
         marginBottom: '32px',
         boxShadow: 'var(--shadow-soft)'
       }}>
-        <div className="tool-detail-header-flex" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginBottom: '24px' }}>
-          <div className="tool-detail-title-group" style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: 1, minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginBottom: '24px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
             <div style={{
               width: '76px',
               height: '76px',
@@ -95,8 +74,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
               alignItems: 'center',
               justifyContent: 'center',
               padding: '12px',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.05)',
-              flexShrink: 0
+              boxShadow: '0 4px 14px rgba(0,0,0,0.05)'
             }}>
               <img 
                 src={googleFavicon} 
@@ -105,19 +83,19 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
               />
             </div>
 
-            <div style={{ minWidth: 0, flex: 1 }}>
+            <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '6px' }}>
-                <h1 className="tool-detail-title" style={{ fontSize: '2.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)', overflowWrap: 'anywhere' }}>
+                <h1 style={{ fontSize: '2.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
                   {tool.name}
                 </h1>
                 {tool.badge && (
-                  <span className="tag-sage" style={{ fontSize: '0.75rem', flexShrink: 0 }}>
+                  <span className="tag-sage" style={{ fontSize: '0.75rem' }}>
                     {tool.badge}
                   </span>
                 )}
               </div>
 
-              <div className="tool-detail-meta-row" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem' }}>
                 {hasRating && (
                   <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
                     <Star size={16} fill="#82A735" color="#82A735" />
@@ -127,7 +105,7 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
                 )}
 
                 {visitsDisplay && (
-                  <div className="tool-detail-badge" style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '3px 10px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '3px 10px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
                     <Eye size={13} color="#82A735" />
                     <span>{visitsDisplay} monthly visits</span>
                   </div>

@@ -1,25 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ArrowUpRight, Megaphone } from 'lucide-react';
 
-// Active Paid Top Banner Sponsors (Impression Rotation Pool)
-const TOP_BAR_SPONSORS = [
-  {
-    name: 'XusCRM',
-    url: 'https://xuscrm.com',
-    tagline: '— UAE Real Estate CRM & AI Leads'
-  }
-];
-
 export default function SponsoredBanner({ onOpenVendorModal }) {
-  const [activeSponsor, setActiveSponsor] = useState(TOP_BAR_SPONSORS[0]);
-
-  useEffect(() => {
-    if (TOP_BAR_SPONSORS.length > 1) {
-      const randomIndex = Math.floor(Math.random() * TOP_BAR_SPONSORS.length);
-      setActiveSponsor(TOP_BAR_SPONSORS[randomIndex]);
-    }
-  }, []);
-
   return (
     <div style={{
       background: 'linear-gradient(90deg, #EBF3D8 0%, #E2EECA 50%, #D4E6B3 100%)',
@@ -33,9 +15,10 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '8px',
-      flexWrap: 'wrap',
-      maxWidth: '100vw'
+      gap: '10px',
+      whiteSpace: 'nowrap',
+      overflowX: 'auto',
+      WebkitOverflowScrolling: 'touch'
     }}>
       <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
         <span style={{
@@ -47,10 +30,10 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
         </span>
 
         <a 
-          href={activeSponsor.url} 
+          href="https://xuscrm.com" 
           target="_blank" 
           rel="noopener noreferrer" 
-          aria-label={`${activeSponsor.name} Sponsor Link`}
+          aria-label="XusCRM Real Estate Platform"
           style={{
             background: '#141E14',
             color: '#FFFFFF',
@@ -64,12 +47,12 @@ export default function SponsoredBanner({ onOpenVendorModal }) {
             textDecoration: 'none'
           }}
         >
-          <span>{activeSponsor.name}</span>
+          <span>XusCRM</span>
           <ArrowUpRight size={13} color="#82A735" />
         </a>
 
         <span style={{ fontSize: '0.78rem', color: '#4A5D4A', fontWeight: '600' }} className="hide-mobile">
-          {activeSponsor.tagline}
+          — UAE Real Estate CRM & AI Leads
         </span>
       </div>
 

@@ -67,19 +67,17 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
           gap: '20px',
           boxShadow: 'var(--shadow-soft)'
         }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', flex: '1 1 280px', minWidth: 0 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <div style={{
-              width: '60px',
-              height: '60px',
+              width: '56px',
+              height: '56px',
               borderRadius: '16px',
               background: '#FFFFFF',
-              border: '1px solid var(--border-color)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: '8px',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.06)',
-              flexShrink: 0
+              padding: '6px',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.06)'
             }}>
               <img 
                 src={`https://www.google.com/s2/favicons?domain=${topWinner.domain}&sz=128`} 
@@ -88,11 +86,11 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
               />
             </div>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '4px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.75rem', textTransform: 'uppercase' }}>
                 <Award size={16} /> #1 Rated Replacement for {targetTool.name}
               </div>
-              <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 6px' }}>{topWinner.name}</h3>
-              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>{winnerTagline}</p>
+              <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)' }}>{topWinner.name}</h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{winnerTagline}</p>
             </div>
           </div>
 
