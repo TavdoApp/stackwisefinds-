@@ -456,7 +456,11 @@ export default function App() {
         setCurrentView={(view) => {
           setCurrentView(view);
           setSelectedArticle(null);
-          if (view === 'directory') window.location.hash = '';
+          setSelectedToolDetailId(null);
+          if (view === 'directory') {
+            window.location.hash = '';
+            window.history.pushState(null, '', '/');
+          }
         }}
         compareCount={selectedCompareIds.length}
         onOpenCompareModal={() => setShowCompareModal(true)}
@@ -950,7 +954,10 @@ export default function App() {
                 article={selectedArticle}
                 onBack={() => {
                   setCurrentView('directory');
+                  setSelectedArticle(null);
                   window.location.hash = '';
+                  window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             )}
@@ -961,7 +968,10 @@ export default function App() {
                 toolBId={selectedVersus.toolBId}
                 onBack={() => {
                   setCurrentView('directory');
+                  setSelectedVersus(null);
                   window.location.hash = '';
+                  window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             )}
@@ -972,6 +982,8 @@ export default function App() {
                 onBack={() => {
                   setCurrentView('directory');
                   window.location.hash = '';
+                  window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />
             )}
@@ -981,10 +993,14 @@ export default function App() {
                 onSelectCategory={(catId) => {
                   setSelectedCategory(catId);
                   setCurrentView('directory');
+                  window.history.pushState(null, '', '/');
                   const el = document.getElementById('directory-section');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                onBack={() => setCurrentView('directory')}
+                onBack={() => {
+                  setCurrentView('directory');
+                  window.history.pushState(null, '', '/');
+                }}
               />
             )}
 
@@ -997,6 +1013,7 @@ export default function App() {
                 onSelectCategory={(catId) => {
                   setSelectedCategory(catId);
                   setCurrentView('directory');
+                  window.history.pushState(null, '', '/');
                 }}
               />
             )}
@@ -1023,7 +1040,10 @@ export default function App() {
                 toolId={selectedToolDetailId}
                 onBack={() => {
                   setCurrentView('directory');
+                  setSelectedToolDetailId(null);
                   window.location.hash = '';
+                  window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 onOpenReviewModal={(t) => setSelectedReviewTool(t)}
                 onToggleCompare={handleToggleCompare}
