@@ -5,19 +5,30 @@ import { saasTools } from '../data/saasData.jsx';
 export default function ArticleView({ article, onBack }) {
   if (!article) return null;
 
+  const textToMatch = `${article.title || ''} ${article.question || ''} ${article.summary || ''} ${article.category || ''}`.toLowerCase();
+  
+  // Topic Flags (Top-Level Component Scope)
+  const isAlternativesQuery = /alternative|alternatives|vs|instead of|replace|competitor/i.test(textToMatch);
+  const isSecurityTopic = /security|cyber|identity|vulnerability|ssh|k8s|sast|dast|pam|threat|firewall|ids|siem|compliance/i.test(textToMatch);
+  const isBookingTopic = /booking|schedule|appointment|calendar|meeting/i.test(textToMatch);
+  const isLeadGenTopic = /lead|leadgen|form|survey|funnel|capture|conversion|landing/i.test(textToMatch);
+  const isPaymentTopic = /stripe|paypal|payment|checkout|subscription|billing|merchant|gateway/i.test(textToMatch);
+  const isCrmTopic = /crm|sales pipeline|real estate|client management/i.test(textToMatch);
+  const isOpenSourceTopic = /open-source|open-sourced|self-hosted/i.test(textToMatch);
+  const isBuilderTopic = /lovable|builder|v0|bolt|no-code|nocode|web-builder/i.test(textToMatch);
+  const isVideoAdTopic = /video|vid|video ad|ad creative|reels|shorts|commercial|tiktok ad/i.test(textToMatch);
+  const isEcommerceTopic = /ecommerce|e-commerce|shopify|storefront|d2c|product ad/i.test(textToMatch);
+
   // Smart Contextual Tool Recommendation System
   const recommendedTools = (() => {
     if (!saasTools || saasTools.length === 0) return [];
 
     if (Array.isArray(article.recommendedToolIds) && article.recommendedToolIds.length > 0) {
-      const explicit = saasTools.filter(t => article.recommendedToolIds.includes(t.id));
+      const explicit = saasTools.filter(t => t && article.recommendedToolIds.includes(t.id));
       if (explicit.length > 0) return explicit.slice(0, 4);
     }
     
-    const textToMatch = `${article.title || ''} ${article.question || ''} ${article.summary || ''} ${article.category || ''}`.toLowerCase();
-    
     // Alternatives Intent Check & Named Tool Exclusion
-    const isAlternativesQuery = /alternative|alternatives|vs|instead of|replace|competitor/i.test(textToMatch);
     const excludedToolIds = new Set();
 
     if (isAlternativesQuery) {
@@ -32,18 +43,6 @@ export default function ArticleView({ article, onBack }) {
         }
       });
     }
-
-    const isSecurityTopic = /security|cyber|identity|vulnerability|ssh|k8s|sast|dast|pam|threat|firewall|ids|siem|compliance/i.test(textToMatch);
-    
-    // Topic Flags
-    const isBookingTopic = /booking|schedule|appointment|calendar|meeting/i.test(textToMatch);
-    const isLeadGenTopic = /lead|leadgen|form|survey|funnel|capture|conversion|landing/i.test(textToMatch);
-    const isPaymentTopic = /stripe|paypal|payment|checkout|subscription|billing|merchant|gateway/i.test(textToMatch);
-    const isCrmTopic = /crm|sales pipeline|real estate|client management/i.test(textToMatch);
-    const isOpenSourceTopic = /open-source|open-sourced|self-hosted/i.test(textToMatch);
-    const isBuilderTopic = /lovable|builder|v0|bolt|no-code|nocode|web-builder/i.test(textToMatch);
-    const isVideoAdTopic = /video|vid|video ad|ad creative|reels|shorts|commercial|tiktok ad/i.test(textToMatch);
-    const isEcommerceTopic = /ecommerce|e-commerce|shopify|storefront|d2c|product ad/i.test(textToMatch);
 
     const keywordMatches = [];
     
@@ -170,6 +169,15 @@ export default function ArticleView({ article, onBack }) {
 
   const topWinner = recommendedTools.length > 0 ? recommendedTools[0] : null;
 
+  const getToolDomain = (t) => {
+    if (!t) return 'stakdock.com';
+    if (t.domain) return t.domain;
+    if (t.websiteUrl) {
+      try { return new URL(t.websiteUrl).hostname; } catch {}
+    }
+    return 'stakdock.com';
+  };
+
   // Format Date cleanly
   const formattedDate = (() => {
     if (article.publishDate) return article.publishDate;
@@ -183,7 +191,7 @@ export default function ArticleView({ article, onBack }) {
         // fallback
       }
     }
-    return 'August 7, 2026';
+    return 'August 8, 2026';
   })();
 
   return (
@@ -199,7 +207,7 @@ export default function ArticleView({ article, onBack }) {
           {(article.category || 'BUYER GUIDE').toUpperCase()} (2026)
         </div>
         <h1 style={{ fontSize: '2.8rem', fontWeight: '800', marginBottom: '16px', lineHeight: '1.15' }}>
-          {article.title}
+          {article.title || article.question || 'Buyer Evaluation Guide'}
         </h1>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: 'var(--text-muted)', fontSize: '0.88rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '20px', flexWrap: 'wrap' }}>
@@ -243,8 +251,8 @@ export default function ArticleView({ article, onBack }) {
               flexShrink: 0
             }}>
               <img 
-                src={`https://www.google.com/s2/favicons?domain=${topWinner.domain}&sz=128`} 
-                alt={topWinner.name} 
+                src={`https://www.google.com/s2/favicons?domain=${getToolDomain(topWinner)}&sz=128`} 
+                alt={topWinner.name || 'Recommended Tool'} 
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
@@ -258,13 +266,13 @@ export default function ArticleView({ article, onBack }) {
           </div>
 
           <a 
-            href={topWinner.affiliateUrl} 
+            href={topWinner.affiliateUrl || topWinner.websiteUrl || '#'} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-pill-green"
             style={{ padding: '10px 20px', fontSize: '0.9rem' }}
           >
-            <span>Visit {topWinner.name} ↗</span>
+            <span>Visit {topWinner.name || 'Tool'} ↗</span>
           </a>
         </div>
       )}
@@ -296,7 +304,7 @@ export default function ArticleView({ article, onBack }) {
 
       {/* Dynamic Topic-Specific Content Synthesizer */}
       {(() => {
-        const toolNames = recommendedTools.map(t => t.name).join(', ');
+        const toolNames = recommendedTools.map(t => t ? t.name : '').filter(Boolean).join(', ');
         
         let customLeadSections = [];
         if (isVideoAdTopic) {
@@ -348,22 +356,30 @@ export default function ArticleView({ article, onBack }) {
           ];
         }
 
-        const sectionsToRender = [...customLeadSections, ...(Array.isArray(article.sections) ? article.sections : [])];
+        const validSections = (Array.isArray(article.sections) ? article.sections : []).filter(s => s && typeof s === 'object');
+        const sectionsToRender = [...customLeadSections, ...validSections];
 
         if (sectionsToRender.length === 0) return null;
 
         return (
           <div className="article-body" style={{ marginTop: '24px' }}>
-            {sectionsToRender.map((sec, idx) => (
-              <section key={idx} style={{ marginBottom: '28px' }}>
-                <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginBottom: '10px', color: 'var(--text-dark)' }}>
-                  {sec.heading}
-                </h3>
-                <p style={{ fontSize: '0.98rem', lineHeight: '1.65', color: 'var(--text-muted)' }}>
-                  {sec.body}
-                </p>
-              </section>
-            ))}
+            {sectionsToRender.map((sec, idx) => {
+              if (!sec || typeof sec !== 'object') return null;
+              return (
+                <section key={idx} style={{ marginBottom: '28px' }}>
+                  {sec.heading && (
+                    <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginBottom: '10px', color: 'var(--text-dark)' }}>
+                      {sec.heading}
+                    </h3>
+                  )}
+                  {sec.body && (
+                    <p style={{ fontSize: '0.98rem', lineHeight: '1.65', color: 'var(--text-muted)' }}>
+                      {sec.body}
+                    </p>
+                  )}
+                </section>
+              );
+            })}
 
             {article.sourceUrl && (
               <div style={{ marginTop: '32px', paddingTop: '20px', borderTop: '1px solid var(--border-color)', fontSize: '0.88rem', color: 'var(--text-muted)' }}>
@@ -382,61 +398,65 @@ export default function ArticleView({ article, onBack }) {
           </h3>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            {recommendedTools.map((t) => (
-              <div key={t.id} style={{
-                background: '#FFFFFF',
-                border: '1px solid var(--border-color)',
-                borderRadius: '20px',
-                padding: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '16px',
-                boxShadow: 'var(--shadow-soft)'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{
-                    width: '52px',
-                    height: '52px',
-                    borderRadius: '14px',
-                    background: '#FFFFFF',
-                    border: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    padding: '6px'
-                  }}>
-                    <img 
-                      src={`https://www.google.com/s2/favicons?domain=${t.domain}&sz=128`} 
-                      alt={t.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                    />
-                  </div>
-                  <div>
-                    <h4 style={{ fontSize: '1.3rem', fontWeight: '800' }}>{t.name}</h4>
-                    <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{t.description}</p>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '4px' }}>
-                      <span style={{ color: 'var(--text-dark)', fontSize: '0.88rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        <Star size={14} fill="#82A735" color="#82A735" /> {t.rating}
-                      </span>
-                      <span style={{ color: 'var(--primary-green-dark)', fontSize: '0.85rem', fontWeight: '700' }}>{t.pricing}</span>
+            {recommendedTools.map((t, idx) => {
+              if (!t || typeof t !== 'object') return null;
+              const tDomain = getToolDomain(t);
+              return (
+                <div key={t.id || idx} style={{
+                  background: '#FFFFFF',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '20px',
+                  padding: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  gap: '16px',
+                  boxShadow: 'var(--shadow-soft)'
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                    <div style={{
+                      width: '52px',
+                      height: '52px',
+                      borderRadius: '14px',
+                      background: '#FFFFFF',
+                      border: '1px solid var(--border-color)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      padding: '6px'
+                    }}>
+                      <img 
+                        src={`https://www.google.com/s2/favicons?domain=${tDomain}&sz=128`} 
+                        alt={t.name || 'Software'}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      />
+                    </div>
+                    <div>
+                      <h4 style={{ fontSize: '1.3rem', fontWeight: '800' }}>{t.name || 'Software Tool'}</h4>
+                      <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{t.description || ''}</p>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '4px' }}>
+                        <span style={{ color: 'var(--text-dark)', fontSize: '0.88rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                          <Star size={14} fill="#82A735" color="#82A735" /> {t.rating || '4.8'}
+                        </span>
+                        <span style={{ color: 'var(--primary-green-dark)', fontSize: '0.85rem', fontWeight: '700' }}>{t.pricing || 'Freemium'}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <a
-                  href={t.affiliateUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill-green"
-                >
-                  <span>Visit {t.name}</span>
-                  <ExternalLink size={15} />
-                </a>
-              </div>
-            ))}
+                  <a
+                    href={t.affiliateUrl || t.websiteUrl || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-pill-green"
+                  >
+                    <span>Visit {t.name || 'Software'}</span>
+                    <ExternalLink size={15} />
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
