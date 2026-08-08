@@ -1,7 +1,83 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-07T20:45:58.162Z",
+  "updatedAt": "2026-08-08T06:59:34.335Z",
   "answers": [
+    {
+      "id": "answer-d03ac072fb8dcd5d",
+      "slug": "replaces-niche-proprietary-erp-with-erpnext-to-escape-vendor-bug-fix-bottlenecks-anyone-do-d03ac072",
+      "title": "How to evaluate: Replaces niche proprietary ERP with ERPNext to escape vendor bug-fix bottlenecks? Anyone done this?",
+      "question": "Replaces niche proprietary ERP with ERPNext to escape vendor bug-fix bottlenecks? Anyone done this?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "tool-selection",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vilqs7/replaces_niche_proprietary_erp_with_erpnext_to/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-08T05:01:09.447Z",
+      "canonicalUrl": "https://stakdock.com/guides/replaces-niche-proprietary-erp-with-erpnext-to-escape-vendor-bug-fix-bottlenecks-anyone-do-d03ac072/",
+      "sections": [
+        {
+          "heading": "Set decision criteria",
+          "body": "Rank the requirements that matter most, such as integrations, collaboration, data control, support, budget, and time to implement."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
+    {
+      "id": "answer-478da59d1fbd05ff",
+      "slug": "first-time-founder-how-should-i-monetize-my-mandarin-learning-site-mor-vs-alternatives-478da59d",
+      "title": "How to evaluate: First-time founder: How should I monetize my Mandarin learning site (MoR vs. alternatives)?",
+      "question": "First-time founder: How should I monetize my Mandarin learning site (MoR vs. alternatives)?",
+      "summary": "A practical software-evaluation framework based on a publicly available community question.",
+      "category": "Software Evaluation",
+      "intent": "alternatives",
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vil8rg/firsttime_founder_how_should_i_monetize_my/",
+      "sourceSubreddit": "SaaS",
+      "publishedAt": "2026-08-08T03:36:43.692Z",
+      "canonicalUrl": "https://stakdock.com/guides/first-time-founder-how-should-i-monetize-my-mandarin-learning-site-mor-vs-alternatives-478da59d/",
+      "sections": [
+        {
+          "heading": "Define what must improve",
+          "body": "For an alternative, identify the current limitation first: price, integrations, reporting, support, data export, or performance. A replacement only helps when it solves that specific constraint."
+        },
+        {
+          "heading": "Start with the job to be done",
+          "body": "Write down the outcome you need, the people who will use the software, and the workflow it must support. This prevents feature lists from driving the decision."
+        },
+        {
+          "heading": "Verify the evidence yourself",
+          "body": "Use vendor documentation, a trial account, current pricing pages, and security documentation. Community discussions can suggest ideas, but they are not proof of product claims."
+        },
+        {
+          "heading": "Run a small comparison",
+          "body": "Compare a short list against the same requirements, then test the highest-priority workflow before committing data, budget, or a long contract."
+        }
+      ],
+      "isAutoAnswer": true,
+      "qualityChecks": {
+        "sourceTitleOnly": true,
+        "copiedPostBody": false,
+        "toolClaimsIncluded": false,
+        "ratingsIncluded": false
+      }
+    },
     {
       "id": "answer-a0c358e86903e6f8",
       "slug": "is-it-a-dumb-idea-to-build-a-lovable-alternative-for-small-businesses-a0c358e8",
