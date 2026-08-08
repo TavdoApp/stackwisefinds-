@@ -40,31 +40,31 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 
   <!-- High-Intent Editorial Guides -->
   <url>
-    <loc>${baseUrl}/#guide-best-ai-video-generators-2026</loc>
+    <loc>${baseUrl}/guides/best-ai-video-generators-2026</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>${baseUrl}/#guide-best-real-estate-crms-2026</loc>
+    <loc>${baseUrl}/guides/best-real-estate-crms-2026</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>${baseUrl}/#guide-best-ai-coding-tools-2026</loc>
+    <loc>${baseUrl}/guides/best-ai-coding-tools-2026</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>${baseUrl}/#guide-best-ai-music-audio-2026</loc>
+    <loc>${baseUrl}/guides/best-ai-music-audio-2026</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>${baseUrl}/#guide-best-ecommerce-stack-2026</loc>
+    <loc>${baseUrl}/guides/best-ecommerce-stack-2026</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
