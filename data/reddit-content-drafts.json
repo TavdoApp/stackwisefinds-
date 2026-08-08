@@ -1,7 +1,41 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-08T03:36:43.109Z",
+  "updatedAt": "2026-08-08T05:01:08.954Z",
   "drafts": [
+    {
+      "id": "d03ac072fb8dcd5d",
+      "status": "auto_published",
+      "question": "Replaces niche proprietary ERP with ERPNext to escape vendor bug-fix bottlenecks? Anyone done this?",
+      "suggestedSlug": "replaces-niche-proprietary-erp-with-erpnext-to-escape-vendor-bug-fix-bottlenecks",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1vilqs7/replaces_niche_proprietary_erp_with_erpnext_to/",
+      "sourcePublishedAt": "2026-08-08T03:57:45+00:00",
+      "discoveredAt": "2026-08-08T05:01:08.954Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      },
+      "autoPublication": {
+        "publishedAt": "2026-08-08T05:01:09.447Z",
+        "canonicalUrl": "https://stakdock.com/guides/replaces-niche-proprietary-erp-with-erpnext-to-escape-vendor-bug-fix-bottlenecks-anyone-do-d03ac072/",
+        "qualityChecks": {
+          "sourceTitleOnly": true,
+          "copiedPostBody": false,
+          "toolClaimsIncluded": false,
+          "ratingsIncluded": false
+        }
+      }
+    },
     {
       "id": "478da59d1fbd05ff",
       "status": "auto_published",
