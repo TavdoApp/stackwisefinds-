@@ -1,7 +1,31 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-08T05:01:08.954Z",
+  "updatedAt": "2026-08-08T06:59:33.258Z",
   "drafts": [
+    {
+      "id": "1b793f5e0c9405f7",
+      "status": "pending_review",
+      "question": "First real launch: I built an analytics tool for algorithmic traders (and would love your brutally honest feedback).",
+      "suggestedSlug": "first-real-launch-i-built-an-analytics-tool-for-algorithmic-traders-and-would-lo",
+      "intent": "tool-selection",
+      "source": {
+        "platform": "reddit",
+        "subreddit": "SaaS",
+        "searchQuery": "alternative"
+      },
+      "sourceUrl": "https://www.reddit.com/r/SaaS/comments/1viovwd/first_real_launch_i_built_an_analytics_tool_for/",
+      "sourcePublishedAt": "2026-08-08T06:48:54+00:00",
+      "discoveredAt": "2026-08-08T06:59:33.258Z",
+      "editorial": {
+        "duplicateChecked": false,
+        "searchIntentValidated": false,
+        "sourceReviewed": false,
+        "answerResearchComplete": false,
+        "reviewer": null,
+        "reviewedAt": null,
+        "notes": null
+      }
+    },
     {
       "id": "d03ac072fb8dcd5d",
       "status": "auto_published",
