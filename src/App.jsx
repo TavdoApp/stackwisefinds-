@@ -311,6 +311,51 @@ export default function App() {
     };
   }, []);
 
+  // Sync client-side document.title and meta description for SEO & AEO
+  useEffect(() => {
+    let titleStr = 'StakDock — The SaaS & AI Software Launch Dock (2026)';
+    let descStr = 'Discover, compare, and stack top-rated SaaS tools, AI generators, and software platforms for 2026.';
+
+    if (currentView === 'tool-detail' && selectedToolDetailId) {
+      const t = saasTools.find(tool => tool.id === selectedToolDetailId);
+      if (t) {
+        titleStr = `${t.name} Review 2026: Pricing, Features & Alternatives | StakDock`;
+        descStr = t.description ? `${t.name} review (2026): ${t.description} Compare pricing (${t.pricing || 'Freemium'}), ratings (${t.rating || '4.8'}★), and top alternatives on StakDock.` : `In-depth ${t.name} review (2026). Compare ${t.name} pricing, features, pros & cons, ratings, and alternatives.`;
+      }
+    } else if (currentView === 'alternatives-detail' && selectedAlternativeToolId) {
+      const t = saasTools.find(tool => tool.id === selectedAlternativeToolId);
+      if (t) {
+        titleStr = `7 Best ${t.name} Alternatives & Competitors (2026) | StakDock`;
+        descStr = `Looking for the best alternatives to ${t.name}? Compare top verified ${t.name} competitors in 2026 by features, pricing plans, free trials, and user ratings on StakDock.`;
+      }
+    } else if (currentView === 'versus-detail' && selectedVersus) {
+      const tA = saasTools.find(t => t.id === selectedVersus.toolAId);
+      const tB = saasTools.find(t => t.id === selectedVersus.toolBId);
+      if (tA && tB) {
+        titleStr = `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner | StakDock`;
+        descStr = `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`;
+      }
+    } else if (currentView === 'article-detail' && selectedArticle) {
+      const rawTitle = selectedArticle.title || selectedArticle.question || 'Buyer Guide';
+      const guideTitle = rawTitle.includes('2026') ? rawTitle : `${rawTitle} (2026 Guide)`;
+      titleStr = `${guideTitle} | StakDock`;
+      descStr = selectedArticle.summary ? `${selectedArticle.summary} Compare top verified software picks, pricing, and buyer evaluation frameworks on StakDock.` : 'Software buyer guide and evaluation framework on StakDock.';
+    } else if (currentView === 'category-grid') {
+      titleStr = 'Browse Software & AI Categories (2026) | StakDock';
+      descStr = 'Explore verified software categories: AI Content, CRM, Developer Tools, Marketing Automation, and Analytics.';
+    } else if (currentView === 'ranking') {
+      titleStr = 'Top 100 Highest Rated SaaS & AI Software (2026) | StakDock';
+      descStr = 'Compare the top 100 highest rated SaaS tools and AI software ranked by traffic, user reviews, and verified features.';
+    } else if (currentView === 'advertise') {
+      titleStr = 'Advertise & List Your Software | StakDock';
+      descStr = 'Reach 50,000+ purchasing managers and tech founders on StakDock with directory indexing and sponsored listing spots.';
+    }
+
+    document.title = titleStr;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', descStr);
+  }, [currentView, selectedToolDetailId, selectedAlternativeToolId, selectedVersus, selectedArticle]);
+
   // Toggle compare item
   const handleToggleCompare = (toolId) => {
     if (selectedCompareIds.includes(toolId)) {

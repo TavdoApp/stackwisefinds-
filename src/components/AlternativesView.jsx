@@ -6,9 +6,15 @@ import { injectSoftwareApplicationSchema, injectFaqPageSchema } from '../utils/s
 export default function AlternativesView({ targetToolId, onBack, onSelectTool }) {
   const targetTool = saasTools.find(t => t.id === targetToolId) || saasTools[0];
   
-  // Find top direct competitors in the same category
-  const alternatives = saasTools.filter(t => t.category === targetTool.category && t.id !== targetTool.id);
-  const topWinner = alternatives[0] || saasTools[1] || targetTool;
+  // Find top direct competitors in the same category (excluding personal roommate app SplitMatePro from B2B payment alternatives)
+  const isPaymentTarget = targetToolId === 'stripe' || targetToolId === 'paypal' || targetTool.category === 'payment-gateways';
+  const alternatives = saasTools.filter(t => {
+    if (!t) return false;
+    if (t.id === targetTool.id) return false;
+    if (isPaymentTarget && (t.id === 'splitmatepro' || (t.description || '').toLowerCase().includes('roommate') || (t.description || '').toLowerCase().includes('tenant'))) return false;
+    return t.category === targetTool.category;
+  });
+  const topWinner = alternatives[0] || saasTools.find(t => t.id === 'chargebee') || saasTools[1] || targetTool;
 
   const winnerTagline = topWinner.description || topWinner.name || 'Verified Software Alternative';
 

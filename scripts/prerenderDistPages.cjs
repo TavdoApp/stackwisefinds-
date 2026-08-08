@@ -84,8 +84,8 @@ saasTools.forEach(tool => {
   };
 
   const pageHtml = buildSeoPage({
-    title: `${tool.name} Review, Pricing & Features (2026)`,
-    description: tool.description || `${tool.name} is a verified software tool on StakDock. Compare pricing, alternative tools, and real user ratings.`,
+    title: `${tool.name} Review 2026: Pricing, Features & Alternatives`,
+    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), ratings (${tool.rating || '4.8'}★), and top alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, pros & cons, ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.`,
     canonicalUrl: `https://stakdock.com/software/${tool.id}`,
     jsonLd
   });
@@ -108,8 +108,8 @@ saasTools.forEach(tool => {
   };
 
   const pageHtml = buildSeoPage({
-    title: `Top ${tool.name} Alternatives & Competitors (2026)`,
-    description: `Discover the best competitors and alternatives to ${tool.name}. Compare features, pricing, ratings, and user reviews.`,
+    title: `7 Best ${tool.name} Alternatives & Competitors (2026)`,
+    description: `Looking for the best alternatives to ${tool.name}? Compare top verified ${tool.name} competitors in 2026 by features, pricing plans, free trials, and user ratings on StakDock.`,
     canonicalUrl: `https://stakdock.com/alternatives/${tool.id}`,
     jsonLd
   });
@@ -144,8 +144,8 @@ for (let i = 0; i < topTools.length; i++) {
     };
 
     const pageHtml = buildSeoPage({
-      title: `${tA.name} vs ${tB.name}: 2026 Features, Pricing & Winner`,
-      description: `In-depth side-by-side comparison of ${tA.name} vs ${tB.name}. Compare features, pricing, ratings, and best use cases.`,
+      title: `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`,
+      description: `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`,
       canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
       jsonLd
     });
@@ -199,8 +199,9 @@ allGuides.forEach(guide => {
   const targetFolder = path.join(guidesDir, guideSlug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
-  const guideTitle = guide.title || guide.question || 'Buyer Guide';
-  const guideDesc = guide.summary || 'Software buyer guide and evaluation framework on StakDock.';
+  const rawTitle = guide.title || guide.question || 'Buyer Guide';
+  const guideTitle = rawTitle.includes('2026') ? rawTitle : `${rawTitle} (2026 Guide)`;
+  const guideDesc = guide.summary ? `${guide.summary} Compare top verified software picks, pricing, and buyer evaluation frameworks on StakDock.` : 'Software buyer guide and evaluation framework on StakDock.';
   const canonicalUrl = guide.canonicalUrl || `https://stakdock.com/guides/${guideSlug}`;
 
   const jsonLd = {
