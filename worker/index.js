@@ -144,6 +144,43 @@ async function handleRecordClick(request, env, corsHeaders) {
   }
 }
 
+async function sendTelegramAlert(env, data) {
+  const botToken = env.TELEGRAM_BOT_TOKEN || '8893841010:AAHEaWaZgPfKks3ZchCfR0TjVIrsbLvCjSU';
+  const chatId = env.TELEGRAM_CHAT_ID || '1088779618';
+
+  const planLabel = data.packageType === 'top-banner' 
+    ? '🔥 Top Banner Sponsor ($99/mo)' 
+    : data.packageType === 'in-feed' 
+      ? '⚡ In-Feed Sponsor ($49/mo)' 
+      : data.packageType === 'premium' 
+        ? '⭐ Featured Annual ($99/yr)' 
+        : '🆓 Standard Directory Listing ($0)';
+
+  const text = `🚨 <b>NEW STAKDOCK SOFTWARE SUBMISSION!</b>\n\n` +
+    `📦 <b>Software Name:</b> ${data.softwareName}\n` +
+    `🌐 <b>Website:</b> ${data.softwareWebsite}\n` +
+    `👤 <b>Founder/Vendor:</b> ${data.vendorName}\n` +
+    `✉️ <b>Email:</b> ${data.vendorEmail}\n` +
+    `🏷️ <b>Category:</b> ${data.category || 'General'}\n` +
+    `💎 <b>Plan Selected:</b> ${planLabel}\n` +
+    `⏰ <b>Timestamp:</b> ${new Date().toISOString()}`;
+
+  try {
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: chatId,
+        text,
+        parse_mode: 'HTML',
+        disable_web_page_preview: true
+      })
+    });
+  } catch (err) {
+    console.warn('Telegram alert send error:', err.message);
+  }
+}
+
 async function handleVendorSubmission(request, env, corsHeaders) {
   if (!env.DB) {
     return new Response(JSON.stringify({ success: false, error: 'Database binding unavailable' }), {
@@ -184,6 +221,16 @@ async function handleVendorSubmission(request, env, corsHeaders) {
     if (!res.success) {
       throw new Error('Database submission write unconfirmed');
     }
+
+    // Trigger instant mobile push alert to Ossama's phone via Telegram Bot
+    await sendTelegramAlert(env, {
+      vendorName,
+      softwareName,
+      softwareWebsite,
+      vendorEmail,
+      category: sanitizeText(body.category || ''),
+      packageType: sanitizeText(body.packageType || 'free')
+    });
 
     return new Response(JSON.stringify({ success: true, status: 'pending', confirmedWrite: true, message: 'Submitted for editorial review' }), {
       status: 200,
