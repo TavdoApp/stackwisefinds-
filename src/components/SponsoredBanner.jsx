@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowUpRight, Megaphone, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const defaultSponsoredTools = [
   {
@@ -34,13 +34,31 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
     return () => clearInterval(interval);
   }, [sponsors.length]);
 
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev === 0 ? sponsors.length - 1 : prev - 1));
+      setIsFading(false);
+    }, 200);
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setIsFading(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % sponsors.length);
+      setIsFading(false);
+    }, 200);
+  };
+
   const activeSponsor = sponsors[currentIndex] || sponsors[0];
 
   return (
     <div style={{
       background: 'linear-gradient(90deg, #EBF3D8 0%, #E2EECA 50%, #D4E6B3 100%)',
       color: '#141E14',
-      padding: '7px 14px',
+      padding: '7px 16px',
       fontSize: '0.82rem',
       fontWeight: '600',
       borderBottom: '1px solid #C2DC8E',
@@ -54,7 +72,7 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
       overflowX: 'auto',
       WebkitOverflowScrolling: 'touch'
     }}>
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
         <span style={{
           color: '#4A5D4A',
           fontSize: '0.78rem',
@@ -64,7 +82,7 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
           gap: '4px'
         }}>
           <Sparkles size={13} color="#82A735" />
-          Sponsored
+          Sponsored by
         </span>
 
         <div style={{
@@ -102,36 +120,50 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
         </div>
       </div>
 
-      <button
-        onClick={() => {
-          if (onOpenVendorModal) {
-            onOpenVendorModal('top-banner');
-          } else {
-            window.location.href = 'https://checkout.dodopayments.com/buy/pdt_0NksTosz02Ins84wJV7ku';
-          }
-        }}
-        aria-label="Promote your software tool on StakDock"
-        style={{
-          background: '#82A735',
-          border: 'none',
-          color: '#FFFFFF',
-          padding: '4px 12px',
-          borderRadius: '9999px',
-          fontSize: '0.75rem',
-          fontWeight: '800',
-          cursor: 'pointer',
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '5px',
-          flexShrink: 0,
-          boxShadow: '0 2px 8px rgba(130,167,53,0.35)',
-          transition: 'all 0.2s ease'
-        }}
-        title="Promote your SaaS product in the top bar"
-      >
-        <Megaphone size={12} color="#FFFFFF" />
-        <span>Promote Your Software ↗</span>
-      </button>
+      {sponsors.length > 1 && (
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', flexShrink: 0, marginLeft: '6px' }}>
+          <button
+            onClick={handlePrev}
+            aria-label="Previous sponsored tool"
+            style={{
+              background: 'rgba(20, 30, 20, 0.08)',
+              border: '1px solid rgba(20, 30, 20, 0.15)',
+              color: '#141E14',
+              width: '22px',
+              height: '22px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              padding: 0
+            }}
+            title="Previous sponsor"
+          >
+            <ChevronLeft size={13} color="#141E14" />
+          </button>
+          <button
+            onClick={handleNext}
+            aria-label="Next sponsored tool"
+            style={{
+              background: 'rgba(20, 30, 20, 0.08)',
+              border: '1px solid rgba(20, 30, 20, 0.15)',
+              color: '#141E14',
+              width: '22px',
+              height: '22px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              padding: 0
+            }}
+            title="Next sponsor"
+          >
+            <ChevronRight size={13} color="#141E14" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
