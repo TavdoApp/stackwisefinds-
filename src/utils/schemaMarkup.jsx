@@ -12,7 +12,19 @@ export function injectGlobalOrganizationSchema() {
     'name': 'StakDock Technologies',
     'url': 'https://stakdock.com/',
     'logo': 'https://stakdock.com/logo.svg',
-    'description': 'The premier SaaS & AI software launch dock and buyer recommendation platform.'
+    'description': 'The premier SaaS & AI software launch dock and buyer recommendation platform.',
+    'contactPoint': [
+      {
+        '@type': 'ContactPoint',
+        'email': 'support@stakdock.com',
+        'contactType': 'customer support'
+      },
+      {
+        '@type': 'ContactPoint',
+        'email': 'business@stakdock.com',
+        'contactType': 'business development'
+      }
+    ]
   };
 
   return (

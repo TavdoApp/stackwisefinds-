@@ -127,6 +127,16 @@ export default function Footer({ setCurrentView, setLegalView, setSelectedCatego
                   In-Feed Sponsored Badge ($49/mo)
                 </span>
               </li>
+              <li style={{ marginTop: '6px', paddingTop: '8px', borderTop: '1px solid #203320' }}>
+                <a href="mailto:business@stakdock.com" style={{ color: '#82A735', textDecoration: 'none', fontWeight: '700', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>💼 business@stakdock.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:support@stakdock.com" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>✉️ support@stakdock.com</span>
+                </a>
+              </li>
             </ul>
           </div>
 

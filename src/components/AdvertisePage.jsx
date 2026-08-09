@@ -171,15 +171,19 @@ export default function AdvertisePage({ onOpenVendorModal }) {
         ))}
       </div>
 
-      {/* Trust Guarantee */}
+      {/* Trust Guarantee & Direct Contact */}
       <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
         <ShieldCheck size={32} color="#82A735" style={{ margin: '0 auto 12px' }} />
         <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
-          StakDock Sponsor Guarantee
+          StakDock Sponsor Guarantee & Direct Business Contact
         </h3>
-        <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.6' }}>
+        <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', margin: '0 0 16px 0', lineHeight: '1.6' }}>
           All sponsored listings undergo instant verification. Once submitted, your software placement goes live within 24 hours with full analytics tracking.
         </p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', fontSize: '0.9rem', borderTop: '1px solid var(--border-color)', paddingTop: '16px', marginTop: '16px' }}>
+          <span>💼 Business & Partnerships: <a href="mailto:business@stakdock.com" style={{ color: '#82A735', fontWeight: '800', textDecoration: 'none' }}>business@stakdock.com</a></span>
+          <span>✉️ Vendor Support: <a href="mailto:support@stakdock.com" style={{ color: '#82A735', fontWeight: '800', textDecoration: 'none' }}>support@stakdock.com</a></span>
+        </div>
       </div>
     </div>
   );
