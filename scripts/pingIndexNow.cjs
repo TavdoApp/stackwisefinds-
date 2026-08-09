@@ -3,12 +3,7 @@ const path = require('path');
 const https = require('https');
 
 const host = 'stakdock.com';
-const indexNowKey = process.env.INDEXNOW_KEY;
-
-if (!indexNowKey) {
-  console.log('[IndexNow] INDEXNOW_KEY environment secret missing. Skipping live search engine ping.');
-  process.exit(0);
-}
+const indexNowKey = process.env.INDEXNOW_KEY || 'a53d32fd83994486a386b673385325ac';
 
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 const sitemap = fs.readFileSync(sitemapPath, 'utf8');
