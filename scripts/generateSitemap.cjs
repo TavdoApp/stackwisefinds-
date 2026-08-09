@@ -97,18 +97,43 @@ saasTools.forEach(t => {
   </url>\n`;
 });
 
-// Add top 150 pairwise comparison routes
-const topToolsForCompare = saasTools.slice(0, 20);
-for (let i = 0; i < topToolsForCompare.length; i++) {
-  for (let j = i + 1; j < topToolsForCompare.length; j++) {
-    sitemapXml += `  <url>
-    <loc>${baseUrl}/vs/${topToolsForCompare[i].id}-vs-${topToolsForCompare[j].id}</loc>
+// Add 480 category-based pairwise comparison routes
+function getVsPairsList(tools) {
+  const map = new Map();
+  const catMap = {};
+
+  tools.forEach(t => {
+    if (!t || !t.category) return;
+    const c = String(t.category).toLowerCase();
+    if (!catMap[c]) catMap[c] = [];
+    catMap[c].push(t);
+  });
+
+  Object.values(catMap).forEach(list => {
+    if (list.length < 2) return;
+    const top = list.slice(0, 6);
+    for (let i = 0; i < top.length; i++) {
+      for (let j = i + 1; j < top.length; j++) {
+        const slug = `${top[i].id}-vs-${top[j].id}`;
+        if (!map.has(slug)) {
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
+        }
+      }
+    }
+  });
+
+  return Array.from(map.values());
+}
+
+const versusPairs = getVsPairsList(saasTools);
+versusPairs.forEach(({ vsSlug }) => {
+  sitemapXml += `  <url>
+    <loc>${baseUrl}/vs/${vsSlug}</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>\n`;
-  }
-}
+});
 
 const totalUrlsCount = (sitemapXml.match(/<loc>/g) || []).length;
 sitemapXml += `</urlset>\n`;
