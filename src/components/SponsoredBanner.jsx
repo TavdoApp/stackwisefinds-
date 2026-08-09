@@ -102,12 +102,6 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
         </div>
       </div>
 
-      {sponsors.length > 1 && (
-        <span style={{ fontSize: '0.7rem', color: '#6A7F6A', fontWeight: '700', flexShrink: 0 }}>
-          ({currentIndex + 1}/{sponsors.length})
-        </span>
-      )}
-
       <button
         onClick={() => {
           if (onOpenVendorModal) {
@@ -116,26 +110,27 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
             window.location.href = 'https://checkout.dodopayments.com/buy/pdt_0NksTosz02Ins84wJV7ku';
           }
         }}
-        aria-label="Advertise your SaaS tool for $99 a month"
+        aria-label="Promote your software tool on StakDock"
         style={{
           background: '#82A735',
           border: 'none',
           color: '#FFFFFF',
-          padding: '3px 10px',
+          padding: '4px 12px',
           borderRadius: '9999px',
-          fontSize: '0.72rem',
+          fontSize: '0.75rem',
           fontWeight: '800',
           cursor: 'pointer',
           display: 'inline-flex',
           alignItems: 'center',
-          gap: '4px',
+          gap: '5px',
           flexShrink: 0,
-          boxShadow: '0 2px 6px rgba(130,167,53,0.3)'
+          boxShadow: '0 2px 8px rgba(130,167,53,0.35)',
+          transition: 'all 0.2s ease'
         }}
         title="Promote your SaaS product in the top bar"
       >
-        <Megaphone size={11} color="#FFFFFF" />
-        <span>Advertise ($99/mo)</span>
+        <Megaphone size={12} color="#FFFFFF" />
+        <span>Promote Your Software ↗</span>
       </button>
     </div>
   );
