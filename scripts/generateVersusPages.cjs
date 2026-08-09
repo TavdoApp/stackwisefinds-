@@ -96,27 +96,51 @@ saasTools.forEach(tool => {
   altCount++;
 });
 
-// 3. Generate top 50 pairwise static HTML pages (/vs/:toolA-vs-:toolB)
+// 3. Generate 480+ category-based pairwise static HTML pages (/vs/:toolA-vs-:toolB)
 let vsCount = 0;
-const topToolsForCompare = saasTools.slice(0, 11);
-for (let i = 0; i < topToolsForCompare.length; i++) {
-  for (let j = i + 1; j < topToolsForCompare.length; j++) {
-    const tA = topToolsForCompare[i];
-    const tB = topToolsForCompare[j];
-    const vsSlug = `${tA.id}-vs-${tB.id}`;
-    const pageDir = path.join(versusDir, vsSlug);
-    if (!fs.existsSync(pageDir)) fs.mkdirSync(pageDir, { recursive: true });
-    const html = generateHtml({
-      title: `${tA.name} vs ${tB.name} (2026 Comparison)`,
-      description: `In-depth side-by-side comparison of ${tA.name} vs ${tB.name}. Compare features, pricing, ratings, and best use cases.`,
-      canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
-      targetUrl: `https://stakdock.com/vs/${vsSlug}`,
-      heading: `${tA.name} vs ${tB.name}: Which Software Wins in 2026?`,
-      subheading: `Detailed pairwise breakdown of ${tA.name} (${tA.pricing}) vs ${tB.name} (${tB.pricing}).`
-    });
-    fs.writeFileSync(path.join(pageDir, 'index.html'), html, 'utf8');
-    vsCount++;
-  }
+
+function getVsPairsList(tools) {
+  const map = new Map();
+  const catMap = {};
+
+  tools.forEach(t => {
+    if (!t || !t.category) return;
+    const c = String(t.category).toLowerCase();
+    if (!catMap[c]) catMap[c] = [];
+    catMap[c].push(t);
+  });
+
+  Object.values(catMap).forEach(list => {
+    if (list.length < 2) return;
+    const top = list.slice(0, 6);
+    for (let i = 0; i < top.length; i++) {
+      for (let j = i + 1; j < top.length; j++) {
+        const slug = `${top[i].id}-vs-${top[j].id}`;
+        if (!map.has(slug)) {
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
+        }
+      }
+    }
+  });
+
+  return Array.from(map.values());
 }
+
+const versusPairs = getVsPairsList(saasTools);
+
+versusPairs.forEach(({ tA, tB, vsSlug }) => {
+  const pageDir = path.join(versusDir, vsSlug);
+  if (!fs.existsSync(pageDir)) fs.mkdirSync(pageDir, { recursive: true });
+  const html = generateHtml({
+    title: `${tA.name} vs ${tB.name} (2026 Comparison)`,
+    description: `In-depth side-by-side comparison of ${tA.name} vs ${tB.name}. Compare features, pricing, ratings, and best use cases.`,
+    canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
+    targetUrl: `https://stakdock.com/vs/${vsSlug}`,
+    heading: `${tA.name} vs ${tB.name}: Which Software Wins in 2026?`,
+    subheading: `Detailed pairwise breakdown of ${tA.name} (${tA.pricing || 'Freemium'}) vs ${tB.name} (${tB.pricing || 'Freemium'}).`
+  });
+  fs.writeFileSync(path.join(pageDir, 'index.html'), html, 'utf8');
+  vsCount++;
+});
 
 console.log(`Generated ${softwareCount} /software/ pages, ${altCount} /alternatives/ pages, and ${vsCount} static /vs/ comparison pages.`);

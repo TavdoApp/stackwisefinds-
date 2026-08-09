@@ -118,42 +118,65 @@ saasTools.forEach(tool => {
   altCount++;
 });
 
-// 3. Generate top pairwise dist/vs/:vsSlug/index.html
-const topTools = saasTools.slice(0, 11);
-for (let i = 0; i < topTools.length; i++) {
-  for (let j = i + 1; j < topTools.length; j++) {
-    const tA = topTools[i];
-    const tB = topTools[j];
-    const vsSlug = `${tA.id}-vs-${tB.id}`;
-    const targetFolder = path.join(versusDir, vsSlug);
-    if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
+// 3. Generate 480+ category-based pairwise dist/vs/:vsSlug/index.html
+function getVsPairsList(tools) {
+  const map = new Map();
+  const catMap = {};
 
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": `Is ${tA.name} better than ${tB.name}?`,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": `${tA.name} and ${tB.name} both offer specialized software capabilities. Compare features, ratings, and pricing on StakDock.`
-          }
+  tools.forEach(t => {
+    if (!t || !t.category) return;
+    const c = String(t.category).toLowerCase();
+    if (!catMap[c]) catMap[c] = [];
+    catMap[c].push(t);
+  });
+
+  Object.values(catMap).forEach(list => {
+    if (list.length < 2) return;
+    const top = list.slice(0, 6);
+    for (let i = 0; i < top.length; i++) {
+      for (let j = i + 1; j < top.length; j++) {
+        const slug = `${top[i].id}-vs-${top[j].id}`;
+        if (!map.has(slug)) {
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
         }
-      ]
-    };
+      }
+    }
+  });
 
-    const pageHtml = buildSeoPage({
-      title: `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`,
-      description: `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`,
-      canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
-      jsonLd
-    });
-
-    fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
-    vsCount++;
-  }
+  return Array.from(map.values());
 }
+
+const versusPairs = getVsPairsList(saasTools);
+
+versusPairs.forEach(({ tA, tB, vsSlug }) => {
+  const targetFolder = path.join(versusDir, vsSlug);
+  if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Is ${tA.name} better than ${tB.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${tA.name} and ${tB.name} both offer specialized software capabilities. Compare features, ratings, and pricing on StakDock.`
+        }
+      }
+    ]
+  };
+
+  const pageHtml = buildSeoPage({
+    title: `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`,
+    description: `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`,
+    canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
+    jsonLd
+  });
+
+  fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
+  vsCount++;
+});
 
 // 4. Generate dist/guides/:slug/index.html for all auto & static guides
 const guidesDir = path.join(distDir, 'guides');
