@@ -550,8 +550,8 @@ export default function App() {
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
                     <ToolSearchInput
-                      selectedTool={saasTools.find(t => t.id === selectedVersus.toolAId) || saasTools[0]}
-                      onSelectTool={(tool) => tool && setSelectedVersus({ ...selectedVersus, toolAId: tool.id })}
+                      selectedTool={saasTools.find(t => t.id === selectedVersus?.toolAId) || saasTools[0]}
+                      onSelectTool={(tool) => tool && setSelectedVersus({ ...(selectedVersus || {}), toolAId: tool.id })}
                       tools={saasTools}
                       placeholder="Tool 1..."
                       background="#F6F7F2"
@@ -561,8 +561,8 @@ export default function App() {
                     <span style={{ fontWeight: '800', color: 'var(--primary-green-dark)' }}>VS</span>
 
                     <ToolSearchInput
-                      selectedTool={saasTools.find(t => t.id === selectedVersus.toolBId) || saasTools[1]}
-                      onSelectTool={(tool) => tool && setSelectedVersus({ ...selectedVersus, toolBId: tool.id })}
+                      selectedTool={saasTools.find(t => t.id === selectedVersus?.toolBId) || saasTools[1]}
+                      onSelectTool={(tool) => tool && setSelectedVersus({ ...(selectedVersus || {}), toolBId: tool.id })}
                       tools={saasTools}
                       placeholder="Tool 2..."
                       background="#F6F7F2"
@@ -571,8 +571,8 @@ export default function App() {
 
                     <button 
                       onClick={() => {
-                        const tA = selectedVersus.toolAId || (saasTools[0] && saasTools[0].id);
-                        const tB = selectedVersus.toolBId || (saasTools[1] && saasTools[1].id);
+                        const tA = selectedVersus?.toolAId || (saasTools[0] && saasTools[0].id);
+                        const tB = selectedVersus?.toolBId || (saasTools[1] && saasTools[1].id);
                         if (tA && tB) {
                           window.history.pushState(null, '', `/vs/${tA}-vs-${tB}`);
                           setCurrentView('versus-detail');
@@ -962,13 +962,12 @@ export default function App() {
               />
             )}
 
-            {currentView === 'versus-detail' && (
+            {currentView === 'versus-detail' && selectedVersus && (
               <VersusPage
-                toolAId={selectedVersus.toolAId}
-                toolBId={selectedVersus.toolBId}
+                toolAId={selectedVersus.toolAId || 'freshbooks'}
+                toolBId={selectedVersus.toolBId || 'quickbooks'}
                 onBack={() => {
                   setCurrentView('directory');
-                  setSelectedVersus(null);
                   window.location.hash = '';
                   window.history.pushState(null, '', '/');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
