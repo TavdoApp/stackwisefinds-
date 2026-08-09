@@ -4,7 +4,7 @@ const path = require('path');
 
 const draftsPath = path.join(__dirname, '..', 'data', 'reddit-content-drafts.json');
 const answersPath = path.join(__dirname, '..', 'data', 'auto-published-answers.json');
-const maxAnswersPerRun = 2;
+const maxAnswersPerRun = 1;
 
 function readJson(filePath, fallback) {
   if (!fs.existsSync(filePath)) return fallback;
