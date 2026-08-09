@@ -33,12 +33,6 @@ jobs:
       - name: Curate Verified Trending SEO Tools
         run: node scripts/curateTrendingTools.cjs
 
-      - name: Collect Reddit Research Drafts for Editorial Review
-        run: node scripts/mineRedditQuestions.cjs
-
-      - name: Publish Original Reddit-Inspired Answer Pages
-        run: node scripts/publishRedditAnswers.cjs
-
       - name: Generate Static Answer Pages
         run: node scripts/generateAnswerPages.cjs
 
