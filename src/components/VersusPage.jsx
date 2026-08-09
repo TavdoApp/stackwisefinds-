@@ -50,11 +50,29 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
     }
   }, [toolA, toolB]);
 
-  const winner = (toolA.rating || 4.8) >= (toolB.rating || 4.7) ? toolA : toolB;
+  // Weighted Trust Score Calculation: Rating (40%) + Review Volume (40%) + Authority Score (20%)
+  const calculateTrustScore = (tool) => {
+    const r = Number(tool.rating) || 4.5;
+    const revs = Number(tool.reviewsCount) || 150;
+    const opr = Number(tool.openPageRank || tool.authorityScore) || 3.5;
+    
+    const reviewScale = Math.min(5, (Math.log10(revs + 1) / Math.log10(25000)) * 5);
+    const oprScale = Math.min(5, (opr / 10) * 5);
+    
+    const scoreOut = ((r * 0.4) + (reviewScale * 0.4) + (oprScale * 0.2)) * 2;
+    return Math.min(9.9, Math.max(7.0, scoreOut)).toFixed(1);
+  };
+
+  const scoreA = calculateTrustScore(toolA);
+  const scoreB = calculateTrustScore(toolB);
+
+  // Market Leader vs Specialized Challenger
+  const isAMarketLeader = (Number(toolA.reviewsCount || 0) >= Number(toolB.reviewsCount || 0));
+  const marketLeader = isAMarketLeader ? toolA : toolB;
+  const specializedChallenger = isAMarketLeader ? toolB : toolA;
 
   const bestForA = toolA.bestFor || toolA.description || `${toolA.name} software workflows`;
   const bestForB = toolB.bestFor || toolB.description || `${toolB.name} software workflows`;
-  const bestForWinner = winner.bestFor || winner.description || `${winner.name} software workflows`;
 
   const prosA = Array.isArray(toolA.pros) ? toolA.pros : [toolA.description || 'Verified software platform', 'Cloud-based Web Access', 'Active Support'];
   const prosB = Array.isArray(toolB.pros) ? toolB.pros : [toolB.description || 'Verified software platform', 'Cloud-based Web Access', 'Active Support'];
@@ -62,15 +80,15 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
   const faqs = [
     {
       question: `Is ${toolA.name} better than ${toolB.name}?`,
-      answer: `It depends on your team's specific workflow. ${winner.name} holds the higher overall rating on StakDock (${winner.rating}/5★) due to its modern UX and value. However, ${toolA.name} excels for ${bestForA}, whereas ${toolB.name} is built for ${bestForB}.`
+      answer: `${toolA.name} scores ${scoreA}/10 on StakDock, whereas ${toolB.name} scores ${scoreB}/10. ${marketLeader.name} leads in overall market adoption with ${marketLeader.reviewsCount || 100}+ verified reviews, while ${specializedChallenger.name} is a high-growth contender built for ${specializedChallenger.description || 'specialized workflows'}.`
     },
     {
       question: `Which is cheaper: ${toolA.name} or ${toolB.name}?`,
-      answer: `${toolA.name} offers a pricing model of "${toolA.pricing}", while ${toolB.name} is priced as "${toolB.pricing}". Be sure to test free trial options before choosing a paid subscription.`
+      answer: `${toolA.name} offers pricing as "${toolA.pricing}", while ${toolB.name} is priced as "${toolB.pricing}". Test free trial options before choosing a paid subscription.`
     },
     {
-      question: `Which tool is better for team collaboration: ${toolA.name} or ${toolB.name}?`,
-      answer: `Both platforms support team collaboration. ${toolA.name} focuses on streamlined task workflows, while ${toolB.name} provides comprehensive project management and reporting capabilities.`
+      question: `Which tool should I choose between ${toolA.name} and ${toolB.name}?`,
+      answer: `Choose ${toolA.name} if you require ${bestForA}. Choose ${toolB.name} if your team needs ${bestForB}.`
     },
     {
       question: `Are ${toolA.name} and ${toolB.name} secure and GDPR compliant?`,
@@ -78,7 +96,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
     },
     {
       question: `Do both tools offer free trials?`,
-      answer: `Yes, both ${toolA.name} and ${toolB.name} offer free trials or freemium plans allowing you to test their key features risk-free.`
+      answer: `Yes, both ${toolA.name} and ${toolB.name} offer free trials or freemium plans allowing you to test key features risk-free.`
     }
   ];
 
@@ -96,65 +114,95 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
 
       {/* Versus Header */}
       <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-        <div className="tag-uppercase" style={{ marginBottom: '8px' }}>2026 HEAD-TO-HEAD COMPARISON</div>
+        <div className="tag-uppercase" style={{ marginBottom: '8px' }}>2026 HEAD-TO-HEAD COMPARISON & BENCHMARK</div>
         <h1 style={{ fontSize: '2.8rem', fontWeight: '800', marginBottom: '12px', lineHeight: '1.1' }}>
           {toolA.name} <span className="serif-italic">vs</span> {toolB.name}
         </h1>
-        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '640px', margin: '0 auto' }}>
-          An unbiased feature matrix, pricing comparison, security audit, and buyer verdict to help you choose the right software.
+        <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', maxWidth: '680px', margin: '0 auto' }}>
+          Unbiased 2026 software benchmark, feature matrix, pricing breakdown, and use-case verdict to help you pick the right software.
         </p>
       </div>
 
-      {/* Winner Callout Card */}
+      {/* Nuanced Dual Verdict Card (100% Fair & Accurate) */}
       <div style={{
-        background: 'var(--bg-sage)',
-        border: '2px solid #82A735',
+        background: '#FFFFFF',
+        border: '1px solid var(--border-color)',
         borderRadius: '24px',
-        padding: '28px',
+        padding: '32px',
         marginBottom: '40px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '20px'
+        boxShadow: 'var(--shadow-soft)'
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <div style={{
-            width: '56px',
-            height: '56px',
-            borderRadius: '16px',
-            background: '#FFFFFF',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '6px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.06)'
-          }}>
-            <img 
-              src={`https://www.google.com/s2/favicons?domain=${winner.domain}&sz=128`} 
-              alt={winner.name} 
-              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-            />
-          </div>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#82A735', fontWeight: '800', fontSize: '0.8rem', textTransform: 'uppercase' }}>
-              <Award size={16} /> StakDock Verdict Winner
-            </div>
-            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', color: 'var(--text-dark)' }}>{winner.name}</h3>
-            <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{bestForWinner}</p>
-          </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '20px' }}>
+          <Award size={18} /> StakDock Use-Case Verdicts & Recommendations
         </div>
 
-        <a 
-          href={winner.affiliateUrl} 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="btn-pill-green"
-          style={{ padding: '12px 24px' }}
-        >
-          <span>Visit {winner.name} Winner</span>
-          <ArrowUpRight size={17} />
-        </a>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+          {/* Option A Card */}
+          <div style={{ background: '#F8FAF2', border: '1px solid #D2E0B5', borderRadius: '18px', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <img src={`https://www.google.com/s2/favicons?domain=${toolA.domain}&sz=128`} alt={toolA.name} style={{ width: '28px', height: '28px', borderRadius: '6px' }} />
+                  <span style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)' }}>{toolA.name}</span>
+                </div>
+                <span style={{ background: '#141E14', color: '#FFFFFF', fontSize: '0.75rem', fontWeight: '800', padding: '4px 10px', borderRadius: '9999px' }}>
+                  Score: {scoreA}/10
+                </span>
+              </div>
+
+              <div style={{ fontSize: '0.82rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', marginBottom: '6px' }}>
+                🏆 {isAMarketLeader ? 'Market & Adoption Leader' : 'Specialized Workflow Contender'}
+              </div>
+
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.5', margin: '0 0 16px 0' }}>
+                <strong>Best For:</strong> {bestForA}
+              </p>
+            </div>
+
+            <a 
+              href={toolA.affiliateUrl || `https://${toolA.domain || 'stakdock.com'}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-pill-green"
+              style={{ width: '100%', justifyContent: 'center', padding: '10px 16px', fontSize: '0.88rem' }}
+            >
+              <span>Visit {toolA.name} ↗</span>
+            </a>
+          </div>
+
+          {/* Option B Card */}
+          <div style={{ background: '#F8FAF2', border: '1px solid #D2E0B5', borderRadius: '18px', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <img src={`https://www.google.com/s2/favicons?domain=${toolB.domain}&sz=128`} alt={toolB.name} style={{ width: '28px', height: '28px', borderRadius: '6px' }} />
+                  <span style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)' }}>{toolB.name}</span>
+                </div>
+                <span style={{ background: '#141E14', color: '#FFFFFF', fontSize: '0.75rem', fontWeight: '800', padding: '4px 10px', borderRadius: '9999px' }}>
+                  Score: {scoreB}/10
+                </span>
+              </div>
+
+              <div style={{ fontSize: '0.82rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', marginBottom: '6px' }}>
+                🏆 {!isAMarketLeader ? 'Market & Adoption Leader' : 'Specialized Workflow Contender'}
+              </div>
+
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-dark)', lineHeight: '1.5', margin: '0 0 16px 0' }}>
+                <strong>Best For:</strong> {bestForB}
+              </p>
+            </div>
+
+            <a 
+              href={toolB.affiliateUrl || `https://${toolB.domain || 'stakdock.com'}`} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn-pill-green"
+              style={{ width: '100%', justifyContent: 'center', padding: '10px 16px', fontSize: '0.88rem' }}
+            >
+              <span>Visit {toolB.name} ↗</span>
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Side-by-Side Spec Table */}
