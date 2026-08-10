@@ -10,7 +10,7 @@ import CategoryGridPage from './components/CategoryGridPage';
 import RankingPage from './components/RankingPage';
 import AdvertisePage from './components/AdvertisePage';
 
-import { saasTools, saasCategories } from './data/saasData.jsx';
+import { saasTools as initialSaasTools, saasCategories } from './data/saasData.jsx';
 import { highIntentArticles } from './data/articlesData';
 import { injectGlobalOrganizationSchema } from './utils/schemaMarkup.jsx';
 import { ArrowUpRight, Sparkles, Scale, Search, Layers, ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
@@ -106,6 +106,23 @@ export default function App() {
       return ['cursor-ai', 'claude-ai', 'n8n', 'xuscrm'];
     }
   });
+
+  const [saasTools, setSaasTools] = useState(initialSaasTools);
+
+  useEffect(() => {
+    fetch('/api/approved-submissions')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.success && Array.isArray(data.approved) && data.approved.length > 0) {
+          setSaasTools(prev => {
+            const existingIds = new Set(prev.map(t => t.id));
+            const newTools = data.approved.filter(t => !existingIds.has(t.id));
+            return [...newTools, ...prev];
+          });
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     try {

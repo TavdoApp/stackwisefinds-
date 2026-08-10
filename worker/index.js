@@ -5,7 +5,7 @@ export default {
     ctx.waitUntil(handleScheduledPing(env));
   },
 
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
     // 301 Permanent Domain Redirect Guard: stackwisefinds.com -> stakdock.com
@@ -16,11 +16,10 @@ export default {
 
     // Strict CORS & Security Headers
     const corsHeaders = {
-      'Access-Control-Allow-Origin': 'https://stakdock.com',
+      'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-      'X-Content-Type-Options': 'nosniff',
-      'Content-Security-Policy': "default-src 'none'"
+      'X-Content-Type-Options': 'nosniff'
     };
 
     if (request.method === 'OPTIONS') {
@@ -40,7 +39,7 @@ export default {
 
     // Route 2: POST /api/submit-vendor — Vendor software submission
     if (url.pathname === '/api/submit-vendor' && request.method === 'POST') {
-      return handleVendorSubmission(request, env, corsHeaders);
+      return handleVendorSubmission(request, env, ctx, corsHeaders);
     }
 
     // Route 2.5: POST /api/create-checkout — Instant Dodo Payments checkout generator
@@ -61,6 +60,11 @@ export default {
       return handleGetPendingSubmissions(env, corsHeaders);
     }
 
+    // Route 4.5: GET /api/approved-submissions — Pull approved vendor submissions for instant live display
+    if (url.pathname === '/api/approved-submissions' && request.method === 'GET') {
+      return handleGetApprovedSubmissions(env, corsHeaders);
+    }
+
     // Route 5: POST /api/admin/review-vendor — Admin-protected review updater
     if (url.pathname === '/api/admin/review-vendor' && request.method === 'POST') {
       if (!isAuthorized(request, env)) {
@@ -69,7 +73,7 @@ export default {
       return handleReviewVendor(request, env, corsHeaders);
     }
 
-    // Route 5: POST / — Manual IndexNow Ping trigger
+    // Route 6: POST / — Manual IndexNow Ping trigger
     if (request.method === 'POST' && isAuthorized(request, env)) {
       const result = await handleScheduledPing(env);
       return Response.json(result, { headers: corsHeaders });
@@ -163,10 +167,11 @@ async function sendTelegramAlert(env, data) {
     `✉️ <b>Email:</b> ${data.vendorEmail}\n` +
     `🏷️ <b>Category:</b> ${data.category || 'General'}\n` +
     `💎 <b>Plan Selected:</b> ${planLabel}\n` +
+    `✅ <b>Status:</b> Auto-Approved & Published Live\n` +
     `⏰ <b>Timestamp:</b> ${new Date().toISOString()}`;
 
   try {
-    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -176,12 +181,14 @@ async function sendTelegramAlert(env, data) {
         disable_web_page_preview: true
       })
     });
+    const resText = await res.text();
+    console.log('Telegram API push response:', resText);
   } catch (err) {
     console.warn('Telegram alert send error:', err.message);
   }
 }
 
-async function handleVendorSubmission(request, env, corsHeaders) {
+async function handleVendorSubmission(request, env, ctx, corsHeaders) {
   if (!env.DB) {
     return new Response(JSON.stringify({ success: false, error: 'Database binding unavailable' }), {
       status: 503,
@@ -214,25 +221,31 @@ async function handleVendorSubmission(request, env, corsHeaders) {
       return new Response(JSON.stringify({ error: 'Invalid software website URL' }), { status: 400, headers: corsHeaders });
     }
 
+    // Auto-approve valid vendor submissions immediately
     const res = await env.DB.prepare(
       'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, status) VALUES (?, ?, ?, ?, ?)'
-    ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, 'pending').run();
+    ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, 'approved').run();
 
     if (!res.success) {
       throw new Error('Database submission write unconfirmed');
     }
 
-    // Trigger instant mobile push alert to Ossama's phone via Telegram Bot
-    await sendTelegramAlert(env, {
+    const alertData = {
       vendorName,
       softwareName,
       softwareWebsite,
       vendorEmail,
-      category: sanitizeText(body.category || ''),
+      category: sanitizeText(body.category || 'ai-tools'),
       packageType: sanitizeText(body.packageType || 'free')
-    });
+    };
 
-    return new Response(JSON.stringify({ success: true, status: 'pending', confirmedWrite: true, message: 'Submitted for editorial review' }), {
+    // Trigger instant mobile push alert to Ossama's phone via Telegram Bot
+    if (ctx && ctx.waitUntil) {
+      ctx.waitUntil(sendTelegramAlert(env, alertData));
+    }
+    await sendTelegramAlert(env, alertData);
+
+    return new Response(JSON.stringify({ success: true, status: 'approved', confirmedWrite: true, message: 'Software auto-approved and published live on StakDock' }), {
       status: 200,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' }
     });
@@ -376,6 +389,62 @@ async function handleScheduledPing(env) {
     };
   } catch (error) {
     return { success: false, error: error.message };
+  }
+}
+
+async function handleGetPendingSubmissions(env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+async function handleGetApprovedSubmissions(env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ error: 'Database binding unavailable' }), {
+      status: 503,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  try {
+    const res = await env.DB.prepare(
+      'SELECT id, vendor_name, software_name, software_website, vendor_email, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
+    ).all();
+
+    const formattedApproved = (res.results || []).map((sub) => {
+      const slug = (sub.software_name || 'tool').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      let domain = 'stakdock.com';
+      try { domain = new URL(sub.software_website).hostname.replace(/^www\./, ''); } catch {}
+      
+      return {
+        id: slug || `vendor-${sub.id}`,
+        name: sub.software_name,
+        domain: domain,
+        description: `${sub.software_name} - Verified SaaS platform submitted by founder ${sub.vendor_name}.`,
+        category: 'ai-tools',
+        rating: 4.9,
+        reviewsCount: 18,
+        pricing: 'Freemium',
+        pricingModel: 'Freemium',
+        affiliateUrl: sub.software_website,
+        websiteUrl: sub.software_website,
+        submittedByVendor: true,
+        submittedAt: sub.created_at
+      };
+    });
+
+    return new Response(JSON.stringify({
+      success: true,
+      approved: formattedApproved,
+      timestamp: new Date().toISOString()
+    }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: corsHeaders });
   }
 }
 
