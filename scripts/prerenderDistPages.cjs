@@ -84,8 +84,8 @@ saasTools.forEach(tool => {
   };
 
   const pageHtml = buildSeoPage({
-    title: `${tool.name} Review 2026: Pricing, Features & Alternatives`,
-    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), ratings (${tool.rating || '4.8'}★), and top alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, pros & cons, ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.`,
+    title: `${tool.name} Review 2026: Pricing, Free Trial & Deals`,
+    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free trial options, ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), free trial options, features, ratings (${tool.rating || '4.8'}★), and top verified deals on StakDock.`,
     canonicalUrl: `https://stakdock.com/software/${tool.id}`,
     jsonLd
   });

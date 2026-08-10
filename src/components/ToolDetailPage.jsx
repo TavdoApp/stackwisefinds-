@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles } from 'lucide-react';
+import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles, Gift } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
@@ -52,6 +52,54 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
       >
         <ArrowLeft size={16} /> Back to Directory
       </button>
+
+      {/* StakDock Verified Deal & Free Trial Callout Box */}
+      <div style={{
+        background: 'linear-gradient(135deg, #F8FAF2 0%, #EFF6E0 100%)',
+        border: '1px solid #C2DC8E',
+        borderRadius: '20px',
+        padding: '18px 24px',
+        marginBottom: '28px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '14px',
+        boxShadow: '0 4px 12px rgba(130, 167, 53, 0.08)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          <div style={{
+            width: '42px',
+            height: '42px',
+            borderRadius: '12px',
+            background: '#82A735',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <Gift size={22} color="#FFFFFF" />
+          </div>
+          <div>
+            <div style={{ fontSize: '0.78rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              🎁 StakDock Verified Free Trial & Deal
+            </div>
+            <div style={{ fontSize: '0.95rem', fontWeight: '700', color: 'var(--text-dark)' }}>
+              Test {tool.name} with an official free trial or freemium plan before subscribing.
+            </div>
+          </div>
+        </div>
+        <a
+          href={tool.affiliateUrl || tool.websiteUrl || `https://${tool.domain}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl || tool.websiteUrl)}
+          className="btn-pill-green"
+          style={{ padding: '9px 20px', fontSize: '0.88rem' }}
+        >
+          <span>Claim {tool.name} Deal ↗</span>
+        </a>
+      </div>
 
       {/* Main Detail Header Card */}
       <div style={{
