@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles, Gift } from 'lucide-react';
+import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles, Gift, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
-import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
+import { injectSoftwareApplicationSchema, injectFAQPageSchema } from '../utils/schemaMarkup.jsx';
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
 export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
   const [activeTab, setActiveTab] = useState('product-info');
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const tool = saasTools.find(t => t.id === toolId) || saasTools[0];
   const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
@@ -221,54 +222,128 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
 
       {/* Tab 1: Product Information */}
       {activeTab === 'product-info' && (
-        <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
-            What is {tool.name}?
-          </h3>
-          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '24px' }}>
-            {tool.name} is a software platform engineered for founders, developers, and operational teams. Built to streamline workflows, eliminate manual overhead, and accelerate execution.
-          </p>
+        <>
+          <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '32px' }}>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '16px', color: 'var(--text-dark)' }}>
+              What is {tool.name}?
+            </h3>
+            <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.7', marginBottom: '24px' }}>
+              {tool.description ? tool.description : `${tool.name} is a software platform engineered for founders, developers, and operational teams. Built to streamline workflows, eliminate manual overhead, and accelerate execution.`}
+            </p>
 
-          <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px' }}>Key Specifications:</h4>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
-            <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Category</div>
-              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.category}</div>
+            <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px' }}>Key Specifications:</h4>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+              <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Category</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.category}</div>
+              </div>
+
+              <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Pricing Tier</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: '#82A735', marginTop: '4px' }}>{tool.pricing || 'Freemium'}</div>
+              </div>
+
+              <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Monthly Traffic</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{visitsDisplay}</div>
+              </div>
             </div>
 
-            <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Pricing Tier</div>
-              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: '#82A735', marginTop: '4px' }}>{tool.pricing}</div>
-            </div>
-
-            <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Monthly Traffic</div>
-              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{visitsDisplay}</div>
-            </div>
-          </div>
-
-          <div style={{ display: 'flex', gap: '12px', marginTop: '24px', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
-              className="btn-pill-outline"
-              style={{ padding: '10px 18px', fontSize: '0.88rem' }}
-            >
-              <MessageSquare size={16} color="#82A735" />
-              <span>Write a Community Review</span>
-            </button>
-
-            {onOpenBadgeModal && (
+            <div style={{ display: 'flex', gap: '12px', marginTop: '24px', flexWrap: 'wrap' }}>
               <button
-                onClick={onOpenBadgeModal}
-                className="btn-pill-green"
+                onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
+                className="btn-pill-outline"
                 style={{ padding: '10px 18px', fontSize: '0.88rem' }}
               >
-                <Sparkles size={16} />
-                <span>Claim Embeddable Founder Badge</span>
+                <MessageSquare size={16} color="#82A735" />
+                <span>Write a Community Review</span>
               </button>
-            )}
+
+              {onOpenBadgeModal && (
+                <button
+                  onClick={onOpenBadgeModal}
+                  className="btn-pill-green"
+                  style={{ padding: '10px 18px', fontSize: '0.88rem' }}
+                >
+                  <Sparkles size={16} />
+                  <span>Claim Embeddable Founder Badge</span>
+                </button>
+              )}
+            </div>
           </div>
-        </div>
+
+          {/* High-Intent Dynamic FAQ Accordion Section for SEO, GEO & AEO */}
+          <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
+              <HelpCircle size={22} color="#82A735" />
+              <h3 style={{ fontSize: '1.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+                Frequently Asked Questions ({tool.name})
+              </h3>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              {[
+                {
+                  q: `Is ${tool.name} free to use or does it offer a free trial?`,
+                  a: `${tool.name} operates on a ${tool.pricing || 'Freemium'} pricing model. You can test ${tool.name} with official free trial options or explore feature tiers directly on their official website.`
+                },
+                {
+                  q: `Does ${tool.name} offer promo codes, coupons, or founder deals?`,
+                  a: `${tool.name} periodically provides special promotional pricing tiers and verified founder deals for new accounts. Click "Open Website" to check for current active offers.`
+                },
+                {
+                  q: `What are the key features and main benefits of ${tool.name}?`,
+                  a: `${tool.name} features ${tool.description ? tool.description : 'automated cloud software workflows'} engineered for founders, creators, and operational teams to boost efficiency.`
+                },
+                {
+                  q: `What are the best verified alternatives to ${tool.name}?`,
+                  a: `Top verified alternatives to ${tool.name} include ${alternatives.map(a => a.name).slice(0, 3).join(', ') || 'similar top platforms'}. Compare full ratings, traffic, and feature specs side-by-side on StakDock.`
+                }
+              ].map((faq, idx) => {
+                const isOpen = openFaqIndex === idx;
+                return (
+                  <div
+                    key={idx}
+                    style={{
+                      border: '1px solid var(--border-color)',
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                      transition: 'all 0.2s ease',
+                      background: isOpen ? '#F8FAF4' : '#FFFFFF'
+                    }}
+                  >
+                    <button
+                      onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+                      style={{
+                        width: '100%',
+                        padding: '16px 20px',
+                        background: 'none',
+                        border: 'none',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        textAlign: 'left',
+                        cursor: 'pointer',
+                        fontWeight: '700',
+                        fontSize: '0.98rem',
+                        color: 'var(--text-dark)'
+                      }}
+                    >
+                      <span>{faq.q}</span>
+                      {isOpen ? <ChevronUp size={18} color="#82A735" /> : <ChevronDown size={18} color="var(--text-muted)" />}
+                    </button>
+
+                    {isOpen && (
+                      <div style={{ padding: '0 20px 18px', fontSize: '0.92rem', color: 'var(--text-muted)', lineHeight: '1.6', borderTop: '1px solid rgba(0,0,0,0.04)', paddingTop: '12px' }}>
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </>
       )}
 
       {/* Tab 2: Reviews */}

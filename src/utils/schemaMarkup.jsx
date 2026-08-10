@@ -146,3 +146,54 @@ export function injectBreadcrumbSchema(items) {
     />
   );
 }
+
+export function injectFAQPageSchema(tool, alternatives = []) {
+  if (!tool) return null;
+  const altNames = (alternatives || []).map(a => a.name).slice(0, 3).join(', ') || 'top software platforms';
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    'mainEntity': [
+      {
+        '@type': 'Question',
+        'name': `Is ${tool.name} free to use or does it offer a free trial?`,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': `${tool.name} operates on a ${tool.pricing || 'Freemium'} pricing model. Users can test ${tool.name} with official free trial options or freemium feature tiers directly on their official website.`
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': `Does ${tool.name} offer promo codes, coupons, or founder deals?`,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': `${tool.name} periodically offers promotional pricing tiers and verified founder deals for new users. Visit the official website via StakDock to verify current discounts.`
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': `What are the key features and benefits of ${tool.name}?`,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': `${tool.name} provides ${tool.description || 'cloud-based software capabilities'} engineered for founders, creators, and operational teams.`
+        }
+      },
+      {
+        '@type': 'Question',
+        'name': `What are the best alternatives to ${tool.name}?`,
+        'acceptedAnswer': {
+          '@type': 'Answer',
+          'text': `Top verified alternatives to ${tool.name} include ${altNames}. Compare full features and ratings side-by-side on StakDock.`
+        }
+      }
+    ]
+  };
+
+  return (
+    <script 
+      type="application/ld+json" 
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} 
+    />
+  );
+}

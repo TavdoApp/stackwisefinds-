@@ -38,8 +38,10 @@ function buildSeoPage({ title, description, canonicalUrl, jsonLd }) {
   html = html.replace(/<meta name="twitter:description" content="[\s\S]*?" \/>/i, `<meta name="twitter:description" content="${safeDesc}" />`);
 
   if (jsonLd) {
-    const jsonLdScript = `\n    <script type="application/ld+json">\n    ${JSON.stringify(jsonLd, null, 2)}\n    </script>\n  </head>`;
-    html = html.replace('</head>', jsonLdScript);
+    const scripts = Array.isArray(jsonLd)
+      ? jsonLd.map(item => `<script type="application/ld+json">\n    ${JSON.stringify(item, null, 2)}\n    </script>`).join('\n')
+      : `<script type="application/ld+json">\n    ${JSON.stringify(jsonLd, null, 2)}\n    </script>`;
+    html = html.replace('</head>', `\n    ${scripts}\n  </head>`);
   }
 
   return html;
@@ -83,11 +85,50 @@ saasTools.forEach(tool => {
     }
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Is ${tool.name} free to use or does it offer a free trial?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${tool.name} operates on a ${tool.pricing || 'Freemium'} pricing model. Users can test ${tool.name} with official free trial options directly on their website.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Does ${tool.name} offer promo codes, coupons, or founder deals?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${tool.name} periodically offers promotional pricing tiers and verified founder deals for new users. Visit the official website via StakDock to verify current discounts.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What are the key features and benefits of ${tool.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${tool.name} provides ${tool.description || 'cloud-based software capabilities'} engineered for founders, creators, and operational teams.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What are the best alternatives to ${tool.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Top verified alternatives to ${tool.name} in ${tool.category || 'software'} include top competing platforms on StakDock.`
+        }
+      }
+    ]
+  };
+
   const pageHtml = buildSeoPage({
     title: `${tool.name} Review 2026: Pricing, Free Trial & Deals`,
     description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free trial options, ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), free trial options, features, ratings (${tool.rating || '4.8'}★), and top verified deals on StakDock.`,
     canonicalUrl: `https://stakdock.com/software/${tool.id}`,
-    jsonLd
+    jsonLd: [jsonLd, faqJsonLd]
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
