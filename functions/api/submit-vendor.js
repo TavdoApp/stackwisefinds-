@@ -90,9 +90,21 @@ export async function onRequestPost(context) {
       return new Response(JSON.stringify({ error: 'Invalid software website URL' }), { status: 400, headers: corsHeaders });
     }
 
-    // Try to write to Cloudflare D1 if DB binding exists
+    // Auto-create D1 table if missing and insert approved submission
     if (env && env.DB) {
       try {
+        await env.DB.prepare(`
+          CREATE TABLE IF NOT EXISTS vendor_submissions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            vendor_name TEXT,
+            software_name TEXT,
+            software_website TEXT,
+            vendor_email TEXT,
+            status TEXT DEFAULT 'approved',
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+          )
+        `).run();
+
         await env.DB.prepare(
           'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, status) VALUES (?, ?, ?, ?, ?)'
         ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, 'approved').run();

@@ -11,10 +11,26 @@ export async function onRequestGet(context) {
   try {
     let results = [];
     if (env && env.DB) {
-      const res = await env.DB.prepare(
-        'SELECT id, vendor_name, software_name, software_website, vendor_email, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
-      ).all();
-      results = res.results || [];
+      try {
+        await env.DB.prepare(`
+          CREATE TABLE IF NOT EXISTS vendor_submissions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            vendor_name TEXT,
+            software_name TEXT,
+            software_website TEXT,
+            vendor_email TEXT,
+            status TEXT DEFAULT 'approved',
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+          )
+        `).run();
+
+        const res = await env.DB.prepare(
+          'SELECT id, vendor_name, software_name, software_website, vendor_email, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
+        ).all();
+        results = res.results || [];
+      } catch (dbErr) {
+        console.warn('D1 query error:', dbErr.message);
+      }
     }
 
     const formattedApproved = results.map((sub) => {
