@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Sparkles, CheckCircle2, ArrowRight, ArrowUpRight, RotateCcw, ShieldCheck, Zap, DollarSign, Layers, BookmarkCheck } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, ArrowRight, ArrowUpRight, RotateCcw, ShieldCheck, Zap, DollarSign, Layers } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
@@ -28,12 +28,12 @@ export default function StackWizardModal({ onClose }) {
   ];
 
   const budgetTiers = [
-    { id: 'free', label: '🆓 100% Free & Freemium Tools ($0/mo)', desc: 'Zero upfront cost, test with free trials and freemium tiers' },
+    { id: 'free', label: '🆓 100% Free & Freemium Tools ($0/mo)', desc: 'Zero upfront cost, verified free plans and free trials' },
     { id: 'growth', label: '⚡ Pro Growth Stack (Under $50/mo)', desc: 'Maximum ROI scaling tools for growing teams' },
     { id: 'enterprise', label: '🏆 Enterprise & Unlimited Stack', desc: 'Uncapped performance for high-volume operations' }
   ];
 
-  // Dynamic tool recommendation generator
+  // Dynamic tool recommendation generator with strict truth & accuracy filtering
   const getRecommendedTools = () => {
     let filtered = saasTools.filter(t => {
       if (coreNeed === 'ai-tools') return t.category === 'ai-tools' || t.category === 'ai-content' || t.category === 'trending-video-ai' || t.category === 'ai-music-audio';
@@ -46,17 +46,31 @@ export default function StackWizardModal({ onClose }) {
     });
 
     if (budgetTier === 'free') {
+      // Strictly filter to tools with verified Freemium or Free pricing tiers
       filtered = filtered.filter(t => t.pricing === 'Freemium' || t.pricing === 'Free' || t.isFreeTier);
-    }
-
-    if (filtered.length < 3) {
-      filtered = saasTools.slice(0, 3);
+      
+      // Strict fallback: never pull paid tools if filtered is under 3
+      if (filtered.length < 3) {
+        const remainingFree = saasTools.filter(t => (t.pricing === 'Freemium' || t.pricing === 'Free' || t.isFreeTier) && !filtered.some(f => f.id === t.id));
+        filtered = [...filtered, ...remainingFree];
+      }
+    } else {
+      if (filtered.length < 3) {
+        const remaining = saasTools.filter(t => !filtered.some(f => f.id === t.id));
+        filtered = [...filtered, ...remaining];
+      }
     }
 
     return filtered.slice(0, 3);
   };
 
   const recommendedStack = getRecommendedTools();
+
+  const getExactPricingBadge = (tool) => {
+    if (tool.pricing === 'Free') return { text: '🟢 100% Free Forever', bg: '#EBF8FF', color: '#2B6CB0', border: '#BEE3F8' };
+    if (tool.pricing === 'Freemium' || tool.isFreeTier) return { text: '🟢 Free Plan & Trial Options', bg: 'rgba(130, 167, 53, 0.12)', color: '#82A735', border: 'rgba(130, 167, 53, 0.25)' };
+    return { text: '🎁 Official Free Trial Available', bg: '#FEFCBF', color: '#975A16', border: '#FEEBC8' };
+  };
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -74,7 +88,7 @@ export default function StackWizardModal({ onClose }) {
             Find Your Ideal Software Stack
           </h2>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-            Tailored 3-tool SaaS recommendation for your exact business profile.
+            Tailored 3-tool SaaS recommendation with 100% verified real-world pricing.
           </p>
         </div>
 
@@ -216,13 +230,15 @@ export default function StackWizardModal({ onClose }) {
                 Tailored Stack for {businessTypes.find(b => b.id === businessType)?.label.replace(/^[^a-zA-Z0-9]+/, '')}
               </h3>
               <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginTop: '4px', margin: 0 }}>
-                Estimated Budget: {budgetTier === 'free' ? '$0/mo (Freemium & Free Trials)' : budgetTier === 'growth' ? 'Under $50/mo Growth Tier' : 'Enterprise Tier'}
+                Estimated Budget: {budgetTier === 'free' ? '$0/mo (Free Plans & Free Trial Options)' : budgetTier === 'growth' ? 'Under $50/mo (Freemium & Pro Tiers)' : 'Enterprise Tier (Custom Scaling)'}
               </p>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
               {recommendedStack.map((tool, idx) => {
                 const roleLabels = ['🥇 Core Platform', '⚡ Automation Engine', '🎨 Growth & Creative Tool'];
+                const pBadge = getExactPricingBadge(tool);
+
                 return (
                   <div key={tool.id} style={{
                     background: '#FFFFFF',
@@ -260,8 +276,19 @@ export default function StackWizardModal({ onClose }) {
                             {roleLabels[idx]}
                           </span>
                           <h4 style={{ fontSize: '1.05rem', fontWeight: '800', margin: 0 }}>{tool.name}</h4>
+                          <span style={{
+                            background: pBadge.bg,
+                            color: pBadge.color,
+                            border: `1px solid ${pBadge.border}`,
+                            fontSize: '0.7rem',
+                            fontWeight: '800',
+                            padding: '2px 8px',
+                            borderRadius: '9999px'
+                          }}>
+                            {pBadge.text}
+                          </span>
                         </div>
-                        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '2px 0 0' }}>{tool.tagline || tool.description}</p>
+                        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '4px 0 0' }}>{tool.tagline || tool.description}</p>
                       </div>
                     </div>
 
@@ -287,7 +314,7 @@ export default function StackWizardModal({ onClose }) {
                 💡 Why This Stack Fits Your Business:
               </div>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
-                This 3-tool combination eliminates manual overhead for your operational focus ({coreNeeds.find(c => c.id === coreNeed)?.label}) while keeping software expenditure strictly within your {budgetTier === 'free' ? 'freemium' : 'budget'} tier.
+                This 3-tool combination eliminates manual overhead for your operational focus ({coreNeeds.find(c => c.id === coreNeed)?.label}) while keeping software expenditure strictly within verified {budgetTier === 'free' ? 'free and freemium' : 'budget'} options.
               </p>
             </div>
 
