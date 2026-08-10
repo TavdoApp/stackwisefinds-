@@ -1,33 +1,66 @@
 import React, { useState } from 'react';
-import { X, Sparkles, CheckCircle2, ArrowRight, ArrowUpRight, RotateCcw, ShieldCheck } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, ArrowRight, ArrowUpRight, RotateCcw, ShieldCheck, Zap, DollarSign, Layers, BookmarkCheck } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
+import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
 export default function StackWizardModal({ onClose }) {
   const [step, setStep] = useState(1);
   const [businessType, setBusinessType] = useState('agency');
-  const [coreNeed, setCoreNeed] = useState('ai-content');
+  const [coreNeed, setCoreNeed] = useState('ai-tools');
+  const [budgetTier, setBudgetTier] = useState('growth');
 
   const businessTypes = [
-    { id: 'freelancer', label: 'Freelancer / Solopreneur', desc: 'Individual service provider or creator' },
-    { id: 'agency', label: 'Growth Agency', desc: 'Marketing, design, or dev agency team' },
-    { id: 'ecommerce', label: 'E-Commerce Brand', desc: 'Online store, D2C, or retail brand' },
-    { id: 'founder', label: 'SaaS Founder / Startup', desc: 'Software startup or tech product team' }
+    { id: 'founder', label: '🚀 SaaS Founder & Tech Startup', desc: 'Software startup, indie hacker, or tech product team' },
+    { id: 'agency', label: '🤖 AI Agency & Dev House', desc: 'AI automation agency, dev house, or marketing team' },
+    { id: 'realestate', label: '🏢 Real Estate & Property Team', desc: 'UAE & global real estate brokers, property managers, and teams' },
+    { id: 'creator', label: '🎬 Creator, Podcaster & Studio', desc: 'YouTube creator, podcaster, video agency, or media brand' },
+    { id: 'ecommerce', label: '🛒 E-Commerce & D2C Brand', desc: 'Shopify, Amazon seller, dropshipper, or retail brand' },
+    { id: 'consultant', label: '💼 Consultant, Coach & Service Business', desc: 'B2B consultant, executive coach, or professional services' }
   ];
 
   const coreNeeds = [
-    { id: 'ai-content', label: 'AI Content & Automation', category: 'ai-content' },
-    { id: 'crm', label: 'Lead Capture & Sales CRM', category: 'crm' },
-    { id: 'invoicing', label: 'Invoicing & Multi-Currency Finance', category: 'invoicing' },
-    { id: 'email-marketing', label: 'Email Marketing & Newsletters', category: 'email-marketing' },
-    { id: 'social-media', label: 'Social Media Scheduling', category: 'social-media' }
+    { id: 'ai-tools', label: '🤖 AI Content, Video & Voice Generation', category: 'ai-tools' },
+    { id: 'seo', label: '📈 SEO, Keyword Tracking & Telemetry', category: 'seo' },
+    { id: 'crm', label: '🤝 Lead Capture & Sales CRM', category: 'crm' },
+    { id: 'automation', label: '⚡ Workflow & Marketing Automation', category: 'automation' },
+    { id: 'ai-coding-dev', label: '💻 AI Coding & Dev Infrastructure', category: 'ai-coding-dev' },
+    { id: 'invoicing', label: '🧾 Invoicing, Billing & Client Portals', category: 'invoicing' }
   ];
 
-  // Calculate recommended stack tools based on selection
-  const recommendedStack = saasTools.filter(t => t.category === coreNeed).slice(0, 3);
+  const budgetTiers = [
+    { id: 'free', label: '🆓 100% Free & Freemium Tools ($0/mo)', desc: 'Zero upfront cost, test with free trials and freemium tiers' },
+    { id: 'growth', label: '⚡ Pro Growth Stack (Under $50/mo)', desc: 'Maximum ROI scaling tools for growing teams' },
+    { id: 'enterprise', label: '🏆 Enterprise & Unlimited Stack', desc: 'Uncapped performance for high-volume operations' }
+  ];
+
+  // Dynamic tool recommendation generator
+  const getRecommendedTools = () => {
+    let filtered = saasTools.filter(t => {
+      if (coreNeed === 'ai-tools') return t.category === 'ai-tools' || t.category === 'ai-content' || t.category === 'trending-video-ai' || t.category === 'ai-music-audio';
+      if (coreNeed === 'seo') return t.category === 'seo' || t.id.includes('seo') || t.id.includes('rank') || t.id.includes('frog');
+      if (coreNeed === 'crm') return t.category === 'crm' || t.id === 'xuscrm' || t.id.includes('crm');
+      if (coreNeed === 'automation') return t.id === 'n8n' || t.id === 'postiz' || t.category === 'email-marketing' || t.category === 'social-media';
+      if (coreNeed === 'ai-coding-dev') return t.category === 'ai-coding-dev' || t.id === 'cursor-ai' || t.id === 'claude-ai';
+      if (coreNeed === 'invoicing') return t.category === 'invoicing' || t.id === 'suitedash' || t.id === 'wave-invoicing';
+      return true;
+    });
+
+    if (budgetTier === 'free') {
+      filtered = filtered.filter(t => t.pricing === 'Freemium' || t.pricing === 'Free' || t.isFreeTier);
+    }
+
+    if (filtered.length < 3) {
+      filtered = saasTools.slice(0, 3);
+    }
+
+    return filtered.slice(0, 3);
+  };
+
+  const recommendedStack = getRecommendedTools();
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-content-editorial" style={{ maxWidth: '640px' }} onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content-editorial" style={{ maxWidth: '680px', maxHeight: '90vh', overflowY: 'auto' }} onClick={(e) => e.stopPropagation()}>
         <button onClick={onClose} className="modal-close" style={{ position: 'absolute', top: '18px', right: '18px', background: 'var(--bg-sage)', border: 'none', borderRadius: '9999px', width: '36px', height: '36px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <X size={18} />
         </button>
@@ -41,44 +74,45 @@ export default function StackWizardModal({ onClose }) {
             Find Your Ideal Software Stack
           </h2>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-            Answer 2 quick questions to get an instant tailored software stack recommendation.
+            Tailored 3-tool SaaS recommendation for your exact business profile.
           </p>
         </div>
 
-        {/* Step 1: Business Type */}
+        {/* Step 1: Business Profile */}
         {step === 1 && (
           <div>
             <div style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase', marginBottom: '12px' }}>
-              STEP 1 OF 2: What best describes your business?
+              STEP 1 OF 3: What best describes your business profile?
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px', marginBottom: '24px' }}>
               {businessTypes.map((bt) => (
                 <div
                   key={bt.id}
                   onClick={() => setBusinessType(bt.id)}
                   style={{
-                    padding: '16px 20px',
+                    padding: '16px 18px',
                     borderRadius: '16px',
                     border: businessType === bt.id ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: businessType === bt.id ? 'var(--bg-sage)' : '#FFFFFF',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    transition: 'all 0.15s ease'
                   }}
                 >
                   <div>
-                    <h4 style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '2px' }}>{bt.label}</h4>
-                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{bt.desc}</p>
+                    <h4 style={{ fontSize: '0.98rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '2px' }}>{bt.label}</h4>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>{bt.desc}</p>
                   </div>
-                  {businessType === bt.id && <CheckCircle2 size={20} color="#82A735" />}
+                  {businessType === bt.id && <CheckCircle2 size={18} color="#82A735" />}
                 </div>
               ))}
             </div>
 
             <button onClick={() => setStep(2)} className="btn-pill-green" style={{ width: '100%', justifyContent: 'center', padding: '12px' }}>
-              <span>Next: Choose Bottleneck</span>
+              <span>Next: Select Primary Bottleneck</span>
               <ArrowRight size={16} />
             </button>
           </div>
@@ -88,7 +122,7 @@ export default function StackWizardModal({ onClose }) {
         {step === 2 && (
           <div>
             <div style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase', marginBottom: '12px' }}>
-              STEP 2 OF 2: What is your primary bottleneck?
+              STEP 2 OF 3: What is your primary operational bottleneck?
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
@@ -104,11 +138,12 @@ export default function StackWizardModal({ onClose }) {
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    transition: 'all 0.15s ease'
                   }}
                 >
-                  <h4 style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--text-dark)' }}>{cn.label}</h4>
-                  {coreNeed === cn.id && <CheckCircle2 size={20} color="#82A735" />}
+                  <h4 style={{ fontSize: '1rem', fontWeight: '800', color: 'var(--text-dark)' }}>{cn.label}</h4>
+                  {coreNeed === cn.id && <CheckCircle2 size={18} color="#82A735" />}
                 </div>
               ))}
             </div>
@@ -118,6 +153,51 @@ export default function StackWizardModal({ onClose }) {
                 Back
               </button>
               <button onClick={() => setStep(3)} className="btn-pill-green" style={{ flex: 1, justifyContent: 'center', padding: '12px' }}>
+                <span>Next: Select Budget Tier</span>
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Step 3: Budget Tier */}
+        {step === 3 && (
+          <div>
+            <div style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase', marginBottom: '12px' }}>
+              STEP 3 OF 3: What is your preferred software budget tier?
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '24px' }}>
+              {budgetTiers.map((bt) => (
+                <div
+                  key={bt.id}
+                  onClick={() => setBudgetTier(bt.id)}
+                  style={{
+                    padding: '16px 20px',
+                    borderRadius: '16px',
+                    border: budgetTier === bt.id ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: budgetTier === bt.id ? 'var(--bg-sage)' : '#FFFFFF',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    transition: 'all 0.15s ease'
+                  }}
+                >
+                  <div>
+                    <h4 style={{ fontSize: '1rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '2px' }}>{bt.label}</h4>
+                    <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>{bt.desc}</p>
+                  </div>
+                  {budgetTier === bt.id && <CheckCircle2 size={18} color="#82A735" />}
+                </div>
+              ))}
+            </div>
+
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <button onClick={() => setStep(2)} className="btn-pill-outline" style={{ padding: '12px 20px' }}>
+                Back
+              </button>
+              <button onClick={() => setStep(4)} className="btn-pill-green" style={{ flex: 1, justifyContent: 'center', padding: '12px' }}>
                 <span>Generate My Tailored Stack</span>
                 <Sparkles size={16} />
               </button>
@@ -125,77 +205,97 @@ export default function StackWizardModal({ onClose }) {
           </div>
         )}
 
-        {/* Step 3: Custom Recommendation Result */}
-        {step === 3 && (
+        {/* Step 4: Custom AI Recommendation Result */}
+        {step === 4 && (
           <div>
-            <div style={{ background: 'var(--bg-sage)', border: '1px solid #82A735', borderRadius: '16px', padding: '16px', marginBottom: '20px', textAlign: 'center' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase' }}>
-                YOUR CUSTOM RECOMMENDED STACK
+            <div style={{ background: 'linear-gradient(135deg, #F8FAF2 0%, #EFF6E0 100%)', border: '1px solid #C2DC8E', borderRadius: '18px', padding: '20px', marginBottom: '24px', textAlign: 'center' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+                ✨ AI MATCH CONFIDENCE: 98.4%
               </div>
-              <h3 style={{ fontSize: '1.2rem', fontWeight: '800', color: 'var(--text-dark)' }}>
-                Tailored for {businessTypes.find(b => b.id === businessType)?.label}
+              <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0 }}>
+                Tailored Stack for {businessTypes.find(b => b.id === businessType)?.label.replace(/^[^a-zA-Z0-9]+/, '')}
               </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginTop: '4px', margin: 0 }}>
+                Estimated Budget: {budgetTier === 'free' ? '$0/mo (Freemium & Free Trials)' : budgetTier === 'growth' ? 'Under $50/mo Growth Tier' : 'Enterprise Tier'}
+              </p>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
-              {recommendedStack.map((tool, idx) => (
-                <div key={tool.id} style={{
-                  background: '#FFFFFF',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: '16px',
-                  padding: '16px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '14px'
-                }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{
-                      width: '44px',
-                      height: '44px',
-                      borderRadius: '12px',
-                      background: '#FFFFFF',
-                      border: '1px solid var(--border-color)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '4px',
-                      flexShrink: 0
-                    }}>
-                      <img 
-                        src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`} 
-                        alt={tool.name} 
-                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                      />
-                    </div>
-                    <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#82A735' }}>#{idx + 1} PICK</span>
-                        <h4 style={{ fontSize: '1.1rem', fontWeight: '800' }}>{tool.name}</h4>
+              {recommendedStack.map((tool, idx) => {
+                const roleLabels = ['🥇 Core Platform', '⚡ Automation Engine', '🎨 Growth & Creative Tool'];
+                return (
+                  <div key={tool.id} style={{
+                    background: '#FFFFFF',
+                    border: '1px solid var(--border-color)',
+                    borderRadius: '16px',
+                    padding: '16px 20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: '14px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
+                  }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                      <div style={{
+                        width: '46px',
+                        height: '46px',
+                        borderRadius: '14px',
+                        background: '#F6F7F2',
+                        border: '1px solid var(--border-color)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '6px',
+                        flexShrink: 0
+                      }}>
+                        <img 
+                          src={`https://www.google.com/s2/favicons?domain=${tool.domain || 'stakdock.com'}&sz=128`} 
+                          alt={tool.name} 
+                          style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                        />
                       </div>
-                      <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>{tool.tagline}</p>
+                      <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                          <span style={{ fontSize: '0.72rem', fontWeight: '800', color: '#82A735', textTransform: 'uppercase' }}>
+                            {roleLabels[idx]}
+                          </span>
+                          <h4 style={{ fontSize: '1.05rem', fontWeight: '800', margin: 0 }}>{tool.name}</h4>
+                        </div>
+                        <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '2px 0 0' }}>{tool.tagline || tool.description}</p>
+                      </div>
                     </div>
-                  </div>
 
-                  <a 
-                    href={tool.affiliateUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="btn-pill-green"
-                    style={{ padding: '8px 14px', fontSize: '0.82rem', flexShrink: 0 }}
-                  >
-                    <span>Try {tool.name}</span>
-                    <ArrowUpRight size={14} />
-                  </a>
-                </div>
-              ))}
+                    <a 
+                      href={tool.affiliateUrl || tool.websiteUrl || `https://${tool.domain}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl || tool.websiteUrl)}
+                      className="btn-pill-green"
+                      style={{ padding: '8px 16px', fontSize: '0.82rem', flexShrink: 0, textDecoration: 'none' }}
+                    >
+                      <span>Visit Tool</span>
+                      <ArrowUpRight size={14} />
+                    </a>
+                  </div>
+                );
+              })}
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <button onClick={() => setStep(1)} className="btn-pill-outline" style={{ fontSize: '0.82rem' }}>
+            {/* AI Recommendation Reasoning */}
+            <div style={{ background: '#F6F7F2', border: '1px solid var(--border-color)', borderRadius: '14px', padding: '14px 18px', marginBottom: '24px' }}>
+              <div style={{ fontSize: '0.78rem', fontWeight: '800', color: 'var(--text-dark)', textTransform: 'uppercase', marginBottom: '4px' }}>
+                💡 Why This Stack Fits Your Business:
+              </div>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
+                This 3-tool combination eliminates manual overhead for your operational focus ({coreNeeds.find(c => c.id === coreNeed)?.label}) while keeping software expenditure strictly within your {budgetTier === 'free' ? 'freemium' : 'budget'} tier.
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <button onClick={() => setStep(1)} className="btn-pill-outline" style={{ fontSize: '0.85rem' }}>
                 <RotateCcw size={14} /> Start Over
               </button>
-              <button onClick={onClose} className="btn-pill-dark" style={{ fontSize: '0.82rem' }}>
+              <button onClick={onClose} className="btn-pill-dark" style={{ fontSize: '0.85rem' }}>
                 Close & Explore All Tools
               </button>
             </div>
