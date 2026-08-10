@@ -1,7 +1,40 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-10T13:52:00.000Z",
+  "updatedAt": "2026-08-10T15:08:00.000Z",
   "tools": [
+    {
+      "id": "suitedash",
+      "name": "SuiteDash",
+      "domain": "suitedash.com",
+      "category": "crm",
+      "tagline": "All-in-one business management software, client portal & CRM platform.",
+      "description": "SuiteDash is an all-in-one client portal, project management, invoicing, and CRM software engineered for agencies, consultants, and service businesses.",
+      "rating": 4.8,
+      "reviewsCount": 35,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://suitedash.com",
+      "website": "https://suitedash.com",
+      "featured": true,
+      "badge": "Verified Tool",
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "Client Portal",
+        "CRM & Lead Management",
+        "Invoicing & Billing",
+        "Project Management"
+      ],
+      "pros": [
+        "All-in-One Client Portal",
+        "White-label Custom Branding",
+        "Freemium Trial Available"
+      ],
+      "cons": [
+        "Advanced Automation Requires Tier Upgrade"
+      ],
+      "bestFor": "Agencies, Consultants & Service Businesses",
+      "publishedAt": "2026-08-10T15:08:00.000Z"
+    },
     {
       "id": "vocallab-ai",
       "name": "Vocallab AI",
