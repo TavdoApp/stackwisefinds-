@@ -21203,6 +21203,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/software/vocallab-ai</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/vocallab-ai</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/software/curated-v0-dev</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>weekly</changefreq>
