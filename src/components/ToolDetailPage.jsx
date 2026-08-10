@@ -89,24 +89,8 @@ export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onTo
                 <h1 style={{ fontSize: '2.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
                   {tool.name}
                 </h1>
-                {tool.badge && (
-                  <span className="tag-sage" style={{ fontSize: '0.75rem' }}>
-                    {tool.badge}
-                  </span>
-                )}
-                <span style={{
-                  background: 'rgba(130, 167, 53, 0.12)',
-                  color: '#82A735',
-                  border: '1px solid rgba(130, 167, 53, 0.25)',
-                  fontSize: '0.75rem',
-                  fontWeight: '800',
-                  padding: '3px 10px',
-                  borderRadius: '9999px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px'
-                }}>
-                  🎁 Free Trial & Verified Deal
+                <span className="tag-sage" style={{ fontSize: '0.75rem' }}>
+                  {tool.badge || 'Verified Tool'}
                 </span>
               </div>
 
