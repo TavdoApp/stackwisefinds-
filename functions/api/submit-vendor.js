@@ -1,3 +1,5 @@
+import { sendBrevoEmail } from '../utils/emailService.js';
+
 function sanitizeText(str) {
   if (!str || typeof str !== 'string') return '';
   return str.replace(/<[^>]*>/g, '').trim();
@@ -167,6 +169,23 @@ export async function onRequestPost(context) {
       context.waitUntil(sendTelegramAlert(env, alertData));
     }
     await sendTelegramAlert(env, alertData);
+
+    // Send transactional notification email to founder via Brevo API
+    const slug = softwareName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    const emailPayload = {
+      toEmail: vendorEmail,
+      vendorName,
+      softwareName,
+      softwareWebsite,
+      slug,
+      status,
+      packageType
+    };
+    if (context.waitUntil) {
+      context.waitUntil(sendBrevoEmail(env, emailPayload));
+    } else {
+      await sendBrevoEmail(env, emailPayload);
+    }
 
     return new Response(JSON.stringify({
       success: true,
