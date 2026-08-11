@@ -465,7 +465,17 @@ export default function App() {
       {injectGlobalOrganizationSchema()}
 
       {/* Toolify & BetaList Feature: Top Sponsored Banner */}
-      <SponsoredBanner onOpenVendorModal={() => setShowVendorModal(true)} />
+      {(() => {
+        const customTopSponsors = saasTools
+          .filter(t => t.packageType === 'top-banner' || t.isTopBanner)
+          .map(t => ({
+            id: t.id,
+            name: t.name,
+            tagline: t.tagline || t.description || 'Verified Top Banner Sponsor',
+            url: t.affiliateUrl || t.websiteUrl || `https://${t.domain}`
+          }));
+        return <SponsoredBanner customSponsors={customTopSponsors} onOpenVendorModal={() => setShowVendorModal(true)} />;
+      })()}
 
       {/* Navigation Header */}
       <Navbar
@@ -1054,6 +1064,7 @@ export default function App() {
             {currentView === 'tool-detail' && (
               <ToolDetailPage
                 toolId={selectedToolDetailId}
+                allTools={saasTools}
                 onBack={() => {
                   setCurrentView('directory');
                   setSelectedToolDetailId(null);

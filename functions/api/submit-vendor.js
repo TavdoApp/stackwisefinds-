@@ -90,6 +90,9 @@ export async function onRequestPost(context) {
       return new Response(JSON.stringify({ error: 'Invalid software website URL' }), { status: 400, headers: corsHeaders });
     }
 
+    const category = sanitizeText(body.category || 'ai-tools');
+    const packageType = sanitizeText(body.packageType || 'free');
+
     // Auto-create D1 table if missing and insert approved submission
     if (env && env.DB) {
       try {
@@ -100,14 +103,19 @@ export async function onRequestPost(context) {
             software_name TEXT,
             software_website TEXT,
             vendor_email TEXT,
+            category TEXT,
+            package_type TEXT,
             status TEXT DEFAULT 'approved',
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
           )
         `).run();
 
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN category TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN package_type TEXT').run(); } catch {}
+
         await env.DB.prepare(
-          'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, status) VALUES (?, ?, ?, ?, ?)'
-        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, 'approved').run();
+          'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, category, package_type, status) VALUES (?, ?, ?, ?, ?, ?, ?)'
+        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, category, packageType, 'approved').run();
       } catch (dbErr) {
         console.warn('D1 write warning:', dbErr.message);
       }

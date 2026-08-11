@@ -25,7 +25,7 @@ export async function onRequestGet(context) {
         `).run();
 
         const res = await env.DB.prepare(
-          'SELECT id, vendor_name, software_name, software_website, vendor_email, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
+          'SELECT id, vendor_name, software_name, software_website, vendor_email, category, package_type, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
         ).all();
         results = res.results || [];
       } catch (dbErr) {
@@ -43,7 +43,7 @@ export async function onRequestGet(context) {
         name: sub.software_name,
         domain: domain,
         description: `${sub.software_name} - Verified SaaS platform submitted by founder ${sub.vendor_name}.`,
-        category: 'ai-tools',
+        category: sub.category || 'ai-tools',
         rating: 4.9,
         reviewsCount: 18,
         pricing: 'Freemium',
@@ -51,6 +51,8 @@ export async function onRequestGet(context) {
         affiliateUrl: sub.software_website,
         websiteUrl: sub.software_website,
         submittedByVendor: true,
+        packageType: sub.package_type || 'free',
+        isTopBanner: sub.package_type === 'top-banner',
         submittedAt: sub.created_at
       };
     });

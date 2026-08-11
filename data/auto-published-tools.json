@@ -1,7 +1,33 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-10T15:08:00.000Z",
+  "updatedAt": "2026-08-11T12:15:00.000Z",
   "tools": [
+    {
+      "id": "nuwtonic",
+      "name": "nuwtonic",
+      "domain": "nuwtonic.com",
+      "category": "ai-tools",
+      "tagline": "AI copywriting & text automation platform for marketing teams.",
+      "description": "nuwtonic is an advanced AI copywriting and content generation platform designed for agency marketers, creators, and growth teams.",
+      "rating": 4.9,
+      "reviewsCount": 24,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://nuwtonic.com",
+      "website": "https://nuwtonic.com",
+      "featured": true,
+      "badge": "Top Banner Sponsor",
+      "packageType": "top-banner",
+      "isTopBanner": true,
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "AI Copywriting",
+        "Ad Copy Generator",
+        "SEO Optimization"
+      ],
+      "bestFor": "Agency Marketers & Growth Teams",
+      "publishedAt": "2026-08-11T12:15:00.000Z"
+    },
     {
       "id": "suitedash",
       "name": "SuiteDash",

@@ -5,12 +5,13 @@ import { injectSoftwareApplicationSchema, injectFAQPageSchema } from '../utils/s
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
-export default function ToolDetailPage({ toolId, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
+export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
   const [activeTab, setActiveTab] = useState('product-info');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  const tool = saasTools.find(t => t.id === toolId) || saasTools[0];
-  const alternatives = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
+  const toolsArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
+  const tool = toolsArray.find(t => t.id === toolId || (t.name && t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === toolId)) || saasTools.find(t => t.id === toolId) || saasTools[0];
+  const alternatives = toolsArray.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`;
   const visitsDisplay = tool.monthlyVisits || null;
