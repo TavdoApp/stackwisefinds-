@@ -248,6 +248,14 @@ button {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .toolify-col-main {
+    order: 1;
+    width: 100%;
   }
 
   .toolify-col-left {
@@ -255,12 +263,9 @@ button {
     border-right: none !important;
     padding-right: 0 !important;
     position: static !important;
-    order: 1;
-    margin-bottom: 12px;
-  }
-
-  .toolify-col-main {
     order: 2;
+    margin-top: 20px;
+    width: 100%;
   }
 
   .toolify-col-right {
@@ -270,27 +275,26 @@ button {
     position: static !important;
     order: 3;
     margin-top: 20px;
+    width: 100%;
   }
 
   .featured-sidebar-container {
     display: flex !important;
     flex-direction: column !important;
+    width: 100%;
   }
 
   .featured-sidebar-list {
     display: flex !important;
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
-    gap: 12px !important;
-    padding: 4px 2px 12px !important;
-    -webkit-overflow-scrolling: touch;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100%;
+    overflow-x: visible !important;
   }
 
   .featured-sidebar-item {
-    flex: 0 0 220px !important;
-    scroll-snap-align: start;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+    flex: 1 1 auto !important;
+    width: 100% !important;
   }
 }
 
