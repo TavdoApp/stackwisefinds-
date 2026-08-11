@@ -16,7 +16,7 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
   const featuredList = [...inFeedSponsors, ...otherFeatured].slice(0, 15);
 
   return (
-    <div style={{
+    <div className="featured-sidebar-container" style={{
       display: 'flex',
       flexDirection: 'column',
       gap: '10px'
@@ -41,14 +41,16 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
         </span>
       </div>
 
-      {featuredList.map(tool => {
-        const attempt = failedImgs[tool.id] || 0;
-        const logoSrc = getLogoUrl(tool, attempt);
+      <div className="featured-sidebar-list" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        {featuredList.map(tool => {
+          const attempt = failedImgs[tool.id] || 0;
+          const logoSrc = getLogoUrl(tool, attempt);
 
-        return (
-          <div
-            key={tool.id}
-            onClick={() => onSelectTool && onSelectTool(tool.id)}
+          return (
+            <div
+              key={tool.id}
+              className="featured-sidebar-item"
+              onClick={() => onSelectTool && onSelectTool(tool.id)}
             style={{
               background: tool.featured ? 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)' : '#FFFFFF',
               border: tool.featured ? '1.5px solid #82A735' : '1px solid var(--border-color)',
@@ -113,6 +115,7 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
           </div>
         );
       })}
+      </div>
 
       {/* Promoted Vendor Submission CTA */}
       <div 
