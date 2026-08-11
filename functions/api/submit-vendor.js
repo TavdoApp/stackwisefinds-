@@ -93,6 +93,17 @@ export async function onRequestPost(context) {
     const category = sanitizeText(body.category || 'ai-tools');
     const packageType = sanitizeText(body.packageType || 'free');
 
+    // Calculate expiration date: 30 days for monthly (in-feed / top-banner), 365 days for annual (premium)
+    const now = new Date();
+    let expiresAt = null;
+    if (packageType === 'in-feed' || packageType === 'top-banner') {
+      const exp = new Date(now.valueOf() + 30 * 24 * 60 * 60 * 1000);
+      expiresAt = exp.toISOString();
+    } else if (packageType === 'premium') {
+      const exp = new Date(now.valueOf() + 365 * 24 * 60 * 60 * 1000);
+      expiresAt = exp.toISOString();
+    }
+
     // Auto-create D1 table if missing and insert approved submission
     if (env && env.DB) {
       try {
@@ -105,6 +116,7 @@ export async function onRequestPost(context) {
             vendor_email TEXT,
             category TEXT,
             package_type TEXT,
+            expires_at TEXT,
             status TEXT DEFAULT 'approved',
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
           )
@@ -112,10 +124,11 @@ export async function onRequestPost(context) {
 
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN category TEXT').run(); } catch {}
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN package_type TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN expires_at TEXT').run(); } catch {}
 
         await env.DB.prepare(
-          'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, category, package_type, status) VALUES (?, ?, ?, ?, ?, ?, ?)'
-        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, category, packageType, 'approved').run();
+          'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, category, packageType, expiresAt, 'approved').run();
       } catch (dbErr) {
         console.warn('D1 write warning:', dbErr.message);
       }

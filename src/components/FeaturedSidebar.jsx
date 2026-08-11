@@ -3,13 +3,17 @@ import { Sparkles, ArrowUpRight, PlusCircle, Star } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
-export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
+export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
 
-  // Display 15 spotlight cards to fill left column continuously
-  const featuredList = saasTools
-    .filter(t => t.featured || t.badge || t.rating >= 4.8)
-    .slice(0, 15);
+  const sourceArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
+
+  // Separate paid In-Feed sponsors from general featured tools
+  const inFeedSponsors = sourceArray.filter(t => t.isInFeed || t.packageType === 'in-feed');
+  const otherFeatured = sourceArray.filter(t => !t.isInFeed && t.packageType !== 'in-feed' && (t.featured || t.badge || t.rating >= 4.8));
+
+  // Prioritize In-Feed sponsors at the top of the sidebar
+  const featuredList = [...inFeedSponsors, ...otherFeatured].slice(0, 15);
 
   return (
     <div style={{

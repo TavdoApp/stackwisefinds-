@@ -25,7 +25,7 @@ export async function onRequestGet(context) {
         `).run();
 
         const res = await env.DB.prepare(
-          'SELECT id, vendor_name, software_name, software_website, vendor_email, category, package_type, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
+          'SELECT id, vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
         ).all();
         results = res.results || [];
       } catch (dbErr) {
@@ -33,11 +33,18 @@ export async function onRequestGet(context) {
       }
     }
 
+    const now = new Date();
     const formattedApproved = results.map((sub) => {
       const slug = (sub.software_name || 'tool').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
       let domain = 'stakdock.com';
       try { domain = new URL(sub.software_website).hostname.replace(/^www\./, ''); } catch {}
       
+      // Auto-check if paid sponsorship has expired (30 days for monthly, 365 days for annual)
+      let effectivePackage = sub.package_type || 'free';
+      if (sub.expires_at && new Date(sub.expires_at) < now) {
+        effectivePackage = 'free'; // Demote to standard free listing if subscription expired
+      }
+
       return {
         id: slug || `vendor-${sub.id}`,
         name: sub.software_name,
@@ -51,9 +58,13 @@ export async function onRequestGet(context) {
         affiliateUrl: sub.software_website,
         websiteUrl: sub.software_website,
         submittedByVendor: true,
-        packageType: sub.package_type || 'free',
-        isTopBanner: sub.package_type === 'top-banner',
-        submittedAt: sub.created_at
+        packageType: effectivePackage,
+        isTopBanner: effectivePackage === 'top-banner',
+        isInFeed: effectivePackage === 'in-feed',
+        isFeatured: effectivePackage === 'in-feed' || effectivePackage === 'premium',
+        badge: effectivePackage === 'in-feed' ? 'In-Feed Sponsor' : effectivePackage === 'top-banner' ? 'Top Banner Sponsor' : effectivePackage === 'premium' ? 'Featured Annual' : 'Verified Tool',
+        submittedAt: sub.created_at,
+        expiresAt: sub.expires_at
       };
     });
 

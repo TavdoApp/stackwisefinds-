@@ -1,7 +1,33 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-11T12:15:00.000Z",
+  "updatedAt": "2026-08-11T12:50:00.000Z",
   "tools": [
+    {
+      "id": "dmchamp",
+      "name": "dmchamp",
+      "domain": "dmchamp.com",
+      "category": "social-media",
+      "tagline": "Instagram & social media DM automation, lead capture & messaging platform.",
+      "description": "dmchamp is an advanced social media DM automation and lead capture platform designed for growth agencies, creators, and e-commerce brands.",
+      "rating": 4.9,
+      "reviewsCount": 18,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://dmchamp.com",
+      "website": "https://dmchamp.com",
+      "featured": true,
+      "badge": "In-Feed Sponsor",
+      "packageType": "in-feed",
+      "isInFeed": true,
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "DM Automation",
+        "Lead Capture Bot",
+        "Social Messaging Pipeline"
+      ],
+      "bestFor": "Growth Agencies, Creators & E-Commerce Brands",
+      "publishedAt": "2026-08-11T12:50:00.000Z"
+    },
     {
       "id": "nuwtonic",
       "name": "nuwtonic",

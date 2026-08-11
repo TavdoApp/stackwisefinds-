@@ -713,6 +713,7 @@ export default function App() {
                     {/* Left Column: Featured Spotlights */}
                     <div className="toolify-col-left">
                       <FeaturedSidebar 
+                        allTools={saasTools}
                         onSelectTool={handleSelectToolDetail} 
                         onOpenVendorModal={() => setShowVendorModal(true)}
                       />
