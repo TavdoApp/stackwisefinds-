@@ -744,6 +744,66 @@ export default function App() {
                           currentLang={currentLang}
                         />
                       ))}
+
+                      {/* Sleek Compact Ellipsis Single-Row Pagination Bar - Directly Under Main Tools */}
+                      {totalPages > 1 && (
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '30px', marginBottom: '20px', flexWrap: 'nowrap' }}>
+                          <button
+                            disabled={currentPage === 1}
+                            onClick={() => handlePageChange(currentPage - 1)}
+                            className="btn-pill-outline"
+                            style={{ padding: '8px 16px', fontSize: '0.85rem', opacity: currentPage === 1 ? 0.4 : 1, cursor: currentPage === 1 ? 'not-allowed' : 'pointer' }}
+                            aria-label="Previous page"
+                          >
+                            <ChevronLeft size={16} /> Prev
+                          </button>
+
+                          {getPaginationRange(currentPage, totalPages).map((item, index) => {
+                            if (item === '...') {
+                              return (
+                                <span key={`dots-${index}`} style={{ padding: '0 6px', color: 'var(--text-light)', fontWeight: '800' }}>
+                                  ...
+                                </span>
+                              );
+                            }
+
+                            return (
+                              <button
+                                key={item}
+                                onClick={() => handlePageChange(item)}
+                                aria-label={`Go to page ${item}`}
+                                style={{
+                                  width: '40px',
+                                  height: '40px',
+                                  borderRadius: '12px',
+                                  border: '1px solid var(--border-color)',
+                                  background: currentPage === item ? '#82A735' : '#FFFFFF',
+                                  color: currentPage === item ? '#FFFFFF' : 'var(--text-dark)',
+                                  fontWeight: '800',
+                                  fontSize: '0.9rem',
+                                  cursor: 'pointer',
+                                  display: 'flex',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  transition: 'all 0.15s ease'
+                                }}
+                              >
+                                {item}
+                              </button>
+                            );
+                          })}
+
+                          <button
+                            disabled={currentPage === totalPages}
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            className="btn-pill-outline"
+                            style={{ padding: '8px 16px', fontSize: '0.85rem', opacity: currentPage === totalPages ? 0.4 : 1, cursor: currentPage === totalPages ? 'not-allowed' : 'pointer' }}
+                            aria-label="Next page"
+                          >
+                            Next <ChevronRight size={16} />
+                          </button>
+                        </div>
+                      )}
                     </div>
 
                     {/* Right Column: Real-Time AI News & Leaderboard Sidebar */}
@@ -754,66 +814,6 @@ export default function App() {
                       />
                     </div>
                   </div>
-
-                  {/* Sleek Compact Ellipsis Single-Row Pagination Bar */}
-                  {totalPages > 1 && (
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginTop: '40px', flexWrap: 'nowrap' }}>
-                      <button
-                        disabled={currentPage === 1}
-                        onClick={() => handlePageChange(currentPage - 1)}
-                        className="btn-pill-outline"
-                        style={{ padding: '8px 16px', fontSize: '0.85rem', opacity: currentPage === 1 ? 0.4 : 1, cursor: currentPage === 1 ? 'not-allowed' : 'pointer' }}
-                        aria-label="Previous page"
-                      >
-                        <ChevronLeft size={16} /> Prev
-                      </button>
-
-                      {getPaginationRange(currentPage, totalPages).map((item, index) => {
-                        if (item === '...') {
-                          return (
-                            <span key={`dots-${index}`} style={{ padding: '0 6px', color: 'var(--text-light)', fontWeight: '800' }}>
-                              ...
-                            </span>
-                          );
-                        }
-
-                        return (
-                          <button
-                            key={item}
-                            onClick={() => handlePageChange(item)}
-                            aria-label={`Go to page ${item}`}
-                            style={{
-                              width: '40px',
-                              height: '40px',
-                              borderRadius: '12px',
-                              border: '1px solid var(--border-color)',
-                              background: currentPage === item ? '#82A735' : '#FFFFFF',
-                              color: currentPage === item ? '#FFFFFF' : 'var(--text-dark)',
-                              fontWeight: '800',
-                              fontSize: '0.9rem',
-                              cursor: 'pointer',
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              transition: 'all 0.15s ease'
-                            }}
-                          >
-                            {item}
-                          </button>
-                        );
-                      })}
-
-                      <button
-                        disabled={currentPage === totalPages}
-                        onClick={() => handlePageChange(currentPage + 1)}
-                        className="btn-pill-outline"
-                        style={{ padding: '8px 16px', fontSize: '0.85rem', opacity: currentPage === totalPages ? 0.4 : 1, cursor: currentPage === totalPages ? 'not-allowed' : 'pointer' }}
-                        aria-label="Next page"
-                      >
-                        Next <ChevronRight size={16} />
-                      </button>
-                    </div>
-                  )}
                 </div>
               </section>
 

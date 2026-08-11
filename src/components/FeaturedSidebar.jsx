@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, ArrowUpRight, PlusCircle, Star } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
+  const [offsetIndex, setOffsetIndex] = useState(0);
 
   const sourceArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
 
@@ -13,7 +14,26 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
   const otherFeatured = sourceArray.filter(t => !t.isInFeed && t.packageType !== 'in-feed' && (t.featured || t.badge || t.rating >= 4.8));
 
   // Prioritize In-Feed sponsors at the top of the sidebar
-  const featuredList = [...inFeedSponsors, ...otherFeatured].slice(0, 15);
+  const fullFeaturedPool = [...inFeedSponsors, ...otherFeatured];
+
+  // Auto-rotate the starting offset index every 30 seconds so all paying founders get top spotlight exposure
+  useEffect(() => {
+    if (fullFeaturedPool.length <= 5) return;
+    const timer = setInterval(() => {
+      setOffsetIndex(prev => (prev + 1) % fullFeaturedPool.length);
+    }, 30000); // 30 seconds
+    return () => clearInterval(timer);
+  }, [fullFeaturedPool.length]);
+
+  // Select 5 tools starting from offsetIndex, wrapping around cleanly
+  const visibleFeatured = [];
+  const count = Math.min(5, fullFeaturedPool.length);
+  for (let i = 0; i < count; i++) {
+    const item = fullFeaturedPool[(offsetIndex + i) % fullFeaturedPool.length];
+    if (item && !visibleFeatured.some(v => v.id === item.id)) {
+      visibleFeatured.push(item);
+    }
+  }
 
   return (
     <div className="featured-sidebar-container" style={{
@@ -37,12 +57,12 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
           <Sparkles size={14} /> Featured Spotlights
         </div>
         <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontWeight: '700' }}>
-          Sponsored
+          Rotates 30s
         </span>
       </div>
 
       <div className="featured-sidebar-list" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {featuredList.map(tool => {
+        {visibleFeatured.map(tool => {
           const attempt = failedImgs[tool.id] || 0;
           const logoSrc = getLogoUrl(tool, attempt);
 
