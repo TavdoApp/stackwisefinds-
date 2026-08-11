@@ -17,7 +17,10 @@ const defaultSponsoredTools = [
 ];
 
 export default function SponsoredBanner({ onOpenVendorModal, customSponsors = [] }) {
-  const sponsors = customSponsors.length > 0 ? customSponsors : defaultSponsoredTools;
+  const allSponsors = [...customSponsors, ...defaultSponsoredTools];
+  const sponsors = allSponsors.filter((tool, index, self) =>
+    index === self.findIndex((t) => t.id === tool.id || (t.name && tool.name && t.name.toLowerCase() === tool.name.toLowerCase()))
+  );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
