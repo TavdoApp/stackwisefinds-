@@ -13,6 +13,9 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
   const tool = toolsArray.find(t => t.id === toolId || (t.name && t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === toolId)) || saasTools.find(t => t.id === toolId) || saasTools[0];
   const alternatives = toolsArray.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
 
+  const isFreeVendor = tool.packageType === 'free' || (tool.submittedByVendor && tool.packageType !== 'in-feed' && tool.packageType !== 'top-banner' && tool.packageType !== 'premium');
+  const relAttr = isFreeVendor ? "nofollow noopener noreferrer" : "noopener noreferrer";
+
   const googleFavicon = `https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`;
   const visitsDisplay = tool.monthlyVisits || null;
   const hasRating = Number.isFinite(tool.rating) && Number.isFinite(tool.reviewsCount);
@@ -123,7 +126,7 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
             <a
               href={tool.affiliateUrl}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={relAttr}
               onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl)}
               className="btn-pill-green"
               style={{ padding: '14px 26px', fontSize: '0.98rem', textDecoration: 'none' }}

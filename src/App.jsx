@@ -427,6 +427,13 @@ export default function App() {
   });
 
   const sortedTools = [...filteredTools].sort((a, b) => {
+    // Paid Sponsored Tools ALWAYS rank before free submissions
+    const aIsPaid = a.packageType === 'in-feed' || a.packageType === 'top-banner' || a.packageType === 'premium' || a.isInFeed || a.isTopBanner || (a.featured && a.packageType !== 'free');
+    const bIsPaid = b.packageType === 'in-feed' || b.packageType === 'top-banner' || b.packageType === 'premium' || b.isInFeed || b.isTopBanner || (b.featured && b.packageType !== 'free');
+
+    if (aIsPaid && !bIsPaid) return -1;
+    if (!aIsPaid && bIsPaid) return 1;
+
     if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
     if (sortBy === 'name') return (a.name || '').localeCompare(b.name || '');
     return (b.reviewsCount || 0) - (a.reviewsCount || 0);

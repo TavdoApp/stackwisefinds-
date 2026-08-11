@@ -214,7 +214,7 @@ export default function ToolCard({
           <a
             href={tool.affiliateUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel={tool.packageType === 'free' || (tool.submittedByVendor && tool.packageType !== 'in-feed' && tool.packageType !== 'top-banner' && tool.packageType !== 'premium') ? "nofollow noopener noreferrer" : "noopener noreferrer"}
             onClick={(e) => {
               e.stopPropagation();
               trackAffiliateClick(tool.id, tool.affiliateUrl);

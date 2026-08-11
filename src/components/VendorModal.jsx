@@ -168,7 +168,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
               </h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '24px' }}>
                 {packageType === 'free'
-                  ? `Your software submission for ${softwareName} has been queued for automated verification and directory indexing. Updates will be sent to ${vendorEmail}.`
+                  ? `Your software submission for ${softwareName} has been placed in our standard review queue (48–72 hours). Want to skip the review queue and go live instantly? Upgrade to a Paid Sponsorship Package.`
                   : `Your premium application for ${softwareName} has been recorded. Our team will send the direct Paddle checkout link and priority placement setup to ${vendorEmail}.`}
               </p>
               <button onClick={onClose} className="btn-pill-green" style={{ width: '100%', padding: '12px' }}>
@@ -202,8 +202,9 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     $0 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: '400' }}>/ free</span>
                   </div>
                   <ul style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.5', paddingLeft: '14px', margin: 0 }}>
-                    <li>Directory Indexing</li>
-                    <li>Automated Checks</li>
+                    <li>Review Queue (48–72 Hours)</li>
+                    <li>Nofollow External Link</li>
+                    <li>Standard Position (Below Paid)</li>
                   </ul>
                 </div>
 

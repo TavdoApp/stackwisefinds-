@@ -28,6 +28,15 @@ async function sendTelegramAlert(env, data) {
         ? '⭐ Featured Annual ($99/yr)' 
         : '🆓 Standard Directory Listing ($0)';
 
+  const statusLabel = data.status === 'approved' ? '✅ AUTO-APPROVED & PUBLISHED LIVE' : '⏳ PENDING REVIEW (48-72hr Queue)';
+
+  let approveLinks = '';
+  if (data.id && data.status === 'pending_review') {
+    approveLinks = `\n\n⚡ <b>ACTIONS:</b>\n` +
+      `👉 <a href="https://stakdock.com/api/approve-tool?id=${data.id}&action=approve">APPROVE NOW & PUBLISH LIVE</a>\n` +
+      `❌ <a href="https://stakdock.com/api/approve-tool?id=${data.id}&action=reject">REJECT SUBMISSION</a>`;
+  }
+
   const text = `🚨 <b>NEW STAKDOCK SOFTWARE SUBMISSION!</b>\n\n` +
     `📦 <b>Software Name:</b> ${data.softwareName}\n` +
     `🌐 <b>Website:</b> ${data.softwareWebsite}\n` +
@@ -35,8 +44,8 @@ async function sendTelegramAlert(env, data) {
     `✉️ <b>Email:</b> ${data.vendorEmail}\n` +
     `🏷️ <b>Category:</b> ${data.category || 'General'}\n` +
     `💎 <b>Plan Selected:</b> ${planLabel}\n` +
-    `✅ <b>Status:</b> Auto-Approved & Published Live\n` +
-    `⏰ <b>Timestamp:</b> ${new Date().toISOString()}`;
+    `📊 <b>Status:</b> ${statusLabel}\n` +
+    `⏰ <b>Timestamp:</b> ${new Date().toISOString()}` + approveLinks;
 
   try {
     const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
@@ -104,7 +113,11 @@ export async function onRequestPost(context) {
       expiresAt = exp.toISOString();
     }
 
-    // Auto-create D1 table if missing and insert approved submission
+    const isPaidPackage = packageType === 'in-feed' || packageType === 'top-banner' || packageType === 'premium';
+    const status = isPaidPackage ? 'approved' : 'pending_review';
+    let insertedId = null;
+
+    // Auto-create D1 table if missing and insert submission
     if (env && env.DB) {
       try {
         await env.DB.prepare(`
@@ -117,7 +130,7 @@ export async function onRequestPost(context) {
             category TEXT,
             package_type TEXT,
             expires_at TEXT,
-            status TEXT DEFAULT 'approved',
+            status TEXT DEFAULT 'pending_review',
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
           )
         `).run();
@@ -126,21 +139,27 @@ export async function onRequestPost(context) {
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN package_type TEXT').run(); } catch {}
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN expires_at TEXT').run(); } catch {}
 
-        await env.DB.prepare(
+        const insertRes = await env.DB.prepare(
           'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
-        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, category, packageType, expiresAt, 'approved').run();
+        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, category, packageType, expiresAt, status).run();
+
+        if (insertRes && insertRes.meta && insertRes.meta.last_row_id) {
+          insertedId = insertRes.meta.last_row_id;
+        }
       } catch (dbErr) {
         console.warn('D1 write warning:', dbErr.message);
       }
     }
 
     const alertData = {
+      id: insertedId,
       vendorName,
       softwareName,
       softwareWebsite,
       vendorEmail,
-      category: sanitizeText(body.category || 'ai-tools'),
-      packageType: sanitizeText(body.packageType || 'free')
+      category,
+      packageType,
+      status
     };
 
     // Send instant mobile push alert to Ossama's phone via Telegram Bot
@@ -151,8 +170,8 @@ export async function onRequestPost(context) {
 
     return new Response(JSON.stringify({
       success: true,
-      status: 'approved',
-      message: 'Software auto-approved and published live on StakDock'
+      status,
+      message: isPaidPackage ? 'Software auto-approved and published live on StakDock' : 'Software queued for 48-72hr review'
     }), {
       status: 200,
       headers: corsHeaders
