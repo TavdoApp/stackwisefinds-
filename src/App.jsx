@@ -32,6 +32,7 @@ const AlternativesView = lazy(() => import('./components/AlternativesView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
 const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
 const BadgeEmbedModal = lazy(() => import('./components/BadgeEmbedModal'));
+const ClaimListingModal = lazy(() => import('./components/ClaimListingModal'));
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -171,6 +172,7 @@ export default function App() {
   const [vendorModalPackage, setVendorModalPackage] = useState('free');
   const [showWizardModal, setShowWizardModal] = useState(false);
   const [showBadgeModal, setShowBadgeModal] = useState(false);
+  const [selectedClaimTool, setSelectedClaimTool] = useState(null);
 
   const handleOpenVendorModal = (pkg = 'free') => {
     setVendorModalPackage(typeof pkg === 'string' ? pkg : 'free');
@@ -1084,6 +1086,7 @@ export default function App() {
                 onToggleCompare={handleToggleCompare}
                 isSelectedForCompare={selectedCompareIds.includes(selectedToolDetailId)}
                 onOpenBadgeModal={() => setShowBadgeModal(true)}
+                onOpenClaimModal={(t) => setSelectedClaimTool(t)}
               />
             )}
           </Suspense>
@@ -1122,6 +1125,13 @@ export default function App() {
         {showBadgeModal && (
           <BadgeEmbedModal
             onClose={() => setShowBadgeModal(false)}
+          />
+        )}
+
+        {selectedClaimTool && (
+          <ClaimListingModal
+            tool={selectedClaimTool}
+            onClose={() => setSelectedClaimTool(null)}
           />
         )}
 

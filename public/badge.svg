@@ -1,18 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" fill="none">
-  <!-- Background Pill -->
-  <rect width="240" height="56" rx="16" fill="#141E14" stroke="#82A735" stroke-width="2"/>
-  
-  <!-- StakDock Icon -->
-  <path d="M22 18L12 23L22 28L32 23L22 18Z" fill="#82A735"/>
-  <path d="M12 29.5L22 34.5L32 29.5" stroke="#82A735" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 36L22 41L32 36" stroke="#82A735" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-
-  <!-- Text Group -->
-  <text x="42" y="24" fill="#82A735" font-family="system-ui, sans-serif" font-size="9" font-weight="800" letter-spacing="0.08em">FEATURED ON</text>
-  <text x="42" y="40" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="800" letter-spacing="-0.02em">StakDock</text>
-
-  <!-- Star Verified Badge -->
-  <rect x="175" y="16" width="52" height="24" rx="12" fill="rgba(130, 167, 53, 0.2)"/>
-  <path d="M187 23.5L188.5 26.5L191.8 27L189.4 29.3L190 32.5L187 31L184 32.5L184.6 29.3L182.2 27L185.5 26.5L187 23.5Z" fill="#82A735"/>
-  <text x="195" y="32" fill="#82A735" font-family="system-ui, sans-serif" font-size="10" font-weight="800">2026</text>
+  <rect width="240" height="56" rx="14" fill="#141E14" stroke="#82A735" stroke-width="2"/>
+  <g transform="translate(14, 14)">
+    <rect width="28" height="28" rx="8" fill="#82A735"/>
+    <path d="M14 6L16.5 11.5L22.5 12.2L18 16.2L19.2 22L14 19L8.8 22L10 16.2L5.5 12.2L11.5 11.5L14 6Z" fill="#FFFFFF"/>
+  </g>
+  <text x="52" y="24" fill="#82A735" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="800" letter-spacing="1">FEATURED ON</text>
+  <text x="52" y="40" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="900" letter-spacing="-0.5">stakdock<tspan fill="#82A735">.com</tspan></text>
 </svg>

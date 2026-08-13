@@ -5,7 +5,7 @@ import { injectSoftwareApplicationSchema, injectFAQPageSchema } from '../utils/s
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 
-export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal }) {
+export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal, onOpenClaimModal }) {
   const [activeTab, setActiveTab] = useState('product-info');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
@@ -247,16 +247,17 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
                 <span>Write a Community Review</span>
               </button>
 
-              {onOpenBadgeModal && (
-                <button
-                  onClick={onOpenBadgeModal}
-                  className="btn-pill-green"
-                  style={{ padding: '10px 18px', fontSize: '0.88rem' }}
-                >
-                  <Sparkles size={16} />
-                  <span>Claim Embeddable Founder Badge</span>
-                </button>
-              )}
+              <button
+                onClick={() => {
+                  if (onOpenClaimModal) onOpenClaimModal(tool);
+                  else if (onOpenBadgeModal) onOpenBadgeModal(tool);
+                }}
+                className="btn-pill-green"
+                style={{ padding: '10px 18px', fontSize: '0.88rem' }}
+              >
+                <Sparkles size={16} />
+                <span>Claim & Verify Software Profile ↗</span>
+              </button>
             </div>
           </div>
 
