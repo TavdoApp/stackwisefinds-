@@ -96,6 +96,21 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
                 <span className="tag-sage" style={{ fontSize: '0.75rem' }}>
                   {tool.badge || 'Verified Tool'}
                 </span>
+                <span style={{
+                  fontSize: '0.75rem',
+                  fontWeight: '800',
+                  background: 'linear-gradient(135deg, #FFF8E7 0%, #FFE8B6 100%)',
+                  color: '#B45309',
+                  border: '1px solid #FCD34D',
+                  padding: '3px 10px',
+                  borderRadius: '9999px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  boxShadow: '0 2px 8px rgba(217,119,6,0.15)'
+                }}>
+                  🏆 #1 Product of the Week
+                </span>
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem' }}>

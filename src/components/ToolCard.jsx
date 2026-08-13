@@ -99,6 +99,25 @@ export default function ToolCard({
                 Featured
               </span>
             )}
+            {tool.rankBadge && (
+              <span style={{
+                fontSize: '0.62rem',
+                fontWeight: '900',
+                background: tool.rankBadge.includes('#1') 
+                  ? 'linear-gradient(135deg, #FFF8E7 0%, #FFE8B6 100%)' 
+                  : 'linear-gradient(135deg, #F3F4F6 0%, #E5E7EB 100%)',
+                color: tool.rankBadge.includes('#1') ? '#B45309' : '#374151',
+                border: tool.rankBadge.includes('#1') ? '1px solid #FCD34D' : '1px solid #D1D5DB',
+                padding: '2px 8px',
+                borderRadius: '6px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '3px',
+                boxShadow: tool.rankBadge.includes('#1') ? '0 2px 6px rgba(217,119,6,0.15)' : 'none'
+              }}>
+                🏆 {tool.rankBadge}
+              </span>
+            )}
             {tool.badge && (
               <span className="tag-sage" style={{ fontSize: '0.6rem', padding: '1px 6px' }}>
                 {tool.badge}

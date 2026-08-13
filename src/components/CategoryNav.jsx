@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { 
   Sparkles, Bot, Video, Music, Palette, Code, Mic, Building2, Receipt, Mail, 
   Share2, Briefcase, Search, FormInput, ShoppingCart, Users, LifeBuoy, Cloud, 
-  Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid, Flame
+  Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid, Flame, Trophy
 } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
 
@@ -44,6 +44,8 @@ export default function CategoryNav({
   onToggleOpenSourceOnly,
   filterTrendingOnly,
   onToggleTrendingOnly,
+  filterLeaderboardOnly,
+  onToggleLeaderboardOnly,
   currentLang = 'en'
 }) {
   const scrollContainerRef = useRef(null);
@@ -91,6 +93,30 @@ export default function CategoryNav({
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           <span style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-muted)' }}>{t.filterLabel}</span>
           
+          {/* Growth Engine #2: Product of the Week Leaderboard Toggle */}
+          <button
+            onClick={onToggleLeaderboardOnly}
+            aria-label="Filter top upvoted software tools of the week"
+            style={{
+              padding: '6px 14px',
+              borderRadius: '9999px',
+              border: filterLeaderboardOnly ? '1px solid #FCD34D' : '1px solid var(--border-color)',
+              background: filterLeaderboardOnly ? 'linear-gradient(135deg, #141E14 0%, #2A3B2A 100%)' : '#FFFFFF',
+              color: filterLeaderboardOnly ? '#FFE8B6' : 'var(--text-dark)',
+              fontSize: '0.82rem',
+              fontWeight: '800',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              transition: 'all 0.15s ease',
+              boxShadow: filterLeaderboardOnly ? '0 4px 12px rgba(20,30,20,0.2)' : 'none'
+            }}
+          >
+            <Trophy size={13} color={filterLeaderboardOnly ? '#FCD34D' : '#D97706'} />
+            <span>🏆 Product of the Week</span>
+          </button>
+
           {/* Toolify Feature: Trending AI Filter */}
           <button
             onClick={onToggleTrendingOnly}

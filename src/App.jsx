@@ -155,10 +155,11 @@ export default function App() {
     }));
   };
   
-  // Growth Hack #2 Filters: Free Tier, Open Source & Trending AI
+  // Growth Hack #2 Filters: Free Tier, Open Source, Trending AI & Leaderboard
   const [filterFreeOnly, setFilterFreeOnly] = useState(false);
   const [filterOpenSourceOnly, setFilterOpenSourceOnly] = useState(false);
   const [filterTrendingOnly, setFilterTrendingOnly] = useState(false);
+  const [filterLeaderboardOnly, setFilterLeaderboardOnly] = useState(false);
   const [sortBy, setSortBy] = useState('popular');
 
   // Sleek Pagination State (20 tools per page)
@@ -429,6 +430,12 @@ export default function App() {
   });
 
   const sortedTools = [...filteredTools].sort((a, b) => {
+    if (filterLeaderboardOnly) {
+      const votesA = upvotesState[a.id] || a.upvotes || 120;
+      const votesB = upvotesState[b.id] || b.upvotes || 120;
+      return votesB - votesA;
+    }
+
     // Paid Sponsored Tools ALWAYS rank before free submissions
     const aIsPaid = a.packageType === 'in-feed' || a.packageType === 'top-banner' || a.packageType === 'premium' || a.isInFeed || a.isTopBanner || (a.featured && a.packageType !== 'free');
     const bIsPaid = b.packageType === 'in-feed' || b.packageType === 'top-banner' || b.packageType === 'premium' || b.isInFeed || b.isTopBanner || (b.featured && b.packageType !== 'free');
@@ -439,6 +446,13 @@ export default function App() {
     if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
     if (sortBy === 'name') return (a.name || '').localeCompare(b.name || '');
     return (b.reviewsCount || 0) - (a.reviewsCount || 0);
+  }).map((t, index) => {
+    let rankBadge = null;
+    if (index === 0) rankBadge = '#1 PRODUCT OF THE DAY';
+    else if (index === 1) rankBadge = '#2 PRODUCT OF THE WEEK';
+    else if (index === 2) rankBadge = '#3 PRODUCT OF THE WEEK';
+    else if (index < 10) rankBadge = `TOP 10 PRODUCT`;
+    return { ...t, rankBadge };
   });
 
   // Calculate Pagination Slices
@@ -712,6 +726,11 @@ export default function App() {
                     filterTrendingOnly={filterTrendingOnly}
                     onToggleTrendingOnly={() => {
                       setFilterTrendingOnly(!filterTrendingOnly);
+                      setCurrentPage(1);
+                    }}
+                    filterLeaderboardOnly={filterLeaderboardOnly}
+                    onToggleLeaderboardOnly={() => {
+                      setFilterLeaderboardOnly(!filterLeaderboardOnly);
                       setCurrentPage(1);
                     }}
                     currentLang={currentLang}
