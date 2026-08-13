@@ -77,8 +77,8 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
         'Accept': 'application/json'
       },
       body: JSON.stringify({
-        sender: { name: 'StakDock Team', email: 'ossamatbili@gmail.com' },
-        replyTo: { name: 'StakDock Support', email: 'support@stakdock.com' },
+        sender: { name: 'StakDock Team', email: 'team@stakdock.com' },
+        replyTo: { name: 'StakDock Team', email: 'team@stakdock.com' },
         to: [{ email: toEmail, name: vendorName || 'Founder' }],
         subject,
         htmlContent
