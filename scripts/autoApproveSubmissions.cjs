@@ -35,36 +35,71 @@ function checkDomainHealth(url, redirects = 0) {
         }
       }
 
-      const request = client.request(url, {
-        method: 'HEAD',
+      const request = client.get(url, {
         headers: {
-          'User-Agent': 'StakDockHealthVerifier/1.0 (+https://stakdock.com)'
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
         },
-        timeout: 6000
+        timeout: 8000
       }, (response) => {
         const code = response.statusCode || 0;
         const location = response.headers.location;
-        response.resume();
 
-        if (location && code >= 300 && code < 400) {
+        if (location && code >= 300 && code < 400 && redirects < 3) {
+          response.resume();
           try {
             const redirectUrl = new URL(location, url).toString();
+            if (/godaddy|namecheap|sedo|dan\.com|afternic|hugedomains|parking/i.test(redirectUrl)) {
+              return resolve({ isHealthy: false, reason: 'Redirected to parked domain registrar' });
+            }
             return resolve(checkDomainHealth(redirectUrl, redirects + 1));
           } catch {
             return resolve({ isHealthy: false, reason: 'Invalid redirect header' });
           }
         }
 
-        if (code >= 200 && code < 400) {
-          resolve({ isHealthy: true, finalUrl: url, statusCode: code });
-        } else {
-          resolve({ isHealthy: false, reason: `HTTP status ${code}` });
+        if (code < 200 || code >= 400) {
+          response.resume();
+          return resolve({ isHealthy: false, reason: `HTTP status ${code}` });
         }
+
+        let body = '';
+        response.setEncoding('utf8');
+        response.on('data', (chunk) => {
+          body += chunk;
+          if (body.length > 30000) response.destroy();
+        });
+
+        response.on('end', () => {
+          const lowerBody = body.toLowerCase();
+          const parkedSignals = [
+            'domain is parked',
+            'buy this domain',
+            'domain for sale',
+            'this domain has expired',
+            'parked free courtesy',
+            'hugedomains',
+            'afternic.com',
+            'dan.com/buy-domain',
+            'sedo.com/search',
+            'godaddy.com/park',
+            'renew your domain',
+            'under construction',
+            'default web site page'
+          ];
+
+          const isParked = parkedSignals.some(s => lowerBody.includes(s));
+          if (isParked || body.length < 250) {
+            return resolve({ isHealthy: false, reason: 'Parked / expired domain detected' });
+          }
+
+          resolve({ isHealthy: true, finalUrl: url, statusCode: code });
+        });
+
+        response.on('error', (err) => resolve({ isHealthy: false, reason: err.message }));
       });
 
       request.on('error', (err) => resolve({ isHealthy: false, reason: err.message }));
       request.on('timeout', () => { request.destroy(); resolve({ isHealthy: false, reason: 'Connection timeout' }); });
-      request.end();
     } catch (err) {
       resolve({ isHealthy: false, reason: err.message });
     }
