@@ -136,8 +136,33 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
             </div>
           </div>
 
-          {/* Single Primary CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          {/* Primary CTAs */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            {tool.lifetimeDealUrl && (
+              <a
+                href={tool.lifetimeDealUrl}
+                target="_blank"
+                rel={relAttr}
+                onClick={() => trackAffiliateClick(tool.id, tool.lifetimeDealUrl)}
+                className="btn-pill-dark"
+                style={{
+                  padding: '14px 24px',
+                  fontSize: '0.98rem',
+                  textDecoration: 'none',
+                  background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 100%)',
+                  color: '#FFFFFF',
+                  border: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  boxShadow: '0 4px 14px rgba(234,88,12,0.35)',
+                  fontWeight: '800'
+                }}
+              >
+                <Gift size={18} />
+                <span>Claim Lifetime Deal</span>
+              </a>
+            )}
             <a
               href={tool.affiliateUrl}
               target="_blank"

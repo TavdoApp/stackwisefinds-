@@ -150,6 +150,30 @@ export const saasCategories = [
 
 export const staticSaasTools = [
   {
+    "id": "greenshift-wp",
+    "name": "Greenshift WP",
+    "domain": "greenshiftwp.com",
+    "category": "web-builders",
+    "tagline": "Modern Gutenberg page builder blocks, CSS animations, and FSE toolkit for WordPress",
+    "description": "Greenshift is an ultra-fast, block-based WordPress page builder plugin featuring GSAP animations, 3D Canvas visual effects, query loops, WooCommerce dynamic builders, and clean zero-bloat code generation.",
+    "rating": 4.9,
+    "reviewsCount": 2840,
+    "pricing": "Freemium / Paid",
+    "websiteUrl": "https://greenshiftwp.com",
+    "affiliateUrl": "https://shop.greenshiftwp.com/?from=2835",
+    "badge": "Verified Partner",
+    "featured": true,
+    "monthlyVisits": "480K",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Visual Block Page Builder",
+      "GSAP Micro-Animations",
+      "Dynamic WooCommerce Builder",
+      "SEO & Core Web Vitals Optimized"
+    ]
+  },
+  {
     "id": "maxbounty",
     "name": "MaxBounty",
     "domain": "maxbounty.com",
@@ -12163,20 +12187,25 @@ export const staticSaasTools = [
     "name": "NeuronWriter",
     "domain": "neuronwriter.com",
     "category": "seo-analytics",
-    "tagline": "NLP content optimization and semantic SEO drafting tool",
-    "description": "Uses semantic NLP recommendations to optimize web content, generate SEO outlines, and analyze SERP competitor intent.",
+    "tagline": "NLP content optimization, semantic SEO drafting, and SERP intelligence tool",
+    "description": "Uses semantic NLP recommendations to optimize web content, generate SEO outlines, evaluate search intent, and analyze top-ranking SERP competitors.",
     "rating": 4.9,
     "reviewsCount": 9480,
-    "pricing": "Paid Trial",
-    "affiliateUrl": "https://neuronwriter.com?aff=stakdock",
-    "featured": false,
-    "isFreeTier": false,
+    "pricing": "Freemium / Lifetime Deal / Subscription",
+    "websiteUrl": "https://neuronwriter.com",
+    "affiliateUrl": "https://app.neuronwriter.com/ar/f1279079a995d647ea261245685fa242",
+    "lifetimeDealUrl": "https://app.neuronwriter.com/arl/f1279079a995d647ea261245685fa242",
+    "hasLifetimeDeal": true,
+    "badge": "Verified Partner",
+    "featured": true,
+    "monthlyVisits": "620K",
+    "isFreeTier": true,
     "isOpenSource": false,
     "features": [
-      "Keyword Research",
-      "SERP Rank Tracking",
-      "Site Audit",
-      "Competitor Intelligence"
+      "Semantic NLP Editor",
+      "SERP Competitor Content Analysis",
+      "AI Outline & Article Generator",
+      "Internal Link Suggestions"
     ]
   },
   {
