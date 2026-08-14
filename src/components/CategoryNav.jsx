@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { 
   Sparkles, Bot, Video, Music, Palette, Code, Mic, Building2, Receipt, Mail, 
   Share2, Briefcase, Search, FormInput, ShoppingCart, Users, LifeBuoy, Cloud, 
-  Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid, Flame, Trophy, Gift
+  Globe, BarChart3, Newspaper, Clock, FileText, Lock, Database, ChevronLeft, ChevronRight, Grid, Flame, Trophy, Gift, Target
 } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
 
@@ -33,7 +33,8 @@ const categoryIconMap = {
   'security-passwords': <Lock size={16} />,
   'nocode-databases': <Database size={16} />,
   'saas-lifetime-deals': <Gift size={16} />,
-  'freelance-marketplaces': <Briefcase size={16} />
+  'freelance-marketplaces': <Briefcase size={16} />,
+  'affiliate-cpa-networks': <Target size={16} />
 };
 
 export default function CategoryNav({

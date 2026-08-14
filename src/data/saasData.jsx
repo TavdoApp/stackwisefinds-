@@ -141,10 +141,182 @@ export const saasCategories = [
   {
     "id": "freelance-marketplaces",
     "label": "Freelance Platforms & Service Marketplaces"
+  },
+  {
+    "id": "affiliate-cpa-networks",
+    "label": "Affiliate Networks & CPA Platforms"
   }
 ];
 
 export const staticSaasTools = [
+  {
+    "id": "maxbounty",
+    "name": "MaxBounty",
+    "domain": "maxbounty.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "Industry-leading performance CPA affiliate network with top converting advertiser campaigns",
+    "description": "MaxBounty connects performance marketers, media buyers, and affiliate publishers with thousands of high-converting CPA, CPL, and pay-per-call advertiser campaigns across finance, software, and e-commerce with dedicated weekly affiliate payouts.",
+    "rating": 4.9,
+    "reviewsCount": 3800,
+    "pricing": "Free for Affiliates / Performance Payouts",
+    "websiteUrl": "https://www.maxbounty.com",
+    "affiliateUrl": "https://affiliates.maxbounty.com/register?referrer=689024",
+    "badge": "Verified Network",
+    "featured": true,
+    "monthlyVisits": "1.2M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Weekly Fast Payouts",
+      "Dedicated Affiliate Managers",
+      "3,000+ Active CPA Offers",
+      "Proprietary Tracking Dashboard"
+    ]
+  },
+  {
+    "id": "impact-com",
+    "name": "Impact.com",
+    "domain": "impact.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "Leading partnership management platform and global affiliate tracking ecosystem",
+    "description": "Impact.com transforms how businesses discover, recruit, and manage affiliate publishers, influencers, and SaaS integration partners with enterprise attribution analytics.",
+    "rating": 4.8,
+    "reviewsCount": 2900,
+    "pricing": "Free for Affiliates / Enterprise",
+    "websiteUrl": "https://impact.com",
+    "affiliateUrl": "https://impact.com",
+    "badge": "Verified Network",
+    "featured": true,
+    "monthlyVisits": "7.8M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Global Partner Discovery",
+      "Cross-Device Attribution",
+      "Automated Contract Contracting",
+      "Enterprise Fraud Protection"
+    ]
+  },
+  {
+    "id": "partnerstack",
+    "name": "PartnerStack",
+    "domain": "partnerstack.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "The premier B2B SaaS partnership and affiliate channel management platform",
+    "description": "PartnerStack accelerates software revenue by automating affiliate, referral, and reseller programs specifically for high-growth B2B SaaS companies and top tech marketers.",
+    "rating": 4.7,
+    "reviewsCount": 1650,
+    "pricing": "Free for Partners / Custom SaaS",
+    "websiteUrl": "https://partnerstack.com",
+    "affiliateUrl": "https://partnerstack.com",
+    "badge": "Verified Network",
+    "featured": true,
+    "monthlyVisits": "2.4M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "B2B SaaS Affiliate Marketplace",
+      "Automated Recurring Commissions",
+      "Partner Resource Portals",
+      "Direct CRM Integration"
+    ]
+  },
+  {
+    "id": "cj-affiliate",
+    "name": "CJ Affiliate",
+    "domain": "cj.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "Enterprise performance marketing network connecting top brands with publishers worldwide",
+    "description": "CJ Affiliate is a global performance marketing powerhouse facilitating billions in commerce through advanced publisher tracking, dynamic commissions, and premium brand partnerships.",
+    "rating": 4.6,
+    "reviewsCount": 4100,
+    "pricing": "Free for Publishers / Merchant Fees",
+    "websiteUrl": "https://www.cj.com",
+    "affiliateUrl": "https://www.cj.com",
+    "badge": "Verified Network",
+    "featured": false,
+    "monthlyVisits": "8.1M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Global Enterprise Brand Catalog",
+      "Real-Time Transaction Tracking",
+      "Cookieless Deep Linking",
+      "Reliable Monthly Direct Deposit"
+    ]
+  },
+  {
+    "id": "shareasale",
+    "name": "ShareASale",
+    "domain": "shareasale.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "Trusted affiliate marketing network for retail merchants and digital content creators",
+    "description": "ShareASale provides performance marketing solutions for over 25,000 merchants and 1 million publishers, offering robust click tracking, deep linking, and automated payouts.",
+    "rating": 4.5,
+    "reviewsCount": 5200,
+    "pricing": "Free for Affiliates / Merchant Plans",
+    "websiteUrl": "https://www.shareasale.com",
+    "affiliateUrl": "https://www.shareasale.com",
+    "badge": "Verified Network",
+    "featured": false,
+    "monthlyVisits": "4.9M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "25,000+ Merchant Programs",
+      "Automated Payment Processing",
+      "Custom Link Creation Tools",
+      "Real-Time Click & Sales Analytics"
+    ]
+  },
+  {
+    "id": "clickbank",
+    "name": "ClickBank",
+    "domain": "clickbank.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "Global e-commerce and digital product marketplace for direct-response affiliate marketers",
+    "description": "ClickBank empowers digital entrepreneurs and affiliate media buyers to scale offers with high commission rates (up to 75%), integrated payment processing, and reliable global payouts.",
+    "rating": 4.5,
+    "reviewsCount": 6800,
+    "pricing": "Free for Affiliates / Direct Sales",
+    "websiteUrl": "https://www.clickbank.com",
+    "affiliateUrl": "https://www.clickbank.com",
+    "badge": "Verified Network",
+    "featured": false,
+    "monthlyVisits": "6.2M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Up to 75% Commission Offers",
+      "Instant Digital Delivery",
+      "Automated Global Payouts",
+      "Dedicated Top-Gravity Metrics"
+    ]
+  },
+  {
+    "id": "perform-cb",
+    "name": "Perform[cb]",
+    "domain": "performcb.com",
+    "category": "affiliate-cpa-networks",
+    "tagline": "Outcome-based performance marketing and top-ranked CPA network for media buyers",
+    "description": "Perform[cb] operates a high-performing CPA affiliate network connecting advertisers with media buyers across native, search, social, and email traffic channels with anti-fraud AI technology.",
+    "rating": 4.7,
+    "reviewsCount": 1200,
+    "pricing": "Performance Payouts",
+    "websiteUrl": "https://performcb.com",
+    "affiliateUrl": "https://performcb.com",
+    "badge": "Verified Network",
+    "featured": false,
+    "monthlyVisits": "340K",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Weighted Smart CPA Bidding",
+      "Patented Anti-Fraud Shield",
+      "Multi-Vertical Campaign Access",
+      "Dedicated Affiliate Strategists"
+    ]
+  },
   {
     "id": "appsumo",
     "name": "AppSumo",
