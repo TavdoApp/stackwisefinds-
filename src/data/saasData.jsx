@@ -133,10 +133,210 @@ export const saasCategories = [
   {
     "id": "testing-qa",
     "label": "Software Testing & QA"
+  },
+  {
+    "id": "saas-lifetime-deals",
+    "label": "Lifetime Deals & Software Marketplace"
+  },
+  {
+    "id": "freelance-marketplaces",
+    "label": "Freelance Platforms & Service Marketplaces"
   }
 ];
 
 export const staticSaasTools = [
+  {
+    "id": "appsumo",
+    "name": "AppSumo",
+    "domain": "appsumo.com",
+    "category": "saas-lifetime-deals",
+    "tagline": "The #1 software marketplace for daily tech deals, lifetime SaaS offers, and founder tools",
+    "description": "AppSumo is the premiere digital marketplace where entrepreneurs and small businesses get lifetime access to top productivity, marketing, design, and AI software at up to 90% off standard pricing.",
+    "rating": 4.8,
+    "reviewsCount": 4200,
+    "pricing": "Lifetime Deals / One-Time",
+    "websiteUrl": "https://appsumo.com",
+    "affiliateUrl": "https://appsumo.com",
+    "badge": "Verified Marketplace",
+    "featured": true,
+    "monthlyVisits": "4.5M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Lifetime SaaS Access",
+      "60-Day Money Back Guarantee",
+      "Founder Discounts",
+      "Product Hunt Specials"
+    ]
+  },
+  {
+    "id": "pitchground",
+    "name": "PitchGround",
+    "domain": "pitchground.com",
+    "category": "saas-lifetime-deals",
+    "tagline": "Exclusive SaaS lifetime deals and growth software community for startups",
+    "description": "PitchGround helps founders scale their tech stacks with exclusive lifetime deals on AI tools, marketing automation platforms, CRM software, and SEO suites with lifetime support.",
+    "rating": 4.6,
+    "reviewsCount": 890,
+    "pricing": "Lifetime Deals / One-Time",
+    "websiteUrl": "https://pitchground.com",
+    "affiliateUrl": "https://pitchground.com",
+    "badge": "Verified Marketplace",
+    "featured": false,
+    "monthlyVisits": "280K",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Exclusive Founder Discounts",
+      "Lifetime Software Licenses",
+      "Growth Academy Access",
+      "Vetted Tech Startups"
+    ]
+  },
+  {
+    "id": "dealmirror",
+    "name": "DealMirror",
+    "domain": "dealmirror.com",
+    "category": "saas-lifetime-deals",
+    "tagline": "Affordable software lifetime deals, web themes, and digital marketing tools",
+    "description": "DealMirror curates daily lifetime deals on web development tools, SEO plugins, AI image generators, and marketing software for agencies and freelancers.",
+    "rating": 4.5,
+    "reviewsCount": 410,
+    "pricing": "Lifetime Deals / One-Time",
+    "websiteUrl": "https://dealmirror.com",
+    "affiliateUrl": "https://dealmirror.com",
+    "badge": "Verified Tool",
+    "featured": false,
+    "monthlyVisits": "180K",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "One-Time Software Offers",
+      "SEO & Marketing Plugins",
+      "Agency Commercial Licenses",
+      "30-Day Money Back"
+    ]
+  },
+  {
+    "id": "stacksocial",
+    "name": "StackSocial",
+    "domain": "stacksocial.com",
+    "category": "saas-lifetime-deals",
+    "tagline": "Curated tech bundles, software lifetime licenses, gadgets, and digital courses",
+    "description": "StackSocial connects tech enthusiasts and business managers with heavily discounted software bundles, lifetime VPN access, online learning subscriptions, and developer tools.",
+    "rating": 4.4,
+    "reviewsCount": 2100,
+    "pricing": "Lifetime Deals / Bundles",
+    "websiteUrl": "https://stacksocial.com",
+    "affiliateUrl": "https://stacksocial.com",
+    "badge": "Verified Marketplace",
+    "featured": false,
+    "monthlyVisits": "1.8M",
+    "isFreeTier": false,
+    "isOpenSource": false,
+    "features": [
+      "Software Lifetime Bundles",
+      "VPN & Cybersecurity Deals",
+      "Developer Licenses",
+      "Digital Academy Courses"
+    ]
+  },
+  {
+    "id": "fiverr",
+    "name": "Fiverr",
+    "domain": "fiverr.com",
+    "category": "freelance-marketplaces",
+    "tagline": "Global online freelance marketplace for digital services, AI gigs, design, and dev",
+    "description": "Fiverr connects business owners with freelance professionals offering instant services across 500+ categories including logo design, WordPress development, AI prompt engineering, and SEO copywriting.",
+    "rating": 4.7,
+    "reviewsCount": 12500,
+    "pricing": "Pay Per Gig / Custom Quotes",
+    "websiteUrl": "https://www.fiverr.com",
+    "affiliateUrl": "https://www.fiverr.com",
+    "badge": "Verified Marketplace",
+    "featured": true,
+    "monthlyVisits": "55M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Instant Gig Booking",
+      "Fiverr Pro Vetted Talent",
+      "AI & Tech Specialists",
+      "Milestone Escrow Protection"
+    ]
+  },
+  {
+    "id": "upwork",
+    "name": "Upwork",
+    "domain": "upwork.com",
+    "category": "freelance-marketplaces",
+    "tagline": "Enterprise work marketplace connecting businesses with top remote freelancers and agencies",
+    "description": "Upwork is the world's leading work marketplace for hiring vetted software developers, AI engineers, marketing directors, finance experts, and full-time remote talent.",
+    "rating": 4.8,
+    "reviewsCount": 18400,
+    "pricing": "Hourly / Fixed Price Escrow",
+    "websiteUrl": "https://www.upwork.com",
+    "affiliateUrl": "https://www.upwork.com",
+    "badge": "Verified Marketplace",
+    "featured": true,
+    "monthlyVisits": "48M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Vetted Remote Developers",
+      "Work Diary & Hourly Verification",
+      "Enterprise Agency Rosters",
+      "Secure Escrow Contracts"
+    ]
+  },
+  {
+    "id": "toptal",
+    "name": "Toptal",
+    "domain": "toptal.com",
+    "category": "freelance-marketplaces",
+    "tagline": "Exclusive network of the top 3% of freelance software developers, designers, and CFOs",
+    "description": "Toptal rigorously screens freelance engineers, UI/UX designers, project managers, and financial experts to match Fortune 500 companies and high-growth startups with elite global talent.",
+    "rating": 4.9,
+    "reviewsCount": 3200,
+    "pricing": "Custom Hourly / Weekly Rates",
+    "websiteUrl": "https://www.toptal.com",
+    "affiliateUrl": "https://www.toptal.com",
+    "badge": "Verified Marketplace",
+    "featured": false,
+    "monthlyVisits": "2.2M",
+    "isFreeTier": false,
+    "isOpenSource": false,
+    "features": [
+      "Top 3% Rigorously Screened Talent",
+      "No-Risk Trial Period",
+      "Senior Full-Stack Engineers",
+      "Fractional Executives & CFOs"
+    ]
+  },
+  {
+    "id": "freelancer",
+    "name": "Freelancer.com",
+    "domain": "freelancer.com",
+    "category": "freelance-marketplaces",
+    "tagline": "Massive global crowdsourcing marketplace for competitive project bidding and contests",
+    "description": "Freelancer.com is a large-scale bidding platform where employers post projects and receive competitive proposals from over 60 million global freelancers for software engineering, design, and translation.",
+    "rating": 4.4,
+    "reviewsCount": 6100,
+    "pricing": "Competitive Bidding / Milestone Escrow",
+    "websiteUrl": "https://www.freelancer.com",
+    "affiliateUrl": "https://www.freelancer.com",
+    "badge": "Verified Marketplace",
+    "featured": false,
+    "monthlyVisits": "8.5M",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Competitive Auction Bidding",
+      "Design & Logo Contests",
+      "Global Multilingual Workforce",
+      "Milestone Payment Escrow"
+    ]
+  },
   {
     "id": "zebracat-ai",
     "name": "Zebracat",
