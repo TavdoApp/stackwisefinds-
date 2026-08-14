@@ -29,6 +29,7 @@ const ReviewModal = lazy(() => import('./components/ReviewModal'));
 const ArticleView = lazy(() => import('./components/ArticleView'));
 const VersusPage = lazy(() => import('./components/VersusPage'));
 const AlternativesView = lazy(() => import('./components/AlternativesView'));
+const CategoryBuyerGuideView = lazy(() => import('./components/CategoryBuyerGuideView'));
 const LegalViews = lazy(() => import('./components/LegalViews'));
 const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
 const BadgeEmbedModal = lazy(() => import('./components/BadgeEmbedModal'));
@@ -84,6 +85,7 @@ export default function App() {
     if (p.startsWith('/vs/')) return 'versus-detail';
     if (p.startsWith('/software/') || p.startsWith('/tool/')) return 'tool-detail';
     if (p.startsWith('/alternatives/')) return 'alternatives-detail';
+    if (p.startsWith('/best/') || p.startsWith('/category/')) return 'category-buyer-guide';
     if (p.startsWith('/guides/')) return 'article-detail';
     if (p === '/categories') return 'category-grid';
     return 'directory';
@@ -91,6 +93,7 @@ export default function App() {
   const [currentLang, setCurrentLang] = useState('en');
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState('freshbooks');
+  const [selectedBuyerCategory, setSelectedBuyerCategory] = useState('crm');
   const [selectedReviewTool, setSelectedReviewTool] = useState(null);
   const [selectedToolDetailId, setSelectedToolDetailId] = useState('cursor-ai');
   const [legalView, setLegalView] = useState(null);
@@ -235,6 +238,21 @@ export default function App() {
         return;
       }
 
+      if (pathname.startsWith('/best/')) {
+        const rawSlug = pathname.replace('/best/', '').replace(/\/$/, '');
+        const catSlug = rawSlug.replace(/-software-2026$/, '').replace(/-software$/, '').replace(/-tools$/, '');
+        setSelectedBuyerCategory(catSlug);
+        setCurrentView('category-buyer-guide');
+        return;
+      }
+
+      if (pathname.startsWith('/category/')) {
+        const catSlug = pathname.replace('/category/', '').replace(/\/$/, '');
+        setSelectedBuyerCategory(catSlug);
+        setCurrentView('category-buyer-guide');
+        return;
+      }
+
       if (pathname === '/privacy' || hash === 'privacy' || search.includes('page=privacy')) {
         setLegalView('privacy');
         setCurrentView('privacy');
@@ -348,6 +366,11 @@ export default function App() {
         titleStr = `7 Best ${t.name} Alternatives & Competitors (2026) | StakDock`;
         descStr = `Looking for the best alternatives to ${t.name}? Compare top verified ${t.name} competitors in 2026 by features, pricing plans, free trials, and user ratings on StakDock.`;
       }
+    } else if (currentView === 'category-buyer-guide' && selectedBuyerCategory) {
+      const catObj = saasCategories.find(c => c.id === selectedBuyerCategory);
+      const catLabel = catObj ? catObj.label : selectedBuyerCategory.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+      titleStr = `Best ${catLabel} Software in 2026 (Ranked & Compared) | StakDock`;
+      descStr = `Discover the top-rated ${catLabel} tools, platforms, and software in 2026. Compare feature matrices, pricing tiers, free trials, and user consensus on StakDock.`;
     } else if (currentView === 'versus-detail' && selectedVersus) {
       const tA = saasTools.find(t => t.id === selectedVersus.toolAId);
       const tB = saasTools.find(t => t.id === selectedVersus.toolBId);
@@ -1038,6 +1061,27 @@ export default function App() {
                   setCurrentView('directory');
                   window.location.hash = '';
                   window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              />
+            )}
+
+            {currentView === 'category-buyer-guide' && (
+              <CategoryBuyerGuideView
+                categorySlug={selectedBuyerCategory}
+                categoryLabel={saasCategories.find(c => c.id === selectedBuyerCategory)?.label}
+                tools={saasTools}
+                onSelectTool={handleSelectToolDetail}
+                onBack={() => {
+                  setCurrentView('directory');
+                  window.location.hash = '';
+                  window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onNavigateAlternatives={(tId) => {
+                  setSelectedAlternativeToolId(tId);
+                  setCurrentView('alternatives-detail');
+                  window.history.pushState(null, '', `/alternatives/${tId}`);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               />

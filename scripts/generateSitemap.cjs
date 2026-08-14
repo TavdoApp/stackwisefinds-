@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
-const { readAllTools } = require('./toolData.cjs');
+const { readAllTools, readCategories } = require('./toolData.cjs');
 
 const saasTools = readAllTools();
+const saasCategories = readCategories();
 const answerDataPath = path.join(__dirname, '..', 'data', 'auto-published-answers.json');
 const answerData = fs.existsSync(answerDataPath) ? JSON.parse(fs.readFileSync(answerDataPath, 'utf8')) : { answers: [] };
 const autoPublishedAnswers = Array.isArray(answerData.answers) ? answerData.answers : [];
@@ -18,6 +19,24 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
     <lastmod>${todayDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/categories</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/ranking</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/advertise</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>${baseUrl}/terms</loc>
@@ -37,8 +56,26 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
+`;
 
-  <!-- High-Intent Editorial Guides -->
+// Add Category Buyer Guides for all categories
+saasCategories.forEach(cat => {
+  if (!cat || !cat.id || cat.id === 'all') return;
+  sitemapXml += `  <url>
+    <loc>${baseUrl}/best/${cat.id}</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>\n`;
+  sitemapXml += `  <url>
+    <loc>${baseUrl}/category/${cat.id}</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>\n`;
+});
+
+sitemapXml += `  <!-- High-Intent Editorial Guides -->
   <url>
     <loc>${baseUrl}/guides/best-ai-video-generators-2026</loc>
     <lastmod>${todayDate}</lastmod>

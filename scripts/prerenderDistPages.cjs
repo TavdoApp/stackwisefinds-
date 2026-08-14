@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { readAllTools } = require('./toolData.cjs');
+const { readAllTools, readCategories } = require('./toolData.cjs');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const indexPath = path.join(distDir, 'index.html');
@@ -11,9 +11,6 @@ if (!fs.existsSync(indexPath)) {
 }
 
 const baseIndexHtml = fs.readFileSync(indexPath, 'utf8');
-
-// Extract head script/css tags from built index.html
-const headAssetsMatch = baseIndexHtml.match(/<script type="module"[\s\S]*<\/body>/i) || baseIndexHtml.match(/<link rel="stylesheet"[\s\S]*<\/body>/i);
 
 // Helper to escape HTML attributes
 function escapeHtml(str) {
@@ -48,18 +45,24 @@ function buildSeoPage({ title, description, canonicalUrl, jsonLd }) {
 }
 
 const saasTools = readAllTools();
+const saasCategories = readCategories();
 
 const softwareDir = path.join(distDir, 'software');
 const alternativesDir = path.join(distDir, 'alternatives');
 const versusDir = path.join(distDir, 'vs');
+const bestDir = path.join(distDir, 'best');
+const categoryDir = path.join(distDir, 'category');
 
 if (!fs.existsSync(softwareDir)) fs.mkdirSync(softwareDir, { recursive: true });
 if (!fs.existsSync(alternativesDir)) fs.mkdirSync(alternativesDir, { recursive: true });
 if (!fs.existsSync(versusDir)) fs.mkdirSync(versusDir, { recursive: true });
+if (!fs.existsSync(bestDir)) fs.mkdirSync(bestDir, { recursive: true });
+if (!fs.existsSync(categoryDir)) fs.mkdirSync(categoryDir, { recursive: true });
 
 let softwareCount = 0;
 let altCount = 0;
 let vsCount = 0;
+let bestCount = 0;
 
 // 1. Generate dist/software/:id/index.html
 saasTools.forEach(tool => {
@@ -75,8 +78,10 @@ saasTools.forEach(tool => {
     "applicationCategory": tool.category || "BusinessApplication",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": tool.rating || 4.8,
-      "ratingCount": tool.reviewsCount || 120
+      "ratingValue": String(tool.rating || 4.8),
+      "ratingCount": String(tool.reviewsCount || 120),
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "offers": {
       "@type": "Offer",
@@ -135,24 +140,69 @@ saasTools.forEach(tool => {
   softwareCount++;
 });
 
-// 2. Generate dist/alternatives/:id/index.html
+// 2. Generate dist/alternatives/:id/index.html with rich SERP stars schema
 saasTools.forEach(tool => {
   const targetFolder = path.join(alternativesDir, tool.id);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
+
+  const categoryMatches = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 7);
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": `Top Alternatives & Competitors to ${tool.name}`,
     "description": `Verified software alternatives and competitors to ${tool.name} on StakDock.`,
-    "url": `https://stakdock.com/alternatives/${tool.id}`
+    "url": `https://stakdock.com/alternatives/${tool.id}`,
+    "numberOfItems": categoryMatches.length,
+    "itemListElement": categoryMatches.map((altTool, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": altTool.name,
+      "url": `https://stakdock.com/software/${altTool.id}`,
+      "item": {
+        "@type": "SoftwareApplication",
+        "name": altTool.name,
+        "applicationCategory": altTool.category || "BusinessApplication",
+        "operatingSystem": "Web, Cloud",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": String(altTool.rating || 4.8),
+          "ratingCount": String(altTool.reviewsCount || 120),
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    }))
+  };
+
+  const altFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `What is the best free alternative to ${tool.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Top free alternatives to ${tool.name} include ${categoryMatches.filter(t => t.isFreeTier).map(t => t.name).join(', ') || 'platforms with generous free tiers'}. Compare features on StakDock.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Are there open-source alternatives to ${tool.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes, open-source competitors allow self-hosting and zero vendor lock-in. Explore our verified open-source filters on StakDock.`
+        }
+      }
+    ]
   };
 
   const pageHtml = buildSeoPage({
-    title: `7 Best ${tool.name} Alternatives & Competitors (2026)`,
+    title: `Best ${tool.name} Free & Open-Source Alternatives (2026)`,
     description: `Looking for the best alternatives to ${tool.name}? Compare top verified ${tool.name} competitors in 2026 by features, pricing plans, free trials, and user ratings on StakDock.`,
     canonicalUrl: `https://stakdock.com/alternatives/${tool.id}`,
-    jsonLd
+    jsonLd: [jsonLd, altFaqJsonLd]
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
@@ -219,7 +269,107 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
   vsCount++;
 });
 
-// 4. Generate dist/guides/:slug/index.html for all auto & static guides
+// 4. Generate Programmatic "Best of 2026" Category Buyer Guides
+saasCategories.forEach(cat => {
+  if (!cat || !cat.id || cat.id === 'all') return;
+
+  const matchedTools = saasTools.filter(t => t.category === cat.id).sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return (b.rating || 4.5) - (a.rating || 4.5);
+  });
+
+  if (matchedTools.length === 0) return;
+
+  const topPick = matchedTools[0];
+  const catLabel = cat.label || cat.id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+
+  const catJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": `Best ${catLabel} Software in 2026 (Ranked & Compared)`,
+    "description": `Rankings and in-depth buyer guide for top ${matchedTools.length} ${catLabel} software, tools, and platforms on StakDock.`,
+    "url": `https://stakdock.com/best/${cat.id}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": `Top Ranked ${catLabel} Tools (2026)`,
+      "numberOfItems": matchedTools.length,
+      "itemListElement": matchedTools.slice(0, 15).map((tool, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": tool.name,
+        "url": `https://stakdock.com/software/${tool.id}`,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": tool.name,
+          "applicationCategory": catLabel,
+          "operatingSystem": "Web, Cloud",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": String(tool.rating || 4.8),
+            "ratingCount": String(tool.reviewsCount || 120),
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      }))
+    }
+  };
+
+  const catFaqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `What is the best ${catLabel} software in 2026?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${topPick.name} ranks as the #1 overall choice in the ${catLabel} category on StakDock, followed by ${matchedTools.slice(1, 4).map(t => t.name).join(', ')}.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Are there free options available for ${catLabel}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes! Many top ${catLabel} platforms offer 100% free tiers or generous trial periods without requiring a credit card upfront.`
+        }
+      }
+    ]
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://stakdock.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Buyer Guides", "item": "https://stakdock.com/categories" },
+      { "@type": "ListItem", "position": 3, "name": `Best ${catLabel}`, "item": `https://stakdock.com/best/${cat.id}` }
+    ]
+  };
+
+  const pageHtml = buildSeoPage({
+    title: `Best ${catLabel} Software in 2026 (Ranked & Compared)`,
+    description: `Discover the top ${matchedTools.length} verified ${catLabel} software and tools in 2026. Compare feature matrices, pricing tiers, free trials, and user consensus on StakDock.`,
+    canonicalUrl: `https://stakdock.com/best/${cat.id}`,
+    jsonLd: [catJsonLd, catFaqJsonLd, breadcrumbJsonLd]
+  });
+
+  // Write to /best/:categorySlug/index.html
+  const bestCatDir = path.join(bestDir, cat.id);
+  if (!fs.existsSync(bestCatDir)) fs.mkdirSync(bestCatDir, { recursive: true });
+  fs.writeFileSync(path.join(bestCatDir, 'index.html'), pageHtml, 'utf8');
+
+  // Also write to /category/:categorySlug/index.html
+  const directCatDir = path.join(categoryDir, cat.id);
+  if (!fs.existsSync(directCatDir)) fs.mkdirSync(directCatDir, { recursive: true });
+  fs.writeFileSync(path.join(directCatDir, 'index.html'), pageHtml, 'utf8');
+
+  bestCount++;
+});
+
+// 5. Generate dist/guides/:slug/index.html for all auto & static guides
 const guidesDir = path.join(distDir, 'guides');
 if (!fs.existsSync(guidesDir)) fs.mkdirSync(guidesDir, { recursive: true });
 
@@ -289,4 +439,5 @@ allGuides.forEach(guide => {
   guideCount++;
 });
 
-console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, ${vsCount} /vs/, and ${guideCount} /guides/ full SPA static HTML pages into dist/!`);
+console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, ${vsCount} /vs/, ${bestCount} /best/, and ${guideCount} /guides/ full SPA static HTML pages into dist/!`);
+

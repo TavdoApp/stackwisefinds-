@@ -32,4 +32,11 @@ function readAllTools() {
   });
 }
 
-module.exports = { readAllTools, readAutoPublishedData, writeAutoPublishedData };
+function readCategories() {
+  const source = fs.readFileSync(staticDataPath, 'utf8');
+  const match = source.match(/export const saasCategories = (\[[\s\S]*?\n\]);/);
+  if (!match) return [];
+  return JSON.parse(match[1]);
+}
+
+module.exports = { readAllTools, readAutoPublishedData, writeAutoPublishedData, readCategories };
