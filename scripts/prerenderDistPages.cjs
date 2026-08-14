@@ -243,6 +243,55 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
   const targetFolder = path.join(versusDir, vsSlug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
+  const vsItemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${tA.name} vs ${tB.name} 2026 Comparison`,
+    "description": `Detailed comparison between ${tA.name} and ${tB.name} on StakDock.`,
+    "url": `https://stakdock.com/vs/${vsSlug}`,
+    "numberOfItems": 2,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": tA.name,
+        "url": `https://stakdock.com/software/${tA.id}`,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": tA.name,
+          "applicationCategory": tA.category || "Software",
+          "operatingSystem": "Web, Cloud",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": String(tA.rating || 4.8),
+            "ratingCount": String(tA.reviewsCount || 120),
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": tB.name,
+        "url": `https://stakdock.com/software/${tB.id}`,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": tB.name,
+          "applicationCategory": tB.category || "Software",
+          "operatingSystem": "Web, Cloud",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": String(tB.rating || 4.7),
+            "ratingCount": String(tB.reviewsCount || 110),
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      }
+    ]
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -254,6 +303,14 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
           "@type": "Answer",
           "text": `${tA.name} and ${tB.name} both offer specialized software capabilities. Compare features, ratings, and pricing on StakDock.`
         }
+      },
+      {
+        "@type": "Question",
+        "name": `How does ${tA.name} pricing compare to ${tB.name}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${tA.name} pricing is ${tA.pricing || 'Freemium / Paid'} while ${tB.name} pricing is ${tB.pricing || 'Freemium / Paid'}. Check official trials on StakDock.`
+        }
       }
     ]
   };
@@ -262,7 +319,7 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
     title: `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`,
     description: `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`,
     canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
-    jsonLd
+    jsonLd: [vsItemListJsonLd, jsonLd]
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');

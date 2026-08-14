@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
-import { X, Copy, Check, Sparkles, Code, ShieldCheck } from 'lucide-react';
+import { X, Copy, Check, Sparkles, Code, ShieldCheck, Award, Sliders } from 'lucide-react';
 
-export default function BadgeEmbedModal({ onClose }) {
+export default function BadgeEmbedModal({ onClose, defaultToolName = '', defaultToolSlug = '' }) {
+  const [toolName, setToolName] = useState(defaultToolName || 'My Software');
+  const [toolSlug, setToolSlug] = useState(
+    defaultToolSlug || (defaultToolName ? defaultToolName.toLowerCase().replace(/[^a-z0-9]+/g, '-') : 'software')
+  );
+  const [badgeStyle, setBadgeStyle] = useState('dark');
+  const [rating, setRating] = useState('4.9');
   const [copied, setCopied] = useState(false);
 
-  const embedCode = `<a href="https://stakdock.com" target="_blank" rel="follow"><img src="https://stakdock.com/badge.svg" alt="Featured on StakDock 2026" width="240" height="56" /></a>`;
+  const cleanSlug = (toolSlug || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const badgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(toolName)}&rating=${rating}&style=${badgeStyle}`;
+  const targetUrl = `https://stakdock.com/software/${cleanSlug}`;
+
+  const embedCode = `<a href="${targetUrl}" target="_blank" rel="noopener"><img src="${badgeUrl}" alt="${toolName} on StakDock 2026" width="270" height="64" /></a>`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(embedCode);
@@ -30,7 +40,7 @@ export default function BadgeEmbedModal({ onClose }) {
       <div style={{
         background: '#FFFFFF',
         borderRadius: '24px',
-        maxWidth: '540px',
+        maxWidth: '560px',
         width: '100%',
         boxShadow: '0 20px 50px rgba(0,0,0,0.2)',
         overflow: 'hidden',
@@ -46,6 +56,7 @@ export default function BadgeEmbedModal({ onClose }) {
         }}>
           <button
             onClick={onClose}
+            aria-label="Close Badge Modal"
             style={{
               position: 'absolute',
               top: '20px',
@@ -79,45 +90,116 @@ export default function BadgeEmbedModal({ onClose }) {
             textTransform: 'uppercase',
             letterSpacing: '0.06em'
           }}>
-            <Sparkles size={12} /> Embeddable Founder Badge
+            <Sparkles size={12} /> Dynamic Founder Badge Engine
           </div>
 
           <h2 style={{ fontSize: '1.8rem', fontWeight: '800', marginBottom: '8px', color: '#FFFFFF' }}>
-            Claim Your Verified Badge
+            Claim Your Verified 2026 Badge
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: '1.5', margin: 0 }}>
-            Embed the official StakDock verification badge on your landing page or docs footer to build user trust.
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.92rem', lineHeight: '1.5', margin: 0 }}>
+            Embed the official live vector verification badge on your homepage or footer to boost visitor trust and conversions.
           </p>
         </div>
 
         {/* Content Body */}
         <div style={{ padding: '24px' }}>
-          {/* Badge Preview */}
+          
+          {/* Customization Inputs */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', marginBottom: '18px' }}>
+            <div>
+              <label style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                Software Name
+              </label>
+              <input
+                type="text"
+                value={toolName}
+                onChange={(e) => {
+                  setToolName(e.target.value);
+                  setToolSlug(e.target.value.toLowerCase().replace(/[^a-z0-9]+/g, '-'));
+                }}
+                placeholder="e.g. XusCRM"
+                style={{
+                  width: '100%',
+                  padding: '9px 12px',
+                  borderRadius: '10px',
+                  border: '1px solid var(--border-color)',
+                  fontSize: '0.88rem',
+                  outline: 'none'
+                }}
+              />
+            </div>
+
+            <div>
+              <label style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                Badge Theme
+              </label>
+              <div style={{ display: 'flex', gap: '8px' }}>
+                <button
+                  onClick={() => setBadgeStyle('dark')}
+                  style={{
+                    flex: 1,
+                    padding: '8px',
+                    borderRadius: '10px',
+                    border: badgeStyle === 'dark' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: '#141E14',
+                    color: '#FFFFFF',
+                    fontWeight: '700',
+                    fontSize: '0.82rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Dark
+                </button>
+                <button
+                  onClick={() => setBadgeStyle('light')}
+                  style={{
+                    flex: 1,
+                    padding: '8px',
+                    borderRadius: '10px',
+                    border: badgeStyle === 'light' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: '#FFFFFF',
+                    color: '#0F172A',
+                    fontWeight: '700',
+                    fontSize: '0.82rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Light
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Live Badge Preview */}
           <div style={{
-            background: '#FAFBF7',
+            background: badgeStyle === 'dark' ? '#0F170F' : '#F8FAFC',
             border: '1px solid var(--border-color)',
             borderRadius: '16px',
-            padding: '24px',
+            padding: '20px',
             textAlign: 'center',
-            marginBottom: '20px'
+            marginBottom: '18px'
           }}>
-            <div style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--text-light)', textTransform: 'uppercase', marginBottom: '12px' }}>
-              BADGE PREVIEW
+            <div style={{ fontSize: '0.72rem', fontWeight: '800', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '10px', letterSpacing: '0.05em' }}>
+              LIVE VECTOR PREVIEW
             </div>
-            <img src="/badge.svg" alt="Featured on StakDock Preview" style={{ width: '240px', height: '56px' }} />
+            <img 
+              src={`/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(toolName)}&rating=${rating}&style=${badgeStyle}`}
+              alt={`${toolName} StakDock Badge Preview`} 
+              style={{ width: '270px', height: '64px', margin: '0 auto', display: 'block' }} 
+            />
           </div>
 
           {/* HTML Snippet Code Box */}
-          <div style={{ marginBottom: '20px' }}>
-            <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
-              <Code size={14} color="#82A735" /> Copy HTML Embed Code
+          <div style={{ marginBottom: '18px' }}>
+            <label style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
+              <Code size={14} color="#82A735" /> Copy HTML Embed Snippet
             </label>
             <div style={{
               background: '#141E14',
               color: '#82A735',
-              padding: '12px 14px',
+              padding: '10px 12px',
               borderRadius: '10px',
-              fontSize: '0.78rem',
+              fontSize: '0.75rem',
               fontFamily: 'monospace',
               overflowX: 'auto',
               wordBreak: 'break-all',
@@ -133,7 +215,7 @@ export default function BadgeEmbedModal({ onClose }) {
             className="btn-pill-green"
             style={{
               width: '100%',
-              padding: '14px',
+              padding: '12px',
               justifyContent: 'center',
               fontSize: '0.95rem'
             }}
@@ -142,9 +224,9 @@ export default function BadgeEmbedModal({ onClose }) {
             <span>{copied ? 'Copied HTML Code!' : 'Copy Embed Code'}</span>
           </button>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '0.78rem', color: 'var(--text-light)', marginTop: '14px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '12px' }}>
             <ShieldCheck size={14} color="#82A735" />
-            <span>Do-Follow Backlink • Instant 2026 Verification Badge</span>
+            <span>Real-time SVG vector rendering • Instant high-DPI resolution</span>
           </div>
         </div>
       </div>

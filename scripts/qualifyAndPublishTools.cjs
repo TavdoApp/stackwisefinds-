@@ -39,18 +39,82 @@ function slugify(value) {
 function probeWebsite(url, redirects = 0) {
   if (!isPublicHttpsUrl(url)) return Promise.resolve(null);
   return new Promise((resolve) => {
-    const request = https.request(url, { method: 'HEAD', headers: { 'User-Agent': 'StakDockQualityVerifier/1.0 (+https://stakdock.com)' }, timeout: 8000 }, (response) => {
-      const statusCode = response.statusCode || 0;
-      const location = response.headers.location;
-      response.resume();
-      if (statusCode >= 300 && statusCode < 400 && location && redirects < 3) {
-        try { return resolve(probeWebsite(new URL(location, url).toString(), redirects + 1)); } catch { return resolve(null); }
-      }
-      resolve(statusCode >= 200 && statusCode < 400 ? url : null);
-    });
-    request.on('error', () => resolve(null));
-    request.on('timeout', () => { request.destroy(); resolve(null); });
-    request.end();
+    try {
+      const request = https.get(url, { 
+        headers: { 
+          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' 
+        }, 
+        timeout: 9000 
+      }, (response) => {
+        const statusCode = response.statusCode || 0;
+        const location = response.headers.location;
+
+        if (statusCode >= 300 && statusCode < 400 && location && redirects < 3) {
+          response.resume();
+          try { 
+            const nextUrl = new URL(location, url).toString();
+            // Reject redirects to known domain parking / sales registrars
+            if (/godaddy|namecheap|sedo|dan\.com|afternic|hugedomains|parking/i.test(nextUrl)) {
+              return resolve(null);
+            }
+            return resolve(probeWebsite(nextUrl, redirects + 1)); 
+          } catch { 
+            return resolve(null); 
+          }
+        }
+
+        if (statusCode < 200 || statusCode >= 400) {
+          response.resume();
+          return resolve(null);
+        }
+
+        let body = '';
+        response.setEncoding('utf8');
+        response.on('data', (chunk) => {
+          body += chunk;
+          if (body.length > 35000) {
+            response.destroy();
+          }
+        });
+
+        response.on('end', () => {
+          const lowerBody = body.toLowerCase();
+          
+          // Anti-Parked / Expired Domain Detection Heuristics
+          const parkedSignals = [
+            'domain is parked',
+            'buy this domain',
+            'domain for sale',
+            'this domain has expired',
+            'parked free courtesy',
+            'hugedomains',
+            'afternic.com',
+            'dan.com/buy-domain',
+            'sedo.com/search',
+            'godaddy.com/park',
+            'renew your domain',
+            'domain name registration',
+            'under construction',
+            'default web site page',
+            'welcome to nginx'
+          ];
+
+          const isParked = parkedSignals.some(signal => lowerBody.includes(signal));
+          if (isParked || body.length < 250) {
+            return resolve(null);
+          }
+
+          resolve(url);
+        });
+
+        response.on('error', () => resolve(null));
+      });
+
+      request.on('error', () => resolve(null));
+      request.on('timeout', () => { request.destroy(); resolve(null); });
+    } catch {
+      resolve(null);
+    }
   });
 }
 
