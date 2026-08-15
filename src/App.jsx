@@ -240,7 +240,16 @@ export default function App() {
 
       if (pathname.startsWith('/best/')) {
         const rawSlug = pathname.replace('/best/', '').replace(/\/$/, '');
-        const catSlug = rawSlug.replace(/-software-2026$/, '').replace(/-software$/, '').replace(/-tools$/, '');
+        let catSlug = rawSlug.replace(/-software-2026$/, '').replace(/-software$/, '').replace(/-tools$/, '');
+        
+        // High-Intent GSC Search Query Aliases
+        if (catSlug === 'all-in-one-seo' || catSlug === 'all-in-one-seo-software' || catSlug === 'seo' || catSlug === 'seo-tools') catSlug = 'seo-analytics';
+        if (catSlug === 'workflow-automation' || catSlug === 'power-automate-alternatives') catSlug = 'nocode-databases';
+        if (catSlug === 'document-automation' || catSlug === 'esign' || catSlug === 'pandadoc-alternatives') catSlug = 'esign-documents';
+        if (catSlug === 'ai-video-generators') catSlug = 'trending-video-ai';
+        if (catSlug === 'real-estate-crms') catSlug = 'crm';
+        if (catSlug === 'ai-coding-tools') catSlug = 'ai-coding-dev';
+
         setSelectedBuyerCategory(catSlug);
         setCurrentView('category-buyer-guide');
         return;
@@ -397,7 +406,7 @@ export default function App() {
     document.title = titleStr;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', descStr);
-  }, [currentView, selectedToolDetailId, selectedAlternativeToolId, selectedVersus, selectedArticle]);
+  }, [currentView, selectedToolDetailId, selectedAlternativeToolId, selectedVersus, selectedArticle, selectedBuyerCategory]);
 
   // Toggle compare item
   const handleToggleCompare = (toolId) => {

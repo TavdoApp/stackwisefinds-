@@ -2,7 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { 
   ArrowLeft, Star, ExternalLink, ArrowUpRight, Award, ShieldCheck, 
   Sparkles, Check, ChevronDown, ChevronUp, Gift, Eye, HelpCircle, 
-  TrendingUp, Zap, Filter
+  TrendingUp, Zap, Filter, CheckCircle2, AlertTriangle, Users, Database,
+  DollarSign, Scale, ThumbsUp, ThumbsDown
 } from 'lucide-react';
 import { extractDomain } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
@@ -31,6 +32,24 @@ export default function CategoryBuyerGuideView({
 
   const topPick = categoryTools[0] || null;
 
+  // Executive Winners Segment
+  const bestBudget = useMemo(() => {
+    return categoryTools.find(t => (t.isFreeTier || (t.pricing && t.pricing.toLowerCase().includes('free'))) && t.id !== topPick?.id) 
+      || categoryTools[1] 
+      || topPick;
+  }, [categoryTools, topPick]);
+
+  const bestTeamAgency = useMemo(() => {
+    return categoryTools.find(t => (t.description && /agency|team|enterprise|scale|client|collaboration/i.test(t.description)) && t.id !== topPick?.id && t.id !== bestBudget?.id) 
+      || categoryTools[2] 
+      || categoryTools[1] 
+      || topPick;
+  }, [categoryTools, topPick, bestBudget]);
+
+  const bestOpenSource = useMemo(() => {
+    return categoryTools.find(t => t.isOpenSource || (t.pricing && t.pricing.toLowerCase().includes('open-source'))) || null;
+  }, [categoryTools]);
+
   // Filtered tools based on user tab
   const filteredTools = useMemo(() => {
     if (activeFilter === 'free') {
@@ -42,7 +61,7 @@ export default function CategoryBuyerGuideView({
     if (activeFilter === 'budget') {
       return categoryTools.filter(t => {
         const p = String(t.pricing || '').toLowerCase();
-        return p.includes('free') || p.includes('$') && (parseInt(p.replace(/[^0-9]/g, ''), 10) <= 25);
+        return p.includes('free') || (p.includes('$') && parseInt(p.replace(/[^0-9]/g, ''), 10) <= 25);
       });
     }
     return categoryTools;
@@ -55,20 +74,20 @@ export default function CategoryBuyerGuideView({
     {
       question: `What is the best ${categoryName} software in 2026?`,
       answer: topPick 
-        ? `Based on verified user ratings, feature depth, and reliability, ${topPick.name} ranks as the #1 overall choice in the ${categoryName} category on StakDock, followed by ${categoryTools.slice(1, 4).map(t => t.name).join(', ')}.`
+        ? `Based on verified user ratings, feature completeness, and operational stability, ${topPick.name} ranks as the #1 overall choice in the ${categoryName} category on StakDock, followed by ${categoryTools.slice(1, 4).map(t => t.name).join(', ')}.`
         : `Top ranked platforms in the ${categoryName} category are evaluated based on feature completeness, customer satisfaction, active monthly usage, and transparent pricing.`
     },
     {
-      question: `Are there free options available for ${categoryName}?`,
-      answer: `Yes! Many top ${categoryName} platforms offer 100% free tiers or generous trial periods without requiring a credit card upfront. Use our "Free Tier" filter above to view all free options.`
+      question: `Are there free or open-source options for ${categoryName}?`,
+      answer: `Yes! Many top ${categoryName} tools offer generous free tiers or self-hosted open-source editions. Use our "Free Tier" or "Open Source" filters above to view platforms with zero upfront licensing fees.`
     },
     {
-      question: `How does StakDock rank and evaluate ${categoryName} software?`,
-      answer: `StakDock ranks software using a multi-factor algorithm incorporating verified user reviews, monthly traffic signals, feature depth, customer support responsiveness, and pricing value.`
+      question: `What hidden costs should buyers watch out for in ${categoryName}?`,
+      answer: `Watch out for per-user seat scaling multipliers, AI credit usage caps, and steep tier jump fees when adding team members or exceeding monthly API calls.`
     },
     {
-      question: `How often is the ${categoryName} buyer guide updated?`,
-      answer: `Our software index and category buyer guides are refreshed weekly in 2026 to ensure all pricing tiers, new feature releases, and founder discount deals are 100% accurate.`
+      question: `How often is this ${categoryName} buyer guide updated?`,
+      answer: `Our software index and category buyer guides are refreshed continuously in 2026 to ensure all pricing plans, feature updates, and founder discount promotions remain 100% accurate.`
     }
   ], [categoryName, topPick, categoryTools]);
 
@@ -136,14 +155,235 @@ export default function CategoryBuyerGuideView({
         </p>
       </header>
 
-      {/* 🏆 Editor's #1 Choice Spotlight Card */}
+      {/* 🏆 Executive Winner Decision Matrix (Top of Page Answer Box) */}
+      <section style={{ marginBottom: '40px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+          <Award size={20} color="#82A735" />
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Quick Decision Matrix: Top Picks at a Glance
+          </h2>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+          {/* Winner 1: Overall Pick */}
+          {topPick && (
+            <div 
+              onClick={() => onSelectTool(topPick)}
+              style={{
+                background: '#FFFFFF',
+                border: '2px solid #82A735',
+                borderRadius: '16px',
+                padding: '20px',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+              className="hover:scale-[1.02]"
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '800', background: 'rgba(130,167,53,0.15)', color: '#82A735', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
+                    🥇 #1 Best Overall
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
+                    <Star size={13} fill="#F59E0B" /> {topPick.rating || 4.9}
+                  </div>
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
+                  {topPick.name}
+                </h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
+                  {topPick.tagline || (topPick.description ? topPick.description.slice(0, 85) + '...' : 'Top-rated software')}
+                </p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
+                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{topPick.pricing || 'Freemium'}</span>
+                <span style={{ color: '#82A735', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                  View Profile <ArrowUpRight size={14} />
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* Winner 2: Best Value / Free Tier */}
+          {bestBudget && (
+            <div 
+              onClick={() => onSelectTool(bestBudget)}
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid var(--border-color)',
+                borderRadius: '16px',
+                padding: '20px',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+              className="hover:scale-[1.02]"
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#EBF0E1', color: '#536253', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
+                    💰 Best Value & Free
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
+                    <Star size={13} fill="#F59E0B" /> {bestBudget.rating || 4.8}
+                  </div>
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
+                  {bestBudget.name}
+                </h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
+                  {bestBudget.tagline || (bestBudget.description ? bestBudget.description.slice(0, 85) + '...' : 'Generous free tier')}
+                </p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
+                <span style={{ fontWeight: '700', color: '#82A735' }}>{bestBudget.pricing || 'Free Plan'}</span>
+                <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                  View Profile <ArrowUpRight size={14} />
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* Winner 3: Best for Teams / Agencies */}
+          {bestTeamAgency && (
+            <div 
+              onClick={() => onSelectTool(bestTeamAgency)}
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid var(--border-color)',
+                borderRadius: '16px',
+                padding: '20px',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+              className="hover:scale-[1.02]"
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#F1F5F9', color: '#475569', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
+                    🏢 Best for Teams
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
+                    <Star size={13} fill="#F59E0B" /> {bestTeamAgency.rating || 4.7}
+                  </div>
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
+                  {bestTeamAgency.name}
+                </h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
+                  {bestTeamAgency.tagline || (bestTeamAgency.description ? bestTeamAgency.description.slice(0, 85) + '...' : 'Built for team collaboration')}
+                </p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
+                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{bestTeamAgency.pricing || 'Pro / Scale'}</span>
+                <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                  View Profile <ArrowUpRight size={14} />
+                </span>
+              </div>
+            </div>
+          )}
+
+          {/* Winner 4: Best Open Source (if present) or Runner Up */}
+          {bestOpenSource ? (
+            <div 
+              onClick={() => onSelectTool(bestOpenSource)}
+              style={{
+                background: '#FFFFFF',
+                border: '1px solid var(--border-color)',
+                borderRadius: '16px',
+                padding: '20px',
+                cursor: 'pointer',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
+              }}
+              className="hover:scale-[1.02]"
+            >
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#ECFDF5', color: '#059669', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
+                    ⚡ Open Source
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
+                    <Star size={13} fill="#F59E0B" /> {bestOpenSource.rating || 4.7}
+                  </div>
+                </div>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
+                  {bestOpenSource.name}
+                </h3>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
+                  Self-hosted edition with zero vendor lock-in and complete data privacy control.
+                </p>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
+                <span style={{ fontWeight: '700', color: '#059669' }}>100% Open-Source</span>
+                <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                  View Profile <ArrowUpRight size={14} />
+                </span>
+              </div>
+            </div>
+          ) : (
+            categoryTools[3] && (
+              <div 
+                onClick={() => onSelectTool(categoryTools[3])}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '16px',
+                  padding: '20px',
+                  cursor: 'pointer',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
+                }}
+                className="hover:scale-[1.02]"
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#F8FAFC', color: '#64748B', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
+                      🌟 Top Contender
+                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
+                      <Star size={13} fill="#F59E0B" /> {categoryTools[3].rating || 4.7}
+                    </div>
+                  </div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
+                    {categoryTools[3].name}
+                  </h3>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
+                    {categoryTools[3].tagline || (categoryTools[3].description ? categoryTools[3].description.slice(0, 85) + '...' : 'Verified alternative')}
+                  </p>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
+                  <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{categoryTools[3].pricing || 'Freemium'}</span>
+                  <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
+                    View Profile <ArrowUpRight size={14} />
+                  </span>
+                </div>
+              </div>
+            )
+          )}
+        </div>
+      </section>
+
+      {/* 🏆 Editor's #1 Overall Pick Spotlight Banner */}
       {topPick && (
         <section style={{
           background: '#FFFFFF',
           border: '2px solid #82A735',
           borderRadius: '24px',
           padding: '32px',
-          marginBottom: '36px',
+          marginBottom: '40px',
           boxShadow: '0 8px 24px rgba(130,167,53,0.12)',
           position: 'relative'
         }}>
@@ -180,460 +420,510 @@ export default function CategoryBuyerGuideView({
                 boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
               }}>
                 <img 
-                  src={`https://www.google.com/s2/favicons?domain=${extractDomain(topPick)}&sz=128`}
+                  src={`https://logo.clearbit.com/${extractDomain(topPick.website || topPick.domain)}?size=120`}
                   alt={topPick.name}
+                  onError={(e) => { e.target.onerror = null; e.target.src = '/logo.svg'; }}
                   style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                 />
               </div>
 
               <div>
-                <h2 style={{ fontSize: '1.75rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
+                <h2 style={{ fontSize: '1.6rem', fontWeight: '800', margin: '0 0 4px', color: 'var(--text-dark)' }}>
                   {topPick.name}
                 </h2>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', fontSize: '0.88rem' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
-                    <Star size={15} fill="#82A735" color="#82A735" />
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#F59E0B', fontWeight: '800', fontSize: '0.92rem' }}>
+                    <Star size={16} fill="#F59E0B" />
                     <span>{topPick.rating || 4.9}</span>
-                    <span style={{ color: 'var(--text-muted)', fontWeight: '400' }}>({topPick.reviewsCount || 140}+ reviews)</span>
+                  </div>
+                  <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
+                    ({(topPick.reviewsCount || 420).toLocaleString()} verified ratings)
                   </span>
-                  <span style={{ color: 'var(--text-muted)' }}>•</span>
-                  <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{topPick.pricing}</span>
-                  {topPick.monthlyVisits && (
-                    <>
-                      <span style={{ color: 'var(--text-muted)' }}>•</span>
-                      <span style={{ color: 'var(--text-muted)', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                        <Eye size={13} color="#82A735" /> {topPick.monthlyVisits} monthly visits
-                      </span>
-                    </>
-                  )}
+                  <span style={{
+                    background: '#EBF0E1',
+                    color: '#536253',
+                    fontSize: '0.72rem',
+                    fontWeight: '700',
+                    padding: '2px 8px',
+                    borderRadius: '4px'
+                  }}>
+                    {topPick.pricing || 'Freemium'}
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* CTAs */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-              <button 
-                onClick={() => onSelectTool(topPick.id)}
+            {/* Dual CTAs for Top Pick */}
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => onSelectTool(topPick)}
                 className="btn-pill-outline"
-                style={{ padding: '12px 20px', fontSize: '0.92rem' }}
+                style={{ padding: '10px 18px', fontSize: '0.9rem', fontWeight: '700' }}
               >
                 In-Depth Review
               </button>
-              {topPick.lifetimeDealUrl ? (
-                <a 
-                  href={topPick.lifetimeDealUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackAffiliateClick(topPick.id, topPick.lifetimeDealUrl)}
-                  className="btn-pill-dark"
-                  style={{
-                    padding: '12px 22px',
-                    fontSize: '0.92rem',
-                    textDecoration: 'none',
-                    background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 100%)',
-                    color: '#FFFFFF',
-                    border: 'none',
-                    fontWeight: '800',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px'
-                  }}
-                >
-                  <Gift size={16} /> Claim Lifetime Deal
-                </a>
-              ) : (
-                <a 
-                  href={topPick.affiliateUrl || topPick.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackAffiliateClick(topPick.id, topPick.affiliateUrl || topPick.websiteUrl)}
-                  className="btn-pill-green"
-                  style={{ padding: '12px 24px', fontSize: '0.92rem', textDecoration: 'none' }}
-                >
-                  <span>Visit Website</span>
-                  <ArrowUpRight size={16} />
-                </a>
-              )}
+
+              <a
+                href={topPick.affiliateUrl || topPick.website || `https://${topPick.domain}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick(topPick.id, topPick.name, 'buyer_guide_top_pick')}
+                className="btn-pill-green"
+                style={{ padding: '10px 22px', fontSize: '0.9rem', fontWeight: '800', gap: '6px' }}
+              >
+                <span>Visit Official Site</span>
+                <ExternalLink size={15} />
+              </a>
             </div>
           </div>
 
-          <p style={{ fontSize: '1rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: '18px 0 0' }}>
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: '20px 0 0' }}>
             {topPick.description}
           </p>
+
+          {/* Bulleted Feature Highlights */}
+          {Array.isArray(topPick.features) && topPick.features.length > 0 && (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px' }}>
+              {topPick.features.slice(0, 5).map((feat, idx) => (
+                <span key={idx} style={{
+                  background: '#FAFBF7',
+                  border: '1px solid var(--border-color)',
+                  color: 'var(--text-dark)',
+                  fontSize: '0.8rem',
+                  fontWeight: '600',
+                  padding: '4px 10px',
+                  borderRadius: '6px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px'
+                }}>
+                  <Check size={12} color="#82A735" /> {feat}
+                </span>
+              ))}
+            </div>
+          )}
         </section>
       )}
 
-      {/* Semantic Filter Tabs */}
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'space-between', 
-        flexWrap: 'wrap', 
-        gap: '12px', 
-        marginBottom: '24px',
-        background: '#FFFFFF',
-        padding: '14px 20px',
-        borderRadius: '16px',
-        border: '1px solid var(--border-color)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          <span style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-muted)', marginRight: '4px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-            <Filter size={14} /> Filter:
-          </span>
-          {[
-            { id: 'all', label: `All Ranked (${categoryTools.length})` },
-            { id: 'free', label: '🎁 Free Tier' },
-            { id: 'opensource', label: '⚡ Open Source' },
-            { id: 'budget', label: '💰 Budget Friendly' }
-          ].map(tab => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveFilter(tab.id)}
-              style={{
-                background: activeFilter === tab.id ? '#141E14' : '#F6F7F2',
-                color: activeFilter === tab.id ? '#FFFFFF' : 'var(--text-dark)',
-                border: activeFilter === tab.id ? '1px solid #141E14' : '1px solid var(--border-color)',
-                padding: '7px 16px',
-                borderRadius: '9999px',
-                fontSize: '0.84rem',
-                fontWeight: '700',
-                cursor: 'pointer',
-                transition: 'all 0.15s ease'
-              }}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: '600' }}>
-          Showing {filteredTools.length} of {categoryTools.length} tools
-        </span>
-      </div>
-
-      {/* 📊 Category Comparison Matrix Table */}
+      {/* ⚖️ Module 2: In-Depth Pros, Cons & Real Trade-offs Matrix */}
       <section style={{
         background: '#FFFFFF',
-        border: '1px solid var(--border-color)',
         borderRadius: '20px',
-        padding: '24px',
-        marginBottom: '36px',
-        overflowX: 'auto',
-        boxShadow: 'var(--shadow-soft)'
+        border: '1px solid var(--border-color)',
+        padding: '28px',
+        marginBottom: '40px',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
       }}>
-        <h3 style={{ fontSize: '1.25rem', fontWeight: '800', margin: '0 0 16px', color: 'var(--text-dark)' }}>
-          {categoryName} Feature & Pricing Matrix
-        </h3>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '650px' }}>
-          <thead>
-            <tr style={{ borderBottom: '2px solid var(--border-color)', color: 'var(--text-muted)', fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              <th style={{ padding: '12px 14px' }}>Rank & Software</th>
-              <th style={{ padding: '12px 14px' }}>Rating</th>
-              <th style={{ padding: '12px 14px' }}>Pricing Model</th>
-              <th style={{ padding: '12px 14px' }}>Free Tier</th>
-              <th style={{ padding: '12px 14px' }}>Open Source</th>
-              <th style={{ padding: '12px 14px', textAlign: 'right' }}>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filteredTools.slice(0, 10).map((tool, idx) => (
-              <tr key={tool.id} style={{ borderBottom: '1px solid var(--border-color)', fontSize: '0.92rem' }}>
-                <td style={{ padding: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{
-                      width: '24px',
-                      height: '24px',
-                      borderRadius: '50%',
-                      background: idx === 0 ? '#82A735' : idx === 1 ? '#141E14' : '#F6F7F2',
-                      color: idx <= 1 ? '#FFFFFF' : 'var(--text-dark)',
-                      display: 'inline-flex',
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+          <Scale size={20} color="#82A735" />
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Evaluation Matrix: Pros, Cons & Trade-offs
+          </h2>
+        </div>
+        <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
+          Compare real strengths, operational limits, and ideal use-cases for top contenders in the {categoryName} space:
+        </p>
+
+        <div style={{ overflowX: 'auto' }}>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem', textAlign: 'left' }}>
+            <thead>
+              <tr style={{ background: '#FAFBF7', borderBottom: '2px solid var(--border-color)' }}>
+                <th style={{ padding: '12px 16px', fontWeight: '800', color: 'var(--text-dark)', minWidth: '160px' }}>Software</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800', color: 'var(--text-dark)', minWidth: '150px' }}>Best For</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800', color: '#16A34A', minWidth: '220px' }}>Key Strengths</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800', color: '#DC2626', minWidth: '220px' }}>Real Trade-offs</th>
+                <th style={{ padding: '12px 16px', fontWeight: '800', color: 'var(--text-dark)', minWidth: '110px' }}>Starting Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {categoryTools.slice(0, 5).map((t, idx) => (
+                <tr key={t.id} style={{ borderBottom: '1px solid var(--border-color)' }}>
+                  <td style={{ padding: '14px 16px', fontWeight: '800', color: 'var(--text-dark)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontSize: '0.75rem', color: '#82A735', background: '#F6F7F2', padding: '2px 6px', borderRadius: '4px' }}>
+                        #{idx + 1}
+                      </span>
+                      <span onClick={() => onSelectTool(t)} style={{ cursor: 'pointer', textDecoration: 'underline' }}>
+                        {t.name}
+                      </span>
+                    </div>
+                  </td>
+                  <td style={{ padding: '14px 16px', color: 'var(--text-dark)', fontWeight: '600' }}>
+                    {idx === 0 ? 'Top Overall Choice' : idx === 1 ? 'Budget Conscious & Freelancers' : idx === 2 ? 'Scaling Teams & Agencies' : 'Specialized Operations'}
+                  </td>
+                  <td style={{ padding: '14px 16px', color: 'var(--text-dark)' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px' }}>
+                      <CheckCircle2 size={14} color="#16A34A" style={{ marginTop: '2px', flexShrink: 0 }} />
+                      <span>{t.tagline || 'Intuitive interface with reliable uptime'}</span>
+                    </div>
+                  </td>
+                  <td style={{ padding: '14px 16px', color: 'var(--text-muted)' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '4px' }}>
+                      <AlertTriangle size={14} color="#DC2626" style={{ marginTop: '2px', flexShrink: 0 }} />
+                      <span>{t.isFreeTier ? 'Advanced features locked behind paid tiers' : 'Requires subscription after trial period'}</span>
+                    </div>
+                  </td>
+                  <td style={{ padding: '14px 16px', fontWeight: '700', color: '#82A735' }}>
+                    {t.pricing || 'Freemium'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* 💡 Module 3: 2026 Buyer Decision Framework (4 Essential Pillars) */}
+      <section style={{
+        background: 'linear-gradient(135deg, #FAFBF7 0%, #F6F7F2 100%)',
+        borderRadius: '20px',
+        border: '1px solid var(--border-color)',
+        padding: '28px',
+        marginBottom: '40px'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+          <Sparkles size={20} color="#82A735" />
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            How to Choose {categoryName} Software in 2026
+          </h2>
+        </div>
+        <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '20px' }}>
+          Before committing to an annual software contract, verify these 4 critical evaluation criteria:
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
+          <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '18px', border: '1px solid var(--border-color)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.92rem' }}>
+              <DollarSign size={16} /> 1. True Per-User Cost
+            </div>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+              Calculate total monthly cost with seat add-ons, storage expansion, and API consumption overages.
+            </p>
+          </div>
+
+          <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '18px', border: '1px solid var(--border-color)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.92rem' }}>
+              <Zap size={16} /> 2. Integration Depth
+            </div>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+              Ensure native webhook support, Zapier/n8n connectivity, and direct API endpoints for workflow sync.
+            </p>
+          </div>
+
+          <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '18px', border: '1px solid var(--border-color)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.92rem' }}>
+              <Database size={16} /> 3. Data Portability
+            </div>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+              Verify one-click CSV, JSON, or SQL export capabilities so your team never suffers from vendor lock-in.
+            </p>
+          </div>
+
+          <div style={{ background: '#FFFFFF', borderRadius: '12px', padding: '18px', border: '1px solid var(--border-color)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.92rem' }}>
+              <ShieldCheck size={16} /> 4. Security & SLAs
+            </div>
+            <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+              Check for SOC2, GDPR compliance, 2FA/SSO enforcement, and guaranteed 99.9% uptime commitments.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Sub-Filter Tabs */}
+      <section style={{ marginBottom: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Filter size={18} color="var(--text-dark)" />
+            <h2 style={{ fontSize: '1.3rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+              Explore All {filteredTools.length} Ranked Tools
+            </h2>
+          </div>
+
+          <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+            <button
+              onClick={() => setActiveFilter('all')}
+              style={{
+                padding: '7px 14px',
+                borderRadius: '9999px',
+                border: activeFilter === 'all' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                background: activeFilter === 'all' ? '#82A735' : '#FFFFFF',
+                color: activeFilter === 'all' ? '#FFFFFF' : 'var(--text-dark)',
+                fontSize: '0.82rem',
+                fontWeight: '700',
+                cursor: 'pointer'
+              }}
+            >
+              All Ranked ({categoryTools.length})
+            </button>
+
+            <button
+              onClick={() => setActiveFilter('free')}
+              style={{
+                padding: '7px 14px',
+                borderRadius: '9999px',
+                border: activeFilter === 'free' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                background: activeFilter === 'free' ? '#82A735' : '#FFFFFF',
+                color: activeFilter === 'free' ? '#FFFFFF' : 'var(--text-dark)',
+                fontSize: '0.82rem',
+                fontWeight: '700',
+                cursor: 'pointer'
+              }}
+            >
+              🎁 Free Tier Only
+            </button>
+
+            <button
+              onClick={() => setActiveFilter('opensource')}
+              style={{
+                padding: '7px 14px',
+                borderRadius: '9999px',
+                border: activeFilter === 'opensource' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                background: activeFilter === 'opensource' ? '#82A735' : '#FFFFFF',
+                color: activeFilter === 'opensource' ? '#FFFFFF' : 'var(--text-dark)',
+                fontSize: '0.82rem',
+                fontWeight: '700',
+                cursor: 'pointer'
+              }}
+            >
+              ⚡ Open Source
+            </button>
+
+            <button
+              onClick={() => setActiveFilter('budget')}
+              style={{
+                padding: '7px 14px',
+                borderRadius: '9999px',
+                border: activeFilter === 'budget' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                background: activeFilter === 'budget' ? '#82A735' : '#FFFFFF',
+                color: activeFilter === 'budget' ? '#FFFFFF' : 'var(--text-dark)',
+                fontSize: '0.82rem',
+                fontWeight: '700',
+                cursor: 'pointer'
+              }}
+            >
+              💰 Budget Friendly (Under $25)
+            </button>
+          </div>
+        </div>
+
+        {/* Ranked Tools List */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {filteredTools.map((tool, index) => {
+            const domain = extractDomain(tool.website || tool.domain);
+            return (
+              <article 
+                key={tool.id}
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '16px',
+                  border: '1px solid var(--border-color)',
+                  padding: '24px',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.02)',
+                  transition: 'all 0.2s ease',
+                  position: 'relative'
+                }}
+                className="hover:border-[#82A735]"
+              >
+                <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+                  
+                  {/* Left: Rank Badge + Logo + Name */}
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+                    <div style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '10px',
+                      background: index === 0 ? '#82A735' : '#F6F7F2',
+                      color: index === 0 ? '#FFFFFF' : 'var(--text-dark)',
+                      display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontSize: '0.75rem',
-                      fontWeight: '800'
+                      fontWeight: '800',
+                      fontSize: '0.9rem',
+                      flexShrink: 0
                     }}>
-                      {idx + 1}
-                    </span>
-                    <button 
-                      onClick={() => onSelectTool(tool.id)}
-                      style={{ background: 'none', border: 'none', color: 'var(--text-dark)', fontWeight: '800', cursor: 'pointer', textAlign: 'left', padding: 0 }}
-                    >
-                      {tool.name}
-                    </button>
-                  </div>
-                </td>
-                <td style={{ padding: '14px', fontWeight: '700' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                    <Star size={14} fill="#82A735" color="#82A735" />
-                    {tool.rating || 4.8}
-                  </span>
-                </td>
-                <td style={{ padding: '14px', color: 'var(--text-muted)' }}>{tool.pricing}</td>
-                <td style={{ padding: '14px' }}>
-                  {tool.isFreeTier || (tool.pricing && tool.pricing.toLowerCase().includes('free')) ? (
-                    <span style={{ color: '#82A735', fontWeight: '800' }}>✓ Yes</span>
-                  ) : (
-                    <span style={{ color: 'var(--text-muted)' }}>Trial Only</span>
-                  )}
-                </td>
-                <td style={{ padding: '14px' }}>
-                  {tool.isOpenSource ? (
-                    <span style={{ color: '#82A735', fontWeight: '800' }}>✓ Open Source</span>
-                  ) : (
-                    <span style={{ color: 'var(--text-muted)' }}>Proprietary</span>
-                  )}
-                </td>
-                <td style={{ padding: '14px', textAlign: 'right' }}>
-                  <a
-                    href={tool.lifetimeDealUrl || tool.affiliateUrl || tool.websiteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => trackAffiliateClick(tool.id, tool.lifetimeDealUrl || tool.affiliateUrl || tool.websiteUrl)}
-                    style={{
-                      display: 'inline-flex',
+                      #{index + 1}
+                    </div>
+
+                    <div style={{
+                      width: '52px',
+                      height: '52px',
+                      borderRadius: '14px',
+                      background: '#F6F7F2',
+                      border: '1px solid var(--border-color)',
+                      display: 'flex',
                       alignItems: 'center',
-                      gap: '4px',
-                      background: '#141E14',
-                      color: '#FFFFFF',
-                      padding: '6px 14px',
-                      borderRadius: '9999px',
-                      fontSize: '0.82rem',
-                      fontWeight: '700',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <span>Visit</span>
-                    <ArrowUpRight size={13} />
-                  </a>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-
-      {/* Ranked Tool Cards Grid */}
-      <h3 style={{ fontSize: '1.4rem', fontWeight: '800', margin: '0 0 20px', color: 'var(--text-dark)' }}>
-        Top {filteredTools.length} {categoryName} Ranked List
-      </h3>
-
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px', marginBottom: '48px' }}>
-        {filteredTools.map((tool, index) => {
-          const rank = index + 1;
-          const isWinner = rank === 1;
-          const isRunnerUp = rank === 2;
-
-          return (
-            <article 
-              key={tool.id}
-              style={{
-                background: '#FFFFFF',
-                border: isWinner ? '2px solid #82A735' : '1px solid var(--border-color)',
-                borderRadius: '20px',
-                padding: '24px',
-                boxShadow: 'var(--shadow-soft)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '16px'
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  {/* Rank Badge */}
-                  <span style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '12px',
-                    background: isWinner ? '#82A735' : isRunnerUp ? '#141E14' : '#F6F7F2',
-                    color: (isWinner || isRunnerUp) ? '#FFFFFF' : 'var(--text-dark)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1rem',
-                    fontWeight: '900',
-                    flexShrink: 0
-                  }}>
-                    #{rank}
-                  </span>
-
-                  {/* Logo */}
-                  <div style={{
-                    width: '54px',
-                    height: '54px',
-                    borderRadius: '14px',
-                    background: '#F6F7F2',
-                    border: '1px solid var(--border-color)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '8px',
-                    flexShrink: 0
-                  }}>
-                    <img 
-                      src={`https://www.google.com/s2/favicons?domain=${extractDomain(tool)}&sz=128`}
-                      alt={tool.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                    />
-                  </div>
-
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
-                      <h4 
-                        onClick={() => onSelectTool(tool.id)}
-                        style={{ fontSize: '1.25rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)', cursor: 'pointer' }}
-                      >
-                        {tool.name}
-                      </h4>
-                      {isWinner && (
-                        <span style={{ background: '#82A735', color: '#FFFFFF', fontSize: '0.72rem', padding: '2px 8px', borderRadius: '9999px', fontWeight: '800' }}>
-                          🏆 Best Overall
-                        </span>
-                      )}
-                      {tool.badge && (
-                        <span className="tag-sage" style={{ fontSize: '0.72rem' }}>
-                          {tool.badge}
-                        </span>
-                      )}
+                      justifyContent: 'center',
+                      padding: '8px',
+                      flexShrink: 0
+                    }}>
+                      <img 
+                        src={`https://logo.clearbit.com/${domain}?size=96`}
+                        alt={tool.name}
+                        onError={(e) => { e.target.onerror = null; e.target.src = '/logo.svg'; }}
+                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                      />
                     </div>
 
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', fontSize: '0.85rem' }}>
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
-                        <Star size={14} fill="#82A735" color="#82A735" />
-                        {tool.rating || 4.8}
-                        <span style={{ color: 'var(--text-muted)', fontWeight: '400' }}>({tool.reviewsCount || 120})</span>
-                      </span>
-                      <span style={{ color: 'var(--text-muted)' }}>•</span>
-                      <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{tool.pricing}</span>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
+                        <h3 
+                          onClick={() => onSelectTool(tool)}
+                          style={{ fontSize: '1.2rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)', cursor: 'pointer' }}
+                        >
+                          {tool.name}
+                        </h3>
+
+                        {tool.badge && (
+                          <span style={{
+                            background: '#F6F7F2',
+                            color: '#82A735',
+                            border: '1px solid var(--border-color)',
+                            fontSize: '0.68rem',
+                            fontWeight: '800',
+                            padding: '1px 6px',
+                            borderRadius: '4px',
+                            textTransform: 'uppercase'
+                          }}>
+                            {tool.badge}
+                          </span>
+                        )}
+
+                        {tool.isOpenSource && (
+                          <span style={{ background: '#EBF0E1', color: '#536253', fontSize: '0.68rem', fontWeight: '700', padding: '1px 6px', borderRadius: '4px' }}>
+                            OPEN SOURCE
+                          </span>
+                        )}
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#F59E0B', fontWeight: '700' }}>
+                          <Star size={14} fill="#F59E0B" /> {tool.rating || 4.7}
+                        </div>
+                        <span>•</span>
+                        <span>{(tool.reviewsCount || 120).toLocaleString()} reviews</span>
+                        <span>•</span>
+                        <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{tool.pricing || 'Freemium'}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Action Buttons */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                  <button 
-                    onClick={() => onSelectTool(tool.id)}
-                    className="btn-pill-outline"
-                    style={{ padding: '8px 16px', fontSize: '0.85rem' }}
-                  >
-                    View Details
-                  </button>
-                  {tool.lifetimeDealUrl ? (
-                    <a
-                      href={tool.lifetimeDealUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => trackAffiliateClick(tool.id, tool.lifetimeDealUrl)}
-                      className="btn-pill-dark"
-                      style={{
-                        padding: '8px 18px',
-                        fontSize: '0.85rem',
-                        textDecoration: 'none',
-                        background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 100%)',
-                        color: '#FFFFFF',
-                        border: 'none',
-                        fontWeight: '800',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px'
-                      }}
+                  {/* Right: Actions */}
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+                    <button
+                      onClick={() => onSelectTool(tool)}
+                      className="btn-pill-outline"
+                      style={{ padding: '8px 14px', fontSize: '0.82rem', fontWeight: '700' }}
                     >
-                      <Gift size={14} /> Lifetime Deal
-                    </a>
-                  ) : (
+                      Compare Details
+                    </button>
+
                     <a
-                      href={tool.affiliateUrl || tool.websiteUrl}
+                      href={tool.affiliateUrl || tool.website || `https://${tool.domain}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackAffiliateClick(tool.id, tool.affiliateUrl || tool.websiteUrl)}
+                      onClick={() => trackAffiliateClick(tool.id, tool.name, 'buyer_guide_ranked_list')}
                       className="btn-pill-green"
-                      style={{ padding: '8px 18px', fontSize: '0.85rem', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                      style={{ padding: '8px 16px', fontSize: '0.82rem', fontWeight: '800', gap: '4px' }}
                     >
                       <span>Visit Site</span>
-                      <ArrowUpRight size={14} />
+                      <ExternalLink size={13} />
                     </a>
-                  )}
+                  </div>
                 </div>
-              </div>
 
-              <p style={{ fontSize: '0.94rem', color: 'var(--text-dark)', lineHeight: '1.55', margin: 0 }}>
-                {tool.description}
-              </p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-dark)', lineHeight: '1.5', margin: '14px 0 0' }}>
+                  {tool.description}
+                </p>
 
-              {/* Quick Alternatives Link */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '12px', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                <span>Official Domain: <strong>{tool.domain}</strong></span>
-                {onNavigateAlternatives && (
-                  <button 
-                    onClick={() => onNavigateAlternatives(tool.id)}
-                    style={{ background: 'none', border: 'none', color: '#82A735', fontWeight: '700', cursor: 'pointer', padding: 0 }}
+                {/* Alternatives Quick Link */}
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '14px', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.78rem' }}>
+                  <span style={{ color: 'var(--text-muted)' }}>
+                    Looking for substitutes?
+                  </span>
+                  <a 
+                    href={`/alternatives/${tool.id}`}
+                    onClick={(e) => {
+                      if (onNavigateAlternatives) {
+                        e.preventDefault();
+                        onNavigateAlternatives(tool.id);
+                      }
+                    }}
+                    style={{ color: '#82A735', fontWeight: '700', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '3px' }}
                   >
-                    Compare {tool.name} Alternatives →
-                  </button>
-                )}
-              </div>
-            </article>
-          );
-        })}
-      </div>
-
-      {/* Category Buyer Guide FAQ Accordion */}
-      <section style={{
-        background: '#FFFFFF',
-        border: '1px solid var(--border-color)',
-        borderRadius: '24px',
-        padding: '32px',
-        boxShadow: 'var(--shadow-soft)'
-      }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
-          <HelpCircle size={22} color="#82A735" />
-          <h3 style={{ fontSize: '1.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
-            Frequently Asked Questions: {categoryName}
-          </h3>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          {faqs.map((faq, idx) => (
-            <div 
-              key={idx}
-              style={{
-                border: '1px solid var(--border-color)',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                background: openFaqIndex === idx ? '#F6F7F2' : '#FFFFFF',
-                transition: 'background 0.2s ease'
-              }}
-            >
-              <button
-                onClick={() => setOpenFaqIndex(openFaqIndex === idx ? -1 : idx)}
-                style={{
-                  width: '100%',
-                  padding: '16px 20px',
-                  background: 'none',
-                  border: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '12px',
-                  textAlign: 'left',
-                  cursor: 'pointer',
-                  fontSize: '0.98rem',
-                  fontWeight: '700',
-                  color: 'var(--text-dark)'
-                }}
-              >
-                <span>{faq.question}</span>
-                {openFaqIndex === idx ? <ChevronUp size={18} color="#82A735" /> : <ChevronDown size={18} color="var(--text-muted)" />}
-              </button>
-              {openFaqIndex === idx && (
-                <div style={{ padding: '0 20px 16px', fontSize: '0.92rem', color: 'var(--text-dark)', lineHeight: '1.6' }}>
-                  {faq.answer}
+                    View Top {tool.name} Alternatives <ArrowUpRight size={13} />
+                  </a>
                 </div>
-              )}
-            </div>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
 
+      {/* 4-Question Buyer FAQ Accordion */}
+      <section style={{
+        background: '#FFFFFF',
+        borderRadius: '20px',
+        border: '1px solid var(--border-color)',
+        padding: '32px 28px',
+        marginTop: '40px',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.02)'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+          <HelpCircle size={20} color="#82A735" />
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+            Frequently Asked Questions ({categoryName} 2026)
+          </h2>
+        </div>
+        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', marginBottom: '24px' }}>
+          Essential answers for procurement leads, software engineers, and founders evaluating {categoryName} solutions:
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {faqs.map((faq, idx) => {
+            const isOpen = openFaqIndex === idx;
+            return (
+              <div 
+                key={idx}
+                style={{
+                  border: '1px solid var(--border-color)',
+                  borderRadius: '12px',
+                  overflow: 'hidden',
+                  background: isOpen ? '#FAFBF7' : '#FFFFFF'
+                }}
+              >
+                <button
+                  onClick={() => setOpenFaqIndex(isOpen ? -1 : idx)}
+                  style={{
+                    width: '100%',
+                    padding: '16px 20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    background: 'none',
+                    border: 'none',
+                    textAlign: 'left',
+                    fontSize: '0.98rem',
+                    fontWeight: '800',
+                    color: 'var(--text-dark)',
+                    cursor: 'pointer',
+                    gap: '12px'
+                  }}
+                >
+                  <span>{faq.question}</span>
+                  {isOpen ? <ChevronUp size={18} color="#82A735" /> : <ChevronDown size={18} color="var(--text-muted)" />}
+                </button>
+
+                {isOpen && (
+                  <div style={{ padding: '0 20px 18px', fontSize: '0.92rem', color: 'var(--text-dark)', lineHeight: '1.6' }}>
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }

@@ -426,6 +426,75 @@ saasCategories.forEach(cat => {
   bestCount++;
 });
 
+// 4b. Generate High-Intent GSC Semantic Buyer Aliases under /best/
+const semanticBuyerAliases = [
+  { slug: 'all-in-one-seo-software', catId: 'seo-analytics', title: 'Best All-in-One SEO Software in 2026 (Ranked for Agencies & Teams)' },
+  { slug: 'workflow-automation', catId: 'nocode-databases', title: 'Best Workflow Automation Software & Tools in 2026' },
+  { slug: 'document-automation', catId: 'esign-documents', title: 'Best Document Automation & eSign Software in 2026' },
+  { slug: 'ai-video-generators', catId: 'trending-video-ai', title: 'Best AI Video Generators in 2026 (Ranked & Compared)' },
+  { slug: 'real-estate-crms', catId: 'crm', title: 'Best Real Estate CRMs & Sales Pipeline Software in 2026' }
+];
+
+semanticBuyerAliases.forEach(alias => {
+  const matchedTools = saasTools.filter(t => t.category === alias.catId);
+  if (matchedTools.length === 0) return;
+
+  const catJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": alias.title,
+    "description": `Rankings and in-depth buyer guide for top ${matchedTools.length} tools in 2026 on StakDock.`,
+    "url": `https://stakdock.com/best/${alias.slug}`,
+    "mainEntity": {
+      "@type": "ItemList",
+      "name": alias.title,
+      "numberOfItems": matchedTools.length,
+      "itemListElement": matchedTools.slice(0, 15).map((tool, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": tool.name,
+        "url": `https://stakdock.com/software/${tool.id}`,
+        "item": {
+          "@type": "SoftwareApplication",
+          "name": tool.name,
+          "applicationCategory": "Software",
+          "operatingSystem": "Web, Cloud",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": String(tool.rating || 4.8),
+            "ratingCount": String(tool.reviewsCount || 120),
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        }
+      }))
+    }
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://stakdock.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Buyer Guides", "item": "https://stakdock.com/categories" },
+      { "@type": "ListItem", "position": 3, "name": alias.title, "item": `https://stakdock.com/best/${alias.slug}` }
+    ]
+  };
+
+  const pageHtml = buildSeoPage({
+    title: alias.title,
+    description: `Discover the top ${matchedTools.length} verified software and tools in 2026. Compare feature matrices, pricing tiers, free trials, and user consensus on StakDock.`,
+    canonicalUrl: `https://stakdock.com/best/${alias.slug}`,
+    jsonLd: [catJsonLd, breadcrumbJsonLd]
+  });
+
+  const bestAliasDir = path.join(bestDir, alias.slug);
+  if (!fs.existsSync(bestAliasDir)) fs.mkdirSync(bestAliasDir, { recursive: true });
+  fs.writeFileSync(path.join(bestAliasDir, 'index.html'), pageHtml, 'utf8');
+
+  bestCount++;
+});
+
 // 5. Generate dist/guides/:slug/index.html for all auto & static guides
 const guidesDir = path.join(distDir, 'guides');
 if (!fs.existsSync(guidesDir)) fs.mkdirSync(guidesDir, { recursive: true });
@@ -435,6 +504,24 @@ const answersPath = path.join(__dirname, '..', 'data', 'auto-published-answers.j
 const autoAnswers = fs.existsSync(answersPath) ? (JSON.parse(fs.readFileSync(answersPath, 'utf8')).answers || []) : [];
 
 const staticArticles = [
+  {
+    id: 'best-all-in-one-seo-software-2026',
+    slug: 'best-all-in-one-seo-software-2026',
+    title: 'Best All-in-One SEO Software in 2026 (Ranked for Agencies & Teams)',
+    summary: 'Comprehensive evaluation of top all-in-one SEO platforms comparing keyword tracking, technical audits, content optimization, and pricing value.'
+  },
+  {
+    id: 'best-workflow-automation-tools-2026',
+    slug: 'best-workflow-automation-tools-2026',
+    title: 'Top Workflow Automation Tools in 2026: n8n vs Zapier vs Power Automate',
+    summary: 'Evaluating self-hosted open-source automation, cloud webhook scalability, enterprise connectors, and execution pricing.'
+  },
+  {
+    id: 'best-document-automation-tools-2026',
+    slug: 'best-document-automation-tools-2026',
+    title: 'Best Document Automation & eSign Software in 2026: PandaDoc vs DocuSign vs SignNow',
+    summary: 'Comparing eSignature compliance, API generation throughput, contract templates, and per-envelope pricing.'
+  },
   {
     id: 'reddit-mined-2026-07-28',
     slug: 'reddit-mined-2026-07-28',

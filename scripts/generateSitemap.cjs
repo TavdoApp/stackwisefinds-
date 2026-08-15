@@ -75,7 +75,43 @@ saasCategories.forEach(cat => {
   </url>\n`;
 });
 
+// Semantic GSC High-Intent Hubs
+const semanticAliases = [
+  'all-in-one-seo-software',
+  'workflow-automation',
+  'document-automation',
+  'ai-video-generators',
+  'real-estate-crms'
+];
+
+semanticAliases.forEach(alias => {
+  sitemapXml += `  <url>
+    <loc>${baseUrl}/best/${alias}</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>\n`;
+});
+
 sitemapXml += `  <!-- High-Intent Editorial Guides -->
+  <url>
+    <loc>${baseUrl}/guides/best-all-in-one-seo-software-2026</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/guides/best-workflow-automation-tools-2026</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${baseUrl}/guides/best-document-automation-tools-2026</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>${baseUrl}/guides/best-ai-video-generators-2026</loc>
     <lastmod>${todayDate}</lastmod>
