@@ -17366,6 +17366,18 @@ export const staticSaasTools = [
     "badge": "Top Trending Video AI",
     "isFreeTier": true,
     "isOpenSource": false,
+    "alternatives": [
+      "kling-ai",
+      "runway",
+      "luma-dream-machine",
+      "hedra-ai",
+      "krea-ai",
+      "google-veo-2",
+      "pika",
+      "sora-openai",
+      "layer-ai",
+      "hailuo-ai"
+    ],
     "features": [
       "Multi-Model Video Studio (Kling, Veo, Sora)",
       "Cinema Studio Scene Sequencing",
@@ -17399,6 +17411,13 @@ export const staticSaasTools = [
     "badge": "Generative Video Model",
     "isFreeTier": false,
     "isOpenSource": false,
+    "alternatives": [
+      "kling-ai",
+      "google-veo-2",
+      "higgsfield-ai",
+      "runway",
+      "luma-dream-machine"
+    ],
     "features": [
       "Up to 60-second HD video clips",
       "Realistic camera motion & physics",
@@ -17420,56 +17439,206 @@ export const staticSaasTools = [
     "name": "Luma Dream Machine",
     "domain": "lumalabs.ai",
     "category": "trending-video-ai",
-    "tagline": "High-fidelity cinematic AI video generator and 3D scene capture",
-    "description": "Generate high-speed realistic 5-second video shots from text prompts or keyframe images.",
+    "tagline": "High-Fidelity Cinematic AI Video Generator and 3D Scene Capture",
+    "description": "Generate realistic 5-second video shots from text prompts or keyframe images with smooth spatial camera tracking and dynamic physics.",
     "rating": 4.9,
     "reviewsCount": 16800,
     "pricing": "Free Credits / $29.99/mo",
+    "pricingTier": "$$",
+    "websiteUrl": "https://lumalabs.ai",
     "affiliateUrl": "https://lumalabs.ai?aff=stackwisefinds",
     "featured": true,
     "badge": "Fastest AI Video",
     "isFreeTier": true,
     "isOpenSource": false,
+    "alternatives": [
+      "kling-ai",
+      "higgsfield-ai",
+      "runway",
+      "sora-openai",
+      "pika"
+    ],
     "features": [
-      "120 FPS generation",
-      "Keyframes"
+      "120 FPS high-speed video generation",
+      "Keyframe-to-keyframe image continuity",
+      "Spatial awareness and dynamic camera pans",
+      "Direct text-to-video and image-to-video"
     ],
     "pros": [
-      "Generates in seconds",
-      "Free credits"
+      "Generates hyper-fluid video shots in under 60 seconds",
+      "Free tier with 30 monthly generations included",
+      "Exceptional spatial awareness and smooth 3D camera sweeps"
     ],
     "cons": [
-      "Peak queue demand"
+      "Heavy server load during peak demand periods"
     ],
-    "bestFor": "Social creators."
+    "bestFor": "Social creators, 3D artists, and motion designers seeking ultra-fast cinematic camera moves."
   },
   {
     "id": "kling-ai",
     "name": "Kling AI",
     "domain": "klingai.com",
     "category": "trending-video-ai",
-    "tagline": "Advanced generative AI video engine for realistic long-clip synthesis",
-    "description": "Generate 1080p realistic videos up to 2 minutes long with natural physical movements.",
-    "rating": 4.8,
-    "reviewsCount": 9200,
+    "tagline": "Advanced Generative AI Video Engine for Cinematic Physics & Long Clips",
+    "description": "Generate 1080p photorealistic videos up to 2 minutes long with complex real-world physics simulation and full camera controls.",
+    "rating": 4.9,
+    "reviewsCount": 18400,
     "pricing": "Free Daily / $10/mo",
+    "pricingTier": "$",
+    "websiteUrl": "https://klingai.com",
     "affiliateUrl": "https://klingai.com?aff=stackwisefinds",
     "featured": true,
-    "badge": "Best 1080p AI Video",
+    "badge": "Best for Cinematic Motion",
     "isFreeTier": true,
     "isOpenSource": false,
+    "alternatives": [
+      "higgsfield-ai",
+      "runway",
+      "luma-dream-machine",
+      "google-veo-2",
+      "sora-openai",
+      "hedra-ai",
+      "krea-ai",
+      "pika"
+    ],
     "features": [
-      "1080p output",
-      "2-minute extension"
+      "1080p full HD cinematic output",
+      "Up to 2-minute video sequence extensions",
+      "Multi-prompt keyframe steering",
+      "Realistic complex motion physics"
     ],
     "pros": [
-      "High clarity",
-      "Free daily credits"
+      "Best-in-class physical world realism and camera trajectory handling",
+      "Free daily credits to generate videos without mandatory subscription",
+      "Supports 1080p high resolution with fluid motion"
     ],
     "cons": [
-      "Processing queue"
+      "Standard queue times can be slow on free tier during peak hours"
     ],
-    "bestFor": "AI video publishers."
+    "bestFor": "Filmmakers, AI video publishers, advertisers, and VFX creators producing long cinematic scenes."
+  },
+  {
+    "id": "google-veo-2",
+    "name": "Google Veo 2",
+    "domain": "deepmind.google",
+    "category": "trending-video-ai",
+    "tagline": "High-Definition Cinematic AI Video Generation & Native Audio Physics",
+    "description": "Google DeepMind's flagship generative video model producing 1080p photorealistic scenes with cinematic physics, camera controls, and native sound generation.",
+    "rating": 4.9,
+    "reviewsCount": 31200,
+    "pricing": "Free Preview / Pay-as-you-go",
+    "pricingTier": "$$",
+    "websiteUrl": "https://deepmind.google/technologies/veo/",
+    "affiliateUrl": "https://deepmind.google/technologies/veo/",
+    "featured": true,
+    "badge": "Best for 1080p + Native Audio",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "alternatives": [
+      "sora-openai",
+      "kling-ai",
+      "higgsfield-ai",
+      "runway",
+      "luma-dream-machine"
+    ],
+    "features": [
+      "1080p Full HD video generation",
+      "Cinematic lens & camera motion prompts",
+      "Native synchronized sound FX synthesis",
+      "Extended temporal visual consistency"
+    ],
+    "pros": [
+      "Exceptional cinematic composition and realistic lighting physics",
+      "Native audio generation synchronized with video actions",
+      "Direct API integration via Google Cloud and AI Studio"
+    ],
+    "cons": [
+      "Access is rolling out via waitlist and developer preview tiers"
+    ],
+    "bestFor": "Creative directors, production studios, and enterprise developers demanding top-tier physical realism and native audio."
+  },
+  {
+    "id": "hedra-ai",
+    "name": "Hedra",
+    "domain": "hedra.com",
+    "category": "trending-video-ai",
+    "tagline": "Character AI Video Studio, Agent-Driven Storytelling & Audio Lip Sync",
+    "description": "Hedra provides multi-character storytelling and real-time expressive avatar generation with brand-guidelines lock and integrated audio synchronization.",
+    "rating": 4.8,
+    "reviewsCount": 19800,
+    "pricing": "Free Tier / $10/mo",
+    "pricingTier": "$",
+    "websiteUrl": "https://hedra.com",
+    "affiliateUrl": "https://hedra.com",
+    "featured": true,
+    "badge": "Best for Character Avatars",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "alternatives": [
+      "higgsfield-ai",
+      "kling-ai",
+      "runway",
+      "heygen",
+      "synthesia",
+      "d-id",
+      "luma-dream-machine"
+    ],
+    "features": [
+      "Character Expressiveness & Audio Lip-Sync",
+      "Multi-Agent Video Storytelling Campaigns",
+      "Brand Elements & Asset Lock",
+      "Integrated Audio & Timeline Engine"
+    ],
+    "pros": [
+      "Unmatched emotional expressiveness and audio-to-video alignment",
+      "Generates full video scenes from voice recordings in seconds",
+      "Generous free tier with daily creation limits"
+    ],
+    "cons": [
+      "Best suited for character/avatar dialogue rather than complex landscape camera sweeps"
+    ],
+    "bestFor": "Content creators, marketers, educators, and narrative filmmakers producing character-driven video campaigns."
+  },
+  {
+    "id": "layer-ai",
+    "name": "Layer AI",
+    "domain": "layer.ai",
+    "category": "trending-video-ai",
+    "tagline": "Multi-Model Batch Video & Asset Pipeline for Creative Studios",
+    "description": "Layer provides game and media studios with consistent style training, multi-model video generation pipelines, and batch asset workflows.",
+    "rating": 4.8,
+    "reviewsCount": 8400,
+    "pricing": "Free Tier / $25/mo",
+    "pricingTier": "$$",
+    "websiteUrl": "https://layer.ai",
+    "affiliateUrl": "https://layer.ai",
+    "featured": true,
+    "badge": "Best for Batch Multi-Model Pipelines",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "alternatives": [
+      "higgsfield-ai",
+      "krea-ai",
+      "kling-ai",
+      "runway",
+      "leonardo-ai",
+      "recraft"
+    ],
+    "features": [
+      "Multi-Model Generation Routing",
+      "Custom Style & IP LoRA Models",
+      "Batch Video & Sprite Pipelines",
+      "Enterprise Collaboration & Asset Locking"
+    ],
+    "pros": [
+      "Maintains strict IP brand consistency across thousands of assets",
+      "Integrates multiple foundation video and image models into one workflow",
+      "Powerful API for automated creative pipelines"
+    ],
+    "cons": [
+      "Steeper learning curve for solo creators compared to consumer text-to-video apps"
+    ],
+    "bestFor": "Game studios, advertising agencies, and creative teams generating high-volume consistent visual assets."
   },
   {
     "id": "suno-ai",
