@@ -170,11 +170,12 @@ export async function onRequestPost(context) {
       status
     };
 
-    // Send instant mobile push alert to Ossama's phone via Telegram Bot
+    // Send instant mobile push alert to Ossama's phone via Telegram Bot (EXACTLY ONCE)
     if (context.waitUntil) {
       context.waitUntil(sendTelegramAlert(env, alertData));
+    } else {
+      await sendTelegramAlert(env, alertData);
     }
-    await sendTelegramAlert(env, alertData);
 
     // Send transactional notification email to founder via Brevo API
     const slug = softwareName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
