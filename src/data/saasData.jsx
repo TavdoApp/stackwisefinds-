@@ -17350,6 +17350,39 @@ export const staticSaasTools = [
     "bestFor": "Researchers & founders."
   },
   {
+    "id": "higgsfield-ai",
+    "name": "Higgsfield AI",
+    "domain": "higgsfield.ai",
+    "category": "trending-video-ai",
+    "tagline": "All-in-One AI Video Generation, Camera Motion & Character Studio",
+    "description": "Direct scene-by-scene cinematic AI video with full camera controls, character consistency, and multi-model generation across Kling, Sora, and Veo.",
+    "rating": 4.9,
+    "reviewsCount": 46800,
+    "pricing": "Free Tier / $19/mo",
+    "pricingTier": "$$",
+    "websiteUrl": "https://higgsfield.ai",
+    "affiliateUrl": "https://higgsfield.ai",
+    "featured": true,
+    "badge": "Top Trending Video AI",
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "features": [
+      "Multi-Model Video Studio (Kling, Veo, Sora)",
+      "Cinema Studio Scene Sequencing",
+      "Full Camera & Physics Controls",
+      "Consistent Character Identities & Outfits"
+    ],
+    "pros": [
+      "Combines leading generative video models into one unified workflow",
+      "Unmatched camera motion control, pan/tilt physics, and character persistence",
+      "Free daily credits available to start creating immediately"
+    ],
+    "cons": [
+      "4K exports and advanced multi-shot renders require Pro credits"
+    ],
+    "bestFor": "Filmmakers, video creators, advertisers, and creative agencies creating cinematic AI sequences."
+  },
+  {
     "id": "sora-openai",
     "name": "Sora by OpenAI",
     "domain": "sora.com",
@@ -17357,13 +17390,13 @@ export const staticSaasTools = [
     "tagline": "Photorealistic AI Video Generation & Camera Physics",
     "description": "Generate high-definition cinematic video clips up to 60 seconds with realistic physics, fluid motion, and prompt fidelity.",
     "rating": 4.9,
-    "reviewsCount": 42100,
+    "reviewsCount": 24500,
     "pricing": "$20/mo via ChatGPT Plus",
     "pricingTier": "$$",
     "websiteUrl": "https://sora.com",
     "affiliateUrl": "https://sora.com",
     "featured": true,
-    "badge": "Top Trending Video AI",
+    "badge": "Generative Video Model",
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
