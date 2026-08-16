@@ -5,6 +5,7 @@
 
 const HIGH_RES_LOGOS = {
   'openai.com': 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
+  'sora.com': 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
   'chatgpt.com': 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
   'anthropic.com': 'https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg',
   'claude.ai': 'https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg',

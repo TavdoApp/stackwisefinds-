@@ -17352,30 +17352,35 @@ export const staticSaasTools = [
   {
     "id": "sora-openai",
     "name": "Sora by OpenAI",
-    "domain": "openai.com",
+    "domain": "sora.com",
     "category": "trending-video-ai",
-    "tagline": "Breakthrough Text-to-Video Physics Model",
-    "description": "Generate photorealistic up to 60-second video clips with complex camera motions.",
+    "tagline": "Photorealistic AI Video Generation & Camera Physics",
+    "description": "Generate high-definition cinematic video clips up to 60 seconds with realistic physics, fluid motion, and prompt fidelity.",
     "rating": 4.9,
     "reviewsCount": 42100,
-    "pricing": "Included in ChatGPT Plus",
-    "affiliateUrl": "https://openai.com/sora?aff=stackwisefinds",
+    "pricing": "$20/mo via ChatGPT Plus",
+    "pricingTier": "$$",
+    "websiteUrl": "https://sora.com",
+    "affiliateUrl": "https://sora.com",
     "featured": true,
     "badge": "Top Trending Video AI",
     "isFreeTier": false,
     "isOpenSource": false,
     "features": [
-      "60-second clips",
-      "Camera motions"
+      "Up to 60-second HD video clips",
+      "Realistic camera motion & physics",
+      "Text-to-video & image-to-video",
+      "Direct prompt control"
     ],
     "pros": [
-      "Realistic physics",
-      "Cinematic output"
+      "Industry-leading physical world simulation and temporal consistency",
+      "Seamless integration with ChatGPT Plus and Pro accounts"
     ],
     "cons": [
-      "Select tier rollout"
+      "Requires active ChatGPT Plus ($20/mo) or Pro subscription",
+      "No standalone free credits tier"
     ],
-    "bestFor": "Filmmakers & advertisers."
+    "bestFor": "Filmmakers, video creators, and creative agencies requiring photorealistic generative video."
   },
   {
     "id": "luma-dream-machine",
