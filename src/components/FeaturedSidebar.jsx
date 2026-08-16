@@ -18,16 +18,16 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
 
   // Auto-rotate the starting offset index every 30 seconds so all paying founders get top spotlight exposure
   useEffect(() => {
-    if (fullFeaturedPool.length <= 5) return;
+    if (fullFeaturedPool.length <= 15) return;
     const timer = setInterval(() => {
       setOffsetIndex(prev => (prev + 1) % fullFeaturedPool.length);
     }, 30000); // 30 seconds
     return () => clearInterval(timer);
   }, [fullFeaturedPool.length]);
 
-  // Select 5 tools starting from offsetIndex, wrapping around cleanly
+  // Select 15 tools starting from offsetIndex, wrapping around cleanly
   const visibleFeatured = [];
-  const count = Math.min(5, fullFeaturedPool.length);
+  const count = Math.min(15, fullFeaturedPool.length);
   for (let i = 0; i < count; i++) {
     const item = fullFeaturedPool[(offsetIndex + i) % fullFeaturedPool.length];
     if (item && !visibleFeatured.some(v => v.id === item.id)) {
