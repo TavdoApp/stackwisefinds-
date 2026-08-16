@@ -42,6 +42,8 @@ async function sendTelegramAlert(env, data) {
   const text = `🚨 <b>NEW STAKDOCK SOFTWARE SUBMISSION!</b>\n\n` +
     `📦 <b>Software Name:</b> ${data.softwareName}\n` +
     `🌐 <b>Website:</b> ${data.softwareWebsite}\n` +
+    `📝 <b>Tagline:</b> ${data.tagline || 'N/A'}\n` +
+    `💰 <b>Pricing:</b> ${data.pricing || 'Freemium'}\n` +
     `👤 <b>Founder/Vendor:</b> ${data.vendorName}\n` +
     `✉️ <b>Email:</b> ${data.vendorEmail}\n` +
     `🏷️ <b>Category:</b> ${data.category || 'General'}\n` +
@@ -103,6 +105,8 @@ export async function onRequestPost(context) {
 
     const category = sanitizeText(body.category || 'ai-tools');
     const packageType = sanitizeText(body.packageType || 'free');
+    const tagline = sanitizeText(body.tagline || body.description || '');
+    const pricing = sanitizeText(body.pricing || 'Freemium');
 
     // Calculate expiration date: 30 days for monthly (in-feed / top-banner), 365 days for annual (premium)
     const now = new Date();
@@ -158,6 +162,8 @@ export async function onRequestPost(context) {
       vendorName,
       softwareName,
       softwareWebsite,
+      tagline,
+      pricing,
       vendorEmail,
       category,
       packageType,
