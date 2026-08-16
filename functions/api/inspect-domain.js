@@ -1,6 +1,6 @@
 /**
  * Cloudflare Edge Function: /api/inspect-domain
- * Crawls and extracts rich metadata (name, tagline, description, category, pricing, logo)
+ * Crawls and extracts rich metadata (name, tagline, description, category, pricing, starting price, logo)
  * for 1-click vendor submissions and directory listings.
  */
 
@@ -27,7 +27,6 @@ function sanitizeDomain(input) {
 
 function cleanSoftwareName(title, hostname) {
   if (title) {
-    // Remove typical SEO suffixes
     let name = title
       .split(/[-|:•–—]/)[0]
       .replace(/home\s*/i, '')
@@ -40,7 +39,6 @@ function cleanSoftwareName(title, hostname) {
     }
   }
 
-  // Fallback to capitalizing hostname parts
   const mainPart = hostname.split('.')[0] || 'Software';
   return mainPart.charAt(0).toUpperCase() + mainPart.slice(1);
 }
@@ -71,12 +69,30 @@ function detectCategory(text) {
 
 function detectPricing(text) {
   const t = (text || '').toLowerCase();
-  if (/open\s*source|self-hosted|mit\s*license|gpl/i.test(t)) return 'Open-Source';
-  if (/100%\s*free|free\s*forever|always\s*free|free\s*tier/i.test(t)) return 'Free Plan';
-  if (/free\s*trial|14-day\s*trial|start\s*free\s*trial/i.test(t)) return 'Free Trial';
-  if (/freemium|free\s*tier\s*available/i.test(t)) return 'Freemium';
-  if (/\$\d+|per\s*month|billed\s*monthly/i.test(t)) return 'Paid';
-  return 'Freemium';
+  
+  // Look for currency amounts like $9, $19, $29, $49, $99
+  const priceMatch = text.match(/\$(\d{1,4})(?:\/mo|\/month|\/user|\/seat)?/i);
+  const detectedAmount = priceMatch ? `$${priceMatch[1]}/mo` : '';
+
+  if (/open\s*source|self-hosted|mit\s*license|gpl/i.test(t)) {
+    return { model: 'Open-Source', startingPrice: '100% Free (Self-Hosted)', tier: '$' };
+  }
+  if (/100%\s*free|free\s*forever|always\s*free/i.test(t)) {
+    return { model: '100% Free', startingPrice: 'Free Forever ($0)', tier: '$' };
+  }
+  if (/free\s*trial|14-day\s*trial|start\s*free\s*trial/i.test(t)) {
+    return { model: 'Free Trial', startingPrice: detectedAmount ? `Free Trial • ${detectedAmount}` : '14-Day Free Trial', tier: '$$' };
+  }
+  if (/freemium|free\s*tier\s*available|free\s*plan/i.test(t)) {
+    return { model: 'Freemium', startingPrice: detectedAmount ? `Free Tier / ${detectedAmount}` : 'Free Tier Available', tier: '$' };
+  }
+  if (detectedAmount) {
+    const num = parseInt(priceMatch[1], 10);
+    const tier = num < 25 ? '$' : num < 75 ? '$$' : '$$$';
+    return { model: 'Paid', startingPrice: `From ${detectedAmount}`, tier };
+  }
+
+  return { model: 'Freemium', startingPrice: 'Free Tier Available', tier: '$$' };
 }
 
 export async function onRequest(context) {
@@ -160,9 +176,9 @@ export async function onRequest(context) {
     const tagline = description.length > 110 ? description.slice(0, 107) + '...' : description;
 
     // Detect Category & Pricing
-    const fullTextContext = `${rawTitle} ${description} ${hostname}`;
+    const fullTextContext = `${rawTitle} ${description} ${hostname} ${html.slice(0, 15000)}`;
     const category = detectCategory(fullTextContext);
-    const pricing = detectPricing(fullTextContext);
+    const pricingInfo = detectPricing(fullTextContext);
 
     return new Response(JSON.stringify({
       success: true,
@@ -170,14 +186,15 @@ export async function onRequest(context) {
       tagline,
       description,
       category,
-      pricing,
+      pricing: pricingInfo.model,
+      startingPrice: pricingInfo.startingPrice,
+      pricingTier: pricingInfo.tier,
       websiteUrl: fullUrl,
       domain: hostname,
       logoUrl
     }), { headers: corsHeaders });
 
   } catch (err) {
-    // Graceful fallback from hostname
     const fallbackName = cleanSoftwareName('', hostname);
     return new Response(JSON.stringify({
       success: true,
@@ -187,6 +204,8 @@ export async function onRequest(context) {
       description: `${fallbackName} empowers teams with streamlined workflows and productive digital solutions.`,
       category: detectCategory(hostname),
       pricing: 'Freemium',
+      startingPrice: 'Free Tier Available',
+      pricingTier: '$$',
       websiteUrl: fullUrl,
       domain: hostname,
       logoUrl

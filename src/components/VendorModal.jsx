@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { 
   X, Sparkles, CheckCircle2, ShieldCheck, CreditCard, ArrowRight, 
-  Star, Check, Zap, Globe, RefreshCw, Eye, Award, ExternalLink
+  Star, Check, Zap, Globe, RefreshCw, Eye, Award, DollarSign
 } from 'lucide-react';
 import { saasCategories } from '../data/saasData.jsx';
 import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
 export default function VendorModal({ onClose, initialPackage = 'free' }) {
-  const [packageType, setPackageType] = useState(initialPackage); // 'free' | 'premium' | 'top-banner' | 'in-feed'
+  const [packageType, setPackageType] = useState(initialPackage); // 'free' | 'in-feed' | 'premium' | 'top-banner'
   const [softwareWebsite, setSoftwareWebsite] = useState('');
   const [softwareName, setSoftwareName] = useState('');
   const [tagline, setTagline] = useState('');
   const [category, setCategory] = useState('ai-content');
   const [pricing, setPricing] = useState('Freemium');
+  const [startingPrice, setStartingPrice] = useState('Free Tier Available');
+  const [pricingTier, setPricingTier] = useState('$$'); // '$' | '$$' | '$$$'
   const [vendorName, setVendorName] = useState('');
   const [vendorEmail, setVendorEmail] = useState('');
   
@@ -40,24 +42,20 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
       const res = await fetch(`/api/inspect-domain?domain=${encodeURIComponent(raw)}`);
       if (res.ok) {
         const data = await res.json();
-        if (data.softwareName && !softwareName) {
-          setSoftwareName(data.softwareName);
-        } else if (data.softwareName) {
-          setSoftwareName(data.softwareName);
-        }
-
+        if (data.softwareName) setSoftwareName(data.softwareName);
         if (data.tagline) setTagline(data.tagline);
         if (data.category && saasCategories.some(c => c.id === data.category)) {
           setCategory(data.category);
         }
         if (data.pricing) setPricing(data.pricing);
+        if (data.startingPrice) setStartingPrice(data.startingPrice);
+        if (data.pricingTier) setPricingTier(data.pricingTier);
         if (data.websiteUrl) setSoftwareWebsite(data.websiteUrl);
 
         setHasAutoInspected(true);
       }
     } catch (err) {
       console.warn('Domain inspection fallback:', err.message);
-      // Fallback domain name parsing
       const cleaned = extractDomain(raw);
       if (!softwareName && cleaned) {
         const inferred = cleaned.split('.')[0];
@@ -68,10 +66,8 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
     }
   };
 
-  // Auto-inspect on blur or paste if domain has TLD
   const handleDomainChange = (e) => {
-    const val = e.target.value;
-    setSoftwareWebsite(val);
+    setSoftwareWebsite(e.target.value);
   };
 
   const handleDomainBlur = () => {
@@ -96,7 +92,8 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
           softwareWebsite,
           tagline,
           description: tagline,
-          pricing,
+          pricing: startingPrice || pricing,
+          pricingTier,
           vendorEmail,
           category,
           packageType
@@ -123,7 +120,6 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
             window.location.href = checkoutData.checkoutUrl;
             return;
           } else {
-            // Direct Dodo payment link fallback
             window.location.href = `https://checkout.dodopayments.com/buy/${selectedProductId}`;
             return;
           }
@@ -166,7 +162,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
       <div style={{
         background: '#FFFFFF',
         borderRadius: '24px',
-        maxWidth: '680px',
+        maxWidth: '700px',
         width: '100%',
         boxShadow: '0 25px 60px rgba(0,0,0,0.25)',
         border: '1px solid var(--border-color)',
@@ -224,7 +220,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
             List Your Software on StakDock
           </h2>
           <p style={{ margin: 0, fontSize: '0.86rem', color: 'rgba(255,255,255,0.8)' }}>
-            Enter your domain — our AI auto-fetches your logo, tagline, and category in seconds.
+            Enter your domain — our AI auto-fetches your logo, tagline, category, and pricing in seconds.
           </p>
         </div>
 
@@ -386,15 +382,15 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                         {softwareName || 'Your Software Name'}
                       </span>
                       <span style={{
-                        background: '#EBF0E1',
-                        color: '#536253',
+                        background: packageType !== 'free' ? '#82A735' : '#EBF0E1',
+                        color: packageType !== 'free' ? '#FFFFFF' : '#536253',
                         fontSize: '0.66rem',
                         fontWeight: '800',
                         padding: '1px 6px',
                         borderRadius: '4px',
                         textTransform: 'uppercase'
                       }}>
-                        {packageType !== 'free' ? '⭐ FEATURED' : 'VERIFIED TOOL'}
+                        {packageType === 'premium' ? '⭐ FEATURED PRO' : packageType === 'top-banner' ? '🔥 TOP BANNER' : packageType === 'in-feed' ? '⚡ SPOTLIGHT' : 'VERIFIED TOOL'}
                       </span>
                     </div>
 
@@ -405,7 +401,9 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <span>•</span>
                       <span>{categoryObj?.label || 'Software'}</span>
                       <span>•</span>
-                      <span style={{ fontWeight: '700', color: '#82A735' }}>{pricing}</span>
+                      <span style={{ fontWeight: '700', color: '#82A735' }}>
+                        {startingPrice || pricing} ({pricingTier})
+                      </span>
                     </div>
 
                     <p style={{ fontSize: '0.82rem', color: 'var(--text-dark)', lineHeight: '1.4', margin: 0 }}>
@@ -484,8 +482,29 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                 />
               </div>
 
-              {/* Pricing & Founder Details */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
+              {/* Pricing & Tier Details */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 0.8fr', gap: '10px' }}>
+                <div>
+                  <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                    Starting Price / Plans *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Free Tier / $19/mo"
+                    value={startingPrice}
+                    onChange={(e) => setStartingPrice(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 10px',
+                      borderRadius: '10px',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '0.85rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
                 <div>
                   <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
                     Pricing Model
@@ -506,14 +525,41 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     <option value="Freemium">Freemium</option>
                     <option value="Free Trial">Free Trial</option>
                     <option value="Open-Source">Open-Source</option>
-                    <option value="Free Plan">100% Free</option>
+                    <option value="100% Free">100% Free Forever</option>
                     <option value="Paid">Paid / Subscription</option>
                   </select>
                 </div>
 
                 <div>
                   <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
-                    Founder Name *
+                    Price Tier
+                  </label>
+                  <select
+                    value={pricingTier}
+                    onChange={(e) => setPricingTier(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 10px',
+                      borderRadius: '10px',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '0.85rem',
+                      outline: 'none',
+                      background: '#FFFFFF',
+                      fontWeight: '700'
+                    }}
+                  >
+                    <option value="$">$ (Budget / Free)</option>
+                    <option value="$$">$$ (Standard / Pro)</option>
+                    <option value="$$$">$$$ (Enterprise)</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Founder Information */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div>
+                  <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                    Founder / Contact Name *
                   </label>
                   <input
                     type="text"
@@ -554,14 +600,14 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                 </div>
               </div>
 
-              {/* Step 4: Sponsorship & Fast-Track Tiers */}
+              {/* Step 4: 4-Tier Launch & Sponsorship Selection Grid */}
               <div>
                 <label style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '8px' }}>
                   Select Launch & Indexing Tier
                 </label>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px' }}>
-                  {/* Free Tier */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px' }}>
+                  {/* Tier 1: Free Listing */}
                   <div
                     onClick={() => setPackageType('free')}
                     style={{
@@ -577,12 +623,33 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>Free Listing</span>
                       <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$0</span>
                     </div>
-                    <p style={{ fontSize: '0.74rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Standard directory queue • 48-72hr review
+                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
+                      Standard queue • 48-72h review
                     </p>
                   </div>
 
-                  {/* Featured Annual */}
+                  {/* Tier 2: Category Spotlight ($49/mo) */}
+                  <div
+                    onClick={() => setPackageType('in-feed')}
+                    style={{
+                      border: packageType === 'in-feed' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                      background: packageType === 'in-feed' ? '#FAFBF7' : '#FFFFFF',
+                      borderRadius: '12px',
+                      padding: '12px',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s'
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>⚡ Spotlight</span>
+                      <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$49/mo</span>
+                    </div>
+                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
+                      #1 Category sticky spot • Fast-track
+                    </p>
+                  </div>
+
+                  {/* Tier 3: Featured Annual Pro ($99/yr) */}
                   <div
                     onClick={() => setPackageType('premium')}
                     style={{
@@ -591,20 +658,19 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       borderRadius: '12px',
                       padding: '12px',
                       cursor: 'pointer',
-                      transition: 'all 0.15s',
-                      position: 'relative'
+                      transition: 'all 0.15s'
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>⭐ Featured Pro</span>
+                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>⭐ Featured</span>
                       <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$99/yr</span>
                     </div>
-                    <p style={{ fontSize: '0.74rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Instant Fast-Track • Homepage spot • Dofollow link
+                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
+                      Homepage spotlight + Dofollow link
                     </p>
                   </div>
 
-                  {/* Top Banner Sponsor */}
+                  {/* Tier 4: Top Banner Takeover ($99/mo) */}
                   <div
                     onClick={() => setPackageType('top-banner')}
                     style={{
@@ -620,8 +686,8 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>🔥 Top Banner</span>
                       <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$99/mo</span>
                     </div>
-                    <p style={{ fontSize: '0.74rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Sitewide sticky banner • 50,000+ monthly impressions
+                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
+                      Sitewide top banner • 50K+ impressions
                     </p>
                   </div>
                 </div>
@@ -646,10 +712,22 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     <Check size={18} />
                     <span>{isSubmitting ? 'Publishing Listing...' : 'Publish Free Listing ($0)'}</span>
                   </>
+                ) : packageType === 'in-feed' ? (
+                  <>
+                    <CreditCard size={18} />
+                    <span>{isSubmitting ? 'Connecting Checkout...' : 'Proceed to Category Spotlight ($49/mo)'}</span>
+                    <ArrowRight size={16} />
+                  </>
+                ) : packageType === 'premium' ? (
+                  <>
+                    <CreditCard size={18} />
+                    <span>{isSubmitting ? 'Connecting Checkout...' : 'Proceed to Featured Pro ($99/yr)'}</span>
+                    <ArrowRight size={16} />
+                  </>
                 ) : (
                   <>
                     <CreditCard size={18} />
-                    <span>{isSubmitting ? 'Connecting Checkout...' : `Proceed with ${packageType === 'premium' ? 'Featured Pro ($99/yr)' : 'Top Banner ($99/mo)'}`}</span>
+                    <span>{isSubmitting ? 'Connecting Checkout...' : 'Proceed to Top Banner Sponsor ($99/mo)'}</span>
                     <ArrowRight size={16} />
                   </>
                 )}
