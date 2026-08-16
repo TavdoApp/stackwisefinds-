@@ -3,7 +3,7 @@
  * Provides intelligent, high-trust competitor and alternative matching for SaaS and AI tools.
  */
 
-// Reason / Highlight map for leading tools
+// Reason / Highlight map for leading tools across the entire platform
 export const toolStrengthBadges = {
   // Generative AI Video & 3D Physics
   'higgsfield-ai': '🌟 All-in-One Multi-Model & Camera Physics Studio',
@@ -27,6 +27,28 @@ export const toolStrengthBadges = {
   'invideo-ai': '📢 Best for Script-to-Video Marketing Campaigns',
   'opusclip': '🔥 Best for AI Long-to-Short Viral Repurposing',
   'submagic': '💬 Best for Dynamic Viral Auto-Captions & Zooms',
+
+  // AI Voice, Audio & Music
+  'elevenlabs': '🎙️ #1 for Ultra-Realistic Voice Cloning & Emotional Range',
+  'suno': '🎵 Best for Full Song Generation with Vocals & Lyrics',
+  'udio': '🎸 Best for High-Fidelity Musical Composition & Soundscapes',
+  'murf-ai': '🗣️ Best for Commercial Voiceovers & Presentation Sync',
+  'play-ht': '⚡ Best for Low-Latency Conversational Voice Streaming',
+
+  // AI Image Generation & Creative Canvas
+  'midjourney': '🎨 #1 for Photorealistic Aesthetics & Artistic Direction',
+  'ideogram': '🔤 Best for Accurate In-Image Typography & Graphic Design',
+  'flux-ai': '⚡ Best Open-Weights Image Model & LoRA Customization',
+  'recraft': '📐 Best for Vector Illustration & Brand Color Palettes',
+
+  // AI Coding & App Builders
+  'cursor-ai': '💻 #1 AI-Native Code Editor & Whole-Codebase Indexing',
+  'v0-dev': '🎨 Best for Prompt-to-React/Tailwind UI Generation',
+  'bolt-new': '⚡ Best for Instant Full-Stack In-Browser Prototyping',
+  'lovable-dev': '🚀 Best for Fast MVP Full-Stack App Building',
+  'windsurf': '🌊 Best for Flow-State AI Code Collaboration',
+  'github-copilot': '🐙 Largest IDE Ecosystem & Enterprise Security',
+  'replit': '☁️ Best Instant Collaborative Cloud Dev Environment',
   
   // CRMs & Sales Automation
   'xuscrm': '🏡 Best Real Estate CRM for Automated Lead Scoring & Follow-ups',
@@ -35,32 +57,59 @@ export const toolStrengthBadges = {
   'zoho-crm': '💰 Best Value CRM for Growing High-Volume Sales Teams',
   'gohighlevel': '🚀 Best All-in-One Agency CRM & Marketing Funnel Engine',
   'salesforce': '🌐 Global Standard for Large Enterprise Customization',
+  'close-crm': '📞 Best for High-Volume Inside Sales & Calling Pipelines',
+  'freshsales': '🤖 Best for AI-Driven Lead Scoring & Multichannel Sales',
   
   // Workflow Automation & Developer Stacks
   'n8n': '⚡ #1 Self-Hosted Automation Engine (Zero Per-Task Execution Fees)',
   'make': '🧩 Best Visual Multi-Step Logic & Flexible JSON Data Routing',
   'zapier': '🔌 Largest App Ecosystem & 7,000+ Pre-Built Integrations',
   'postiz': '📱 Best Self-Hosted Social Media Scheduler & AI Publisher',
+  'activepieces': '🔓 Best Open-Source Zapier Alternative for Self-Hosters',
   
   // SEO, Crawlers & Web Intelligence
   'screaming-frog': '🐸 Industry Standard Desktop Crawler for Deep Technical SEO',
   'ahrefs': '🔍 Best for Backlink Intelligence & Keyword Difficulty',
   'semrush': '📊 Best for All-in-One SEO, PPC Research & Content Marketing',
+  'sitebulb': '💡 Best for Visual Technical SEO Audits & Hints',
+  'se-ranking': '💰 Best Value All-in-One Rank Tracking & SEO Suite',
+  'plausible': '🛡️ Best Lightweight Privacy-Friendly Google Analytics Alternative',
+  'posthog': '🦔 Best Open-Source Product Analytics & Session Replay',
   
   // LLMs & AI Research
   'claude-ai': '🧠 Best for Long-Context Reasoning, Analysis & Clean Code Logic',
   'chatgpt': '🤖 Most Versatile Conversational AI & Custom GPT Ecosystem',
   'perplexity-ai': '🔎 Best for Real-Time Cited Research & Live Web Grounding',
+  'deepseek': '⚡ Best Open-Source Frontier Reasoning Model',
+  'google-gemini': '🌐 Best for Native Multimodal Video & 2M Token Context',
   
   // Productivity & Knowledge Graphs
   'notion': '📓 Best All-in-One Connected Team Workspace & Wiki',
   'obsidian': '🔒 Best Offline Markdown Knowledge Graph with Local Vaults',
+  'coda': '📊 Best for Interactive Formula Docs & Custom Mini-Apps',
+  'linear': '⚡ Best Keyboard-First Issue Tracking for Modern Dev Teams',
+  'clickup': '🎯 Most Customizable Project Management Suite',
+  'asana': '📋 Best for Cross-Functional Enterprise Work Coordination',
   
+  // Backend, BaaS & Cloud Databases
+  'supabase': '⚡ #1 Open-Source Firebase Alternative (PostgreSQL & Realtime)',
+  'firebase': '🔥 Best for Mobile-First App Development & Google Ecosystem',
+  'appwrite': '🔒 Best Self-Hostable BaaS with Built-in Auth & Storage',
+  'neon-db': '🐘 Best Serverless Postgres with Instant Branching',
+  'coolify': '🚀 Best Self-Hosted Heroku & Vercel Alternative on Any VPS',
+
   // Billing, Subscriptions & Payments
   'chargebee': '💳 Best for Complex Recurring SaaS Billing & Multi-Currency',
   'stripe': '🌐 Global Developer Infrastructure for Payments & Billing',
   'lemonsqueezy': '🍋 Best Merchant of Record for Global Tax & Digital Goods',
-  'paddle': '⛵ Best All-in-One Merchant of Record for B2B SaaS Subscriptions'
+  'paddle': '⛵ Best All-in-One Merchant of Record for B2B SaaS Subscriptions',
+
+  // Email & Newsletter Platforms
+  'beehiiv': '🐝 Best Creator-First Newsletter & Monetization Network',
+  'convertkit': '💌 Best for Creators Selling Digital Products & Automations',
+  'resend': '⚡ Best Developer-First Transactional Email API with React Email',
+  'loops-so': '🔄 Best Modern Email Automation for SaaS & Product Teams',
+  'brevo': '💰 Best Flat-Rate High-Volume Email & SMS Platform'
 };
 
 // Curated Community Switch Insights (Reddit / Verified Buyer Intelligence)
@@ -91,6 +140,24 @@ export const communitySwitchInsights = {
       'Queue wait times on free/standard credits during peak server loads',
       'Need for direct character lip-sync and voice track integration (Hedra)',
       'Studio batch pipeline integrations and IP asset locking (Layer AI)'
+    ]
+  },
+  'cursor-ai': {
+    headline: 'Why Developers Benchmark Cursor AI Alternatives',
+    summary: 'Cursor is the leading AI-first IDE fork of VS Code, but developers also explore Windsurf for agentic flow-state coding, GitHub Copilot for seamless enterprise IT governance, and open-source models for air-gapped security.',
+    keyDrivers: [
+      'Pro plan usage limits on high-tier Claude 3.5 Sonnet queries',
+      'Desire for specialized prompt-to-app scaffolds (Bolt.new / Lovable)',
+      'Enterprise security compliance and existing GitHub licensing'
+    ]
+  },
+  'supabase': {
+    headline: 'Why Engineers Compare Supabase vs Firebase & Self-Hosted BaaS',
+    summary: 'Supabase wins on relational PostgreSQL and zero vendor lock-in, but developers also evaluate Appwrite for complete on-premise self-hosting or Neon DB for serverless database branching.',
+    keyDrivers: [
+      'Preference for open-source self-hosting vs hosted cloud tiers',
+      'Relational SQL flexibility vs NoSQL document collections (Firebase)',
+      'Instant staging branch database clones for CI/CD pipelines (Neon)'
     ]
   },
   'hubspot': {
@@ -151,6 +218,16 @@ const subNicheRules = {
   'screen-recording': {
     matchKeywords: ['screen record', 'screen capture', 'loom', 'screen studio', 'camtasia', 'claap'],
     excludeKeywords: ['text-to-video', 'generative ai video', 'cinematic video generation', 'diffusion model', 'camera physics']
+  },
+  // AI Coding & IDEs
+  'ai-coding': {
+    matchKeywords: ['code editor', 'ai code', 'cursor', 'copilot', 'autocomplete', 'ide', 'code generator', 'v0', 'bolt.new', 'windsurf', 'replit'],
+    excludeKeywords: ['video generator', 'crm', 'accounting', 'screen record']
+  },
+  // Voice, TTS & Audio
+  'ai-voice-audio': {
+    matchKeywords: ['voice clone', 'text-to-speech', 'ai voice', 'tts', 'elevenlabs', 'suno', 'udio', 'music generation'],
+    excludeKeywords: ['crm', 'seo crawler', 'accounting', 'database']
   },
   // Real Estate CRM
   'real-estate-crm': {
@@ -336,7 +413,7 @@ export function getGroupedAlternatives(targetTool, allTools = []) {
   const alternatives = getToolAlternatives(targetTool, allTools, { limit: 12 });
   
   // Specific groupings for Generative AI Video
-  if (targetTool.id === 'higgsfield-ai' || targetTool.id === 'kling-ai' || targetTool.id === 'runway' || targetTool.id === 'luma-dream-machine') {
+  if (targetTool.id === 'higgsfield-ai' || targetTool.id === 'kling-ai' || targetTool.id === 'runway' || targetTool.id === 'luma-dream-machine' || targetTool.id === 'google-veo-2' || targetTool.id === 'sora-openai') {
     const cinematic = alternatives.filter(t => ['kling-ai', 'google-veo-2', 'luma-dream-machine', 'sora-openai', 'hailuo-ai'].includes(t.id));
     const multiModel = alternatives.filter(t => ['hedra-ai', 'krea-ai', 'layer-ai', 'heygen'].includes(t.id));
     const editing = alternatives.filter(t => ['runway', 'pika', 'descript', 'capcut'].includes(t.id));
@@ -361,6 +438,28 @@ export function getGroupedAlternatives(targetTool, allTools = []) {
         title: '🎬 Granular Timeline & Creative Editing',
         description: 'Best for professional timeline controls, keyframing, and rapid social media video iteration.',
         tools: editing
+      });
+    }
+    if (groups.length > 0) return groups;
+  }
+
+  // AI Coding & IDE Groupings
+  if (['cursor-ai', 'v0-dev', 'bolt-new', 'lovable-dev', 'windsurf', 'github-copilot', 'replit'].includes(targetTool.id)) {
+    const ideForks = alternatives.filter(t => ['cursor-ai', 'windsurf', 'github-copilot'].includes(t.id));
+    const appBuilders = alternatives.filter(t => ['v0-dev', 'bolt-new', 'lovable-dev', 'replit'].includes(t.id));
+    const groups = [];
+    if (ideForks.length > 0) {
+      groups.push({
+        title: '💻 AI-Native IDEs & Autocomplete',
+        description: 'Best for in-editor codebase indexing, multi-file edits, and agentic workflows.',
+        tools: ideForks
+      });
+    }
+    if (appBuilders.length > 0) {
+      groups.push({
+        title: '⚡ Prompt-to-App & Full-Stack Builders',
+        description: 'Best for generating production-ready full-stack apps and UI scaffolds from text.',
+        tools: appBuilders
       });
     }
     if (groups.length > 0) return groups;
