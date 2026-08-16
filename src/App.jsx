@@ -882,7 +882,7 @@ export default function App() {
                   </div>
 
                   <button onClick={() => setShowVendorModal(true)} className="btn-pill-green" style={{ padding: '12px 24px' }} aria-label="Apply for Featured Spot">
-                    <span>{t.applyFeatured || 'Apply for Featured Spot ($99/yr)'}</span>
+                    <span>Apply for Featured Spot ($99/yr)</span>
                     <ArrowUpRight size={16} />
                   </button>
                 </div>
