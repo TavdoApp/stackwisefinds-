@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles, Gift, HelpCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Flame, Eye, Share2, Check, MessageSquare, BarChart3, Tag, Globe, Sparkles, Gift, HelpCircle, ChevronDown, ChevronUp, Layers, Quote, ArrowRight } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema, injectFAQPageSchema } from '../utils/schemaMarkup.jsx';
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
+import { getToolAlternatives, getCommunitySwitchInsight, getGroupedAlternatives } from '../utils/alternativesHelper.js';
 
-export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal, onOpenClaimModal }) {
+export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal, onOpenClaimModal, onSelectTool, onNavigateAlternatives, onNavigateVersus }) {
   const [activeTab, setActiveTab] = useState('product-info');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const toolsArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
   const tool = toolsArray.find(t => t.id === toolId || (t.name && t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === toolId)) || saasTools.find(t => t.id === toolId) || saasTools[0];
-  const alternatives = toolsArray.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 4);
+  
+  // Intelligent Pro Alternatives Engine
+  const alternatives = getToolAlternatives(tool, toolsArray, { limit: 12 });
+  const switchInsight = getCommunitySwitchInsight(tool);
+  const groupedAlternatives = getGroupedAlternatives(tool, toolsArray);
 
   const isFreeVendor = tool.packageType === 'free' || (tool.submittedByVendor && tool.packageType !== 'in-feed' && tool.packageType !== 'top-banner' && tool.packageType !== 'premium');
   const relAttr = isFreeVendor ? "nofollow noopener noreferrer" : "noopener noreferrer";
@@ -550,25 +555,187 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
       {/* Tab 5: Alternatives */}
       {activeTab === 'alternatives' && (
         <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '20px' }}>
-            Top Recommended Alternatives to {tool.name}
-          </h3>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
-            {alternatives.map(alt => (
-              <div key={alt.id} style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                  <img src={`https://www.google.com/s2/favicons?domain=${alt.domain}&sz=128`} alt={alt.name} style={{ width: '28px', height: '28px', borderRadius: '6px' }} />
-                  <span style={{ fontWeight: '800', fontSize: '1.05rem', color: 'var(--text-dark)' }}>{alt.name}</span>
-                </div>
-                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.4', marginBottom: '12px' }}>{alt.description}</p>
-                <a href={alt.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ padding: '6px 12px', fontSize: '0.8rem', width: '100%', justifyContent: 'center' }}>
-                  <span>Visit {alt.name}</span>
-                  <ArrowUpRight size={14} />
-                </a>
-              </div>
-            ))}
+          {/* Header */}
+          <div style={{ marginBottom: '24px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+              <Layers size={16} /> Verified Software Benchmark (2026)
+            </div>
+            <h3 style={{ fontSize: '1.75rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+              Top Recommended Alternatives to {tool.name}
+            </h3>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: '1.5' }}>
+              Handpicked direct market competitors evaluated on core capabilities, pricing transparency, prompt fidelity, and community switch feedback.
+            </p>
           </div>
+
+          {/* Community Switch Insight Box */}
+          {switchInsight && (
+            <div style={{
+              background: 'linear-gradient(135deg, #FAFBF7 0%, #F3F6EC 100%)',
+              border: '1px solid #C8D8A0',
+              borderRadius: '20px',
+              padding: '24px',
+              marginBottom: '32px',
+              boxShadow: '0 4px 16px rgba(130, 167, 53, 0.08)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <span style={{ background: '#82A735', color: '#FFFFFF', padding: '3px 10px', borderRadius: '9999px', fontSize: '0.75rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Quote size={12} /> Community Switch Consensus
+                </span>
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-light)', fontWeight: '700' }}>Verified Reddit & Buyer Feedback</span>
+              </div>
+
+              <h4 style={{ fontSize: '1.15rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 8px' }}>
+                {switchInsight.headline}
+              </h4>
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: '0 0 16px' }}>
+                {switchInsight.summary}
+              </p>
+
+              {switchInsight.keyDrivers && switchInsight.keyDrivers.length > 0 && (
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '10px', borderTop: '1px solid rgba(130, 167, 53, 0.25)', paddingTop: '14px' }}>
+                  {switchInsight.keyDrivers.map((driver, idx) => (
+                    <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.85rem', color: 'var(--text-dark)' }}>
+                      <Check size={16} color="#82A735" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ lineHeight: '1.4' }}>{driver}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Grouped or Grid Cards */}
+          {groupedAlternatives && groupedAlternatives.length > 0 ? (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+              {groupedAlternatives.map((group, gIdx) => (
+                <div key={gIdx} style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '22px', padding: '24px', boxShadow: 'var(--shadow-soft)' }}>
+                  <div style={{ marginBottom: '18px', borderBottom: '1px solid var(--border-color)', paddingBottom: '12px' }}>
+                    <h4 style={{ fontSize: '1.25rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 4px' }}>
+                      {group.title}
+                    </h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
+                      {group.description}
+                    </p>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+                    {group.tools.map(alt => (
+                      <div key={alt.id} style={{ background: '#FAFBF8', border: '1px solid var(--border-color)', borderRadius: '18px', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', transition: 'all 0.2s ease' }}>
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '10px', marginBottom: '12px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                              <div style={{ width: '38px', height: '38px', borderRadius: '10px', background: '#FFFFFF', border: '1px solid var(--border-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4px', flexShrink: 0 }}>
+                                <img
+                                  src={`https://www.google.com/s2/favicons?domain=${alt.domain}&sz=128`}
+                                  alt={alt.name}
+                                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                                  onError={(e) => {
+                                    e.target.onerror = null;
+                                    e.target.src = `https://icons.duckduckgo.com/ip3/${alt.domain}.ico`;
+                                  }}
+                                />
+                              </div>
+                              <div>
+                                <h5 style={{ fontWeight: '800', fontSize: '1.05rem', color: 'var(--text-dark)', margin: 0 }}>{alt.name}</h5>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.78rem', color: 'var(--text-light)', marginTop: '2px' }}>
+                                  <Star size={12} fill="#82A735" color="#82A735" />
+                                  <span style={{ fontWeight: '800', color: 'var(--text-dark)' }}>{alt.rating || 4.8}</span>
+                                  <span>({(alt.reviewsCount || 100).toLocaleString()})</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {alt.isFreeTier && (
+                              <span style={{ background: '#F0FDF4', color: '#166534', border: '1px solid #BBF7D0', fontSize: '0.7rem', fontWeight: '800', padding: '2px 8px', borderRadius: '9999px', whiteSpace: 'nowrap' }}>
+                                🎁 Free
+                              </span>
+                            )}
+                          </div>
+
+                          {alt.alternativeBadge && (
+                            <div style={{ background: '#EEF4DE', color: '#3A5311', border: '1px solid #D5E5B5', fontSize: '0.74rem', fontWeight: '800', padding: '4px 10px', borderRadius: '8px', marginBottom: '10px', lineHeight: '1.3' }}>
+                              {alt.alternativeBadge}
+                            </div>
+                          )}
+
+                          <p style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: '1.45', marginBottom: '14px', minHeight: '38px' }}>
+                            {alt.description}
+                          </p>
+
+                          <div style={{ fontSize: '0.8rem', fontWeight: '700', color: 'var(--primary-green-dark)', marginBottom: '14px' }}>
+                            Pricing: {alt.pricing || 'Check website'}
+                          </div>
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                          <a
+                            href={alt.affiliateUrl || `https://${alt.domain}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-pill-green"
+                            style={{ padding: '8px 14px', fontSize: '0.82rem', width: '100%', justifyContent: 'center', textDecoration: 'none' }}
+                          >
+                            <span>Visit {alt.name}</span>
+                            <ArrowUpRight size={14} />
+                          </a>
+
+                          {onSelectTool && (
+                            <button
+                              type="button"
+                              onClick={() => onSelectTool(alt.id)}
+                              style={{ background: 'transparent', border: '1px solid var(--border-color)', borderRadius: '9999px', padding: '6px 12px', fontSize: '0.78rem', fontWeight: '700', color: 'var(--text-dark)', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px' }}
+                            >
+                              <span>View {alt.name} Review</span>
+                              <ArrowRight size={12} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
+              {alternatives.map(alt => (
+                <div key={alt.id} style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                      <img src={`https://www.google.com/s2/favicons?domain=${alt.domain}&sz=128`} alt={alt.name} style={{ width: '28px', height: '28px', borderRadius: '6px' }} />
+                      <span style={{ fontWeight: '800', fontSize: '1.05rem', color: 'var(--text-dark)' }}>{alt.name}</span>
+                    </div>
+                    {alt.alternativeBadge && (
+                      <div style={{ background: '#EEF4DE', color: '#3A5311', fontSize: '0.74rem', fontWeight: '800', padding: '4px 8px', borderRadius: '6px', marginBottom: '8px' }}>
+                        {alt.alternativeBadge}
+                      </div>
+                    )}
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.4', marginBottom: '12px' }}>{alt.description}</p>
+                  </div>
+                  <a href={alt.affiliateUrl} target="_blank" rel="noopener noreferrer" className="btn-pill-green" style={{ padding: '6px 12px', fontSize: '0.8rem', width: '100%', justifyContent: 'center' }}>
+                    <span>Visit {alt.name}</span>
+                    <ArrowUpRight size={14} />
+                  </a>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Dedicated Hub CTA Banner */}
+          {onNavigateAlternatives && (
+            <div style={{ marginTop: '28px', textAlign: 'center', background: '#F6F7F2', border: '1px dashed #82A735', borderRadius: '18px', padding: '20px' }}>
+              <button
+                type="button"
+                onClick={() => onNavigateAlternatives(tool.id)}
+                className="btn-pill-green"
+                style={{ display: 'inline-flex', padding: '10px 22px', fontSize: '0.88rem' }}
+              >
+                <span>Explore Full {tool.name} Alternatives & Competitors Hub</span>
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          )}
         </div>
       )}
 

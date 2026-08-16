@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
-import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Check, X, Sparkles, Layers, Shield } from 'lucide-react';
+import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Check, X, Sparkles, Layers, Shield, Quote } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema, injectFaqPageSchema } from '../utils/schemaMarkup.jsx';
+import { getToolAlternatives, getCommunitySwitchInsight, getToolStrengthBadge, getGroupedAlternatives } from '../utils/alternativesHelper.js';
 
 export default function AlternativesView({ targetToolId, onBack, onSelectTool }) {
   const [filterMode, setFilterMode] = useState('all'); // 'all', 'free', 'opensource', 'budget'
 
   const targetTool = saasTools.find(t => t.id === targetToolId) || saasTools[0];
   
-  // Find top direct competitors in the same category
-  const isPaymentTarget = targetToolId === 'stripe' || targetToolId === 'paypal' || targetTool.category === 'payment-gateways';
-  const allAlternatives = saasTools.filter(t => {
-    if (!t) return false;
-    if (t.id === targetTool.id) return false;
-    if (isPaymentTarget && (t.id === 'splitmatepro' || (t.description || '').toLowerCase().includes('roommate') || (t.description || '').toLowerCase().includes('tenant'))) return false;
-    return t.category === targetTool.category;
-  });
+  // Intelligent Pro Alternatives Engine
+  const allAlternatives = getToolAlternatives(targetTool, saasTools, { limit: 16 });
+  const switchInsight = getCommunitySwitchInsight(targetTool);
+  const groupedAlternatives = getGroupedAlternatives(targetTool, saasTools);
 
   const filteredAlternatives = allAlternatives.filter(t => {
     if (filterMode === 'free') return t.isFreeTier || (t.pricing || '').toLowerCase().includes('free');
@@ -25,8 +22,8 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
   });
 
   const alternatives = filteredAlternatives.length > 0 ? filteredAlternatives : allAlternatives;
-  const topWinner = allAlternatives[0] || saasTools.find(t => t.id === 'chargebee') || saasTools[1] || targetTool;
-  const winnerTagline = topWinner.description || topWinner.name || 'Verified Software Alternative';
+  const topWinner = allAlternatives[0] || targetTool;
+  const winnerTagline = topWinner.description || topWinner.tagline || topWinner.name || 'Verified Software Alternative';
 
   const faqs = [
     {
@@ -118,7 +115,7 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
           border: '1px solid #82A735',
           borderRadius: '24px',
           padding: '28px 32px',
-          marginBottom: '40px',
+          marginBottom: '32px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -137,12 +134,17 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
               alignItems: 'center',
               justifyContent: 'center',
               padding: '6px',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.1)'
+              boxShadow: '0 4px 14px rgba(0,0,0,0.1)',
+              flexShrink: 0
             }}>
               <img 
                 src={`https://www.google.com/s2/favicons?domain=${topWinner.domain}&sz=128`} 
                 alt={topWinner.name} 
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = `https://icons.duckduckgo.com/ip3/${topWinner.domain}.ico`;
+                }}
               />
             </div>
             <div>
@@ -155,7 +157,7 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
           </div>
 
           <a 
-            href={topWinner.affiliateUrl} 
+            href={topWinner.affiliateUrl || `https://${topWinner.domain}`} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-pill-green"
@@ -164,6 +166,43 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
             <span>Visit {topWinner.name} Winner</span>
             <ArrowUpRight size={18} />
           </a>
+        </div>
+      )}
+
+      {/* Community Switch Insight Box */}
+      {switchInsight && (
+        <div style={{
+          background: 'linear-gradient(135deg, #FAFBF7 0%, #F3F6EC 100%)',
+          border: '1px solid #C8D8A0',
+          borderRadius: '24px',
+          padding: '28px',
+          marginBottom: '36px',
+          boxShadow: '0 4px 20px rgba(130, 167, 53, 0.09)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+            <span style={{ background: '#82A735', color: '#FFFFFF', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <Quote size={13} /> Verified Community & Reddit Switch Insight
+            </span>
+            <span style={{ fontSize: '0.82rem', color: 'var(--text-light)', fontWeight: '700' }}>Aggregated Buyer Consensus</span>
+          </div>
+
+          <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 10px' }}>
+            {switchInsight.headline}
+          </h3>
+          <p style={{ fontSize: '0.94rem', color: 'var(--text-dark)', lineHeight: '1.65', margin: '0 0 18px' }}>
+            {switchInsight.summary}
+          </p>
+
+          {switchInsight.keyDrivers && switchInsight.keyDrivers.length > 0 && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', borderTop: '1px solid rgba(130, 167, 53, 0.25)', paddingTop: '16px' }}>
+              {switchInsight.keyDrivers.map((driver, idx) => (
+                <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.88rem', color: 'var(--text-dark)' }}>
+                  <Check size={18} color="#82A735" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ lineHeight: '1.45' }}>{driver}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
 
@@ -179,9 +218,9 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
             <thead>
               <tr style={{ borderBottom: '2px solid var(--border-color)', background: 'var(--bg-sage)' }}>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Software Name</th>
+                <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Key Differentiator</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Rating</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Free Tier?</th>
-                <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Open Source?</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Pricing Starting</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)', textAlign: 'right' }}>Action</th>
               </tr>
@@ -192,12 +231,12 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
                 <td style={{ padding: '14px', fontWeight: '800', color: 'var(--text-dark)' }}>
                   {targetTool.name} <span style={{ fontSize: '0.7rem', color: '#888', fontWeight: '700' }}>(Current)</span>
                 </td>
+                <td style={{ padding: '14px', fontSize: '0.82rem', color: 'var(--text-muted)' }}>Baseline Reference</td>
                 <td style={{ padding: '14px', fontWeight: '700' }}>⭐ {targetTool.rating || 4.7}</td>
                 <td style={{ padding: '14px' }}>{targetTool.isFreeTier ? <Check size={16} color="#82A735" /> : <X size={16} color="#999" />}</td>
-                <td style={{ padding: '14px' }}>{targetTool.isOpenSource ? <Check size={16} color="#82A735" /> : <X size={16} color="#999" />}</td>
                 <td style={{ padding: '14px', fontWeight: '700', color: 'var(--primary-green-dark)' }}>{targetTool.pricing || 'Paid Subscription'}</td>
                 <td style={{ padding: '14px', textAlign: 'right' }}>
-                  <a href={targetTool.affiliateUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textDecoration: 'none' }}>
+                  <a href={targetTool.affiliateUrl || `https://${targetTool.domain}`} target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textDecoration: 'none' }}>
                     Visit Website ↗
                   </a>
                 </td>
@@ -207,12 +246,14 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
               {allAlternatives.slice(0, 6).map((tool) => (
                 <tr key={tool.id} style={{ borderBottom: '1px solid var(--border-color)' }}>
                   <td style={{ padding: '14px', fontWeight: '800', color: 'var(--text-dark)' }}>{tool.name}</td>
+                  <td style={{ padding: '14px', fontSize: '0.8rem', color: '#3A5311', fontWeight: '700' }}>
+                    {tool.alternativeBadge || getToolStrengthBadge(tool, targetTool)}
+                  </td>
                   <td style={{ padding: '14px', fontWeight: '700' }}>⭐ {tool.rating || 4.8}</td>
                   <td style={{ padding: '14px' }}>{tool.isFreeTier ? <Check size={16} color="#82A735" /> : <X size={16} color="#999" />}</td>
-                  <td style={{ padding: '14px' }}>{tool.isOpenSource ? <Check size={16} color="#82A735" /> : <X size={16} color="#999" />}</td>
                   <td style={{ padding: '14px', fontWeight: '700', color: 'var(--primary-green-dark)' }}>{tool.pricing || 'Free Tier'}</td>
                   <td style={{ padding: '14px', textAlign: 'right' }}>
-                    <a href={tool.affiliateUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textDecoration: 'none' }}>
+                    <a href={tool.affiliateUrl || `https://${tool.domain}`} target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textDecoration: 'none' }}>
                       Try Alternative ↗
                     </a>
                   </td>
@@ -261,11 +302,15 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
                     src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`} 
                     alt={tool.name}
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `https://icons.duckduckgo.com/ip3/${tool.domain}.ico`;
+                    }}
                   />
                 </div>
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                    <h4 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)' }}>{tool.name}</h4>
+                    <h4 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0 }}>{tool.name}</h4>
                     {tool.isFreeTier && (
                       <span style={{ background: '#F0FDF4', color: '#166534', border: '1px solid #BBF7D0', fontSize: '0.72rem', fontWeight: '800', padding: '2px 8px', borderRadius: '9999px' }}>
                         🎁 Free Tier
@@ -277,6 +322,13 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
                       </span>
                     )}
                   </div>
+
+                  {tool.alternativeBadge && (
+                    <div style={{ display: 'inline-block', background: '#EEF4DE', color: '#3A5311', border: '1px solid #D5E5B5', fontSize: '0.75rem', fontWeight: '800', padding: '3px 8px', borderRadius: '6px', margin: '6px 0 4px' }}>
+                      {tool.alternativeBadge}
+                    </div>
+                  )}
+
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: '6px 0 10px', lineHeight: '1.4' }}>{tool.description}</p>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '0.85rem' }}>
@@ -288,16 +340,18 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
                 </div>
               </div>
 
-              <a
-                href={tool.affiliateUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill-green"
-                style={{ padding: '10px 18px', fontSize: '0.88rem' }}
-              >
-                <span>Visit {tool.name}</span>
-                <ExternalLink size={14} />
-              </a>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <a
+                  href={tool.affiliateUrl || `https://${tool.domain}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill-green"
+                  style={{ padding: '10px 18px', fontSize: '0.88rem', textDecoration: 'none' }}
+                >
+                  <span>Visit {tool.name}</span>
+                  <ExternalLink size={14} />
+                </a>
+              </div>
             </div>
           ))}
         </div>

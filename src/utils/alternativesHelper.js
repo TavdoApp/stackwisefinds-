@@ -4,55 +4,158 @@
  */
 
 // Reason / Highlight map for leading tools
-const toolStrengthBadges = {
-  'kling-ai': '🏆 #1 for Cinematic Motion & Long Clips',
-  'runway': '🎬 #1 for Pro Timeline & Camera Controls',
-  'luma-dream-machine': '⚡ Best for 3D Camera Tracking & Speed',
-  'hedra-ai': '🎙️ Best for Character Avatars & Lip Sync',
-  'krea-ai': '🎨 Best for Real-Time Canvas & Multi-Model',
-  'google-veo-2': '🔮 Best for 1080p HD with Native Audio',
-  'sora-openai': '✨ Best for Photorealistic Simulation',
-  'pika': '🚀 Best for Fast Social Clips & Visual FX',
-  'layer-ai': '🏢 Best for Batch Studio & Custom IP LoRA',
-  'hailuo-ai': '🌊 Best for Physics & Natural Lighting',
-  'haiper-ai': '🖌️ Best for Video Repainting & Motion',
-  'synthesia': '👔 Best for Enterprise Training Avatars',
-  'heygen': '🗣️ Best for Multilingual Avatar Translation',
-  'descript': '✂️ Best for Text-Based Video & Audio Editing',
+export const toolStrengthBadges = {
+  // Generative AI Video & 3D Physics
+  'higgsfield-ai': '🌟 All-in-One Multi-Model & Camera Physics Studio',
+  'kling-ai': '🏆 #1 for Cinematic Motion & Long Clips (1080p)',
+  'runway': '🎬 #1 for Pro Timeline & Advanced Camera Controls',
+  'luma-dream-machine': '⚡ Best for 3D Camera Tracking & Generation Speed',
+  'hedra-ai': '🎙️ Best for Character Storytelling & Brand Element Lock',
+  'krea-ai': '🎨 Best for Real-Time Canvas & Multi-Model Workspaces',
+  'google-veo-2': '🔮 Best for 1080p Full HD with Synchronized Native Audio',
+  'sora-openai': '✨ Best for Photorealistic Simulation & Physical Realism',
+  'pika': '🚀 Best for Fast Social Clips & Dynamic Visual FX',
+  'layer-ai': '🏢 Best for Batch Studio Pipelines & Custom IP LoRAs',
+  'hailuo-ai': '🌊 Best for Natural Lighting & Physics Simulation',
+  'haiper-ai': '🖌️ Best for Video Repainting & Motion Precision',
+  
+  // AI Avatars & Video Marketing
+  'synthesia': '👔 Best for Enterprise Training Avatars & Multilingual LMS',
+  'heygen': '🗣️ Best for Studio-Quality Multilingual Avatar Translation',
+  'descript': '✂️ Best for Text-Based Video & Audio Timeline Editing',
   'capcut': '📱 Best for Mobile & Social Short-Form Cuts',
-  'invideo-ai': '📢 Best for Text-to-Script Video Marketing',
-  'opusclip': '🔥 Best for AI Long-to-Short Repurposing',
-  'submagic': '💬 Best for Dynamic Viral Auto-Captions',
-  'xuscrm': '🏡 Best Real Estate CRM for Automated Leads',
-  'hubspot': '🏢 Best All-in-One Enterprise CRM',
-  'pipedrive': '💼 Best for Visual Deal Pipelines',
-  'zoho-crm': '💰 Best Value for Growing Sales Teams',
-  'n8n': '⚡ Best Self-Hosted Automation Engine',
-  'make': '🧩 Best Visual Multi-Step Integrations',
-  'zapier': '🔌 Largest App Ecosystem & Connectors',
-  'screaming-frog': '🐸 Industry Standard Desktop Crawler',
-  'ahrefs': '🔍 Best for Backlink Analysis & Keywords',
-  'semrush': '📊 Best for All-in-One SEO & PPC Insights',
-  'claude-ai': '🧠 Best for Nuanced Writing & Code Logic',
-  'chatgpt': '🤖 Most Versatile Conversational AI',
-  'perplexity-ai': '🔎 Best for Real-Time Cited Research',
-  'notion': '📓 Best All-in-One Connected Workspace',
-  'obsidian': '🔒 Best Offline Markdown Knowledge Graph',
-  'chargebee': '💳 Best for Complex Recurring Billing',
-  'stripe': '🌐 Global Standard for Developer Payments'
+  'invideo-ai': '📢 Best for Script-to-Video Marketing Campaigns',
+  'opusclip': '🔥 Best for AI Long-to-Short Viral Repurposing',
+  'submagic': '💬 Best for Dynamic Viral Auto-Captions & Zooms',
+  
+  // CRMs & Sales Automation
+  'xuscrm': '🏡 Best Real Estate CRM for Automated Lead Scoring & Follow-ups',
+  'hubspot': '🏢 Best All-in-One Enterprise Marketing & CRM Suite',
+  'pipedrive': '💼 Best for Visual Deal Pipelines & Sales Activity Tracking',
+  'zoho-crm': '💰 Best Value CRM for Growing High-Volume Sales Teams',
+  'gohighlevel': '🚀 Best All-in-One Agency CRM & Marketing Funnel Engine',
+  'salesforce': '🌐 Global Standard for Large Enterprise Customization',
+  
+  // Workflow Automation & Developer Stacks
+  'n8n': '⚡ #1 Self-Hosted Automation Engine (Zero Per-Task Execution Fees)',
+  'make': '🧩 Best Visual Multi-Step Logic & Flexible JSON Data Routing',
+  'zapier': '🔌 Largest App Ecosystem & 7,000+ Pre-Built Integrations',
+  'postiz': '📱 Best Self-Hosted Social Media Scheduler & AI Publisher',
+  
+  // SEO, Crawlers & Web Intelligence
+  'screaming-frog': '🐸 Industry Standard Desktop Crawler for Deep Technical SEO',
+  'ahrefs': '🔍 Best for Backlink Intelligence & Keyword Difficulty',
+  'semrush': '📊 Best for All-in-One SEO, PPC Research & Content Marketing',
+  
+  // LLMs & AI Research
+  'claude-ai': '🧠 Best for Long-Context Reasoning, Analysis & Clean Code Logic',
+  'chatgpt': '🤖 Most Versatile Conversational AI & Custom GPT Ecosystem',
+  'perplexity-ai': '🔎 Best for Real-Time Cited Research & Live Web Grounding',
+  
+  // Productivity & Knowledge Graphs
+  'notion': '📓 Best All-in-One Connected Team Workspace & Wiki',
+  'obsidian': '🔒 Best Offline Markdown Knowledge Graph with Local Vaults',
+  
+  // Billing, Subscriptions & Payments
+  'chargebee': '💳 Best for Complex Recurring SaaS Billing & Multi-Currency',
+  'stripe': '🌐 Global Developer Infrastructure for Payments & Billing',
+  'lemonsqueezy': '🍋 Best Merchant of Record for Global Tax & Digital Goods',
+  'paddle': '⛵ Best All-in-One Merchant of Record for B2B SaaS Subscriptions'
+};
+
+// Curated Community Switch Insights (Reddit / Verified Buyer Intelligence)
+export const communitySwitchInsights = {
+  'higgsfield-ai': {
+    headline: 'Why Creators Explore Alternatives to Higgsfield AI',
+    summary: 'Creators migrating from Higgsfield AI frequently cite aggressive credit burn rates during multi-shot generation and prompt adherence drift in complex sequences. Users looking for hyper-realistic cinematic physics migrate to Kling AI, while teams needing character persistence and multi-model campaign workflows choose Hedra or Krea.',
+    keyDrivers: [
+      'Credit consumption speed on high-resolution multi-shot exports',
+      'Need for 1080p/4K long continuous scene generation (Kling AI handles up to 2-minute extensions)',
+      'Demand for multi-model workspace routing and custom style LoRAs (Krea & Layer AI)',
+      'Need for locked character voice and lip-sync alignment (Hedra & HeyGen)'
+    ]
+  },
+  'runway': {
+    headline: 'Why Video Editors Look Beyond Runway',
+    summary: 'While Runway Gen-3 sets the bar for granular timeline controls and motion brushes, users exploring alternatives often seek more accessible entry tiers, faster rendering queues during peak hours, or specialized character dialog tools.',
+    keyDrivers: [
+      'Cost per second on high-resolution Gen-3 Alpha generations',
+      'Need for native sound FX generation (Google Veo 2)',
+      'Desire for real-time interactive canvas generation (Krea AI)'
+    ]
+  },
+  'kling-ai': {
+    headline: 'Why Users Compare Kling AI Alternatives',
+    summary: 'Kling AI leads in raw cinematic physics and long clips, but creators also test Luma Dream Machine for rapid 3D camera pan rendering and Runway for granular camera keyframe scrubbing.',
+    keyDrivers: [
+      'Queue wait times on free/standard credits during peak server loads',
+      'Need for direct character lip-sync and voice track integration (Hedra)',
+      'Studio batch pipeline integrations and IP asset locking (Layer AI)'
+    ]
+  },
+  'hubspot': {
+    headline: 'Why Scaling Teams Move Away from HubSpot',
+    summary: 'HubSpot is powerful, but teams frequently replace it to avoid steep tiered contact price escalations, mandatory paid onboarding fees, and contract lock-in.',
+    keyDrivers: [
+      'Aggressive pricing jumps when crossing marketing contact thresholds',
+      'Desire for specialized industry workflows (e.g. XusCRM for UAE & real estate agents)',
+      'Preference for lean, drag-and-drop visual pipeline clarity (Pipedrive)'
+    ]
+  },
+  'zapier': {
+    headline: 'Why Automation Engineers Migrate from Zapier',
+    summary: 'As workflows scale into thousands of executions, Zapier’s per-task pricing becomes prohibitive. Teams migrate to self-hosted n8n for unlimited private executions or Make for advanced visual data routing.',
+    keyDrivers: [
+      'High monthly invoices from multi-step zaps triggering thousands of tasks',
+      'Data privacy and GDPR requirements to keep execution payloads on private VPS (n8n)',
+      'Need for complex JSON arrays, loops, and branching logic (Make & n8n)'
+    ]
+  },
+  'stripe': {
+    headline: 'Why SaaS Founders Look for Stripe Billing Alternatives',
+    summary: 'While Stripe is the global payment backbone, SaaS founders often add Chargebee for complex B2B subscription contracts or migrate to Lemon Squeezy / Paddle to offload global sales tax and VAT compliance.',
+    keyDrivers: [
+      'Global sales tax, VAT calculation, and remittance complexity (Merchant of Record benefits)',
+      'Enterprise usage-based metering and tiered customer discount billing (Chargebee)',
+      'Multi-currency subscription management'
+    ]
+  },
+  'screaming-frog': {
+    headline: 'Why SEO Teams Supplement Screaming Frog',
+    summary: 'Screaming Frog is the gold-standard desktop crawler, but large teams often seek cloud-hosted automated crawlers that run continuously without hogging local RAM.',
+    keyDrivers: [
+      'Local machine memory constraints on 1M+ URL crawls',
+      'Need for continuous scheduled cloud monitoring with automated alerts',
+      'Integrated backlink and competitive keyword databases (Ahrefs / Semrush)'
+    ]
+  },
+  'notion': {
+    headline: 'Why Knowledge Workers Switch from Notion',
+    summary: 'Users exploring Notion alternatives typically want local-first offline Markdown speed (Obsidian) or dedicated agile project tracking without database configuration fatigue.',
+    keyDrivers: [
+      'Offline reliability and private local markdown storage (Obsidian)',
+      'Sluggish performance on deeply nested workspaces with heavy databases',
+      'Zero vendor lock-in with plain text data portability'
+    ]
+  }
 };
 
 // Negative keywords / sub-niche filters to prevent mixing unrelated tools
 const subNicheRules = {
   // Generative AI Video tools should NOT match screen recorders or meeting note takers
   'generative-video': {
-    matchKeywords: ['generative', 'text-to-video', 'image-to-video', 'cinematic', 'camera motion', 'kling', 'sora', 'veo', 'diffusion', 'multimodal video'],
-    excludeKeywords: ['screen record', 'meeting note', 'transcri', 'zoom meeting', 'meeting wiki', 'video player', 'streaming infrastructure', 'webinar']
+    matchKeywords: ['generative', 'text-to-video', 'image-to-video', 'cinematic', 'camera motion', 'kling', 'sora', 'veo', 'diffusion', 'multimodal video', 'higgsfield', 'runway', 'luma'],
+    excludeKeywords: ['screen record', 'meeting note', 'transcri', 'zoom meeting', 'meeting wiki', 'video player', 'streaming infrastructure', 'webinar', 'intro maker', 'logo stinger', 'survey', 'quiz']
   },
   // Screen recording tools
   'screen-recording': {
-    matchKeywords: ['screen record', 'screen capture', 'loom', 'screen studio', 'camtasia'],
-    excludeKeywords: ['text-to-video', 'generative ai video', 'cinematic video generation', 'diffusion model']
+    matchKeywords: ['screen record', 'screen capture', 'loom', 'screen studio', 'camtasia', 'claap'],
+    excludeKeywords: ['text-to-video', 'generative ai video', 'cinematic video generation', 'diffusion model', 'camera physics']
+  },
+  // Real Estate CRM
+  'real-estate-crm': {
+    matchKeywords: ['real estate', 'property', 'tenant', 'broker', 'listing', 'xuscrm'],
+    excludeKeywords: ['ecommerce', 'shopify', 'point of sale', 'gaming']
   }
 };
 
@@ -66,6 +169,28 @@ export function getToolStrengthBadge(tool, targetTool) {
   if (tool.isFreeTier) return '💰 Free Tier Available ($0)';
   if (tool.badge) return `⭐ ${tool.badge}`;
   return 'Verified Direct Competitor';
+}
+
+/**
+ * Get curated or synthesized community switch insight for any tool
+ */
+export function getCommunitySwitchInsight(tool) {
+  if (!tool) return null;
+  if (communitySwitchInsights[tool.id]) {
+    return communitySwitchInsights[tool.id];
+  }
+  
+  // Synthesized fallback for other tools based on their category
+  const toolName = tool.name;
+  return {
+    headline: `Why Teams Compare Alternatives to ${toolName}`,
+    summary: `Software buyers evaluate ${toolName} alternatives to optimize subscription costs, unlock specialized feature workflows, avoid vendor lock-in, and compare free or open-source tiers.`,
+    keyDrivers: [
+      `Pricing plan alignment and per-seat vs flat-rate cost efficiency`,
+      `Feature depth and specialized integration requirements`,
+      `Community support, API access, and data portability options`
+    ]
+  };
 }
 
 /**
@@ -183,6 +308,13 @@ export function getToolAlternatives(targetTool, allTools = [], options = {}) {
     for (const t of tools) {
       if (matched.length >= limit) break;
       if (!matchedIds.has(t.id) && t.category === targetTool.category) {
+        // Exclude obvious mismatched tools if rule active
+        if (activeRule) {
+          const candText = `${t.name} ${t.tagline || ''} ${t.description || ''}`.toLowerCase();
+          if (activeRule.excludeKeywords.some(ex => candText.includes(ex))) {
+            continue;
+          }
+        }
         matched.push({
           ...t,
           alternativeBadge: getToolStrengthBadge(t, targetTool),
@@ -194,4 +326,74 @@ export function getToolAlternatives(targetTool, allTools = [], options = {}) {
   }
 
   return matched.slice(0, limit);
+}
+
+/**
+ * Returns grouped alternatives organized by buyer use case
+ */
+export function getGroupedAlternatives(targetTool, allTools = []) {
+  if (!targetTool) return [];
+  const alternatives = getToolAlternatives(targetTool, allTools, { limit: 12 });
+  
+  // Specific groupings for Generative AI Video
+  if (targetTool.id === 'higgsfield-ai' || targetTool.id === 'kling-ai' || targetTool.id === 'runway' || targetTool.id === 'luma-dream-machine') {
+    const cinematic = alternatives.filter(t => ['kling-ai', 'google-veo-2', 'luma-dream-machine', 'sora-openai', 'hailuo-ai'].includes(t.id));
+    const multiModel = alternatives.filter(t => ['hedra-ai', 'krea-ai', 'layer-ai', 'heygen'].includes(t.id));
+    const editing = alternatives.filter(t => ['runway', 'pika', 'descript', 'capcut'].includes(t.id));
+
+    const groups = [];
+    if (cinematic.length > 0) {
+      groups.push({
+        title: '🏆 Cinematic & Motion Physics',
+        description: 'Best for hyper-realistic physical simulation, camera tracking, and long cinematic clip synthesis.',
+        tools: cinematic
+      });
+    }
+    if (multiModel.length > 0) {
+      groups.push({
+        title: '🎙️ Campaign & Multi-Model Workspaces',
+        description: 'Best for character consistency, brand asset locks, and multi-model studio pipelines.',
+        tools: multiModel
+      });
+    }
+    if (editing.length > 0) {
+      groups.push({
+        title: '🎬 Granular Timeline & Creative Editing',
+        description: 'Best for professional timeline controls, keyframing, and rapid social media video iteration.',
+        tools: editing
+      });
+    }
+    if (groups.length > 0) return groups;
+  }
+
+  // Standard groupings for all other software
+  const freeTools = alternatives.filter(t => t.isFreeTier || (t.pricing || '').toLowerCase().includes('free'));
+  const openSourceTools = alternatives.filter(t => t.isOpenSource);
+  const topRated = alternatives.slice(0, 4);
+
+  const groups = [
+    {
+      title: '🏆 Top Rated Direct Competitors',
+      description: `Highest-rated market alternatives benchmarked against ${targetTool.name}.`,
+      tools: topRated
+    }
+  ];
+
+  if (freeTools.length > 0) {
+    groups.push({
+      title: '💰 Best Free & Freemium Alternatives',
+      description: `Zero-cost entry options with functional free tiers to replace ${targetTool.name}.`,
+      tools: freeTools.slice(0, 4)
+    });
+  }
+
+  if (openSourceTools.length > 0) {
+    groups.push({
+      title: '⚡ Open-Source & Self-Hosted Replacements',
+      description: `Self-hostable tools that give you 100% data sovereignty and zero vendor lock-in.`,
+      tools: openSourceTools
+    });
+  }
+
+  return groups;
 }

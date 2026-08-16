@@ -145,7 +145,11 @@ saasTools.forEach(tool => {
   const targetFolder = path.join(alternativesDir, tool.id);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
-  const categoryMatches = saasTools.filter(t => t.category === tool.category && t.id !== tool.id).slice(0, 7);
+  const explicitMatches = Array.isArray(tool.alternatives) && tool.alternatives.length > 0
+    ? tool.alternatives.map(altId => saasTools.find(t => t.id === altId)).filter(Boolean)
+    : [];
+  const fallbackMatches = saasTools.filter(t => t.category === tool.category && t.id !== tool.id);
+  const categoryMatches = [...explicitMatches, ...fallbackMatches.filter(t => !explicitMatches.some(e => e.id === t.id))].slice(0, 7);
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -1066,6 +1066,7 @@ export default function App() {
             {currentView === 'alternatives-detail' && (
               <AlternativesView
                 targetToolId={selectedAlternativeToolId}
+                onSelectTool={handleSelectToolDetail}
                 onBack={() => {
                   setCurrentView('directory');
                   window.location.hash = '';
@@ -1159,6 +1160,19 @@ export default function App() {
                 isSelectedForCompare={selectedCompareIds.includes(selectedToolDetailId)}
                 onOpenBadgeModal={() => setShowBadgeModal(true)}
                 onOpenClaimModal={(t) => setSelectedClaimTool(t)}
+                onSelectTool={handleSelectToolDetail}
+                onNavigateAlternatives={(tId) => {
+                  setSelectedAlternativeToolId(tId);
+                  setCurrentView('alternatives-detail');
+                  window.history.pushState(null, '', `/alternatives/${tId}`);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onNavigateVersus={(tA, tB) => {
+                  setSelectedVersus({ toolAId: tA, toolBId: tB });
+                  setCurrentView('versus-detail');
+                  window.history.pushState(null, '', `/vs/${tA}-vs-${tB}`);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               />
             )}
           </Suspense>
