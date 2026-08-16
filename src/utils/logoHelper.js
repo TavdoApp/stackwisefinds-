@@ -13,13 +13,23 @@ const HIGH_RES_LOGOS = {
   'notion.so': 'https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg',
   'canva.com': 'https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg',
   'figma.com': 'https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg',
-  'github.com': 'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'
+  'github.com': 'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
+  'appsumo.com': 'https://www.google.com/s2/favicons?domain=appsumo.com&sz=128',
+  'pitchground.com': 'https://www.google.com/s2/favicons?domain=pitchground.com&sz=128',
+  'stacksocial.com': 'https://www.google.com/s2/favicons?domain=stacksocial.com&sz=128',
+  'dealmirror.com': 'https://www.google.com/s2/favicons?domain=dealmirror.com&sz=128'
 };
 
-export function extractDomain(tool) {
-  if (!tool) return 'software.com';
+export function extractDomain(input) {
+  if (!input) return 'software.com';
 
-  const raw = tool.domain || tool.website || tool.affiliateUrl || '';
+  let raw = '';
+  if (typeof input === 'string') {
+    raw = input;
+  } else if (typeof input === 'object') {
+    raw = input.domain || input.website || input.websiteUrl || input.affiliateUrl || '';
+  }
+
   if (!raw) return 'software.com';
 
   try {

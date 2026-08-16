@@ -5,8 +5,61 @@ import {
   TrendingUp, Zap, Filter, CheckCircle2, AlertTriangle, Users, Database,
   DollarSign, Scale, ThumbsUp, ThumbsDown
 } from 'lucide-react';
-import { extractDomain } from '../utils/logoHelper.js';
+import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
+
+function ToolLogo({ tool, size = 52, borderRadius = 14 }) {
+  const [errCount, setErrCount] = useState(0);
+  const domain = extractDomain(tool);
+  const logoUrl = getLogoUrl(tool, errCount);
+
+  if (!logoUrl || errCount >= 3) {
+    return (
+      <div style={{
+        width: `${size}px`,
+        height: `${size}px`,
+        borderRadius: `${borderRadius}px`,
+        background: 'linear-gradient(135deg, #141E14 0%, #2A3B2A 100%)',
+        color: '#82A735',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: '800',
+        fontSize: `${Math.round(size * 0.38)}px`,
+        flexShrink: 0,
+        border: '1px solid #2C3E2C',
+        boxShadow: '0 2px 6px rgba(0,0,0,0.06)'
+      }}>
+        {getFallbackInitials(tool?.name)}
+      </div>
+    );
+  }
+
+  return (
+    <div style={{
+      width: `${size}px`,
+      height: `${size}px`,
+      borderRadius: `${borderRadius}px`,
+      background: '#FFFFFF',
+      border: '1px solid var(--border-color)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '8px',
+      flexShrink: 0,
+      boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
+      overflow: 'hidden'
+    }}>
+      <img
+        src={logoUrl}
+        alt={`${tool?.name || 'Software'} logo`}
+        onError={() => setErrCount(prev => prev + 1)}
+        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+        loading="lazy"
+      />
+    </div>
+  );
+}
 
 export default function CategoryBuyerGuideView({ 
   categorySlug, 
@@ -407,25 +460,7 @@ export default function CategoryBuyerGuideView({
 
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginTop: '8px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
-              <div style={{
-                width: '68px',
-                height: '68px',
-                borderRadius: '18px',
-                background: '#F6F7F2',
-                border: '1px solid var(--border-color)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '10px',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
-              }}>
-                <img 
-                  src={`https://logo.clearbit.com/${extractDomain(topPick.website || topPick.domain)}?size=120`}
-                  alt={topPick.name}
-                  onError={(e) => { e.target.onerror = null; e.target.src = '/logo.svg'; }}
-                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                />
-              </div>
+              <ToolLogo tool={topPick} size={68} borderRadius={18} />
 
               <div>
                 <h2 style={{ fontSize: '1.6rem', fontWeight: '800', margin: '0 0 4px', color: 'var(--text-dark)' }}>
@@ -745,25 +780,7 @@ export default function CategoryBuyerGuideView({
                       #{index + 1}
                     </div>
 
-                    <div style={{
-                      width: '52px',
-                      height: '52px',
-                      borderRadius: '14px',
-                      background: '#F6F7F2',
-                      border: '1px solid var(--border-color)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '8px',
-                      flexShrink: 0
-                    }}>
-                      <img 
-                        src={`https://logo.clearbit.com/${domain}?size=96`}
-                        alt={tool.name}
-                        onError={(e) => { e.target.onerror = null; e.target.src = '/logo.svg'; }}
-                        style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-                      />
-                    </div>
+                    <ToolLogo tool={tool} size={52} borderRadius={14} />
 
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '4px' }}>
