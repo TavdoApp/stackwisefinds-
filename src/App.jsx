@@ -870,7 +870,7 @@ export default function App() {
                 </div>
               </section>
 
-              {/* Vendor Promotion Callout Section ($199/yr Featured Tier) */}
+              {/* Vendor Promotion Callout Section ($99/yr Featured Tier) */}
               <section style={{ padding: '40px 0', background: 'var(--bg-sage)', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
                 <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -882,7 +882,7 @@ export default function App() {
                   </div>
 
                   <button onClick={() => setShowVendorModal(true)} className="btn-pill-green" style={{ padding: '12px 24px' }} aria-label="Apply for Featured Spot">
-                    <span>Apply for Featured Spot ($199/yr)</span>
+                    <span>{t.applyFeatured || 'Apply for Featured Spot ($99/yr)'}</span>
                     <ArrowUpRight size={16} />
                   </button>
                 </div>

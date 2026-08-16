@@ -77,7 +77,7 @@ export function TermsOfServiceView({ onBack }) {
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>3. Featured Vendor Subscriptions</h2>
           <p style={{ marginBottom: '16px' }}>
-            Featured Vendor spots ($199/year) grant priority positioning and verified badge styling. Featured status does not bypass community guidelines or guarantee immunity from negative user reviews if service quality degrades.
+            Featured Vendor spots ($99/year) grant priority positioning and verified badge styling. Featured status does not bypass community guidelines or guarantee immunity from negative user reviews if service quality degrades.
           </p>
 
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>4. Merchant of Record</h2>
@@ -115,7 +115,7 @@ export function RefundPolicyView({ onBack }) {
               🛡️ 14-Day Money-Back Guarantee
             </div>
             <p style={{ margin: 0, fontSize: '0.92rem' }}>
-              We offer a full <strong>100% money-back guarantee</strong> on all Featured Vendor listings ($199/year) within 14 days of purchase if you are not completely satisfied with your referral traffic placement.
+              We offer a full <strong>100% money-back guarantee</strong> on all Featured Vendor listings ($99/year) within 14 days of purchase if you are not completely satisfied with your referral traffic placement.
             </p>
           </div>
 

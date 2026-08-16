@@ -21,7 +21,7 @@ export const translations = {
     visitSite: 'Visit Site',
     reviewBtn: 'Review',
     compareBtn: 'Compare',
-    applyFeatured: 'Apply for Featured Spot ($199/yr)'
+    applyFeatured: 'Apply for Featured Spot ($99/yr)'
   },
   zh: {
     navDirectory: '软件目录',
@@ -45,7 +45,7 @@ export const translations = {
     visitSite: '访问官网',
     reviewBtn: '查看评测',
     compareBtn: '加入对比',
-    applyFeatured: '申请精选推广位 ($199/年)'
+    applyFeatured: '申请精选推广位 ($99/年)'
   },
   ar: {
     navDirectory: 'الدليل',
@@ -69,7 +69,7 @@ export const translations = {
     visitSite: 'زيارة الموقع',
     reviewBtn: 'مراجعة',
     compareBtn: 'مقارنة',
-    applyFeatured: 'تقديم طلب موقع مميز ($199/سنة)'
+    applyFeatured: 'تقديم طلب موقع مميز ($99/سنة)'
   },
   es: {
     navDirectory: 'Directorio',
@@ -93,7 +93,7 @@ export const translations = {
     visitSite: 'Visitar Sitio',
     reviewBtn: 'Reseña',
     compareBtn: 'Comparar',
-    applyFeatured: 'Solicitar Espacio Destacado ($199/año)'
+    applyFeatured: 'Solicitar Espacio Destacado ($99/año)'
   },
   de: {
     navDirectory: 'Verzeichnis',
@@ -117,7 +117,7 @@ export const translations = {
     visitSite: 'Website besuchen',
     reviewBtn: 'Bewertung',
     compareBtn: 'Vergleichen',
-    applyFeatured: 'Hervorgehobenen Platz beantragen ($199/Jahr)'
+    applyFeatured: 'Hervorgehobenen Platz beantragen ($99/Jahr)'
   },
   fr: {
     navDirectory: 'Annuaire',
@@ -141,7 +141,7 @@ export const translations = {
     visitSite: 'Visiter le site',
     reviewBtn: 'Avis',
     compareBtn: 'Comparer',
-    applyFeatured: 'Demander un emplacement en vedette (199 $/an)'
+    applyFeatured: 'Demander un emplacement en vedette (99 $/an)'
   },
   ja: {
     navDirectory: 'ディレクトリ',
@@ -165,7 +165,7 @@ export const translations = {
     visitSite: '公式サイトへ',
     reviewBtn: 'レビュー',
     compareBtn: '比較する',
-    applyFeatured: '注目枠を申請 ($199/年)'
+    applyFeatured: '注目枠を申請 ($99/年)'
   },
   ko: {
     navDirectory: '디렉토리',
@@ -189,7 +189,7 @@ export const translations = {
     visitSite: '사이트 방문',
     reviewBtn: '리뷰 보기',
     compareBtn: '비교 추가',
-    applyFeatured: '추천 스팟 신청 ($199/년)'
+    applyFeatured: '추천 스팟 신청 ($99/년)'
   },
   pt: {
     navDirectory: 'Diretório',
@@ -213,7 +213,7 @@ export const translations = {
     visitSite: 'Visitar Site',
     reviewBtn: 'Avaliação',
     compareBtn: 'Comparar',
-    applyFeatured: 'Solicitar Destaque ($199/ano)'
+    applyFeatured: 'Solicitar Destaque ($99/ano)'
   },
   vi: {
     navDirectory: 'Danh mục',
@@ -237,7 +237,7 @@ export const translations = {
     visitSite: 'Truy cập trang',
     reviewBtn: 'Đánh giá',
     compareBtn: 'So sánh',
-    applyFeatured: 'Đăng ký vị trí nổi bật ($199/năm)'
+    applyFeatured: 'Đăng ký vị trí nổi bật ($99/năm)'
   }
 };
 
