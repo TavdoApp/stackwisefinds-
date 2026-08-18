@@ -7,11 +7,13 @@ import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 import { getToolAlternatives, getCommunitySwitchInsight, getGroupedAlternatives } from '../utils/alternativesHelper.js';
 import UpvoteButton from './UpvoteButton.jsx';
 import ShareLaunchModal from './ShareLaunchModal.jsx';
+import SuggestAlternativeModal from './SuggestAlternativeModal.jsx';
 
 export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal, onOpenClaimModal, onSelectTool, onNavigateAlternatives, onNavigateVersus }) {
   const [activeTab, setActiveTab] = useState('product-info');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [showSuggestModal, setShowSuggestModal] = useState(false);
 
   const toolsArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
   const tool = toolsArray.find(t => t.id === toolId || (t.name && t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === toolId)) || saasTools.find(t => t.id === toolId) || saasTools[0];
@@ -579,16 +581,28 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
       {activeTab === 'alternatives' && (
         <div style={{ marginBottom: '40px' }}>
           {/* Header */}
-          <div style={{ marginBottom: '24px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
-              <Layers size={16} /> Verified Software Benchmark (2026)
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '24px' }}>
+            <div style={{ flex: 1, minWidth: '280px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
+                <Layers size={16} /> Verified Software Benchmark (2026)
+              </div>
+              <h3 style={{ fontSize: '1.75rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
+                Top Recommended Alternatives to {tool.name}
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: '1.5' }}>
+                Handpicked direct market competitors evaluated on core capabilities, pricing transparency, prompt fidelity, and community switch feedback.
+              </p>
             </div>
-            <h3 style={{ fontSize: '1.75rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
-              Top Recommended Alternatives to {tool.name}
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginTop: '6px', lineHeight: '1.5' }}>
-              Handpicked direct market competitors evaluated on core capabilities, pricing transparency, prompt fidelity, and community switch feedback.
-            </p>
+
+            <button
+              type="button"
+              onClick={() => setShowSuggestModal(true)}
+              className="btn-pill-outline"
+              style={{ padding: '8px 18px', fontSize: '0.82rem', fontWeight: '800', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+            >
+              <Sparkles size={14} color="#82A735" />
+              <span>+ Suggest an Alternative</span>
+            </button>
           </div>
 
           {/* Community Switch Insight Box */}
@@ -773,6 +787,13 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
         isOpen={showShareModal}
         onClose={() => setShowShareModal(false)}
         tool={tool}
+      />
+
+      {/* Suggest Alternative Modal */}
+      <SuggestAlternativeModal
+        tool={tool}
+        isOpen={showSuggestModal}
+        onClose={() => setShowSuggestModal(false)}
       />
     </div>
   );

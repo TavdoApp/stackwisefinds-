@@ -20,6 +20,7 @@ import FeaturedSidebar from './components/FeaturedSidebar';
 
 import ToolDetailPage from './components/ToolDetailPage';
 import ToolSearchInput from './components/ToolSearchInput';
+import RequestToolCard from './components/RequestToolCard';
 
 // Lazy Loaded Modal & Detail Views for High Performance & Micro-Bundle Splitting
 const ComparisonModal = lazy(() => import('./components/ComparisonModal'));
@@ -781,22 +782,29 @@ export default function App() {
 
                     {/* Center Column: Main Directory List */}
                     <div className="toolify-col-main">
-                      {paginatedTools.map((tool) => (
-                        <ToolCard
-                          key={tool.id}
-                          tool={tool}
-                          isSelectedForCompare={selectedCompareIds.includes(tool.id)}
-                          onToggleCompare={handleToggleCompare}
-                          onOpenReviewModal={(t) => setSelectedReviewTool(t)}
-                          onUpvoteTool={handleUpvoteTool}
-                          upvotes={upvotesState[tool.id] || 120}
-                          isBookmarked={bookmarkedIds.includes(tool.id)}
-                          onToggleBookmark={handleToggleBookmark}
-                          onSelectTool={handleSelectToolDetail}
-                          onSelectCategory={(catId) => { setSelectedCategory(catId); setCurrentPage(1); const el = document.getElementById('directory-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
-                          currentLang={currentLang}
+                      {paginatedTools.length === 0 ? (
+                        <RequestToolCard
+                          searchTerm={searchTerm}
+                          onOpenVendorModal={() => setShowVendorModal(true)}
                         />
-                      ))}
+                      ) : (
+                        paginatedTools.map((tool) => (
+                          <ToolCard
+                            key={tool.id}
+                            tool={tool}
+                            isSelectedForCompare={selectedCompareIds.includes(tool.id)}
+                            onToggleCompare={handleToggleCompare}
+                            onOpenReviewModal={(t) => setSelectedReviewTool(t)}
+                            onUpvoteTool={handleUpvoteTool}
+                            upvotes={upvotesState[tool.id] || 120}
+                            isBookmarked={bookmarkedIds.includes(tool.id)}
+                            onToggleBookmark={handleToggleBookmark}
+                            onSelectTool={handleSelectToolDetail}
+                            onSelectCategory={(catId) => { setSelectedCategory(catId); setCurrentPage(1); const el = document.getElementById('directory-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
+                            currentLang={currentLang}
+                          />
+                        ))
+                      )}
 
                       {/* Sleek Compact Ellipsis Single-Row Pagination Bar - Directly Under Main Tools */}
                       {totalPages > 1 && (

@@ -156,8 +156,13 @@ export default function ToolSearchInput({
           {/* Tools List Container */}
           <div style={{ maxHeight: '260px', overflowY: 'auto' }}>
             {filteredTools.length === 0 ? (
-              <div style={{ padding: '16px', fontSize: '0.85rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-                No tools found for "{searchQuery}"
+              <div style={{ padding: '16px 12px', fontSize: '0.85rem', color: 'var(--text-muted)', textAlign: 'center' }}>
+                <div style={{ fontWeight: '700', color: 'var(--text-dark)', marginBottom: '4px' }}>
+                  No tools found for "{searchQuery}"
+                </div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '4px' }}>
+                  Scroll down to directory to request this tool in 1-click!
+                </div>
               </div>
             ) : (
               filteredTools.map((t) => {

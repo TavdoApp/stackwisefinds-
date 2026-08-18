@@ -3,9 +3,11 @@ import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Check,
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema, injectFaqPageSchema } from '../utils/schemaMarkup.jsx';
 import { getToolAlternatives, getCommunitySwitchInsight, getToolStrengthBadge, getGroupedAlternatives } from '../utils/alternativesHelper.js';
+import SuggestAlternativeModal from './SuggestAlternativeModal.jsx';
 
 export default function AlternativesView({ targetToolId, onBack, onSelectTool }) {
   const [filterMode, setFilterMode] = useState('all'); // 'all', 'free', 'opensource', 'budget'
+  const [showSuggestModal, setShowSuggestModal] = useState(false);
 
   const targetTool = saasTools.find(t => t.id === targetToolId) || saasTools[0];
   
@@ -104,6 +106,15 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
             style={{ padding: '7px 16px', fontSize: '0.84rem' }}
           >
             <span>💰 Budget Friendly</span>
+          </button>
+
+          <button
+            onClick={() => setShowSuggestModal(true)}
+            className="btn-pill-outline"
+            style={{ padding: '7px 16px', fontSize: '0.84rem', fontWeight: '800', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+          >
+            <Sparkles size={14} color="#82A735" />
+            <span>+ Suggest Alternative</span>
           </button>
         </div>
       </div>
@@ -377,6 +388,13 @@ export default function AlternativesView({ targetToolId, onBack, onSelectTool })
         <ShieldCheck size={16} color="#82A735" />
         <span>StakDock is reader-supported. We may earn an affiliate commission when you sign up through partner links.</span>
       </div>
+
+      {/* Suggest Alternative Modal */}
+      <SuggestAlternativeModal
+        tool={targetTool}
+        isOpen={showSuggestModal}
+        onClose={() => setShowSuggestModal(false)}
+      />
     </div>
   );
 }
