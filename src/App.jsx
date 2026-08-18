@@ -1124,6 +1124,7 @@ export default function App() {
                   setCurrentView('directory');
                   window.history.pushState(null, '', '/');
                 }}
+                onOpenSubmitModal={() => setIsVendorModalOpen(true)}
               />
             )}
 

@@ -5,10 +5,13 @@ import { injectSoftwareApplicationSchema, injectFAQPageSchema } from '../utils/s
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 import { getToolAlternatives, getCommunitySwitchInsight, getGroupedAlternatives } from '../utils/alternativesHelper.js';
+import UpvoteButton from './UpvoteButton.jsx';
+import ShareLaunchModal from './ShareLaunchModal.jsx';
 
 export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewModal, onToggleCompare, isSelectedForCompare, onOpenBadgeModal, onOpenClaimModal, onSelectTool, onNavigateAlternatives, onNavigateVersus }) {
   const [activeTab, setActiveTab] = useState('product-info');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [showShareModal, setShowShareModal] = useState(false);
 
   const toolsArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
   const tool = toolsArray.find(t => t.id === toolId || (t.name && t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === toolId)) || saasTools.find(t => t.id === toolId) || saasTools[0];
@@ -143,6 +146,26 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
 
           {/* Primary CTAs */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+            <UpvoteButton tool={tool} size="md" />
+
+            <button
+              type="button"
+              onClick={() => setShowShareModal(true)}
+              className="btn-pill-outline"
+              style={{
+                padding: '12px 18px',
+                fontSize: '0.9rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                fontWeight: '700'
+              }}
+              title="Share and collect upvotes"
+            >
+              <Share2 size={16} color="#82A735" />
+              <span>Share & Upvote</span>
+            </button>
+
             {tool.lifetimeDealUrl && (
               <a
                 href={tool.lifetimeDealUrl}
@@ -744,6 +767,13 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
         <ShieldCheck size={16} color="#82A735" />
         <span>StakDock is reader-supported. We may earn an affiliate commission when you purchase software through partner links.</span>
       </div>
+
+      {/* Share Launch & Upvote Modal */}
+      <ShareLaunchModal
+        isOpen={showShareModal}
+        onClose={() => setShowShareModal(false)}
+        tool={tool}
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   X, Sparkles, CheckCircle2, ShieldCheck, CreditCard, ArrowRight, 
-  Star, Check, Zap, Globe, RefreshCw, Eye, Award, DollarSign
+  Star, Check, Zap, Globe, RefreshCw, Eye, Award, DollarSign, Rocket, Share2, Copy
 } from 'lucide-react';
 import { saasCategories } from '../data/saasData.jsx';
 import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
@@ -227,7 +227,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
         {/* Modal Body */}
         <div style={{ padding: '24px 28px', maxHeight: 'calc(90vh - 120px)', overflowY: 'auto' }}>
           {isSubmitted ? (
-            <div style={{ textAlign: 'center', padding: '30px 10px' }}>
+            <div style={{ textAlign: 'center', padding: '24px 10px' }}>
               <div style={{
                 width: '64px',
                 height: '64px',
@@ -244,15 +244,56 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
               <h3 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
                 🎉 Submission Received!
               </h3>
-              <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', maxWidth: '440px', margin: '0 auto 20px', lineHeight: '1.5' }}>
-                We are processing <strong>{softwareName || 'your software'}</strong>. Our automated health and SSL verification scanner will index your tool across category buyer guides.
+              <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', maxWidth: '460px', margin: '0 auto 18px', lineHeight: '1.5' }}>
+                We are processing <strong>{softwareName || 'your software'}</strong>. While automated checks verify your site, share your launch with your community to collect upvotes and rank #1!
               </p>
+
+              <div style={{
+                background: '#F6F7F2',
+                border: '1px dashed #82A735',
+                borderRadius: '16px',
+                padding: '16px',
+                maxWidth: '480px',
+                margin: '0 auto 24px',
+                textAlign: 'left'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '800', fontSize: '0.86rem', color: 'var(--text-dark)', marginBottom: '8px' }}>
+                  <Rocket size={16} color="#82A735" />
+                  <span>Kickstart Your Launch Campaign:</span>
+                </div>
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const shareText = `🚀 We just launched ${softwareName || 'our SaaS'} on @StakDock!\n\nCheck it out and show some love:`;
+                      const shareUrl = `https://stakdock.com/ranking`;
+                      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
+                    }}
+                    className="btn-pill-dark"
+                    style={{ padding: '8px 14px', fontSize: '0.82rem' }}
+                  >
+                    Share on 𝕏 (Twitter)
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const shareUrl = `https://stakdock.com/ranking`;
+                      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
+                    }}
+                    className="btn-pill-outline"
+                    style={{ padding: '8px 14px', fontSize: '0.82rem' }}
+                  >
+                    Share on LinkedIn
+                  </button>
+                </div>
+              </div>
+
               <button
                 onClick={onClose}
                 className="btn-pill-green"
-                style={{ padding: '10px 24px', margin: '0 auto' }}
+                style={{ padding: '12px 28px', margin: '0 auto' }}
               >
-                Back to StakDock
+                Back to StakDock Directory
               </button>
             </div>
           ) : (

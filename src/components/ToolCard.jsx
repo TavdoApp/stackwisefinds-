@@ -4,6 +4,7 @@ import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { getTranslation } from '../utils/translations';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
+import UpvoteButton from './UpvoteButton.jsx';
 
 export default function ToolCard({ 
   tool, 
@@ -205,20 +206,7 @@ export default function ToolCard({
             </span>
           </button>
 
-          <button
-            onClick={handleUpvote}
-            className="btn-pill-outline"
-            aria-label={`Upvote ${tool.name}`}
-            style={{
-              padding: '5px 10px',
-              fontSize: '0.75rem',
-              borderColor: hasUpvoted ? '#82A735' : 'var(--border-color)',
-              background: hasUpvoted ? 'var(--bg-sage)' : '#FFFFFF'
-            }}
-          >
-            <Flame size={12} color={hasUpvoted ? '#82A735' : '#888'} />
-            <span style={{ fontWeight: '700' }}>{(upvotes || 342) + (hasUpvoted ? 1 : 0)}</span>
-          </button>
+          <UpvoteButton tool={tool} size="sm" />
 
           <button
             onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
