@@ -47,6 +47,7 @@ export default function AdvertisePage({ onOpenVendorModal }) {
       description: 'High-visibility sticky placement at the top of the Left Featured Spotlight column and main feed.',
       features: [
         '⚡ Top #1 Priority in Homepage Left Spotlight Sidebar',
+        '🔗 High-Authority Dofollow SEO Backlink for Google PageRank',
         '📌 Highlighted card styling with animated green badge',
         '🚀 Priority ranking in real-time category search',
         '🔄 30-Second live rotation across all visitor sessions',
@@ -68,8 +69,8 @@ export default function AdvertisePage({ onOpenVendorModal }) {
       features: [
         '👑 Full-width sticky top bar displayed on 100% of page views',
         '👁️ 50,000+ Guaranteed Monthly Impressions from software buyers',
+        '🔗 High-Authority Dofollow SEO Backlink with UTM parameters',
         '🎨 Custom headline, emoji tag, and branded button styling',
-        '🔗 Direct outbound tracking link with UTM parameter pass-through',
         '⚡ Exclusive single-sponsor slot per category / sitewide',
         '📊 Dedicated real-time conversion and CTR reporting'
       ]
@@ -81,7 +82,7 @@ export default function AdvertisePage({ onOpenVendorModal }) {
     { name: 'Category Pinned Rank', free: 'Standard (By votes)', spotlight: 'Priority Feed Boost', featured: '🏆 Permanent #1 in Category', banner: 'Sitewide (Above all)' },
     { name: 'Competitor Pages Alternative Injection', free: '❌ No', spotlight: '❌ No', featured: '✅ Included (Shopify, Cursor, etc.)', banner: '✅ Sitewide Banner' },
     { name: 'Directory Badging', free: 'Standard Badge', spotlight: '⚡ Spotlight Badge', featured: '⭐ Gold "FEATURED PRO"', banner: '🔥 Top Sponsor' },
-    { name: 'SEO Backlink Type', free: 'Nofollow', spotlight: 'Nofollow', featured: '🔗 High-Authority Dofollow', banner: 'Dofollow / Direct' },
+    { name: 'SEO Backlink Type', free: 'Nofollow', spotlight: '🔗 High-Authority Dofollow', featured: '🔗 High-Authority Dofollow', banner: '🔗 High-Authority Dofollow' },
     { name: 'Homepage Left Spotlight Rotation', free: '❌ No', spotlight: '✅ #1 Priority Slot', featured: '✅ Included in Rotation', banner: '✅ Top of Page' },
     { name: 'IndexNow Instant Search Ping', free: 'Standard Queue', spotlight: '✅ Instant Push', featured: '✅ Instant Push', banner: '✅ Instant Push' },
     { name: 'Support & Updates', free: 'Community', spotlight: 'Priority Email', featured: '⭐ Dedicated VIP Founder Support', banner: '⭐ VIP Account Manager' }
