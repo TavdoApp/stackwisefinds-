@@ -282,6 +282,8 @@ export function getToolAlternatives(targetTool, allTools = [], options = {}) {
   if (!targetTool) return [];
   const limit = options.limit || 6;
   const tools = Array.isArray(allTools) && allTools.length > 0 ? allTools : [];
+  const matched = [];
+  const matchedIds = new Set([targetTool.id]);
 
   // 1. Priority: Paid $99/yr Featured Pro Sponsors in this Category (Guaranteed Competitor Placement)
   const paidCategorySponsors = tools.filter(t => 
