@@ -53,6 +53,8 @@ export async function onRequestGet(context) {
         category: sub.category || 'ai-tools',
         rating: 4.9,
         reviewsCount: 18,
+        upvotes: 1,
+        isNewLaunch: true,
         pricing: 'Freemium',
         pricingModel: 'Freemium',
         affiliateUrl: sub.software_website,

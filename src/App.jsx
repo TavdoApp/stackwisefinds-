@@ -21,6 +21,7 @@ import FeaturedSidebar from './components/FeaturedSidebar';
 import ToolDetailPage from './components/ToolDetailPage';
 import ToolSearchInput from './components/ToolSearchInput';
 import RequestToolCard from './components/RequestToolCard';
+import { getToolVotes } from './utils/upvoteHelper.js';
 
 // Lazy Loaded Modal & Detail Views for High Performance & Micro-Bundle Splitting
 const ComparisonModal = lazy(() => import('./components/ComparisonModal'));
@@ -815,7 +816,7 @@ export default function App() {
                             onToggleCompare={handleToggleCompare}
                             onOpenReviewModal={(t) => setSelectedReviewTool(t)}
                             onUpvoteTool={handleUpvoteTool}
-                            upvotes={upvotesState[tool.id] || 120}
+                            upvotes={upvotesState[tool.id] || getToolVotes(tool)}
                             isBookmarked={bookmarkedIds.includes(tool.id)}
                             onToggleBookmark={handleToggleBookmark}
                             onSelectTool={handleSelectToolDetail}

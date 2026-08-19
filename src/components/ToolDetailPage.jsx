@@ -5,6 +5,7 @@ import { injectSoftwareApplicationSchema, injectFAQPageSchema } from '../utils/s
 import { extractDomain, getFallbackInitials } from '../utils/logoHelper.js';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 import { getToolAlternatives, getCommunitySwitchInsight, getGroupedAlternatives } from '../utils/alternativesHelper.js';
+import { getToolVotes, getGamifiedBadge, getNextMilestone } from '../utils/upvoteHelper.js';
 import UpvoteButton from './UpvoteButton.jsx';
 import ShareLaunchModal from './ShareLaunchModal.jsx';
 import SuggestAlternativeModal from './SuggestAlternativeModal.jsx';
@@ -18,6 +19,11 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
   const toolsArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
   const tool = toolsArray.find(t => t.id === toolId || (t.name && t.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === toolId)) || saasTools.find(t => t.id === toolId) || saasTools[0];
   
+  // Dynamic Gamified Upvote Badge & Milestone
+  const currentVotes = getToolVotes(tool);
+  const gamifiedBadge = getGamifiedBadge(currentVotes);
+  const nextMilestone = getNextMilestone(currentVotes);
+
   // Intelligent Pro Alternatives Engine
   const alternatives = getToolAlternatives(tool, toolsArray, { limit: 12 });
   const switchInsight = getCommunitySwitchInsight(tool);
@@ -109,17 +115,17 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
                 <span style={{
                   fontSize: '0.75rem',
                   fontWeight: '800',
-                  background: 'linear-gradient(135deg, #FFF8E7 0%, #FFE8B6 100%)',
-                  color: '#B45309',
-                  border: '1px solid #FCD34D',
+                  background: gamifiedBadge.bg,
+                  color: gamifiedBadge.color,
+                  border: `1px solid ${gamifiedBadge.border}`,
                   padding: '3px 10px',
                   borderRadius: '9999px',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '4px',
-                  boxShadow: '0 2px 8px rgba(217,119,6,0.15)'
+                  boxShadow: gamifiedBadge.shadow
                 }}>
-                  🏆 #1 Product of the Week
+                  {gamifiedBadge.icon} {gamifiedBadge.label}
                 </span>
               </div>
 
@@ -179,7 +185,7 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
                   padding: '14px 24px',
                   fontSize: '0.98rem',
                   textDecoration: 'none',
-                  background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 100%)',
+                  background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 1000%)',
                   color: '#FFFFFF',
                   border: 'none',
                   display: 'inline-flex',
@@ -208,9 +214,51 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
         </div>
 
         {/* Introduction */}
-        <p style={{ fontSize: '1.08rem', color: 'var(--text-dark)', lineHeight: '1.6', marginBottom: '24px' }}>
+        <p style={{ fontSize: '1.08rem', color: 'var(--text-dark)', lineHeight: '1.6', marginBottom: nextMilestone ? '16px' : '24px' }}>
           {tool.description}
         </p>
+
+        {/* Viral Upvote Milestone Rally Banner */}
+        {nextMilestone && (
+          <div style={{
+            marginBottom: '24px',
+            background: 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)',
+            border: '1px solid #86EFAC',
+            borderRadius: '14px',
+            padding: '12px 18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '12px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.86rem', color: '#166534', fontWeight: '600' }}>
+              <Sparkles size={16} color="#15803D" />
+              <span>
+                Currently has <strong>{currentVotes} upvote{currentVotes === 1 ? '' : 's'}</strong> • Collect <strong>{nextMilestone.needed} more upvote{nextMilestone.needed === 1 ? '' : 's'}</strong> to unlock the <strong>{nextMilestone.nextBadge}</strong> badge!
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowShareModal(true)}
+              style={{
+                background: '#15803D',
+                color: '#FFFFFF',
+                border: 'none',
+                padding: '6px 14px',
+                borderRadius: '8px',
+                fontWeight: '700',
+                fontSize: '0.8rem',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px'
+              }}
+            >
+              <Share2 size={13} /> Rally Upvotes
+            </button>
+          </div>
+        )}
 
         {/* Website Preview Banner */}
         <div style={{

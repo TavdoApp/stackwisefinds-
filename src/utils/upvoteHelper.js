@@ -5,10 +5,16 @@ const CUSTOM_VOTES_KEY = 'stakdock_votes_delta';
 
 // Deterministic seed vote count for any tool based on reviews, rating, and visits
 export function getBaseVotes(tool) {
-  if (!tool) return 120;
+  if (!tool) return 1;
+
+  // 1. Newly submitted tools start with exactly 1 initial Upvote (the founder's launch vote)
+  if (tool.submittedByVendor || tool.isSubmission || tool.packageType || tool.isNewLaunch || tool.upvotes === 1) {
+    return 1;
+  }
+
   if (tool.upvotes && typeof tool.upvotes === 'number') return tool.upvotes;
 
-  // Generate deterministic count between 60 and 950
+  // Generate deterministic count between 45 and 950 for established directory tools
   let seed = 100;
   if (tool.reviewsCount) {
     seed += Math.min(tool.reviewsCount * 4, 400);
@@ -34,6 +40,69 @@ export function getBaseVotes(tool) {
   const variance = Math.abs(hash % 45);
   
   return Math.max(45, seed + variance);
+}
+
+// Product Hunt-Style Milestone Badge Engine
+export function getGamifiedBadge(upvoteCount) {
+  const votes = Number(upvoteCount) || 1;
+  if (votes >= 250) {
+    return {
+      label: '#1 Product of the Week',
+      icon: '🏆',
+      color: '#B45309',
+      bg: 'linear-gradient(135deg, #FFF8E7 0%, #FFE8B6 100%)',
+      border: '#FCD34D',
+      shadow: '0 2px 8px rgba(217,119,6,0.15)'
+    };
+  }
+  if (votes >= 100) {
+    return {
+      label: 'Top 10 Product of the Week',
+      icon: '🥉',
+      color: '#92400E',
+      bg: '#FEF3C7',
+      border: '#FDE68A',
+      shadow: '0 2px 6px rgba(146,64,14,0.1)'
+    };
+  }
+  if (votes >= 50) {
+    return {
+      label: 'Trending Launch',
+      icon: '⚡',
+      color: '#065F46',
+      bg: '#D1FAE5',
+      border: '#A7F3D0',
+      shadow: '0 2px 6px rgba(6,95,70,0.1)'
+    };
+  }
+  if (votes >= 10) {
+    return {
+      label: 'Rising Star',
+      icon: '🔥',
+      color: '#9A3412',
+      bg: '#FFEDD5',
+      border: '#FED7AA',
+      shadow: '0 2px 6px rgba(154,52,18,0.1)'
+    };
+  }
+  return {
+    label: 'Newly Launched',
+    icon: '🌱',
+    color: '#374151',
+    bg: '#F3F4F6',
+    border: '#E5E7EB',
+    shadow: 'none'
+  };
+}
+
+// Next Milestone Threshold for Viral Call to Action
+export function getNextMilestone(upvoteCount) {
+  const votes = Number(upvoteCount) || 1;
+  if (votes < 10) return { nextBadge: '🔥 Rising Star', needed: 10 - votes, target: 10 };
+  if (votes < 50) return { nextBadge: '⚡ Trending Launch', needed: 50 - votes, target: 50 };
+  if (votes < 100) return { nextBadge: '🥉 Top 10 Product of the Week', needed: 100 - votes, target: 100 };
+  if (votes < 250) return { nextBadge: '🏆 #1 Product of the Week', needed: 250 - votes, target: 250 };
+  return null;
 }
 
 // Get user's upvoted tool IDs from LocalStorage
