@@ -9,11 +9,11 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
 
   const sourceArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
 
-  // Separate paid In-Feed sponsors from general featured tools
+  // Separate paid In-Feed / Spotlight sponsors ($49/mo) from general featured tools
   const inFeedSponsors = sourceArray.filter(t => t.isInFeed || t.packageType === 'in-feed');
-  const otherFeatured = sourceArray.filter(t => !t.isInFeed && t.packageType !== 'in-feed' && (t.featured || t.badge || t.rating >= 4.8));
+  const otherFeatured = sourceArray.filter(t => !t.isInFeed && t.packageType !== 'in-feed' && t.packageType !== 'premium' && !t.submittedByVendor && (t.featured || t.badge || t.rating >= 4.8));
 
-  // Prioritize In-Feed sponsors at the top of the sidebar
+  // Prioritize In-Feed / Spotlight sponsors at the top of the sidebar
   const fullFeaturedPool = [...inFeedSponsors, ...otherFeatured];
 
   // Auto-rotate the starting offset index every 30 seconds so all paying founders get top spotlight exposure

@@ -63,8 +63,8 @@ export async function onRequestGet(context) {
         packageType: effectivePackage,
         isTopBanner: effectivePackage === 'top-banner',
         isInFeed: effectivePackage === 'in-feed',
-        isFeatured: effectivePackage === 'in-feed' || effectivePackage === 'premium',
-        badge: effectivePackage === 'in-feed' ? 'In-Feed Sponsor' : effectivePackage === 'top-banner' ? 'Top Banner Sponsor' : effectivePackage === 'premium' ? 'Featured Annual' : 'Verified Tool',
+        isFeatured: effectivePackage === 'premium',
+        badge: effectivePackage === 'in-feed' ? '⚡ Spotlight Sponsor' : effectivePackage === 'top-banner' ? '🔥 Top Banner Sponsor' : effectivePackage === 'premium' ? '⭐ Featured Pro' : 'Verified Tool',
         submittedAt: sub.created_at,
         expiresAt: sub.expires_at
       };
