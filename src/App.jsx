@@ -89,15 +89,34 @@ export default function App() {
     if (p.startsWith('/best/') || p.startsWith('/category/')) return 'category-buyer-guide';
     if (p.startsWith('/guides/')) return 'article-detail';
     if (p === '/categories') return 'category-grid';
+    if (p === '/ranking') return 'ranking';
+    if (p === '/advertise' || p === '/pricing') return 'advertise';
+    if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure') return p.slice(1);
     return 'directory';
   });
   const [currentLang, setCurrentLang] = useState('en');
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState('freshbooks');
+  const [selectedAlternativeToolId, setSelectedAlternativeToolId] = useState(() => {
+    if (typeof window === 'undefined') return 'freshbooks';
+    const p = window.location.pathname.toLowerCase();
+    if (p.startsWith('/alternatives/')) return p.replace('/alternatives/', '').replace(/-alternatives$/, '').replace(/\/$/, '') || 'freshbooks';
+    return 'freshbooks';
+  });
   const [selectedBuyerCategory, setSelectedBuyerCategory] = useState('crm');
   const [selectedReviewTool, setSelectedReviewTool] = useState(null);
-  const [selectedToolDetailId, setSelectedToolDetailId] = useState('cursor-ai');
-  const [legalView, setLegalView] = useState(null);
+  const [selectedToolDetailId, setSelectedToolDetailId] = useState(() => {
+    if (typeof window === 'undefined') return 'cursor-ai';
+    const p = window.location.pathname.toLowerCase();
+    if (p.startsWith('/software/')) return p.replace('/software/', '').replace(/\/$/, '') || 'cursor-ai';
+    if (p.startsWith('/tool/')) return p.replace('/tool/', '').replace(/\/$/, '') || 'cursor-ai';
+    return 'cursor-ai';
+  });
+  const [legalView, setLegalView] = useState(() => {
+    if (typeof window === 'undefined') return null;
+    const p = window.location.pathname.toLowerCase();
+    if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure') return p.slice(1);
+    return null;
+  });
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 

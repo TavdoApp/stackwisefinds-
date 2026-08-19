@@ -18,6 +18,14 @@ These rules apply to the entire StakDock repository.
 - **Cloudflare Pages Middleware Protection**: Legacy domain `stackwisefinds.com` 301 redirects to `https://stakdock.com` MUST be enforced via `functions/_middleware.js` in Cloudflare Pages so edge 301 redirects execute on 100% of requests before any static file or SPA route is evaluated.
 - **Verification Before Handoff**: Every pull request, deployment, or code change MUST re-verify that previously fixed core features (301 redirects, logo resolution, detail view rendering, sticky 3-column layout) remain 100% functional.
 
+## Technical SEO & Programmatic Indexing Gate (NON-NEGOTIABLE)
+
+- **Dual 200 OK Flat Files**: Every programmatic route (`/software/:id`, `/alternatives/:id`, `/vs/:slug`, `/best/:id`, `/guides/:slug`, `/categories`, `/ranking`, etc.) MUST generate dual flat `.html` files AND `index.html` folders in `dist/` so Cloudflare Pages resolves 100% of requests with instant HTTP 200 OK (0 redirects).
+- **Full Semantic SSR Body**: Every generated page MUST contain rich semantic HTML inside `<div id="root">` (H1 heading, rating summary, pricing badges, tool overview, key features list, alternative competitor cards, and detailed FAQ accordions). Never output an empty `<div id="root"></div>` shell.
+- **Strict Canonical Tag Match**: Every page's `<link rel="canonical">` MUST exactly match the canonical sitemap URL with zero trailing slash discrepancies.
+- **Automated CI SEO Gate**: `npm run build` automatically runs `scripts/verifySeoIntegrity.cjs`. If even a single URL in `sitemap.xml` has an empty body, missing file, or canonical mismatch, the build MUST abort immediately.
+- **Sitemap `lastmod` Protection**: Never mass-overwrite `lastmod` across all URLs in automated cron jobs to prevent search engine crawl spikes.
+
 ## Secrets and Access
 
 - Never print, commit, paste, or log secrets, API tokens, D1 credentials, or `.env` values.

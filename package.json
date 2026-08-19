@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/prerenderDistPages.cjs",
+    "build": "vite build && node scripts/prerenderDistPages.cjs && node scripts/verifySeoIntegrity.cjs",
     "preview": "vite preview",
     "ping-indexnow": "node scripts/pingIndexNow.cjs"
   },
