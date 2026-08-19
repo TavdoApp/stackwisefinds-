@@ -82,6 +82,11 @@ function detectCategory(text, hostname) {
   // Weighted scoring rules for all SaaS categories
   const categoryRules = [
     {
+      id: 'ai-content',
+      regex: /\b(ai copywriting|ai writer|content generator|ai text generator|copy\.ai|jasper ai|chatgpt|article writer|prompt engineering|blog writer)\b/gi,
+      weight: 10
+    },
+    {
       id: 'ecommerce-funnels',
       regex: /\b(ecommerce|e-commerce|storefront|online store|sell online|merchants?|shopping cart|shopify|woocommerce|magento|bigcommerce|dropshipping|checkout conversion|order fulfillment|pos system)\b/gi,
       weight: 12
@@ -179,6 +184,76 @@ function detectCategory(text, hostname) {
     {
       id: 'ad-creative',
       regex: /\b(ad creative|facebook ads copy|google ads generator|ppc copy|ad banner generator)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'analytics-heatmaps',
+      regex: /\b(web analytics|product analytics|heatmaps?|session replay|mixpanel|posthog|google analytics|hotjar|plausible|amplitude)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'dev-cloud',
+      regex: /\b(cloud hosting|serverless|vps hosting|aws|gcp|azure|cloudflare workers|digitalocean|compute cloud)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'devops-infrastructure',
+      regex: /\b(devops|ci\/cd|terraform|kubernetes|docker|infrastructure as code|github actions|jenkins|ansible)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'publishing-cms',
+      regex: /\b(headless cms|blogging platform|ghost cms|substack|strapi|sanity\.io|contentful|newsletter publishing)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'time-productivity',
+      regex: /\b(time tracking|productivity tracker|pomodoro|clockify|toggl|harvest|focus timer|screen time)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'esign-documents',
+      regex: /\b(esign|electronic signature|contract management|docuSign|pandadoc|signwell|pdf signature|document signing)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'database-engines',
+      regex: /\b(database engine|postgres|postgresql|mongodb|redis cache|mysql|supabase|planetscale|vector database|pinecone)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'open-source-self-hosted',
+      regex: /\b(open-source|open source software|self-hosted|self hosted|docker-compose|github repository|mit licensed)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'collaboration-chat',
+      regex: /\b(team chat|workplace collaboration|slack alternative|discord for teams|internal messaging|team communication)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'api-management',
+      regex: /\b(api gateway|postman alternative|api testing|api documentation|graphql|rest api management|kong api)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'testing-qa',
+      regex: /\b(software testing|qa testing|e2e testing|playwright|cypress|selenium|load testing|automated testing)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'saas-lifetime-deals',
+      regex: /\b(lifetime deal|appsumo alternative|ltd software|software marketplace|discounted software|lifetime access)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'freelance-marketplaces',
+      regex: /\b(freelance marketplace|hire developers|upwork alternative|fiverr alternative|vetted freelancers|contract talent)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'affiliate-cpa-networks',
+      regex: /\b(affiliate network|cpa network|affiliate tracking|commission tracking|partnerstack|impact\.com|rewardful)\b/gi,
       weight: 9
     }
   ];
