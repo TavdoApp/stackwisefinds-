@@ -5,7 +5,7 @@
  */
 
 function sanitizeDomain(input) {
-  if (!input || typeof input !== 'string') return '';
+  if (!input || typeof input !== 'string') return { fullUrl: '', hostname: '' };
   let cleaned = input.trim();
   if (!cleaned.startsWith('http://') && !cleaned.startsWith('https://')) {
     cleaned = 'https://' + cleaned;
@@ -14,10 +14,10 @@ function sanitizeDomain(input) {
     const urlObj = new URL(cleaned);
     return {
       fullUrl: urlObj.href,
-      hostname: urlObj.hostname.replace(/^www\./, '')
+      hostname: urlObj.hostname.replace(/^www\./, '').toLowerCase()
     };
   } catch {
-    const host = input.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].trim();
+    const host = input.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0].trim().toLowerCase();
     return {
       fullUrl: `https://${host}`,
       hostname: host
@@ -25,46 +25,184 @@ function sanitizeDomain(input) {
   }
 }
 
-function cleanSoftwareName(title, hostname) {
-  if (title) {
-    let name = title
-      .split(/[-|:•–—]/)[0]
-      .replace(/home\s*/i, '')
-      .replace(/official\s*site/i, '')
-      .replace(/welcome\s*to/i, '')
-      .trim();
+function cleanSoftwareName(title, hostname, ogSiteName) {
+  const hostRoot = (hostname || '').split('.')[0].toLowerCase();
+  const formatBrand = (str) => {
+    if (!str) return '';
+    return str.replace(/([a-z])([A-Z])/g, '$1 $2').trim();
+  };
 
-    if (name.length >= 2 && name.length <= 35) {
-      return name;
+  // 1. If og:site_name is present and reasonable length, trust it
+  if (ogSiteName && ogSiteName.trim().length >= 2 && ogSiteName.trim().length <= 30) {
+    const cleanOg = ogSiteName.trim().replace(/^(the|official)\s+/i, '');
+    if (cleanOg.length >= 2) return cleanOg;
+  }
+
+  // 2. Parse title tokens
+  if (title) {
+    const tokens = title
+      .split(/[-|:•–—]/)
+      .map(t => t.trim())
+      .filter(t => t.length >= 2);
+
+    // Look for token that contains or matches the domain root
+    for (const token of tokens) {
+      const cleanToken = token.replace(/^(the|official|home\s+of|welcome\s+to)\s+/i, '').trim();
+      const lowerToken = cleanToken.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const lowerRoot = hostRoot.replace(/[^a-z0-9]/g, '');
+
+      if (lowerToken === lowerRoot || lowerToken.includes(lowerRoot) || lowerRoot.includes(lowerToken)) {
+        if (cleanToken.length <= 35) {
+          return cleanToken;
+        }
+      }
+    }
+
+    // If no token matched domain, take the shortest reasonable token that isn't a long marketing phrase
+    const nonSloganTokens = tokens.filter(t => 
+      !/^(the\s+#1|best|sell|build|grow|discover|free|welcome|home)/i.test(t) && t.length <= 25
+    );
+    if (nonSloganTokens.length > 0) {
+      return nonSloganTokens[0];
     }
   }
 
-  const mainPart = hostname.split('.')[0] || 'Software';
-  return mainPart.charAt(0).toUpperCase() + mainPart.slice(1);
+  // 3. Fallback to capitalized domain root
+  if (hostRoot && hostRoot.length >= 2) {
+    return hostRoot.charAt(0).toUpperCase() + hostRoot.slice(1);
+  }
+
+  return 'Software Tool';
 }
 
-function detectCategory(text) {
+function detectCategory(text, hostname) {
   const t = (text || '').toLowerCase();
+  const host = (hostname || '').toLowerCase();
 
-  if (/crm|sales\s*pipeline|leads|realtor|real\s*estate/i.test(t)) return 'crm';
-  if (/seo|keyword|backlink|ranking|serp|screaming\s*frog/i.test(t)) return 'seo-analytics';
-  if (/video|vid|reel|avatar|clip|screen\s*record/i.test(t)) return 'trending-video-ai';
-  if (/invoice|invoicing|accounting|receipt|tax|bookkeeping/i.test(t)) return 'invoicing';
-  if (/email|newsletter|cold\s*email|smtp|inbox/i.test(t)) return 'email-marketing';
-  if (/form|survey|poll|quiz|leadgen|capture/i.test(t)) return 'forms-leadgen';
-  if (/design|graphic|canvas|banner|photo\s*editor|svg/i.test(t)) return 'design-creative';
-  if (/audio|music|voice|podcast|tts|speech/i.test(t)) return 'ai-music-audio';
-  if (/code|coding|github|git|developer|api|devops|docker|k8s/i.test(t)) return 'ai-coding-dev';
-  if (/meeting|transcribe|notetaker|zoom|transcript/i.test(t)) return 'meeting-ai';
-  if (/password|auth|security|cyber|2fa|vault/i.test(t)) return 'security-passwords';
-  if (/chat|team|slack|discord|messaging/i.test(t)) return 'collaboration-chat';
-  if (/project|task|kanban|sprint|jira|trello/i.test(t)) return 'project-mgmt';
-  if (/database|sql|nosql|postgres|redis|mongo/i.test(t)) return 'database-engines';
-  if (/nocode|no-code|airtable|zapier|automation|workflow/i.test(t)) return 'nocode-databases';
-  if (/open\s*source|self-hosted|github\.com/i.test(t)) return 'open-source-self-hosted';
-  if (/ad\s*creative|facebook\s*ads|google\s*ads|ppc/i.test(t)) return 'ad-creative';
+  // Weighted scoring rules for all SaaS categories
+  const categoryRules = [
+    {
+      id: 'ecommerce-funnels',
+      regex: /\b(ecommerce|e-commerce|storefront|online store|sell online|merchants?|shopping cart|shopify|woocommerce|magento|bigcommerce|dropshipping|checkout conversion|order fulfillment|pos system)\b/gi,
+      weight: 12
+    },
+    {
+      id: 'crm',
+      regex: /\b(crm|sales pipeline|lead management|deal tracking|realtor crm|real estate crm|salesforce|hubspot crm|pipeline management|customer relationship)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'invoicing',
+      regex: /\b(invoicing|accounting software|bookkeeping|invoices|tax compliance|quickbooks|freshbooks|stripe billing|payroll tax|expense tracking)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'seo-analytics',
+      regex: /\b(seo software|keyword research|backlink analysis|serp tracking|search console|site audit|ahrefs|semrush|organic traffic|rank tracker)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'trending-video-ai',
+      regex: /\b(video generator|text to video|ai avatar|video editing|video creation|lip sync|motion graphics|submagic|descript|runway|synthesia|heygen)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'ai-coding-dev',
+      regex: /\b(code editor|coding assistant|github copilot|developer tools|api gateway|autocomplete code|codebase|debugger|ide plugin)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'ai-music-audio',
+      regex: /\b(ai music|audio generator|voice cloning|text to speech|podcast editor|suno|elevenlabs|udio|transcribe audio|voiceover)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'design-creative',
+      regex: /\b(graphic design|ai image generator|banner maker|vector graphics|figma plugin|canva|midjourney|photo editor|svg editor)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'email-marketing',
+      regex: /\b(email marketing|newsletter platform|cold email|smtp server|mailchimp|klaviyo|email automation|deliverability|inbox placement)\b/gi,
+      weight: 10
+    },
+    {
+      id: 'web-builders',
+      regex: /\b(website builder|landing page builder|webflow|wix|framer|wordpress theme|drag and drop builder|site builder)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'forms-leadgen',
+      regex: /\b(form builder|surveys?|quiz builder|typeform|lead capture form|online forms|poll maker)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'project-mgmt',
+      regex: /\b(project management|kanban board|task tracking|sprint planning|jira|asana|monday\.com|trello|scrum board)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'nocode-databases',
+      regex: /\b(no-code|nocode app|workflow automation|airtable|make\.com|zapier|app builder|relational database|visual workflow)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'customer-support',
+      regex: /\b(customer support|helpdesk|live chat widget|zendesk|intercom|support ticketing|knowledge base)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'hr-payroll',
+      regex: /\b(hr platform|global payroll|contractor payroll|deel|gusto|rippling|applicant tracking system|onboarding hr)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'social-media',
+      regex: /\b(social media scheduler|social publisher|buffer|hootsuite|auto post|tweet scheduler|content calendar)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'security-passwords',
+      regex: /\b(password manager|1password|bitwarden|2fa authenticator|credentials vault|secure password)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'cybersecurity-identity',
+      regex: /\b(cybersecurity|identity management|sso|threat intelligence|endpoint security|waf firewall|vulnerability scanner)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'meeting-ai',
+      regex: /\b(meeting notes|meeting transcriber|zoom summarizer|fireflies|otter\.ai|meeting recorder|call summary)\b/gi,
+      weight: 9
+    },
+    {
+      id: 'ad-creative',
+      regex: /\b(ad creative|facebook ads copy|google ads generator|ppc copy|ad banner generator)\b/gi,
+      weight: 9
+    }
+  ];
 
-  return 'ai-content';
+  let bestCategory = 'ai-content';
+  let highestScore = 0;
+
+  for (const rule of categoryRules) {
+    const matches = t.match(rule.regex);
+    const count = matches ? matches.length : 0;
+    const score = count * rule.weight;
+
+    if (score > highestScore) {
+      highestScore = score;
+      bestCategory = rule.id;
+    }
+  }
+
+  // Domain name heuristic boost
+  if (host.includes('shop') || host.includes('store') || host.includes('sell') || host.includes('cart') || host.includes('pay')) {
+    if (highestScore < 15) return 'ecommerce-funnels';
+  }
+
+  return bestCategory;
 }
 
 function detectPricing(text) {
@@ -93,6 +231,26 @@ function detectPricing(text) {
   }
 
   return { model: 'Freemium', startingPrice: 'Free Tier Available', tier: '$$' };
+}
+
+function cleanTagline(desc, softwareName) {
+  if (!desc || desc.length < 10) {
+    return `${softwareName} is a verified software tool engineered for modern teams and founders.`;
+  }
+
+  let cleaned = desc.trim()
+    .replace(/^home\s*-\s*/i, '')
+    .replace(/^welcome\s+to\s+/i, '');
+
+  if (cleaned.length <= 110) return cleaned;
+
+  // Clean boundary truncation without cutting words
+  const truncated = cleaned.slice(0, 107);
+  const lastSpace = truncated.lastIndexOf(' ');
+  if (lastSpace > 60) {
+    return truncated.slice(0, lastSpace) + '...';
+  }
+  return truncated + '...';
 }
 
 export async function onRequest(context) {
@@ -135,13 +293,14 @@ export async function onRequest(context) {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 4000);
+    const timeoutId = setTimeout(() => controller.abort(), 4500);
 
     const res = await fetch(fullUrl, {
       signal: controller.signal,
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9'
       },
       redirect: 'follow',
       cf: { cacheTtl: 3600 }
@@ -155,12 +314,16 @@ export async function onRequest(context) {
 
     const html = await res.text();
 
-    // Extract Title
+    // Extract Title & OpenGraph Name
     const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
     const ogTitleMatch = html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i) ||
                          html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:title["']/i);
+    const ogSiteNameMatch = html.match(/<meta[^>]+property=["']og:site_name["'][^>]+content=["']([^"']+)["']/i) ||
+                            html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:site_name["']/i);
+
     const rawTitle = (ogTitleMatch ? ogTitleMatch[1] : titleMatch ? titleMatch[1] : '').trim();
-    const softwareName = cleanSoftwareName(rawTitle, hostname);
+    const ogSiteName = ogSiteNameMatch ? ogSiteNameMatch[1].trim() : '';
+    const softwareName = cleanSoftwareName(rawTitle, hostname, ogSiteName);
 
     // Extract Description / Tagline
     const ogDescMatch = html.match(/<meta[^>]+property=["']og:description["'][^>]+content=["']([^"']+)["']/i) ||
@@ -173,11 +336,11 @@ export async function onRequest(context) {
       description = `${softwareName} is an innovative software platform engineered for modern teams and creators.`;
     }
 
-    const tagline = description.length > 110 ? description.slice(0, 107) + '...' : description;
+    const tagline = cleanTagline(description, softwareName);
 
-    // Detect Category & Pricing
+    // Detect Category & Pricing with Weighted Context
     const fullTextContext = `${rawTitle} ${description} ${hostname} ${html.slice(0, 15000)}`;
-    const category = detectCategory(fullTextContext);
+    const category = detectCategory(fullTextContext, hostname);
     const pricingInfo = detectPricing(fullTextContext);
 
     return new Response(JSON.stringify({
@@ -195,14 +358,14 @@ export async function onRequest(context) {
     }), { headers: corsHeaders });
 
   } catch (err) {
-    const fallbackName = cleanSoftwareName('', hostname);
+    const fallbackName = cleanSoftwareName('', hostname, '');
     return new Response(JSON.stringify({
       success: true,
       isFallback: true,
       softwareName: fallbackName,
       tagline: `${fallbackName} is a verified software tool for modern professionals.`,
       description: `${fallbackName} empowers teams with streamlined workflows and productive digital solutions.`,
-      category: detectCategory(hostname),
+      category: detectCategory(hostname, hostname),
       pricing: 'Freemium',
       startingPrice: 'Free Tier Available',
       pricingTier: '$$',
