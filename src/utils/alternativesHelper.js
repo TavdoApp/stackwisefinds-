@@ -283,10 +283,27 @@ export function getToolAlternatives(targetTool, allTools = [], options = {}) {
   const limit = options.limit || 6;
   const tools = Array.isArray(allTools) && allTools.length > 0 ? allTools : [];
 
-  const matched = [];
-  const matchedIds = new Set([targetTool.id]);
+  // 1. Priority: Paid $99/yr Featured Pro Sponsors in this Category (Guaranteed Competitor Placement)
+  const paidCategorySponsors = tools.filter(t => 
+    t && t.id && t.id !== targetTool.id && 
+    t.category === targetTool.category && 
+    (t.packageType === 'premium' || (t.submittedByVendor && t.packageType !== 'free'))
+  );
 
-  // 1. Explicitly Curated Alternatives
+  for (const sponsor of paidCategorySponsors) {
+    if (matched.length >= limit) break;
+    if (!matchedIds.has(sponsor.id)) {
+      matched.push({
+        ...sponsor,
+        alternativeBadge: '⭐ Recommended Verified Alternative',
+        isCurated: true,
+        isSponsor: true
+      });
+      matchedIds.add(sponsor.id);
+    }
+  }
+
+  // 2. Explicitly Curated Alternatives
   const explicitList = targetTool.alternatives || targetTool.competitors || [];
   if (Array.isArray(explicitList) && explicitList.length > 0) {
     for (const altId of explicitList) {
