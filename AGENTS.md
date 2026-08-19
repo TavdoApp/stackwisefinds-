@@ -33,8 +33,11 @@ These rules apply to the entire StakDock repository.
 - Revoke and replace any credential exposed in a terminal, chat, commit, or log.
 - Do not change a secret name or deployment credential without verifying the corresponding GitHub workflow uses it.
 
-## Cloudflare Delivery Gate
+## Cloudflare Delivery Gate & Mandatory Production Deployment (NON-NEGOTIABLE)
 
+- **Mandatory Production Deployment**: Every completed task, feature, or bug fix MUST be built (`npm run build`), SEO-verified (`scripts/verifySeoIntegrity.cjs`), committed, and pushed to `origin/main`. 
+- **Automated CI/CD Pipeline**: Every push to `main` automatically triggers `.github/workflows/deploy-pages.yml` to build and deploy Cloudflare Pages and `.github/workflows/deploy-worker.yml` for Cloudflare Workers.
+- **Verification on Live Production**: No task or handoff is complete until the live production URL (`https://stakdock.com`) has been tested and verified to reflect the changes.
 - `wrangler.toml` must contain real, non-placeholder resource IDs before deployment.
 - Apply D1 migrations before deploying Worker code that depends on them.
 - A deployment is complete only after its exact GitHub Actions run URL reports success.
