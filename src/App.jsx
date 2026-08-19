@@ -23,19 +23,18 @@ import ToolSearchInput from './components/ToolSearchInput';
 import RequestToolCard from './components/RequestToolCard';
 import { getToolVotes } from './utils/upvoteHelper.js';
 
-// Lazy Loaded Modal & Detail Views for High Performance & Micro-Bundle Splitting
-const ComparisonModal = lazy(() => import('./components/ComparisonModal'));
-const VendorModal = lazy(() => import('./components/VendorModal'));
-const StackWizardModal = lazy(() => import('./components/StackWizardModal'));
-const ReviewModal = lazy(() => import('./components/ReviewModal'));
-const ArticleView = lazy(() => import('./components/ArticleView'));
-const VersusPage = lazy(() => import('./components/VersusPage'));
-const AlternativesView = lazy(() => import('./components/AlternativesView'));
-const CategoryBuyerGuideView = lazy(() => import('./components/CategoryBuyerGuideView'));
-const LegalViews = lazy(() => import('./components/LegalViews'));
-const BookmarkDrawer = lazy(() => import('./components/BookmarkDrawer'));
-const BadgeEmbedModal = lazy(() => import('./components/BadgeEmbedModal'));
-const ClaimListingModal = lazy(() => import('./components/ClaimListingModal'));
+import ComparisonModal from './components/ComparisonModal';
+import VendorModal from './components/VendorModal';
+import StackWizardModal from './components/StackWizardModal';
+import ReviewModal from './components/ReviewModal';
+import ArticleView from './components/ArticleView';
+import VersusPage from './components/VersusPage';
+import AlternativesView from './components/AlternativesView';
+import CategoryBuyerGuideView from './components/CategoryBuyerGuideView';
+import LegalViews from './components/LegalViews';
+import BookmarkDrawer from './components/BookmarkDrawer';
+import BadgeEmbedModal from './components/BadgeEmbedModal';
+import ClaimListingModal from './components/ClaimListingModal';
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
