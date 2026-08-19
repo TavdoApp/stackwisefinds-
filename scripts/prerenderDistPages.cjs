@@ -27,7 +27,6 @@ function buildSeoPage({ title, description, canonicalUrl, jsonLd, bodyHtml }) {
   const safeDesc = escapeHtml(description);
   const safeCanonical = escapeHtml(canonicalUrl);
 
-  // Replace default title and meta tags in baseIndexHtml
   let html = baseIndexHtml;
 
   html = html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${safeTitle} | StakDock</title>`);
@@ -47,7 +46,6 @@ function buildSeoPage({ title, description, canonicalUrl, jsonLd, bodyHtml }) {
   }
 
   if (bodyHtml) {
-    // Inject rich semantic SSR markup inside <div id="root">
     html = html.replace('<div id="root"></div>', `<div id="root">\n${bodyHtml}\n</div>`);
   }
 
@@ -77,13 +75,57 @@ let vsCount = 0;
 let bestCount = 0;
 let guideCount = 0;
 
-// Helper to get category label
 function getCategoryLabel(catId) {
   const c = saasCategories.find(item => item && item.id === catId);
   return c ? c.label : (catId || 'Software').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
-// 1. Generate dist/software/:id/index.html AND dist/software/:id.html with rich SSR body
+// 0. Prerender Root Homepage (dist/index.html)
+const homeFeaturedTools = saasTools.filter(t => t.featured).slice(0, 12);
+const homeBodyHtml = `
+<main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
+  <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;text-align:center;">
+    <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+      VERIFIED SOFTWARE &amp; SAAS DIRECTORY 2026
+    </div>
+    <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 16px 0;color:#182618;">
+      Discover &amp; Compare the Best SaaS Software Tools
+    </h1>
+    <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:760px;">
+      Explore 1,700+ verified software platforms across AI, SEO, CRM, DevOps, and automation. Compare transparent pricing, free trials, feature matrices, and user reviews on StakDock.
+    </p>
+  </header>
+
+  <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+    <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Top Trending &amp; Verified SaaS Platforms</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;">
+      ${homeFeaturedTools.map(tool => `
+        <article style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <h3 style="font-size:1.15rem;font-weight:800;margin:0 0 6px 0;">
+            <a href="/software/${tool.id}/" style="color:#182618;text-decoration:none;">${escapeHtml(tool.name)}</a>
+          </h3>
+          <p style="font-size:0.9rem;color:#45593e;line-height:1.5;margin:0 0 12px 0;">${escapeHtml(tool.tagline || tool.description || '')}</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
+            <span style="font-weight:700;color:#2D4522;">${escapeHtml(tool.pricing || 'Freemium')}</span>
+            <a href="/software/${tool.id}/" style="color:#82A735;font-weight:800;text-decoration:underline;">Review &rarr;</a>
+          </div>
+        </article>
+      `).join('')}
+    </div>
+  </section>
+</main>
+`;
+
+const homePageHtml = buildSeoPage({
+  title: 'StakDock — Discover, Compare & Choose the Best SaaS Software in 2026',
+  description: 'Explore 1,700+ verified SaaS software tools, AI platforms, and developer utilities. Compare pricing, free trials, and authentic alternatives on StakDock.',
+  canonicalUrl: 'https://stakdock.com/',
+  bodyHtml: homeBodyHtml
+});
+
+fs.writeFileSync(indexPath, homePageHtml, 'utf8');
+
+// 1. Generate dist/software/:id/index.html with rich high-entropy SSR body
 saasTools.forEach(tool => {
   if (!tool || !tool.id) return;
 
@@ -92,7 +134,6 @@ saasTools.forEach(tool => {
 
   const catLabel = getCategoryLabel(tool.category);
 
-  // Match alternative candidates
   const explicitMatches = Array.isArray(tool.alternatives) && tool.alternatives.length > 0
     ? tool.alternatives.map(altId => saasTools.find(t => t.id === altId)).filter(Boolean)
     : [];
@@ -120,51 +161,11 @@ saasTools.forEach(tool => {
     }
   };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `Is ${tool.name} free to use or does it offer a free trial?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${tool.name} operates on a ${tool.pricing || 'Freemium'} pricing model. Users can test ${tool.name} with official free trial options directly on their website.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Does ${tool.name} offer promo codes, coupons, or founder deals?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${tool.name} periodically offers promotional pricing tiers and verified founder deals for new users. Visit the official website via StakDock to verify current discounts.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What are the key features and benefits of ${tool.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${tool.name} provides ${tool.description || 'cloud-based software capabilities'} engineered for founders, creators, and operational teams.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `What are the best alternatives to ${tool.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Top verified alternatives to ${tool.name} in ${catLabel} include ${competitors.map(c => c.name).join(', ') || 'top competing platforms on StakDock'}.`
-        }
-      }
-    ]
-  };
-
-  // Build full semantic SSR body
   const bodyHtml = `
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
     <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
       <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/best/${escapeHtml(tool.category || 'crm')}" style="color:#5c7353;text-decoration:none;">${escapeHtml(catLabel)}</a> &rsaquo;
+      <a href="/best/${escapeHtml(tool.category || 'crm')}/" style="color:#5c7353;text-decoration:none;">${escapeHtml(catLabel)}</a> &rsaquo;
       <span style="color:#182618;font-weight:700;">${escapeHtml(tool.name)}</span>
     </nav>
 
@@ -194,7 +195,7 @@ saasTools.forEach(tool => {
         <a href="${escapeHtml(tool.affiliateUrl || tool.websiteUrl || `https://${tool.domain}`)}" target="_blank" rel="noopener noreferrer" style="background:#82A735;color:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;">
           Visit Official Website &rarr;
         </a>
-        <a href="/alternatives/${tool.id}" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:700;text-decoration:none;font-size:0.95rem;">
+        <a href="/alternatives/${tool.id}/" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:700;text-decoration:none;font-size:0.95rem;">
           View ${escapeHtml(tool.name)} Alternatives
         </a>
       </div>
@@ -222,18 +223,18 @@ saasTools.forEach(tool => {
         ${competitors.map(alt => `
           <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#f9fbf8;border:1px solid #e2ede0;border-radius:12px;flex-wrap:wrap;gap:8px;">
             <div>
-              <a href="/software/${alt.id}" style="color:#182618;font-weight:800;text-decoration:none;font-size:1rem;">${escapeHtml(alt.name)}</a>
+              <a href="/software/${alt.id}/" style="color:#182618;font-weight:800;text-decoration:none;font-size:1rem;">${escapeHtml(alt.name)}</a>
               <span style="font-size:0.85rem;color:#5c7353;margin-left:8px;">— ${escapeHtml(alt.tagline || alt.description || '')}</span>
             </div>
             <div style="display:flex;align-items:center;gap:8px;">
               <span style="font-size:0.82rem;font-weight:700;color:#2D4522;">${escapeHtml(alt.pricing || 'Freemium')}</span>
-              <a href="/vs/${tool.id}-vs-${alt.id}" style="font-size:0.8rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare vs ${escapeHtml(tool.name)}</a>
+              <a href="/vs/${tool.id}-vs-${alt.id}/" style="font-size:0.8rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare vs ${escapeHtml(tool.name)}</a>
             </div>
           </div>
         `).join('')}
       </div>
       <div style="margin-top:20px;">
-        <a href="/alternatives/${tool.id}" style="font-weight:800;color:#82A735;text-decoration:underline;font-size:0.95rem;">
+        <a href="/alternatives/${tool.id}/" style="font-weight:800;color:#82A735;text-decoration:underline;font-size:0.95rem;">
           View All Alternatives to ${escapeHtml(tool.name)} &rarr;
         </a>
       </div>
@@ -241,19 +242,23 @@ saasTools.forEach(tool => {
     ` : ''}
 
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
-      <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Frequently Asked Questions</h2>
-      <div style="display:flex;flex-direction:column;gap:20px;">
-        <div>
-          <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:6px;color:#182618;">Is ${escapeHtml(tool.name)} free or does it offer a free trial?</h3>
-          <p style="font-size:0.95rem;line-height:1.6;color:#33482f;margin:0;">
-            ${escapeHtml(tool.name)} operates on a ${escapeHtml(tool.pricing || 'Freemium')} pricing model. Visit their official website directly to test available free plans or trial periods.
-          </p>
+      <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Software Specifications</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;">
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Category</div>
+          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${escapeHtml(catLabel)}</div>
         </div>
-        <div>
-          <h3 style="font-size:1.05rem;font-weight:800;margin-bottom:6px;color:#182618;">How does ${escapeHtml(tool.name)} rank compared to competitors?</h3>
-          <p style="font-size:0.95rem;line-height:1.6;color:#33482f;margin:0;">
-            With a community rating of ${tool.rating || 4.8}★, ${escapeHtml(tool.name)} is ranked among the top verified solutions in ${escapeHtml(catLabel)} on StakDock.
-          </p>
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Pricing Model</div>
+          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${escapeHtml(tool.pricing || 'Freemium')}</div>
+        </div>
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Free Tier</div>
+          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${tool.isFreeTier ? 'Yes (Available)' : 'Paid / Free Trial'}</div>
+        </div>
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Open Source</div>
+          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${tool.isOpenSource ? 'Yes (Public Repo)' : 'Proprietary SaaS'}</div>
         </div>
       </div>
     </section>
@@ -262,19 +267,17 @@ saasTools.forEach(tool => {
 
   const pageHtml = buildSeoPage({
     title: `${tool.name} Review 2026: Pricing, Free Trial & Deals`,
-    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free trial options, ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), free trial options, features, ratings (${tool.rating || '4.8'}★), and top verified deals on StakDock.`,
-    canonicalUrl: `https://stakdock.com/software/${tool.id}`,
-    jsonLd: [jsonLd, faqJsonLd],
+    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, ratings (${tool.rating || '4.8'}★), and top verified deals on StakDock.`,
+    canonicalUrl: `https://stakdock.com/software/${tool.id}/`,
+    jsonLd: [jsonLd],
     bodyHtml
   });
 
-  // Dual write for clean 200 OK responses with or without trailing slash
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(softwareDir, `${tool.id}.html`), pageHtml, 'utf8');
   softwareCount++;
 });
 
-// 2. Generate dist/alternatives/:id/index.html AND dist/alternatives/:id.html
+// 2. Generate dist/alternatives/:id/index.html
 saasTools.forEach(tool => {
   if (!tool || !tool.id) return;
 
@@ -294,13 +297,13 @@ saasTools.forEach(tool => {
     "@type": "ItemList",
     "name": `Top Alternatives & Competitors to ${tool.name}`,
     "description": `Verified software alternatives and competitors to ${tool.name} on StakDock.`,
-    "url": `https://stakdock.com/alternatives/${tool.id}`,
+    "url": `https://stakdock.com/alternatives/${tool.id}/`,
     "numberOfItems": categoryMatches.length,
     "itemListElement": categoryMatches.map((altTool, idx) => ({
       "@type": "ListItem",
       "position": idx + 1,
       "name": altTool.name,
-      "url": `https://stakdock.com/software/${altTool.id}`,
+      "url": `https://stakdock.com/software/${altTool.id}/`,
       "item": {
         "@type": "SoftwareApplication",
         "name": altTool.name,
@@ -317,35 +320,11 @@ saasTools.forEach(tool => {
     }))
   };
 
-  const altFaqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `What is the best free alternative to ${tool.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Top free alternatives to ${tool.name} include ${categoryMatches.filter(t => t.isFreeTier).map(t => t.name).join(', ') || 'platforms with generous free tiers'}. Compare features on StakDock.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Are there open-source alternatives to ${tool.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes, open-source competitors allow self-hosting and zero vendor lock-in. Explore our verified open-source filters on StakDock.`
-        }
-      }
-    ]
-  };
-
-  // Build rich semantic SSR body for alternatives
   const bodyHtml = `
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
     <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
       <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/software/${tool.id}" style="color:#5c7353;text-decoration:none;">${escapeHtml(tool.name)}</a> &rsaquo;
+      <a href="/software/${tool.id}/" style="color:#5c7353;text-decoration:none;">${escapeHtml(tool.name)}</a> &rsaquo;
       <span style="color:#182618;font-weight:700;">Alternatives</span>
     </nav>
 
@@ -369,7 +348,7 @@ saasTools.forEach(tool => {
               #${idx + 1} Alternative to ${escapeHtml(tool.name)}
             </div>
             <h2 style="font-size:1.35rem;font-weight:800;margin:0 0 8px 0;">
-              <a href="/software/${alt.id}" style="color:#182618;text-decoration:none;">${escapeHtml(alt.name)}</a>
+              <a href="/software/${alt.id}/" style="color:#182618;text-decoration:none;">${escapeHtml(alt.name)}</a>
             </h2>
             <p style="font-size:0.95rem;color:#45593e;line-height:1.5;margin:0 0 12px 0;">
               ${escapeHtml(alt.description || alt.tagline || '')}
@@ -381,10 +360,10 @@ saasTools.forEach(tool => {
             </div>
           </div>
           <div style="display:flex;flex-direction:column;gap:8px;min-width:160px;">
-            <a href="/software/${alt.id}" style="background:#82A735;color:#FFFFFF;padding:8px 16px;border-radius:9999px;font-weight:700;font-size:0.85rem;text-decoration:none;text-align:center;">
+            <a href="/software/${alt.id}/" style="background:#82A735;color:#FFFFFF;padding:8px 16px;border-radius:9999px;font-weight:700;font-size:0.85rem;text-decoration:none;text-align:center;">
               Read ${escapeHtml(alt.name)} Review
             </a>
-            <a href="/vs/${tool.id}-vs-${alt.id}" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:600;font-size:0.8rem;text-decoration:none;text-align:center;">
+            <a href="/vs/${tool.id}-vs-${alt.id}/" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:600;font-size:0.8rem;text-decoration:none;text-align:center;">
               ${escapeHtml(tool.name)} vs ${escapeHtml(alt.name)}
             </a>
           </div>
@@ -404,17 +383,16 @@ saasTools.forEach(tool => {
   const pageHtml = buildSeoPage({
     title: `Best ${tool.name} Free & Open-Source Alternatives (2026)`,
     description: `Looking for the best alternatives to ${tool.name}? Compare top verified ${tool.name} competitors in 2026 by features, pricing plans, free trials, and user ratings on StakDock.`,
-    canonicalUrl: `https://stakdock.com/alternatives/${tool.id}`,
-    jsonLd: [jsonLd, altFaqJsonLd],
+    canonicalUrl: `https://stakdock.com/alternatives/${tool.id}/`,
+    jsonLd: [jsonLd],
     bodyHtml
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(alternativesDir, `${tool.id}.html`), pageHtml, 'utf8');
   altCount++;
 });
 
-// 3. Generate pairwise dist/vs/:vsSlug/index.html AND dist/vs/:vsSlug.html
+// 3. Generate pairwise dist/vs/:vsSlug/index.html
 function getVsPairsList(tools) {
   const map = new Map();
   const catMap = {};
@@ -453,14 +431,14 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
     "@type": "ItemList",
     "name": `${tA.name} vs ${tB.name} 2026 Comparison`,
     "description": `Detailed comparison between ${tA.name} and ${tB.name} on StakDock.`,
-    "url": `https://stakdock.com/vs/${vsSlug}`,
+    "url": `https://stakdock.com/vs/${vsSlug}/`,
     "numberOfItems": 2,
     "itemListElement": [
       {
         "@type": "ListItem",
         "position": 1,
         "name": tA.name,
-        "url": `https://stakdock.com/software/${tA.id}`,
+        "url": `https://stakdock.com/software/${tA.id}/`,
         "item": {
           "@type": "SoftwareApplication",
           "name": tA.name,
@@ -479,7 +457,7 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
         "@type": "ListItem",
         "position": 2,
         "name": tB.name,
-        "url": `https://stakdock.com/software/${tB.id}`,
+        "url": `https://stakdock.com/software/${tB.id}/`,
         "item": {
           "@type": "SoftwareApplication",
           "name": tB.name,
@@ -492,29 +470,6 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
             "bestRating": "5",
             "worstRating": "1"
           }
-        }
-      }
-    ]
-  };
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `Is ${tA.name} better than ${tB.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${tA.name} and ${tB.name} both offer specialized software capabilities. Compare features, ratings, and pricing on StakDock.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `How does ${tA.name} pricing compare to ${tB.name}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${tA.name} pricing is ${tA.pricing || 'Freemium / Paid'} while ${tB.name} pricing is ${tB.pricing || 'Freemium / Paid'}. Check official trials on StakDock.`
         }
       }
     ]
@@ -539,26 +494,61 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
       </p>
     </header>
 
+    <!-- Side-by-Side Comparison Matrix Table -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Side-by-Side Specification Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.95rem;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;">
+            <th style="padding:12px;color:#5c7353;font-weight:800;width:30%;">Feature / Metric</th>
+            <th style="padding:12px;color:#182618;font-weight:800;width:35%;">${escapeHtml(tA.name)}</th>
+            <th style="padding:12px;color:#182618;font-weight:800;width:35%;">${escapeHtml(tB.name)}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px;font-weight:700;color:#2d4029;">Pricing Model</td>
+            <td style="padding:12px;color:#182618;">${escapeHtml(tA.pricing || 'Freemium')}</td>
+            <td style="padding:12px;color:#182618;">${escapeHtml(tB.pricing || 'Freemium')}</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px;font-weight:700;color:#2d4029;">User Rating</td>
+            <td style="padding:12px;color:#182618;">⭐ ${tA.rating || 4.8}★ (${tA.reviewsCount ? tA.reviewsCount.toLocaleString() : '100+'} reviews)</td>
+            <td style="padding:12px;color:#182618;">⭐ ${tB.rating || 4.7}★ (${tB.reviewsCount ? tB.reviewsCount.toLocaleString() : '100+'} reviews)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px;font-weight:700;color:#2d4029;">Free Tier</td>
+            <td style="padding:12px;color:#182618;">${tA.isFreeTier ? '✓ Available' : 'Trial / Paid'}</td>
+            <td style="padding:12px;color:#182618;">${tB.isFreeTier ? '✓ Available' : 'Trial / Paid'}</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px;font-weight:700;color:#2d4029;">Open Source</td>
+            <td style="padding:12px;color:#182618;">${tA.isOpenSource ? '✓ Yes' : 'Proprietary'}</td>
+            <td style="padding:12px;color:#182618;">${tB.isOpenSource ? '✓ Yes' : 'Proprietary'}</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px;font-weight:700;color:#2d4029;">Official Website</td>
+            <td style="padding:12px;"><a href="https://${escapeHtml(tA.domain)}" target="_blank" rel="noopener noreferrer" style="color:#82A735;font-weight:700;text-decoration:underline;">${escapeHtml(tA.domain)}</a></td>
+            <td style="padding:12px;"><a href="https://${escapeHtml(tB.domain)}" target="_blank" rel="noopener noreferrer" style="color:#82A735;font-weight:700;text-decoration:underline;">${escapeHtml(tB.domain)}</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:24px;margin-bottom:32px;">
       <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:28px;">
-        <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;color:#182618;">${escapeHtml(tA.name)}</h2>
+        <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;color:#182618;">${escapeHtml(tA.name)} Overview</h2>
         <p style="font-size:0.95rem;color:#45593e;line-height:1.5;">${escapeHtml(tA.description || tA.tagline || '')}</p>
-        <div style="margin-top:16px;padding:12px;background:#f4f7f2;border-radius:10px;font-size:0.9rem;font-weight:700;color:#182618;">
-          ⭐ ${tA.rating || 4.8}★ | 💰 ${escapeHtml(tA.pricing || 'Freemium')}
-        </div>
         <div style="margin-top:16px;">
-          <a href="/software/${tA.id}" style="color:#82A735;font-weight:800;text-decoration:underline;">Full ${escapeHtml(tA.name)} Review &rarr;</a>
+          <a href="/software/${tA.id}/" style="color:#82A735;font-weight:800;text-decoration:underline;">Full ${escapeHtml(tA.name)} Review &rarr;</a>
         </div>
       </div>
 
       <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:28px;">
-        <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;color:#182618;">${escapeHtml(tB.name)}</h2>
+        <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;color:#182618;">${escapeHtml(tB.name)} Overview</h2>
         <p style="font-size:0.95rem;color:#45593e;line-height:1.5;">${escapeHtml(tB.description || tB.tagline || '')}</p>
-        <div style="margin-top:16px;padding:12px;background:#f4f7f2;border-radius:10px;font-size:0.9rem;font-weight:700;color:#182618;">
-          ⭐ ${tB.rating || 4.7}★ | 💰 ${escapeHtml(tB.pricing || 'Freemium')}
-        </div>
         <div style="margin-top:16px;">
-          <a href="/software/${tB.id}" style="color:#82A735;font-weight:800;text-decoration:underline;">Full ${escapeHtml(tB.name)} Review &rarr;</a>
+          <a href="/software/${tB.id}/" style="color:#82A735;font-weight:800;text-decoration:underline;">Full ${escapeHtml(tB.name)} Review &rarr;</a>
         </div>
       </div>
     </div>
@@ -568,17 +558,16 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
   const pageHtml = buildSeoPage({
     title: `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`,
     description: `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`,
-    canonicalUrl: `https://stakdock.com/vs/${vsSlug}`,
-    jsonLd: [vsItemListJsonLd, jsonLd],
+    canonicalUrl: `https://stakdock.com/vs/${vsSlug}/`,
+    jsonLd: [vsItemListJsonLd],
     bodyHtml
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(versusDir, `${vsSlug}.html`), pageHtml, 'utf8');
   vsCount++;
 });
 
-// 4. Generate Programmatic "Best of 2026" Category Buyer Guides
+// 4. Generate Category Buyer Guides
 saasCategories.forEach(cat => {
   if (!cat || !cat.id || cat.id === 'all') return;
 
@@ -590,7 +579,6 @@ saasCategories.forEach(cat => {
 
   if (matchedTools.length === 0) return;
 
-  const topPick = matchedTools[0];
   const catLabel = cat.label || cat.id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
   const catJsonLd = {
@@ -598,7 +586,7 @@ saasCategories.forEach(cat => {
     "@type": "CollectionPage",
     "name": `Best ${catLabel} Software in 2026 (Ranked & Compared)`,
     "description": `Rankings and in-depth buyer guide for top ${matchedTools.length} ${catLabel} software, tools, and platforms on StakDock.`,
-    "url": `https://stakdock.com/best/${cat.id}`,
+    "url": `https://stakdock.com/best/${cat.id}/`,
     "mainEntity": {
       "@type": "ItemList",
       "name": `Top Ranked ${catLabel} Tools (2026)`,
@@ -607,7 +595,7 @@ saasCategories.forEach(cat => {
         "@type": "ListItem",
         "position": idx + 1,
         "name": tool.name,
-        "url": `https://stakdock.com/software/${tool.id}`,
+        "url": `https://stakdock.com/software/${tool.id}/`,
         "item": {
           "@type": "SoftwareApplication",
           "name": tool.name,
@@ -625,29 +613,6 @@ saasCategories.forEach(cat => {
     }
   };
 
-  const catFaqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": `What is the best ${catLabel} software in 2026?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `${topPick.name} ranks as the #1 overall choice in the ${catLabel} category on StakDock, followed by ${matchedTools.slice(1, 4).map(t => t.name).join(', ')}.`
-        }
-      },
-      {
-        "@type": "Question",
-        "name": `Are there free options available for ${catLabel}?`,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": `Yes! Many top ${catLabel} platforms offer 100% free tiers or generous trial periods without requiring a credit card upfront.`
-        }
-      }
-    ]
-  };
-
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -662,13 +627,13 @@ saasCategories.forEach(cat => {
         "@type": "ListItem",
         "position": 2,
         "name": "Categories",
-        "item": "https://stakdock.com/categories"
+        "item": "https://stakdock.com/categories/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": `Best ${catLabel}`,
-        "item": `https://stakdock.com/best/${cat.id}`
+        "item": `https://stakdock.com/best/${cat.id}/`
       }
     ]
   };
@@ -677,7 +642,7 @@ saasCategories.forEach(cat => {
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
     <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
       <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/categories" style="color:#5c7353;text-decoration:none;">Categories</a> &rsaquo;
+      <a href="/categories/" style="color:#5c7353;text-decoration:none;">Categories</a> &rsaquo;
       <span style="color:#182618;font-weight:700;">${escapeHtml(catLabel)}</span>
     </nav>
 
@@ -699,13 +664,13 @@ saasCategories.forEach(cat => {
           <div>
             <span style="font-size:0.8rem;font-weight:800;color:#82A735;">#${idx + 1}</span>
             <h2 style="font-size:1.25rem;font-weight:800;margin:0 0 4px 0;display:inline-block;margin-left:8px;">
-              <a href="/software/${tool.id}" style="color:#182618;text-decoration:none;">${escapeHtml(tool.name)}</a>
+              <a href="/software/${tool.id}/" style="color:#182618;text-decoration:none;">${escapeHtml(tool.name)}</a>
             </h2>
             <p style="font-size:0.9rem;color:#45593e;margin:0;">${escapeHtml(tool.tagline || tool.description || '')}</p>
           </div>
           <div style="display:flex;align-items:center;gap:12px;">
             <span style="font-size:0.85rem;font-weight:700;color:#2D4522;">${escapeHtml(tool.pricing || 'Freemium')}</span>
-            <a href="/software/${tool.id}" style="background:#82A735;color:#FFFFFF;padding:8px 16px;border-radius:9999px;font-size:0.85rem;font-weight:700;text-decoration:none;">Review</a>
+            <a href="/software/${tool.id}/" style="background:#82A735;color:#FFFFFF;padding:8px 16px;border-radius:9999px;font-size:0.85rem;font-weight:700;text-decoration:none;">Review</a>
           </div>
         </article>
       `).join('')}
@@ -716,30 +681,27 @@ saasCategories.forEach(cat => {
   const pageHtml = buildSeoPage({
     title: `Best ${catLabel} Software in 2026 (Ranked & Reviewed)`,
     description: `Discover the best ${catLabel} software and tools of 2026 on StakDock. In-depth rankings, verified user reviews, pricing comparisons, and feature breakdowns.`,
-    canonicalUrl: `https://stakdock.com/best/${cat.id}`,
-    jsonLd: [catJsonLd, catFaqJsonLd, breadcrumbJsonLd],
+    canonicalUrl: `https://stakdock.com/best/${cat.id}/`,
+    jsonLd: [catJsonLd, breadcrumbJsonLd],
     bodyHtml
   });
 
-  // Write to /best/:categorySlug/index.html AND /best/:categorySlug.html
   const bestCatDir = path.join(bestDir, cat.id);
   if (!fs.existsSync(bestCatDir)) fs.mkdirSync(bestCatDir, { recursive: true });
   fs.writeFileSync(path.join(bestCatDir, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(bestDir, `${cat.id}.html`), pageHtml, 'utf8');
 
-  // Also write to /category/:categorySlug/index.html AND /category/:categorySlug.html with matching canonical tag
+  // Also write to /category/:categorySlug/index.html with matching canonical tag
   const categoryPageHtml = buildSeoPage({
     title: `${catLabel} Software Directory 2026: Compare Tools & Pricing`,
     description: `Browse all verified ${catLabel} software and tools on StakDock. Compare user ratings, pricing models, free tiers, and features.`,
-    canonicalUrl: `https://stakdock.com/category/${cat.id}`,
-    jsonLd: [catJsonLd, catFaqJsonLd, breadcrumbJsonLd],
+    canonicalUrl: `https://stakdock.com/category/${cat.id}/`,
+    jsonLd: [catJsonLd, breadcrumbJsonLd],
     bodyHtml
   });
 
   const directCatDir = path.join(categoryDir, cat.id);
   if (!fs.existsSync(directCatDir)) fs.mkdirSync(directCatDir, { recursive: true });
   fs.writeFileSync(path.join(directCatDir, 'index.html'), categoryPageHtml, 'utf8');
-  fs.writeFileSync(path.join(categoryDir, `${cat.id}.html`), categoryPageHtml, 'utf8');
 
   bestCount++;
 });
@@ -773,14 +735,13 @@ semanticBuyerAliases.forEach(alias => {
   const pageHtml = buildSeoPage({
     title: `Best ${alias.label} in 2026 (Ranked & Reviewed)`,
     description: `Discover the top ${alias.label} of 2026. Compare pricing, features, ratings, and alternatives on StakDock.`,
-    canonicalUrl: `https://stakdock.com/best/${alias.slug}`,
+    canonicalUrl: `https://stakdock.com/best/${alias.slug}/`,
     bodyHtml
   });
 
   const bestAliasDir = path.join(bestDir, alias.slug);
   if (!fs.existsSync(bestAliasDir)) fs.mkdirSync(bestAliasDir, { recursive: true });
   fs.writeFileSync(path.join(bestAliasDir, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(bestDir, `${alias.slug}.html`), pageHtml, 'utf8');
 
   bestCount++;
 });
@@ -862,7 +823,7 @@ allGuides.forEach(guide => {
   <main class="stakdock-ssr-main" style="max-width:900px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
     <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
       <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/categories" style="color:#5c7353;text-decoration:none;">Buyer Guides</a> &rsaquo;
+      <a href="/categories/" style="color:#5c7353;text-decoration:none;">Buyer Guides</a> &rsaquo;
       <span style="color:#182618;font-weight:700;">${escapeHtml(guide.title)}</span>
     </nav>
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
@@ -882,12 +843,11 @@ allGuides.forEach(guide => {
   const pageHtml = buildSeoPage({
     title: guide.title,
     description: guide.summary,
-    canonicalUrl: `https://stakdock.com/guides/${guideSlug}`,
+    canonicalUrl: `https://stakdock.com/guides/${guideSlug}/`,
     bodyHtml
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(guidesDir, `${guideSlug}.html`), pageHtml, 'utf8');
   guideCount++;
 });
 
@@ -922,12 +882,11 @@ coreStaticPages.forEach(page => {
   const pageHtml = buildSeoPage({
     title: page.title,
     description: page.description,
-    canonicalUrl: `https://stakdock.com/${page.slug}`,
+    canonicalUrl: `https://stakdock.com/${page.slug}/`,
     bodyHtml
   });
 
   fs.writeFileSync(path.join(targetFolder, 'index.html'), pageHtml, 'utf8');
-  fs.writeFileSync(path.join(distDir, `${page.slug}.html`), pageHtml, 'utf8');
 });
 
-console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, ${vsCount} /vs/, ${bestCount} /best/, ${guideCount} /guides/, and ${coreStaticPages.length} core pages into dist/!`);
+console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, ${vsCount} /vs/, ${bestCount} /best/, ${guideCount} /guides/, and ${coreStaticPages.length} core pages into dist/ (100% strict trailing-slash canonicals, zero duplicate flat files)!`);

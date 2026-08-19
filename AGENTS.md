@@ -20,11 +20,18 @@ These rules apply to the entire StakDock repository.
 
 ## Technical SEO & Programmatic Indexing Gate (NON-NEGOTIABLE)
 
-- **Dual 200 OK Flat Files**: Every programmatic route (`/software/:id`, `/alternatives/:id`, `/vs/:slug`, `/best/:id`, `/guides/:slug`, `/categories`, `/ranking`, etc.) MUST generate dual flat `.html` files AND `index.html` folders in `dist/` so Cloudflare Pages resolves 100% of requests with instant HTTP 200 OK (0 redirects).
-- **Full Semantic SSR Body**: Every generated page MUST contain rich semantic HTML inside `<div id="root">` (H1 heading, rating summary, pricing badges, tool overview, key features list, alternative competitor cards, and detailed FAQ accordions). Never output an empty `<div id="root"></div>` shell.
-- **Strict Canonical Tag Match**: Every page's `<link rel="canonical">` MUST exactly match the canonical sitemap URL with zero trailing slash discrepancies.
-- **Automated CI SEO Gate**: `npm run build` automatically runs `scripts/verifySeoIntegrity.cjs`. If even a single URL in `sitemap.xml` has an empty body, missing file, or canonical mismatch, the build MUST abort immediately.
+- **Single Canonical Trailing-Slash Architecture**: All programmatic routes (`/software/:id/`, `/alternatives/:id/`, `/vs/:slug/`, `/best/:id/`, `/categories/`, `/ranking/`, etc.) MUST generate folder-based `index.html` files in `dist/`. Standalone `.html` files (`dist/software/tool.html`) that create duplicate 200 OK endpoints are STRICTLY PROHIBITED.
+- **Strict Canonical Tag Match**: Every page's `<link rel="canonical">` MUST strictly end with a trailing slash (`https://stakdock.com/.../`) matching the exact sitemap URL.
+- **301 Permanent Redirects**: Non-trailing-slash requests (`/software/tool`) and HTTP requests MUST 301-redirect to their trailing-slash HTTPS canonical.
+- **Full Semantic SSR Body**: Every generated page MUST contain rich semantic HTML inside `<div id="root">` (H1 heading, rating summary, pricing badges, tool overview, key features list, alternative competitor cards, and detailed comparison tables). Never output an empty `<div id="root"></div>` shell.
 - **Sitemap `lastmod` Protection**: Never mass-overwrite `lastmod` across all URLs in automated cron jobs to prevent search engine crawl spikes.
+
+## Google Algorithm Defense & Quality Compliance Gate (NON-NEGOTIABLE)
+
+- **Anti-Scaled Content Abuse Standard**: Programmatic pages must never use repetitive boilerplate FAQ loops where only the tool name changes. Every page must contain distinct, dynamic tool-specific data (exact pricing, real features, platform compatibility).
+- **Template Entropy & Uniqueness**: Maximum 30% template overlap between any two generated pages. Every comparison page (`/vs/`) must feature a full side-by-side spec comparison table, pros/cons, and distinct verdict.
+- **Anti-Thin Content**: Every public page must contain a minimum of 250 words of structured, rich editorial content. Doorway pages or lightweight redirect cards are strictly prohibited.
+- **Automated CI Google Compliance Gate**: `npm run build` MUST automatically execute `scripts/verifyGoogleCompliance.cjs` and `scripts/verifySeoIntegrity.cjs`. If any route violates canonical trailing slashes, contains empty shells, or exceeds template boilerplate thresholds, the build MUST abort immediately.
 
 ## Secrets and Access
 

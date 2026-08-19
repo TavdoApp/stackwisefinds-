@@ -24,40 +24,32 @@ let checkedCount = 0;
 
 for (const route of urls) {
   checkedCount++;
-  if (route === '' || route === '/') continue;
+  const cleanRoute = route.replace(/^\//, '').replace(/\/$/, '');
+  const indexFile = cleanRoute === '' ? path.join(distDir, 'index.html') : path.join(distDir, cleanRoute, 'index.html');
 
-  const cleanRoute = route.replace(/^\//, '');
-  const htmlFile = path.join(distDir, `${cleanRoute}.html`);
-  const indexFile = path.join(distDir, cleanRoute, 'index.html');
-
-  // Guard 1: Dual Flat File & Directory File Existence (Prevents Cloudflare 308 Redirects)
-  if (!fs.existsSync(htmlFile)) {
-    errors.push(`[Missing Flat File]: ${cleanRoute}.html does not exist in dist/`);
-  }
+  // Guard 1: Directory Index File Existence
   if (!fs.existsSync(indexFile)) {
     errors.push(`[Missing Index File]: ${cleanRoute}/index.html does not exist in dist/`);
+    continue;
   }
 
   // Guard 2: Full Semantic HTML Body & Root Content Verification
-  const targetFile = fs.existsSync(htmlFile) ? htmlFile : (fs.existsSync(indexFile) ? indexFile : null);
-  if (targetFile) {
-    const html = fs.readFileSync(targetFile, 'utf8');
+  const html = fs.readFileSync(indexFile, 'utf8');
 
-    // Check for empty React shell
-    if (html.includes('<div id="root"></div>') || !html.includes('<div id="root">')) {
-      errors.push(`[Empty Body]: ${route} has an empty or missing <div id="root">`);
-    }
+  // Check for empty React shell
+  if (html.includes('<div id="root"></div>') || !html.includes('<div id="root">')) {
+    errors.push(`[Empty Body]: ${route} has an empty or missing <div id="root">`);
+  }
 
-    // Check for canonical tag consistency
-    const canonicalExpected = `https://stakdock.com${route}`;
-    if (!html.includes(`rel="canonical" href="${canonicalExpected}"`) && !html.includes(`href="${canonicalExpected}" rel="canonical"`)) {
-      errors.push(`[Canonical Mismatch]: ${route} canonical tag does not match ${canonicalExpected}`);
-    }
+  // Check for canonical tag consistency with trailing slash
+  const canonicalExpected = `https://stakdock.com${route.endsWith('/') ? route : route + '/'}`;
+  if (!html.includes(`rel="canonical" href="${canonicalExpected}"`) && !html.includes(`href="${canonicalExpected}" rel="canonical"`)) {
+    errors.push(`[Canonical Mismatch]: ${route} canonical tag does not match ${canonicalExpected}`);
+  }
 
-    // Check for essential H1 heading
-    if (!html.includes('<h1')) {
-      errors.push(`[Missing H1]: ${route} does not have an <h1> heading in raw SSR HTML`);
-    }
+  // Check for essential H1 heading
+  if (!html.includes('<h1')) {
+    errors.push(`[Missing H1]: ${route} does not have an <h1> heading in raw SSR HTML`);
   }
 
   if (errors.length >= 10) {
@@ -71,4 +63,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`✅ SEO Integrity Gate PASSED: 100% of ${checkedCount} canonical URLs verified with dual 200 OK flat files, full semantic SSR bodies, matching canonical tags, and H1 headings!`);
+console.log(`✅ SEO Integrity Gate PASSED: 100% of ${checkedCount} canonical URLs verified with single canonical folder index files, full semantic SSR bodies, matching trailing-slash canonical tags, and H1 headings!`);

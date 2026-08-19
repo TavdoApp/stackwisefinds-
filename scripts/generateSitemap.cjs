@@ -4,16 +4,13 @@ const { readAllTools, readCategories } = require('./toolData.cjs');
 
 const saasTools = readAllTools();
 const saasCategories = readCategories();
-const answerDataPath = path.join(__dirname, '..', 'data', 'auto-published-answers.json');
-const answerData = fs.existsSync(answerDataPath) ? JSON.parse(fs.readFileSync(answerDataPath, 'utf8')) : { answers: [] };
-const autoPublishedAnswers = Array.isArray(answerData.answers) ? answerData.answers : [];
 const baseUrl = 'https://stakdock.com';
 const todayDate = new Date().toISOString().split('T')[0];
 
 let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Core Pages -->
+  <!-- Core Pages (Strict Trailing Slash) -->
   <url>
     <loc>${baseUrl}/</loc>
     <lastmod>${todayDate}</lastmod>
@@ -21,37 +18,37 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>${baseUrl}/categories</loc>
+    <loc>${baseUrl}/categories/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>${baseUrl}/ranking</loc>
+    <loc>${baseUrl}/ranking/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>${baseUrl}/advertise</loc>
+    <loc>${baseUrl}/advertise/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>${baseUrl}/terms</loc>
+    <loc>${baseUrl}/terms/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>${baseUrl}/privacy</loc>
+    <loc>${baseUrl}/privacy/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>${baseUrl}/refund</loc>
+    <loc>${baseUrl}/refund/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
@@ -62,13 +59,13 @@ let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 saasCategories.forEach(cat => {
   if (!cat || !cat.id || cat.id === 'all') return;
   sitemapXml += `  <url>
-    <loc>${baseUrl}/best/${cat.id}</loc>
+    <loc>${baseUrl}/best/${cat.id}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>\n`;
   sitemapXml += `  <url>
-    <loc>${baseUrl}/category/${cat.id}</loc>
+    <loc>${baseUrl}/category/${cat.id}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -86,91 +83,51 @@ const semanticAliases = [
 
 semanticAliases.forEach(alias => {
   sitemapXml += `  <url>
-    <loc>${baseUrl}/best/${alias}</loc>
+    <loc>${baseUrl}/best/${alias}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>\n`;
 });
 
-sitemapXml += `  <!-- High-Intent Editorial Guides -->
-  <url>
-    <loc>${baseUrl}/guides/best-all-in-one-seo-software-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-workflow-automation-tools-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-document-automation-tools-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-ai-video-generators-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-real-estate-crms-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-ai-coding-tools-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-ai-music-audio-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>${baseUrl}/guides/best-ecommerce-stack-2026</loc>
-    <lastmod>${todayDate}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-`;
+// High-Intent Editorial Guides
+const editorialGuides = [
+  'best-all-in-one-seo-software-2026',
+  'best-workflow-automation-tools-2026',
+  'best-document-automation-tools-2026',
+  'best-ai-video-generators-2026',
+  'best-real-estate-crms-2026',
+  'best-ai-coding-tools-2026',
+  'best-ai-music-audio-2026',
+  'best-ecommerce-stack-2026'
+];
 
-// Add real static URLs for automated answer pages.
-autoPublishedAnswers.forEach((answer) => {
-  if (!answer.canonicalUrl || !/^https:\/\/stakdock\.com\/guides\//.test(answer.canonicalUrl)) return;
+editorialGuides.forEach(slug => {
   sitemapXml += `  <url>
-    <loc>${answer.canonicalUrl}</loc>
-    <lastmod>${(answer.publishedAt || todayDate).slice(0, 10)}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <loc>${baseUrl}/guides/${slug}/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>\n`;
 });
+
 // Add dedicated /software/ individual tool pages & /alternatives/ hubs for all tools
 saasTools.forEach(t => {
   sitemapXml += `  <url>
-    <loc>${baseUrl}/software/${t.id}</loc>
+    <loc>${baseUrl}/software/${t.id}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>\n`;
   sitemapXml += `  <url>
-    <loc>${baseUrl}/alternatives/${t.id}</loc>
+    <loc>${baseUrl}/alternatives/${t.id}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>\n`;
 });
 
-// Add 480 category-based pairwise comparison routes
+// Add category-based pairwise comparison routes
 function getVsPairsList(tools) {
   const map = new Map();
   const catMap = {};
@@ -201,7 +158,7 @@ function getVsPairsList(tools) {
 const versusPairs = getVsPairsList(saasTools);
 versusPairs.forEach(({ vsSlug }) => {
   sitemapXml += `  <url>
-    <loc>${baseUrl}/vs/${vsSlug}</loc>
+    <loc>${baseUrl}/vs/${vsSlug}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -214,4 +171,4 @@ sitemapXml += `</urlset>\n`;
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
 
-console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${totalUrlsCount}`);
+console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${totalUrlsCount} (100% strict trailing-slash canonicals)`);
