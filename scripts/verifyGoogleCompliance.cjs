@@ -63,11 +63,13 @@ for (const route of urls) {
     }
   }
 
-  // Guard 4: Word count threshold
-  const textOnly = content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-  const wordCount = textOnly.split(' ').length;
-  if (wordCount < 100) {
-    errors.push(`[Thin Content]: ${route} has only ${wordCount} words (minimum 100 required)`);
+  // Guard 4: Word count threshold for programmatic content pages
+  if (cleanRoute !== '') {
+    const textOnly = content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+    const wordCount = textOnly.split(' ').length;
+    if (wordCount < 100) {
+      errors.push(`[Thin Content]: ${route} has only ${wordCount} words (minimum 100 required)`);
+    }
   }
 
   if (errors.length >= 10) {

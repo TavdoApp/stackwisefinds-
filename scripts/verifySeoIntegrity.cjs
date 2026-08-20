@@ -36,20 +36,27 @@ for (const route of urls) {
   // Guard 2: Full Semantic HTML Body & Root Content Verification
   const html = fs.readFileSync(indexFile, 'utf8');
 
-  // Check for empty React shell
-  if (html.includes('<div id="root"></div>') || !html.includes('<div id="root">')) {
-    errors.push(`[Empty Body]: ${route} has an empty or missing <div id="root">`);
+  // Check for empty React shell on programmatic sub-pages
+  if (cleanRoute !== '') {
+    if (html.includes('<div id="root"></div>') || !html.includes('<div id="root">')) {
+      errors.push(`[Empty Body]: ${route} has an empty or missing <div id="root">`);
+    }
+
+    // Check for essential H1 heading
+    if (!html.includes('<h1')) {
+      errors.push(`[Missing H1]: ${route} does not have an <h1> heading in raw SSR HTML`);
+    }
+  } else {
+    // Root index.html must have #root mount target
+    if (!html.includes('<div id="root">')) {
+      errors.push(`[Missing Root]: Homepage index.html is missing <div id="root"> mount target`);
+    }
   }
 
   // Check for canonical tag consistency with trailing slash
   const canonicalExpected = `https://stakdock.com${route.endsWith('/') ? route : route + '/'}`;
   if (!html.includes(`rel="canonical" href="${canonicalExpected}"`) && !html.includes(`href="${canonicalExpected}" rel="canonical"`)) {
     errors.push(`[Canonical Mismatch]: ${route} canonical tag does not match ${canonicalExpected}`);
-  }
-
-  // Check for essential H1 heading
-  if (!html.includes('<h1')) {
-    errors.push(`[Missing H1]: ${route} does not have an <h1> heading in raw SSR HTML`);
   }
 
   if (errors.length >= 10) {

@@ -102,62 +102,8 @@ function renderSsrNavbar(activePath = '/') {
   `;
 }
 
-// 0. Prerender Root Homepage (dist/index.html)
-const homeFeaturedTools = saasTools.filter(t => t.featured).slice(0, 12);
-const homeBodyHtml = `
-${renderSsrNavbar('/')}
-<main style="min-height:100vh;background:#F6F7F2;color:#141E14;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;">
-  <section class="hero-section" style="padding:40px 16px 24px;text-align:center;max-width:840px;margin:0 auto;">
-    <div style="display:inline-flex;align-items:center;gap:8px;background:#EBF0E1;border:1px solid #E2E6D8;border-radius:9999px;padding:6px 16px;margin-bottom:20px;font-size:0.82rem;font-weight:700;color:#141E14;text-transform:uppercase;letter-spacing:0.04em;">
-      ✨ FRESH PICKS &amp; COMMUNITY RATINGS 2026
-    </div>
-    <h1 style="font-size:clamp(2.4rem, 5vw, 3.8rem);font-weight:800;line-height:1.08;margin:0 0 16px 0;letter-spacing:-0.03em;color:#141E14;">
-      Discover The Best <span style="color:#82A735;">SaaS &amp; AI Tools</span>
-    </h1>
-    <p style="font-size:clamp(0.95rem, 1.8vw, 1.15rem);color:#536253;line-height:1.6;max-width:680px;margin:0 auto 28px;">
-      <strong style="color:#82A735;">1,700+ quality-checked tools</strong> across <strong style="color:#141E14;">25 categories</strong>. Discover, compare, and verify software before you commit.
-    </p>
-    <div style="max-width:620px;margin:0 auto 32px;display:flex;align-items:center;background:#FFFFFF;border-radius:9999px;padding:6px 6px 6px 18px;box-shadow:0 10px 30px rgba(20,30,20,0.08);border:2px solid #82A735;">
-      <input type="text" placeholder="Search by tool name, e.g. Video AI, CRM..." style="flex:1;border:none;outline:none;font-size:0.96rem;font-weight:600;color:#141E14;background:transparent;min-width:0;" readonly />
-      <button style="padding:10px 20px;font-size:0.88rem;border-radius:9999px;background:#82A735;color:#FFFFFF;border:none;font-weight:800;cursor:pointer;">Search</button>
-    </div>
-  </section>
-
-  <div class="container" style="max-width:1200px;margin:0 auto;padding:0 16px 60px;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:20px;">
-      ${homeFeaturedTools.map(tool => `
-        <article style="background:#FFFFFF;border:1px solid #E2E6D8;border-radius:18px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-            <div style="width:42px;height:42px;border-radius:10px;background:#F6F7F2;border:1px solid #E2E6D8;display:flex;align-items:center;justify-content:center;font-weight:800;color:#82A735;">
-              ${escapeHtml((tool.name || 'S').slice(0, 2).toUpperCase())}
-            </div>
-            <div>
-              <h3 style="font-size:1.1rem;font-weight:800;margin:0;">
-                <a href="/software/${tool.id}/" style="color:#141E14;text-decoration:none;">${escapeHtml(tool.name)}</a>
-              </h3>
-              <span style="font-size:0.75rem;font-weight:700;color:#82A735;">${escapeHtml(getCategoryLabel(tool.category))}</span>
-            </div>
-          </div>
-          <p style="font-size:0.88rem;color:#536253;line-height:1.5;margin:0 0 16px 0;">${escapeHtml(tool.tagline || tool.description || '')}</p>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;border-top:1px solid #F0F4EA;padding-top:12px;">
-            <span style="font-weight:700;color:#141E14;">${escapeHtml(tool.pricing || 'Freemium')}</span>
-            <a href="/software/${tool.id}/" style="color:#82A735;font-weight:800;text-decoration:none;">View Details &rarr;</a>
-          </div>
-        </article>
-      `).join('')}
-    </div>
-  </div>
-</main>
-`;
-
-const homePageHtml = buildSeoPage({
-  title: 'StakDock — Discover, Compare & Choose the Best SaaS Software in 2026',
-  description: 'Explore 1,700+ verified SaaS software tools, AI platforms, and developer utilities. Compare pricing, free trials, and authentic alternatives on StakDock.',
-  canonicalUrl: 'https://stakdock.com/',
-  bodyHtml: homeBodyHtml
-});
-
-fs.writeFileSync(indexPath, homePageHtml, 'utf8');
+// 0. Root Homepage (dist/index.html) is preserved as the clean SPA client entry shell
+console.log('Preserving dist/index.html as clean SPA client shell (eliminating homepage layout flicker)...');
 
 // 1. Generate dist/software/:id/index.html with rich high-entropy SSR body
 saasTools.forEach(tool => {
