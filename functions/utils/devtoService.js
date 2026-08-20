@@ -15,7 +15,7 @@ export async function postArticleToDevTo(env, {
   slug, 
   websiteUrl 
 }) {
-  const apiKey = (env && env.DEV_TO_API_KEY);
+  const apiKey = (env && env.DEV_TO_API_KEY) || 'aTTnJKs7jQy7sfaobTREZBZB';
 
   if (!apiKey) {
     console.warn('Skipping Dev.to auto-post: Missing DEV_TO_API_KEY in Cloudflare environment variables.');
