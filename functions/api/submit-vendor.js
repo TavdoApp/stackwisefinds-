@@ -1,5 +1,6 @@
 import { sendBrevoEmail } from '../utils/emailService.js';
 import { postTweetToX } from '../utils/twitterService.js';
+import { postArticleToDevTo } from '../utils/devtoService.js';
 
 function sanitizeText(str) {
   if (!str || typeof str !== 'string') return '';
@@ -194,6 +195,15 @@ export async function onRequestPost(context) {
       status,
       packageType
     };
+    const articlePayload = {
+      softwareName,
+      tagline,
+      category,
+      slug,
+      pricing,
+      websiteUrl: softwareWebsite
+    };
+
     if (context.waitUntil) {
       context.waitUntil(sendBrevoEmail(env, emailPayload));
       if (isPaidPackage) {
@@ -204,6 +214,7 @@ export async function onRequestPost(context) {
           slug,
           pricing
         }));
+        context.waitUntil(postArticleToDevTo(env, articlePayload));
       }
     } else {
       await sendBrevoEmail(env, emailPayload);
@@ -215,6 +226,7 @@ export async function onRequestPost(context) {
           slug,
           pricing
         });
+        await postArticleToDevTo(env, articlePayload);
       }
     }
 

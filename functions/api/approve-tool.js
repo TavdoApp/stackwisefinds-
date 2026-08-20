@@ -1,5 +1,6 @@
 import { sendBrevoEmail } from '../utils/emailService.js';
 import { postTweetToX } from '../utils/twitterService.js';
+import { postArticleToDevTo } from '../utils/devtoService.js';
 
 export async function onRequest(context) {
   const { request, env } = context;
@@ -97,12 +98,23 @@ export async function onRequest(context) {
         pricing: 'Freemium'
       };
 
+      const articlePayload = {
+        softwareName: record.software_name,
+        tagline: record.tagline || '',
+        category: record.category || 'Tech',
+        slug,
+        pricing: 'Freemium',
+        websiteUrl: record.software_website
+      };
+
       if (context.waitUntil) {
         context.waitUntil(sendBrevoEmail(env, emailPayload));
         context.waitUntil(postTweetToX(env, tweetPayload));
+        context.waitUntil(postArticleToDevTo(env, articlePayload));
       } else {
         await sendBrevoEmail(env, emailPayload);
         await postTweetToX(env, tweetPayload);
+        await postArticleToDevTo(env, articlePayload);
       }
     }
 
