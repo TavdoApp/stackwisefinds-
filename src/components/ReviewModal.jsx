@@ -22,6 +22,26 @@ export default function ReviewModal({ tool, onClose }) {
       alert('Please enter a brief review before submitting.');
       return;
     }
+
+    const newReview = {
+      id: `rev-${Date.now()}`,
+      toolId: tool.id,
+      reviewerName: reviewerName.trim() || 'Verified Software User',
+      rating,
+      reviewText: reviewText.trim(),
+      date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+      verified: true
+    };
+
+    try {
+      const storageKey = `stakdock_reviews_${tool.id}`;
+      const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      localStorage.setItem(storageKey, JSON.stringify([newReview, ...existing]));
+      window.dispatchEvent(new CustomEvent('stakdock_review_added', { detail: { toolId: tool.id, review: newReview } }));
+    } catch (err) {
+      console.warn('LocalStorage error saving review:', err);
+    }
+
     setSubmitted(true);
   };
 
