@@ -33,11 +33,16 @@ async function sendTelegramAlert(env, data) {
 
   const statusLabel = data.status === 'approved' ? '✅ AUTO-APPROVED & PUBLISHED LIVE' : '⏳ PENDING REVIEW (48-72hr Queue)';
 
-  let approveLinks = '';
+  const slug = (data.softwareName || 'tool').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const tweetText = `🚀 Just listed on @Stakdock: ${data.softwareName}! ${data.tagline ? '— ' + data.tagline : ''}\n\nExplore full specs, reviews & alternatives 👇\nhttps://stakdock.com/software/${slug}/\n\n#SaaS #AI #BuildInPublic`;
+  const tweetIntentUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetText)}`;
+
+  let approveLinks = `\n\n🐦 <b>1-CLICK 𝕏 POST:</b>\n👉 <a href="${tweetIntentUrl}">POST TWEET TO @STAKDOCK 🚀</a>`;
   if (data.id && data.status === 'pending_review') {
     approveLinks = `\n\n⚡ <b>ACTIONS:</b>\n` +
       `👉 <a href="https://stakdock.com/api/approve-tool?id=${data.id}&action=approve">APPROVE NOW & PUBLISH LIVE</a>\n` +
-      `❌ <a href="https://stakdock.com/api/approve-tool?id=${data.id}&action=reject">REJECT SUBMISSION</a>`;
+      `❌ <a href="https://stakdock.com/api/approve-tool?id=${data.id}&action=reject">REJECT SUBMISSION</a>` +
+      approveLinks;
   }
 
   const text = `🚨 <b>NEW STAKDOCK SOFTWARE SUBMISSION!</b>\n\n` +
