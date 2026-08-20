@@ -9,12 +9,23 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
 
   const sourceArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
 
-  // Separate paid In-Feed / Spotlight sponsors ($49/mo) from general featured tools
-  const inFeedSponsors = sourceArray.filter(t => t.isInFeed || t.packageType === 'in-feed');
-  const otherFeatured = sourceArray.filter(t => !t.isInFeed && t.packageType !== 'in-feed' && t.packageType !== 'premium' && !t.submittedByVendor && (t.featured || t.badge || t.rating >= 4.8));
+  // Separate paid sponsors ($99/yr Premium, $49/mo In-Feed, $99/mo Top-Banner) from general featured tools
+  const paidSponsors = sourceArray.filter(t => 
+    t.packageType === 'premium' || 
+    t.packageType === 'in-feed' || 
+    t.packageType === 'top-banner' || 
+    t.isInFeed || 
+    t.isTopBanner || 
+    t.isFeatured ||
+    (t.submittedByVendor && t.packageType !== 'free')
+  );
+  const otherFeatured = sourceArray.filter(t => 
+    !paidSponsors.some(p => p.id === t.id) && 
+    (t.featured || t.badge || (t.rating && t.rating >= 4.8))
+  );
 
-  // Prioritize In-Feed / Spotlight sponsors at the top of the sidebar
-  const fullFeaturedPool = [...inFeedSponsors, ...otherFeatured];
+  // Prioritize all paid sponsors at the top of the sidebar
+  const fullFeaturedPool = [...paidSponsors, ...otherFeatured];
 
   // Auto-rotate the starting offset index every 30 seconds so all paying founders get top spotlight exposure
   useEffect(() => {

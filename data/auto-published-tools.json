@@ -1,7 +1,43 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-11T12:50:00.000Z",
+  "updatedAt": "2026-08-20T12:30:00.000Z",
   "tools": [
+    {
+      "id": "selldone",
+      "name": "Selldone® Business OS",
+      "domain": "selldone.com",
+      "category": "e-commerce",
+      "tagline": "No-code business operating system & multi-channel e-commerce platform.",
+      "description": "Selldone is an all-in-one business operating system and e-commerce platform designed for online merchants, creators, and enterprise retailers to build, scale, and automate digital commerce workflows without code.",
+      "rating": 4.9,
+      "reviewsCount": 128,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://selldone.com",
+      "website": "https://selldone.com",
+      "websiteUrl": "https://selldone.com",
+      "featured": true,
+      "badge": "⭐ Featured Pro",
+      "packageType": "premium",
+      "isFeatured": true,
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "No-Code Storefront Builder",
+        "Multi-Channel Inventory Sync",
+        "Integrated POS & Invoicing",
+        "Automated Marketing & Funnels"
+      ],
+      "pros": [
+        "0% Transaction Fee on Standard Tiers",
+        "Built-in ERP & Warehouse Management",
+        "Multi-Currency & Global Payment Gateways"
+      ],
+      "cons": [
+        "Advanced Custom Integrations Require Enterprise Tier"
+      ],
+      "bestFor": "E-Commerce Brands, Online Merchants & Fast-Growing Stores",
+      "publishedAt": "2026-08-19T10:00:00.000Z"
+    },
     {
       "id": "dmchamp",
       "name": "dmchamp",

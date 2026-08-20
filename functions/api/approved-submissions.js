@@ -45,25 +45,32 @@ export async function onRequestGet(context) {
         effectivePackage = 'free'; // Demote to standard free listing if subscription expired
       }
 
+      const isPaid = effectivePackage === 'premium' || effectivePackage === 'in-feed' || effectivePackage === 'top-banner';
+      let normCat = (sub.category || 'ai-tools').toLowerCase();
+      if (normCat.includes('commerce') || normCat.includes('funnel') || normCat.includes('store')) normCat = 'e-commerce';
+
       return {
         id: slug || `vendor-${sub.id}`,
         name: sub.software_name,
         domain: domain,
         description: `${sub.software_name} - Verified SaaS platform submitted by founder ${sub.vendor_name}.`,
-        category: sub.category || 'ai-tools',
+        category: normCat,
         rating: 4.9,
         reviewsCount: 18,
-        upvotes: 1,
+        upvotes: isPaid ? 48 : 1,
         isNewLaunch: true,
+        featured: isPaid,
+        isFeatured: effectivePackage === 'premium',
         pricing: 'Freemium',
         pricingModel: 'Freemium',
+        isFreeTier: true,
+        isOpenSource: false,
         affiliateUrl: sub.software_website,
         websiteUrl: sub.software_website,
         submittedByVendor: true,
         packageType: effectivePackage,
         isTopBanner: effectivePackage === 'top-banner',
         isInFeed: effectivePackage === 'in-feed',
-        isFeatured: effectivePackage === 'premium',
         badge: effectivePackage === 'in-feed' ? '⚡ Spotlight Sponsor' : effectivePackage === 'top-banner' ? '🔥 Top Banner Sponsor' : effectivePackage === 'premium' ? '⭐ Featured Pro' : 'Verified Tool',
         submittedAt: sub.created_at,
         expiresAt: sub.expires_at

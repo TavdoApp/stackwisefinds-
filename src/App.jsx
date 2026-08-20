@@ -473,14 +473,19 @@ export default function App() {
                           desc.toLowerCase().includes(search) ||
                           (tool.features && Array.isArray(tool.features) && tool.features.some(f => typeof f === 'string' && f.toLowerCase().includes(search)));
     
-    const matchesCategory = selectedCategory === 'all' || cat === selectedCategory;
-    const matchesFree = !filterFreeOnly || tool.isFreeTier;
+    const normCat = (tool.category || '').toLowerCase().trim();
+    const selCat = (selectedCategory || 'all').toLowerCase().trim();
+    const matchesCategory = selCat === 'all' || 
+      normCat === selCat ||
+      normCat.replace(/[^a-z0-9]/g, '-') === selCat.replace(/[^a-z0-9]/g, '-') ||
+      (selCat === 'e-commerce' && (normCat.includes('commerce') || normCat.includes('funnel') || normCat.includes('store')));
+    
+    const matchesFree = !filterFreeOnly || tool.isFreeTier || tool.pricing?.toLowerCase().includes('free');
     const matchesOpenSource = !filterOpenSourceOnly || tool.isOpenSource;
-    const isAiTool = cat.includes('ai') || name.toLowerCase().includes('ai') || desc.toLowerCase().includes('ai');
-    const matchesTrending = !filterTrendingOnly || (isAiTool && (tool.badge?.includes('TRENDING') || tool.badge?.includes('LAUNCH') || tool.badge?.includes('STANDARD') || (tool.rating || 0) >= 4.8));
+    const matchesTrending = !filterTrendingOnly || (tool.packageType === 'premium' || tool.packageType === 'in-feed' || tool.packageType === 'top-banner' || tool.badge?.includes('TRENDING') || tool.badge?.includes('LAUNCH') || tool.badge?.includes('STANDARD') || (tool.rating || 0) >= 4.8);
 
     const matchesQuick = () => {
-      if (quickFilter === 'new') return tool.featured || tool.autoQualifiedAt || tool.badge?.includes('LAUNCH') || tool.badge?.includes('NEW') || tool.badge?.includes('STANDARD');
+      if (quickFilter === 'new') return tool.isNewLaunch || tool.submittedByVendor || tool.featured || tool.autoQualifiedAt || tool.badge?.includes('LAUNCH') || tool.badge?.includes('NEW') || tool.badge?.includes('STANDARD');
       if (quickFilter === 'deals') return Boolean(tool.lifetimeDealUrl || tool.hasDeal || tool.pricing?.toLowerCase().includes('freemium') || tool.pricing?.toLowerCase().includes('trial'));
       if (quickFilter === 'free') return tool.pricing?.toLowerCase().includes('free') || tool.isOpenSource || tool.isFreeTier;
       return true;
