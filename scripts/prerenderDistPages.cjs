@@ -80,39 +80,73 @@ function getCategoryLabel(catId) {
   return c ? c.label : (catId || 'Software').replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 }
 
+function renderSsrNavbar(activePath = '/') {
+  return `
+  <header style="position:sticky;top:0;z-index:100;background:rgba(246, 247, 242, 0.97);backdrop-filter:blur(16px);border-bottom:1px solid #E2E6D8;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 16px;max-width:1200px;margin:0 auto;">
+      <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0;">
+        <div style="width:34px;height:34px;border-radius:10px;background:#EBF0E1;display:flex;align-items:center;justify-content:center;border:1px solid #E2E6D8;color:#82A735;font-weight:800;font-size:1.1rem;">
+          ✨
+        </div>
+        <span style="font-size:1.35rem;font-weight:800;color:#141E14;letter-spacing:-0.02em;">stakdock</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:8px;font-size:0.88rem;font-weight:700;">
+        <a href="/" style="color:${activePath === '/' ? '#141E14' : '#536253'};text-decoration:none;padding:6px 12px;border-radius:9999px;background:${activePath === '/' ? '#EBF0E1' : 'transparent'};">Directory</a>
+        <a href="/categories/" style="color:${activePath.startsWith('/categories') ? '#141E14' : '#536253'};text-decoration:none;padding:6px 12px;border-radius:9999px;background:${activePath.startsWith('/categories') ? '#EBF0E1' : 'transparent'};">Categories</a>
+        <a href="/ranking/" style="color:${activePath.startsWith('/ranking') ? '#141E14' : '#536253'};text-decoration:none;padding:6px 12px;border-radius:9999px;background:${activePath.startsWith('/ranking') ? '#EBF0E1' : 'transparent'};">Rankings</a>
+        <a href="/advertise/" style="color:${activePath.startsWith('/advertise') ? '#141E14' : '#536253'};text-decoration:none;padding:6px 12px;border-radius:9999px;background:${activePath.startsWith('/advertise') ? '#EBF0E1' : 'transparent'};">Advertise</a>
+        <a href="/submit/" style="color:#FFFFFF;background:#141E14;text-decoration:none;padding:8px 16px;border-radius:9999px;">Submit</a>
+      </nav>
+    </div>
+  </header>
+  `;
+}
+
 // 0. Prerender Root Homepage (dist/index.html)
 const homeFeaturedTools = saasTools.filter(t => t.featured).slice(0, 12);
 const homeBodyHtml = `
-<main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-  <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;text-align:center;">
-    <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
-      VERIFIED SOFTWARE &amp; SAAS DIRECTORY 2026
+${renderSsrNavbar('/')}
+<main style="min-height:100vh;background:#F6F7F2;color:#141E14;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;">
+  <section class="hero-section" style="padding:40px 16px 24px;text-align:center;max-width:840px;margin:0 auto;">
+    <div style="display:inline-flex;align-items:center;gap:8px;background:#EBF0E1;border:1px solid #E2E6D8;border-radius:9999px;padding:6px 16px;margin-bottom:20px;font-size:0.82rem;font-weight:700;color:#141E14;text-transform:uppercase;letter-spacing:0.04em;">
+      ✨ FRESH PICKS &amp; COMMUNITY RATINGS 2026
     </div>
-    <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 16px 0;color:#182618;">
-      Discover &amp; Compare the Best SaaS Software Tools
+    <h1 style="font-size:clamp(2.4rem, 5vw, 3.8rem);font-weight:800;line-height:1.08;margin:0 0 16px 0;letter-spacing:-0.03em;color:#141E14;">
+      Discover The Best <span style="color:#82A735;">SaaS &amp; AI Tools</span>
     </h1>
-    <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:760px;">
-      Explore 1,700+ verified software platforms across AI, SEO, CRM, DevOps, and automation. Compare transparent pricing, free trials, feature matrices, and user reviews on StakDock.
+    <p style="font-size:clamp(0.95rem, 1.8vw, 1.15rem);color:#536253;line-height:1.6;max-width:680px;margin:0 auto 28px;">
+      <strong style="color:#82A735;">1,700+ quality-checked tools</strong> across <strong style="color:#141E14;">25 categories</strong>. Discover, compare, and verify software before you commit.
     </p>
-  </header>
+    <div style="max-width:620px;margin:0 auto 32px;display:flex;align-items:center;background:#FFFFFF;border-radius:9999px;padding:6px 6px 6px 18px;box-shadow:0 10px 30px rgba(20,30,20,0.08);border:2px solid #82A735;">
+      <input type="text" placeholder="Search by tool name, e.g. Video AI, CRM..." style="flex:1;border:none;outline:none;font-size:0.96rem;font-weight:600;color:#141E14;background:transparent;min-width:0;" readonly />
+      <button style="padding:10px 20px;font-size:0.88rem;border-radius:9999px;background:#82A735;color:#FFFFFF;border:none;font-weight:800;cursor:pointer;">Search</button>
+    </div>
+  </section>
 
-  <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
-    <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Top Trending &amp; Verified SaaS Platforms</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;">
+  <div class="container" style="max-width:1200px;margin:0 auto;padding:0 16px 60px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:20px;">
       ${homeFeaturedTools.map(tool => `
-        <article style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
-          <h3 style="font-size:1.15rem;font-weight:800;margin:0 0 6px 0;">
-            <a href="/software/${tool.id}/" style="color:#182618;text-decoration:none;">${escapeHtml(tool.name)}</a>
-          </h3>
-          <p style="font-size:0.9rem;color:#45593e;line-height:1.5;margin:0 0 12px 0;">${escapeHtml(tool.tagline || tool.description || '')}</p>
-          <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
-            <span style="font-weight:700;color:#2D4522;">${escapeHtml(tool.pricing || 'Freemium')}</span>
-            <a href="/software/${tool.id}/" style="color:#82A735;font-weight:800;text-decoration:underline;">Review &rarr;</a>
+        <article style="background:#FFFFFF;border:1px solid #E2E6D8;border-radius:18px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,0.03);">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <div style="width:42px;height:42px;border-radius:10px;background:#F6F7F2;border:1px solid #E2E6D8;display:flex;align-items:center;justify-content:center;font-weight:800;color:#82A735;">
+              ${escapeHtml((tool.name || 'S').slice(0, 2).toUpperCase())}
+            </div>
+            <div>
+              <h3 style="font-size:1.1rem;font-weight:800;margin:0;">
+                <a href="/software/${tool.id}/" style="color:#141E14;text-decoration:none;">${escapeHtml(tool.name)}</a>
+              </h3>
+              <span style="font-size:0.75rem;font-weight:700;color:#82A735;">${escapeHtml(getCategoryLabel(tool.category))}</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem;color:#536253;line-height:1.5;margin:0 0 16px 0;">${escapeHtml(tool.tagline || tool.description || '')}</p>
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.82rem;border-top:1px solid #F0F4EA;padding-top:12px;">
+            <span style="font-weight:700;color:#141E14;">${escapeHtml(tool.pricing || 'Freemium')}</span>
+            <a href="/software/${tool.id}/" style="color:#82A735;font-weight:800;text-decoration:none;">View Details &rarr;</a>
           </div>
         </article>
       `).join('')}
     </div>
-  </section>
+  </div>
 </main>
 `;
 
@@ -162,11 +196,12 @@ saasTools.forEach(tool => {
   };
 
   const bodyHtml = `
-  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-    <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
-      <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/best/${escapeHtml(tool.category || 'crm')}/" style="color:#5c7353;text-decoration:none;">${escapeHtml(catLabel)}</a> &rsaquo;
-      <span style="color:#182618;font-weight:700;">${escapeHtml(tool.name)}</span>
+  ${renderSsrNavbar('/software/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/best/${escapeHtml(tool.category || 'crm')}/" style="color:#536253;text-decoration:none;">${escapeHtml(catLabel)}</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">${escapeHtml(tool.name)}</span>
     </nav>
 
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
@@ -321,11 +356,12 @@ saasTools.forEach(tool => {
   };
 
   const bodyHtml = `
-  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-    <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
-      <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/software/${tool.id}/" style="color:#5c7353;text-decoration:none;">${escapeHtml(tool.name)}</a> &rsaquo;
-      <span style="color:#182618;font-weight:700;">Alternatives</span>
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/software/${tool.id}/" style="color:#536253;text-decoration:none;">${escapeHtml(tool.name)}</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Alternatives</span>
     </nav>
 
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
@@ -476,10 +512,11 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
   };
 
   const bodyHtml = `
-  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-    <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
-      <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <span style="color:#182618;font-weight:700;">${escapeHtml(tA.name)} vs ${escapeHtml(tB.name)}</span>
+  ${renderSsrNavbar('/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">${escapeHtml(tA.name)} vs ${escapeHtml(tB.name)}</span>
     </nav>
 
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;text-align:center;">
@@ -639,11 +676,12 @@ saasCategories.forEach(cat => {
   };
 
   const bodyHtml = `
-  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-    <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
-      <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/categories/" style="color:#5c7353;text-decoration:none;">Categories</a> &rsaquo;
-      <span style="color:#182618;font-weight:700;">${escapeHtml(catLabel)}</span>
+  ${renderSsrNavbar('/categories/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">${escapeHtml(catLabel)}</span>
     </nav>
 
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
@@ -820,11 +858,12 @@ allGuides.forEach(guide => {
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
   const bodyHtml = `
-  <main class="stakdock-ssr-main" style="max-width:900px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-    <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
-      <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/categories/" style="color:#5c7353;text-decoration:none;">Buyer Guides</a> &rsaquo;
-      <span style="color:#182618;font-weight:700;">${escapeHtml(guide.title)}</span>
+  ${renderSsrNavbar('/guides/')}
+  <main class="stakdock-ssr-main" style="max-width:900px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Buyer Guides</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">${escapeHtml(guide.title)}</span>
     </nav>
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;margin-bottom:8px;">
@@ -867,10 +906,11 @@ coreStaticPages.forEach(page => {
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
   const bodyHtml = `
-  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#182618;">
-    <nav style="font-size:0.85rem;color:#5c7353;margin-bottom:20px;">
-      <a href="/" style="color:#5c7353;text-decoration:none;">Home</a> &rsaquo;
-      <span style="color:#182618;font-weight:700;">${escapeHtml(page.title)}</span>
+  ${renderSsrNavbar('/' + page.slug + '/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">${escapeHtml(page.title)}</span>
     </nav>
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin:0 0 12px 0;">${escapeHtml(page.title)}</h1>
