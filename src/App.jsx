@@ -820,69 +820,21 @@ export default function App() {
                           onOpenVendorModal={() => setShowVendorModal(true)}
                         />
                       ) : (
-                        paginatedTools.map((tool, index) => (
-                          <React.Fragment key={tool.id}>
-                            <ToolCard
-                              tool={tool}
-                              isSelectedForCompare={selectedCompareIds.includes(tool.id)}
-                              onToggleCompare={handleToggleCompare}
-                              onOpenReviewModal={(t) => setSelectedReviewTool(t)}
-                              onUpvoteTool={handleUpvoteTool}
-                              upvotes={upvotesState[tool.id] || getToolVotes(tool)}
-                              isBookmarked={bookmarkedIds.includes(tool.id)}
-                              onToggleBookmark={handleToggleBookmark}
-                              onSelectTool={handleSelectToolDetail}
-                              onSelectCategory={(catId) => { setSelectedCategory(catId); setCurrentPage(1); const el = document.getElementById('directory-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
-                              currentLang={currentLang}
-                            />
-
-                            {/* In-Grid Native Sponsored Banner (Toolify Style) */}
-                            {index === 3 && (
-                              <div style={{
-                                background: 'linear-gradient(135deg, #141E14 0%, #203320 100%)',
-                                borderRadius: '18px',
-                                padding: '20px 24px',
-                                margin: '8px 0 20px',
-                                color: '#FFFFFF',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                flexWrap: 'wrap',
-                                gap: '16px',
-                                boxShadow: '0 8px 24px rgba(20, 30, 20, 0.12)',
-                                border: '1px solid #2D4522'
-                              }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                                  <div style={{ width: '42px', height: '42px', borderRadius: '12px', background: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6px', flexShrink: 0 }}>
-                                    <Sparkles size={22} color="#82A735" />
-                                  </div>
-                                  <div>
-                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '3px' }}>
-                                      <span style={{ fontSize: '0.65rem', fontWeight: '800', background: '#82A735', color: '#FFFFFF', padding: '2px 6px', borderRadius: '4px', textTransform: 'uppercase' }}>
-                                        SPONSORED SPOTLIGHT
-                                      </span>
-                                      <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.75)' }}>Reach 50,000+ Buyers</span>
-                                    </div>
-                                    <h4 style={{ fontSize: '1.02rem', fontWeight: '800', color: '#FFFFFF', margin: 0 }}>
-                                      Want Your SaaS Featured in Front of Active Tech Buyers?
-                                    </h4>
-                                  </div>
-                                </div>
-
-                                <button
-                                  onClick={() => {
-                                    setInitialVendorPackage('in-feed');
-                                    setShowVendorModal(true);
-                                  }}
-                                  className="btn-pill-green"
-                                  style={{ padding: '8px 18px', fontSize: '0.84rem' }}
-                                >
-                                  <span>Feature Your Tool ($49/mo)</span>
-                                  <ArrowUpRight size={14} />
-                                </button>
-                              </div>
-                            )}
-                          </React.Fragment>
+                        paginatedTools.map((tool) => (
+                          <ToolCard
+                            key={tool.id}
+                            tool={tool}
+                            isSelectedForCompare={selectedCompareIds.includes(tool.id)}
+                            onToggleCompare={handleToggleCompare}
+                            onOpenReviewModal={(t) => setSelectedReviewTool(t)}
+                            onUpvoteTool={handleUpvoteTool}
+                            upvotes={upvotesState[tool.id] || getToolVotes(tool)}
+                            isBookmarked={bookmarkedIds.includes(tool.id)}
+                            onToggleBookmark={handleToggleBookmark}
+                            onSelectTool={handleSelectToolDetail}
+                            onSelectCategory={(catId) => { setSelectedCategory(catId); setCurrentPage(1); const el = document.getElementById('directory-section'); if (el) el.scrollIntoView({ behavior: 'smooth' }); }}
+                            currentLang={currentLang}
+                          />
                         ))
                       )}
 
