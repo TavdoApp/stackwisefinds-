@@ -140,8 +140,16 @@ export default function App() {
       .then(data => {
         if (data && data.success && Array.isArray(data.approved) && data.approved.length > 0) {
           setSaasTools(prev => {
-            const existingIds = new Set(prev.map(t => t.id));
-            const newTools = data.approved.filter(t => !existingIds.has(t.id));
+            const existingIds = new Set(prev.map(t => (t.id || '').toLowerCase()));
+            const existingDomains = new Set(prev.map(t => (t.domain || '').toLowerCase().replace(/^www\./, '')));
+            const existingNames = new Set(prev.map(t => (t.name || '').toLowerCase().replace(/[^a-z0-9]/g, '')));
+
+            const newTools = data.approved.filter(t => {
+              const tid = (t.id || '').toLowerCase();
+              const dom = (t.domain || '').toLowerCase().replace(/^www\./, '');
+              const nm = (t.name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+              return !existingIds.has(tid) && (!dom || !existingDomains.has(dom)) && (!nm || !existingNames.has(nm));
+            });
             return [...newTools, ...prev];
           });
         }
@@ -1099,6 +1107,7 @@ export default function App() {
               <VersusPage
                 toolAId={selectedVersus.toolAId || 'freshbooks'}
                 toolBId={selectedVersus.toolBId || 'quickbooks'}
+                allTools={saasTools}
                 onBack={() => {
                   setCurrentView('directory');
                   window.location.hash = '';
@@ -1111,6 +1120,7 @@ export default function App() {
             {currentView === 'alternatives-detail' && (
               <AlternativesView
                 targetToolId={selectedAlternativeToolId}
+                allTools={saasTools}
                 onSelectTool={handleSelectToolDetail}
                 onBack={() => {
                   setCurrentView('directory');

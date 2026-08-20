@@ -5,16 +5,40 @@ import { injectSoftwareApplicationSchema, injectFaqPageSchema } from '../utils/s
 import { getToolAlternatives, getCommunitySwitchInsight, getToolStrengthBadge, getGroupedAlternatives } from '../utils/alternativesHelper.js';
 import SuggestAlternativeModal from './SuggestAlternativeModal.jsx';
 
-export default function AlternativesView({ targetToolId, onBack, onSelectTool }) {
+export default function AlternativesView({ targetToolId, allTools, onBack, onSelectTool }) {
   const [filterMode, setFilterMode] = useState('all'); // 'all', 'free', 'opensource', 'budget'
   const [showSuggestModal, setShowSuggestModal] = useState(false);
 
-  const targetTool = saasTools.find(t => t.id === targetToolId) || saasTools[0];
+  const toolPool = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
+  const targetIdClean = (targetToolId || '').toLowerCase().trim();
+
+  const formatFallbackName = (slug) => {
+    if (!slug) return 'Software';
+    return String(slug).split(/[-_]/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  };
+
+  const targetTool = toolPool.find(t => 
+    t.id === targetIdClean ||
+    t.id.replace(/-/g, '') === targetIdClean.replace(/-/g, '') ||
+    t.name.toLowerCase().trim() === targetIdClean ||
+    (t.domain && (targetIdClean.includes(t.domain.replace(/\..*$/, '')) || t.domain.toLowerCase().includes(targetIdClean))) ||
+    targetIdClean.startsWith(t.id) ||
+    t.id.startsWith(targetIdClean)
+  ) || {
+    id: targetIdClean,
+    name: formatFallbackName(targetIdClean),
+    domain: `${targetIdClean}.com`,
+    category: 'e-commerce',
+    description: `${formatFallbackName(targetIdClean)} software platform and business suite.`,
+    pricing: 'Freemium',
+    rating: 4.8,
+    reviewsCount: 45
+  };
   
   // Intelligent Pro Alternatives Engine
-  const allAlternatives = getToolAlternatives(targetTool, saasTools, { limit: 16 });
+  const allAlternatives = getToolAlternatives(targetTool, toolPool, { limit: 16 });
   const switchInsight = getCommunitySwitchInsight(targetTool);
-  const groupedAlternatives = getGroupedAlternatives(targetTool, saasTools);
+  const groupedAlternatives = getGroupedAlternatives(targetTool, toolPool);
 
   const filteredAlternatives = allAlternatives.filter(t => {
     if (filterMode === 'free') return t.isFreeTier || (t.pricing || '').toLowerCase().includes('free');

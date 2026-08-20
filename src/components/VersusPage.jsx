@@ -3,26 +3,29 @@ import { ArrowLeft, Star, ExternalLink, ShieldCheck, ArrowUpRight, Award, Chevro
 import { saasTools } from '../data/saasData.jsx';
 import { injectSoftwareApplicationSchema, injectFaqPageSchema } from '../utils/schemaMarkup.jsx';
 
-function resolveTool(targetSlug) {
+function resolveTool(targetSlug, pool = saasTools) {
   if (!targetSlug) return null;
   const slug = String(targetSlug).toLowerCase().trim();
-  return saasTools.find(t => 
-    t.id === slug || 
+  const cleanSlug = slug.replace(/[^a-z0-9]/g, '');
+  return pool.find(t => 
+    t.id.toLowerCase() === slug || 
+    t.id.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanSlug ||
     t.name.toLowerCase().includes(slug) || 
-    slug.includes(t.id) ||
-    (t.domain && slug.includes(t.domain.replace(/\..*$/, '')))
+    slug.includes(t.id.toLowerCase()) ||
+    (t.domain && (slug.includes(t.domain.replace(/\..*$/, '')) || t.domain.toLowerCase().includes(slug)))
   ) || null;
 }
 
-export default function VersusPage({ toolAId, toolBId, onBack }) {
+export default function VersusPage({ toolAId, toolBId, allTools, onBack }) {
   const [openFaq, setOpenFaq] = useState(null);
+  const toolPool = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
 
   const formatFallbackName = (slug) => {
     if (!slug) return 'Software';
     return String(slug).split(/[-_]/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   };
 
-  const toolA = resolveTool(toolAId) || (saasTools && saasTools[0]) || {
+  const toolA = resolveTool(toolAId, toolPool) || {
     id: toolAId || 'tool-a',
     name: formatFallbackName(toolAId),
     domain: `${toolAId || 'software'}.com`,
@@ -33,7 +36,7 @@ export default function VersusPage({ toolAId, toolBId, onBack }) {
     category: 'invoicing'
   };
 
-  const toolB = resolveTool(toolBId) || (saasTools && saasTools[1]) || {
+  const toolB = resolveTool(toolBId, toolPool) || {
     id: toolBId || 'tool-b',
     name: formatFallbackName(toolBId),
     domain: `${toolBId || 'software'}.com`,
