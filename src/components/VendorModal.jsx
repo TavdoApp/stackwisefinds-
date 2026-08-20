@@ -686,7 +686,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$49/mo</span>
                     </div>
                     <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      #1 Category sticky spot • Fast-track
+                      #1 Category spot + Competitor Intercept Banner
                     </p>
                   </div>
 
@@ -707,7 +707,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$99/yr</span>
                     </div>
                     <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Homepage spotlight + Dofollow link
+                      Homepage spotlight + Competitor Intercept Banner + Dofollow link
                     </p>
                   </div>
 
