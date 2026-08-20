@@ -22,6 +22,8 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
   const [hasAutoInspected, setHasAutoInspected] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [copiedBadge, setCopiedBadge] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
 
   const dodoProductMap = {
@@ -227,73 +229,226 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
         {/* Modal Body */}
         <div style={{ padding: '24px 28px', maxHeight: 'calc(90vh - 120px)', overflowY: 'auto' }}>
           {isSubmitted ? (
-            <div style={{ textAlign: 'center', padding: '24px 10px' }}>
+            <div style={{ textAlign: 'center', padding: '16px 8px' }}>
               <div style={{
-                width: '64px',
-                height: '64px',
+                width: '60px',
+                height: '60px',
                 borderRadius: '50%',
                 background: 'rgba(130,167,53,0.15)',
                 color: '#82A735',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                margin: '0 auto 16px'
+                margin: '0 auto 14px'
               }}>
-                <CheckCircle2 size={36} />
+                <CheckCircle2 size={32} />
               </div>
-              <h3 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
-                🎉 Submission Received!
+
+              <h3 style={{ fontSize: '1.4rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '6px' }}>
+                🎉 Submission Confirmed!
               </h3>
-              <p style={{ fontSize: '0.92rem', color: 'var(--text-muted)', maxWidth: '460px', margin: '0 auto 18px', lineHeight: '1.5' }}>
-                We are processing <strong>{softwareName || 'your software'}</strong>. While automated checks verify your site, share your launch with your community to collect upvotes and rank #1!
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', maxWidth: '480px', margin: '0 auto 20px', lineHeight: '1.5' }}>
+                We are processing <strong>{softwareName || 'your software'}</strong>. While verification runs, use your official <strong>Founder Launch Kit</strong> below to collect upvotes, embed your badge, and climb to #1 Product of the Week!
               </p>
 
+              {/* Action 1: Viral Upvote & Share Loop */}
               <div style={{
                 background: '#F6F7F2',
-                border: '1px dashed #82A735',
-                borderRadius: '16px',
-                padding: '16px',
-                maxWidth: '480px',
-                margin: '0 auto 24px',
+                border: '1px solid var(--border-color)',
+                borderRadius: '18px',
+                padding: '18px',
+                maxWidth: '540px',
+                margin: '0 auto 16px',
                 textAlign: 'left'
               }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontWeight: '800', fontSize: '0.86rem', color: 'var(--text-dark)', marginBottom: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '800', fontSize: '0.88rem', color: 'var(--text-dark)', marginBottom: '6px' }}>
                   <Rocket size={16} color="#82A735" />
-                  <span>Kickstart Your Launch Campaign:</span>
+                  <span>1. Collect Upvotes & Rank #1 (Reach 50,000+ Buyers)</span>
                 </div>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 12px; line-height: 1.4;">
+                  Community upvotes push your tool to the top of our daily leaderboard. Share your launch link to start ranking:
+                </p>
+
                 <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
                   <button
                     type="button"
                     onClick={() => {
-                      const shareText = `🚀 We just launched ${softwareName || 'our SaaS'} on @StakDock!\n\nCheck it out and show some love:`;
-                      const shareUrl = `https://stakdock.com/ranking`;
+                      const cleanSlug = (softwareName || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                      const shareText = `🚀 We just launched ${softwareName || 'our SaaS'} on @Stakdock!\n\nUpvote our listing and check out our verified specs:`;
+                      const shareUrl = `https://stakdock.com/software/${cleanSlug}/`;
                       window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
                     }}
                     className="btn-pill-dark"
-                    style={{ padding: '8px 14px', fontSize: '0.82rem' }}
+                    style={{ padding: '8px 14px', fontSize: '0.8rem', background: '#000000', color: '#FFFFFF' }}
                   >
                     Share on 𝕏 (Twitter)
                   </button>
+
                   <button
                     type="button"
                     onClick={() => {
-                      const shareUrl = `https://stakdock.com/ranking`;
+                      const cleanSlug = (softwareName || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                      const shareUrl = `https://stakdock.com/software/${cleanSlug}/`;
                       window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`, '_blank', 'noopener,noreferrer');
                     }}
                     className="btn-pill-outline"
-                    style={{ padding: '8px 14px', fontSize: '0.82rem' }}
+                    style={{ padding: '8px 14px', fontSize: '0.8rem' }}
                   >
                     Share on LinkedIn
                   </button>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const cleanSlug = (softwareName || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                      const shareUrl = `https://stakdock.com/software/${cleanSlug}/`;
+                      navigator.clipboard.writeText(shareUrl);
+                      setCopiedLink(true);
+                      setTimeout(() => setCopiedLink(false), 2000);
+                    }}
+                    className="btn-pill-outline"
+                    style={{ padding: '8px 14px', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '4px' }}
+                  >
+                    {copiedLink ? <Check size={14} color="#82A735" /> : <Copy size={14} />}
+                    <span>{copiedLink ? 'Copied URL!' : 'Copy Launch Link'}</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Action 2: Embeddable Backlink Badge */}
+              <div style={{
+                background: '#FFFFFF',
+                border: '1.5px solid #82A735',
+                borderRadius: '18px',
+                padding: '18px',
+                maxWidth: '540px',
+                margin: '0 auto 16px',
+                textAlign: 'left'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontWeight: '800', fontSize: '0.88rem', color: 'var(--text-dark)' }}>
+                    <Award size={16} color="#82A735" />
+                    <span>2. Embed Your Verified StakDock Badge</span>
+                  </div>
+                  <span style={{ fontSize: '0.72rem', background: '#F0F5E5', color: '#2D4522', padding: '2px 8px', borderRadius: '9999px', fontWeight: '800' }}>
+                    +Authority Backlink
+                  </span>
+                </div>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: '0 0 10px', lineHeight: '1.4' }}>
+                  Place this badge in your footer or landing page for instant third-party social proof & high trust score:
+                </p>
+
+                {(() => {
+                  const cleanSlug = (softwareName || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                  const badgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(softwareName || 'Software')}&rating=4.9&style=dark`;
+                  const embedCode = `<a href="https://stakdock.com/software/${cleanSlug}/" target="_blank" rel="noopener"><img src="${badgeUrl}" alt="${softwareName || 'Software'} on StakDock 2026" width="270" height="64" /></a>`;
+
+                  return (
+                    <div>
+                      <div style={{ textAlign: 'center', margin: '8px 0 12px' }}>
+                        <img src={badgeUrl} alt="StakDock Badge Preview" style={{ maxWidth: '240px', height: 'auto', borderRadius: '10px' }} />
+                      </div>
+                      <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                        <input
+                          type="text"
+                          readOnly
+                          value={embedCode}
+                          style={{
+                            flex: 1,
+                            padding: '8px 12px',
+                            background: '#F6F7F2',
+                            border: '1px solid var(--border-color)',
+                            borderRadius: '8px',
+                            fontSize: '0.74rem',
+                            fontFamily: 'monospace',
+                            color: 'var(--text-dark)'
+                          }}
+                        />
+                        <button
+                          type="button"
+                          onClick={() => {
+                            navigator.clipboard.writeText(embedCode);
+                            setCopiedBadge(true);
+                            setTimeout(() => setCopiedBadge(false), 2000);
+                          }}
+                          className="btn-pill-dark"
+                          style={{ padding: '8px 14px', fontSize: '0.78rem', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '4px' }}
+                        >
+                          {copiedBadge ? <Check size={14} color="#82A735" /> : <Copy size={14} />}
+                          <span>{copiedBadge ? 'Copied HTML!' : 'Copy Code'}</span>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              {/* Action 3: Omnichannel Developer Syndication */}
+              <div style={{
+                background: '#F6F7F2',
+                border: '1px solid var(--border-color)',
+                borderRadius: '18px',
+                padding: '14px 18px',
+                maxWidth: '540px',
+                margin: '0 auto 24px',
+                textAlign: 'left',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '10px'
+              }}>
+                <div>
+                  <div style={{ fontWeight: '800', fontSize: '0.84rem', color: 'var(--text-dark)' }}>
+                    📢 Syndication on 𝕏 & Dev.to (DA 90+)
+                  </div>
+                  <div style={{ fontSize: '0.76rem', color: 'var(--text-muted)' }}>
+                    Follow our channels to retweet & amplify your launch:
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '8px' }}>
+                  <a
+                    href="https://x.com/Stakdock"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      background: '#000000',
+                      color: '#FFFFFF',
+                      padding: '5px 12px',
+                      borderRadius: '9999px',
+                      fontSize: '0.74rem',
+                      fontWeight: '800',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    𝕏 @Stakdock
+                  </a>
+                  <a
+                    href="https://dev.to/stakdock"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      background: '#0D140D',
+                      color: '#82A735',
+                      border: '1px solid #82A735',
+                      padding: '5px 12px',
+                      borderRadius: '9999px',
+                      fontSize: '0.74rem',
+                      fontWeight: '800',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Dev.to Reviews
+                  </a>
                 </div>
               </div>
 
               <button
                 onClick={onClose}
                 className="btn-pill-green"
-                style={{ padding: '12px 28px', margin: '0 auto' }}
+                style={{ padding: '12px 32px', margin: '0 auto', fontSize: '0.95rem' }}
               >
-                Back to StakDock Directory
+                Done & Back to Directory
               </button>
             </div>
           ) : (
