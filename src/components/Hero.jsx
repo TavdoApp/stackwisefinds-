@@ -1,6 +1,39 @@
-import React from 'react';
-import { ArrowDown, Sparkles, Wand2, Search } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowDown, Sparkles, Wand2, Search, Flame, Rocket, Star, Tag, Gift, Award, ArrowUpRight } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
+
+const rotatingSponsors = [
+  {
+    name: 'Cursor',
+    tagline: 'The AI-first code editor built for modern developers',
+    domain: 'cursor.com',
+    url: '/software/cursor-ai/'
+  },
+  {
+    name: 'Make.com',
+    tagline: 'Design, build, and automate workflows visually',
+    domain: 'make.com',
+    url: '/software/make-integromat/'
+  },
+  {
+    name: 'Notion AI',
+    tagline: 'Connected workspace with integrated AI writing and docs',
+    domain: 'notion.so',
+    url: '/software/notion/'
+  },
+  {
+    name: 'Jasper AI',
+    tagline: 'Enterprise generative AI marketing and copywriting engine',
+    domain: 'jasper.ai',
+    url: '/software/jasper-ai/'
+  },
+  {
+    name: 'Perplexity AI',
+    tagline: 'Real-time conversational AI search and answer engine',
+    domain: 'perplexity.ai',
+    url: '/software/perplexity-ai/'
+  }
+];
 
 export default function Hero({ 
   onExploreClick, 
@@ -10,10 +43,22 @@ export default function Hero({
   searchTerm = '',
   onSearchChange,
   onSearchSubmit,
-  totalToolsCount = 101,
-  currentLang = 'en' 
+  totalToolsCount = 1786,
+  currentLang = 'en',
+  activeQuickFilter = 'all',
+  onSelectQuickFilter
 }) {
   const t = getTranslation(currentLang);
+  const [sponsorIndex, setSponsorIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSponsorIndex(prev => (prev + 1) % rotatingSponsors.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentSponsor = rotatingSponsors[sponsorIndex];
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -22,34 +67,81 @@ export default function Hero({
     }
   };
 
+  const quickFilterTabs = [
+    { id: 'all', label: '🔥 Today\'s Top', icon: <Flame size={14} /> },
+    { id: 'new', label: '🚀 Just Launched', icon: <Rocket size={14} /> },
+    { id: 'upvoted', label: '⭐ Most Upvoted', icon: <Star size={14} /> },
+    { id: 'deals', label: '💎 Verified Deals', icon: <Gift size={14} /> },
+    { id: 'free', label: '⚡ Free Forever', icon: <Tag size={14} /> }
+  ];
+
   return (
     <section className="hero-section" style={{ padding: '40px 0 24px' }}>
-      <div className="container" style={{ textAlign: 'center', maxWidth: '840px', margin: '0 auto' }}>
+      <div className="container" style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto' }}>
         
-        {/* Editorial Subtitle Pill */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--bg-sage)', border: '1px solid var(--border-color)', borderRadius: '9999px', padding: '6px 16px', marginBottom: '20px' }}>
-          <Sparkles size={15} color="#82A735" />
-          <span style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-            {t.heroBadge}
+        {/* Rotating "Sponsored by [Tool]" Toolify-Style Hero Pill */}
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+          background: '#FFFFFF',
+          border: '1.5px solid #82A735',
+          borderRadius: '9999px',
+          padding: '5px 14px 5px 8px',
+          marginBottom: '20px',
+          boxShadow: '0 4px 14px rgba(130, 167, 53, 0.12)',
+          transition: 'all 0.3s ease'
+        }}>
+          <span style={{
+            fontSize: '0.68rem',
+            fontWeight: '800',
+            background: '#82A735',
+            color: '#FFFFFF',
+            padding: '2px 8px',
+            borderRadius: '9999px',
+            letterSpacing: '0.04em',
+            textTransform: 'uppercase'
+          }}>
+            SPONSORED
           </span>
+          <a 
+            href={currentSponsor.url} 
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              textDecoration: 'none',
+              color: 'var(--text-dark)',
+              fontSize: '0.84rem',
+              fontWeight: '700'
+            }}
+          >
+            <img 
+              src={`https://www.google.com/s2/favicons?domain=${currentSponsor.domain}&sz=64`} 
+              alt={currentSponsor.name} 
+              style={{ width: '16px', height: '16px', borderRadius: '4px' }} 
+            />
+            <span><strong>{currentSponsor.name}</strong> — {currentSponsor.tagline}</span>
+            <span style={{ color: '#82A735', fontWeight: '800' }}>&rarr;</span>
+          </a>
         </div>
 
         {/* Main Headline */}
         <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: '800', lineHeight: '1.08', marginBottom: '16px', letterSpacing: '-0.03em', color: 'var(--text-dark)' }}>
-          Discover The Best <span style={{ color: '#82A735' }}>SaaS & AI Tools</span>
+          Discover The Best <span style={{ color: '#82A735' }}>SaaS &amp; AI Tools</span>
         </h1>
 
         {/* Toolify-Style Live Telemetry Subtitle */}
         <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)', color: 'var(--text-muted)', lineHeight: '1.6', maxWidth: '680px', margin: '0 auto 28px' }}>
-          <strong style={{ color: '#82A735' }}>{totalToolsCount} quality-checked tools</strong> across <strong style={{ color: 'var(--text-dark)' }}>25 categories</strong>. Discover, compare, and verify software before you commit.
+          <strong style={{ color: '#82A735' }}>{totalToolsCount}+ quality-checked tools</strong> across <strong style={{ color: 'var(--text-dark)' }}>40+ categories</strong>. Discover, compare, and verify software before you commit.
         </p>
 
         {/* Toolify Prominent Hero Search Bar */}
         <div 
           className="hero-search-container"
           style={{
-            maxWidth: '620px',
-            margin: '0 auto 32px',
+            maxWidth: '640px',
+            margin: '0 auto 24px',
             position: 'relative',
             display: 'flex',
             alignItems: 'center',
@@ -63,7 +155,7 @@ export default function Hero({
           <Search size={20} color="#82A735" style={{ marginRight: '10px', flexShrink: 0 }} />
           <input
             type="text"
-            placeholder={t.searchPlaceholder || "Search by tool name, e.g. Video AI, CRM..."}
+            placeholder={t.searchPlaceholder || "Search by tool name, e.g. Video AI, CRM, Automation..."}
             value={searchTerm}
             onChange={(e) => onSearchChange && onSearchChange(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -95,6 +187,47 @@ export default function Hero({
           >
             <span>Search</span>
           </button>
+        </div>
+
+        {/* Toolify Quick Sub-Navigation Filter Tabs (Today, New, Upvoted, Deals, Free) */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          flexWrap: 'wrap',
+          marginBottom: '28px'
+        }}>
+          {quickFilterTabs.map(tab => {
+            const isActive = activeQuickFilter === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  if (onSelectQuickFilter) onSelectQuickFilter(tab.id);
+                  if (onExploreClick) onExploreClick();
+                }}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '7px 14px',
+                  borderRadius: '9999px',
+                  fontSize: '0.85rem',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  border: isActive ? '1.5px solid #82A735' : '1px solid var(--border-color)',
+                  background: isActive ? '#EBF0E1' : '#FFFFFF',
+                  color: isActive ? '#141E14' : 'var(--text-muted)',
+                  boxShadow: isActive ? '0 2px 8px rgba(130, 167, 53, 0.15)' : 'none',
+                  transition: 'all 0.15s ease'
+                }}
+              >
+                <span style={{ color: isActive ? '#82A735' : 'inherit' }}>{tab.icon}</span>
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Action CTAs */}
