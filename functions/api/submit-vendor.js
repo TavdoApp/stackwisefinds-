@@ -1,4 +1,5 @@
 import { sendBrevoEmail } from '../utils/emailService.js';
+import { postTweetToX } from '../utils/twitterService.js';
 
 function sanitizeText(str) {
   if (!str || typeof str !== 'string') return '';
@@ -190,8 +191,26 @@ export async function onRequestPost(context) {
     };
     if (context.waitUntil) {
       context.waitUntil(sendBrevoEmail(env, emailPayload));
+      if (isPaidPackage) {
+        context.waitUntil(postTweetToX(env, {
+          softwareName,
+          tagline,
+          category,
+          slug,
+          pricing
+        }));
+      }
     } else {
       await sendBrevoEmail(env, emailPayload);
+      if (isPaidPackage) {
+        await postTweetToX(env, {
+          softwareName,
+          tagline,
+          category,
+          slug,
+          pricing
+        });
+      }
     }
 
     return new Response(JSON.stringify({
