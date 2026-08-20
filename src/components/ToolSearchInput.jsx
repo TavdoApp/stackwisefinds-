@@ -2,25 +2,33 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Search, ChevronDown, X, Check } from 'lucide-react';
 import { extractDomain } from '../utils/logoHelper.js';
 
-function normalizeText(str) {
-  return String(str || '').toLowerCase().replace(/[^a-z0-9]/g, '');
-}
+function getMatchScore(tool, query) {
+  if (!query) return 1;
+  const q = query.toLowerCase().trim();
+  const cleanQ = q.replace(/[^a-z0-9]/g, '');
+  
+  const name = (tool.name || '').toLowerCase();
+  const cleanName = name.replace(/[^a-z0-9]/g, '');
+  const id = (tool.id || '').toLowerCase();
+  const cleanId = id.replace(/[^a-z0-9]/g, '');
+  const domain = (tool.domain || '').toLowerCase().replace(/^www\./, '');
+  const category = (tool.category || '').toLowerCase();
 
-// Levenshtein distance for typo-tolerance (e.g. 'cloude' vs 'claude')
-function isFuzzyMatch(target, query) {
-  const normTarget = normalizeText(target);
-  const normQuery = normalizeText(query);
+  // Exact startsWith matches (Highest Priority: 1000+)
+  if (name.startsWith(q) || cleanName.startsWith(cleanQ)) return 1000;
+  if (id.startsWith(q) || cleanId.startsWith(cleanQ)) return 900;
+  if (domain.startsWith(q)) return 800;
 
-  if (!normQuery) return true;
-  if (normTarget.includes(normQuery)) return true;
+  // Name or ID contains full query string (Priority: 400 - 600)
+  if (name.includes(q) || cleanName.includes(cleanQ)) return 600;
+  if (id.includes(q) || cleanId.includes(cleanQ)) return 500;
+  if (domain.includes(q)) return 400;
 
-  // Simple prefix / character overlap check for typos
-  if (normQuery.length >= 3) {
-    const sub = normQuery.slice(0, 3);
-    if (normTarget.includes(sub)) return true;
-  }
+  // Category exact word match (e.g. searching 'crm' or 'seo')
+  if (category.split(/[-_\s]/).some(word => word === q)) return 200;
+  if (category.includes(q)) return 100;
 
-  return false;
+  return 0;
 }
 
 export default function ToolSearchInput({
@@ -52,14 +60,13 @@ export default function ToolSearchInput({
     }
   }, [isOpen]);
 
-  const filteredTools = searchQuery.trim()
-    ? tools.filter(t => 
-        isFuzzyMatch(t.name, searchQuery) ||
-        isFuzzyMatch(t.id, searchQuery) ||
-        isFuzzyMatch(t.domain, searchQuery) ||
-        isFuzzyMatch(t.category, searchQuery) ||
-        isFuzzyMatch(t.tagline, searchQuery)
-      )
+  const cleanQuery = searchQuery.trim().toLowerCase();
+  const filteredTools = cleanQuery
+    ? tools
+        .map(t => ({ tool: t, score: getMatchScore(t, cleanQuery) }))
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .map(item => item.tool)
     : tools;
 
   const handleSelect = (tool) => {
