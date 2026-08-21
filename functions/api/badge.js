@@ -3,93 +3,65 @@ export async function onRequest(context) {
   const url = new URL(request.url);
 
   // Read query params
-  const toolSlug = url.searchParams.get('tool') || 'software';
-  const rawRating = url.searchParams.get('rating');
-  const styleParam = (url.searchParams.get('style') || 'dark').toLowerCase();
+  const styleParam = (url.searchParams.get('style') || 'light').toLowerCase();
 
-  const rating = rawRating ? parseFloat(rawRating).toFixed(1) : '4.9';
+  // 3 Color Palettes: Light, Neutral, Dark (Exact Toolify / Product Hunt Standard 250x60)
+  let bgColor, borderColor, brandColor, tagColor, starColor, iconBoxBg, iconSparkle;
 
-  // 3 Color Palettes: Light, Neutral, Dark (Exact Product Hunt Badge Standard)
-  let bgColor1, bgColor2, borderColor, brandColor, tagColor, iconBg, iconColor, rightBg, rightText, arrowColor;
-
-  if (styleParam === 'light') {
-    bgColor1 = '#FFFFFF';
-    bgColor2 = '#FFFFFF';
-    borderColor = '#E2E8F0';
-    brandColor = '#0F172A';
-    tagColor = '#64748B';
-    iconBg = '#82A735';
-    iconColor = '#FFFFFF';
-    rightBg = '#F8FAFC';
-    rightText = '#0F172A';
-    arrowColor = '#82A735';
-  } else if (styleParam === 'neutral') {
-    bgColor1 = '#F1F5F9';
-    bgColor2 = '#F8FAFC';
-    borderColor = '#CBD5E1';
-    brandColor = '#1E293B';
-    tagColor = '#64748B';
-    iconBg = '#1E293B';
-    iconColor = '#FFFFFF';
-    rightBg = '#E2E8F0';
-    rightText = '#1E293B';
-    arrowColor = '#82A735';
-  } else {
-    // Dark Mode (Default)
-    bgColor1 = '#141E14';
-    bgColor2 = '#0D140D';
+  if (styleParam === 'dark') {
+    bgColor = '#141E14';
     borderColor = '#283C28';
     brandColor = '#FFFFFF';
     tagColor = '#82A735';
-    iconBg = '#82A735';
-    iconColor = '#FFFFFF';
-    rightBg = 'rgba(130,167,53,0.12)';
-    rightText = '#FFFFFF';
-    arrowColor = '#82A735';
+    starColor = '#82A735';
+    iconBoxBg = '#1F2E1F';
+    iconSparkle = '#82A735';
+  } else if (styleParam === 'neutral') {
+    bgColor = '#F8FAFC';
+    borderColor = '#CBD5E1';
+    brandColor = '#0F172A';
+    tagColor = '#64748B';
+    starColor = '#82A735';
+    iconBoxBg = '#E2E8F0';
+    iconSparkle = '#334155';
+  } else {
+    // Light Mode (Default)
+    bgColor = '#FFFFFF';
+    borderColor = '#82A735';
+    brandColor = '#141E14';
+    tagColor = '#82A735';
+    starColor = '#82A735';
+    iconBoxBg = '#F0F5E5';
+    iconSparkle = '#82A735';
   }
 
-  // Exact Product Hunt 250x54 standard badge dimension
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="54" viewBox="0 0 250 54" fill="none">
-  <defs>
-    <linearGradient id="badgeGrad" x1="0" y1="0" x2="250" y2="54" gradientUnits="userSpaceOnUse">
-      <stop stop-color="${bgColor1}"/>
-      <stop offset="1" stop-color="${bgColor2}"/>
-    </linearGradient>
-    <filter id="badgeShadow" x="-2" y="0" width="254" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
-    </filter>
-  </defs>
-
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60" fill="none">
   <!-- Container Box -->
-  <rect x="0.5" y="0.5" width="249" height="53" rx="12" fill="url(#badgeGrad)" stroke="${borderColor}" filter="url(#badgeShadow)"/>
+  <rect x="0.5" y="0.5" width="249" height="59" rx="8" fill="${bgColor}" stroke="${borderColor}" stroke-width="1.2"/>
 
-  <!-- Left StakDock Brand Icon (Product Hunt 'P' Style) -->
-  <g transform="translate(10, 9)">
-    <rect width="36" height="36" rx="9" fill="${iconBg}"/>
-    <!-- StakDock 'S' Launch Monogram -->
-    <path d="M18 10L24 18H20V25H16V18H12L18 10Z" fill="${iconColor}"/>
-    <circle cx="18" cy="27" r="1.2" fill="${iconColor}"/>
+  <!-- Left StakDock Sparkles Logo Container -->
+  <g transform="translate(14, 12)">
+    <rect width="36" height="36" rx="8" fill="${iconBoxBg}"/>
+    <!-- StakDock Sparkles Vector Mark -->
+    <path d="M18 8L20 14L26 16L20 18L18 24L16 18L10 16L16 14L18 8Z" fill="${iconSparkle}"/>
+    <path d="M25 21L26 24L29 25L26 26L25 29L24 26L21 25L24 24L25 21Z" fill="${iconSparkle}"/>
   </g>
 
   <!-- Middle Brand Typography -->
-  <g transform="translate(56, 11)">
+  <g transform="translate(60, 15)">
     <!-- Small Top Label -->
-    <text x="0" y="11" fill="${tagColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" letter-spacing="0.08em">
+    <text x="0" y="11" fill="${tagColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" letter-spacing="0.06em">
       FEATURED ON
     </text>
     <!-- StakDock Main Wordmark -->
-    <text x="0" y="27" fill="${brandColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" letter-spacing="-0.02em">
-      StakDock
+    <text x="0" y="28" fill="${brandColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" letter-spacing="-0.02em">
+      StakDock<tspan fill="${styleParam === 'neutral' ? '#64748B' : '#82A735'}">.com</tspan>
     </text>
   </g>
 
-  <!-- Right Upvote / Rating Counter (Product Hunt Style) -->
-  <g transform="translate(186, 11)">
-    <rect width="54" height="32" rx="8" fill="${rightBg}" stroke="${borderColor}" stroke-width="0.5"/>
-    <path d="M21 11L25 16H17L21 11Z" fill="${arrowColor}"/>
-    <text x="27" y="22" fill="${rightText}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" text-anchor="middle">
-      ${rating}
-    </text>
+  <!-- Right Accent Star -->
+  <g transform="translate(214, 20)">
+    <path d="M10 0L12.9 6.2L19.7 7.1L14.7 11.9L16 18.6L10 15.3L4 18.6L5.3 11.9L0.3 7.1L7.1 6.2L10 0Z" fill="${starColor}"/>
   </g>
 </svg>`;
 

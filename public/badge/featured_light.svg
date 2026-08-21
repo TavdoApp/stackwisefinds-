@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60" fill="none">
+  <rect x="0.5" y="0.5" width="249" height="59" rx="8" fill="#FFFFFF" stroke="#82A735" stroke-width="1.2"/>
+  <g transform="translate(14, 12)">
+    <rect width="36" height="36" rx="8" fill="#F0F5E5"/>
+    <path d="M18 8L20 14L26 16L20 18L18 24L16 18L10 16L16 14L18 8Z" fill="#82A735"/>
+    <path d="M25 21L26 24L29 25L26 26L25 29L24 26L21 25L24 24L25 21Z" fill="#82A735"/>
+  </g>
+  <g transform="translate(60, 15)">
+    <text x="0" y="11" fill="#82A735" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" letter-spacing="0.06em">
+      FEATURED ON
+    </text>
+    <text x="0" y="28" fill="#141E14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" letter-spacing="-0.02em">
+      StakDock<tspan fill="#82A735">.com</tspan>
+    </text>
+  </g>
+  <g transform="translate(214, 20)">
+    <path d="M10 0L12.9 6.2L19.7 7.1L14.7 11.9L16 18.6L10 15.3L4 18.6L5.3 11.9L0.3 7.1L7.1 6.2L10 0Z" fill="#82A735"/>
+  </g>
+</svg>

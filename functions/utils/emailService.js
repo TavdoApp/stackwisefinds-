@@ -13,12 +13,12 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
   const alternativesUrl = `https://stakdock.com/alternatives/${cleanSlug}/`;
   const pricingUrl = `https://stakdock.com/#pricing`;
 
-  // Product Hunt style badges (250x54 standard)
-  const darkBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&style=dark`;
-  const lightBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&style=light`;
-  const neutralBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&style=neutral`;
+  // Toolify-style badges (250x60 standard)
+  const lightBadgeUrl = `https://stakdock.com/badge/featured_light.svg`;
+  const darkBadgeUrl = `https://stakdock.com/badge/featured_dark.svg`;
+  const neutralBadgeUrl = `https://stakdock.com/badge/featured_neutral.svg`;
 
-  const standardEmbedCode = `&lt;a href="${liveUrl}" target="_blank" rel="noopener"&gt;&lt;img src="${darkBadgeUrl}" alt="${softwareName} on StakDock" width="250" height="54" /&gt;&lt;/a&gt;`;
+  const standardEmbedCode = `&lt;a href="${liveUrl}?ref=embed" target="_blank" style="cursor: pointer;"&gt;&lt;img src="${lightBadgeUrl}" style="width: 250px; height: 60px;" width="250" height="60" alt="${softwareName} on StakDock" /&gt;&lt;/a&gt;`;
 
   const isApproved = status === 'approved';
 
