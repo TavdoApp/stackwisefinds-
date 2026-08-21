@@ -13,14 +13,12 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
   const alternativesUrl = `https://stakdock.com/alternatives/${cleanSlug}/`;
   const pricingUrl = `https://stakdock.com/#pricing`;
 
-  // 3 Product Hunt style badge URLs
-  const darkBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(softwareName)}&rating=4.9&style=dark`;
-  const lightBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(softwareName)}&rating=4.9&style=light`;
-  const neutralBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(softwareName)}&rating=4.9&style=neutral`;
+  // Product Hunt style badges (250x54 standard)
+  const darkBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&style=dark`;
+  const lightBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&style=light`;
+  const neutralBadgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&style=neutral`;
 
-  const darkEmbedCode = `&lt;a href="${liveUrl}" target="_blank" rel="noopener"&gt;&lt;img src="${darkBadgeUrl}" alt="${softwareName} on StakDock 2026" width="280" height="66" /&gt;&lt;/a&gt;`;
-  const lightEmbedCode = `&lt;a href="${liveUrl}" target="_blank" rel="noopener"&gt;&lt;img src="${lightBadgeUrl}" alt="${softwareName} on StakDock 2026" width="280" height="66" /&gt;&lt;/a&gt;`;
-  const neutralEmbedCode = `&lt;a href="${liveUrl}" target="_blank" rel="noopener"&gt;&lt;img src="${neutralBadgeUrl}" alt="${softwareName} on StakDock 2026" width="280" height="66" /&gt;&lt;/a&gt;`;
+  const standardEmbedCode = `&lt;a href="${liveUrl}" target="_blank" rel="noopener"&gt;&lt;img src="${darkBadgeUrl}" alt="${softwareName} on StakDock" width="250" height="54" /&gt;&lt;/a&gt;`;
 
   const isApproved = status === 'approved';
 
@@ -41,30 +39,30 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>${subject}</title>
   <style type="text/css">
-    body { margin:0; padding:0; background-color:#0D140D; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { margin:0; padding:0; background-color:#0A0F0A; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
     table { border-collapse:collapse; }
+    img { border:0; outline:none; text-decoration:none; display:block; }
     a { text-decoration:none; }
-    .btn-pill { border-radius:8px; display:inline-block; font-weight:800; font-size:13px; text-align:center; padding:10px 18px; }
   </style>
 </head>
-<body style="margin:0; padding:0; background-color:#0D140D; color:#FFFFFF;">
-  <table width="100%" bgcolor="#0D140D" cellpadding="0" cellspacing="0" border="0" style="padding: 30px 12px;">
+<body style="margin:0; padding:0; background-color:#0A0F0A; color:#FFFFFF;">
+  <table width="100%" bgcolor="#0A0F0A" cellpadding="0" cellspacing="0" border="0" style="padding: 24px 8px;">
     <tr>
       <td align="center">
-        <!-- Main Container -->
-        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; background-color:#141E14; border:1px solid #283C28; border-radius:20px; overflow:hidden;">
+        <!-- Main Card Wrapper -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px; background-color:#141E14; border:1px solid #233323; border-radius:18px; overflow:hidden;">
           
-          <!-- Header Bar -->
+          <!-- Header Bar with Zero-Wrap Table -->
           <tr>
-            <td style="padding: 24px 28px 20px; border-bottom: 1px solid #283C28;">
+            <td style="padding: 22px 24px; border-bottom: 1px solid #233323;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
-                  <td align="left" style="font-size:24px; font-weight:900; color:#FFFFFF; letter-spacing:-0.03em;">
+                  <td align="left" style="font-size:22px; font-weight:900; color:#FFFFFF; letter-spacing:-0.03em;">
                     stak<span style="color:#82A735;">dock</span>
                   </td>
-                  <td align="right">
-                    <span style="background-color:rgba(130,167,53,0.18); color:#82A735; border:1px solid rgba(130,167,53,0.4); padding:4px 12px; border-radius:20px; font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.05em;">
-                      OFFICIAL LAUNCH DOCK
+                  <td align="right" style="white-space:nowrap;">
+                    <span style="display:inline-block; background-color:rgba(130,167,53,0.18); color:#82A735; border:1px solid rgba(130,167,53,0.4); padding:4px 10px; border-radius:14px; font-size:10.5px; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; white-space:nowrap;">
+                      LAUNCH DOCK
                     </span>
                   </td>
                 </tr>
@@ -74,11 +72,11 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
 
           <!-- Hero Greeting -->
           <tr>
-            <td style="padding: 28px 28px 20px;">
-              <h1 style="margin:0 0 12px; font-size:24px; font-weight:900; line-height:1.3; color:#FFFFFF;">
-                ${isApproved ? `🎉 Congratulations, ${cleanVendor}!` : `⏳ ${softwareName} is in the Review Queue!`}
+            <td style="padding: 26px 24px 18px;">
+              <h1 style="margin:0 0 10px; font-size:23px; font-weight:900; line-height:1.3; color:#FFFFFF;">
+                ${isApproved ? `🎉 Congratulations, ${cleanVendor}!` : `⏳ ${softwareName} is in Review`}
               </h1>
-              <p style="margin:0; font-size:15px; line-height:1.6; color:rgba(255,255,255,0.85);">
+              <p style="margin:0; font-size:14.5px; line-height:1.6; color:rgba(255,255,255,0.85);">
                 ${isApproved 
                   ? `Your software <strong style="color:#FFFFFF;">${softwareName}</strong> is officially <strong style="color:#82A735;">VERIFIED &amp; LIVE</strong> on StakDock! Founders, purchasing managers, and tech buyers can now discover, review, and compare your tool.`
                   : `Thank you for submitting <strong style="color:#FFFFFF;">${softwareName}</strong>! Your software has been placed in our standard review queue.`}
@@ -89,27 +87,27 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
           ${isApproved ? `
           <!-- Live Listing Showcase Card -->
           <tr>
-            <td style="padding: 0 28px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1A271A; border:1.5px solid #82A735; border-radius:14px; padding:20px; text-align:center;">
+            <td style="padding: 0 24px 22px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#192619; border:1.5px solid #82A735; border-radius:14px; padding:18px 16px; text-align:center;">
                 <tr>
                   <td align="center">
-                    <p style="margin:0 0 8px; font-size:11px; font-weight:800; color:#82A735; text-transform:uppercase; letter-spacing:0.08em;">
-                      🚀 Your Live Software Listing
+                    <p style="margin:0 0 6px; font-size:11px; font-weight:800; color:#82A735; text-transform:uppercase; letter-spacing:0.06em;">
+                      🚀 Live Software Listing
                     </p>
-                    <p style="margin:0 0 16px; font-size:15px; font-weight:800; color:#FFFFFF;">
+                    <p style="margin:0 0 14px; font-size:16px; font-weight:900; color:#FFFFFF;">
                       ${softwareName}
                     </p>
                     
-                    <!-- Action Buttons Table -->
+                    <!-- Action Buttons -->
                     <table cellpadding="0" cellspacing="0" border="0" align="center">
                       <tr>
-                        <td style="padding:4px;">
-                          <a href="${liveUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:11px 22px; border-radius:8px; font-weight:800; font-size:13px; display:inline-block;">
-                            View Live Listing ↗
+                        <td style="padding:3px;">
+                          <a href="${liveUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:10px 20px; border-radius:8px; font-weight:800; font-size:12.5px; display:inline-block;">
+                            View Listing ↗
                           </a>
                         </td>
-                        <td style="padding:4px;">
-                          <a href="${alternativesUrl}" target="_blank" style="background-color:#283C28; color:#FFFFFF; border:1px solid #3E5C3E; padding:11px 18px; border-radius:8px; font-weight:700; font-size:13px; display:inline-block;">
+                        <td style="padding:3px;">
+                          <a href="${alternativesUrl}" target="_blank" style="background-color:#263826; color:#FFFFFF; border:1px solid #3B523B; padding:10px 16px; border-radius:8px; font-weight:700; font-size:12.5px; display:inline-block;">
                             Alternatives Hub ↗
                           </a>
                         </td>
@@ -121,17 +119,17 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
             </td>
           </tr>
 
-          <!-- Growth Engine 1: Upvote Loop -->
+          <!-- Growth Step 1: Upvote Loop -->
           <tr>
-            <td style="padding: 0 28px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#182418; border:1px solid #283C28; border-radius:14px; padding:20px;">
+            <td style="padding: 0 24px 20px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#182418; border:1px solid #283C28; border-radius:14px; padding:18px 16px;">
                 <tr>
                   <td>
-                    <p style="margin:0 0 8px; font-size:15px; font-weight:800; color:#FFFFFF;">
+                    <p style="margin:0 0 6px; font-size:14.5px; font-weight:800; color:#FFFFFF;">
                       📈 Step 1: Collect Upvotes &amp; Rank #1
                     </p>
-                    <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.8); line-height:1.5;">
-                      StakDock features daily and weekly software leaderboards. The more upvotes and reviews you collect this week, the higher your tool ranks on our homepage to reach <strong>50,000+ monthly software buyers</strong>!
+                    <p style="margin:0 0 12px; font-size:13px; color:rgba(255,255,255,0.8); line-height:1.5;">
+                      StakDock features daily software leaderboards. The more upvotes and reviews ${softwareName} collects this week, the higher you climb to reach <strong>50,000+ monthly software buyers</strong>!
                     </p>
                     
                     <table cellpadding="0" cellspacing="0" border="0">
@@ -159,56 +157,52 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
             </td>
           </tr>
 
-          <!-- Growth Engine 2: Embeddable Backlink Badges (Product Hunt Style: Light / Neutral / Dark) -->
+          <!-- Growth Step 2: Product Hunt Style Verified Badges -->
           <tr>
-            <td style="padding: 0 28px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#182418; border:1px solid #283C28; border-radius:14px; padding:20px;">
+            <td style="padding: 0 24px 20px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#182418; border:1px solid #283C28; border-radius:14px; padding:18px 16px;">
                 <tr>
                   <td>
-                    <p style="margin:0 0 8px; font-size:15px; font-weight:800; color:#FFFFFF;">
+                    <p style="margin:0 0 6px; font-size:14.5px; font-weight:800; color:#FFFFFF;">
                       🏆 Step 2: Embed Your Verified StakDock Badge
                     </p>
                     <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.8); line-height:1.5;">
-                      Embed the official StakDock badge in your website footer or hero section. This proves third-party verification to your visitors and unlocks a <strong>permanent high-trust authority score</strong> on StakDock.
+                      Embed our official Product-Hunt-style badge on your landing page or footer for third-party social proof and a <strong>permanent trust signal</strong>:
                     </p>
 
-                    <!-- Dark Badge Style -->
-                    <p style="margin:12px 0 6px; font-size:12px; font-weight:800; color:#82A735; text-transform:uppercase;">
-                      Style 1: Dark Mode Badge
+                    <!-- Dark Mode Badge Preview -->
+                    <p style="margin:0 0 6px; font-size:11.5px; font-weight:800; color:#82A735; text-transform:uppercase;">
+                      • Dark Theme
                     </p>
-                    <div style="margin-bottom:8px;">
+                    <div style="margin-bottom:10px;">
                       <a href="${liveUrl}" target="_blank">
-                        <img src="${darkBadgeUrl}" alt="${softwareName} Dark Badge" width="280" style="max-width:100%; height:auto; border-radius:10px;" />
+                        <img src="${darkBadgeUrl}" alt="Featured on StakDock Dark" width="250" height="54" style="max-width:250px; height:auto; border-radius:10px;" />
                       </a>
-                    </div>
-                    <div style="background-color:#0D140D; border:1px solid #283C28; border-radius:6px; padding:8px 10px; font-family:monospace; font-size:11px; color:#A0C080; word-break:break-all; margin-bottom:14px;">
-                      ${darkEmbedCode}
                     </div>
 
-                    <!-- Light Badge Style -->
-                    <p style="margin:12px 0 6px; font-size:12px; font-weight:800; color:#82A735; text-transform:uppercase;">
-                      Style 2: Light Mode Badge
+                    <!-- Light Mode Badge Preview -->
+                    <p style="margin:0 0 6px; font-size:11.5px; font-weight:800; color:#82A735; text-transform:uppercase;">
+                      • Light Theme
                     </p>
-                    <div style="margin-bottom:8px;">
+                    <div style="margin-bottom:10px;">
                       <a href="${liveUrl}" target="_blank">
-                        <img src="${lightBadgeUrl}" alt="${softwareName} Light Badge" width="280" style="max-width:100%; height:auto; border-radius:10px;" />
+                        <img src="${lightBadgeUrl}" alt="Featured on StakDock Light" width="250" height="54" style="max-width:250px; height:auto; border-radius:10px;" />
                       </a>
-                    </div>
-                    <div style="background-color:#0D140D; border:1px solid #283C28; border-radius:6px; padding:8px 10px; font-family:monospace; font-size:11px; color:#A0C080; word-break:break-all; margin-bottom:14px;">
-                      ${lightEmbedCode}
                     </div>
 
-                    <!-- Neutral Badge Style -->
-                    <p style="margin:12px 0 6px; font-size:12px; font-weight:800; color:#82A735; text-transform:uppercase;">
-                      Style 3: Neutral / Slate Badge
+                    <!-- Neutral Mode Badge Preview -->
+                    <p style="margin:0 0 6px; font-size:11.5px; font-weight:800; color:#82A735; text-transform:uppercase;">
+                      • Neutral Theme
                     </p>
-                    <div style="margin-bottom:8px;">
+                    <div style="margin-bottom:12px;">
                       <a href="${liveUrl}" target="_blank">
-                        <img src="${neutralBadgeUrl}" alt="${softwareName} Neutral Badge" width="280" style="max-width:100%; height:auto; border-radius:10px;" />
+                        <img src="${neutralBadgeUrl}" alt="Featured on StakDock Neutral" width="250" height="54" style="max-width:250px; height:auto; border-radius:10px;" />
                       </a>
                     </div>
+
+                    <!-- Copy Embed Code Box -->
                     <div style="background-color:#0D140D; border:1px solid #283C28; border-radius:6px; padding:8px 10px; font-family:monospace; font-size:11px; color:#A0C080; word-break:break-all;">
-                      ${neutralEmbedCode}
+                      ${standardEmbedCode}
                     </div>
                   </td>
                 </tr>
@@ -216,17 +210,17 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
             </td>
           </tr>
 
-          <!-- Growth Engine 3: Omnichannel Syndication (X & Dev.to) -->
+          <!-- Growth Step 3: Omnichannel Syndication -->
           <tr>
-            <td style="padding: 0 28px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#182418; border:1px solid #283C28; border-radius:14px; padding:20px;">
+            <td style="padding: 0 24px 20px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#182418; border:1px solid #283C28; border-radius:14px; padding:18px 16px;">
                 <tr>
                   <td>
-                    <p style="margin:0 0 8px; font-size:15px; font-weight:800; color:#FFFFFF;">
+                    <p style="margin:0 0 6px; font-size:14.5px; font-weight:800; color:#FFFFFF;">
                       📢 Step 3: Syndication on 𝕏 &amp; Dev.to
                     </p>
-                    <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.8); line-height:1.5;">
-                      We actively feature approved software across our developer networks. Connect with us to amplify your launch:
+                    <p style="margin:0 0 12px; font-size:13px; color:rgba(255,255,255,0.8); line-height:1.5;">
+                      We actively feature approved software across our developer channels. Connect with us to amplify your launch:
                     </p>
                     
                     <table cellpadding="0" cellspacing="0" border="0">
@@ -249,43 +243,40 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
             </td>
           </tr>
 
-          <!-- Growth Engine 4: High-Converting Sponsor Spotlight (Upsell Engine) -->
+          <!-- Growth Step 4: Pro Sponsor Packages Upsell -->
           <tr>
-            <td style="padding: 0 28px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1E2B1E; border:1.5px solid #82A735; border-radius:14px; padding:22px;">
+            <td style="padding: 0 24px 22px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1B2A1B; border:1.5px solid #82A735; border-radius:14px; padding:20px 16px;">
                 <tr>
                   <td>
-                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:12px;">
-                      <tr>
-                        <td align="left">
-                          <span style="font-size:16px; font-weight:900; color:#FFFFFF;">⚡ Accelerate Your Sales: Sponsor Packages</span>
-                        </td>
-                        <td align="right">
-                          <span style="background-color:#82A735; color:#FFFFFF; font-size:10px; font-weight:900; padding:3px 8px; border-radius:6px; text-transform:uppercase;">
-                            PRO PROMOTION
-                          </span>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.5;">
-                      Want guaranteed top ranking without waiting for community votes? Upgrade to a verified sponsor package:
+                    <!-- Clean Stacked Badge & Title (Zero Overlap) -->
+                    <div style="margin-bottom:6px;">
+                      <span style="background-color:#82A735; color:#FFFFFF; font-size:9.5px; font-weight:900; padding:3px 8px; border-radius:4px; text-transform:uppercase; letter-spacing:0.04em; display:inline-block;">
+                        OFFICIAL SPONSORSHIP
+                      </span>
+                    </div>
+                    <p style="margin:0 0 10px; font-size:16px; font-weight:900; color:#FFFFFF;">
+                      ⚡ Accelerate Your Sales: Sponsor Packages
                     </p>
 
-                    <!-- Pricing Options Table -->
-                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
+                    <p style="margin:0 0 12px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.5;">
+                      Want guaranteed top placement without waiting for community votes? Upgrade to an official sponsor package:
+                    </p>
+
+                    <!-- Sponsor Options -->
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:14px;">
                       <tr>
-                        <td style="padding:6px 0; border-bottom:1px solid #2C3E2C; font-size:12.5px; color:#FFFFFF;">
+                        <td style="padding:5px 0; border-bottom:1px solid #2C3E2C; font-size:12px; color:#FFFFFF;">
                           🔥 <strong>Top Banner Sponsor:</strong> $99/mo (Hero banner across 4,171 pages, 50,000+ views)
                         </td>
                       </tr>
                       <tr>
-                        <td style="padding:6px 0; border-bottom:1px solid #2C3E2C; font-size:12.5px; color:#FFFFFF;">
+                        <td style="padding:5px 0; border-bottom:1px solid #2C3E2C; font-size:12px; color:#FFFFFF;">
                           ⚡ <strong>In-Feed Sponsor:</strong> $49/mo (Guaranteed #1 placement in your category + dofollow link)
                         </td>
                       </tr>
                       <tr>
-                        <td style="padding:6px 0; font-size:12.5px; color:#FFFFFF;">
+                        <td style="padding:5px 0; font-size:12px; color:#FFFFFF;">
                           ⭐ <strong>Featured Annual:</strong> $99/yr (12 months guaranteed ranking + verified badge)
                         </td>
                       </tr>
@@ -294,7 +285,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td align="center">
-                          <a href="${pricingUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:12px 28px; border-radius:8px; font-weight:900; font-size:13.5px; display:inline-block; box-shadow:0 4px 14px rgba(130,167,53,0.4);">
+                          <a href="${pricingUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:11px 26px; border-radius:8px; font-weight:900; font-size:13px; display:inline-block; box-shadow:0 4px 14px rgba(130,167,53,0.35);">
                             Claim Sponsor Placement ↗
                           </a>
                         </td>
@@ -306,19 +297,19 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
             </td>
           </tr>
           ` : `
-          <!-- Review Queue Notice with Fast-Track Upsell -->
+          <!-- Queue Notice with Fast-Track Upsell -->
           <tr>
-            <td style="padding: 0 28px 24px;">
-              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1E2B1E; border:1.5px solid #82A735; border-radius:14px; padding:22px;">
+            <td style="padding: 0 24px 22px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#1B2A1B; border:1.5px solid #82A735; border-radius:14px; padding:20px 16px;">
                 <tr>
                   <td>
-                    <p style="margin:0 0 10px; font-size:15px; font-weight:800; color:#FFFFFF;">
+                    <p style="margin:0 0 8px; font-size:15px; font-weight:800; color:#FFFFFF;">
                       ⚡ Want to Bypass the Queue &amp; Go Live Instantly?
                     </p>
-                    <p style="margin:0 0 16px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.55;">
-                      Standard submissions require 48–72 hours for manual verification. Upgrade to an <strong>In-Feed ($49/mo)</strong> or <strong>Top Banner ($99/mo)</strong> package to publish instantly with guaranteed top placement, Dev.to syndication, and social shoutouts.
+                    <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.55;">
+                      Standard submissions require 48–72 hours for verification. Upgrade to an <strong>In-Feed ($49/mo)</strong> or <strong>Top Banner ($99/mo)</strong> package to publish instantly with guaranteed top placement, Dev.to syndication, and social shoutouts.
                     </p>
-                    <a href="${pricingUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:11px 24px; border-radius:8px; font-weight:800; font-size:13px; display:inline-block;">
+                    <a href="${pricingUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:10px 22px; border-radius:8px; font-weight:800; font-size:12.5px; display:inline-block;">
                       Explore Sponsor Packages ↗
                     </a>
                   </td>
@@ -330,12 +321,12 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
 
           <!-- Footer -->
           <tr>
-            <td style="padding: 20px 28px; border-top: 1px solid #283C28; text-align:center;">
-              <p style="margin:0 0 8px; font-size:12px; color:rgba(255,255,255,0.55); line-height:1.5;">
+            <td style="padding: 18px 24px; border-top: 1px solid #233323; text-align:center;">
+              <p style="margin:0 0 6px; font-size:11.5px; color:rgba(255,255,255,0.55); line-height:1.5;">
                 StakDock Software Launch Dock • <a href="https://stakdock.com" style="color:#82A735; text-decoration:none;">stakdock.com</a><br/>
                 Connected on <a href="https://x.com/Stakdock" style="color:#82A735; text-decoration:none;">𝕏 (@Stakdock)</a> &amp; <a href="https://dev.to/stakdock" style="color:#82A735; text-decoration:none;">Dev.to (@stakdock)</a>
               </p>
-              <p style="margin:0; font-size:11px; color:rgba(255,255,255,0.35);">
+              <p style="margin:0; font-size:10.5px; color:rgba(255,255,255,0.35);">
                 Have questions? Reply directly to this email or reach us at <a href="mailto:support@stakdock.com" style="color:#82A735;">support@stakdock.com</a>
               </p>
             </td>

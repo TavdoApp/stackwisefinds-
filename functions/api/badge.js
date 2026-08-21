@@ -4,96 +4,91 @@ export async function onRequest(context) {
 
   // Read query params
   const toolSlug = url.searchParams.get('tool') || 'software';
-  const rawName = url.searchParams.get('name');
   const rawRating = url.searchParams.get('rating');
   const styleParam = (url.searchParams.get('style') || 'dark').toLowerCase();
 
-  // Format Tool Name and Rating
-  const toolName = rawName 
-    ? rawName 
-    : toolSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).slice(0, 22);
-
   const rating = rawRating ? parseFloat(rawRating).toFixed(1) : '4.9';
 
-  // 3 Color Palettes: Light, Neutral, Dark (Product Hunt grade)
-  let bgColor1, bgColor2, borderColor, textColor, subtextColor, tagBg, tagText, iconBg, iconColor, starColor;
+  // 3 Color Palettes: Light, Neutral, Dark (Exact Product Hunt Badge Standard)
+  let bgColor1, bgColor2, borderColor, brandColor, tagColor, iconBg, iconColor, rightBg, rightText, arrowColor;
 
   if (styleParam === 'light') {
     bgColor1 = '#FFFFFF';
-    bgColor2 = '#F8FAFC';
+    bgColor2 = '#FFFFFF';
     borderColor = '#E2E8F0';
-    textColor = '#0F172A';
-    subtextColor = '#64748B';
-    tagBg = '#EEF6E2';
-    tagText = '#456B17';
+    brandColor = '#0F172A';
+    tagColor = '#64748B';
     iconBg = '#82A735';
     iconColor = '#FFFFFF';
-    starColor = '#EAB308';
+    rightBg = '#F8FAFC';
+    rightText = '#0F172A';
+    arrowColor = '#82A735';
   } else if (styleParam === 'neutral') {
-    bgColor1 = '#F8FAFC';
-    bgColor2 = '#EEF2F6';
+    bgColor1 = '#F1F5F9';
+    bgColor2 = '#F8FAFC';
     borderColor = '#CBD5E1';
-    textColor = '#1E293B';
-    subtextColor = '#475569';
-    tagBg = '#E2E8F0';
-    tagText = '#334155';
-    iconBg = '#0F172A';
+    brandColor = '#1E293B';
+    tagColor = '#64748B';
+    iconBg = '#1E293B';
     iconColor = '#FFFFFF';
-    starColor = '#F59E0B';
+    rightBg = '#E2E8F0';
+    rightText = '#1E293B';
+    arrowColor = '#82A735';
   } else {
-    // Dark (Default)
+    // Dark Mode (Default)
     bgColor1 = '#141E14';
     bgColor2 = '#0D140D';
     borderColor = '#283C28';
-    textColor = '#FFFFFF';
-    subtextColor = 'rgba(255,255,255,0.75)';
-    tagBg = 'rgba(130,167,53,0.18)';
-    tagText = '#82A735';
+    brandColor = '#FFFFFF';
+    tagColor = '#82A735';
     iconBg = '#82A735';
     iconColor = '#FFFFFF';
-    starColor = '#FACC15';
+    rightBg = 'rgba(130,167,53,0.12)';
+    rightText = '#FFFFFF';
+    arrowColor = '#82A735';
   }
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="280" height="66" viewBox="0 0 280 66" fill="none">
+  // Exact Product Hunt 250x54 standard badge dimension
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="54" viewBox="0 0 250 54" fill="none">
   <defs>
-    <linearGradient id="badgeBg" x1="0" y1="0" x2="280" y2="66" gradientUnits="userSpaceOnUse">
+    <linearGradient id="badgeGrad" x1="0" y1="0" x2="250" y2="54" gradientUnits="userSpaceOnUse">
       <stop stop-color="${bgColor1}"/>
       <stop offset="1" stop-color="${bgColor2}"/>
     </linearGradient>
-    <filter id="badgeShadow" x="-2" y="0" width="284" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    <filter id="badgeShadow" x="-2" y="0" width="254" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <!-- Card Background -->
-  <rect x="1" y="1" width="278" height="64" rx="14" fill="url(#badgeBg)" stroke="${borderColor}" stroke-width="1.5" filter="url(#badgeShadow)"/>
+  <!-- Container Box -->
+  <rect x="0.5" y="0.5" width="249" height="53" rx="12" fill="url(#badgeGrad)" stroke="${borderColor}" filter="url(#badgeShadow)"/>
 
-  <!-- Left Icon Emblem Container -->
-  <g transform="translate(14, 15)">
-    <rect width="36" height="36" rx="10" fill="${iconBg}" />
-    <!-- Dynamic StakDock Launch Icon -->
-    <path d="M18 7L24 15H20V23H16V15H12L18 7Z" fill="${iconColor}"/>
-    <circle cx="18" cy="27" r="1.5" fill="${iconColor}"/>
+  <!-- Left StakDock Brand Icon (Product Hunt 'P' Style) -->
+  <g transform="translate(10, 9)">
+    <rect width="36" height="36" rx="9" fill="${iconBg}"/>
+    <!-- StakDock 'S' Launch Monogram -->
+    <path d="M18 10L24 18H20V25H16V18H12L18 10Z" fill="${iconColor}"/>
+    <circle cx="18" cy="27" r="1.2" fill="${iconColor}"/>
   </g>
 
-  <!-- Text Hierarchy -->
-  <g transform="translate(60, 14)">
-    <!-- Verification / Category Tag -->
-    <g transform="translate(0, 0)">
-      <rect width="96" height="15" rx="4" fill="${tagBg}"/>
-      <text x="6" y="11" fill="${tagText}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.05em">
-        FEATURED ON
-      </text>
-    </g>
-
-    <!-- Main Software Name -->
-    <text x="0" y="30" fill="${textColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="900" letter-spacing="-0.01em">
-      ${escapeXml(toolName)}
+  <!-- Middle Brand Typography -->
+  <g transform="translate(56, 11)">
+    <!-- Small Top Label -->
+    <text x="0" y="11" fill="${tagColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="800" letter-spacing="0.08em">
+      FEATURED ON
     </text>
+    <!-- StakDock Main Wordmark -->
+    <text x="0" y="27" fill="${brandColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="900" letter-spacing="-0.02em">
+      StakDock
+    </text>
+  </g>
 
-    <!-- Rating & Domain -->
-    <text x="0" y="44" fill="${subtextColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">
-      <tspan fill="${starColor}">★</tspan> ${rating} on <tspan fill="${tagText}" font-weight="800">stakdock.com</tspan>
+  <!-- Right Upvote / Rating Counter (Product Hunt Style) -->
+  <g transform="translate(186, 11)">
+    <rect width="54" height="32" rx="8" fill="${rightBg}" stroke="${borderColor}" stroke-width="0.5"/>
+    <path d="M21 11L25 16H17L21 11Z" fill="${arrowColor}"/>
+    <text x="27" y="22" fill="${rightText}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" text-anchor="middle">
+      ${rating}
     </text>
   </g>
 </svg>`;
@@ -106,13 +101,4 @@ export async function onRequest(context) {
       'Access-Control-Allow-Origin': '*'
     }
   });
-}
-
-function escapeXml(str) {
-  return String(str || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
 }

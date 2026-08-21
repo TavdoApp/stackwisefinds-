@@ -11,10 +11,10 @@ export default function BadgeEmbedModal({ onClose, defaultToolName = '', default
   const [copied, setCopied] = useState(false);
 
   const cleanSlug = (toolSlug || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-  const badgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(toolName)}&rating=${rating}&style=${badgeStyle}`;
-  const targetUrl = `https://stakdock.com/software/${cleanSlug}`;
+  const badgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&rating=${rating}&style=${badgeStyle}`;
+  const targetUrl = `https://stakdock.com/software/${cleanSlug}/`;
 
-  const embedCode = `<a href="${targetUrl}" target="_blank" rel="noopener"><img src="${badgeUrl}" alt="${toolName} on StakDock 2026" width="270" height="64" /></a>`;
+  const embedCode = `<a href="${targetUrl}" target="_blank" rel="noopener"><img src="${badgeUrl}" alt="${toolName} on StakDock" width="250" height="54" /></a>`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(embedCode);
