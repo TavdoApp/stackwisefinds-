@@ -26,9 +26,13 @@ export default function Footer({ setCurrentView, setLegalView, setSelectedCatego
               <div style={{
                 width: '32px', height: '32px', borderRadius: '8px',
                 background: '#203320', display: 'flex', alignItems: 'center',
-                justifyContent: 'center', border: '1px solid #2E472E'
+                justifyContent: 'center', border: '1px solid #2E472E', padding: '5px'
               }}>
-                <Sparkles size={16} color="#82A735" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" fill="none">
+                  <path d="M256 95L75 178L256 262L437 178L256 95Z" fill="#82A735"/>
+                  <path d="M75 255L256 340L437 255" stroke="#82A735" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M75 335L256 420L437 335" stroke="#82A735" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </div>
               <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
                 stak<span style={{ color: '#82A735' }}>dock</span>

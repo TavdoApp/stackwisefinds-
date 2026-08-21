@@ -349,14 +349,13 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
         </div>
       </div>
 
-      {/* Toolify 6 Sub-Tabs Navigation */}
+      {/* Toolify 5 Sub-Tabs Navigation */}
       <div style={{ display: 'flex', gap: '8px', borderBottom: '2px solid var(--border-color)', marginBottom: '28px', overflowX: 'auto', paddingBottom: '4px' }}>
         {[
           { id: 'product-info', label: 'Product Information' },
           { id: 'reviews', label: `Reviews (${tool.reviewsCount || 120})` },
           { id: 'pricing', label: 'Pricing' },
           { id: 'analytics', label: '📊 Traffic & Analytics' },
-          { id: 'embed', label: '🛡️ Launch Embeds' },
           { id: 'alternatives', label: `Alternatives (${alternatives.length})` }
         ].map(tab => (
           <button
@@ -930,110 +929,7 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
         </div>
       )}
 
-      {/* Tab 5: Launch Embeds */}
-      {activeTab === 'embed' && (
-        <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '32px', marginBottom: '40px', boxShadow: 'var(--shadow-soft)' }}>
-          <div style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#F0F5E5', color: '#456B17', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '800', marginBottom: '12px', textTransform: 'uppercase' }}>
-              <Award size={14} color="#82A735" /> Official Launch Badge
-            </div>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: '800', margin: '0 0 10px', color: 'var(--text-dark)' }}>
-              {tool.name} Launch embeds
-            </h3>
-            <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: '0 0 24px' }}>
-              Use website badges to drive support from your community for your StakDock Launch. They're easy to embed on your homepage, docs, or footer.
-            </p>
-
-            {/* Theme Selector */}
-            <div style={{ display: 'inline-flex', background: '#F1F5F9', padding: '4px', borderRadius: '9999px', gap: '4px', marginBottom: '20px' }}>
-              {[
-                { id: 'light', label: 'Light' },
-                { id: 'neutral', label: 'Neutral' },
-                { id: 'dark', label: 'Dark' }
-              ].map(style => (
-                <button
-                  key={style.id}
-                  type="button"
-                  onClick={() => setInPageBadgeStyle(style.id)}
-                  style={{
-                    padding: '8px 20px',
-                    borderRadius: '9999px',
-                    border: 'none',
-                    fontSize: '0.85rem',
-                    fontWeight: '800',
-                    cursor: 'pointer',
-                    background: inPageBadgeStyle === style.id ? '#82A735' : 'transparent',
-                    color: inPageBadgeStyle === style.id ? '#FFFFFF' : '#64748B',
-                    transition: 'all 0.15s ease'
-                  }}
-                >
-                  {style.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Preview Box */}
-            <div style={{
-              padding: '24px',
-              borderRadius: '16px',
-              background: inPageBadgeStyle === 'dark' ? '#0F170F' : inPageBadgeStyle === 'neutral' ? '#F1F5F9' : '#FFFFFF',
-              border: '1px solid var(--border-color)',
-              display: 'inline-block',
-              marginBottom: '20px'
-            }}>
-              <img
-                src={`/badge/featured_${inPageBadgeStyle}.svg`}
-                alt={`${tool.name} on StakDock`}
-                style={{ width: '250px', height: '60px', display: 'block' }}
-              />
-            </div>
-
-            {/* Embed Code Textarea */}
-            <div style={{ marginBottom: '16px', textAlign: 'left' }}>
-              <label style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '6px' }}>
-                HTML Embed Code
-              </label>
-              <textarea
-                readOnly
-                value={`<a href="https://stakdock.com/software/${tool.id}/?ref=embed" target="_blank" style="cursor: pointer;"><img src="https://stakdock.com/badge/featured_${inPageBadgeStyle}.svg" style="width: 250px; height: 60px;" width="250" height="60" alt="${tool.name} on StakDock: Compare, Reviews & Alternatives"></a>`}
-                rows={3}
-                style={{
-                  width: '100%',
-                  padding: '12px',
-                  borderRadius: '12px',
-                  border: '1px solid var(--border-color)',
-                  background: '#F6F7F2',
-                  fontSize: '0.82rem',
-                  fontFamily: 'monospace',
-                  color: 'var(--text-dark)',
-                  resize: 'none',
-                  outline: 'none'
-                }}
-              />
-            </div>
-
-            {/* Actions */}
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
-              <button
-                type="button"
-                onClick={() => {
-                  const embedSnippet = `<a href="https://stakdock.com/software/${tool.id}/?ref=embed" target="_blank" style="cursor: pointer;"><img src="https://stakdock.com/badge/featured_${inPageBadgeStyle}.svg" style="width: 250px; height: 60px;" width="250" height="60" alt="${tool.name} on StakDock: Compare, Reviews & Alternatives"></a>`;
-                  navigator.clipboard.writeText(embedSnippet);
-                  setInPageBadgeCopied(true);
-                  setTimeout(() => setInPageBadgeCopied(false), 2000);
-                }}
-                className="btn-pill-green"
-                style={{ padding: '10px 24px', fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
-              >
-                {inPageBadgeCopied ? <Check size={16} /> : <Copy size={16} />}
-                <span>{inPageBadgeCopied ? 'Copied HTML Code!' : 'Copy Embed Code'}</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Tab 6: Alternatives */}
+      {/* Tab 5: Alternatives */}
       {activeTab === 'alternatives' && (
         <div style={{ marginBottom: '40px' }}>
           {/* Header */}

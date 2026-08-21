@@ -83,9 +83,13 @@ export default function Navbar({
             <div style={{
               width: '34px', height: '34px', borderRadius: '10px',
               background: '#EBF0E1', display: 'flex', alignItems: 'center',
-              justifyContent: 'center', border: '1px solid #E2E6D8',
+              justifyContent: 'center', border: '1px solid #E2E6D8', padding: '5px'
             }}>
-              <Sparkles size={18} color="#82A735" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 512 512" fill="none">
+                <path d="M256 95L75 178L256 262L437 178L256 95Z" fill="#82A735"/>
+                <path d="M75 255L256 340L437 255" stroke="#82A735" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M75 335L256 420L437 335" stroke="#82A735" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
             <span style={{ fontSize: '1.35rem', fontWeight: '800', color: '#141E14', letterSpacing: '-0.02em' }}>
               stak<span style={{ color: '#82A735' }}>dock</span>

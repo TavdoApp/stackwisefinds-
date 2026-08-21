@@ -5,8 +5,8 @@ export async function onRequest(context) {
   // Read query params
   const styleParam = (url.searchParams.get('style') || 'light').toLowerCase();
 
-  // 3 Color Palettes: Light, Neutral, Dark (Exact Toolify / Product Hunt Standard 250x60)
-  let bgColor, borderColor, brandColor, tagColor, starColor, iconBoxBg, iconSparkle;
+  // 3 Color Palettes: Light, Neutral, Dark (Exact Toolify Standard 250x60)
+  let bgColor, borderColor, brandColor, tagColor, starColor, iconBoxBg, iconStrokeColor, iconPrimary;
 
   if (styleParam === 'dark') {
     bgColor = '#141E14';
@@ -15,7 +15,8 @@ export async function onRequest(context) {
     tagColor = '#82A735';
     starColor = '#82A735';
     iconBoxBg = '#1F2E1F';
-    iconSparkle = '#82A735';
+    iconStrokeColor = '#283C28';
+    iconPrimary = '#82A735';
   } else if (styleParam === 'neutral') {
     bgColor = '#F8FAFC';
     borderColor = '#CBD5E1';
@@ -23,7 +24,8 @@ export async function onRequest(context) {
     tagColor = '#64748B';
     starColor = '#82A735';
     iconBoxBg = '#E2E8F0';
-    iconSparkle = '#334155';
+    iconStrokeColor = '#CBD5E1';
+    iconPrimary = '#334155';
   } else {
     // Light Mode (Default)
     bgColor = '#FFFFFF';
@@ -32,23 +34,26 @@ export async function onRequest(context) {
     tagColor = '#82A735';
     starColor = '#82A735';
     iconBoxBg = '#F0F5E5';
-    iconSparkle = '#82A735';
+    iconStrokeColor = '#E2E6D8';
+    iconPrimary = '#82A735';
   }
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="250" height="60" viewBox="0 0 250 60" fill="none">
-  <!-- Container Box -->
+  <!-- Card Container -->
   <rect x="0.5" y="0.5" width="249" height="59" rx="8" fill="${bgColor}" stroke="${borderColor}" stroke-width="1.2"/>
 
-  <!-- Left StakDock Sparkles Logo Container -->
+  <!-- Left Official Favicon Logo Container -->
   <g transform="translate(14, 12)">
-    <rect width="36" height="36" rx="8" fill="${iconBoxBg}"/>
-    <!-- StakDock Sparkles Vector Mark -->
-    <path d="M18 8L20 14L26 16L20 18L18 24L16 18L10 16L16 14L18 8Z" fill="${iconSparkle}"/>
-    <path d="M25 21L26 24L29 25L26 26L25 29L24 26L21 25L24 24L25 21Z" fill="${iconSparkle}"/>
+    <rect width="36" height="36" rx="8" fill="${iconBoxBg}" stroke="${iconStrokeColor}" stroke-width="0.8"/>
+    <g transform="translate(4, 4) scale(0.0546875)">
+      <path d="M256 95L75 178L256 262L437 178L256 95Z" fill="${iconPrimary}"/>
+      <path d="M75 255L256 340L437 255" stroke="${iconPrimary}" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M75 335L256 420L437 335" stroke="${iconPrimary}" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
   </g>
 
   <!-- Middle Brand Typography -->
-  <g transform="translate(60, 15)">
+  <g transform="translate(58, 15)">
     <!-- Small Top Label -->
     <text x="0" y="11" fill="${tagColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="800" letter-spacing="0.06em">
       FEATURED ON
