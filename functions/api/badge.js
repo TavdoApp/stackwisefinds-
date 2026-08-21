@@ -6,58 +6,94 @@ export async function onRequest(context) {
   const toolSlug = url.searchParams.get('tool') || 'software';
   const rawName = url.searchParams.get('name');
   const rawRating = url.searchParams.get('rating');
-  const style = url.searchParams.get('style') || 'dark';
+  const styleParam = (url.searchParams.get('style') || 'dark').toLowerCase();
 
   // Format Tool Name and Rating
   const toolName = rawName 
     ? rawName 
-    : toolSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).slice(0, 24);
+    : toolSlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()).slice(0, 22);
 
   const rating = rawRating ? parseFloat(rawRating).toFixed(1) : '4.9';
 
-  // Color schemes
-  const isDark = style !== 'light';
-  const bgColor = isDark ? '#141E14' : '#FFFFFF';
-  const borderColor = isDark ? '#2C3E2C' : '#E2E8F0';
-  const textColor = isDark ? '#FFFFFF' : '#0F172A';
-  const subtextColor = isDark ? 'rgba(255,255,255,0.7)' : '#64748B';
-  const accentGreen = '#82A735';
+  // 3 Color Palettes: Light, Neutral, Dark (Product Hunt grade)
+  let bgColor1, bgColor2, borderColor, textColor, subtextColor, tagBg, tagText, iconBg, iconColor, starColor;
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="270" height="64" viewBox="0 0 270 64" fill="none">
+  if (styleParam === 'light') {
+    bgColor1 = '#FFFFFF';
+    bgColor2 = '#F8FAFC';
+    borderColor = '#E2E8F0';
+    textColor = '#0F172A';
+    subtextColor = '#64748B';
+    tagBg = '#EEF6E2';
+    tagText = '#456B17';
+    iconBg = '#82A735';
+    iconColor = '#FFFFFF';
+    starColor = '#EAB308';
+  } else if (styleParam === 'neutral') {
+    bgColor1 = '#F8FAFC';
+    bgColor2 = '#EEF2F6';
+    borderColor = '#CBD5E1';
+    textColor = '#1E293B';
+    subtextColor = '#475569';
+    tagBg = '#E2E8F0';
+    tagText = '#334155';
+    iconBg = '#0F172A';
+    iconColor = '#FFFFFF';
+    starColor = '#F59E0B';
+  } else {
+    // Dark (Default)
+    bgColor1 = '#141E14';
+    bgColor2 = '#0D140D';
+    borderColor = '#283C28';
+    textColor = '#FFFFFF';
+    subtextColor = 'rgba(255,255,255,0.75)';
+    tagBg = 'rgba(130,167,53,0.18)';
+    tagText = '#82A735';
+    iconBg = '#82A735';
+    iconColor = '#FFFFFF';
+    starColor = '#FACC15';
+  }
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="280" height="66" viewBox="0 0 280 66" fill="none">
   <defs>
-    <linearGradient id="badgeGrad" x1="0" y1="0" x2="270" y2="64" gradientUnits="userSpaceOnUse">
-      <stop stop-color="${bgColor}"/>
-      <stop offset="1" stop-color="${isDark ? '#1C2B1C' : '#F8FAFC'}"/>
+    <linearGradient id="badgeBg" x1="0" y1="0" x2="280" y2="66" gradientUnits="userSpaceOnUse">
+      <stop stop-color="${bgColor1}"/>
+      <stop offset="1" stop-color="${bgColor2}"/>
     </linearGradient>
-    <filter id="badgeShadow" x="0" y="0" width="270" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/>
+    <filter id="badgeShadow" x="-2" y="0" width="284" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
     </filter>
   </defs>
 
-  <!-- Background Container -->
-  <rect width="270" height="64" rx="14" fill="url(#badgeGrad)" stroke="${borderColor}" stroke-width="1.5" filter="url(#badgeShadow)"/>
+  <!-- Card Background -->
+  <rect x="1" y="1" width="278" height="64" rx="14" fill="url(#badgeBg)" stroke="${borderColor}" stroke-width="1.5" filter="url(#badgeShadow)"/>
 
-  <!-- Left Accent Trophy Icon -->
-  <g transform="translate(14, 16)">
-    <rect width="32" height="32" rx="8" fill="${accentGreen}" fill-opacity="0.15" stroke="${accentGreen}" stroke-width="1"/>
-    <path d="M16 8L18.5 13L24 13.8L20 17.7L21 23.2L16 20.6L11 23.2L12 17.7L8 13.8L13.5 13L16 8Z" fill="${accentGreen}"/>
+  <!-- Left Icon Emblem Container -->
+  <g transform="translate(14, 15)">
+    <rect width="36" height="36" rx="10" fill="${iconBg}" />
+    <!-- Dynamic StakDock Launch Icon -->
+    <path d="M18 7L24 15H20V23H16V15H12L18 7Z" fill="${iconColor}"/>
+    <circle cx="18" cy="27" r="1.5" fill="${iconColor}"/>
   </g>
 
   <!-- Text Hierarchy -->
-  <g transform="translate(56, 12)">
-    <!-- Subtitle / Verification Tag -->
-    <text x="0" y="11" fill="${accentGreen}" font-family="system-ui, -apple-system, sans-serif" font-size="9" font-weight="800" letter-spacing="0.06em">
-      🏆 TOP RANKED 2026
-    </text>
+  <g transform="translate(60, 14)">
+    <!-- Verification / Category Tag -->
+    <g transform="translate(0, 0)">
+      <rect width="96" height="15" rx="4" fill="${tagBg}"/>
+      <text x="6" y="11" fill="${tagText}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="8.5" font-weight="800" letter-spacing="0.05em">
+        FEATURED ON
+      </text>
+    </g>
 
     <!-- Main Software Name -->
-    <text x="0" y="27" fill="${textColor}" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800">
+    <text x="0" y="30" fill="${textColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="900" letter-spacing="-0.01em">
       ${escapeXml(toolName)}
     </text>
 
     <!-- Rating & Domain -->
-    <text x="0" y="40" fill="${subtextColor}" font-family="system-ui, -apple-system, sans-serif" font-size="9.5" font-weight="600">
-      ⭐ ${rating}/5.0 on <tspan fill="${accentGreen}" font-weight="800">stakdock.com</tspan>
+    <text x="0" y="44" fill="${subtextColor}" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600">
+      <tspan fill="${starColor}">★</tspan> ${rating} on <tspan fill="${tagText}" font-weight="800">stakdock.com</tspan>
     </text>
   </g>
 </svg>`;

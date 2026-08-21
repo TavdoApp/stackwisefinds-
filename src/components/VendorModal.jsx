@@ -24,6 +24,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedBadge, setCopiedBadge] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [selectedBadgeStyle, setSelectedBadgeStyle] = useState('dark');
   const [errorMsg, setErrorMsg] = useState('');
 
   const dodoProductMap = {
@@ -340,14 +341,51 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
 
                 {(() => {
                   const cleanSlug = (softwareName || 'software').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                  const badgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(softwareName || 'Software')}&rating=4.9&style=dark`;
-                  const embedCode = `<a href="https://stakdock.com/software/${cleanSlug}/" target="_blank" rel="noopener"><img src="${badgeUrl}" alt="${softwareName || 'Software'} on StakDock 2026" width="270" height="64" /></a>`;
+                  const badgeUrl = `https://stakdock.com/api/badge?tool=${encodeURIComponent(cleanSlug)}&name=${encodeURIComponent(softwareName || 'Software')}&rating=4.9&style=${selectedBadgeStyle}`;
+                  const embedCode = `<a href="https://stakdock.com/software/${cleanSlug}/" target="_blank" rel="noopener"><img src="${badgeUrl}" alt="${softwareName || 'Software'} on StakDock 2026" width="280" height="66" /></a>`;
 
                   return (
                     <div>
-                      <div style={{ textAlign: 'center', margin: '8px 0 12px' }}>
-                        <img src={badgeUrl} alt="StakDock Badge Preview" style={{ maxWidth: '240px', height: 'auto', borderRadius: '10px' }} />
+                      {/* Style Tabs */}
+                      <div style={{ display: 'flex', gap: '6px', marginBottom: '12px' }}>
+                        {[
+                          { id: 'light', label: 'Light', bg: '#FFFFFF', text: '#0F172A' },
+                          { id: 'neutral', label: 'Neutral', bg: '#F1F5F9', text: '#1E293B' },
+                          { id: 'dark', label: 'Dark', bg: '#141E14', text: '#FFFFFF' }
+                        ].map(st => (
+                          <button
+                            key={st.id}
+                            type="button"
+                            onClick={() => setSelectedBadgeStyle(st.id)}
+                            style={{
+                              flex: 1,
+                              padding: '6px 4px',
+                              borderRadius: '8px',
+                              border: selectedBadgeStyle === st.id ? '2px solid #82A735' : '1px solid var(--border-color)',
+                              background: st.bg,
+                              color: st.text,
+                              fontWeight: '800',
+                              fontSize: '0.76rem',
+                              cursor: 'pointer',
+                              textAlign: 'center'
+                            }}
+                          >
+                            {st.label}
+                          </button>
+                        ))}
                       </div>
+
+                      {/* Dynamic Badge Preview */}
+                      <div style={{
+                        textAlign: 'center',
+                        margin: '8px 0 12px',
+                        padding: '12px',
+                        background: selectedBadgeStyle === 'dark' ? '#0F170F' : selectedBadgeStyle === 'neutral' ? '#E2E8F0' : '#F8FAFC',
+                        borderRadius: '12px'
+                      }}>
+                        <img src={badgeUrl} alt="StakDock Badge Preview" style={{ maxWidth: '260px', height: 'auto', borderRadius: '10px' }} />
+                      </div>
+
                       <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                         <input
                           type="text"

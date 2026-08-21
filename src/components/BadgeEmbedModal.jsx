@@ -131,40 +131,56 @@ export default function BadgeEmbedModal({ onClose, defaultToolName = '', default
 
             <div>
               <label style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
-                Badge Theme
+                Badge Theme (Product Hunt Style)
               </label>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <button
-                  onClick={() => setBadgeStyle('dark')}
-                  style={{
-                    flex: 1,
-                    padding: '8px',
-                    borderRadius: '10px',
-                    border: badgeStyle === 'dark' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                    background: '#141E14',
-                    color: '#FFFFFF',
-                    fontWeight: '700',
-                    fontSize: '0.82rem',
-                    cursor: 'pointer'
-                  }}
-                >
-                  Dark
-                </button>
+              <div style={{ display: 'flex', gap: '6px' }}>
                 <button
                   onClick={() => setBadgeStyle('light')}
                   style={{
                     flex: 1,
-                    padding: '8px',
-                    borderRadius: '10px',
+                    padding: '7px 4px',
+                    borderRadius: '8px',
                     border: badgeStyle === 'light' ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: '#FFFFFF',
                     color: '#0F172A',
-                    fontWeight: '700',
-                    fontSize: '0.82rem',
+                    fontWeight: '800',
+                    fontSize: '0.78rem',
                     cursor: 'pointer'
                   }}
                 >
                   Light
+                </button>
+                <button
+                  onClick={() => setBadgeStyle('neutral')}
+                  style={{
+                    flex: 1,
+                    padding: '7px 4px',
+                    borderRadius: '8px',
+                    border: badgeStyle === 'neutral' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: '#F1F5F9',
+                    color: '#1E293B',
+                    fontWeight: '800',
+                    fontSize: '0.78rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Neutral
+                </button>
+                <button
+                  onClick={() => setBadgeStyle('dark')}
+                  style={{
+                    flex: 1,
+                    padding: '7px 4px',
+                    borderRadius: '8px',
+                    border: badgeStyle === 'dark' ? '2px solid #82A735' : '1px solid var(--border-color)',
+                    background: '#141E14',
+                    color: '#FFFFFF',
+                    fontWeight: '800',
+                    fontSize: '0.78rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Dark
                 </button>
               </div>
             </div>
