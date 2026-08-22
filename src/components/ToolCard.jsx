@@ -187,10 +187,10 @@ export default function ToolCard({
         </div>
 
         {/* Action CTAs */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginLeft: 'auto', flexWrap: 'nowrap' }}>
+        <div className="tool-card-actions-wrapper" style={{ display: 'flex', alignItems: 'center', gap: '6px', marginLeft: 'auto' }}>
           <button
             onClick={() => onToggleBookmark && onToggleBookmark(tool.id)}
-            className="btn-pill-outline"
+            className="btn-pill-outline tool-action-btn"
             aria-label={`Save ${tool.name} to stack`}
             style={{
               padding: '5px 10px',
@@ -206,11 +206,11 @@ export default function ToolCard({
             </span>
           </button>
 
-          <UpvoteButton tool={tool} size="sm" />
+          <UpvoteButton tool={tool} size="sm" className="tool-action-btn" />
 
           <button
             onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
-            className="btn-pill-outline"
+            className="btn-pill-outline tool-action-btn"
             aria-label={`Review ${tool.name}`}
             style={{ padding: '5px 10px', fontSize: '0.75rem' }}
           >
@@ -226,7 +226,7 @@ export default function ToolCard({
               e.stopPropagation();
               trackAffiliateClick(tool.id, tool.affiliateUrl);
             }}
-            className="btn-pill-green"
+            className="btn-pill-green tool-primary-btn"
             style={{ padding: '6px 14px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}
           >
             <span>Visit Site</span>

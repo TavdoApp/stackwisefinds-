@@ -319,18 +319,27 @@ export default function Navbar({
                   Navigate
                 </div>
                 {[
-                  { label: t.navDirectory || 'Software Directory', icon: <Compass size={18} color="#82A735" />, view: 'directory' },
-                  { label: t.navGuides || 'Buyer Guides', icon: <BookOpen size={18} color="#82A735" />, view: 'articles' },
+                  { label: t.navDirectory || 'Software Directory', icon: <Compass size={18} color="#82A735" />, view: 'directory', path: '/' },
+                  { label: 'Browse Categories', icon: <Compass size={18} color="#82A735" />, view: 'category-grid', path: '/categories' },
+                  { label: 'Leaderboard & Rankings', icon: <Sparkles size={18} color="#82A735" />, view: 'ranking', path: '/ranking' },
+                  { label: 'Advertise & Sponsor', icon: <PlusCircle size={18} color="#82A735" />, view: 'advertise', path: '/pricing' },
+                  { label: t.navGuides || 'Buyer Guides', icon: <BookOpen size={18} color="#82A735" />, view: 'articles', path: '/guides' },
                 ].map(item => (
                   <button
                     key={item.view}
-                    onClick={() => handleMobileNav(() => setCurrentView(item.view))}
+                    onClick={() => handleMobileNav(() => {
+                      setCurrentView(item.view);
+                      if (item.path) {
+                        window.history.pushState(null, '', item.path);
+                        window.scrollTo(0, 0);
+                      }
+                    })}
                     style={{
                       display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                      width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '6px',
+                      width: '100%', padding: '12px 14px', borderRadius: '12px', marginBottom: '6px',
                       background: currentView === item.view ? '#EBF0E1' : '#F6F7F2',
                       border: currentView === item.view ? '1px solid #82A735' : '1px solid transparent',
-                      fontWeight: '700', fontSize: '0.95rem', color: '#141E14', cursor: 'pointer',
+                      fontWeight: '700', fontSize: '0.9rem', color: '#141E14', cursor: 'pointer',
                       transition: 'all 0.15s ease',
                     }}
                   >

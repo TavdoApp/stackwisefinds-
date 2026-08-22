@@ -182,12 +182,13 @@ export default function CategoryNav({
       </div>
 
       {/* Single-Row Horizontal Scrollable Category Bar with Left/Right Arrows */}
-      <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
+      <div style={{ position: 'relative', display: 'flex', alignItems: 'center', width: '100%', maxWidth: '100%', overflow: 'hidden' }}>
         <button
           onClick={() => scroll('left')}
+          className="hide-mobile"
           style={{
             position: 'absolute',
-            left: '-14px',
+            left: '2px',
             zIndex: 2,
             width: '32px',
             height: '32px',
@@ -209,12 +210,14 @@ export default function CategoryNav({
           ref={scrollContainerRef}
           style={{
             display: 'flex',
-            gap: '10px',
+            gap: '8px',
             overflowX: 'auto',
             scrollBehavior: 'smooth',
-            padding: '6px 20px',
+            padding: '6px 4px',
             scrollbarWidth: 'none',
-            msOverflowStyle: 'none'
+            msOverflowStyle: 'none',
+            width: '100%',
+            WebkitOverflowScrolling: 'touch'
           }}
           className="hide-scrollbar"
         >
@@ -254,9 +257,10 @@ export default function CategoryNav({
 
         <button
           onClick={() => scroll('right')}
+          className="hide-mobile"
           style={{
             position: 'absolute',
-            right: '-14px',
+            right: '2px',
             zIndex: 2,
             width: '32px',
             height: '32px',

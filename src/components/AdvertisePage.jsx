@@ -103,7 +103,7 @@ export default function AdvertisePage({ onOpenVendorModal }) {
     },
     {
       q: 'Can I edit my tool details (logo, tagline, pricing, link) after publishing?',
-      a: 'Yes! You can update your tool metadata, add special discount codes, or update your URL at any time by contacting support@stakdock.com or through your founder claim dashboard.'
+      a: 'Yes! You can update your tool metadata, add special discount codes, or update your URL at any time by clicking "Claim & Verify Profile" on your software listing page, or by emailing our founder concierge team at support@stakdock.com.'
     },
     {
       q: 'Do I get an official Dofollow SEO backlink?',

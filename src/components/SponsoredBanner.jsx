@@ -61,7 +61,7 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
     <div style={{
       background: 'linear-gradient(90deg, #EBF3D8 0%, #E2EECA 50%, #D4E6B3 100%)',
       color: '#141E14',
-      padding: '7px 16px',
+      padding: '7px 12px',
       fontSize: '0.82rem',
       fontWeight: '600',
       borderBottom: '1px solid #C2DC8E',
@@ -70,19 +70,21 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      gap: '12px',
-      whiteSpace: 'nowrap',
-      overflowX: 'auto',
-      WebkitOverflowScrolling: 'touch'
+      gap: '8px',
+      width: '100%',
+      maxWidth: '100vw',
+      boxSizing: 'border-box',
+      overflowX: 'hidden'
     }}>
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', flexShrink: 0, minWidth: 0 }}>
         <span style={{
           color: '#4A5D4A',
           fontSize: '0.78rem',
           fontWeight: '700',
           display: 'inline-flex',
           alignItems: 'center',
-          gap: '4px'
+          gap: '4px',
+          flexShrink: 0
         }}>
           <Sparkles size={13} color="#82A735" />
           Sponsored by
@@ -93,7 +95,8 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
           alignItems: 'center',
           gap: '6px',
           opacity: isFading ? 0 : 1,
-          transition: 'opacity 0.3s ease-in-out'
+          transition: 'opacity 0.3s ease-in-out',
+          minWidth: 0
         }}>
           <a 
             href={activeSponsor.url} 
@@ -110,7 +113,8 @@ export default function SponsoredBanner({ onOpenVendorModal, customSponsors = []
               display: 'inline-flex',
               alignItems: 'center',
               gap: '4px',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              flexShrink: 0
             }}
           >
             <span>{activeSponsor.name}</span>

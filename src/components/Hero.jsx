@@ -87,10 +87,12 @@ export default function Hero({
           background: '#FFFFFF',
           border: '1.5px solid #82A735',
           borderRadius: '9999px',
-          padding: '5px 14px 5px 8px',
+          padding: '5px 12px 5px 8px',
           marginBottom: '20px',
           boxShadow: '0 4px 14px rgba(130, 167, 53, 0.12)',
-          transition: 'all 0.3s ease'
+          transition: 'all 0.3s ease',
+          maxWidth: '100%',
+          boxSizing: 'border-box'
         }}>
           <span style={{
             fontSize: '0.68rem',
@@ -100,29 +102,39 @@ export default function Hero({
             padding: '2px 8px',
             borderRadius: '9999px',
             letterSpacing: '0.04em',
-            textTransform: 'uppercase'
+            textTransform: 'uppercase',
+            flexShrink: 0
           }}>
             SPONSORED
           </span>
           <a 
             href={currentSponsor.url} 
             style={{
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
               textDecoration: 'none',
               color: 'var(--text-dark)',
               fontSize: '0.84rem',
-              fontWeight: '700'
+              fontWeight: '700',
+              minWidth: 0,
+              overflow: 'hidden'
             }}
           >
             <img 
               src={`https://www.google.com/s2/favicons?domain=${currentSponsor.domain}&sz=64`} 
               alt={currentSponsor.name} 
-              style={{ width: '16px', height: '16px', borderRadius: '4px' }} 
+              style={{ width: '16px', height: '16px', borderRadius: '4px', flexShrink: 0 }} 
             />
-            <span><strong>{currentSponsor.name}</strong> — {currentSponsor.tagline}</span>
-            <span style={{ color: '#82A735', fontWeight: '800' }}>&rarr;</span>
+            <span style={{
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              maxWidth: 'min(500px, calc(100vw - 160px))'
+            }}>
+              <strong>{currentSponsor.name}</strong> — {currentSponsor.tagline}
+            </span>
+            <span style={{ color: '#82A735', fontWeight: '800', flexShrink: 0 }}>&rarr;</span>
           </a>
         </div>
 
