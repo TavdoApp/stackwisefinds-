@@ -266,7 +266,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                   <Rocket size={16} color="#82A735" />
                   <span>1. Collect Upvotes & Rank #1 (Reach 50,000+ Buyers)</span>
                 </div>
-                <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0 0 12px; line-height: 1.4;">
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: '0 0 12px', lineHeight: '1.4' }}>
                   Community upvotes push your tool to the top of our daily leaderboard. Share your launch link to start ranking:
                 </p>
 

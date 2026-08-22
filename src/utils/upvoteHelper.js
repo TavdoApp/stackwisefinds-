@@ -42,7 +42,7 @@ export function getBaseVotes(tool) {
   return Math.max(45, seed + variance);
 }
 
-// Product Hunt-Style Milestone Badge Engine
+// StakDock Official Milestone Badge Engine
 export function getGamifiedBadge(upvoteCount) {
   const votes = Number(upvoteCount) || 1;
   if (votes >= 250) {

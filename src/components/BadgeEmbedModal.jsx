@@ -131,7 +131,7 @@ export default function BadgeEmbedModal({ onClose, defaultToolName = '', default
 
             <div>
               <label style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
-                Badge Theme (Product Hunt Style)
+                Official StakDock Badge Theme
               </label>
               <div style={{ display: 'flex', gap: '6px' }}>
                 <button
