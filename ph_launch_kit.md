@@ -71,10 +71,10 @@ Would love to hear your thoughts and feedback in the comments below! 🚀
 > Are you building an AI tool or SaaS app?  
 > List your tool on StakDock for free, or grab the official 2026 Verified Founder Badge to embed on your landing page.  
 > 
-> Submit here: https://stakdock.com/#pricing
+> Submit here: https://stakdock.com/pricing/
 
 ### Tweet 5 (Call to Action):
-> Explore StakDock live today: https://stakdock.com  
+> Explore StakDock live today: https://stakdock.com/  
 > 
 > If you find it useful, give us an upvote on Product Hunt!  
 > Retweet the first tweet if you believe in transparent, zero-fluff software tools 🚀
