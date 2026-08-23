@@ -162,10 +162,35 @@ export async function onRequestPost(context) {
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN category TEXT').run(); } catch {}
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN package_type TEXT').run(); } catch {}
         try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN expires_at TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN tagline TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN pricing TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN has_lifetime_deal INTEGER').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN deal_platform TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN deal_price TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN deal_discount TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN deal_url TEXT').run(); } catch {}
+        try { await env.DB.prepare('ALTER TABLE vendor_submissions ADD COLUMN deal_highlights TEXT').run(); } catch {}
 
         const insertRes = await env.DB.prepare(
-          'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
-        ).bind(vendorName, softwareName, softwareWebsite, vendorEmail, category, packageType, expiresAt, status).run();
+          'INSERT INTO vendor_submissions (vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status, tagline, pricing, has_lifetime_deal, deal_platform, deal_price, deal_discount, deal_url, deal_highlights) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+        ).bind(
+          vendorName,
+          softwareName,
+          softwareWebsite,
+          vendorEmail,
+          category,
+          packageType,
+          expiresAt,
+          status,
+          tagline,
+          pricing,
+          hasLifetimeDeal ? 1 : 0,
+          dealPlatform,
+          dealPrice,
+          dealDiscount,
+          dealUrl,
+          dealHighlights
+        ).run();
 
         if (insertRes && insertRes.meta && insertRes.meta.last_row_id) {
           insertedId = insertRes.meta.last_row_id;

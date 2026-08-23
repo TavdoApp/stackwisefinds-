@@ -25,7 +25,7 @@ export async function onRequestGet(context) {
         `).run();
 
         const res = await env.DB.prepare(
-          'SELECT id, vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
+          'SELECT id, vendor_name, software_name, software_website, vendor_email, category, package_type, expires_at, status, tagline, pricing, has_lifetime_deal, deal_platform, deal_price, deal_discount, deal_url, deal_highlights, created_at FROM vendor_submissions WHERE status = "approved" ORDER BY id DESC LIMIT 100'
         ).all();
         results = res.results || [];
       } catch (dbErr) {
@@ -49,11 +49,14 @@ export async function onRequestGet(context) {
       let normCat = (sub.category || 'ai-tools').toLowerCase();
       if (normCat.includes('commerce') || normCat.includes('funnel') || normCat.includes('store')) normCat = 'e-commerce';
 
+      const hasDeal = sub.has_lifetime_deal === 1 || !!sub.has_lifetime_deal || !!sub.deal_price;
+
       return {
         id: slug || `vendor-${sub.id}`,
         name: sub.software_name,
         domain: domain,
-        description: `${sub.software_name} - Verified SaaS platform submitted by founder ${sub.vendor_name}.`,
+        description: sub.tagline || `${sub.software_name} - Verified SaaS platform submitted by founder ${sub.vendor_name}.`,
+        tagline: sub.tagline || '',
         category: normCat,
         rating: 4.9,
         reviewsCount: 18,
@@ -61,17 +64,24 @@ export async function onRequestGet(context) {
         isNewLaunch: true,
         featured: isPaid,
         isFeatured: effectivePackage === 'premium',
-        pricing: 'Freemium',
-        pricingModel: 'Freemium',
+        pricing: sub.pricing || 'Freemium',
+        pricingModel: sub.pricing || 'Freemium',
         isFreeTier: true,
         isOpenSource: false,
-        affiliateUrl: sub.software_website,
+        affiliateUrl: sub.deal_url || sub.software_website,
         websiteUrl: sub.software_website,
         submittedByVendor: true,
         packageType: effectivePackage,
         isTopBanner: effectivePackage === 'top-banner',
         isInFeed: effectivePackage === 'in-feed',
-        badge: effectivePackage === 'in-feed' ? '⚡ Spotlight Sponsor' : effectivePackage === 'top-banner' ? '🔥 Top Banner Sponsor' : effectivePackage === 'premium' ? '⭐ Featured Pro' : 'Verified Tool',
+        badge: effectivePackage === 'in-feed' ? '⚡ Spotlight Sponsor' : effectivePackage === 'top-banner' ? '🔥 Top Banner Sponsor' : effectivePackage === 'premium' ? '⭐ Featured Pro' : (hasDeal ? '🔥 Lifetime Deal' : 'Verified Tool'),
+        hasLifetimeDeal: hasDeal,
+        dealPlatform: sub.deal_platform || 'AppSumo',
+        dealPrice: sub.deal_price || '',
+        dealDiscount: sub.deal_discount || '',
+        dealUrl: sub.deal_url || '',
+        lifetimeDealUrl: sub.deal_url || '',
+        dealHighlights: sub.deal_highlights || '',
         submittedAt: sub.created_at,
         expiresAt: sub.expires_at
       };

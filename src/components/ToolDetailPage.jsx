@@ -227,18 +227,18 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
               <span>Share & Upvote</span>
             </button>
 
-            {tool.lifetimeDealUrl && (
+            {(tool.dealUrl || tool.lifetimeDealUrl) && (
               <a
-                href={tool.lifetimeDealUrl}
+                href={tool.dealUrl || tool.lifetimeDealUrl}
                 target="_blank"
-                rel={relAttr}
-                onClick={() => trackAffiliateClick(tool.id, tool.lifetimeDealUrl)}
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick(tool.id, tool.dealUrl || tool.lifetimeDealUrl)}
                 className="btn-pill-dark"
                 style={{
                   padding: '14px 24px',
                   fontSize: '0.98rem',
                   textDecoration: 'none',
-                  background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 1000%)',
+                  background: 'linear-gradient(135deg, #FF6B00 0%, #EA580C 100%)',
                   color: '#FFFFFF',
                   border: 'none',
                   display: 'inline-flex',
@@ -249,7 +249,7 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
                 }}
               >
                 <Gift size={18} />
-                <span>Claim Lifetime Deal</span>
+                <span>🔥 Claim {tool.dealPrice ? `${tool.dealPrice} LTD` : 'Lifetime Deal'}</span>
               </a>
             )}
             <a
@@ -265,6 +265,75 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
             </a>
           </div>
         </div>
+
+        {/* Lifetime Deal Spotlight Box */}
+        {(tool.hasLifetimeDeal || tool.dealPrice || tool.dealUrl || tool.lifetimeDealUrl) && (
+          <div style={{
+            margin: '20px 0 24px 0',
+            background: 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)',
+            border: '1.5px solid #F97316',
+            borderRadius: '16px',
+            padding: '20px 24px',
+            boxShadow: '0 4px 16px rgba(234, 88, 12, 0.12)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px'
+          }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <span style={{
+                  background: '#EA580C',
+                  color: '#FFFFFF',
+                  fontSize: '0.72rem',
+                  fontWeight: '900',
+                  padding: '3px 10px',
+                  borderRadius: '6px',
+                  textTransform: 'uppercase'
+                }}>
+                  🔥 ACTIVE {tool.dealPlatform || 'LIFETIME'} DEAL
+                </span>
+                {tool.dealDiscount && (
+                  <span style={{ fontSize: '0.82rem', fontWeight: '800', color: '#C2410C' }}>
+                    {tool.dealDiscount}
+                  </span>
+                )}
+              </div>
+              <div style={{ fontSize: '1.25rem', fontWeight: '800', color: '#9A3412' }}>
+                {tool.dealPrice ? `${tool.dealPrice} One-Time Lifetime Access` : 'Exclusive Lifetime Deal Available'}
+              </div>
+              <p style={{ fontSize: '0.88rem', color: '#7C2D12', margin: '4px 0 0 0', fontWeight: '500' }}>
+                {tool.dealHighlights || 'Pay once, own forever with lifetime updates and zero recurring subscription fees.'}
+              </p>
+            </div>
+
+            {(tool.dealUrl || tool.lifetimeDealUrl || tool.affiliateUrl) && (
+              <a
+                href={tool.dealUrl || tool.lifetimeDealUrl || tool.affiliateUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackAffiliateClick(tool.id, tool.dealUrl || tool.lifetimeDealUrl || tool.affiliateUrl)}
+                style={{
+                  background: 'linear-gradient(135deg, #EA580C 0%, #C2410C 100%)',
+                  color: '#FFFFFF',
+                  padding: '12px 22px',
+                  borderRadius: '9999px',
+                  fontWeight: '800',
+                  fontSize: '0.92rem',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  boxShadow: '0 4px 12px rgba(234, 88, 12, 0.3)'
+                }}
+              >
+                <span>Claim Deal on {tool.dealPlatform || 'AppSumo'}</span>
+                <ArrowUpRight size={16} />
+              </a>
+            )}
+          </div>
+        )}
 
         {/* Introduction */}
         <p style={{ fontSize: '1.08rem', color: 'var(--text-dark)', lineHeight: '1.6', marginBottom: nextMilestone ? '16px' : '24px' }}>
@@ -810,6 +879,71 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
           <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '24px' }}>
             Official pricing classification: <strong style={{ color: '#82A735' }}>{tool.pricing}</strong>
           </p>
+
+          {(tool.hasLifetimeDeal || tool.dealPrice || tool.dealUrl || tool.lifetimeDealUrl) && (
+            <div style={{
+              background: 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)',
+              border: '2px solid #F97316',
+              borderRadius: '20px',
+              padding: '24px',
+              marginBottom: '28px',
+              boxShadow: '0 4px 16px rgba(234, 88, 12, 0.15)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                    <span style={{
+                      background: '#EA580C',
+                      color: '#FFFFFF',
+                      fontSize: '0.75rem',
+                      fontWeight: '900',
+                      padding: '3px 10px',
+                      borderRadius: '6px',
+                      textTransform: 'uppercase'
+                    }}>
+                      🔥 {tool.dealPlatform || 'LIFETIME'} DEAL
+                    </span>
+                    {tool.dealDiscount && (
+                      <span style={{ fontSize: '0.88rem', fontWeight: '800', color: '#C2410C' }}>
+                        {tool.dealDiscount}
+                      </span>
+                    )}
+                  </div>
+                  <h4 style={{ fontSize: '1.4rem', fontWeight: '800', color: '#9A3412', margin: '0 0 6px 0' }}>
+                    {tool.dealPrice ? `${tool.dealPrice} One-Time Payment` : 'Lifetime Access Offer'}
+                  </h4>
+                  <p style={{ fontSize: '0.9rem', color: '#7C2D12', margin: 0 }}>
+                    {tool.dealHighlights || 'Get full lifetime updates, unrestricted core access, and zero recurring monthly fees.'}
+                  </p>
+                </div>
+
+                {(tool.dealUrl || tool.lifetimeDealUrl || tool.affiliateUrl) && (
+                  <a
+                    href={tool.dealUrl || tool.lifetimeDealUrl || tool.affiliateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackAffiliateClick(tool.id, tool.dealUrl || tool.lifetimeDealUrl || tool.affiliateUrl)}
+                    style={{
+                      background: 'linear-gradient(135deg, #EA580C 0%, #C2410C 100%)',
+                      color: '#FFFFFF',
+                      padding: '14px 28px',
+                      borderRadius: '9999px',
+                      fontWeight: '800',
+                      fontSize: '0.98rem',
+                      textDecoration: 'none',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      boxShadow: '0 4px 14px rgba(234, 88, 12, 0.35)'
+                    }}
+                  >
+                    <span>Claim Lifetime Deal</span>
+                    <ArrowUpRight size={18} />
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '20px' }}>
             {/custom|demo|quote/i.test(tool.pricing || '') ? (
