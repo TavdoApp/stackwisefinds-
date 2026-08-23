@@ -493,8 +493,29 @@ export default function App() {
     const matchesTrending = !filterTrendingOnly || (tool.packageType === 'premium' || tool.packageType === 'in-feed' || tool.packageType === 'top-banner' || tool.badge?.includes('TRENDING') || tool.badge?.includes('LAUNCH') || tool.badge?.includes('STANDARD') || (tool.rating || 0) >= 4.8);
 
     const matchesQuick = () => {
-      if (quickFilter === 'new') return tool.isNewLaunch || tool.submittedByVendor || tool.featured || tool.autoQualifiedAt || tool.badge?.includes('LAUNCH') || tool.badge?.includes('NEW') || tool.badge?.includes('STANDARD');
-      if (quickFilter === 'deals') return Boolean(tool.lifetimeDealUrl || tool.hasDeal || tool.pricing?.toLowerCase().includes('freemium') || tool.pricing?.toLowerCase().includes('trial'));
+      if (quickFilter === 'new') {
+        return Boolean(
+          tool.isNewLaunch || 
+          tool.submittedByVendor || 
+          tool.autoQualifiedAt || 
+          tool.badge?.includes('Launch') || 
+          tool.badge?.includes('Deal') || 
+          tool.badge?.includes('New') || 
+          tool.badge?.includes('Spotlight') ||
+          tool.hasLifetimeDeal
+        );
+      }
+      if (quickFilter === 'deals') {
+        return Boolean(
+          tool.hasLifetimeDeal ||
+          tool.dealUrl || 
+          tool.lifetimeDealUrl || 
+          tool.dealPrice ||
+          tool.pricing?.toLowerCase().includes('ltd') ||
+          tool.pricing?.toLowerCase().includes('lifetime') ||
+          tool.pricing?.toLowerCase().includes('deal')
+        );
+      }
       if (quickFilter === 'free') return tool.pricing?.toLowerCase().includes('free') || tool.isOpenSource || tool.isFreeTier;
       return true;
     };
@@ -503,13 +524,33 @@ export default function App() {
   });
 
   const sortedTools = [...filteredTools].sort((a, b) => {
+    // When "Just Launched" is active, strictly sort by newest launch first
+    if (quickFilter === 'new') {
+      const aIsPaid = a.packageType === 'in-feed' || a.packageType === 'top-banner' || a.packageType === 'premium';
+      const bIsPaid = b.packageType === 'in-feed' || b.packageType === 'top-banner' || b.packageType === 'premium';
+      if (aIsPaid && !bIsPaid) return -1;
+      if (!aIsPaid && bIsPaid) return 1;
+
+      const timeA = a.submittedAt ? new Date(a.submittedAt).getTime() : (a.submittedByVendor || a.isNewLaunch ? 2000000000000 : 0);
+      const timeB = b.submittedAt ? new Date(b.submittedAt).getTime() : (b.submittedByVendor || b.isNewLaunch ? 2000000000000 : 0);
+      if (timeB !== timeA) return timeB - timeA;
+      return 0;
+    }
+
     if (filterLeaderboardOnly || quickFilter === 'upvoted') {
       const votesA = upvotesState[a.id] || a.upvotes || 120;
       const votesB = upvotesState[b.id] || b.upvotes || 120;
       return votesB - votesA;
     }
 
-    // Paid Sponsored Tools ALWAYS rank before free submissions
+    if (quickFilter === 'deals') {
+      const aHasDeal = a.hasLifetimeDeal || a.dealPrice || a.dealUrl;
+      const bHasDeal = b.hasLifetimeDeal || b.dealPrice || b.dealUrl;
+      if (aHasDeal && !bHasDeal) return -1;
+      if (!aHasDeal && bHasDeal) return 1;
+    }
+
+    // Paid Sponsored Tools ALWAYS rank before standard listings
     const aIsPaid = a.packageType === 'in-feed' || a.packageType === 'top-banner' || a.packageType === 'premium' || a.isInFeed || a.isTopBanner || (a.featured && a.packageType !== 'free');
     const bIsPaid = b.packageType === 'in-feed' || b.packageType === 'top-banner' || b.packageType === 'premium' || b.isInFeed || b.isTopBanner || (b.featured && b.packageType !== 'free');
 
@@ -521,10 +562,15 @@ export default function App() {
     return (b.reviewsCount || 0) - (a.reviewsCount || 0);
   }).map((t, index) => {
     let rankBadge = null;
-    if (index === 0) rankBadge = '#1 PRODUCT OF THE DAY';
-    else if (index === 1) rankBadge = '#2 PRODUCT OF THE WEEK';
-    else if (index === 2) rankBadge = '#3 PRODUCT OF THE WEEK';
-    else if (index < 10) rankBadge = `TOP 10 PRODUCT`;
+    if (quickFilter === 'new') {
+      if (index === 0) rankBadge = '🚀 #1 NEW LAUNCH TODAY';
+      else if (index < 5) rankBadge = '🚀 NEW LAUNCH';
+    } else {
+      if (index === 0) rankBadge = '#1 PRODUCT OF THE DAY';
+      else if (index === 1) rankBadge = '#2 PRODUCT OF THE WEEK';
+      else if (index === 2) rankBadge = '#3 PRODUCT OF THE WEEK';
+      else if (index < 10) rankBadge = `TOP 10 PRODUCT`;
+    }
     return { ...t, rankBadge };
   });
 
