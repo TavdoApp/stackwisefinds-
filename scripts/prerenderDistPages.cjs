@@ -127,19 +127,22 @@ saasTools.forEach(tool => {
     "url": tool.websiteUrl || tool.affiliateUrl || `https://${tool.domain}`,
     "operatingSystem": "Web, Cloud SaaS",
     "applicationCategory": tool.category || "BusinessApplication",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": String(tool.rating || 4.8),
-      "ratingCount": String(tool.reviewsCount || 120),
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "offers": {
       "@type": "Offer",
       "price": tool.pricing && tool.pricing.includes('$') ? tool.pricing.replace(/[^0-9.]/g, '') || "0" : "0",
       "priceCurrency": "USD"
     }
   };
+
+  if (tool.rating && tool.reviewsCount && Number(tool.reviewsCount) > 0 && Number(tool.rating) > 0) {
+    jsonLd.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": String(tool.rating),
+      "ratingCount": String(tool.reviewsCount),
+      "bestRating": "5",
+      "worstRating": "1"
+    };
+  }
 
   const bodyHtml = `
   ${renderSsrNavbar('/software/')}
@@ -289,14 +292,7 @@ saasTools.forEach(tool => {
         "@type": "SoftwareApplication",
         "name": altTool.name,
         "applicationCategory": altTool.category || "BusinessApplication",
-        "operatingSystem": "Web, Cloud",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": String(altTool.rating || 4.8),
-          "ratingCount": String(altTool.reviewsCount || 120),
-          "bestRating": "5",
-          "worstRating": "1"
-        }
+        "operatingSystem": "Web, Cloud"
       }
     }))
   };
@@ -425,14 +421,7 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
           "@type": "SoftwareApplication",
           "name": tA.name,
           "applicationCategory": tA.category || "Software",
-          "operatingSystem": "Web, Cloud",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": String(tA.rating || 4.8),
-            "ratingCount": String(tA.reviewsCount || 120),
-            "bestRating": "5",
-            "worstRating": "1"
-          }
+          "operatingSystem": "Web, Cloud"
         }
       },
       {
@@ -444,14 +433,7 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
           "@type": "SoftwareApplication",
           "name": tB.name,
           "applicationCategory": tB.category || "Software",
-          "operatingSystem": "Web, Cloud",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": String(tB.rating || 4.7),
-            "ratingCount": String(tB.reviewsCount || 110),
-            "bestRating": "5",
-            "worstRating": "1"
-          }
+          "operatingSystem": "Web, Cloud"
         }
       }
     ]
