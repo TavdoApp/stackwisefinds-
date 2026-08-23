@@ -28,7 +28,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
   const redditShareUrl = `https://reddit.com/submit?url=${encodeURIComponent(liveUrl)}&title=${encodeURIComponent(`${softwareName} is now live on StakDock!`)}`;
 
   const subject = isApproved 
-    ? `🎉 ${softwareName} is Officially LIVE on StakDock! (Your Launch & Growth Kit)` 
+    ? `🎉 ${softwareName} is Verified & Live on StakDock (Your Badge & Launch Kit)` 
     : `⏳ ${softwareName} received! Queued for StakDock review`;
 
   const htmlContent = `
@@ -102,12 +102,12 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                     <table cellpadding="0" cellspacing="0" border="0" align="center">
                       <tr>
                         <td style="padding:4px;">
-                          <a href="${liveUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:10px 20px; border-radius:8px; font-weight:800; font-size:12.5px; display:inline-block;">
+                          <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" style="background-color:#82A735; color:#FFFFFF; padding:10px 20px; border-radius:8px; font-weight:800; font-size:12.5px; display:inline-block;">
                             View Listing ↗
                           </a>
                         </td>
                         <td style="padding:4px;">
-                          <a href="${alternativesUrl}" target="_blank" style="background-color:#263826; color:#FFFFFF; border:1px solid #3B523B; padding:10px 16px; border-radius:8px; font-weight:700; font-size:12.5px; display:inline-block;">
+                          <a href="${alternativesUrl}" target="_blank" rel="noopener noreferrer" style="background-color:#263826; color:#FFFFFF; border:1px solid #3B523B; padding:10px 16px; border-radius:8px; font-weight:700; font-size:12.5px; display:inline-block;">
                             Alternatives Hub ↗
                           </a>
                         </td>
@@ -129,23 +129,23 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                       📈 Step 1: Collect Upvotes &amp; Rank #1
                     </p>
                     <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.5;">
-                      StakDock features daily software leaderboards. The more upvotes and reviews ${softwareName} collects this week, the higher you climb to reach <strong>50,000+ monthly software buyers</strong>!
+                      StakDock ranks tools by real community traction. Share your live listing to collect initial upvotes, gain positive reviews, and climb to the <strong>#1 Product of the Week</strong> spotlight across <strong>50,000+ monthly software buyers</strong>:
                     </p>
                     
                     <table cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="padding:4px 6px 4px 0;">
-                          <a href="${twitterShareUrl}" target="_blank" style="background-color:#000000; color:#FFFFFF; border:1px solid #333333; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
+                          <a href="${twitterShareUrl}" target="_blank" rel="noopener noreferrer" style="background-color:#000000; color:#FFFFFF; border:1px solid #333333; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
                             Post to 𝕏
                           </a>
                         </td>
                         <td style="padding:4px 6px;">
-                          <a href="${linkedInShareUrl}" target="_blank" style="background-color:#0A66C2; color:#FFFFFF; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
+                          <a href="${linkedInShareUrl}" target="_blank" rel="noopener noreferrer" style="background-color:#0A66C2; color:#FFFFFF; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
                             Share on LinkedIn
                           </a>
                         </td>
                         <td style="padding:4px 0 4px 6px;">
-                          <a href="${redditShareUrl}" target="_blank" style="background-color:#FF4500; color:#FFFFFF; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
+                          <a href="${redditShareUrl}" target="_blank" rel="noopener noreferrer" style="background-color:#FF4500; color:#FFFFFF; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
                             Post to Reddit
                           </a>
                         </td>
@@ -167,7 +167,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                       🏆 Step 2: Embed Your Verified StakDock Badge
                     </p>
                     <p style="margin:0 0 18px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.5;">
-                      Embed our official verified badge on your landing page or footer for third-party social proof and a <strong>permanent trust signal</strong>:
+                      Founders who display our official badge get an automated <strong>Permanent Verified Trust Signal</strong> that boosts buyer confidence and landing page conversion rates. Copy this 1-line HTML snippet into your website footer, hero, or docs:
                     </p>
 
                     <!-- Dark Mode Badge Preview -->
@@ -175,7 +175,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                       • Dark Theme
                     </p>
                     <div style="margin-bottom:16px;">
-                      <a href="${liveUrl}" target="_blank">
+                      <a href="${liveUrl}" target="_blank" rel="noopener noreferrer">
                         <img src="${darkBadgeUrl}" alt="Featured on StakDock Dark" width="250" height="60" style="max-width:250px; width:250px; height:auto; border-radius:10px; display:block;" />
                       </a>
                     </div>
@@ -185,7 +185,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                       • Light Theme
                     </p>
                     <div style="margin-bottom:16px;">
-                      <a href="${liveUrl}" target="_blank">
+                      <a href="${liveUrl}" target="_blank" rel="noopener noreferrer">
                         <img src="${lightBadgeUrl}" alt="Featured on StakDock Light" width="250" height="60" style="max-width:250px; width:250px; height:auto; border-radius:10px; display:block;" />
                       </a>
                     </div>
@@ -195,7 +195,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                       • Neutral Theme
                     </p>
                     <div style="margin-bottom:18px;">
-                      <a href="${liveUrl}" target="_blank">
+                      <a href="${liveUrl}" target="_blank" rel="noopener noreferrer">
                         <img src="${neutralBadgeUrl}" alt="Featured on StakDock Neutral" width="250" height="60" style="max-width:250px; width:250px; height:auto; border-radius:10px; display:block;" />
                       </a>
                     </div>
@@ -229,12 +229,12 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                     <table cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td style="padding:4px 8px 4px 0;">
-                          <a href="https://x.com/Stakdock" target="_blank" style="background-color:#000000; color:#FFFFFF; border:1px solid #333333; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
+                          <a href="https://x.com/Stakdock" target="_blank" rel="noopener noreferrer" style="background-color:#000000; color:#FFFFFF; border:1px solid #333333; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
                             Follow @Stakdock on 𝕏 ↗
                           </a>
                         </td>
                         <td style="padding:4px 0 4px 8px;">
-                          <a href="https://dev.to/stakdock" target="_blank" style="background-color:#0D140D; color:#82A735; border:1px solid #82A735; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
+                          <a href="https://dev.to/stakdock" target="_blank" rel="noopener noreferrer" style="background-color:#0D140D; color:#82A735; border:1px solid #82A735; padding:9px 15px; border-radius:6px; font-size:12px; font-weight:700; display:inline-block;">
                             Read on Dev.to (DA 90+) ↗
                           </a>
                         </td>
@@ -263,24 +263,24 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                     </p>
 
                     <p style="margin:0 0 14px; font-size:13px; color:rgba(255,255,255,0.85); line-height:1.5;">
-                      Want guaranteed top placement without waiting for community votes? Upgrade to an official sponsor package:
+                      Want to lock in guaranteed top ranking without waiting for community votes? Upgrade to an official sponsor package to drive immediate buyer traffic and high-authority SEO backlinks:
                     </p>
 
                     <!-- Sponsor Options -->
                     <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:16px;">
                       <tr>
                         <td style="padding:7px 0; border-bottom:1px solid #2C3E2C; font-size:12.5px; color:#FFFFFF;">
-                          🔥 <strong>Top Banner Sponsor:</strong> $99/mo (Hero banner across 4,171 pages, 50,000+ views)
+                          🔥 <strong>Top Banner Sponsor:</strong> $99/mo (Sitewide Hero banner across 4,171 pages, 50,000+ views)
                         </td>
                       </tr>
                       <tr>
                         <td style="padding:7px 0; border-bottom:1px solid #2C3E2C; font-size:12.5px; color:#FFFFFF;">
-                          ⚡ <strong>In-Feed Sponsor:</strong> $49/mo (Guaranteed #1 placement in your category + dofollow link)
+                          ⚡ <strong>In-Feed Sponsor:</strong> $49/mo (Guaranteed Permanent #1 category ranking + Dofollow backlink)
                         </td>
                       </tr>
                       <tr>
                         <td style="padding:7px 0; font-size:12.5px; color:#FFFFFF;">
-                          ⭐ <strong>Featured Annual:</strong> $99/yr (12 months guaranteed ranking + verified badge)
+                          ⭐ <strong>Featured Annual:</strong> $99/yr (12 months guaranteed ranking + verified badge &amp; syndication)
                         </td>
                       </tr>
                     </table>
@@ -288,7 +288,7 @@ export async function sendBrevoEmail(env, { toEmail, vendorName, softwareName, s
                     <table width="100%" cellpadding="0" cellspacing="0" border="0">
                       <tr>
                         <td align="center">
-                          <a href="${pricingUrl}" target="_blank" style="background-color:#82A735; color:#FFFFFF; padding:12px 28px; border-radius:8px; font-weight:900; font-size:13px; display:inline-block; box-shadow:0 4px 14px rgba(130,167,53,0.35);">
+                          <a href="${pricingUrl}" target="_blank" rel="noopener noreferrer" style="background-color:#82A735; color:#FFFFFF; padding:12px 28px; border-radius:8px; font-weight:900; font-size:13px; display:inline-block; box-shadow:0 4px 14px rgba(130,167,53,0.35);">
                             Claim Sponsor Placement ↗
                           </a>
                         </td>
