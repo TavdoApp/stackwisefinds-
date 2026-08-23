@@ -150,6 +150,39 @@ export const saasCategories = [
 
 export const staticSaasTools = [
   {
+    "id": "bookster",
+    "name": "Bookster",
+    "domain": "bookster.ai",
+    "category": "time-productivity",
+    "tagline": "AI-powered digital bookkeeper and smart financial management platform for founders and businesses.",
+    "description": "Bookster is an AI-powered automated financial and bookkeeping platform engineered for solopreneurs, agencies, and small businesses. It streamlines receipt tracking, expense categorization, invoicing, and real-time financial reporting.",
+    "rating": 4.9,
+    "reviewsCount": 38,
+    "pricing": "Lifetime Deal • $19 (89% OFF)",
+    "startingPrice": "LTD $19",
+    "pricingTier": "$",
+    "websiteUrl": "https://bookster.ai",
+    "affiliateUrl": "https://appsumo.com/products/bookster/",
+    "dealUrl": "https://appsumo.com/products/bookster/",
+    "lifetimeDealUrl": "https://appsumo.com/products/bookster/",
+    "hasLifetimeDeal": true,
+    "dealPlatform": "AppSumo",
+    "dealPrice": "$19",
+    "dealDiscount": "$179 (89% OFF)",
+    "dealHighlights": "Full lifetime access, future updates included, and 60-day money-back guarantee.",
+    "badge": "🔥 Lifetime Deal",
+    "featured": true,
+    "monthlyVisits": "45K",
+    "isFreeTier": false,
+    "isOpenSource": false,
+    "features": [
+      "AI Automated Receipt & Expense Tracking",
+      "One-Click Financial Reporting & Tax Prep",
+      "Multi-Currency Invoicing & Payment Links",
+      "Real-Time Cash Flow Analytics Dashboard"
+    ]
+  },
+  {
     "id": "greenshift-wp",
     "name": "Greenshift WP",
     "domain": "greenshiftwp.com",
