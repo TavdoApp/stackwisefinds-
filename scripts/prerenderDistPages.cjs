@@ -102,6 +102,61 @@ function renderSsrNavbar(activePath = '/') {
   `;
 }
 
+function getDealBreakdown(dealPriceRaw, dealDiscountRaw) {
+  const formatDealPrice = (val) => {
+    if (!val) return '';
+    const trimmed = String(val).trim();
+    if (!trimmed) return '';
+    if (/^\d+(\.\d{1,2})?$/.test(trimmed)) return `$${trimmed}`;
+    if (/^\d+/.test(trimmed)) return `$${trimmed}`;
+    return trimmed;
+  };
+  const parseNumericPrice = (str) => {
+    if (!str) return 0;
+    const match = String(str).replace(/,/g, '').match(/\d+(\.\d{1,2})?/);
+    return match ? parseFloat(match[0]) : 0;
+  };
+
+  const dealPrice = formatDealPrice(dealPriceRaw);
+  const dealNum = parseNumericPrice(dealPriceRaw);
+
+  const rawDiscount = String(dealDiscountRaw || '').trim();
+  let originalPrice = null;
+  let savingsAmount = null;
+  let discountPercent = null;
+
+  if (/^\$?\d+(\.\d{1,2})?$/.test(rawDiscount)) {
+    const origNum = parseNumericPrice(rawDiscount);
+    if (origNum > 0) {
+      originalPrice = `$${origNum}`;
+      if (dealNum > 0 && origNum > dealNum) {
+        const saved = origNum - dealNum;
+        savingsAmount = `$${Number.isInteger(saved) ? saved : saved.toFixed(2)}`;
+        const pct = Math.round(((origNum - dealNum) / origNum) * 100);
+        discountPercent = `${pct}% OFF`;
+      }
+    }
+  } else if (rawDiscount.includes('%')) {
+    discountPercent = rawDiscount.includes('OFF') ? rawDiscount : `${rawDiscount} OFF`;
+    const origMatch = rawDiscount.match(/\$?\d+/);
+    if (origMatch && parseNumericPrice(origMatch[0]) > dealNum) {
+      originalPrice = formatDealPrice(origMatch[0]);
+      const origNum = parseNumericPrice(origMatch[0]);
+      if (origNum > dealNum) {
+        const saved = origNum - dealNum;
+        savingsAmount = `$${Number.isInteger(saved) ? saved : saved.toFixed(2)}`;
+      }
+    }
+  }
+
+  return {
+    dealPrice: dealPrice || '$19',
+    originalPrice,
+    savingsAmount,
+    discountPercent
+  };
+}
+
 // 0. Root Homepage (dist/index.html) is preserved as the clean SPA client entry shell
 console.log('Preserving dist/index.html as clean SPA client shell (eliminating homepage layout flicker)...');
 
@@ -113,6 +168,7 @@ saasTools.forEach(tool => {
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
   const catLabel = getCategoryLabel(tool.category);
+  const dealInfo = getDealBreakdown(tool.dealPrice, tool.dealDiscount);
 
   const explicitMatches = Array.isArray(tool.alternatives) && tool.alternatives.length > 0
     ? tool.alternatives.map(altId => saasTools.find(t => t.id === altId)).filter(Boolean)
@@ -196,10 +252,12 @@ saasTools.forEach(tool => {
               <span style="background:#EA580C;color:#FFFFFF;font-size:0.72rem;font-weight:900;padding:3px 10px;border-radius:6px;text-transform:uppercase;">
                 🔥 ACTIVE ${escapeHtml(tool.dealPlatform || 'APPSUMO')} DEAL
               </span>
-              ${tool.dealDiscount ? `<span style="font-size:0.75rem;font-weight:900;background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:6px;">${escapeHtml(tool.dealDiscount)}</span>` : ''}
+              ${dealInfo.discountPercent ? `<span style="font-size:0.75rem;font-weight:900;background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:6px;">${escapeHtml(dealInfo.discountPercent)}</span>` : ''}
+              ${dealInfo.savingsAmount ? `<span style="font-size:0.75rem;font-weight:900;background:#16A34A;color:#FFFFFF;padding:2px 8px;border-radius:6px;">SAVE ${escapeHtml(dealInfo.savingsAmount)}</span>` : ''}
             </div>
-            <div style="font-size:1.35rem;font-weight:900;color:#9A3412;">
-              ${escapeHtml(tool.dealPrice ? `${tool.dealPrice} One-Time Lifetime Access` : 'Exclusive Lifetime Deal Available')}
+            <div style="font-size:1.35rem;font-weight:900;color:#9A3412;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;">
+              <span>${escapeHtml(dealInfo.dealPrice)} One-Time Lifetime Access</span>
+              ${dealInfo.originalPrice ? `<span style="font-size:1rem;text-decoration:line-through;color:#9CA3AF;font-weight:600;">${escapeHtml(dealInfo.originalPrice)}</span>` : ''}
             </div>
             <p style="font-size:0.88rem;color:#7C2D12;margin:4px 0 0 0;font-weight:500;">
               ${escapeHtml(tool.dealHighlights || 'Pay once, own forever with lifetime updates and zero recurring subscription fees.')}
