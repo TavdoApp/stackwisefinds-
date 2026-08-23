@@ -175,14 +175,41 @@ saasTools.forEach(tool => {
         ${tool.isOpenSource ? '<span style="background:#eaf0f8;color:#1b466e;padding:6px 14px;border-radius:10px;font-weight:700;">⚙ Open Source</span>' : ''}
       </div>
 
-      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="${escapeHtml(tool.affiliateUrl || tool.websiteUrl || `https://${tool.domain}`)}" target="_blank" rel="noopener noreferrer" style="background:#82A735;color:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;">
-          Visit Official Website &rarr;
+      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+        ${(tool.hasLifetimeDeal || tool.dealPrice || tool.dealUrl || tool.lifetimeDealUrl) ? `
+          <a href="${escapeHtml(tool.dealUrl || tool.lifetimeDealUrl || tool.websiteUrl || `https://${tool.domain}`)}" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg, #EA580C 0%, #C2410C 100%);color:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(234,88,12,0.25);">
+            🔥 Claim ${escapeHtml(tool.dealPrice ? `${tool.dealPrice} LTD` : 'Lifetime Deal')} &rarr;
+          </a>
+        ` : ''}
+        <a href="${escapeHtml(tool.websiteUrl || `https://${tool.domain}`)}" target="_blank" rel="noopener noreferrer" style="background:#82A735;color:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:0.95rem;display:inline-flex;align-items:center;gap:6px;">
+          Open Website &rarr;
         </a>
         <a href="/alternatives/${tool.id}/" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:12px 24px;border-radius:9999px;font-weight:700;text-decoration:none;font-size:0.95rem;">
           View ${escapeHtml(tool.name)} Alternatives
         </a>
       </div>
+
+      ${(tool.hasLifetimeDeal || tool.dealPrice || tool.dealUrl || tool.lifetimeDealUrl) ? `
+        <div style="margin-top:24px;background:linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%);border:1.5px solid #F97316;border-radius:16px;padding:20px 24px;box-shadow:0 4px 16px rgba(234,88,12,0.12);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+              <span style="background:#EA580C;color:#FFFFFF;font-size:0.72rem;font-weight:900;padding:3px 10px;border-radius:6px;text-transform:uppercase;">
+                🔥 ACTIVE ${escapeHtml(tool.dealPlatform || 'APPSUMO')} DEAL
+              </span>
+              ${tool.dealDiscount ? `<span style="font-size:0.75rem;font-weight:900;background:#DC2626;color:#FFFFFF;padding:2px 8px;border-radius:6px;">${escapeHtml(tool.dealDiscount)}</span>` : ''}
+            </div>
+            <div style="font-size:1.35rem;font-weight:900;color:#9A3412;">
+              ${escapeHtml(tool.dealPrice ? `${tool.dealPrice} One-Time Lifetime Access` : 'Exclusive Lifetime Deal Available')}
+            </div>
+            <p style="font-size:0.88rem;color:#7C2D12;margin:4px 0 0 0;font-weight:500;">
+              ${escapeHtml(tool.dealHighlights || 'Pay once, own forever with lifetime updates and zero recurring subscription fees.')}
+            </p>
+          </div>
+          <a href="${escapeHtml(tool.dealUrl || tool.lifetimeDealUrl || tool.websiteUrl || `https://${tool.domain}`)}" target="_blank" rel="noopener noreferrer" style="background:linear-gradient(135deg, #EA580C 0%, #C2410C 100%);color:#FFFFFF;padding:12px 22px;border-radius:9999px;font-weight:800;font-size:0.92rem;text-decoration:none;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(234,88,12,0.3);">
+            <span>Claim Deal on ${escapeHtml(tool.dealPlatform || 'AppSumo')}</span> &rarr;
+          </a>
+        </div>
+      ` : ''}
     </header>
 
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
