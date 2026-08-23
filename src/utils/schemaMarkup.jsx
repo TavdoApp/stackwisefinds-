@@ -58,8 +58,8 @@ export function injectSoftwareApplicationSchema(tool) {
     };
   }
 
-  // Include aggregateRating if real rating and reviewsCount exist on tool object
-  if (tool.rating && tool.reviewsCount) {
+  // Include aggregateRating only when authentic community reviews exist (> 0)
+  if (tool.rating && tool.reviewsCount && Number(tool.reviewsCount) > 0 && Number(tool.rating) > 0) {
     schema.aggregateRating = {
       '@type': 'AggregateRating',
       'ratingValue': String(tool.rating),
@@ -89,7 +89,7 @@ export function injectItemListSchema(tools, listName = 'SaaS & AI Software Direc
       '@type': 'ListItem',
       'position': index + 1,
       'name': tool.name,
-      'url': `https://stakdock.com/#${tool.id}`
+      'url': `https://stakdock.com/software/${tool.id}/`
     }))
   };
 
