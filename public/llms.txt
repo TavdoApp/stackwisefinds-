@@ -7,13 +7,12 @@
 ## Core Pages & Buying Guides
 
 - [Software Directory](https://stakdock.com/): Browse verified software tools and buyer guidance.
-- [Buyer Guides](https://stakdock.com/#guides): In-depth research articles on AI video, CRMs, coding, and e-commerce.
-- [Featured Vendor Application](https://stakdock.com/#pricing): Apply for a featured vendor directory placement.
-- [XusCRM Alternatives](https://stakdock.com/alternatives/xuscrm): Best alternatives to XusCRM for real estate brokerages.
-- [ChatGPT Plus Alternatives](https://stakdock.com/alternatives/chatgpt-plus): Best alternatives to ChatGPT Plus.
-- [Terms of Service](https://stakdock.com/#terms): Terms of service policy.
-- [Privacy Policy](https://stakdock.com/#privacy): Privacy policy.
-- [Refund & Cancellation Policy](https://stakdock.com/#refund): Refund and cancellation policy.
+- [Buyer Guides](https://stakdock.com/guides/): In-depth research articles on AI video, CRMs, coding, and e-commerce.
+- [Featured Vendor Application](https://stakdock.com/pricing/): Apply for a featured vendor directory placement.
+- [Browse Categories](https://stakdock.com/categories/): Browse 35+ software and AI categories.
+- [Software Rankings](https://stakdock.com/ranking/): Daily software leaderboard and most upvoted tools.
+- [XusCRM Alternatives](https://stakdock.com/alternatives/xuscrm/): Best alternatives to XusCRM for real estate brokerages.
+- [ChatGPT Plus Alternatives](https://stakdock.com/alternatives/chatgpt-plus/): Best alternatives to ChatGPT Plus.
 
 ## Featured Software Platforms
 
