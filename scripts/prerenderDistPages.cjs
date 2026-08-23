@@ -137,12 +137,13 @@ function getDealBreakdown(dealPriceRaw, dealDiscountRaw) {
       }
     }
   } else if (rawDiscount.includes('%')) {
-    discountPercent = rawDiscount.includes('OFF') ? rawDiscount : `${rawDiscount} OFF`;
-    const origMatch = rawDiscount.match(/\$?\d+/);
-    if (origMatch && parseNumericPrice(origMatch[0]) > dealNum) {
-      originalPrice = formatDealPrice(origMatch[0]);
+    const pctMatch = rawDiscount.match(/\d+%/);
+    discountPercent = pctMatch ? `${pctMatch[0]} OFF` : (rawDiscount.includes('OFF') ? rawDiscount : `${rawDiscount} OFF`);
+    const origMatch = rawDiscount.match(/\$?(\d+(\.\d{1,2})?)/);
+    if (origMatch) {
       const origNum = parseNumericPrice(origMatch[0]);
       if (origNum > dealNum) {
+        originalPrice = `$${origNum}`;
         const saved = origNum - dealNum;
         savingsAmount = `$${Number.isInteger(saved) ? saved : saved.toFixed(2)}`;
       }
