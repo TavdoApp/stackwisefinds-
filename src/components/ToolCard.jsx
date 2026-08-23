@@ -4,6 +4,7 @@ import { injectSoftwareApplicationSchema } from '../utils/schemaMarkup.jsx';
 import { getTranslation } from '../utils/translations';
 import { trackAffiliateClick } from '../utils/affiliateTracker.js';
 import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
+import { formatDealPrice } from '../utils/dealHelper.js';
 import UpvoteButton from './UpvoteButton.jsx';
 
 export default function ToolCard({ 
@@ -114,7 +115,7 @@ export default function ToolCard({
                 gap: '3px',
                 boxShadow: '0 2px 6px rgba(234, 88, 12, 0.15)'
               }}>
-                🔥 {tool.dealPrice ? `LTD ${tool.dealPrice}` : 'LIFETIME DEAL'}
+                🔥 {tool.dealPrice ? `LTD ${formatDealPrice(tool.dealPrice)}` : 'LIFETIME DEAL'}
               </span>
             )}
             {tool.rankBadge && (
@@ -235,14 +236,14 @@ export default function ToolCard({
             <span>Review</span>
           </button>
 
-          {tool.dealUrl && (
+          {(tool.dealUrl || tool.lifetimeDealUrl) && (
             <a
-              href={tool.dealUrl}
+              href={tool.dealUrl || tool.lifetimeDealUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => {
                 e.stopPropagation();
-                trackAffiliateClick(tool.id, tool.dealUrl);
+                trackAffiliateClick(tool.id, tool.dealUrl || tool.lifetimeDealUrl);
               }}
               className="btn-pill-dark tool-action-btn"
               style={{
@@ -257,18 +258,18 @@ export default function ToolCard({
               }}
               title={`Claim ${tool.dealPlatform || 'Lifetime'} Deal`}
             >
-              <span>🔥 Claim LTD</span>
+              <span>🔥 Claim {tool.dealPrice ? `${formatDealPrice(tool.dealPrice)} LTD` : 'LTD'}</span>
               <ArrowUpRight size={13} />
             </a>
           )}
 
           <a
-            href={tool.affiliateUrl}
+            href={tool.websiteUrl || tool.affiliateUrl}
             target="_blank"
             rel={tool.packageType === 'free' || (tool.submittedByVendor && tool.packageType !== 'in-feed' && tool.packageType !== 'top-banner' && tool.packageType !== 'premium') ? "nofollow noopener noreferrer" : "noopener noreferrer"}
             onClick={(e) => {
               e.stopPropagation();
-              trackAffiliateClick(tool.id, tool.affiliateUrl);
+              trackAffiliateClick(tool.id, tool.websiteUrl || tool.affiliateUrl);
             }}
             className="btn-pill-green tool-primary-btn"
             style={{ padding: '6px 14px', fontSize: '0.8rem', whiteSpace: 'nowrap' }}

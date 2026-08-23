@@ -68,7 +68,7 @@ export async function onRequestGet(context) {
         pricingModel: sub.pricing || 'Freemium',
         isFreeTier: true,
         isOpenSource: false,
-        affiliateUrl: sub.deal_url || sub.software_website,
+        affiliateUrl: sub.software_website,
         websiteUrl: sub.software_website,
         submittedByVendor: true,
         packageType: effectivePackage,

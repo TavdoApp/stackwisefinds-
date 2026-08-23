@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { saasCategories } from '../data/saasData.jsx';
 import { extractDomain, getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
+import { formatDealPrice, getDealBreakdown } from '../utils/dealHelper.js';
 
 export default function VendorModal({ onClose, initialPackage = 'free' }) {
   const [packageType, setPackageType] = useState(initialPackage); // 'free' | 'in-feed' | 'premium' | 'top-banner'
@@ -899,9 +900,10 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                         </label>
                         <input
                           type="text"
-                          placeholder="e.g. $19"
+                          placeholder="e.g. 79 or $79"
                           value={dealPrice}
                           onChange={(e) => setDealPrice(e.target.value)}
+                          onBlur={() => setDealPrice(prev => formatDealPrice(prev))}
                           style={{
                             width: '100%',
                             padding: '8px 10px',
@@ -917,13 +919,14 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
 
                       <div>
                         <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>
-                          Original Price / Discount
+                          Original Price (e.g. 144)
                         </label>
                         <input
                           type="text"
-                          placeholder="e.g. $179 (89% OFF)"
+                          placeholder="e.g. 144 or $144"
                           value={dealDiscount}
                           onChange={(e) => setDealDiscount(e.target.value)}
+                          onBlur={() => setDealDiscount(prev => formatDealPrice(prev))}
                           style={{
                             width: '100%',
                             padding: '8px 10px',
@@ -936,6 +939,49 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                         />
                       </div>
                     </div>
+
+                    {/* Live Promo Badge Preview */}
+                    {(dealPrice || dealDiscount) && (
+                      <div style={{
+                        background: '#FFFFFF',
+                        border: '1px dashed #F97316',
+                        borderRadius: '8px',
+                        padding: '8px 12px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '6px'
+                      }}>
+                        <span style={{ fontSize: '0.72rem', color: '#9A3412', fontWeight: '800' }}>
+                          Live Promo Badge Preview:
+                        </span>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{
+                            background: '#EA580C',
+                            color: '#FFFFFF',
+                            fontSize: '0.68rem',
+                            fontWeight: '900',
+                            padding: '2px 6px',
+                            borderRadius: '4px'
+                          }}>
+                            🔥 {dealPlatform} {formatDealPrice(dealPrice) || '$79'} LTD
+                          </span>
+                          {dealDiscount && (
+                            <span style={{
+                              background: '#16A34A',
+                              color: '#FFFFFF',
+                              fontSize: '0.68rem',
+                              fontWeight: '900',
+                              padding: '2px 6px',
+                              borderRadius: '4px'
+                            }}>
+                              {getDealBreakdown(dealPrice, dealDiscount).discountPercent || 'SAVE BIG'}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    )}
 
                     <div>
                       <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>

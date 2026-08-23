@@ -243,21 +243,39 @@ button {
   padding-left: 16px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .toolify-3col-layout {
-    grid-template-columns: 1fr 310px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
   }
-  .toolify-col-left {
-    display: none;
-  }
-}
 
-@media (max-width: 860px) {
-  .toolify-3col-layout {
-    grid-template-columns: 1fr;
+  .toolify-col-main {
+    order: 1;
+    width: 100%;
   }
+
+  .toolify-col-left {
+    display: block !important;
+    border-right: none !important;
+    padding-right: 0 !important;
+    position: static !important;
+    order: 2;
+    margin-top: 20px;
+    width: 100%;
+  }
+
   .toolify-col-right {
-    display: none;
+    display: block !important;
+    border-left: none !important;
+    padding-left: 0 !important;
+    position: static !important;
+    order: 3;
+    margin-top: 20px;
+    width: 100%;
   }
 }
 
