@@ -1,53 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Sparkles, ArrowUpRight, PlusCircle, Star } from 'lucide-react';
 import { saasTools } from '../data/saasData.jsx';
 import { getLogoUrl, getFallbackInitials } from '../utils/logoHelper.js';
 
-export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorModal }) {
+export default function FeaturedSidebar({ onSelectTool, onOpenVendorModal }) {
   const [failedImgs, setFailedImgs] = useState({});
-  const [offsetIndex, setOffsetIndex] = useState(0);
 
-  const sourceArray = Array.isArray(allTools) && allTools.length > 0 ? allTools : saasTools;
-
-  // Separate paid sponsors ($99/yr Premium, $49/mo In-Feed, $99/mo Top-Banner) from general featured tools
-  const paidSponsors = sourceArray.filter(t => 
-    t.packageType === 'premium' || 
-    t.packageType === 'in-feed' || 
-    t.packageType === 'top-banner' || 
-    t.isInFeed || 
-    t.isTopBanner || 
-    t.isFeatured ||
-    (t.submittedByVendor && t.packageType !== 'free')
-  );
-  const otherFeatured = sourceArray.filter(t => 
-    !paidSponsors.some(p => p.id === t.id) && 
-    (t.featured || t.badge || (t.rating && t.rating >= 4.8))
-  );
-
-  // Prioritize all paid sponsors at the top of the sidebar
-  const fullFeaturedPool = [...paidSponsors, ...otherFeatured];
-
-  // Auto-rotate the starting offset index every 30 seconds so all paying founders get top spotlight exposure
-  useEffect(() => {
-    if (fullFeaturedPool.length <= 15) return;
-    const timer = setInterval(() => {
-      setOffsetIndex(prev => (prev + 1) % fullFeaturedPool.length);
-    }, 30000); // 30 seconds
-    return () => clearInterval(timer);
-  }, [fullFeaturedPool.length]);
-
-  // Select 15 tools starting from offsetIndex, wrapping around cleanly
-  const visibleFeatured = [];
-  const count = Math.min(15, fullFeaturedPool.length);
-  for (let i = 0; i < count; i++) {
-    const item = fullFeaturedPool[(offsetIndex + i) % fullFeaturedPool.length];
-    if (item && !visibleFeatured.some(v => v.id === item.id)) {
-      visibleFeatured.push(item);
-    }
-  }
+  // Display 15 spotlight cards to fill left column continuously
+  const featuredList = saasTools
+    .filter(t => t.featured || t.badge || t.rating >= 4.8)
+    .slice(0, 15);
 
   return (
-    <div className="featured-sidebar-container" style={{
+    <div style={{
       display: 'flex',
       flexDirection: 'column',
       gap: '10px'
@@ -68,20 +33,18 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
           <Sparkles size={14} /> Featured Spotlights
         </div>
         <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)', fontWeight: '700' }}>
-          Rotates 30s
+          Sponsored
         </span>
       </div>
 
-      <div className="featured-sidebar-list" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        {visibleFeatured.map(tool => {
-          const attempt = failedImgs[tool.id] || 0;
-          const logoSrc = getLogoUrl(tool, attempt);
+      {featuredList.map(tool => {
+        const attempt = failedImgs[tool.id] || 0;
+        const logoSrc = getLogoUrl(tool, attempt);
 
-          return (
-            <div
-              key={tool.id}
-              className="featured-sidebar-item"
-              onClick={() => onSelectTool && onSelectTool(tool.id)}
+        return (
+          <div
+            key={tool.id}
+            onClick={() => onSelectTool && onSelectTool(tool.id)}
             style={{
               background: tool.featured ? 'linear-gradient(180deg, #FFFFFF 0%, #F9FBF5 100%)' : '#FFFFFF',
               border: tool.featured ? '1.5px solid #82A735' : '1px solid var(--border-color)',
@@ -146,7 +109,6 @@ export default function FeaturedSidebar({ allTools, onSelectTool, onOpenVendorMo
           </div>
         );
       })}
-      </div>
 
       {/* Promoted Vendor Submission CTA */}
       <div 
