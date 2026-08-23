@@ -18,6 +18,14 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
   const [vendorName, setVendorName] = useState('');
   const [vendorEmail, setVendorEmail] = useState('');
   
+  // Lifetime Deal / Special Promo State
+  const [hasLifetimeDeal, setHasLifetimeDeal] = useState(false);
+  const [dealPlatform, setDealPlatform] = useState('AppSumo');
+  const [dealPrice, setDealPrice] = useState('');
+  const [dealDiscount, setDealDiscount] = useState('');
+  const [dealUrl, setDealUrl] = useState('');
+  const [dealHighlights, setDealHighlights] = useState('');
+  
   const [isInspecting, setIsInspecting] = useState(false);
   const [hasAutoInspected, setHasAutoInspected] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -90,16 +98,22 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          vendorName,
           softwareName,
           softwareWebsite,
           tagline,
-          description: tagline,
-          pricing: startingPrice || pricing,
+          pricing: hasLifetimeDeal && dealPrice ? `${pricing} • LTD: ${dealPrice}` : pricing,
+          startingPrice: hasLifetimeDeal && dealPrice ? `LTD ${dealPrice}` : startingPrice,
           pricingTier,
+          vendorName,
           vendorEmail,
           category,
-          packageType
+          packageType,
+          hasLifetimeDeal,
+          dealPlatform,
+          dealPrice,
+          dealDiscount,
+          dealUrl,
+          dealHighlights
         })
       });
 
@@ -626,6 +640,20 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       }}>
                         {packageType === 'premium' ? '⭐ FEATURED PRO' : packageType === 'top-banner' ? '🔥 TOP BANNER' : packageType === 'in-feed' ? '⚡ SPOTLIGHT' : 'VERIFIED TOOL'}
                       </span>
+                      {hasLifetimeDeal && dealPrice && (
+                        <span style={{
+                          background: 'linear-gradient(135deg, #FFEDD5 0%, #FED7AA 100%)',
+                          color: '#9A3412',
+                          border: '1px solid #FDBA74',
+                          fontSize: '0.64rem',
+                          fontWeight: '900',
+                          padding: '1px 6px',
+                          borderRadius: '4px',
+                          textTransform: 'uppercase'
+                        }}>
+                          🔥 LTD: {dealPrice} {dealDiscount ? `• ${dealDiscount}` : ''}
+                        </span>
+                      )}
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.76rem', color: 'var(--text-muted)', marginBottom: '6px' }}>
@@ -636,7 +664,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       <span>{categoryObj?.label || 'Software'}</span>
                       <span>•</span>
                       <span style={{ fontWeight: '700', color: '#82A735' }}>
-                        {startingPrice || pricing} ({pricingTier})
+                        {hasLifetimeDeal && dealPrice ? `LTD ${dealPrice}` : (startingPrice || pricing)} ({pricingTier})
                       </span>
                     </div>
 
@@ -761,6 +789,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     <option value="Open-Source">Open-Source</option>
                     <option value="100% Free">100% Free Forever</option>
                     <option value="Paid">Paid / Subscription</option>
+                    <option value="Lifetime Deal">Lifetime Deal (LTD)</option>
                   </select>
                 </div>
 
@@ -787,6 +816,170 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     <option value="$$$">$$$ (Enterprise)</option>
                   </select>
                 </div>
+              </div>
+
+              {/* Optional Lifetime Deal / Special Promo Section */}
+              <div style={{
+                background: hasLifetimeDeal ? 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)' : '#F8FAFC',
+                border: hasLifetimeDeal ? '1.5px solid #F97316' : '1px solid var(--border-color)',
+                borderRadius: '14px',
+                padding: '14px 16px',
+                transition: 'all 0.2s ease'
+              }}>
+                <div 
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    cursor: 'pointer'
+                  }} 
+                  onClick={() => setHasLifetimeDeal(!hasLifetimeDeal)}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{
+                      background: hasLifetimeDeal ? '#EA580C' : '#E2E8F0',
+                      color: hasLifetimeDeal ? '#FFFFFF' : '#64748B',
+                      fontSize: '0.72rem',
+                      fontWeight: '900',
+                      padding: '2px 8px',
+                      borderRadius: '6px',
+                      textTransform: 'uppercase'
+                    }}>
+                      {hasLifetimeDeal ? '🔥 ACTIVE DEAL' : 'OPTIONAL'}
+                    </span>
+                    <span style={{ fontSize: '0.88rem', fontWeight: '800', color: hasLifetimeDeal ? '#9A3412' : 'var(--text-dark)' }}>
+                      Have an Active Lifetime Deal or Promo?
+                    </span>
+                  </div>
+
+                  <input 
+                    type="checkbox"
+                    checked={hasLifetimeDeal}
+                    onChange={(e) => setHasLifetimeDeal(e.target.checked)}
+                    style={{ width: '18px', height: '18px', accentColor: '#EA580C', cursor: 'pointer' }}
+                  />
+                </div>
+
+                {hasLifetimeDeal && (
+                  <div style={{ marginTop: '14px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <p style={{ fontSize: '0.78rem', color: '#9A3412', margin: 0, fontWeight: '600' }}>
+                      Add your AppSumo, Dealify, or Founder Direct Lifetime Deal to unlock the glowing <strong>🔥 LIFETIME DEAL</strong> badge and high-intent buyer clicks!
+                    </p>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr 1fr', gap: '8px' }}>
+                      <div>
+                        <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>
+                          Deal Marketplace / Platform
+                        </label>
+                        <select
+                          value={dealPlatform}
+                          onChange={(e) => setDealPlatform(e.target.value)}
+                          style={{
+                            width: '100%',
+                            padding: '8px 10px',
+                            borderRadius: '8px',
+                            border: '1px solid #FDBA74',
+                            fontSize: '0.82rem',
+                            background: '#FFFFFF',
+                            fontWeight: '600'
+                          }}
+                        >
+                          <option value="AppSumo">AppSumo</option>
+                          <option value="Dealify">Dealify</option>
+                          <option value="PrimeClub">PrimeClub</option>
+                          <option value="Founder Direct LTD">Founder Direct LTD</option>
+                          <option value="Product Hunt Special">Product Hunt Special</option>
+                          <option value="Other Marketplace">Other Marketplace</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>
+                          Deal Price (One-Time) *
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="e.g. $19"
+                          value={dealPrice}
+                          onChange={(e) => setDealPrice(e.target.value)}
+                          style={{
+                            width: '100%',
+                            padding: '8px 10px',
+                            borderRadius: '8px',
+                            border: '1px solid #FDBA74',
+                            fontSize: '0.82rem',
+                            background: '#FFFFFF',
+                            fontWeight: '700',
+                            outline: 'none'
+                          }}
+                        />
+                      </div>
+
+                      <div>
+                        <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>
+                          Original Price / Discount
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="e.g. $179 (89% OFF)"
+                          value={dealDiscount}
+                          onChange={(e) => setDealDiscount(e.target.value)}
+                          style={{
+                            width: '100%',
+                            padding: '8px 10px',
+                            borderRadius: '8px',
+                            border: '1px solid #FDBA74',
+                            fontSize: '0.82rem',
+                            background: '#FFFFFF',
+                            outline: 'none'
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>
+                        Direct Lifetime Deal URL *
+                      </label>
+                      <input
+                        type="url"
+                        placeholder="e.g. https://appsumo.com/products/bookster/"
+                        value={dealUrl}
+                        onChange={(e) => setDealUrl(e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '8px 10px',
+                          borderRadius: '8px',
+                          border: '1px solid #FDBA74',
+                          fontSize: '0.82rem',
+                          background: '#FFFFFF',
+                          outline: 'none'
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <label style={{ fontSize: '0.76rem', fontWeight: '800', color: '#9A3412', display: 'block', marginBottom: '3px' }}>
+                        Deal Highlights &amp; Guarantee (Short)
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="e.g. Full lifetime access, future updates, 60-day money-back guarantee"
+                        value={dealHighlights}
+                        onChange={(e) => setDealHighlights(e.target.value)}
+                        style={{
+                          width: '100%',
+                          padding: '8px 10px',
+                          borderRadius: '8px',
+                          border: '1px solid #FDBA74',
+                          fontSize: '0.82rem',
+                          background: '#FFFFFF',
+                          outline: 'none'
+                        }}
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* Founder Information */}

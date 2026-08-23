@@ -100,6 +100,23 @@ export default function ToolCard({
                 Featured
               </span>
             )}
+            {(tool.hasLifetimeDeal || tool.dealPrice || (tool.pricing && tool.pricing.toLowerCase().includes('ltd')) || (tool.pricing && tool.pricing.toLowerCase().includes('lifetime'))) && (
+              <span style={{
+                fontSize: '0.62rem',
+                fontWeight: '900',
+                background: 'linear-gradient(135deg, #FFF7ED 0%, #FFEDD5 100%)',
+                color: '#C2410C',
+                border: '1px solid #FDBA74',
+                padding: '2px 7px',
+                borderRadius: '6px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '3px',
+                boxShadow: '0 2px 6px rgba(234, 88, 12, 0.15)'
+              }}>
+                🔥 {tool.dealPrice ? `LTD ${tool.dealPrice}` : 'LIFETIME DEAL'}
+              </span>
+            )}
             {tool.rankBadge && (
               <span style={{
                 fontSize: '0.62rem',
@@ -217,6 +234,33 @@ export default function ToolCard({
             <MessageSquare size={12} />
             <span>Review</span>
           </button>
+
+          {tool.dealUrl && (
+            <a
+              href={tool.dealUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.stopPropagation();
+                trackAffiliateClick(tool.id, tool.dealUrl);
+              }}
+              className="btn-pill-dark tool-action-btn"
+              style={{
+                padding: '6px 12px',
+                fontSize: '0.78rem',
+                whiteSpace: 'nowrap',
+                background: 'linear-gradient(135deg, #EA580C 0%, #C2410C 100%)',
+                color: '#FFFFFF',
+                border: 'none',
+                boxShadow: '0 2px 8px rgba(234, 88, 12, 0.25)',
+                fontWeight: '800'
+              }}
+              title={`Claim ${tool.dealPlatform || 'Lifetime'} Deal`}
+            >
+              <span>🔥 Claim LTD</span>
+              <ArrowUpRight size={13} />
+            </a>
+          )}
 
           <a
             href={tool.affiliateUrl}

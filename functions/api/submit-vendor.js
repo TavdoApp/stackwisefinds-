@@ -46,6 +46,10 @@ async function sendTelegramAlert(env, data) {
       approveLinks;
   }
 
+  const dealInfo = data.hasLifetimeDeal && data.dealPrice
+    ? `\n🔥 <b>LIFETIME DEAL:</b> ${data.dealPlatform} — ${data.dealPrice} ${data.dealDiscount ? `(${data.dealDiscount})` : ''}\n🔗 <b>Deal Link:</b> ${data.dealUrl || data.softwareWebsite}\n💡 <b>Perks:</b> ${data.dealHighlights || 'N/A'}`
+    : '';
+
   const text = `🚨 <b>NEW STAKDOCK SOFTWARE SUBMISSION!</b>\n\n` +
     `📦 <b>Software Name:</b> ${data.softwareName}\n` +
     `🌐 <b>Website:</b> ${data.softwareWebsite}\n` +
@@ -55,7 +59,7 @@ async function sendTelegramAlert(env, data) {
     `✉️ <b>Email:</b> ${data.vendorEmail}\n` +
     `🏷️ <b>Category:</b> ${data.category || 'General'}\n` +
     `💎 <b>Plan Selected:</b> ${planLabel}\n` +
-    `📊 <b>Status:</b> ${statusLabel}\n` +
+    `📊 <b>Status:</b> ${statusLabel}` + dealInfo + `\n` +
     `⏰ <b>Timestamp:</b> ${new Date().toISOString()}` + approveLinks;
 
   try {
@@ -114,6 +118,13 @@ export async function onRequestPost(context) {
     const packageType = sanitizeText(body.packageType || 'free');
     const tagline = sanitizeText(body.tagline || body.description || '');
     const pricing = sanitizeText(body.pricing || 'Freemium');
+
+    const hasLifetimeDeal = !!body.hasLifetimeDeal;
+    const dealPlatform = sanitizeText(body.dealPlatform || 'AppSumo');
+    const dealPrice = sanitizeText(body.dealPrice || '');
+    const dealDiscount = sanitizeText(body.dealDiscount || '');
+    const dealUrl = sanitizeText(body.dealUrl || '');
+    const dealHighlights = sanitizeText(body.dealHighlights || '');
 
     // Calculate expiration date: 30 days for monthly (in-feed / top-banner), 365 days for annual (premium)
     const now = new Date();
@@ -174,7 +185,13 @@ export async function onRequestPost(context) {
       vendorEmail,
       category,
       packageType,
-      status
+      status,
+      hasLifetimeDeal,
+      dealPlatform,
+      dealPrice,
+      dealDiscount,
+      dealUrl,
+      dealHighlights
     };
 
     // Send instant mobile push alert to Ossama's phone via Telegram Bot (EXACTLY ONCE)
