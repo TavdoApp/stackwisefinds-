@@ -415,7 +415,7 @@ export default function ArticleView({ article, onBack }) {
         }
 
         const validSections = (Array.isArray(article.sections) ? article.sections : []).filter(s => s && typeof s === 'object');
-        const sectionsToRender = [...customLeadSections, ...validSections];
+        const sectionsToRender = validSections.length > 0 ? validSections : customLeadSections;
 
         if (sectionsToRender.length === 0) return null;
 
@@ -430,9 +430,9 @@ export default function ArticleView({ article, onBack }) {
                       {sec.heading}
                     </h3>
                   )}
-                  {sec.body && (
+                  {(sec.body || sec.content) && (
                     <p style={{ fontSize: '0.98rem', lineHeight: '1.65', color: 'var(--text-muted)' }}>
-                      {sec.body}
+                      {sec.body || sec.content}
                     </p>
                   )}
                 </section>
