@@ -3,48 +3,18 @@
 const USER_UPVOTES_KEY = 'stakdock_user_upvotes';
 const CUSTOM_VOTES_KEY = 'stakdock_votes_delta';
 
-// Deterministic seed vote count for any tool based on reviews, rating, and visits
+// Real Upvote Baseline: Unvoted tools start at 0.
 export function getBaseVotes(tool) {
-  if (!tool) return 1;
-
-  // 1. Newly submitted tools start with exactly 1 initial Upvote (the founder's launch vote)
-  if (tool.submittedByVendor || tool.isSubmission || tool.packageType || tool.isNewLaunch || tool.upvotes === 1) {
-    return 1;
+  if (!tool) return 0;
+  if (typeof tool.upvotes === 'number' && Number.isFinite(tool.upvotes)) {
+    return Math.max(0, tool.upvotes);
   }
-
-  if (tool.upvotes && typeof tool.upvotes === 'number') return tool.upvotes;
-
-  // Generate deterministic count between 45 and 950 for established directory tools
-  let seed = 100;
-  if (tool.reviewsCount) {
-    seed += Math.min(tool.reviewsCount * 4, 400);
-  }
-  if (tool.rating) {
-    seed += Math.round((parseFloat(tool.rating) - 4.0) * 200);
-  }
-  if (tool.monthlyVisits) {
-    if (tool.monthlyVisits.includes('M')) {
-      seed += 250 + Math.round(parseFloat(tool.monthlyVisits) * 15);
-    } else if (tool.monthlyVisits.includes('K')) {
-      seed += 80 + Math.round(parseFloat(tool.monthlyVisits) * 0.4);
-    }
-  }
-
-  // Consistent hash based on tool id characters
-  let hash = 0;
-  const str = tool.id || tool.name || 'tool';
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash << 5) - hash + str.charCodeAt(i);
-    hash |= 0;
-  }
-  const variance = Math.abs(hash % 45);
-  
-  return Math.max(45, seed + variance);
+  return 0;
 }
 
-// StakDock Official Milestone Badge Engine
+// StakDock Milestone Badge Engine: Only awards badges when authentic community votes meet thresholds
 export function getGamifiedBadge(upvoteCount) {
-  const votes = Number(upvoteCount) || 1;
+  const votes = Number(upvoteCount) || 0;
   if (votes >= 250) {
     return {
       label: '#1 Product of the Week',
@@ -85,14 +55,8 @@ export function getGamifiedBadge(upvoteCount) {
       shadow: '0 2px 6px rgba(154,52,18,0.1)'
     };
   }
-  return {
-    label: 'Newly Launched',
-    icon: '🌱',
-    color: '#374151',
-    bg: '#F3F4F6',
-    border: '#E5E7EB',
-    shadow: 'none'
-  };
+  // Return null when below real milestone threshold (zero synthetic awards)
+  return null;
 }
 
 // Next Milestone Threshold for Viral Call to Action
@@ -187,49 +151,56 @@ export function toggleToolUpvote(tool) {
   };
 }
 
-// Sort tools for leaderboard tabs
+// Sort tools for leaderboard tabs using genuine upvotes and stable deterministic order
 export function getLeaderboardRankings(toolsList, filterType = 'voted') {
   if (!Array.isArray(toolsList)) return [];
   const list = [...toolsList];
 
-  const parseVisits = (v) => {
-    if (!v) return 180000;
-    if (v.includes('M')) return parseFloat(v) * 1000000;
-    if (v.includes('K')) return parseFloat(v) * 1000;
-    return 100000;
+  const compareVotes = (a, b) => {
+    const vA = getToolVotes(a);
+    const vB = getToolVotes(b);
+    if (vB !== vA) return vB - vA;
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return (a.name || '').localeCompare(b.name || '');
   };
 
   switch (filterType) {
     case 'voted': // Top Community Upvoted All-Time
-      return list.sort((a, b) => getToolVotes(b) - getToolVotes(a)).slice(0, 50);
+      return list.sort(compareVotes).slice(0, 50);
 
-    case 'trending': // Daily Launches & Trending Velocity
+    case 'trending': // Newly launched tools first, then by authentic votes
       return list.sort((a, b) => {
-        const scoreA = getToolVotes(a) * 0.7 + (a.isNew ? 300 : 0) + (a.reviewsCount || 10) * 1.5;
-        const scoreB = getToolVotes(b) * 0.7 + (b.isNew ? 300 : 0) + (b.reviewsCount || 10) * 1.5;
-        return scoreB - scoreA;
+        const isNewA = a.isNewLaunch || a.isNew || a.submittedByVendor ? 1 : 0;
+        const isNewB = b.isNewLaunch || b.isNew || b.submittedByVendor ? 1 : 0;
+        if (isNewB !== isNewA) return isNewB - isNewA;
+        return compareVotes(a, b);
       }).slice(0, 50);
 
-    case 'traffic': // Ranked by monthly traffic
-      return list.sort((a, b) => parseVisits(b.monthlyVisits) - parseVisits(a.monthlyVisits)).slice(0, 50);
+    case 'traffic': // Verified featured tools and directory listings
+      return list.sort((a, b) => {
+        if (a.featured && !b.featured) return -1;
+        if (!a.featured && b.featured) return 1;
+        return compareVotes(a, b);
+      }).slice(0, 50);
 
     case 'coding': // Top AI Coding & Dev
       return list.filter(t => t.category === 'ai-coding-dev' || t.subCategory === 'ai-coding-dev')
-        .sort((a, b) => getToolVotes(b) - getToolVotes(a)).slice(0, 50);
+        .sort(compareVotes).slice(0, 50);
 
     case 'content': // Top AI Content & Creative
-      return list.filter(t => t.category === 'ai-content' || t.subCategory === 'ai-video' || t.category === 'ai-audio')
-        .sort((a, b) => getToolVotes(b) - getToolVotes(a)).slice(0, 50);
+      return list.filter(t => t.category === 'ai-content' || t.subCategory === 'ai-video' || t.category === 'ai-audio' || t.category === 'trending-video-ai')
+        .sort(compareVotes).slice(0, 50);
 
     case 'free': // Free tier software
       return list.filter(t => t.isFreeTier || (t.pricing && t.pricing.toLowerCase().includes('free')))
-        .sort((a, b) => getToolVotes(b) - getToolVotes(a)).slice(0, 50);
+        .sort(compareVotes).slice(0, 50);
 
     case 'opensource': // Open Source software
       return list.filter(t => t.isOpenSource || (t.pricing && t.pricing.toLowerCase().includes('open-source')))
-        .sort((a, b) => getToolVotes(b) - getToolVotes(a)).slice(0, 50);
+        .sort(compareVotes).slice(0, 50);
 
     default:
-      return list.sort((a, b) => getToolVotes(b) - getToolVotes(a)).slice(0, 50);
+      return list.sort(compareVotes).slice(0, 50);
   }
 }

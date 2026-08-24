@@ -58,12 +58,12 @@ export function injectSoftwareApplicationSchema(tool) {
     };
   }
 
-  // Include aggregateRating only when authentic community reviews exist (> 0)
-  if (tool.rating && tool.reviewsCount && Number(tool.reviewsCount) > 0 && Number(tool.rating) > 0) {
+  // Include aggregateRating ONLY when authentic, verified community reviews exist (> 0)
+  if (tool.verifiedReviewCount && Number(tool.verifiedReviewCount) > 0 && Number(tool.verifiedRating) > 0) {
     schema.aggregateRating = {
       '@type': 'AggregateRating',
-      'ratingValue': String(tool.rating),
-      'ratingCount': String(tool.reviewsCount),
+      'ratingValue': String(tool.verifiedRating),
+      'ratingCount': String(tool.verifiedReviewCount),
       'bestRating': '5',
       'worstRating': '1'
     };

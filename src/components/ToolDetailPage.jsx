@@ -40,32 +40,14 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
     (t.packageType === 'premium' || t.isInFeed || t.packageType === 'in-feed' || (t.submittedByVendor && t.packageType !== 'free'))
   ) || (alternatives && alternatives.length > 0 ? alternatives[0] : null);
 
-  // Live Community Reviews State (Loaded from localStorage + Curated Initial Feedback)
+  // Live Community Reviews State (Loaded from localStorage for local user submissions)
   const [communityReviews, setCommunityReviews] = useState(() => {
     try {
       const storageKey = `stakdock_reviews_${tool.id}`;
       const saved = localStorage.getItem(storageKey);
       if (saved) return JSON.parse(saved);
     } catch (e) {}
-
-    return [
-      {
-        id: `seed-1-${tool.id}`,
-        reviewerName: 'Marcus Vance (SaaS Operator)',
-        rating: tool.rating >= 4.8 ? 5 : 4,
-        reviewText: `We tested ${tool.name} for our team's ${tool.category} workflow. The setup was straightforward and the ${tool.pricing || 'pricing'} model provides solid value for the capabilities delivered.`,
-        date: 'Verified Buyer • Aug 2026',
-        verified: true
-      },
-      {
-        id: `seed-2-${tool.id}`,
-        reviewerName: 'Elena Rostova (Growth Lead)',
-        rating: 5,
-        reviewText: `Clean interface, fast response time, and strong reliability. Definitely one of the top recommended tools in the ${tool.category} category.`,
-        date: 'Verified Buyer • Jul 2026',
-        verified: true
-      }
-    ];
+    return [];
   });
 
   useEffect(() => {
@@ -164,44 +146,48 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
                   {tool.name}
                 </h1>
                 <span className="tag-sage" style={{ fontSize: '0.75rem' }}>
-                  {tool.badge || 'Verified Tool'}
+                  {tool.claimedByFounder ? '✓ Founder Verified' : '🌐 Website Checked'}
                 </span>
-                <span style={{
-                  fontSize: '0.75rem',
-                  fontWeight: '800',
-                  background: gamifiedBadge.bg,
-                  color: gamifiedBadge.color,
-                  border: `1px solid ${gamifiedBadge.border}`,
-                  padding: '3px 10px',
-                  borderRadius: '9999px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px',
-                  boxShadow: gamifiedBadge.shadow
-                }}>
-                  {gamifiedBadge.icon} {gamifiedBadge.label}
-                </span>
+                {gamifiedBadge && (
+                  <span style={{
+                    fontSize: '0.75rem',
+                    fontWeight: '800',
+                    background: gamifiedBadge.bg,
+                    color: gamifiedBadge.color,
+                    border: `1px solid ${gamifiedBadge.border}`,
+                    padding: '3px 10px',
+                    borderRadius: '9999px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px',
+                    boxShadow: gamifiedBadge.shadow
+                  }}>
+                    {gamifiedBadge.icon} {gamifiedBadge.label}
+                  </span>
+                )}
               </div>
 
               <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap', fontSize: '0.88rem' }}>
-                {hasRating && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
-                    <Star size={16} fill="#82A735" color="#82A735" />
-                    <span>{tool.rating}</span>
-                    <span style={{ color: 'var(--text-muted)', fontWeight: '400' }}>({tool.reviewsCount} reviews)</span>
-                  </div>
-                )}
-
-                {visitsDisplay && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '3px 10px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-                    <Eye size={13} color="#82A735" />
-                    <span>{visitsDisplay} monthly visits</span>
-                  </div>
-                )}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'var(--text-muted)', fontSize: '0.84rem', fontWeight: '600' }}>
+                  <MessageSquare size={15} color="#82A735" />
+                  <span>{communityReviews.length} community {communityReviews.length === 1 ? 'review' : 'reviews'}</span>
+                </div>
 
                 <div style={{ fontWeight: '700', color: 'var(--text-dark)' }}>
-                  Pricing: {tool.pricing}
+                  Pricing: {tool.pricing || 'Freemium'}
                 </div>
+
+                {tool.isFreeTier && (
+                  <span style={{ background: '#EBF3DE', color: '#2D4522', padding: '3px 10px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '700', border: '1px solid #D6E4C2' }}>
+                    ✓ Free Tier
+                  </span>
+                )}
+
+                {tool.isOpenSource && (
+                  <span style={{ background: '#EBF0E1', color: '#141E14', padding: '3px 10px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '700', border: '1px solid #D6E4C2' }}>
+                    ⚙ Open Source
+                  </span>
+                )}
 
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#F0F5E5', color: '#2D4522', padding: '3px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '700', border: '1px solid #D6E4C2' }}>
                   <Tag size={12} color="#82A735" />
@@ -815,88 +801,114 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
             </button>
           </div>
 
-          {/* Rating Summary Bar */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: '#F6F7F2', padding: '20px', borderRadius: '16px', marginBottom: '32px', flexWrap: 'wrap' }}>
-            <div style={{ textAlign: 'center', borderRight: '1px solid var(--border-color)', paddingRight: '20px', minWidth: '110px' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#82A735', lineHeight: '1' }}>{tool.rating || 4.8}</div>
-              <div style={{ display: 'flex', gap: '2px', margin: '6px 0 2px', justifyContent: 'center' }}>
-                {[1,2,3,4,5].map(i => <Star key={i} size={14} fill="#82A735" color="#82A735" />)}
-              </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '700' }}>{communityReviews.length + (tool.reviewsCount || 120)} total ratings</div>
-            </div>
-
-            <div style={{ flex: 1, minWidth: '220px' }}>
-              <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <ShieldCheck size={18} color="#82A735" /> 98% Positive Buyer Consensus
-              </div>
-              <div style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
-                Verified users highlight reliable performance, intuitive UI, and responsive support for {tool.category} workflows.
-              </div>
-            </div>
-          </div>
-
-          {/* Live Review Feed List */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-            {communityReviews.map((rev) => (
-              <div
-                key={rev.id}
-                style={{
-                  background: '#F9FBF5',
-                  border: '1px solid var(--border-color)',
-                  borderRadius: '16px',
-                  padding: '20px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
-                }}
+          {communityReviews.length === 0 ? (
+            <div style={{ textAlign: 'center', padding: '48px 24px', background: '#F9FBF5', borderRadius: '20px', border: '1px solid var(--border-color)', margin: '20px 0' }}>
+              <MessageSquare size={38} color="#82A735" style={{ margin: '0 auto 14px' }} />
+              <h4 style={{ fontSize: '1.25rem', fontWeight: '800', margin: '0 0 8px', color: 'var(--text-dark)' }}>
+                No community reviews yet
+              </h4>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', maxWidth: '460px', margin: '0 auto 20px', lineHeight: '1.5' }}>
+                Have you used {tool.name}? Be the first to share your experience with the StakDock community.
+              </p>
+              <button
+                onClick={() => onOpenReviewModal && onOpenReviewModal(tool)}
+                className="btn-pill-green"
+                style={{ padding: '11px 24px', fontSize: '0.92rem' }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '50%',
-                      background: '#82A735',
-                      color: '#FFFFFF',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontWeight: '800',
-                      fontSize: '0.85rem'
-                    }}>
-                      {(rev.reviewerName || 'U').slice(0, 1).toUpperCase()}
-                    </div>
-                    <div>
-                      <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                        <span>{rev.reviewerName}</span>
-                        {rev.verified && (
-                          <span style={{ fontSize: '0.68rem', fontWeight: '800', color: '#166534', background: '#DCFCE7', padding: '2px 6px', borderRadius: '4px' }}>
-                            ✓ Verified User
-                          </span>
-                        )}
-                      </div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--text-light)' }}>
-                        {rev.date}
-                      </div>
-                    </div>
+                <MessageSquare size={16} />
+                <span>Write the First Review</span>
+              </button>
+            </div>
+          ) : (
+            <>
+              {/* Rating Summary Bar for Genuine Community Reviews */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', background: '#F6F7F2', padding: '20px', borderRadius: '16px', marginBottom: '32px', flexWrap: 'wrap' }}>
+                <div style={{ textAlign: 'center', borderRight: '1px solid var(--border-color)', paddingRight: '20px', minWidth: '110px' }}>
+                  <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#82A735', lineHeight: '1' }}>
+                    {(communityReviews.reduce((sum, r) => sum + (r.rating || 5), 0) / communityReviews.length).toFixed(1)}
                   </div>
-
-                  <div style={{ display: 'flex', gap: '2px' }}>
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <Star
-                        key={s}
-                        size={15}
-                        fill={s <= (rev.rating || 5) ? '#82A735' : 'none'}
-                        color={s <= (rev.rating || 5) ? '#82A735' : 'var(--text-light)'}
-                      />
-                    ))}
+                  <div style={{ display: 'flex', gap: '2px', margin: '6px 0 2px', justifyContent: 'center' }}>
+                    {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} fill="#82A735" color="#82A735" />)}
+                  </div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: '700' }}>
+                    {communityReviews.length} community {communityReviews.length === 1 ? 'review' : 'reviews'}
                   </div>
                 </div>
 
-                <p style={{ fontSize: '0.92rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: 0 }}>
-                  "{rev.reviewText}"
-                </p>
+                <div style={{ flex: 1, minWidth: '220px' }}>
+                  <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <ShieldCheck size={18} color="#82A735" /> Verified Community Feedback
+                  </div>
+                  <div style={{ fontSize: '0.84rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
+                    First-party feedback submitted by verified software operators and developers.
+                  </div>
+                </div>
               </div>
-            ))}
-          </div>
+
+              {/* Live Review Feed List */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {communityReviews.map((rev) => (
+                  <div
+                    key={rev.id}
+                    style={{
+                      background: '#F9FBF5',
+                      border: '1px solid var(--border-color)',
+                      borderRadius: '16px',
+                      padding: '20px',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <div style={{
+                          width: '36px',
+                          height: '36px',
+                          borderRadius: '50%',
+                          background: '#82A735',
+                          color: '#FFFFFF',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          fontWeight: '800',
+                          fontSize: '0.85rem'
+                        }}>
+                          {(rev.reviewerName || 'U').slice(0, 1).toUpperCase()}
+                        </div>
+                        <div>
+                          <div style={{ fontWeight: '800', fontSize: '0.92rem', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            <span>{rev.reviewerName}</span>
+                            {rev.verified && (
+                              <span style={{ fontSize: '0.68rem', fontWeight: '800', color: '#166534', background: '#DCFCE7', padding: '2px 6px', borderRadius: '4px' }}>
+                                ✓ Verified User
+                              </span>
+                            )}
+                          </div>
+                          <div style={{ fontSize: '0.75rem', color: 'var(--text-light)' }}>
+                            {rev.date}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '2px' }}>
+                        {[1, 2, 3, 4, 5].map((s) => (
+                          <Star
+                            key={s}
+                            size={15}
+                            fill={s <= (rev.rating || 5) ? '#82A735' : 'none'}
+                            color={s <= (rev.rating || 5) ? '#82A735' : 'var(--text-light)'}
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    <p style={{ fontSize: '0.92rem', color: 'var(--text-dark)', lineHeight: '1.6', margin: 0 }}>
+                      "{rev.reviewText}"
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       )}
 

@@ -126,7 +126,7 @@ export default function RankingPage({ onSelectTool, onSelectCategory, onOpenSubm
           const rankNum = index + 1;
           const isTop3 = rankNum <= 3;
           const rankColor = rankNum === 1 ? '#D4AF37' : rankNum === 2 ? '#A8A8A8' : rankNum === 3 ? '#CD7F32' : '#82A735';
-          const topLabel = rankNum === 1 ? '🥇 #1 Product of the Day' : rankNum === 2 ? '🥈 #2 Top Launch' : rankNum === 3 ? '🥉 #3 Trending' : null;
+          const topLabel = (getToolVotes(tool) >= 10 && isTop3) ? (rankNum === 1 ? '🥇 #1 Trending' : rankNum === 2 ? '🥈 #2 Trending' : '🥉 #3 Trending') : null;
 
           return (
             <div
@@ -190,11 +190,9 @@ export default function RankingPage({ onSelectTool, onSelectCategory, onOpenSubm
                       {topLabel}
                     </span>
                   )}
-                  {tool.badge && !topLabel && (
-                    <span className="tag-sage" style={{ fontSize: '0.68rem' }}>
-                      {tool.badge}
-                    </span>
-                  )}
+                  <span className="tag-sage" style={{ fontSize: '0.68rem' }}>
+                    {tool.claimedByFounder ? 'Founder Verified' : 'Website Checked'}
+                  </span>
                 </div>
                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.4' }}>
                   {tool.description}
@@ -202,19 +200,19 @@ export default function RankingPage({ onSelectTool, onSelectCategory, onOpenSubm
               </div>
 
               {/* Community Stats */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '0.85rem' }}>
-                {tool.rating && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '800', color: 'var(--text-dark)' }}>
-                    <Star size={14} fill="#82A735" color="#82A735" />
-                    <span>{tool.rating}</span>
-                  </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.82rem' }}>
+                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>
+                  {tool.pricing || 'Freemium'}
+                </span>
+                {tool.isFreeTier && (
+                  <span style={{ background: '#EBF3DE', color: '#2D4522', padding: '2px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: '700' }}>
+                    Free Tier
+                  </span>
                 )}
-
-                {tool.monthlyVisits && (
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '4px 10px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-                    <Eye size={12} color="#82A735" />
-                    <span>{tool.monthlyVisits}</span>
-                  </div>
+                {tool.isOpenSource && (
+                  <span style={{ background: '#EBF0E1', color: '#141E14', padding: '2px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: '700' }}>
+                    Open Source
+                  </span>
                 )}
               </div>
 

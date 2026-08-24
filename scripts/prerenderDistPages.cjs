@@ -191,11 +191,11 @@ saasTools.forEach(tool => {
     }
   };
 
-  if (tool.rating && tool.reviewsCount && Number(tool.reviewsCount) > 0 && Number(tool.rating) > 0) {
+  if (tool.verifiedReviewCount && Number(tool.verifiedReviewCount) > 0 && Number(tool.verifiedRating) > 0) {
     jsonLd.aggregateRating = {
       "@type": "AggregateRating",
-      "ratingValue": String(tool.rating),
-      "ratingCount": String(tool.reviewsCount),
+      "ratingValue": String(tool.verifiedRating),
+      "ratingCount": String(tool.verifiedReviewCount),
       "bestRating": "5",
       "worstRating": "1"
     };
@@ -223,10 +223,10 @@ saasTools.forEach(tool => {
 
       <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;font-size:0.9rem;">
         <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;color:#182618;">
-          ⭐ ${tool.rating || 4.8} / 5.0 (${tool.reviewsCount ? tool.reviewsCount.toLocaleString() : '120+'} ratings)
-        </span>
-        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;color:#182618;">
           💰 Pricing: ${escapeHtml(tool.pricing || 'Freemium')}
+        </span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;color:#2D4522;">
+          🌐 Website Checked
         </span>
         ${tool.isFreeTier ? '<span style="background:#eaf8ea;color:#1b6e1b;padding:6px 14px;border-radius:10px;font-weight:700;">✓ Free Tier Available</span>' : ''}
         ${tool.isOpenSource ? '<span style="background:#eaf0f8;color:#1b466e;padding:6px 14px;border-radius:10px;font-weight:700;">⚙ Open Source</span>' : ''}
@@ -418,7 +418,7 @@ saasTools.forEach(tool => {
               ${escapeHtml(alt.description || alt.tagline || '')}
             </p>
             <div style="display:flex;gap:12px;font-size:0.85rem;color:#5c7353;font-weight:600;">
-              <span>⭐ ${alt.rating || 4.8}★ (${alt.reviewsCount ? alt.reviewsCount.toLocaleString() : '100+'} reviews)</span>
+              <span>🌐 Website Checked</span>
               <span>💰 ${escapeHtml(alt.pricing || 'Freemium')}</span>
               ${alt.isFreeTier ? '<span style="color:#1b6e1b;">✓ Free Tier</span>' : ''}
             </div>
@@ -563,9 +563,9 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
             <td style="padding:12px;color:#182618;">${escapeHtml(tB.pricing || 'Freemium')}</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f4ee;">
-            <td style="padding:12px;font-weight:700;color:#2d4029;">User Rating</td>
-            <td style="padding:12px;color:#182618;">⭐ ${tA.rating || 4.8}★ (${tA.reviewsCount ? tA.reviewsCount.toLocaleString() : '100+'} reviews)</td>
-            <td style="padding:12px;color:#182618;">⭐ ${tB.rating || 4.7}★ (${tB.reviewsCount ? tB.reviewsCount.toLocaleString() : '100+'} reviews)</td>
+            <td style="padding:12px;font-weight:700;color:#2d4029;">Verification Status</td>
+            <td style="padding:12px;color:#182618;">${tA.claimedByFounder ? '✓ Founder Verified' : '🌐 Website Checked'}</td>
+            <td style="padding:12px;color:#182618;">${tB.claimedByFounder ? '✓ Founder Verified' : '🌐 Website Checked'}</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f4ee;">
             <td style="padding:12px;font-weight:700;color:#2d4029;">Free Tier</td>
@@ -651,14 +651,7 @@ saasCategories.forEach(cat => {
           "@type": "SoftwareApplication",
           "name": tool.name,
           "applicationCategory": catLabel,
-          "operatingSystem": "Web, Cloud",
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": String(tool.rating || 4.8),
-            "ratingCount": String(tool.reviewsCount || 120),
-            "bestRating": "5",
-            "worstRating": "1"
-          }
+          "operatingSystem": "Web, Cloud"
         }
       }))
     }
@@ -907,7 +900,7 @@ allGuides.forEach(guide => {
 // 7. Prerender Core Static Pages
 const coreStaticPages = [
   { slug: 'categories', title: 'Software Categories Directory 2026', description: 'Browse all 40+ verified SaaS software categories, buyer guides, and tool comparisons on StakDock.' },
-  { slug: 'ranking', title: 'Top Ranked SaaS Software & Verified Tools 2026', description: 'Leaderboard of top-rated software, CRM platforms, AI tools, and automation engines ranked by verified user reviews on StakDock.' },
+  { slug: 'ranking', title: 'Top Ranked SaaS Software & Trending Launches 2026', description: 'Leaderboard of top software, CRM platforms, AI tools, and automation engines ranked by community upvotes and telemetry on StakDock.' },
   { slug: 'advertise', title: 'Promote Your Software & Reach 50,000+ Founders', description: 'Feature your SaaS product on StakDock to acquire qualified software buyers, founders, and marketing operators.' },
   { slug: 'submit', title: 'Submit & List Your SaaS Product Free', description: 'List your software tool on StakDock directory in 60 seconds with instant domain inspection and automated competitor matching.' },
   { slug: 'terms', title: 'Terms of Service', description: 'StakDock Terms of Service and user agreements.' },

@@ -48,9 +48,6 @@ export default function ToolCard({
         boxShadow: '0 2px 6px rgba(0,0,0,0.02)'
       }}
     >
-      {/* Schema.org Rich Snippet Ingestion */}
-      {injectSoftwareApplicationSchema(tool)}
-
       {/* Compact Main Layout */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px', width: '100%', flexWrap: 'wrap' }}>
         
@@ -118,7 +115,7 @@ export default function ToolCard({
                 🔥 {tool.dealPrice ? `LTD ${formatDealPrice(tool.dealPrice)}` : 'LIFETIME DEAL'}
               </span>
             )}
-            {tool.rankBadge && (
+            {tool.isGenuineAward && tool.rankBadge && (
               <span style={{
                 fontSize: '0.62rem',
                 fontWeight: '900',
@@ -137,11 +134,9 @@ export default function ToolCard({
                 🏆 {tool.rankBadge}
               </span>
             )}
-            {tool.badge && (
-              <span className="tag-sage" style={{ fontSize: '0.6rem', padding: '1px 6px' }}>
-                {tool.badge}
-              </span>
-            )}
+            <span className="tag-sage" style={{ fontSize: '0.6rem', padding: '1px 6px' }}>
+              {tool.claimedByFounder ? 'Founder Verified' : 'Website Checked'}
+            </span>
           </div>
 
           <p style={{
@@ -187,20 +182,9 @@ export default function ToolCard({
               </span>
             )}
 
-            {hasRating && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#141E14', fontWeight: '700', marginLeft: 'auto' }}>
-                <Star size={11} fill="#82A735" color="#82A735" />
-                <span>{tool.rating}</span>
-                <span style={{ color: 'var(--text-light)', fontWeight: '400' }}>({tool.reviewsCount})</span>
-              </div>
-            )}
-
-            {visitsDisplay && (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: 'var(--text-muted)', fontWeight: '700', background: '#F6F7F2', padding: '1px 6px', borderRadius: '9999px', border: '1px solid var(--border-color)' }}>
-                <Eye size={10} color="#82A735" />
-                <span>{visitsDisplay}</span>
-              </div>
-            )}
+            <span style={{ fontSize: '0.68rem', fontWeight: '700', color: 'var(--text-dark)', marginLeft: 'auto' }}>
+              {tool.pricing || 'Freemium'}
+            </span>
           </div>
         </div>
 
