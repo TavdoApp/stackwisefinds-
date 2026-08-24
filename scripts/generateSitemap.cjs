@@ -219,5 +219,11 @@ sitemapXml += `</urlset>\n`;
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
 
-console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${totalUrlsCount} (100% strict trailing-slash canonicals)`);
+const distPath = path.join(__dirname, '..', 'dist');
+if (fs.existsSync(distPath)) {
+  fs.writeFileSync(path.join(distPath, 'sitemap.xml'), sitemapXml, 'utf8');
+}
+
+console.log(`✨ Successfully generated public/sitemap.xml & dist/sitemap.xml for StakDock.com! Total indexed routes: ${totalUrlsCount} (100% strict trailing-slash canonicals)`);
 console.log(`🛡️  Quality Gating: Indexed Software: ${indexedSoftwareCount}, Held from Index: ${heldSoftwareCount}`);
+
