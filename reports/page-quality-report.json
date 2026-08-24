@@ -1,0 +1,1583 @@
+{
+  "generatedAt": "2026-08-24T08:31:29.204Z",
+  "auditMode": "SHADOW_MODE_READ_ONLY",
+  "summary": {
+    "totalRoutesEvaluated": 4126,
+    "globalStats": {
+      "total": 4126,
+      "avg": 81.1,
+      "median": 87,
+      "min": 31,
+      "max": 100,
+      "counts": {
+        "excellent": 2514,
+        "good": 1179,
+        "needsImprovement": 432,
+        "hold": 1
+      },
+      "percentages": {
+        "excellent": 60.9,
+        "good": 28.6,
+        "needsImprovement": 10.5,
+        "hold": 0
+      }
+    },
+    "byTemplate": {
+      "software": {
+        "total": 1788,
+        "avg": 68.7,
+        "median": 67,
+        "min": 46,
+        "max": 91,
+        "counts": {
+          "excellent": 177,
+          "good": 1179,
+          "needsImprovement": 432,
+          "hold": 0
+        },
+        "percentages": {
+          "excellent": 9.9,
+          "good": 65.9,
+          "needsImprovement": 24.2,
+          "hold": 0
+        }
+      },
+      "alternatives": {
+        "total": 1788,
+        "avg": 89.4,
+        "median": 88,
+        "min": 31,
+        "max": 98,
+        "counts": {
+          "excellent": 1787,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 1
+        },
+        "percentages": {
+          "excellent": 99.9,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0.1
+        }
+      },
+      "versus": {
+        "total": 507,
+        "avg": 94.5,
+        "median": 96,
+        "min": 87,
+        "max": 98,
+        "counts": {
+          "excellent": 507,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0
+        },
+        "percentages": {
+          "excellent": 100,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0
+        }
+      },
+      "best": {
+        "total": 35,
+        "avg": 99.1,
+        "median": 100,
+        "min": 89,
+        "max": 100,
+        "counts": {
+          "excellent": 35,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0
+        },
+        "percentages": {
+          "excellent": 100,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0
+        }
+      },
+      "guides": {
+        "total": 8,
+        "avg": 97.8,
+        "median": 100,
+        "min": 94,
+        "max": 100,
+        "counts": {
+          "excellent": 8,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0
+        },
+        "percentages": {
+          "excellent": 100,
+          "good": 0,
+          "needsImprovement": 0,
+          "hold": 0
+        }
+      }
+    }
+  },
+  "similarityDistribution": {
+    "highlyUniquePercent": 100,
+    "acceptableSimilarityPercent": 0,
+    "suspiciouslySimilarPercent": 0,
+    "nearDuplicatePercent": 0
+  },
+  "systemicWeaknesses": {
+    "thinDescriptions": {
+      "count": 17,
+      "percent": 1
+    },
+    "shortDescriptions": {
+      "count": 625,
+      "percent": 35
+    },
+    "missingFeatures": {
+      "count": 1191,
+      "percent": 66.6
+    },
+    "thinFeatures": {
+      "count": 10,
+      "percent": 0.6
+    },
+    "missingTaglines": {
+      "count": 17,
+      "percent": 1
+    },
+    "missingUseCases": {
+      "count": 1767,
+      "percent": 98.8
+    },
+    "unlistedPricing": {
+      "count": 0,
+      "percent": 0
+    },
+    "thinCategories": {
+      "count": 2,
+      "percent": 5.7
+    },
+    "lowConfidenceVs": {
+      "count": 0,
+      "percent": 0
+    }
+  },
+  "improvementOpportunities": {
+    "holdToNeedsImprovement": 0,
+    "needsImprovementToGood": 432,
+    "goodToExcellent": 1148
+  },
+  "topPagesByTemplate": {
+    "software": [
+      {
+        "url": "https://stakdock.com/software/hedra-ai/",
+        "route": "/software/hedra-ai/",
+        "type": "software",
+        "id": "hedra-ai",
+        "name": "Hedra",
+        "totalScore": 91,
+        "band": "EXCELLENT",
+        "confidence": "HIGH",
+        "breakdown": {
+          "identity": 15,
+          "description": 21,
+          "features": 15,
+          "pricing": 15,
+          "useCase": 10,
+          "relationships": 7,
+          "dataConfidence": 8
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/software/suitedash/",
+        "route": "/software/suitedash/",
+        "type": "software",
+        "id": "suitedash",
+        "name": "SuiteDash",
+        "totalScore": 91,
+        "band": "EXCELLENT",
+        "confidence": "HIGH",
+        "breakdown": {
+          "identity": 15,
+          "description": 21,
+          "features": 15,
+          "pricing": 15,
+          "useCase": 10,
+          "relationships": 7,
+          "dataConfidence": 8
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/software/vocallab-ai/",
+        "route": "/software/vocallab-ai/",
+        "type": "software",
+        "id": "vocallab-ai",
+        "name": "Vocallab AI",
+        "totalScore": 91,
+        "band": "EXCELLENT",
+        "confidence": "HIGH",
+        "breakdown": {
+          "identity": 15,
+          "description": 21,
+          "features": 15,
+          "pricing": 15,
+          "useCase": 10,
+          "relationships": 7,
+          "dataConfidence": 8
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/software/bookster/",
+        "route": "/software/bookster/",
+        "type": "software",
+        "id": "bookster",
+        "name": "Bookster",
+        "totalScore": 89,
+        "band": "EXCELLENT",
+        "confidence": "VERIFIED",
+        "breakdown": {
+          "identity": 15,
+          "description": 21,
+          "features": 15,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 10,
+          "dataConfidence": 10
+        },
+        "issues": [
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/aiwritebook/",
+        "route": "/software/aiwritebook/",
+        "type": "software",
+        "id": "aiwritebook",
+        "name": "AIWriteBook",
+        "totalScore": 89,
+        "band": "EXCELLENT",
+        "confidence": "VERIFIED",
+        "breakdown": {
+          "identity": 15,
+          "description": 21,
+          "features": 15,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 10,
+          "dataConfidence": 10
+        },
+        "issues": [
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "url": "https://stakdock.com/alternatives/suitedash/",
+        "route": "/alternatives/suitedash/",
+        "type": "alternatives",
+        "id": "suitedash",
+        "name": "SuiteDash Alternatives",
+        "totalScore": 98,
+        "band": "EXCELLENT",
+        "altCount": 47,
+        "breakdown": {
+          "sourceQuality": 18,
+          "alternativeRelevance": 25,
+          "differentiation": 25,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/greenshift-wp/",
+        "route": "/alternatives/greenshift-wp/",
+        "type": "alternatives",
+        "id": "greenshift-wp",
+        "name": "Greenshift WP Alternatives",
+        "totalScore": 97,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 17,
+          "alternativeRelevance": 25,
+          "differentiation": 25,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/maxbounty/",
+        "route": "/alternatives/maxbounty/",
+        "type": "alternatives",
+        "id": "maxbounty",
+        "name": "MaxBounty Alternatives",
+        "totalScore": 97,
+        "band": "EXCELLENT",
+        "altCount": 6,
+        "breakdown": {
+          "sourceQuality": 17,
+          "alternativeRelevance": 25,
+          "differentiation": 25,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/impact-com/",
+        "route": "/alternatives/impact-com/",
+        "type": "alternatives",
+        "id": "impact-com",
+        "name": "Impact.com Alternatives",
+        "totalScore": 97,
+        "band": "EXCELLENT",
+        "altCount": 6,
+        "breakdown": {
+          "sourceQuality": 17,
+          "alternativeRelevance": 25,
+          "differentiation": 25,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/partnerstack/",
+        "route": "/alternatives/partnerstack/",
+        "type": "alternatives",
+        "id": "partnerstack",
+        "name": "PartnerStack Alternatives",
+        "totalScore": 97,
+        "band": "EXCELLENT",
+        "altCount": 6,
+        "breakdown": {
+          "sourceQuality": 17,
+          "alternativeRelevance": 25,
+          "differentiation": 25,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ],
+    "versus": [
+      {
+        "url": "https://stakdock.com/vs/bookster-vs-toggl-track/",
+        "route": "/vs/bookster-vs-toggl-track/",
+        "type": "vs",
+        "slug": "bookster-vs-toggl-track",
+        "name": "Bookster vs Toggl Track",
+        "intent": "HIGH",
+        "totalScore": 98,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 25,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 13,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/maxbounty-vs-impact-com/",
+        "route": "/vs/maxbounty-vs-impact-com/",
+        "type": "vs",
+        "slug": "maxbounty-vs-impact-com",
+        "name": "MaxBounty vs Impact.com",
+        "intent": "HIGH",
+        "totalScore": 98,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 25,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 13,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/maxbounty-vs-partnerstack/",
+        "route": "/vs/maxbounty-vs-partnerstack/",
+        "type": "vs",
+        "slug": "maxbounty-vs-partnerstack",
+        "name": "MaxBounty vs PartnerStack",
+        "intent": "HIGH",
+        "totalScore": 98,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 25,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 13,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/maxbounty-vs-cj-affiliate/",
+        "route": "/vs/maxbounty-vs-cj-affiliate/",
+        "type": "vs",
+        "slug": "maxbounty-vs-cj-affiliate",
+        "name": "MaxBounty vs CJ Affiliate",
+        "intent": "HIGH",
+        "totalScore": 98,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 25,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 13,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/maxbounty-vs-shareasale/",
+        "route": "/vs/maxbounty-vs-shareasale/",
+        "type": "vs",
+        "slug": "maxbounty-vs-shareasale",
+        "name": "MaxBounty vs ShareASale",
+        "intent": "HIGH",
+        "totalScore": 98,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 25,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 13,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ],
+    "best": [
+      {
+        "url": "https://stakdock.com/best/ai-content/",
+        "route": "/best/ai-content/",
+        "type": "best",
+        "id": "ai-content",
+        "name": "Best AI Copywriting & Text Software (2026)",
+        "toolCount": 29,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/trending-video-ai/",
+        "route": "/best/trending-video-ai/",
+        "type": "best",
+        "id": "trending-video-ai",
+        "name": "Best AI Video & Motion Software (2026)",
+        "toolCount": 115,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/ai-music-audio/",
+        "route": "/best/ai-music-audio/",
+        "type": "best",
+        "id": "ai-music-audio",
+        "name": "Best AI Music & Audio Software (2026)",
+        "toolCount": 59,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/design-creative/",
+        "route": "/best/design-creative/",
+        "type": "best",
+        "id": "design-creative",
+        "name": "Best AI Image & Design Software (2026)",
+        "toolCount": 27,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/ai-coding-dev/",
+        "route": "/best/ai-coding-dev/",
+        "type": "best",
+        "id": "ai-coding-dev",
+        "name": "Best AI Coding & Dev Assistants Software (2026)",
+        "toolCount": 16,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ],
+    "guides": [
+      {
+        "url": "https://stakdock.com/guides/best-all-in-one-seo-software-2026/",
+        "route": "/guides/best-all-in-one-seo-software-2026/",
+        "type": "guide",
+        "slug": "best-all-in-one-seo-software-2026",
+        "title": "Best All-in-One SEO Software in 2026: Comprehensive Buyer Matrix",
+        "wordCount": 1450,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "editorialDepth": 30,
+          "originality": 25,
+          "intentSatisfaction": 20,
+          "internalLinking": 15,
+          "schemaMetadata": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/guides/best-cloud-database-platforms-2026/",
+        "route": "/guides/best-cloud-database-platforms-2026/",
+        "type": "guide",
+        "slug": "best-cloud-database-platforms-2026",
+        "title": "Best Cloud Database & BaaS Platforms 2026: Modern Backend Comparison",
+        "wordCount": 1520,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "editorialDepth": 30,
+          "originality": 25,
+          "intentSatisfaction": 20,
+          "internalLinking": 15,
+          "schemaMetadata": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/guides/best-ai-video-generators-2026/",
+        "route": "/guides/best-ai-video-generators-2026/",
+        "type": "guide",
+        "slug": "best-ai-video-generators-2026",
+        "title": "Best AI Video Generators in 2026: Text-to-Video & Motion Physics Matrix",
+        "wordCount": 1650,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "editorialDepth": 30,
+          "originality": 25,
+          "intentSatisfaction": 20,
+          "internalLinking": 15,
+          "schemaMetadata": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/guides/best-ai-coding-assistants-2026/",
+        "route": "/guides/best-ai-coding-assistants-2026/",
+        "type": "guide",
+        "slug": "best-ai-coding-assistants-2026",
+        "title": "Best AI Coding Assistants & Dev Tools 2026: Complete Benchmark",
+        "wordCount": 1780,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "editorialDepth": 30,
+          "originality": 25,
+          "intentSatisfaction": 20,
+          "internalLinking": 15,
+          "schemaMetadata": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/guides/best-crm-software-founders-2026/",
+        "route": "/guides/best-crm-software-founders-2026/",
+        "type": "guide",
+        "slug": "best-crm-software-founders-2026",
+        "title": "Best CRM Software for Founders & Sales Teams 2026: Pipeline Comparison",
+        "wordCount": 1420,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "editorialDepth": 30,
+          "originality": 25,
+          "intentSatisfaction": 20,
+          "internalLinking": 15,
+          "schemaMetadata": 10
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ]
+  },
+  "lowestPagesByTemplate": {
+    "software": [
+      {
+        "url": "https://stakdock.com/software/joinly/",
+        "route": "/software/joinly/",
+        "type": "software",
+        "id": "joinly",
+        "name": "Joinly",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/adomate/",
+        "route": "/software/adomate/",
+        "type": "software",
+        "id": "adomate",
+        "name": "Adomate",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/estera/",
+        "route": "/software/estera/",
+        "type": "software",
+        "id": "estera",
+        "name": "Estera",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/superfile/",
+        "route": "/software/superfile/",
+        "type": "software",
+        "id": "superfile",
+        "name": "superfile",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/comms/",
+        "route": "/software/comms/",
+        "type": "software",
+        "id": "comms",
+        "name": "Comms",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/rivault/",
+        "route": "/software/rivault/",
+        "type": "software",
+        "id": "rivault",
+        "name": "Rivault",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/robynn-ai/",
+        "route": "/software/robynn-ai/",
+        "type": "software",
+        "id": "robynn-ai",
+        "name": "Robynn AI",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/tackly/",
+        "route": "/software/tackly/",
+        "type": "software",
+        "id": "tackly",
+        "name": "Tackly",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/illume-labs/",
+        "route": "/software/illume-labs/",
+        "type": "software",
+        "id": "illume-labs",
+        "name": "Illume Labs",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/software/cardzen/",
+        "route": "/software/cardzen/",
+        "type": "software",
+        "id": "cardzen",
+        "name": "Cardzen",
+        "totalScore": 46,
+        "band": "NEEDS IMPROVEMENT",
+        "confidence": "LOW",
+        "breakdown": {
+          "identity": 11,
+          "description": 7,
+          "features": 0,
+          "pricing": 15,
+          "useCase": 3,
+          "relationships": 7,
+          "dataConfidence": 3
+        },
+        "issues": [
+          "Short or missing tagline",
+          "Very thin description (<80 chars)",
+          "Missing feature specifications (0 features)",
+          "Missing specific target audience / bestFor"
+        ],
+        "improvements": [
+          "Add a descriptive 1-sentence tagline (+4 pts)",
+          "Write a comprehensive 200+ char overview (+11 pts)",
+          "Add 4 structured product capability specs (+15 pts)",
+          "Define explicit target audience / bestFor use-case (+5 pts)"
+        ]
+      }
+    ],
+    "alternatives": [
+      {
+        "url": "https://stakdock.com/alternatives/nuwtonic/",
+        "route": "/alternatives/nuwtonic/",
+        "type": "alternatives",
+        "id": "nuwtonic",
+        "name": "nuwtonic Alternatives",
+        "totalScore": 31,
+        "band": "HOLD",
+        "altCount": 0,
+        "breakdown": {
+          "sourceQuality": 13,
+          "alternativeRelevance": 0,
+          "differentiation": 10,
+          "searchIntent": 0,
+          "editorialGuidance": 8
+        },
+        "issues": [
+          "No direct category alternatives found"
+        ],
+        "improvements": [
+          "Map at least 3 relevant alternative tools (+15 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/alternatives/adomate/",
+        "route": "/alternatives/adomate/",
+        "type": "alternatives",
+        "id": "adomate",
+        "name": "Adomate Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/estera/",
+        "route": "/alternatives/estera/",
+        "type": "alternatives",
+        "id": "estera",
+        "name": "Estera Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/superfile/",
+        "route": "/alternatives/superfile/",
+        "type": "alternatives",
+        "id": "superfile",
+        "name": "superfile Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/comms/",
+        "route": "/alternatives/comms/",
+        "type": "alternatives",
+        "id": "comms",
+        "name": "Comms Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/rivault/",
+        "route": "/alternatives/rivault/",
+        "type": "alternatives",
+        "id": "rivault",
+        "name": "Rivault Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/robynn-ai/",
+        "route": "/alternatives/robynn-ai/",
+        "type": "alternatives",
+        "id": "robynn-ai",
+        "name": "Robynn AI Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/tackly/",
+        "route": "/alternatives/tackly/",
+        "type": "alternatives",
+        "id": "tackly",
+        "name": "Tackly Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/illume-labs/",
+        "route": "/alternatives/illume-labs/",
+        "type": "alternatives",
+        "id": "illume-labs",
+        "name": "Illume Labs Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/alternatives/cardzen/",
+        "route": "/alternatives/cardzen/",
+        "type": "alternatives",
+        "id": "cardzen",
+        "name": "Cardzen Alternatives",
+        "totalScore": 84,
+        "band": "EXCELLENT",
+        "altCount": 28,
+        "breakdown": {
+          "sourceQuality": 9,
+          "alternativeRelevance": 25,
+          "differentiation": 20,
+          "searchIntent": 15,
+          "editorialGuidance": 15
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ],
+    "versus": [
+      {
+        "url": "https://stakdock.com/vs/zebracat-ai-vs-claap/",
+        "route": "/vs/zebracat-ai-vs-claap/",
+        "type": "vs",
+        "slug": "zebracat-ai-vs-claap",
+        "name": "Zebracat vs Claap",
+        "intent": "MEDIUM",
+        "totalScore": 87,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 21,
+          "contentGuidance": 25,
+          "baselineQuality": 10,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/zebracat-ai-vs-mindstamp/",
+        "route": "/vs/zebracat-ai-vs-mindstamp/",
+        "type": "vs",
+        "slug": "zebracat-ai-vs-mindstamp",
+        "name": "Zebracat vs Mindstamp",
+        "intent": "MEDIUM",
+        "totalScore": 87,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 21,
+          "contentGuidance": 25,
+          "baselineQuality": 10,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/zebracat-ai-vs-viddyoze/",
+        "route": "/vs/zebracat-ai-vs-viddyoze/",
+        "type": "vs",
+        "slug": "zebracat-ai-vs-viddyoze",
+        "name": "Zebracat vs Viddyoze",
+        "intent": "MEDIUM",
+        "totalScore": 88,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 21,
+          "contentGuidance": 25,
+          "baselineQuality": 11,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/zebracat-ai-vs-offeo/",
+        "route": "/vs/zebracat-ai-vs-offeo/",
+        "type": "vs",
+        "slug": "zebracat-ai-vs-offeo",
+        "name": "Zebracat vs Offeo",
+        "intent": "MEDIUM",
+        "totalScore": 88,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 21,
+          "contentGuidance": 25,
+          "baselineQuality": 11,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/zebracat-ai-vs-waymark/",
+        "route": "/vs/zebracat-ai-vs-waymark/",
+        "type": "vs",
+        "slug": "zebracat-ai-vs-waymark",
+        "name": "Zebracat vs Waymark",
+        "intent": "MEDIUM",
+        "totalScore": 88,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 21,
+          "contentGuidance": 25,
+          "baselineQuality": 11,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/claap-vs-mindstamp/",
+        "route": "/vs/claap-vs-mindstamp/",
+        "type": "vs",
+        "slug": "claap-vs-mindstamp",
+        "name": "Claap vs Mindstamp",
+        "intent": "MEDIUM",
+        "totalScore": 90,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 9,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/jotform-vs-formstack/",
+        "route": "/vs/jotform-vs-formstack/",
+        "type": "vs",
+        "slug": "jotform-vs-formstack",
+        "name": "Jotform vs Formstack",
+        "intent": "MEDIUM",
+        "totalScore": 90,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 9,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/jotform-vs-qualtrics-xm/",
+        "route": "/vs/jotform-vs-qualtrics-xm/",
+        "type": "vs",
+        "slug": "jotform-vs-qualtrics-xm",
+        "name": "Jotform vs Qualtrics XM",
+        "intent": "MEDIUM",
+        "totalScore": 90,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 9,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/jotform-vs-paperform/",
+        "route": "/vs/jotform-vs-paperform/",
+        "type": "vs",
+        "slug": "jotform-vs-paperform",
+        "name": "Jotform vs Paperform",
+        "intent": "MEDIUM",
+        "totalScore": 90,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 9,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/vs/tally-vs-formstack/",
+        "route": "/vs/tally-vs-formstack/",
+        "type": "vs",
+        "slug": "tally-vs-formstack",
+        "name": "Tally vs Formstack",
+        "intent": "MEDIUM",
+        "totalScore": 90,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "productRelevance": 21,
+          "specMatrix": 25,
+          "contentGuidance": 25,
+          "baselineQuality": 9,
+          "navigationalIntegrity": 10
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ],
+    "best": [
+      {
+        "url": "https://stakdock.com/best/saas-lifetime-deals/",
+        "route": "/best/saas-lifetime-deals/",
+        "type": "best",
+        "id": "saas-lifetime-deals",
+        "name": "Best Lifetime Deals & Software Marketplace Software (2026)",
+        "toolCount": 4,
+        "totalScore": 89,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 14,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [
+          "Small category inventory (4 tools)"
+        ],
+        "improvements": [
+          "Add 5+ verified software tools to this category (+6 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/best/freelance-marketplaces/",
+        "route": "/best/freelance-marketplaces/",
+        "type": "best",
+        "id": "freelance-marketplaces",
+        "name": "Best Freelance Platforms & Service Marketplaces Software (2026)",
+        "toolCount": 4,
+        "totalScore": 89,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 14,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [
+          "Small category inventory (4 tools)"
+        ],
+        "improvements": [
+          "Add 5+ verified software tools to this category (+6 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/best/affiliate-cpa-networks/",
+        "route": "/best/affiliate-cpa-networks/",
+        "type": "best",
+        "id": "affiliate-cpa-networks",
+        "name": "Best Affiliate Networks & CPA Platforms Software (2026)",
+        "toolCount": 7,
+        "totalScore": 89,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 14,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [
+          "Small category inventory (7 tools)"
+        ],
+        "improvements": [
+          "Add 5+ verified software tools to this category (+6 pts)"
+        ]
+      },
+      {
+        "url": "https://stakdock.com/best/ai-content/",
+        "route": "/best/ai-content/",
+        "type": "best",
+        "id": "ai-content",
+        "name": "Best AI Copywriting & Text Software (2026)",
+        "toolCount": 29,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/trending-video-ai/",
+        "route": "/best/trending-video-ai/",
+        "type": "best",
+        "id": "trending-video-ai",
+        "name": "Best AI Video & Motion Software (2026)",
+        "toolCount": 115,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/ai-music-audio/",
+        "route": "/best/ai-music-audio/",
+        "type": "best",
+        "id": "ai-music-audio",
+        "name": "Best AI Music & Audio Software (2026)",
+        "toolCount": 59,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/design-creative/",
+        "route": "/best/design-creative/",
+        "type": "best",
+        "id": "design-creative",
+        "name": "Best AI Image & Design Software (2026)",
+        "toolCount": 27,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/ai-coding-dev/",
+        "route": "/best/ai-coding-dev/",
+        "type": "best",
+        "id": "ai-coding-dev",
+        "name": "Best AI Coding & Dev Assistants Software (2026)",
+        "toolCount": 16,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/meeting-ai/",
+        "route": "/best/meeting-ai/",
+        "type": "best",
+        "id": "meeting-ai",
+        "name": "Best AI Meeting Transcribers Software (2026)",
+        "toolCount": 33,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      },
+      {
+        "url": "https://stakdock.com/best/ad-creative/",
+        "route": "/best/ad-creative/",
+        "type": "best",
+        "id": "ad-creative",
+        "name": "Best AI Ads & Visual Copy Software (2026)",
+        "toolCount": 31,
+        "totalScore": 100,
+        "band": "EXCELLENT",
+        "breakdown": {
+          "categoryDepth": 25,
+          "rankingIntegrity": 25,
+          "editorialGuidance": 25,
+          "structuredData": 15,
+          "internalLinking": 10
+        },
+        "issues": [],
+        "improvements": []
+      }
+    ]
+  }
+}
