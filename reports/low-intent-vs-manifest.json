@@ -1,0 +1,4510 @@
+{
+  "generatedAt": "2026-08-24T08:43:19.929Z",
+  "totalLowIntentPairs": 237,
+  "policy": "GRANDFATHERED_UNDER_REVIEW_DO_NOT_MASS_DELETE",
+  "pairs": [
+    {
+      "url": "https://stakdock.com/vs/bookster-vs-any-do/",
+      "route": "/vs/bookster-vs-any-do/",
+      "type": "vs",
+      "slug": "bookster-vs-any-do",
+      "toolA": {
+        "id": "bookster",
+        "name": "Bookster"
+      },
+      "toolB": {
+        "id": "any-do",
+        "name": "Any.do"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 35,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/bookster-vs-obsidian/",
+      "route": "/vs/bookster-vs-obsidian/",
+      "type": "vs",
+      "slug": "bookster-vs-obsidian",
+      "toolA": {
+        "id": "bookster",
+        "name": "Bookster"
+      },
+      "toolB": {
+        "id": "obsidian",
+        "name": "Obsidian"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 36,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/bookster-vs-evernote/",
+      "route": "/vs/bookster-vs-evernote/",
+      "type": "vs",
+      "slug": "bookster-vs-evernote",
+      "toolA": {
+        "id": "bookster",
+        "name": "Bookster"
+      },
+      "toolB": {
+        "id": "evernote",
+        "name": "Evernote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 36,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/any-do-vs-motion/",
+      "route": "/vs/any-do-vs-motion/",
+      "type": "vs",
+      "slug": "any-do-vs-motion",
+      "toolA": {
+        "id": "any-do",
+        "name": "Any.do"
+      },
+      "toolB": {
+        "id": "motion",
+        "name": "Motion"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 32,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/any-do-vs-toggl-track/",
+      "route": "/vs/any-do-vs-toggl-track/",
+      "type": "vs",
+      "slug": "any-do-vs-toggl-track",
+      "toolA": {
+        "id": "any-do",
+        "name": "Any.do"
+      },
+      "toolB": {
+        "id": "toggl-track",
+        "name": "Toggl Track"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 34,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/any-do-vs-obsidian/",
+      "route": "/vs/any-do-vs-obsidian/",
+      "type": "vs",
+      "slug": "any-do-vs-obsidian",
+      "toolA": {
+        "id": "any-do",
+        "name": "Any.do"
+      },
+      "toolB": {
+        "id": "obsidian",
+        "name": "Obsidian"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/any-do-vs-evernote/",
+      "route": "/vs/any-do-vs-evernote/",
+      "type": "vs",
+      "slug": "any-do-vs-evernote",
+      "toolA": {
+        "id": "any-do",
+        "name": "Any.do"
+      },
+      "toolB": {
+        "id": "evernote",
+        "name": "Evernote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/motion-vs-obsidian/",
+      "route": "/vs/motion-vs-obsidian/",
+      "type": "vs",
+      "slug": "motion-vs-obsidian",
+      "toolA": {
+        "id": "motion",
+        "name": "Motion"
+      },
+      "toolB": {
+        "id": "obsidian",
+        "name": "Obsidian"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/motion-vs-evernote/",
+      "route": "/vs/motion-vs-evernote/",
+      "type": "vs",
+      "slug": "motion-vs-evernote",
+      "toolA": {
+        "id": "motion",
+        "name": "Motion"
+      },
+      "toolB": {
+        "id": "evernote",
+        "name": "Evernote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/toggl-track-vs-obsidian/",
+      "route": "/vs/toggl-track-vs-obsidian/",
+      "type": "vs",
+      "slug": "toggl-track-vs-obsidian",
+      "toolA": {
+        "id": "toggl-track",
+        "name": "Toggl Track"
+      },
+      "toolB": {
+        "id": "obsidian",
+        "name": "Obsidian"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 35,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/toggl-track-vs-evernote/",
+      "route": "/vs/toggl-track-vs-evernote/",
+      "type": "vs",
+      "slug": "toggl-track-vs-evernote",
+      "toolA": {
+        "id": "toggl-track",
+        "name": "Toggl Track"
+      },
+      "toolB": {
+        "id": "evernote",
+        "name": "Evernote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 35,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/obsidian-vs-evernote/",
+      "route": "/vs/obsidian-vs-evernote/",
+      "type": "vs",
+      "slug": "obsidian-vs-evernote",
+      "toolA": {
+        "id": "obsidian",
+        "name": "Obsidian"
+      },
+      "toolB": {
+        "id": "evernote",
+        "name": "Evernote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/zebracat-ai-vs-claap/",
+      "route": "/vs/zebracat-ai-vs-claap/",
+      "type": "vs",
+      "slug": "zebracat-ai-vs-claap",
+      "toolA": {
+        "id": "zebracat-ai",
+        "name": "Zebracat"
+      },
+      "toolB": {
+        "id": "claap",
+        "name": "Claap"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/zebracat-ai-vs-mindstamp/",
+      "route": "/vs/zebracat-ai-vs-mindstamp/",
+      "type": "vs",
+      "slug": "zebracat-ai-vs-mindstamp",
+      "toolA": {
+        "id": "zebracat-ai",
+        "name": "Zebracat"
+      },
+      "toolB": {
+        "id": "mindstamp",
+        "name": "Mindstamp"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/zebracat-ai-vs-viddyoze/",
+      "route": "/vs/zebracat-ai-vs-viddyoze/",
+      "type": "vs",
+      "slug": "zebracat-ai-vs-viddyoze",
+      "toolA": {
+        "id": "zebracat-ai",
+        "name": "Zebracat"
+      },
+      "toolB": {
+        "id": "viddyoze",
+        "name": "Viddyoze"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 32,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/zebracat-ai-vs-offeo/",
+      "route": "/vs/zebracat-ai-vs-offeo/",
+      "type": "vs",
+      "slug": "zebracat-ai-vs-offeo",
+      "toolA": {
+        "id": "zebracat-ai",
+        "name": "Zebracat"
+      },
+      "toolB": {
+        "id": "offeo",
+        "name": "Offeo"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 32,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/zebracat-ai-vs-waymark/",
+      "route": "/vs/zebracat-ai-vs-waymark/",
+      "type": "vs",
+      "slug": "zebracat-ai-vs-waymark",
+      "toolA": {
+        "id": "zebracat-ai",
+        "name": "Zebracat"
+      },
+      "toolB": {
+        "id": "waymark",
+        "name": "Waymark"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 32,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/claap-vs-mindstamp/",
+      "route": "/vs/claap-vs-mindstamp/",
+      "type": "vs",
+      "slug": "claap-vs-mindstamp",
+      "toolA": {
+        "id": "claap",
+        "name": "Claap"
+      },
+      "toolB": {
+        "id": "mindstamp",
+        "name": "Mindstamp"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/claap-vs-viddyoze/",
+      "route": "/vs/claap-vs-viddyoze/",
+      "type": "vs",
+      "slug": "claap-vs-viddyoze",
+      "toolA": {
+        "id": "claap",
+        "name": "Claap"
+      },
+      "toolB": {
+        "id": "viddyoze",
+        "name": "Viddyoze"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 31,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/claap-vs-offeo/",
+      "route": "/vs/claap-vs-offeo/",
+      "type": "vs",
+      "slug": "claap-vs-offeo",
+      "toolA": {
+        "id": "claap",
+        "name": "Claap"
+      },
+      "toolB": {
+        "id": "offeo",
+        "name": "Offeo"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 31,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/claap-vs-waymark/",
+      "route": "/vs/claap-vs-waymark/",
+      "type": "vs",
+      "slug": "claap-vs-waymark",
+      "toolA": {
+        "id": "claap",
+        "name": "Claap"
+      },
+      "toolB": {
+        "id": "waymark",
+        "name": "Waymark"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 31,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/mindstamp-vs-viddyoze/",
+      "route": "/vs/mindstamp-vs-viddyoze/",
+      "type": "vs",
+      "slug": "mindstamp-vs-viddyoze",
+      "toolA": {
+        "id": "mindstamp",
+        "name": "Mindstamp"
+      },
+      "toolB": {
+        "id": "viddyoze",
+        "name": "Viddyoze"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 31,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/mindstamp-vs-offeo/",
+      "route": "/vs/mindstamp-vs-offeo/",
+      "type": "vs",
+      "slug": "mindstamp-vs-offeo",
+      "toolA": {
+        "id": "mindstamp",
+        "name": "Mindstamp"
+      },
+      "toolB": {
+        "id": "offeo",
+        "name": "Offeo"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 31,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/mindstamp-vs-waymark/",
+      "route": "/vs/mindstamp-vs-waymark/",
+      "type": "vs",
+      "slug": "mindstamp-vs-waymark",
+      "toolA": {
+        "id": "mindstamp",
+        "name": "Mindstamp"
+      },
+      "toolB": {
+        "id": "waymark",
+        "name": "Waymark"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 31,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/splitmatepro-vs-sage-intacct/",
+      "route": "/vs/splitmatepro-vs-sage-intacct/",
+      "type": "vs",
+      "slug": "splitmatepro-vs-sage-intacct",
+      "toolA": {
+        "id": "splitmatepro",
+        "name": "SplitMatePro"
+      },
+      "toolB": {
+        "id": "sage-intacct",
+        "name": "Sage Intacct"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 34,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/splitmatepro-vs-chargebee/",
+      "route": "/vs/splitmatepro-vs-chargebee/",
+      "type": "vs",
+      "slug": "splitmatepro-vs-chargebee",
+      "toolA": {
+        "id": "splitmatepro",
+        "name": "SplitMatePro"
+      },
+      "toolB": {
+        "id": "chargebee",
+        "name": "Chargebee"
+      },
+      "intent": "LOW",
+      "intentReason": "Target audience mismatch: Consumer Bill Splitter vs Enterprise Billing SaaS",
+      "totalScore": 34,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/splitmatepro-vs-recurly/",
+      "route": "/vs/splitmatepro-vs-recurly/",
+      "type": "vs",
+      "slug": "splitmatepro-vs-recurly",
+      "toolA": {
+        "id": "splitmatepro",
+        "name": "SplitMatePro"
+      },
+      "toolB": {
+        "id": "recurly",
+        "name": "Recurly"
+      },
+      "intent": "LOW",
+      "intentReason": "Target audience mismatch: Consumer Bill Splitter vs Enterprise Billing SaaS",
+      "totalScore": 34,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/splitmatepro-vs-maxio/",
+      "route": "/vs/splitmatepro-vs-maxio/",
+      "type": "vs",
+      "slug": "splitmatepro-vs-maxio",
+      "toolA": {
+        "id": "splitmatepro",
+        "name": "SplitMatePro"
+      },
+      "toolB": {
+        "id": "maxio",
+        "name": "Maxio"
+      },
+      "intent": "LOW",
+      "intentReason": "Target audience mismatch: Consumer Bill Splitter vs Enterprise Billing SaaS",
+      "totalScore": 34,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/splitmatepro-vs-invoicely/",
+      "route": "/vs/splitmatepro-vs-invoicely/",
+      "type": "vs",
+      "slug": "splitmatepro-vs-invoicely",
+      "toolA": {
+        "id": "splitmatepro",
+        "name": "SplitMatePro"
+      },
+      "toolB": {
+        "id": "invoicely",
+        "name": "Invoicely"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 34,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jotform-vs-tally/",
+      "route": "/vs/jotform-vs-tally/",
+      "type": "vs",
+      "slug": "jotform-vs-tally",
+      "toolA": {
+        "id": "jotform",
+        "name": "Jotform"
+      },
+      "toolB": {
+        "id": "tally",
+        "name": "Tally"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jotform-vs-surveymonkey/",
+      "route": "/vs/jotform-vs-surveymonkey/",
+      "type": "vs",
+      "slug": "jotform-vs-surveymonkey",
+      "toolA": {
+        "id": "jotform",
+        "name": "Jotform"
+      },
+      "toolB": {
+        "id": "surveymonkey",
+        "name": "SurveyMonkey"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jotform-vs-formstack/",
+      "route": "/vs/jotform-vs-formstack/",
+      "type": "vs",
+      "slug": "jotform-vs-formstack",
+      "toolA": {
+        "id": "jotform",
+        "name": "Jotform"
+      },
+      "toolB": {
+        "id": "formstack",
+        "name": "Formstack"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jotform-vs-qualtrics-xm/",
+      "route": "/vs/jotform-vs-qualtrics-xm/",
+      "type": "vs",
+      "slug": "jotform-vs-qualtrics-xm",
+      "toolA": {
+        "id": "jotform",
+        "name": "Jotform"
+      },
+      "toolB": {
+        "id": "qualtrics-xm",
+        "name": "Qualtrics XM"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jotform-vs-paperform/",
+      "route": "/vs/jotform-vs-paperform/",
+      "type": "vs",
+      "slug": "jotform-vs-paperform",
+      "toolA": {
+        "id": "jotform",
+        "name": "Jotform"
+      },
+      "toolB": {
+        "id": "paperform",
+        "name": "Paperform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tally-vs-surveymonkey/",
+      "route": "/vs/tally-vs-surveymonkey/",
+      "type": "vs",
+      "slug": "tally-vs-surveymonkey",
+      "toolA": {
+        "id": "tally",
+        "name": "Tally"
+      },
+      "toolB": {
+        "id": "surveymonkey",
+        "name": "SurveyMonkey"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tally-vs-formstack/",
+      "route": "/vs/tally-vs-formstack/",
+      "type": "vs",
+      "slug": "tally-vs-formstack",
+      "toolA": {
+        "id": "tally",
+        "name": "Tally"
+      },
+      "toolB": {
+        "id": "formstack",
+        "name": "Formstack"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tally-vs-qualtrics-xm/",
+      "route": "/vs/tally-vs-qualtrics-xm/",
+      "type": "vs",
+      "slug": "tally-vs-qualtrics-xm",
+      "toolA": {
+        "id": "tally",
+        "name": "Tally"
+      },
+      "toolB": {
+        "id": "qualtrics-xm",
+        "name": "Qualtrics XM"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tally-vs-paperform/",
+      "route": "/vs/tally-vs-paperform/",
+      "type": "vs",
+      "slug": "tally-vs-paperform",
+      "toolA": {
+        "id": "tally",
+        "name": "Tally"
+      },
+      "toolB": {
+        "id": "paperform",
+        "name": "Paperform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/surveymonkey-vs-formstack/",
+      "route": "/vs/surveymonkey-vs-formstack/",
+      "type": "vs",
+      "slug": "surveymonkey-vs-formstack",
+      "toolA": {
+        "id": "surveymonkey",
+        "name": "SurveyMonkey"
+      },
+      "toolB": {
+        "id": "formstack",
+        "name": "Formstack"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/surveymonkey-vs-qualtrics-xm/",
+      "route": "/vs/surveymonkey-vs-qualtrics-xm/",
+      "type": "vs",
+      "slug": "surveymonkey-vs-qualtrics-xm",
+      "toolA": {
+        "id": "surveymonkey",
+        "name": "SurveyMonkey"
+      },
+      "toolB": {
+        "id": "qualtrics-xm",
+        "name": "Qualtrics XM"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/surveymonkey-vs-paperform/",
+      "route": "/vs/surveymonkey-vs-paperform/",
+      "type": "vs",
+      "slug": "surveymonkey-vs-paperform",
+      "toolA": {
+        "id": "surveymonkey",
+        "name": "SurveyMonkey"
+      },
+      "toolB": {
+        "id": "paperform",
+        "name": "Paperform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/formstack-vs-qualtrics-xm/",
+      "route": "/vs/formstack-vs-qualtrics-xm/",
+      "type": "vs",
+      "slug": "formstack-vs-qualtrics-xm",
+      "toolA": {
+        "id": "formstack",
+        "name": "Formstack"
+      },
+      "toolB": {
+        "id": "qualtrics-xm",
+        "name": "Qualtrics XM"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/formstack-vs-paperform/",
+      "route": "/vs/formstack-vs-paperform/",
+      "type": "vs",
+      "slug": "formstack-vs-paperform",
+      "toolA": {
+        "id": "formstack",
+        "name": "Formstack"
+      },
+      "toolB": {
+        "id": "paperform",
+        "name": "Paperform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/qualtrics-xm-vs-paperform/",
+      "route": "/vs/qualtrics-xm-vs-paperform/",
+      "type": "vs",
+      "slug": "qualtrics-xm-vs-paperform",
+      "toolA": {
+        "id": "qualtrics-xm",
+        "name": "Qualtrics XM"
+      },
+      "toolB": {
+        "id": "paperform",
+        "name": "Paperform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/medium-vs-curated/",
+      "route": "/vs/medium-vs-curated/",
+      "type": "vs",
+      "slug": "medium-vs-curated",
+      "toolA": {
+        "id": "medium",
+        "name": "Medium"
+      },
+      "toolB": {
+        "id": "curated",
+        "name": "Curated"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/medium-vs-letterdrop/",
+      "route": "/vs/medium-vs-letterdrop/",
+      "type": "vs",
+      "slug": "medium-vs-letterdrop",
+      "toolA": {
+        "id": "medium",
+        "name": "Medium"
+      },
+      "toolB": {
+        "id": "letterdrop",
+        "name": "Letterdrop"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/medium-vs-hashnode/",
+      "route": "/vs/medium-vs-hashnode/",
+      "type": "vs",
+      "slug": "medium-vs-hashnode",
+      "toolA": {
+        "id": "medium",
+        "name": "Medium"
+      },
+      "toolB": {
+        "id": "hashnode",
+        "name": "Hashnode"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/medium-vs-dev-to/",
+      "route": "/vs/medium-vs-dev-to/",
+      "type": "vs",
+      "slug": "medium-vs-dev-to",
+      "toolA": {
+        "id": "medium",
+        "name": "Medium"
+      },
+      "toolB": {
+        "id": "dev-to",
+        "name": "Dev.to"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/medium-vs-sailthru-by-marigold/",
+      "route": "/vs/medium-vs-sailthru-by-marigold/",
+      "type": "vs",
+      "slug": "medium-vs-sailthru-by-marigold",
+      "toolA": {
+        "id": "medium",
+        "name": "Medium"
+      },
+      "toolB": {
+        "id": "sailthru-by-marigold",
+        "name": "Sailthru by Marigold"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/curated-vs-letterdrop/",
+      "route": "/vs/curated-vs-letterdrop/",
+      "type": "vs",
+      "slug": "curated-vs-letterdrop",
+      "toolA": {
+        "id": "curated",
+        "name": "Curated"
+      },
+      "toolB": {
+        "id": "letterdrop",
+        "name": "Letterdrop"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/curated-vs-hashnode/",
+      "route": "/vs/curated-vs-hashnode/",
+      "type": "vs",
+      "slug": "curated-vs-hashnode",
+      "toolA": {
+        "id": "curated",
+        "name": "Curated"
+      },
+      "toolB": {
+        "id": "hashnode",
+        "name": "Hashnode"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/curated-vs-dev-to/",
+      "route": "/vs/curated-vs-dev-to/",
+      "type": "vs",
+      "slug": "curated-vs-dev-to",
+      "toolA": {
+        "id": "curated",
+        "name": "Curated"
+      },
+      "toolB": {
+        "id": "dev-to",
+        "name": "Dev.to"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/curated-vs-sailthru-by-marigold/",
+      "route": "/vs/curated-vs-sailthru-by-marigold/",
+      "type": "vs",
+      "slug": "curated-vs-sailthru-by-marigold",
+      "toolA": {
+        "id": "curated",
+        "name": "Curated"
+      },
+      "toolB": {
+        "id": "sailthru-by-marigold",
+        "name": "Sailthru by Marigold"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 22,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/letterdrop-vs-hashnode/",
+      "route": "/vs/letterdrop-vs-hashnode/",
+      "type": "vs",
+      "slug": "letterdrop-vs-hashnode",
+      "toolA": {
+        "id": "letterdrop",
+        "name": "Letterdrop"
+      },
+      "toolB": {
+        "id": "hashnode",
+        "name": "Hashnode"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/letterdrop-vs-dev-to/",
+      "route": "/vs/letterdrop-vs-dev-to/",
+      "type": "vs",
+      "slug": "letterdrop-vs-dev-to",
+      "toolA": {
+        "id": "letterdrop",
+        "name": "Letterdrop"
+      },
+      "toolB": {
+        "id": "dev-to",
+        "name": "Dev.to"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/letterdrop-vs-sailthru-by-marigold/",
+      "route": "/vs/letterdrop-vs-sailthru-by-marigold/",
+      "type": "vs",
+      "slug": "letterdrop-vs-sailthru-by-marigold",
+      "toolA": {
+        "id": "letterdrop",
+        "name": "Letterdrop"
+      },
+      "toolB": {
+        "id": "sailthru-by-marigold",
+        "name": "Sailthru by Marigold"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/hashnode-vs-dev-to/",
+      "route": "/vs/hashnode-vs-dev-to/",
+      "type": "vs",
+      "slug": "hashnode-vs-dev-to",
+      "toolA": {
+        "id": "hashnode",
+        "name": "Hashnode"
+      },
+      "toolB": {
+        "id": "dev-to",
+        "name": "Dev.to"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/hashnode-vs-sailthru-by-marigold/",
+      "route": "/vs/hashnode-vs-sailthru-by-marigold/",
+      "type": "vs",
+      "slug": "hashnode-vs-sailthru-by-marigold",
+      "toolA": {
+        "id": "hashnode",
+        "name": "Hashnode"
+      },
+      "toolB": {
+        "id": "sailthru-by-marigold",
+        "name": "Sailthru by Marigold"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dev-to-vs-sailthru-by-marigold/",
+      "route": "/vs/dev-to-vs-sailthru-by-marigold/",
+      "type": "vs",
+      "slug": "dev-to-vs-sailthru-by-marigold",
+      "toolA": {
+        "id": "dev-to",
+        "name": "Dev.to"
+      },
+      "toolB": {
+        "id": "sailthru-by-marigold",
+        "name": "Sailthru by Marigold"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/intercom-vs-help-scout/",
+      "route": "/vs/intercom-vs-help-scout/",
+      "type": "vs",
+      "slug": "intercom-vs-help-scout",
+      "toolA": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
+      "toolB": {
+        "id": "help-scout",
+        "name": "Help Scout"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/intercom-vs-gorgias/",
+      "route": "/vs/intercom-vs-gorgias/",
+      "type": "vs",
+      "slug": "intercom-vs-gorgias",
+      "toolA": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
+      "toolB": {
+        "id": "gorgias",
+        "name": "Gorgias"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/intercom-vs-front/",
+      "route": "/vs/intercom-vs-front/",
+      "type": "vs",
+      "slug": "intercom-vs-front",
+      "toolA": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
+      "toolB": {
+        "id": "front",
+        "name": "Front"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/intercom-vs-crisp/",
+      "route": "/vs/intercom-vs-crisp/",
+      "type": "vs",
+      "slug": "intercom-vs-crisp",
+      "toolA": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
+      "toolB": {
+        "id": "crisp",
+        "name": "Crisp"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/intercom-vs-tidio/",
+      "route": "/vs/intercom-vs-tidio/",
+      "type": "vs",
+      "slug": "intercom-vs-tidio",
+      "toolA": {
+        "id": "intercom",
+        "name": "Intercom"
+      },
+      "toolB": {
+        "id": "tidio",
+        "name": "Tidio"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/help-scout-vs-gorgias/",
+      "route": "/vs/help-scout-vs-gorgias/",
+      "type": "vs",
+      "slug": "help-scout-vs-gorgias",
+      "toolA": {
+        "id": "help-scout",
+        "name": "Help Scout"
+      },
+      "toolB": {
+        "id": "gorgias",
+        "name": "Gorgias"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/help-scout-vs-front/",
+      "route": "/vs/help-scout-vs-front/",
+      "type": "vs",
+      "slug": "help-scout-vs-front",
+      "toolA": {
+        "id": "help-scout",
+        "name": "Help Scout"
+      },
+      "toolB": {
+        "id": "front",
+        "name": "Front"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/help-scout-vs-crisp/",
+      "route": "/vs/help-scout-vs-crisp/",
+      "type": "vs",
+      "slug": "help-scout-vs-crisp",
+      "toolA": {
+        "id": "help-scout",
+        "name": "Help Scout"
+      },
+      "toolB": {
+        "id": "crisp",
+        "name": "Crisp"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/help-scout-vs-tidio/",
+      "route": "/vs/help-scout-vs-tidio/",
+      "type": "vs",
+      "slug": "help-scout-vs-tidio",
+      "toolA": {
+        "id": "help-scout",
+        "name": "Help Scout"
+      },
+      "toolB": {
+        "id": "tidio",
+        "name": "Tidio"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gorgias-vs-front/",
+      "route": "/vs/gorgias-vs-front/",
+      "type": "vs",
+      "slug": "gorgias-vs-front",
+      "toolA": {
+        "id": "gorgias",
+        "name": "Gorgias"
+      },
+      "toolB": {
+        "id": "front",
+        "name": "Front"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gorgias-vs-crisp/",
+      "route": "/vs/gorgias-vs-crisp/",
+      "type": "vs",
+      "slug": "gorgias-vs-crisp",
+      "toolA": {
+        "id": "gorgias",
+        "name": "Gorgias"
+      },
+      "toolB": {
+        "id": "crisp",
+        "name": "Crisp"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gorgias-vs-tidio/",
+      "route": "/vs/gorgias-vs-tidio/",
+      "type": "vs",
+      "slug": "gorgias-vs-tidio",
+      "toolA": {
+        "id": "gorgias",
+        "name": "Gorgias"
+      },
+      "toolB": {
+        "id": "tidio",
+        "name": "Tidio"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/front-vs-crisp/",
+      "route": "/vs/front-vs-crisp/",
+      "type": "vs",
+      "slug": "front-vs-crisp",
+      "toolA": {
+        "id": "front",
+        "name": "Front"
+      },
+      "toolB": {
+        "id": "crisp",
+        "name": "Crisp"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/front-vs-tidio/",
+      "route": "/vs/front-vs-tidio/",
+      "type": "vs",
+      "slug": "front-vs-tidio",
+      "toolA": {
+        "id": "front",
+        "name": "Front"
+      },
+      "toolB": {
+        "id": "tidio",
+        "name": "Tidio"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/crisp-vs-tidio/",
+      "route": "/vs/crisp-vs-tidio/",
+      "type": "vs",
+      "slug": "crisp-vs-tidio",
+      "toolA": {
+        "id": "crisp",
+        "name": "Crisp"
+      },
+      "toolB": {
+        "id": "tidio",
+        "name": "Tidio"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/asana-vs-smartsheet/",
+      "route": "/vs/asana-vs-smartsheet/",
+      "type": "vs",
+      "slug": "asana-vs-smartsheet",
+      "toolA": {
+        "id": "asana",
+        "name": "Asana"
+      },
+      "toolB": {
+        "id": "smartsheet",
+        "name": "Smartsheet"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notion-vs-linear/",
+      "route": "/vs/notion-vs-linear/",
+      "type": "vs",
+      "slug": "notion-vs-linear",
+      "toolA": {
+        "id": "notion",
+        "name": "Notion"
+      },
+      "toolB": {
+        "id": "linear",
+        "name": "Linear"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notion-vs-jira-by-atlassian/",
+      "route": "/vs/notion-vs-jira-by-atlassian/",
+      "type": "vs",
+      "slug": "notion-vs-jira-by-atlassian",
+      "toolA": {
+        "id": "notion",
+        "name": "Notion"
+      },
+      "toolB": {
+        "id": "jira-by-atlassian",
+        "name": "Jira by Atlassian"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notion-vs-trello/",
+      "route": "/vs/notion-vs-trello/",
+      "type": "vs",
+      "slug": "notion-vs-trello",
+      "toolA": {
+        "id": "notion",
+        "name": "Notion"
+      },
+      "toolB": {
+        "id": "trello",
+        "name": "Trello"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notion-vs-smartsheet/",
+      "route": "/vs/notion-vs-smartsheet/",
+      "type": "vs",
+      "slug": "notion-vs-smartsheet",
+      "toolA": {
+        "id": "notion",
+        "name": "Notion"
+      },
+      "toolB": {
+        "id": "smartsheet",
+        "name": "Smartsheet"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/linear-vs-trello/",
+      "route": "/vs/linear-vs-trello/",
+      "type": "vs",
+      "slug": "linear-vs-trello",
+      "toolA": {
+        "id": "linear",
+        "name": "Linear"
+      },
+      "toolB": {
+        "id": "trello",
+        "name": "Trello"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/linear-vs-smartsheet/",
+      "route": "/vs/linear-vs-smartsheet/",
+      "type": "vs",
+      "slug": "linear-vs-smartsheet",
+      "toolA": {
+        "id": "linear",
+        "name": "Linear"
+      },
+      "toolB": {
+        "id": "smartsheet",
+        "name": "Smartsheet"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jira-by-atlassian-vs-trello/",
+      "route": "/vs/jira-by-atlassian-vs-trello/",
+      "type": "vs",
+      "slug": "jira-by-atlassian-vs-trello",
+      "toolA": {
+        "id": "jira-by-atlassian",
+        "name": "Jira by Atlassian"
+      },
+      "toolB": {
+        "id": "trello",
+        "name": "Trello"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/jira-by-atlassian-vs-smartsheet/",
+      "route": "/vs/jira-by-atlassian-vs-smartsheet/",
+      "type": "vs",
+      "slug": "jira-by-atlassian-vs-smartsheet",
+      "toolA": {
+        "id": "jira-by-atlassian",
+        "name": "Jira by Atlassian"
+      },
+      "toolB": {
+        "id": "smartsheet",
+        "name": "Smartsheet"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/trello-vs-smartsheet/",
+      "route": "/vs/trello-vs-smartsheet/",
+      "type": "vs",
+      "slug": "trello-vs-smartsheet",
+      "toolA": {
+        "id": "trello",
+        "name": "Trello"
+      },
+      "toolB": {
+        "id": "smartsheet",
+        "name": "Smartsheet"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chanty-vs-otter-ai/",
+      "route": "/vs/chanty-vs-otter-ai/",
+      "type": "vs",
+      "slug": "chanty-vs-otter-ai",
+      "toolA": {
+        "id": "chanty",
+        "name": "Chanty"
+      },
+      "toolB": {
+        "id": "otter-ai",
+        "name": "Otter.ai"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chanty-vs-fireflies-ai/",
+      "route": "/vs/chanty-vs-fireflies-ai/",
+      "type": "vs",
+      "slug": "chanty-vs-fireflies-ai",
+      "toolA": {
+        "id": "chanty",
+        "name": "Chanty"
+      },
+      "toolB": {
+        "id": "fireflies-ai",
+        "name": "Fireflies.ai"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chanty-vs-fathom/",
+      "route": "/vs/chanty-vs-fathom/",
+      "type": "vs",
+      "slug": "chanty-vs-fathom",
+      "toolA": {
+        "id": "chanty",
+        "name": "Chanty"
+      },
+      "toolB": {
+        "id": "fathom",
+        "name": "Fathom"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chanty-vs-avoma/",
+      "route": "/vs/chanty-vs-avoma/",
+      "type": "vs",
+      "slug": "chanty-vs-avoma",
+      "toolA": {
+        "id": "chanty",
+        "name": "Chanty"
+      },
+      "toolB": {
+        "id": "avoma",
+        "name": "Avoma"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chanty-vs-supernormal/",
+      "route": "/vs/chanty-vs-supernormal/",
+      "type": "vs",
+      "slug": "chanty-vs-supernormal",
+      "toolA": {
+        "id": "chanty",
+        "name": "Chanty"
+      },
+      "toolB": {
+        "id": "supernormal",
+        "name": "Supernormal"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/otter-ai-vs-fireflies-ai/",
+      "route": "/vs/otter-ai-vs-fireflies-ai/",
+      "type": "vs",
+      "slug": "otter-ai-vs-fireflies-ai",
+      "toolA": {
+        "id": "otter-ai",
+        "name": "Otter.ai"
+      },
+      "toolB": {
+        "id": "fireflies-ai",
+        "name": "Fireflies.ai"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/otter-ai-vs-fathom/",
+      "route": "/vs/otter-ai-vs-fathom/",
+      "type": "vs",
+      "slug": "otter-ai-vs-fathom",
+      "toolA": {
+        "id": "otter-ai",
+        "name": "Otter.ai"
+      },
+      "toolB": {
+        "id": "fathom",
+        "name": "Fathom"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/otter-ai-vs-avoma/",
+      "route": "/vs/otter-ai-vs-avoma/",
+      "type": "vs",
+      "slug": "otter-ai-vs-avoma",
+      "toolA": {
+        "id": "otter-ai",
+        "name": "Otter.ai"
+      },
+      "toolB": {
+        "id": "avoma",
+        "name": "Avoma"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/otter-ai-vs-supernormal/",
+      "route": "/vs/otter-ai-vs-supernormal/",
+      "type": "vs",
+      "slug": "otter-ai-vs-supernormal",
+      "toolA": {
+        "id": "otter-ai",
+        "name": "Otter.ai"
+      },
+      "toolB": {
+        "id": "supernormal",
+        "name": "Supernormal"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fireflies-ai-vs-fathom/",
+      "route": "/vs/fireflies-ai-vs-fathom/",
+      "type": "vs",
+      "slug": "fireflies-ai-vs-fathom",
+      "toolA": {
+        "id": "fireflies-ai",
+        "name": "Fireflies.ai"
+      },
+      "toolB": {
+        "id": "fathom",
+        "name": "Fathom"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fireflies-ai-vs-avoma/",
+      "route": "/vs/fireflies-ai-vs-avoma/",
+      "type": "vs",
+      "slug": "fireflies-ai-vs-avoma",
+      "toolA": {
+        "id": "fireflies-ai",
+        "name": "Fireflies.ai"
+      },
+      "toolB": {
+        "id": "avoma",
+        "name": "Avoma"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fireflies-ai-vs-supernormal/",
+      "route": "/vs/fireflies-ai-vs-supernormal/",
+      "type": "vs",
+      "slug": "fireflies-ai-vs-supernormal",
+      "toolA": {
+        "id": "fireflies-ai",
+        "name": "Fireflies.ai"
+      },
+      "toolB": {
+        "id": "supernormal",
+        "name": "Supernormal"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fathom-vs-avoma/",
+      "route": "/vs/fathom-vs-avoma/",
+      "type": "vs",
+      "slug": "fathom-vs-avoma",
+      "toolA": {
+        "id": "fathom",
+        "name": "Fathom"
+      },
+      "toolB": {
+        "id": "avoma",
+        "name": "Avoma"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fathom-vs-supernormal/",
+      "route": "/vs/fathom-vs-supernormal/",
+      "type": "vs",
+      "slug": "fathom-vs-supernormal",
+      "toolA": {
+        "id": "fathom",
+        "name": "Fathom"
+      },
+      "toolB": {
+        "id": "supernormal",
+        "name": "Supernormal"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/avoma-vs-supernormal/",
+      "route": "/vs/avoma-vs-supernormal/",
+      "type": "vs",
+      "slug": "avoma-vs-supernormal",
+      "toolA": {
+        "id": "avoma",
+        "name": "Avoma"
+      },
+      "toolB": {
+        "id": "supernormal",
+        "name": "Supernormal"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fibery-vs-sanity/",
+      "route": "/vs/fibery-vs-sanity/",
+      "type": "vs",
+      "slug": "fibery-vs-sanity",
+      "toolA": {
+        "id": "fibery",
+        "name": "Fibery"
+      },
+      "toolB": {
+        "id": "sanity",
+        "name": "Sanity"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fibery-vs-softr/",
+      "route": "/vs/fibery-vs-softr/",
+      "type": "vs",
+      "slug": "fibery-vs-softr",
+      "toolA": {
+        "id": "fibery",
+        "name": "Fibery"
+      },
+      "toolB": {
+        "id": "softr",
+        "name": "Softr"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fibery-vs-glide/",
+      "route": "/vs/fibery-vs-glide/",
+      "type": "vs",
+      "slug": "fibery-vs-glide",
+      "toolA": {
+        "id": "fibery",
+        "name": "Fibery"
+      },
+      "toolB": {
+        "id": "glide",
+        "name": "Glide"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 32,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fibery-vs-bubble/",
+      "route": "/vs/fibery-vs-bubble/",
+      "type": "vs",
+      "slug": "fibery-vs-bubble",
+      "toolA": {
+        "id": "fibery",
+        "name": "Fibery"
+      },
+      "toolB": {
+        "id": "bubble",
+        "name": "Bubble"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fibery-vs-zapier/",
+      "route": "/vs/fibery-vs-zapier/",
+      "type": "vs",
+      "slug": "fibery-vs-zapier",
+      "toolA": {
+        "id": "fibery",
+        "name": "Fibery"
+      },
+      "toolB": {
+        "id": "zapier",
+        "name": "Zapier"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/sanity-vs-zapier/",
+      "route": "/vs/sanity-vs-zapier/",
+      "type": "vs",
+      "slug": "sanity-vs-zapier",
+      "toolA": {
+        "id": "sanity",
+        "name": "Sanity"
+      },
+      "toolB": {
+        "id": "zapier",
+        "name": "Zapier"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/softr-vs-zapier/",
+      "route": "/vs/softr-vs-zapier/",
+      "type": "vs",
+      "slug": "softr-vs-zapier",
+      "toolA": {
+        "id": "softr",
+        "name": "Softr"
+      },
+      "toolB": {
+        "id": "zapier",
+        "name": "Zapier"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/glide-vs-zapier/",
+      "route": "/vs/glide-vs-zapier/",
+      "type": "vs",
+      "slug": "glide-vs-zapier",
+      "toolA": {
+        "id": "glide",
+        "name": "Glide"
+      },
+      "toolB": {
+        "id": "zapier",
+        "name": "Zapier"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/bubble-vs-zapier/",
+      "route": "/vs/bubble-vs-zapier/",
+      "type": "vs",
+      "slug": "bubble-vs-zapier",
+      "toolA": {
+        "id": "bubble",
+        "name": "Bubble"
+      },
+      "toolB": {
+        "id": "zapier",
+        "name": "Zapier"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 33,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gong-vs-chorus-ai-by-zoominfo/",
+      "route": "/vs/gong-vs-chorus-ai-by-zoominfo/",
+      "type": "vs",
+      "slug": "gong-vs-chorus-ai-by-zoominfo",
+      "toolA": {
+        "id": "gong",
+        "name": "Gong"
+      },
+      "toolB": {
+        "id": "chorus-ai-by-zoominfo",
+        "name": "Chorus.ai by ZoomInfo"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gong-vs-read-ai/",
+      "route": "/vs/gong-vs-read-ai/",
+      "type": "vs",
+      "slug": "gong-vs-read-ai",
+      "toolA": {
+        "id": "gong",
+        "name": "Gong"
+      },
+      "toolB": {
+        "id": "read-ai",
+        "name": "Read AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gong-vs-limitless-rewind/",
+      "route": "/vs/gong-vs-limitless-rewind/",
+      "type": "vs",
+      "slug": "gong-vs-limitless-rewind",
+      "toolA": {
+        "id": "gong",
+        "name": "Gong"
+      },
+      "toolB": {
+        "id": "limitless-rewind",
+        "name": "Limitless (Rewind)"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gong-vs-fellow-app/",
+      "route": "/vs/gong-vs-fellow-app/",
+      "type": "vs",
+      "slug": "gong-vs-fellow-app",
+      "toolA": {
+        "id": "gong",
+        "name": "Gong"
+      },
+      "toolB": {
+        "id": "fellow-app",
+        "name": "Fellow.app"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gong-vs-circleback/",
+      "route": "/vs/gong-vs-circleback/",
+      "type": "vs",
+      "slug": "gong-vs-circleback",
+      "toolA": {
+        "id": "gong",
+        "name": "Gong"
+      },
+      "toolB": {
+        "id": "circleback",
+        "name": "Circleback"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chorus-ai-by-zoominfo-vs-read-ai/",
+      "route": "/vs/chorus-ai-by-zoominfo-vs-read-ai/",
+      "type": "vs",
+      "slug": "chorus-ai-by-zoominfo-vs-read-ai",
+      "toolA": {
+        "id": "chorus-ai-by-zoominfo",
+        "name": "Chorus.ai by ZoomInfo"
+      },
+      "toolB": {
+        "id": "read-ai",
+        "name": "Read AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chorus-ai-by-zoominfo-vs-limitless-rewind/",
+      "route": "/vs/chorus-ai-by-zoominfo-vs-limitless-rewind/",
+      "type": "vs",
+      "slug": "chorus-ai-by-zoominfo-vs-limitless-rewind",
+      "toolA": {
+        "id": "chorus-ai-by-zoominfo",
+        "name": "Chorus.ai by ZoomInfo"
+      },
+      "toolB": {
+        "id": "limitless-rewind",
+        "name": "Limitless (Rewind)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chorus-ai-by-zoominfo-vs-fellow-app/",
+      "route": "/vs/chorus-ai-by-zoominfo-vs-fellow-app/",
+      "type": "vs",
+      "slug": "chorus-ai-by-zoominfo-vs-fellow-app",
+      "toolA": {
+        "id": "chorus-ai-by-zoominfo",
+        "name": "Chorus.ai by ZoomInfo"
+      },
+      "toolB": {
+        "id": "fellow-app",
+        "name": "Fellow.app"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/chorus-ai-by-zoominfo-vs-circleback/",
+      "route": "/vs/chorus-ai-by-zoominfo-vs-circleback/",
+      "type": "vs",
+      "slug": "chorus-ai-by-zoominfo-vs-circleback",
+      "toolA": {
+        "id": "chorus-ai-by-zoominfo",
+        "name": "Chorus.ai by ZoomInfo"
+      },
+      "toolB": {
+        "id": "circleback",
+        "name": "Circleback"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/read-ai-vs-limitless-rewind/",
+      "route": "/vs/read-ai-vs-limitless-rewind/",
+      "type": "vs",
+      "slug": "read-ai-vs-limitless-rewind",
+      "toolA": {
+        "id": "read-ai",
+        "name": "Read AI"
+      },
+      "toolB": {
+        "id": "limitless-rewind",
+        "name": "Limitless (Rewind)"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/read-ai-vs-fellow-app/",
+      "route": "/vs/read-ai-vs-fellow-app/",
+      "type": "vs",
+      "slug": "read-ai-vs-fellow-app",
+      "toolA": {
+        "id": "read-ai",
+        "name": "Read AI"
+      },
+      "toolB": {
+        "id": "fellow-app",
+        "name": "Fellow.app"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/read-ai-vs-circleback/",
+      "route": "/vs/read-ai-vs-circleback/",
+      "type": "vs",
+      "slug": "read-ai-vs-circleback",
+      "toolA": {
+        "id": "read-ai",
+        "name": "Read AI"
+      },
+      "toolB": {
+        "id": "circleback",
+        "name": "Circleback"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/limitless-rewind-vs-fellow-app/",
+      "route": "/vs/limitless-rewind-vs-fellow-app/",
+      "type": "vs",
+      "slug": "limitless-rewind-vs-fellow-app",
+      "toolA": {
+        "id": "limitless-rewind",
+        "name": "Limitless (Rewind)"
+      },
+      "toolB": {
+        "id": "fellow-app",
+        "name": "Fellow.app"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/limitless-rewind-vs-circleback/",
+      "route": "/vs/limitless-rewind-vs-circleback/",
+      "type": "vs",
+      "slug": "limitless-rewind-vs-circleback",
+      "toolA": {
+        "id": "limitless-rewind",
+        "name": "Limitless (Rewind)"
+      },
+      "toolB": {
+        "id": "circleback",
+        "name": "Circleback"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/fellow-app-vs-circleback/",
+      "route": "/vs/fellow-app-vs-circleback/",
+      "type": "vs",
+      "slug": "fellow-app-vs-circleback",
+      "toolA": {
+        "id": "fellow-app",
+        "name": "Fellow.app"
+      },
+      "toolB": {
+        "id": "circleback",
+        "name": "Circleback"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krisp-vs-notta/",
+      "route": "/vs/krisp-vs-notta/",
+      "type": "vs",
+      "slug": "krisp-vs-notta",
+      "toolA": {
+        "id": "krisp",
+        "name": "Krisp"
+      },
+      "toolB": {
+        "id": "notta",
+        "name": "Notta"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krisp-vs-sonix/",
+      "route": "/vs/krisp-vs-sonix/",
+      "type": "vs",
+      "slug": "krisp-vs-sonix",
+      "toolA": {
+        "id": "krisp",
+        "name": "Krisp"
+      },
+      "toolB": {
+        "id": "sonix",
+        "name": "Sonix"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krisp-vs-trint/",
+      "route": "/vs/krisp-vs-trint/",
+      "type": "vs",
+      "slug": "krisp-vs-trint",
+      "toolA": {
+        "id": "krisp",
+        "name": "Krisp"
+      },
+      "toolB": {
+        "id": "trint",
+        "name": "Trint"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krisp-vs-happy-scribe/",
+      "route": "/vs/krisp-vs-happy-scribe/",
+      "type": "vs",
+      "slug": "krisp-vs-happy-scribe",
+      "toolA": {
+        "id": "krisp",
+        "name": "Krisp"
+      },
+      "toolB": {
+        "id": "happy-scribe",
+        "name": "Happy Scribe"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krisp-vs-rask-ai/",
+      "route": "/vs/krisp-vs-rask-ai/",
+      "type": "vs",
+      "slug": "krisp-vs-rask-ai",
+      "toolA": {
+        "id": "krisp",
+        "name": "Krisp"
+      },
+      "toolB": {
+        "id": "rask-ai",
+        "name": "Rask AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notta-vs-sonix/",
+      "route": "/vs/notta-vs-sonix/",
+      "type": "vs",
+      "slug": "notta-vs-sonix",
+      "toolA": {
+        "id": "notta",
+        "name": "Notta"
+      },
+      "toolB": {
+        "id": "sonix",
+        "name": "Sonix"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notta-vs-trint/",
+      "route": "/vs/notta-vs-trint/",
+      "type": "vs",
+      "slug": "notta-vs-trint",
+      "toolA": {
+        "id": "notta",
+        "name": "Notta"
+      },
+      "toolB": {
+        "id": "trint",
+        "name": "Trint"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notta-vs-happy-scribe/",
+      "route": "/vs/notta-vs-happy-scribe/",
+      "type": "vs",
+      "slug": "notta-vs-happy-scribe",
+      "toolA": {
+        "id": "notta",
+        "name": "Notta"
+      },
+      "toolB": {
+        "id": "happy-scribe",
+        "name": "Happy Scribe"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/notta-vs-rask-ai/",
+      "route": "/vs/notta-vs-rask-ai/",
+      "type": "vs",
+      "slug": "notta-vs-rask-ai",
+      "toolA": {
+        "id": "notta",
+        "name": "Notta"
+      },
+      "toolB": {
+        "id": "rask-ai",
+        "name": "Rask AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/sonix-vs-trint/",
+      "route": "/vs/sonix-vs-trint/",
+      "type": "vs",
+      "slug": "sonix-vs-trint",
+      "toolA": {
+        "id": "sonix",
+        "name": "Sonix"
+      },
+      "toolB": {
+        "id": "trint",
+        "name": "Trint"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 22,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/sonix-vs-happy-scribe/",
+      "route": "/vs/sonix-vs-happy-scribe/",
+      "type": "vs",
+      "slug": "sonix-vs-happy-scribe",
+      "toolA": {
+        "id": "sonix",
+        "name": "Sonix"
+      },
+      "toolB": {
+        "id": "happy-scribe",
+        "name": "Happy Scribe"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/sonix-vs-rask-ai/",
+      "route": "/vs/sonix-vs-rask-ai/",
+      "type": "vs",
+      "slug": "sonix-vs-rask-ai",
+      "toolA": {
+        "id": "sonix",
+        "name": "Sonix"
+      },
+      "toolB": {
+        "id": "rask-ai",
+        "name": "Rask AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/trint-vs-happy-scribe/",
+      "route": "/vs/trint-vs-happy-scribe/",
+      "type": "vs",
+      "slug": "trint-vs-happy-scribe",
+      "toolA": {
+        "id": "trint",
+        "name": "Trint"
+      },
+      "toolB": {
+        "id": "happy-scribe",
+        "name": "Happy Scribe"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/trint-vs-rask-ai/",
+      "route": "/vs/trint-vs-rask-ai/",
+      "type": "vs",
+      "slug": "trint-vs-rask-ai",
+      "toolA": {
+        "id": "trint",
+        "name": "Trint"
+      },
+      "toolB": {
+        "id": "rask-ai",
+        "name": "Rask AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 23,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/happy-scribe-vs-rask-ai/",
+      "route": "/vs/happy-scribe-vs-rask-ai/",
+      "type": "vs",
+      "slug": "happy-scribe-vs-rask-ai",
+      "toolA": {
+        "id": "happy-scribe",
+        "name": "Happy Scribe"
+      },
+      "toolB": {
+        "id": "rask-ai",
+        "name": "Rask AI"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
+      "totalScore": 24,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/klaviyo-vs-customer-io/",
+      "route": "/vs/klaviyo-vs-customer-io/",
+      "type": "vs",
+      "slug": "klaviyo-vs-customer-io",
+      "toolA": {
+        "id": "klaviyo",
+        "name": "Klaviyo"
+      },
+      "toolB": {
+        "id": "customer-io",
+        "name": "Customer.io"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Video Ad Generator vs Screen Recorder",
+      "totalScore": 41,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/convertkit-kit-vs-customer-io/",
+      "route": "/vs/convertkit-kit-vs-customer-io/",
+      "type": "vs",
+      "slug": "convertkit-kit-vs-customer-io",
+      "toolA": {
+        "id": "convertkit-kit",
+        "name": "ConvertKit (Kit)"
+      },
+      "toolB": {
+        "id": "customer-io",
+        "name": "Customer.io"
+      },
+      "intent": "LOW",
+      "intentReason": "Sub-niche mismatch: Video Ad Generator vs Screen Recorder",
+      "totalScore": 41,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/supabase-vs-raycast/",
+      "route": "/vs/supabase-vs-raycast/",
+      "type": "vs",
+      "slug": "supabase-vs-raycast",
+      "toolA": {
+        "id": "supabase",
+        "name": "Supabase"
+      },
+      "toolB": {
+        "id": "raycast",
+        "name": "Raycast"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/supabase-vs-aws/",
+      "route": "/vs/supabase-vs-aws/",
+      "type": "vs",
+      "slug": "supabase-vs-aws",
+      "toolA": {
+        "id": "supabase",
+        "name": "Supabase"
+      },
+      "toolB": {
+        "id": "aws",
+        "name": "Amazon Web Services (AWS)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/supabase-vs-google-cloud/",
+      "route": "/vs/supabase-vs-google-cloud/",
+      "type": "vs",
+      "slug": "supabase-vs-google-cloud",
+      "toolA": {
+        "id": "supabase",
+        "name": "Supabase"
+      },
+      "toolB": {
+        "id": "google-cloud",
+        "name": "Google Cloud Platform (GCP)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/supabase-vs-microsoft-azure/",
+      "route": "/vs/supabase-vs-microsoft-azure/",
+      "type": "vs",
+      "slug": "supabase-vs-microsoft-azure",
+      "toolA": {
+        "id": "supabase",
+        "name": "Supabase"
+      },
+      "toolB": {
+        "id": "microsoft-azure",
+        "name": "Microsoft Azure"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/supabase-vs-vercel/",
+      "route": "/vs/supabase-vs-vercel/",
+      "type": "vs",
+      "slug": "supabase-vs-vercel",
+      "toolA": {
+        "id": "supabase",
+        "name": "Supabase"
+      },
+      "toolB": {
+        "id": "vercel",
+        "name": "Vercel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/raycast-vs-aws/",
+      "route": "/vs/raycast-vs-aws/",
+      "type": "vs",
+      "slug": "raycast-vs-aws",
+      "toolA": {
+        "id": "raycast",
+        "name": "Raycast"
+      },
+      "toolB": {
+        "id": "aws",
+        "name": "Amazon Web Services (AWS)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/raycast-vs-google-cloud/",
+      "route": "/vs/raycast-vs-google-cloud/",
+      "type": "vs",
+      "slug": "raycast-vs-google-cloud",
+      "toolA": {
+        "id": "raycast",
+        "name": "Raycast"
+      },
+      "toolB": {
+        "id": "google-cloud",
+        "name": "Google Cloud Platform (GCP)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/raycast-vs-microsoft-azure/",
+      "route": "/vs/raycast-vs-microsoft-azure/",
+      "type": "vs",
+      "slug": "raycast-vs-microsoft-azure",
+      "toolA": {
+        "id": "raycast",
+        "name": "Raycast"
+      },
+      "toolB": {
+        "id": "microsoft-azure",
+        "name": "Microsoft Azure"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/raycast-vs-vercel/",
+      "route": "/vs/raycast-vs-vercel/",
+      "type": "vs",
+      "slug": "raycast-vs-vercel",
+      "toolA": {
+        "id": "raycast",
+        "name": "Raycast"
+      },
+      "toolB": {
+        "id": "vercel",
+        "name": "Vercel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/aws-vs-google-cloud/",
+      "route": "/vs/aws-vs-google-cloud/",
+      "type": "vs",
+      "slug": "aws-vs-google-cloud",
+      "toolA": {
+        "id": "aws",
+        "name": "Amazon Web Services (AWS)"
+      },
+      "toolB": {
+        "id": "google-cloud",
+        "name": "Google Cloud Platform (GCP)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/aws-vs-microsoft-azure/",
+      "route": "/vs/aws-vs-microsoft-azure/",
+      "type": "vs",
+      "slug": "aws-vs-microsoft-azure",
+      "toolA": {
+        "id": "aws",
+        "name": "Amazon Web Services (AWS)"
+      },
+      "toolB": {
+        "id": "microsoft-azure",
+        "name": "Microsoft Azure"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/aws-vs-vercel/",
+      "route": "/vs/aws-vs-vercel/",
+      "type": "vs",
+      "slug": "aws-vs-vercel",
+      "toolA": {
+        "id": "aws",
+        "name": "Amazon Web Services (AWS)"
+      },
+      "toolB": {
+        "id": "vercel",
+        "name": "Vercel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/google-cloud-vs-microsoft-azure/",
+      "route": "/vs/google-cloud-vs-microsoft-azure/",
+      "type": "vs",
+      "slug": "google-cloud-vs-microsoft-azure",
+      "toolA": {
+        "id": "google-cloud",
+        "name": "Google Cloud Platform (GCP)"
+      },
+      "toolB": {
+        "id": "microsoft-azure",
+        "name": "Microsoft Azure"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/google-cloud-vs-vercel/",
+      "route": "/vs/google-cloud-vs-vercel/",
+      "type": "vs",
+      "slug": "google-cloud-vs-vercel",
+      "toolA": {
+        "id": "google-cloud",
+        "name": "Google Cloud Platform (GCP)"
+      },
+      "toolB": {
+        "id": "vercel",
+        "name": "Vercel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/microsoft-azure-vs-vercel/",
+      "route": "/vs/microsoft-azure-vs-vercel/",
+      "type": "vs",
+      "slug": "microsoft-azure-vs-vercel",
+      "toolA": {
+        "id": "microsoft-azure",
+        "name": "Microsoft Azure"
+      },
+      "toolB": {
+        "id": "vercel",
+        "name": "Vercel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/bitwarden-vs-lastpass/",
+      "route": "/vs/bitwarden-vs-lastpass/",
+      "type": "vs",
+      "slug": "bitwarden-vs-lastpass",
+      "toolA": {
+        "id": "bitwarden",
+        "name": "Bitwarden"
+      },
+      "toolB": {
+        "id": "lastpass",
+        "name": "LastPass"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dashlane-vs-lastpass/",
+      "route": "/vs/dashlane-vs-lastpass/",
+      "type": "vs",
+      "slug": "dashlane-vs-lastpass",
+      "toolA": {
+        "id": "dashlane",
+        "name": "Dashlane"
+      },
+      "toolB": {
+        "id": "lastpass",
+        "name": "LastPass"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dashlane-vs-keeper/",
+      "route": "/vs/dashlane-vs-keeper/",
+      "type": "vs",
+      "slug": "dashlane-vs-keeper",
+      "toolA": {
+        "id": "dashlane",
+        "name": "Dashlane"
+      },
+      "toolB": {
+        "id": "keeper",
+        "name": "Keeper Password Manager"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dashlane-vs-proton-pass/",
+      "route": "/vs/dashlane-vs-proton-pass/",
+      "type": "vs",
+      "slug": "dashlane-vs-proton-pass",
+      "toolA": {
+        "id": "dashlane",
+        "name": "Dashlane"
+      },
+      "toolB": {
+        "id": "proton-pass",
+        "name": "Proton Pass"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/lastpass-vs-keeper/",
+      "route": "/vs/lastpass-vs-keeper/",
+      "type": "vs",
+      "slug": "lastpass-vs-keeper",
+      "toolA": {
+        "id": "lastpass",
+        "name": "LastPass"
+      },
+      "toolB": {
+        "id": "keeper",
+        "name": "Keeper Password Manager"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/lastpass-vs-proton-pass/",
+      "route": "/vs/lastpass-vs-proton-pass/",
+      "type": "vs",
+      "slug": "lastpass-vs-proton-pass",
+      "toolA": {
+        "id": "lastpass",
+        "name": "LastPass"
+      },
+      "toolB": {
+        "id": "proton-pass",
+        "name": "Proton Pass"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/keeper-vs-proton-pass/",
+      "route": "/vs/keeper-vs-proton-pass/",
+      "type": "vs",
+      "slug": "keeper-vs-proton-pass",
+      "toolA": {
+        "id": "keeper",
+        "name": "Keeper Password Manager"
+      },
+      "toolB": {
+        "id": "proton-pass",
+        "name": "Proton Pass"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/docusign-vs-adobe-acrobat-sign/",
+      "route": "/vs/docusign-vs-adobe-acrobat-sign/",
+      "type": "vs",
+      "slug": "docusign-vs-adobe-acrobat-sign",
+      "toolA": {
+        "id": "docusign",
+        "name": "DocuSign"
+      },
+      "toolB": {
+        "id": "adobe-acrobat-sign",
+        "name": "Adobe Acrobat Sign"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/docusign-vs-dropbox-sign/",
+      "route": "/vs/docusign-vs-dropbox-sign/",
+      "type": "vs",
+      "slug": "docusign-vs-dropbox-sign",
+      "toolA": {
+        "id": "docusign",
+        "name": "DocuSign"
+      },
+      "toolB": {
+        "id": "dropbox-sign",
+        "name": "Dropbox Sign (formerly HelloSign)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/docusign-vs-pandadoc/",
+      "route": "/vs/docusign-vs-pandadoc/",
+      "type": "vs",
+      "slug": "docusign-vs-pandadoc",
+      "toolA": {
+        "id": "docusign",
+        "name": "DocuSign"
+      },
+      "toolB": {
+        "id": "pandadoc",
+        "name": "PandaDoc"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/docusign-vs-documenso/",
+      "route": "/vs/docusign-vs-documenso/",
+      "type": "vs",
+      "slug": "docusign-vs-documenso",
+      "toolA": {
+        "id": "docusign",
+        "name": "DocuSign"
+      },
+      "toolB": {
+        "id": "documenso",
+        "name": "Documenso"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/docusign-vs-signwell/",
+      "route": "/vs/docusign-vs-signwell/",
+      "type": "vs",
+      "slug": "docusign-vs-signwell",
+      "toolA": {
+        "id": "docusign",
+        "name": "DocuSign"
+      },
+      "toolB": {
+        "id": "signwell",
+        "name": "SignWell"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/adobe-acrobat-sign-vs-dropbox-sign/",
+      "route": "/vs/adobe-acrobat-sign-vs-dropbox-sign/",
+      "type": "vs",
+      "slug": "adobe-acrobat-sign-vs-dropbox-sign",
+      "toolA": {
+        "id": "adobe-acrobat-sign",
+        "name": "Adobe Acrobat Sign"
+      },
+      "toolB": {
+        "id": "dropbox-sign",
+        "name": "Dropbox Sign (formerly HelloSign)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/adobe-acrobat-sign-vs-pandadoc/",
+      "route": "/vs/adobe-acrobat-sign-vs-pandadoc/",
+      "type": "vs",
+      "slug": "adobe-acrobat-sign-vs-pandadoc",
+      "toolA": {
+        "id": "adobe-acrobat-sign",
+        "name": "Adobe Acrobat Sign"
+      },
+      "toolB": {
+        "id": "pandadoc",
+        "name": "PandaDoc"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/adobe-acrobat-sign-vs-documenso/",
+      "route": "/vs/adobe-acrobat-sign-vs-documenso/",
+      "type": "vs",
+      "slug": "adobe-acrobat-sign-vs-documenso",
+      "toolA": {
+        "id": "adobe-acrobat-sign",
+        "name": "Adobe Acrobat Sign"
+      },
+      "toolB": {
+        "id": "documenso",
+        "name": "Documenso"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/adobe-acrobat-sign-vs-signwell/",
+      "route": "/vs/adobe-acrobat-sign-vs-signwell/",
+      "type": "vs",
+      "slug": "adobe-acrobat-sign-vs-signwell",
+      "toolA": {
+        "id": "adobe-acrobat-sign",
+        "name": "Adobe Acrobat Sign"
+      },
+      "toolB": {
+        "id": "signwell",
+        "name": "SignWell"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dropbox-sign-vs-pandadoc/",
+      "route": "/vs/dropbox-sign-vs-pandadoc/",
+      "type": "vs",
+      "slug": "dropbox-sign-vs-pandadoc",
+      "toolA": {
+        "id": "dropbox-sign",
+        "name": "Dropbox Sign (formerly HelloSign)"
+      },
+      "toolB": {
+        "id": "pandadoc",
+        "name": "PandaDoc"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dropbox-sign-vs-documenso/",
+      "route": "/vs/dropbox-sign-vs-documenso/",
+      "type": "vs",
+      "slug": "dropbox-sign-vs-documenso",
+      "toolA": {
+        "id": "dropbox-sign",
+        "name": "Dropbox Sign (formerly HelloSign)"
+      },
+      "toolB": {
+        "id": "documenso",
+        "name": "Documenso"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/dropbox-sign-vs-signwell/",
+      "route": "/vs/dropbox-sign-vs-signwell/",
+      "type": "vs",
+      "slug": "dropbox-sign-vs-signwell",
+      "toolA": {
+        "id": "dropbox-sign",
+        "name": "Dropbox Sign (formerly HelloSign)"
+      },
+      "toolB": {
+        "id": "signwell",
+        "name": "SignWell"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/pandadoc-vs-documenso/",
+      "route": "/vs/pandadoc-vs-documenso/",
+      "type": "vs",
+      "slug": "pandadoc-vs-documenso",
+      "toolA": {
+        "id": "pandadoc",
+        "name": "PandaDoc"
+      },
+      "toolB": {
+        "id": "documenso",
+        "name": "Documenso"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/pandadoc-vs-signwell/",
+      "route": "/vs/pandadoc-vs-signwell/",
+      "type": "vs",
+      "slug": "pandadoc-vs-signwell",
+      "toolA": {
+        "id": "pandadoc",
+        "name": "PandaDoc"
+      },
+      "toolB": {
+        "id": "signwell",
+        "name": "SignWell"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/documenso-vs-signwell/",
+      "route": "/vs/documenso-vs-signwell/",
+      "type": "vs",
+      "slug": "documenso-vs-signwell",
+      "toolA": {
+        "id": "documenso",
+        "name": "Documenso"
+      },
+      "toolB": {
+        "id": "signwell",
+        "name": "SignWell"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/rippling-vs-deel/",
+      "route": "/vs/rippling-vs-deel/",
+      "type": "vs",
+      "slug": "rippling-vs-deel",
+      "toolA": {
+        "id": "rippling",
+        "name": "Rippling"
+      },
+      "toolB": {
+        "id": "deel",
+        "name": "Deel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/rippling-vs-gusto/",
+      "route": "/vs/rippling-vs-gusto/",
+      "type": "vs",
+      "slug": "rippling-vs-gusto",
+      "toolA": {
+        "id": "rippling",
+        "name": "Rippling"
+      },
+      "toolB": {
+        "id": "gusto",
+        "name": "Gusto"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/rippling-vs-bamboohr/",
+      "route": "/vs/rippling-vs-bamboohr/",
+      "type": "vs",
+      "slug": "rippling-vs-bamboohr",
+      "toolA": {
+        "id": "rippling",
+        "name": "Rippling"
+      },
+      "toolB": {
+        "id": "bamboohr",
+        "name": "BambooHR"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/rippling-vs-remote-com/",
+      "route": "/vs/rippling-vs-remote-com/",
+      "type": "vs",
+      "slug": "rippling-vs-remote-com",
+      "toolA": {
+        "id": "rippling",
+        "name": "Rippling"
+      },
+      "toolB": {
+        "id": "remote-com",
+        "name": "Remote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/rippling-vs-greenhouse/",
+      "route": "/vs/rippling-vs-greenhouse/",
+      "type": "vs",
+      "slug": "rippling-vs-greenhouse",
+      "toolA": {
+        "id": "rippling",
+        "name": "Rippling"
+      },
+      "toolB": {
+        "id": "greenhouse",
+        "name": "Greenhouse"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/deel-vs-gusto/",
+      "route": "/vs/deel-vs-gusto/",
+      "type": "vs",
+      "slug": "deel-vs-gusto",
+      "toolA": {
+        "id": "deel",
+        "name": "Deel"
+      },
+      "toolB": {
+        "id": "gusto",
+        "name": "Gusto"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/deel-vs-bamboohr/",
+      "route": "/vs/deel-vs-bamboohr/",
+      "type": "vs",
+      "slug": "deel-vs-bamboohr",
+      "toolA": {
+        "id": "deel",
+        "name": "Deel"
+      },
+      "toolB": {
+        "id": "bamboohr",
+        "name": "BambooHR"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/deel-vs-remote-com/",
+      "route": "/vs/deel-vs-remote-com/",
+      "type": "vs",
+      "slug": "deel-vs-remote-com",
+      "toolA": {
+        "id": "deel",
+        "name": "Deel"
+      },
+      "toolB": {
+        "id": "remote-com",
+        "name": "Remote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/deel-vs-greenhouse/",
+      "route": "/vs/deel-vs-greenhouse/",
+      "type": "vs",
+      "slug": "deel-vs-greenhouse",
+      "toolA": {
+        "id": "deel",
+        "name": "Deel"
+      },
+      "toolB": {
+        "id": "greenhouse",
+        "name": "Greenhouse"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gusto-vs-bamboohr/",
+      "route": "/vs/gusto-vs-bamboohr/",
+      "type": "vs",
+      "slug": "gusto-vs-bamboohr",
+      "toolA": {
+        "id": "gusto",
+        "name": "Gusto"
+      },
+      "toolB": {
+        "id": "bamboohr",
+        "name": "BambooHR"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gusto-vs-remote-com/",
+      "route": "/vs/gusto-vs-remote-com/",
+      "type": "vs",
+      "slug": "gusto-vs-remote-com",
+      "toolA": {
+        "id": "gusto",
+        "name": "Gusto"
+      },
+      "toolB": {
+        "id": "remote-com",
+        "name": "Remote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/gusto-vs-greenhouse/",
+      "route": "/vs/gusto-vs-greenhouse/",
+      "type": "vs",
+      "slug": "gusto-vs-greenhouse",
+      "toolA": {
+        "id": "gusto",
+        "name": "Gusto"
+      },
+      "toolB": {
+        "id": "greenhouse",
+        "name": "Greenhouse"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/bamboohr-vs-remote-com/",
+      "route": "/vs/bamboohr-vs-remote-com/",
+      "type": "vs",
+      "slug": "bamboohr-vs-remote-com",
+      "toolA": {
+        "id": "bamboohr",
+        "name": "BambooHR"
+      },
+      "toolB": {
+        "id": "remote-com",
+        "name": "Remote"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/bamboohr-vs-greenhouse/",
+      "route": "/vs/bamboohr-vs-greenhouse/",
+      "type": "vs",
+      "slug": "bamboohr-vs-greenhouse",
+      "toolA": {
+        "id": "bamboohr",
+        "name": "BambooHR"
+      },
+      "toolB": {
+        "id": "greenhouse",
+        "name": "Greenhouse"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/remote-com-vs-greenhouse/",
+      "route": "/vs/remote-com-vs-greenhouse/",
+      "type": "vs",
+      "slug": "remote-com-vs-greenhouse",
+      "toolA": {
+        "id": "remote-com",
+        "name": "Remote"
+      },
+      "toolB": {
+        "id": "greenhouse",
+        "name": "Greenhouse"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tableau-vs-power-bi/",
+      "route": "/vs/tableau-vs-power-bi/",
+      "type": "vs",
+      "slug": "tableau-vs-power-bi",
+      "toolA": {
+        "id": "tableau",
+        "name": "Tableau"
+      },
+      "toolB": {
+        "id": "power-bi",
+        "name": "Microsoft Power BI"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tableau-vs-mixpanel/",
+      "route": "/vs/tableau-vs-mixpanel/",
+      "type": "vs",
+      "slug": "tableau-vs-mixpanel",
+      "toolA": {
+        "id": "tableau",
+        "name": "Tableau"
+      },
+      "toolB": {
+        "id": "mixpanel",
+        "name": "Mixpanel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tableau-vs-looker-studio/",
+      "route": "/vs/tableau-vs-looker-studio/",
+      "type": "vs",
+      "slug": "tableau-vs-looker-studio",
+      "toolA": {
+        "id": "tableau",
+        "name": "Tableau"
+      },
+      "toolB": {
+        "id": "looker-studio",
+        "name": "Looker Studio (Google)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tableau-vs-looker/",
+      "route": "/vs/tableau-vs-looker/",
+      "type": "vs",
+      "slug": "tableau-vs-looker",
+      "toolA": {
+        "id": "tableau",
+        "name": "Tableau"
+      },
+      "toolB": {
+        "id": "looker",
+        "name": "Looker"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tableau-vs-amplitude/",
+      "route": "/vs/tableau-vs-amplitude/",
+      "type": "vs",
+      "slug": "tableau-vs-amplitude",
+      "toolA": {
+        "id": "tableau",
+        "name": "Tableau"
+      },
+      "toolB": {
+        "id": "amplitude",
+        "name": "Amplitude"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/power-bi-vs-mixpanel/",
+      "route": "/vs/power-bi-vs-mixpanel/",
+      "type": "vs",
+      "slug": "power-bi-vs-mixpanel",
+      "toolA": {
+        "id": "power-bi",
+        "name": "Microsoft Power BI"
+      },
+      "toolB": {
+        "id": "mixpanel",
+        "name": "Mixpanel"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/power-bi-vs-looker-studio/",
+      "route": "/vs/power-bi-vs-looker-studio/",
+      "type": "vs",
+      "slug": "power-bi-vs-looker-studio",
+      "toolA": {
+        "id": "power-bi",
+        "name": "Microsoft Power BI"
+      },
+      "toolB": {
+        "id": "looker-studio",
+        "name": "Looker Studio (Google)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/power-bi-vs-looker/",
+      "route": "/vs/power-bi-vs-looker/",
+      "type": "vs",
+      "slug": "power-bi-vs-looker",
+      "toolA": {
+        "id": "power-bi",
+        "name": "Microsoft Power BI"
+      },
+      "toolB": {
+        "id": "looker",
+        "name": "Looker"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/power-bi-vs-amplitude/",
+      "route": "/vs/power-bi-vs-amplitude/",
+      "type": "vs",
+      "slug": "power-bi-vs-amplitude",
+      "toolA": {
+        "id": "power-bi",
+        "name": "Microsoft Power BI"
+      },
+      "toolB": {
+        "id": "amplitude",
+        "name": "Amplitude"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/mixpanel-vs-looker-studio/",
+      "route": "/vs/mixpanel-vs-looker-studio/",
+      "type": "vs",
+      "slug": "mixpanel-vs-looker-studio",
+      "toolA": {
+        "id": "mixpanel",
+        "name": "Mixpanel"
+      },
+      "toolB": {
+        "id": "looker-studio",
+        "name": "Looker Studio (Google)"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/mixpanel-vs-looker/",
+      "route": "/vs/mixpanel-vs-looker/",
+      "type": "vs",
+      "slug": "mixpanel-vs-looker",
+      "toolA": {
+        "id": "mixpanel",
+        "name": "Mixpanel"
+      },
+      "toolB": {
+        "id": "looker",
+        "name": "Looker"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/mixpanel-vs-amplitude/",
+      "route": "/vs/mixpanel-vs-amplitude/",
+      "type": "vs",
+      "slug": "mixpanel-vs-amplitude",
+      "toolA": {
+        "id": "mixpanel",
+        "name": "Mixpanel"
+      },
+      "toolB": {
+        "id": "amplitude",
+        "name": "Amplitude"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/looker-studio-vs-looker/",
+      "route": "/vs/looker-studio-vs-looker/",
+      "type": "vs",
+      "slug": "looker-studio-vs-looker",
+      "toolA": {
+        "id": "looker-studio",
+        "name": "Looker Studio (Google)"
+      },
+      "toolB": {
+        "id": "looker",
+        "name": "Looker"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/looker-studio-vs-amplitude/",
+      "route": "/vs/looker-studio-vs-amplitude/",
+      "type": "vs",
+      "slug": "looker-studio-vs-amplitude",
+      "toolA": {
+        "id": "looker-studio",
+        "name": "Looker Studio (Google)"
+      },
+      "toolB": {
+        "id": "amplitude",
+        "name": "Amplitude"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/looker-vs-amplitude/",
+      "route": "/vs/looker-vs-amplitude/",
+      "type": "vs",
+      "slug": "looker-vs-amplitude",
+      "toolA": {
+        "id": "looker",
+        "name": "Looker"
+      },
+      "toolB": {
+        "id": "amplitude",
+        "name": "Amplitude"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/playwright-vs-cypress/",
+      "route": "/vs/playwright-vs-cypress/",
+      "type": "vs",
+      "slug": "playwright-vs-cypress",
+      "toolA": {
+        "id": "playwright",
+        "name": "Playwright"
+      },
+      "toolB": {
+        "id": "cypress",
+        "name": "Cypress"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/playwright-vs-grafana-k6/",
+      "route": "/vs/playwright-vs-grafana-k6/",
+      "type": "vs",
+      "slug": "playwright-vs-grafana-k6",
+      "toolA": {
+        "id": "playwright",
+        "name": "Playwright"
+      },
+      "toolB": {
+        "id": "grafana-k6",
+        "name": "Grafana k6"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/playwright-vs-applitools/",
+      "route": "/vs/playwright-vs-applitools/",
+      "type": "vs",
+      "slug": "playwright-vs-applitools",
+      "toolA": {
+        "id": "playwright",
+        "name": "Playwright"
+      },
+      "toolB": {
+        "id": "applitools",
+        "name": "Applitools Eyes"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/playwright-vs-selenium/",
+      "route": "/vs/playwright-vs-selenium/",
+      "type": "vs",
+      "slug": "playwright-vs-selenium",
+      "toolA": {
+        "id": "playwright",
+        "name": "Playwright"
+      },
+      "toolB": {
+        "id": "selenium",
+        "name": "Selenium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/playwright-vs-appium/",
+      "route": "/vs/playwright-vs-appium/",
+      "type": "vs",
+      "slug": "playwright-vs-appium",
+      "toolA": {
+        "id": "playwright",
+        "name": "Playwright"
+      },
+      "toolB": {
+        "id": "appium",
+        "name": "Appium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/cypress-vs-grafana-k6/",
+      "route": "/vs/cypress-vs-grafana-k6/",
+      "type": "vs",
+      "slug": "cypress-vs-grafana-k6",
+      "toolA": {
+        "id": "cypress",
+        "name": "Cypress"
+      },
+      "toolB": {
+        "id": "grafana-k6",
+        "name": "Grafana k6"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/cypress-vs-applitools/",
+      "route": "/vs/cypress-vs-applitools/",
+      "type": "vs",
+      "slug": "cypress-vs-applitools",
+      "toolA": {
+        "id": "cypress",
+        "name": "Cypress"
+      },
+      "toolB": {
+        "id": "applitools",
+        "name": "Applitools Eyes"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/cypress-vs-selenium/",
+      "route": "/vs/cypress-vs-selenium/",
+      "type": "vs",
+      "slug": "cypress-vs-selenium",
+      "toolA": {
+        "id": "cypress",
+        "name": "Cypress"
+      },
+      "toolB": {
+        "id": "selenium",
+        "name": "Selenium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/cypress-vs-appium/",
+      "route": "/vs/cypress-vs-appium/",
+      "type": "vs",
+      "slug": "cypress-vs-appium",
+      "toolA": {
+        "id": "cypress",
+        "name": "Cypress"
+      },
+      "toolB": {
+        "id": "appium",
+        "name": "Appium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/grafana-k6-vs-applitools/",
+      "route": "/vs/grafana-k6-vs-applitools/",
+      "type": "vs",
+      "slug": "grafana-k6-vs-applitools",
+      "toolA": {
+        "id": "grafana-k6",
+        "name": "Grafana k6"
+      },
+      "toolB": {
+        "id": "applitools",
+        "name": "Applitools Eyes"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/grafana-k6-vs-selenium/",
+      "route": "/vs/grafana-k6-vs-selenium/",
+      "type": "vs",
+      "slug": "grafana-k6-vs-selenium",
+      "toolA": {
+        "id": "grafana-k6",
+        "name": "Grafana k6"
+      },
+      "toolB": {
+        "id": "selenium",
+        "name": "Selenium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/grafana-k6-vs-appium/",
+      "route": "/vs/grafana-k6-vs-appium/",
+      "type": "vs",
+      "slug": "grafana-k6-vs-appium",
+      "toolA": {
+        "id": "grafana-k6",
+        "name": "Grafana k6"
+      },
+      "toolB": {
+        "id": "appium",
+        "name": "Appium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/applitools-vs-selenium/",
+      "route": "/vs/applitools-vs-selenium/",
+      "type": "vs",
+      "slug": "applitools-vs-selenium",
+      "toolA": {
+        "id": "applitools",
+        "name": "Applitools Eyes"
+      },
+      "toolB": {
+        "id": "selenium",
+        "name": "Selenium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/applitools-vs-appium/",
+      "route": "/vs/applitools-vs-appium/",
+      "type": "vs",
+      "slug": "applitools-vs-appium",
+      "toolA": {
+        "id": "applitools",
+        "name": "Applitools Eyes"
+      },
+      "toolB": {
+        "id": "appium",
+        "name": "Appium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/selenium-vs-appium/",
+      "route": "/vs/selenium-vs-appium/",
+      "type": "vs",
+      "slug": "selenium-vs-appium",
+      "toolA": {
+        "id": "selenium",
+        "name": "Selenium"
+      },
+      "toolB": {
+        "id": "appium",
+        "name": "Appium"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/kong-gateway-vs-tyk-io/",
+      "route": "/vs/kong-gateway-vs-tyk-io/",
+      "type": "vs",
+      "slug": "kong-gateway-vs-tyk-io",
+      "toolA": {
+        "id": "kong-gateway",
+        "name": "Kong Gateway"
+      },
+      "toolB": {
+        "id": "tyk-io",
+        "name": "Tyk"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/kong-gateway-vs-svix-webhooks/",
+      "route": "/vs/kong-gateway-vs-svix-webhooks/",
+      "type": "vs",
+      "slug": "kong-gateway-vs-svix-webhooks",
+      "toolA": {
+        "id": "kong-gateway",
+        "name": "Kong Gateway"
+      },
+      "toolB": {
+        "id": "svix-webhooks",
+        "name": "Svix"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/kong-gateway-vs-krakend/",
+      "route": "/vs/kong-gateway-vs-krakend/",
+      "type": "vs",
+      "slug": "kong-gateway-vs-krakend",
+      "toolA": {
+        "id": "kong-gateway",
+        "name": "Kong Gateway"
+      },
+      "toolB": {
+        "id": "krakend",
+        "name": "KrakenD"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/kong-gateway-vs-hasura/",
+      "route": "/vs/kong-gateway-vs-hasura/",
+      "type": "vs",
+      "slug": "kong-gateway-vs-hasura",
+      "toolA": {
+        "id": "kong-gateway",
+        "name": "Kong Gateway"
+      },
+      "toolB": {
+        "id": "hasura",
+        "name": "Hasura"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/kong-gateway-vs-mulesoft-anypoint/",
+      "route": "/vs/kong-gateway-vs-mulesoft-anypoint/",
+      "type": "vs",
+      "slug": "kong-gateway-vs-mulesoft-anypoint",
+      "toolA": {
+        "id": "kong-gateway",
+        "name": "Kong Gateway"
+      },
+      "toolB": {
+        "id": "mulesoft-anypoint",
+        "name": "MuleSoft Anypoint Platform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tyk-io-vs-svix-webhooks/",
+      "route": "/vs/tyk-io-vs-svix-webhooks/",
+      "type": "vs",
+      "slug": "tyk-io-vs-svix-webhooks",
+      "toolA": {
+        "id": "tyk-io",
+        "name": "Tyk"
+      },
+      "toolB": {
+        "id": "svix-webhooks",
+        "name": "Svix"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tyk-io-vs-krakend/",
+      "route": "/vs/tyk-io-vs-krakend/",
+      "type": "vs",
+      "slug": "tyk-io-vs-krakend",
+      "toolA": {
+        "id": "tyk-io",
+        "name": "Tyk"
+      },
+      "toolB": {
+        "id": "krakend",
+        "name": "KrakenD"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tyk-io-vs-hasura/",
+      "route": "/vs/tyk-io-vs-hasura/",
+      "type": "vs",
+      "slug": "tyk-io-vs-hasura",
+      "toolA": {
+        "id": "tyk-io",
+        "name": "Tyk"
+      },
+      "toolB": {
+        "id": "hasura",
+        "name": "Hasura"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/tyk-io-vs-mulesoft-anypoint/",
+      "route": "/vs/tyk-io-vs-mulesoft-anypoint/",
+      "type": "vs",
+      "slug": "tyk-io-vs-mulesoft-anypoint",
+      "toolA": {
+        "id": "tyk-io",
+        "name": "Tyk"
+      },
+      "toolB": {
+        "id": "mulesoft-anypoint",
+        "name": "MuleSoft Anypoint Platform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/svix-webhooks-vs-krakend/",
+      "route": "/vs/svix-webhooks-vs-krakend/",
+      "type": "vs",
+      "slug": "svix-webhooks-vs-krakend",
+      "toolA": {
+        "id": "svix-webhooks",
+        "name": "Svix"
+      },
+      "toolB": {
+        "id": "krakend",
+        "name": "KrakenD"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/svix-webhooks-vs-hasura/",
+      "route": "/vs/svix-webhooks-vs-hasura/",
+      "type": "vs",
+      "slug": "svix-webhooks-vs-hasura",
+      "toolA": {
+        "id": "svix-webhooks",
+        "name": "Svix"
+      },
+      "toolB": {
+        "id": "hasura",
+        "name": "Hasura"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/svix-webhooks-vs-mulesoft-anypoint/",
+      "route": "/vs/svix-webhooks-vs-mulesoft-anypoint/",
+      "type": "vs",
+      "slug": "svix-webhooks-vs-mulesoft-anypoint",
+      "toolA": {
+        "id": "svix-webhooks",
+        "name": "Svix"
+      },
+      "toolB": {
+        "id": "mulesoft-anypoint",
+        "name": "MuleSoft Anypoint Platform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krakend-vs-hasura/",
+      "route": "/vs/krakend-vs-hasura/",
+      "type": "vs",
+      "slug": "krakend-vs-hasura",
+      "toolA": {
+        "id": "krakend",
+        "name": "KrakenD"
+      },
+      "toolB": {
+        "id": "hasura",
+        "name": "Hasura"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 26,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/krakend-vs-mulesoft-anypoint/",
+      "route": "/vs/krakend-vs-mulesoft-anypoint/",
+      "type": "vs",
+      "slug": "krakend-vs-mulesoft-anypoint",
+      "toolA": {
+        "id": "krakend",
+        "name": "KrakenD"
+      },
+      "toolB": {
+        "id": "mulesoft-anypoint",
+        "name": "MuleSoft Anypoint Platform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    },
+    {
+      "url": "https://stakdock.com/vs/hasura-vs-mulesoft-anypoint/",
+      "route": "/vs/hasura-vs-mulesoft-anypoint/",
+      "type": "vs",
+      "slug": "hasura-vs-mulesoft-anypoint",
+      "toolA": {
+        "id": "hasura",
+        "name": "Hasura"
+      },
+      "toolB": {
+        "id": "mulesoft-anypoint",
+        "name": "MuleSoft Anypoint Platform"
+      },
+      "intent": "LOW",
+      "intentReason": "Shared category but thin uncorroborated specs",
+      "totalScore": 25,
+      "band": "HOLD",
+      "recommendedAction": "NOINDEX"
+    }
+  ]
+}

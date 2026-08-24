@@ -1,0 +1,3852 @@
+{
+  "generatedAt": "2026-08-24T08:43:19.932Z",
+  "summary": {
+    "totalSoftware": 1788,
+    "tierA_HighestPriority": 303,
+    "tierB_MediumPriority": 1386,
+    "tierC_LowPriority": 99
+  },
+  "tierA_Sample": [
+    {
+      "url": "https://stakdock.com/software/bookster/",
+      "route": "/software/bookster/",
+      "type": "software",
+      "id": "bookster",
+      "name": "Bookster",
+      "totalScore": 86,
+      "completenessScore": 80,
+      "provenanceScore": 100,
+      "provenanceLevel": "VERIFIED",
+      "provenanceSource": "AppSumo Partner Feed",
+      "band": "EXCELLENT",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 15,
+        "useCase": 0,
+        "provenance": 20
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/aiwritebook/",
+      "route": "/software/aiwritebook/",
+      "type": "software",
+      "id": "aiwritebook",
+      "name": "AIWriteBook",
+      "totalScore": 86,
+      "completenessScore": 68,
+      "provenanceScore": 100,
+      "provenanceLevel": "VERIFIED",
+      "provenanceSource": "AppSumo Partner Feed",
+      "band": "EXCELLENT",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 15,
+        "useCase": 0,
+        "provenance": 20
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/greenshift-wp/",
+      "route": "/software/greenshift-wp/",
+      "type": "software",
+      "id": "greenshift-wp",
+      "name": "Greenshift WP",
+      "totalScore": 69,
+      "completenessScore": 75,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/maxbounty/",
+      "route": "/software/maxbounty/",
+      "type": "software",
+      "id": "maxbounty",
+      "name": "MaxBounty",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/impact-com/",
+      "route": "/software/impact-com/",
+      "type": "software",
+      "id": "impact-com",
+      "name": "Impact.com",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/partnerstack/",
+      "route": "/software/partnerstack/",
+      "type": "software",
+      "id": "partnerstack",
+      "name": "PartnerStack",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/cj-affiliate/",
+      "route": "/software/cj-affiliate/",
+      "type": "software",
+      "id": "cj-affiliate",
+      "name": "CJ Affiliate",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/shareasale/",
+      "route": "/software/shareasale/",
+      "type": "software",
+      "id": "shareasale",
+      "name": "ShareASale",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/clickbank/",
+      "route": "/software/clickbank/",
+      "type": "software",
+      "id": "clickbank",
+      "name": "ClickBank",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/perform-cb/",
+      "route": "/software/perform-cb/",
+      "type": "software",
+      "id": "perform-cb",
+      "name": "Perform[cb]",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/appsumo/",
+      "route": "/software/appsumo/",
+      "type": "software",
+      "id": "appsumo",
+      "name": "AppSumo",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/pitchground/",
+      "route": "/software/pitchground/",
+      "type": "software",
+      "id": "pitchground",
+      "name": "PitchGround",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/dealmirror/",
+      "route": "/software/dealmirror/",
+      "type": "software",
+      "id": "dealmirror",
+      "name": "DealMirror",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/fiverr/",
+      "route": "/software/fiverr/",
+      "type": "software",
+      "id": "fiverr",
+      "name": "Fiverr",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/upwork/",
+      "route": "/software/upwork/",
+      "type": "software",
+      "id": "upwork",
+      "name": "Upwork",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/freelancer/",
+      "route": "/software/freelancer/",
+      "type": "software",
+      "id": "freelancer",
+      "name": "Freelancer.com",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/zebracat-ai/",
+      "route": "/software/zebracat-ai/",
+      "type": "software",
+      "id": "zebracat-ai",
+      "name": "Zebracat",
+      "totalScore": 44,
+      "completenessScore": 40,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/tenable-io/",
+      "route": "/software/tenable-io/",
+      "type": "software",
+      "id": "tenable-io",
+      "name": "Tenable.io",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/semgrep-sast/",
+      "route": "/software/semgrep-sast/",
+      "type": "software",
+      "id": "semgrep-sast",
+      "name": "Semgrep",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/checkov-bridgecrew/",
+      "route": "/software/checkov-bridgecrew/",
+      "type": "software",
+      "id": "checkov-bridgecrew",
+      "name": "Checkov",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/kube-bench/",
+      "route": "/software/kube-bench/",
+      "type": "software",
+      "id": "kube-bench",
+      "name": "Kube-Bench",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/kube-hunter/",
+      "route": "/software/kube-hunter/",
+      "type": "software",
+      "id": "kube-hunter",
+      "name": "Kube-Hunter",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/defectdojo/",
+      "route": "/software/defectdojo/",
+      "type": "software",
+      "id": "defectdojo",
+      "name": "OWASP DefectDojo",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/openvas-greenbone/",
+      "route": "/software/openvas-greenbone/",
+      "type": "software",
+      "id": "openvas-greenbone",
+      "name": "OpenVAS",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/nuclei-projectdiscovery/",
+      "route": "/software/nuclei-projectdiscovery/",
+      "type": "software",
+      "id": "nuclei-projectdiscovery",
+      "name": "Nuclei",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/subfinder-projectdiscovery/",
+      "route": "/software/subfinder-projectdiscovery/",
+      "type": "software",
+      "id": "subfinder-projectdiscovery",
+      "name": "Subfinder",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/owasp-amass/",
+      "route": "/software/owasp-amass/",
+      "type": "software",
+      "id": "owasp-amass",
+      "name": "OWASP Amass",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/bloodhound-ad/",
+      "route": "/software/bloodhound-ad/",
+      "type": "software",
+      "id": "bloodhound-ad",
+      "name": "BloodHound",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/caldera-mitre/",
+      "route": "/software/caldera-mitre/",
+      "type": "software",
+      "id": "caldera-mitre",
+      "name": "MITRE CALDERA",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/atomic-red-team/",
+      "route": "/software/atomic-red-team/",
+      "type": "software",
+      "id": "atomic-red-team",
+      "name": "Atomic Red Team",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/wazuh-siem/",
+      "route": "/software/wazuh-siem/",
+      "type": "software",
+      "id": "wazuh-siem",
+      "name": "Wazuh",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/security-onion/",
+      "route": "/software/security-onion/",
+      "type": "software",
+      "id": "security-onion",
+      "name": "Security Onion",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/suricata-ids/",
+      "route": "/software/suricata-ids/",
+      "type": "software",
+      "id": "suricata-ids",
+      "name": "Suricata",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/zeek-ids/",
+      "route": "/software/zeek-ids/",
+      "type": "software",
+      "id": "zeek-ids",
+      "name": "Zeek (formerly Bro)",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/snort-ids/",
+      "route": "/software/snort-ids/",
+      "type": "software",
+      "id": "snort-ids",
+      "name": "Snort",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/pritunl-vpn/",
+      "route": "/software/pritunl-vpn/",
+      "type": "software",
+      "id": "pritunl-vpn",
+      "name": "Pritunl",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/softether-vpn/",
+      "route": "/software/softether-vpn/",
+      "type": "software",
+      "id": "softether-vpn",
+      "name": "SoftEther VPN",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/nebula-slack/",
+      "route": "/software/nebula-slack/",
+      "type": "software",
+      "id": "nebula-slack",
+      "name": "Nebula",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/zerotier-one/",
+      "route": "/software/zerotier-one/",
+      "type": "software",
+      "id": "zerotier-one",
+      "name": "ZeroTier",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/cloudflare-access/",
+      "route": "/software/cloudflare-access/",
+      "type": "software",
+      "id": "cloudflare-access",
+      "name": "Cloudflare Access",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/telemetrydeck-analytics/",
+      "route": "/software/telemetrydeck-analytics/",
+      "type": "software",
+      "id": "telemetrydeck-analytics",
+      "name": "TelemetryDeck",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/caprover/",
+      "route": "/software/caprover/",
+      "type": "software",
+      "id": "caprover",
+      "name": "CapRover",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/kamal-deploy/",
+      "route": "/software/kamal-deploy/",
+      "type": "software",
+      "id": "kamal-deploy",
+      "name": "Kamal",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/focalboard/",
+      "route": "/software/focalboard/",
+      "type": "software",
+      "id": "focalboard",
+      "name": "Focalboard",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/vikunja/",
+      "route": "/software/vikunja/",
+      "type": "software",
+      "id": "vikunja",
+      "name": "Vikunja",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/leantime/",
+      "route": "/software/leantime/",
+      "type": "software",
+      "id": "leantime",
+      "name": "Leantime",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/rustdesk/",
+      "route": "/software/rustdesk/",
+      "type": "software",
+      "id": "rustdesk",
+      "name": "RustDesk",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/meshcentral/",
+      "route": "/software/meshcentral/",
+      "type": "software",
+      "id": "meshcentral",
+      "name": "MeshCentral",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/apache-guacamole/",
+      "route": "/software/apache-guacamole/",
+      "type": "software",
+      "id": "apache-guacamole",
+      "name": "Apache Guacamole",
+      "totalScore": 76,
+      "completenessScore": 63,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/photoprism/",
+      "route": "/software/photoprism/",
+      "type": "software",
+      "id": "photoprism",
+      "name": "PhotoPrism",
+      "totalScore": 76,
+      "completenessScore": 75,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_A",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    }
+  ],
+  "tierB_Sample": [
+    {
+      "url": "https://stakdock.com/software/formstack/",
+      "route": "/software/formstack/",
+      "type": "software",
+      "id": "formstack",
+      "name": "Formstack",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/qualtrics-xm/",
+      "route": "/software/qualtrics-xm/",
+      "type": "software",
+      "id": "qualtrics-xm",
+      "name": "Qualtrics XM",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/paperform/",
+      "route": "/software/paperform/",
+      "type": "software",
+      "id": "paperform",
+      "name": "Paperform",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/feathery/",
+      "route": "/software/feathery/",
+      "type": "software",
+      "id": "feathery",
+      "name": "Feathery",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/cognito-forms/",
+      "route": "/software/cognito-forms/",
+      "type": "software",
+      "id": "cognito-forms",
+      "name": "Cognito Forms",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/microsoft-forms/",
+      "route": "/software/microsoft-forms/",
+      "type": "software",
+      "id": "microsoft-forms",
+      "name": "Microsoft Forms",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/formbrick/",
+      "route": "/software/formbrick/",
+      "type": "software",
+      "id": "formbrick",
+      "name": "Formbrick",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/alchemer-formerly-surveygizmo/",
+      "route": "/software/alchemer-formerly-surveygizmo/",
+      "type": "software",
+      "id": "alchemer-formerly-surveygizmo",
+      "name": "Alchemer (formerly SurveyGizmo)",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/wufoo-by-surveymonkey/",
+      "route": "/software/wufoo-by-surveymonkey/",
+      "type": "software",
+      "id": "wufoo-by-surveymonkey",
+      "name": "Wufoo by SurveyMonkey",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/123formbuilder/",
+      "route": "/software/123formbuilder/",
+      "type": "software",
+      "id": "123formbuilder",
+      "name": "123FormBuilder",
+      "totalScore": 37,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/deformity-reform/",
+      "route": "/software/deformity-reform/",
+      "type": "software",
+      "id": "deformity-reform",
+      "name": "Deformity / Reform",
+      "totalScore": 32,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/tripetto/",
+      "route": "/software/tripetto/",
+      "type": "software",
+      "id": "tripetto",
+      "name": "Tripetto",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/kobotoolbox/",
+      "route": "/software/kobotoolbox/",
+      "type": "software",
+      "id": "kobotoolbox",
+      "name": "KoboToolbox",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/formik/",
+      "route": "/software/formik/",
+      "type": "software",
+      "id": "formik",
+      "name": "Formik",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/react-hook-form/",
+      "route": "/software/react-hook-form/",
+      "type": "software",
+      "id": "react-hook-form",
+      "name": "React Hook Form",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/zonka-feedback/",
+      "route": "/software/zonka-feedback/",
+      "type": "software",
+      "id": "zonka-feedback",
+      "name": "Zonka Feedback",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/delighted-by-qualtrics/",
+      "route": "/software/delighted-by-qualtrics/",
+      "type": "software",
+      "id": "delighted-by-qualtrics",
+      "name": "Delighted by Qualtrics",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/survicate/",
+      "route": "/software/survicate/",
+      "type": "software",
+      "id": "survicate",
+      "name": "Survicate",
+      "totalScore": 37,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/micromodal-usabilla-getfeedback/",
+      "route": "/software/micromodal-usabilla-getfeedback/",
+      "type": "software",
+      "id": "micromodal-usabilla-getfeedback",
+      "name": "MicroModal / Usabilla (GetFeedback)",
+      "totalScore": 32,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/refiner/",
+      "route": "/software/refiner/",
+      "type": "software",
+      "id": "refiner",
+      "name": "Refiner",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/proprofs-survey-maker/",
+      "route": "/software/proprofs-survey-maker/",
+      "type": "software",
+      "id": "proprofs-survey-maker",
+      "name": "ProProfs Survey Maker",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/involve-me/",
+      "route": "/software/involve-me/",
+      "type": "software",
+      "id": "involve-me",
+      "name": "Involve.me",
+      "totalScore": 37,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/outgrow/",
+      "route": "/software/outgrow/",
+      "type": "software",
+      "id": "outgrow",
+      "name": "Outgrow",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/interact-tryinteract/",
+      "route": "/software/interact-tryinteract/",
+      "type": "software",
+      "id": "interact-tryinteract",
+      "name": "Interact (TryInteract)",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/scoreapp/",
+      "route": "/software/scoreapp/",
+      "type": "software",
+      "id": "scoreapp",
+      "name": "ScoreApp",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/pointerpro-formerly-survey-anyplace/",
+      "route": "/software/pointerpro-formerly-survey-anyplace/",
+      "type": "software",
+      "id": "pointerpro-formerly-survey-anyplace",
+      "name": "Pointerpro (formerly Survey Anyplace)",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/feathery-logic-youform/",
+      "route": "/software/feathery-logic-youform/",
+      "type": "software",
+      "id": "feathery-logic-youform",
+      "name": "Feathery Logic / Youform",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/formcarry/",
+      "route": "/software/formcarry/",
+      "type": "software",
+      "id": "formcarry",
+      "name": "Formcarry",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/formspree/",
+      "route": "/software/formspree/",
+      "type": "software",
+      "id": "formspree",
+      "name": "Formspree",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/formkeep/",
+      "route": "/software/formkeep/",
+      "type": "software",
+      "id": "formkeep",
+      "name": "Formkeep",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/getform/",
+      "route": "/software/getform/",
+      "type": "software",
+      "id": "getform",
+      "name": "Getform",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/web3forms/",
+      "route": "/software/web3forms/",
+      "type": "software",
+      "id": "web3forms",
+      "name": "Web3Forms",
+      "totalScore": 37,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/gravity-forms/",
+      "route": "/software/gravity-forms/",
+      "type": "software",
+      "id": "gravity-forms",
+      "name": "Gravity Forms",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/wpforms/",
+      "route": "/software/wpforms/",
+      "type": "software",
+      "id": "wpforms",
+      "name": "WPForms",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/ninja-forms/",
+      "route": "/software/ninja-forms/",
+      "type": "software",
+      "id": "ninja-forms",
+      "name": "Ninja Forms",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/formidable-forms/",
+      "route": "/software/formidable-forms/",
+      "type": "software",
+      "id": "formidable-forms",
+      "name": "Formidable Forms",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/devicemagic-gocanvas/",
+      "route": "/software/devicemagic-gocanvas/",
+      "type": "software",
+      "id": "devicemagic-gocanvas",
+      "name": "DeviceMagic / GoCanvas",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/fastfield-forms/",
+      "route": "/software/fastfield-forms/",
+      "type": "software",
+      "id": "fastfield-forms",
+      "name": "FastField Forms",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/fulcrum/",
+      "route": "/software/fulcrum/",
+      "type": "software",
+      "id": "fulcrum",
+      "name": "Fulcrum",
+      "totalScore": 39,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/sogosurvey-sogolytics/",
+      "route": "/software/sogosurvey-sogolytics/",
+      "type": "software",
+      "id": "sogosurvey-sogolytics",
+      "name": "SogoSurvey / Sogolytics",
+      "totalScore": 37,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/limesurvey/",
+      "route": "/software/limesurvey/",
+      "type": "software",
+      "id": "limesurvey",
+      "name": "LimeSurvey",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/blocksurvey/",
+      "route": "/software/blocksurvey/",
+      "type": "software",
+      "id": "blocksurvey",
+      "name": "BlockSurvey",
+      "totalScore": 32,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/crowdsignal/",
+      "route": "/software/crowdsignal/",
+      "type": "software",
+      "id": "crowdsignal",
+      "name": "Crowdsignal",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/poll-maker-slido/",
+      "route": "/software/poll-maker-slido/",
+      "type": "software",
+      "id": "poll-maker-slido",
+      "name": "Poll Maker / Slido",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/hashnode/",
+      "route": "/software/hashnode/",
+      "type": "software",
+      "id": "hashnode",
+      "name": "Hashnode",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/dev-to/",
+      "route": "/software/dev-to/",
+      "type": "software",
+      "id": "dev-to",
+      "name": "Dev.to",
+      "totalScore": 37,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/sailthru-by-marigold/",
+      "route": "/software/sailthru-by-marigold/",
+      "type": "software",
+      "id": "sailthru-by-marigold",
+      "name": "Sailthru by Marigold",
+      "totalScore": 32,
+      "completenessScore": 28,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 9,
+        "features": 0,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/revue-historical-archive/",
+      "route": "/software/revue-historical-archive/",
+      "type": "software",
+      "id": "revue-historical-archive",
+      "name": "Revue (Historical Archive)",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/scribe-mirror-xyz/",
+      "route": "/software/scribe-mirror-xyz/",
+      "type": "software",
+      "id": "scribe-mirror-xyz",
+      "name": "Scribe / Mirror.xyz",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/substack-notes-paragraph/",
+      "route": "/software/substack-notes-paragraph/",
+      "type": "software",
+      "id": "substack-notes-paragraph",
+      "name": "Substack Notes / Paragraph",
+      "totalScore": 44,
+      "completenessScore": 33,
+      "provenanceScore": 50,
+      "provenanceLevel": "MEDIUM",
+      "provenanceSource": "Direct Domain Crawl",
+      "band": "HOLD",
+      "remediationTier": "TIER_B",
+      "breakdown": {
+        "identity": 10,
+        "description": 16,
+        "features": 0,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 8
+      },
+      "issues": [
+        "Missing feature specifications (0 specs)",
+        "Missing explicit bestFor / target persona"
+      ]
+    }
+  ],
+  "tierC_Sample": [
+    {
+      "url": "https://stakdock.com/software/stacksocial/",
+      "route": "/software/stacksocial/",
+      "type": "software",
+      "id": "stacksocial",
+      "name": "StackSocial",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/toptal/",
+      "route": "/software/toptal/",
+      "type": "software",
+      "id": "toptal",
+      "name": "Toptal",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/onelogin-iam/",
+      "route": "/software/onelogin-iam/",
+      "type": "software",
+      "id": "onelogin-iam",
+      "name": "OneLogin",
+      "totalScore": 71,
+      "completenessScore": 70,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/delinea-pam/",
+      "route": "/software/delinea-pam/",
+      "type": "software",
+      "id": "delinea-pam",
+      "name": "Delinea",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/manageengine-pam360/",
+      "route": "/software/manageengine-pam360/",
+      "type": "software",
+      "id": "manageengine-pam360",
+      "name": "ManageEngine PAM360",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/opal-security/",
+      "route": "/software/opal-security/",
+      "type": "software",
+      "id": "opal-security",
+      "name": "Opal Security",
+      "totalScore": 71,
+      "completenessScore": 70,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/sysdig-secure/",
+      "route": "/software/sysdig-secure/",
+      "type": "software",
+      "id": "sysdig-secure",
+      "name": "Sysdig Secure",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/aws-guardduty/",
+      "route": "/software/aws-guardduty/",
+      "type": "software",
+      "id": "aws-guardduty",
+      "name": "AWS GuardDuty",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/aws-security-hub/",
+      "route": "/software/aws-security-hub/",
+      "type": "software",
+      "id": "aws-security-hub",
+      "name": "AWS Security Hub",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/trendmicro-cloud-one/",
+      "route": "/software/trendmicro-cloud-one/",
+      "type": "software",
+      "id": "trendmicro-cloud-one",
+      "name": "Trend Micro Cloud One",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/qualys-cloud-platform/",
+      "route": "/software/qualys-cloud-platform/",
+      "type": "software",
+      "id": "qualys-cloud-platform",
+      "name": "Qualys Cloud Platform",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/rapid7-insightvm/",
+      "route": "/software/rapid7-insightvm/",
+      "type": "software",
+      "id": "rapid7-insightvm",
+      "name": "Rapid7 InsightVM",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/alienvault-usm/",
+      "route": "/software/alienvault-usm/",
+      "type": "software",
+      "id": "alienvault-usm",
+      "name": "AT&T USM Anywhere (AlienVault)",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/banyan-security/",
+      "route": "/software/banyan-security/",
+      "type": "software",
+      "id": "banyan-security",
+      "name": "Banyan Security",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/elisity-segmentation/",
+      "route": "/software/elisity-segmentation/",
+      "type": "software",
+      "id": "elisity-segmentation",
+      "name": "Elisity",
+      "totalScore": 71,
+      "completenessScore": 70,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/hashicorp-sentinel/",
+      "route": "/software/hashicorp-sentinel/",
+      "type": "software",
+      "id": "hashicorp-sentinel",
+      "name": "HashiCorp Sentinel",
+      "totalScore": 71,
+      "completenessScore": 58,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 20,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/dragonfly/",
+      "route": "/software/dragonfly/",
+      "type": "software",
+      "id": "dragonfly",
+      "name": "Dragonfly",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/valkey/",
+      "route": "/software/valkey/",
+      "type": "software",
+      "id": "valkey",
+      "name": "Valkey",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/faunadb/",
+      "route": "/software/faunadb/",
+      "type": "software",
+      "id": "faunadb",
+      "name": "Fauna",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/scylladb/",
+      "route": "/software/scylladb/",
+      "type": "software",
+      "id": "scylladb",
+      "name": "ScyllaDB",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/opensearch/",
+      "route": "/software/opensearch/",
+      "type": "software",
+      "id": "opensearch",
+      "name": "OpenSearch",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/typesense/",
+      "route": "/software/typesense/",
+      "type": "software",
+      "id": "typesense",
+      "name": "Typesense",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/elasticsearch/",
+      "route": "/software/elasticsearch/",
+      "type": "software",
+      "id": "elasticsearch",
+      "name": "Elasticsearch",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/memgraph/",
+      "route": "/software/memgraph/",
+      "type": "software",
+      "id": "memgraph",
+      "name": "Memgraph",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/arangodb/",
+      "route": "/software/arangodb/",
+      "type": "software",
+      "id": "arangodb",
+      "name": "ArangoDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/tigergraph/",
+      "route": "/software/tigergraph/",
+      "type": "software",
+      "id": "tigergraph",
+      "name": "TigerGraph",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/couchbase/",
+      "route": "/software/couchbase/",
+      "type": "software",
+      "id": "couchbase",
+      "name": "Couchbase",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/influxdb/",
+      "route": "/software/influxdb/",
+      "type": "software",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/questdb/",
+      "route": "/software/questdb/",
+      "type": "software",
+      "id": "questdb",
+      "name": "QuestDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/turbopuffer/",
+      "route": "/software/turbopuffer/",
+      "type": "software",
+      "id": "turbopuffer",
+      "name": "Turbopuffer",
+      "totalScore": 66,
+      "completenessScore": 62,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 5,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Generic pricing tag",
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/marqo/",
+      "route": "/software/marqo/",
+      "type": "software",
+      "id": "marqo",
+      "name": "Marqo",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/yugabyte-db/",
+      "route": "/software/yugabyte-db/",
+      "type": "software",
+      "id": "yugabyte-db",
+      "name": "YugabyteDB",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/tidb-pingcap/",
+      "route": "/software/tidb-pingcap/",
+      "type": "software",
+      "id": "tidb-pingcap",
+      "name": "TiDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/dgraph/",
+      "route": "/software/dgraph/",
+      "type": "software",
+      "id": "dgraph",
+      "name": "Dgraph",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/janusgraph/",
+      "route": "/software/janusgraph/",
+      "type": "software",
+      "id": "janusgraph",
+      "name": "JanusGraph",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/terminusdb/",
+      "route": "/software/terminusdb/",
+      "type": "software",
+      "id": "terminusdb",
+      "name": "TerminusDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/rocksdb/",
+      "route": "/software/rocksdb/",
+      "type": "software",
+      "id": "rocksdb",
+      "name": "RocksDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/aerospike/",
+      "route": "/software/aerospike/",
+      "type": "software",
+      "id": "aerospike",
+      "name": "Aerospike",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/cassandra/",
+      "route": "/software/cassandra/",
+      "type": "software",
+      "id": "cassandra",
+      "name": "Apache Cassandra",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/astradb/",
+      "route": "/software/astradb/",
+      "type": "software",
+      "id": "astradb",
+      "name": "DataStax Astra DB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/zilliz-cloud/",
+      "route": "/software/zilliz-cloud/",
+      "type": "software",
+      "id": "zilliz-cloud",
+      "name": "Zilliz Cloud",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/keydb/",
+      "route": "/software/keydb/",
+      "type": "software",
+      "id": "keydb",
+      "name": "KeyDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/kuzu-db/",
+      "route": "/software/kuzu-db/",
+      "type": "software",
+      "id": "kuzu-db",
+      "name": "Kùzu",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/greptimedb/",
+      "route": "/software/greptimedb/",
+      "type": "software",
+      "id": "greptimedb",
+      "name": "GreptimeDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/victoriametrics/",
+      "route": "/software/victoriametrics/",
+      "type": "software",
+      "id": "victoriametrics",
+      "name": "VictoriaMetrics",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/cratedb/",
+      "route": "/software/cratedb/",
+      "type": "software",
+      "id": "cratedb",
+      "name": "CrateDB",
+      "totalScore": 71,
+      "completenessScore": 55,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/faiss-fb/",
+      "route": "/software/faiss-fb/",
+      "type": "software",
+      "id": "faiss-fb",
+      "name": "FAISS (Meta)",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/pgvector-ext/",
+      "route": "/software/pgvector-ext/",
+      "type": "software",
+      "id": "pgvector-ext",
+      "name": "pgvector",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/foundationdb/",
+      "route": "/software/foundationdb/",
+      "type": "software",
+      "id": "foundationdb",
+      "name": "FoundationDB",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    },
+    {
+      "url": "https://stakdock.com/software/tikv-cncf/",
+      "route": "/software/tikv-cncf/",
+      "type": "software",
+      "id": "tikv-cncf",
+      "name": "TiKV",
+      "totalScore": 71,
+      "completenessScore": 67,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Official Domain & Multi-Field Corroborated",
+      "band": "GOOD",
+      "remediationTier": "TIER_C",
+      "breakdown": {
+        "identity": 10,
+        "description": 21,
+        "features": 15,
+        "pricing": 10,
+        "useCase": 0,
+        "provenance": 15
+      },
+      "issues": [
+        "Missing explicit bestFor / target persona"
+      ]
+    }
+  ]
+}

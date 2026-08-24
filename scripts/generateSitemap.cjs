@@ -7,6 +7,11 @@ const saasCategories = readCategories();
 const baseUrl = 'https://stakdock.com';
 const todayDate = new Date().toISOString().split('T')[0];
 
+console.log('🗺️  Generating StakDock XML Sitemap with Controlled Quality Gating & Grandfathering...');
+
+// Cutoff timestamp for grandfathered historical routes
+const GRANDFATHERED_BASELINE_TOOL_IDS = new Set(saasTools.map(t => t.id));
+
 let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
@@ -111,20 +116,49 @@ editorialGuides.forEach(slug => {
   </url>\n`;
 });
 
-// Add dedicated /software/ individual tool pages & /alternatives/ hubs for all tools
+// Helper: New-page indexation quality gate evaluator
+function evaluateNewPageGate(tool) {
+  // Check if grandfathered
+  if (GRANDFATHERED_BASELINE_TOOL_IDS.has(tool.id)) {
+    return { shouldIndex: true, reason: 'Grandfathered Historical Listing' };
+  }
+
+  // Strict Gate for NEW tools added in the future:
+  const hasDesc = tool.description && tool.description.length >= 150;
+  const hasValidFeats = Array.isArray(tool.features) && tool.features.length >= 3;
+  const hasPricing = tool.pricing && tool.pricing !== 'Unlisted';
+  const hasDomain = tool.domain && tool.domain.includes('.');
+
+  if (hasDesc && hasValidFeats && hasPricing && hasDomain) {
+    return { shouldIndex: true, reason: 'Passed 4-Pillar Quality Gate' };
+  }
+
+  return { shouldIndex: false, reason: 'Failed Gate: Needs rich specs and verified pricing' };
+}
+
+let indexedSoftwareCount = 0;
+let heldSoftwareCount = 0;
+
+// Add dedicated /software/ individual tool pages & /alternatives/ hubs
 saasTools.forEach(t => {
-  sitemapXml += `  <url>
+  const gate = evaluateNewPageGate(t);
+  if (gate.shouldIndex) {
+    sitemapXml += `  <url>
     <loc>${baseUrl}/software/${t.id}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>\n`;
-  sitemapXml += `  <url>
+    sitemapXml += `  <url>
     <loc>${baseUrl}/alternatives/${t.id}/</loc>
     <lastmod>${todayDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>\n`;
+    indexedSoftwareCount++;
+  } else {
+    heldSoftwareCount++;
+  }
 });
 
 // Add category-based pairwise comparison routes
@@ -172,3 +206,4 @@ const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
 fs.writeFileSync(sitemapPath, sitemapXml, 'utf8');
 
 console.log(`✨ Successfully generated public/sitemap.xml for StakDock.com! Total indexed routes: ${totalUrlsCount} (100% strict trailing-slash canonicals)`);
+console.log(`🛡️  Quality Gating: Indexed Software: ${indexedSoftwareCount}, Held from Index: ${heldSoftwareCount}`);
