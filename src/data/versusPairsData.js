@@ -1,3 +1,16 @@
+export const approvedFlagshipComparisons = [
+  {
+    slug: 'cursor-ai-vs-github-copilot',
+    tool1Id: 'cursor-ai',
+    tool2Id: 'github-copilot',
+    title: 'Cursor AI vs GitHub Copilot: 2026 Developer Comparison & Decision Guide',
+    metaDescription: 'In-depth comparison of Cursor AI vs GitHub Copilot. Compare AI-native editor workflows, IDE extensions, codebase indexing, multi-file refactoring, and verified pricing.',
+    comparisonIntent: 'HIGH',
+    isFlagship: true,
+    lastChecked: '2026-08-24'
+  }
+];
+
 export const versusPairs = [
   {
     slug: 'chatgpt-plus-vs-claude-ai',
@@ -17,11 +30,13 @@ export const versusPairs = [
   },
   {
     slug: 'cursor-ai-vs-github-copilot',
-    tool1Id: 'curated-cursor-com',
+    tool1Id: 'cursor-ai',
     tool2Id: 'github-copilot',
-    title: 'Cursor AI vs GitHub Copilot: Which AI Code Editor Wins in 2026?',
-    metaDescription: 'Compare Cursor AI vs GitHub Copilot. In-depth analysis of codebase indexing, multi-file edits, terminal AI commands, and pricing.',
-    verdict: 'Cursor AI offers superior multi-file codebase indexing and Sonnet 3.5 integration, whereas GitHub Copilot seamlessly integrates into native VS Code extensions.'
+    title: 'Cursor AI vs GitHub Copilot: 2026 Developer Comparison & Decision Guide',
+    metaDescription: 'In-depth comparison of Cursor AI vs GitHub Copilot. Compare AI-native editor workflows, IDE extensions, codebase indexing, multi-file refactoring, and verified pricing.',
+    verdict: 'Choose Cursor AI for deep whole-codebase vector indexing and multi-file Composer refactoring; choose GitHub Copilot for seamless multi-IDE extension integration across JetBrains, Visual Studio, and Neovim.',
+    comparisonIntent: 'HIGH',
+    isFlagship: true
   },
   {
     slug: 'v0-dev-vs-bolt-new',
@@ -40,3 +55,4 @@ export const versusPairs = [
     verdict: 'ElevenLabs leads the industry in hyper-realistic voice cloning and emotional inflection, while Speechify is optimized for speed-reading documents and PDFs.'
   }
 ];
+

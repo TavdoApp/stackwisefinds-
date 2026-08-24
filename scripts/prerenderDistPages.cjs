@@ -520,10 +520,24 @@ saasTools.forEach(tool => {
   altCount++;
 });
 
+// Controlled explicit approved cross-category flagship comparisons
+const approvedFlagshipComparisons = [
+  { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot', isFlagship: true }
+];
+
 // 3. Generate pairwise dist/vs/:vsSlug/index.html
 function getVsPairsList(tools) {
   const map = new Map();
   const catMap = {};
+
+  // Register approved flagship cross-category pairs first
+  approvedFlagshipComparisons.forEach(f => {
+    const tA = tools.find(t => t.id === f.toolAId);
+    const tB = tools.find(t => t.id === f.toolBId);
+    if (tA && tB) {
+      map.set(f.vsSlug, { tA, tB, vsSlug: f.vsSlug, isFlagship: true });
+    }
+  });
 
   tools.forEach(t => {
     if (!t || !t.category) return;
@@ -539,7 +553,7 @@ function getVsPairsList(tools) {
       for (let j = i + 1; j < top.length; j++) {
         const slug = `${top[i].id}-vs-${top[j].id}`;
         if (!map.has(slug)) {
-          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug, isFlagship: false });
         }
       }
     }
@@ -591,9 +605,352 @@ function generateFactualVsIntro(tA, tB) {
   return intro;
 }
 
+// Flagship Decision Renderer for Cursor AI vs GitHub Copilot
+function renderFlagshipCursorVsCopilotSsr(tA, tB, vsSlug) {
+  return `
+  ${renderSsrNavbar('/vs/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/vs/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Cursor AI vs GitHub Copilot</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        FLAGSHIP DEVELOPER COMPARISON &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Cursor AI vs GitHub Copilot: Which AI Coding Tool Should You Choose in 2026?
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        An evidence-grounded comparison of AI-native editor workflows, multi-file refactoring, IDE extensions, codebase indexing, and verified pricing.
+      </p>
+    </header>
+
+    <!-- Above-The-Fold Decision Summary -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
+      <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
+        <strong>Cursor</strong> is a standalone AI-native code editor (VS Code fork) engineered around whole-codebase vector indexing and automated multi-file edits (Composer). <strong>GitHub Copilot</strong> is a cross-IDE AI extension developed by GitHub and OpenAI that integrates inline autocomplete, conversational chat, and CLI assistance directly into your existing editor (VS Code, JetBrains IDEs, Visual Studio, Neovim).
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#2D4522;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+            <span>Choose Cursor AI if:</span>
+          </div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You want deep, repository-wide vector indexing with multi-file code generation and diff reviews (<code>Cmd+I</code> / Composer).</li>
+            <li>You are willing to use a dedicated, standalone AI-first editor that maintains full VS Code extension and keybinding compatibility.</li>
+            <li>You require native model switching between Claude 3.5 Sonnet, GPT-4o, and specialized Cursor refactoring models.</li>
+            <li>You frequently execute complex architectural refactorings across multiple project files simultaneously.</li>
+          </ul>
+        </div>
+
+        <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#37286B;margin-bottom:12px;display:flex;align-items:center;gap:8px;">
+            <span>Choose GitHub Copilot if:</span>
+          </div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You want AI assistance inside your existing environment (JetBrains IDEs, Visual Studio, Neovim, VS Code) without switching editors.</li>
+            <li>Your organization requires centralized GitHub Enterprise governance, SOC 2 Type II compliance, and IP copyright indemnity.</li>
+            <li>You want native GitHub workflows, including Copilot in GitHub CLI and PR summarization.</li>
+            <li>You qualify for free access as a verified student, educator, or maintainer of popular open-source repositories.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Quick Comparison Matrix -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Side-by-Side Specification Matrix</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
+          <thead>
+            <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+              <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Comparison Criteria</th>
+              <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Cursor AI</th>
+              <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">GitHub Copilot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Product Architecture</td>
+              <td style="padding:12px 16px;color:#182618;">Standalone AI-Native Editor (VS Code fork)</td>
+              <td style="padding:12px 16px;color:#182618;">Cross-IDE Plugin &amp; Extension</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Primary Workflow</td>
+              <td style="padding:12px 16px;color:#182618;">Multi-file generation (Composer) &amp; inline diff edits</td>
+              <td style="padding:12px 16px;color:#182618;">Ghost-text inline autocomplete &amp; sidebar chat</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Supported Environments</td>
+              <td style="padding:12px 16px;color:#182618;">macOS, Windows, Linux (Dedicated Desktop App)</td>
+              <td style="padding:12px 16px;color:#182618;">VS Code, JetBrains, Visual Studio, Neovim, CLI</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Codebase Context</td>
+              <td style="padding:12px 16px;color:#182618;">Local vector embeddings indexing entire project</td>
+              <td style="padding:12px 16px;color:#182618;">Open tabs context &amp; GitHub repository index</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Multi-File Edits</td>
+              <td style="padding:12px 16px;color:#182618;">Native multi-file generation &amp; unified diff review</td>
+              <td style="padding:12px 16px;color:#182618;">Multi-file chat suggestions reviewed file-by-file</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Underlying AI Models</td>
+              <td style="padding:12px 16px;color:#182618;">Claude 3.5 Sonnet, GPT-4o, Cursor Tab models</td>
+              <td style="padding:12px 16px;color:#182618;">GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Free Entry Tier</td>
+              <td style="padding:12px 16px;color:#182618;">Free Hobby (2,000 completions, 50 slow requests)</td>
+              <td style="padding:12px 16px;color:#182618;">Free Tier (limited) / Free for Students &amp; OSS</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Starting Paid Price</td>
+              <td style="padding:12px 16px;color:#182618;">$20/mo ($16/mo billed annually at $192/yr)</td>
+              <td style="padding:12px 16px;color:#182618;">$10/mo ($100/yr billed annually)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Team / Business Plan</td>
+              <td style="padding:12px 16px;color:#182618;">$40/user/mo (Teams Standard)</td>
+              <td style="padding:12px 16px;color:#182618;">$19/user/mo (Copilot Business)</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Enterprise Governance</td>
+              <td style="padding:12px 16px;color:#182618;">Team-wide Privacy Mode, SAML/OIDC SSO</td>
+              <td style="padding:12px 16px;color:#182618;">SAML SSO, SCIM, pooled credits, IP indemnity</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Best Suited For</td>
+              <td style="padding:12px 16px;color:#182618;">Engineers seeking deep AI-first project refactoring</td>
+              <td style="padding:12px 16px;color:#182618;">Engineers &amp; teams wanting AI inside existing IDEs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Deep Technical & Workflow Differences -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:20px;color:#182618;">Deep Workflow Comparison</h2>
+
+      <div style="margin-bottom:24px;">
+        <h3 style="font-size:1.15rem;font-weight:800;color:#182618;margin-bottom:8px;">1. Standalone AI Editor vs IDE Plugin Architecture</h3>
+        <p style="font-size:0.96rem;color:#45593e;line-height:1.65;margin:0 0 10px 0;">
+          The fundamental decision point begins with your editor choice. <strong>Cursor</strong> requires adopting a dedicated desktop application. Because Cursor is a direct fork of open-source VS Code, developers transitioning from VS Code can import their keybindings, themes, extensions, and workspace settings in one click. However, developers who work inside JetBrains IDEs (IntelliJ, WebStorm, PyCharm) or Neovim must switch their active editor to use Cursor.
+        </p>
+        <p style="font-size:0.96rem;color:#45593e;line-height:1.65;margin:0;">
+          <strong>GitHub Copilot</strong> operates as a lightweight extension. You install it directly from your IDE's marketplace without altering your editor setup, debugger configurations, or toolchains.
+        </p>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <h3 style="font-size:1.15rem;font-weight:800;color:#182618;margin-bottom:8px;">2. Repository Context &amp; Codebase Awareness</h3>
+        <p style="font-size:0.96rem;color:#45593e;line-height:1.65;margin:0 0 10px 0;">
+          Understanding project context across hundreds of files is where the tools diverge mechanically:
+        </p>
+        <ul style="margin:0;padding-left:22px;line-height:1.75;color:#45593e;font-size:0.95rem;">
+          <li><strong>Cursor:</strong> Computes local vector embeddings for all project files (ignoring build folders defined in <code>.cursorignore</code>). When you ask a question or edit code, Cursor retrieves semantically relevant code snippets across the entire repository to ground the LLM prompt.</li>
+          <li><strong>GitHub Copilot:</strong> Uses "neighboring tabs" heuristics, local file context, and remote GitHub repository indexing (on Enterprise plans) to populate the context window. While highly effective for inline completions, whole-repository semantic search is less deeply integrated into inline editing than Cursor.</li>
+        </ul>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <h3 style="font-size:1.15rem;font-weight:800;color:#182618;margin-bottom:8px;">3. Multi-File Refactoring &amp; Composer</h3>
+        <p style="font-size:0.96rem;color:#45593e;line-height:1.65;margin:0 0 10px 0;">
+          <strong>Cursor's Composer (<code>Cmd+I</code>)</strong> allows developers to prompt the AI to create new components, update routing tables, modify database models, and adjust styles simultaneously. Edits appear directly in the editor as red/green inline diffs that you can accept or reject file-by-file or all at once.
+        </p>
+        <p style="font-size:0.96rem;color:#45593e;line-height:1.65;margin:0;">
+          <strong>GitHub Copilot Chat</strong> supports multi-file suggestions and edits via workspace commands, but applying them typically requires navigating between files to review and accept code blocks incrementally.
+        </p>
+      </div>
+
+      <div>
+        <h3 style="font-size:1.15rem;font-weight:800;color:#182618;margin-bottom:8px;">4. Terminal &amp; Command-Line Integration</h3>
+        <p style="font-size:0.96rem;color:#45593e;line-height:1.65;margin:0;">
+          Cursor includes inline terminal AI (<code>Cmd+K</code> directly in the integrated terminal) to translate natural language into shell commands and debug build errors in-place. GitHub Copilot provides the standalone <code>gh copilot</code> CLI tool, enabling developers to run <code>gh copilot explain</code> or <code>gh copilot suggest</code> in any standalone terminal emulator.
+        </p>
+      </div>
+    </section>
+
+    <!-- Verified Pricing Breakdown -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">Pricing &amp; Quota Breakdown</h2>
+      <p style="font-size:0.92rem;color:#5c7353;margin-bottom:20px;">
+        Verified directly from official vendor pricing documentation (Checked: Aug 24, 2026).
+      </p>
+
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
+          <thead>
+            <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+              <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:24%;">Tier</th>
+              <th style="padding:14px 16px;color:#182618;font-weight:800;width:38%;">Cursor AI</th>
+              <th style="padding:14px 16px;color:#182618;font-weight:800;width:38%;">GitHub Copilot</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Free Option</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>Hobby ($0):</strong> 2,000 completions, 50 slow requests/mo, access to Composer.</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>Free ($0):</strong> Limited completions/mo. Free for verified students &amp; popular OSS maintainers.</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Individual / Pro</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>$20/mo</strong> ($16/mo billed annually at $192/yr). Unlimited completions, 500 fast premium requests.</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>$10/mo</strong> ($100/yr billed annually). Unlimited completions, Copilot Chat, model selection.</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Team / Business</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>$40/user/mo:</strong> Centralized billing, team privacy mode, shared context, Bugbot code reviews.</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>$19/user/mo:</strong> Centralized management, policy controls, pooled AI credits per user.</td>
+            </tr>
+            <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+              <td style="padding:12px 16px;font-weight:700;color:#2d4029;">Enterprise</td>
+              <td style="padding:12px 16px;color:#182618;">Custom pricing: Pooled usage, SCIM seat management, audit logs, service accounts.</td>
+              <td style="padding:12px 16px;color:#182618;"><strong>$39/user/mo:</strong> Enterprise Cloud indexing, 3,900 pooled credits/user, custom knowledge bases.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Real-World Decision Scenarios -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Real-World Developer Decision Scenarios</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:18px;">
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <div style="font-weight:800;color:#182618;margin-bottom:8px;font-size:1rem;">Scenario A: The JetBrains Developer</div>
+          <p style="font-size:0.9rem;color:#45593e;line-height:1.6;margin:0;">
+            If your primary IDE is IntelliJ IDEA, PyCharm, WebStorm, or Rider, <strong>GitHub Copilot</strong> is the recommended choice. Copilot installs seamlessly without requiring you to abandon your IDE's indexing, database tools, or refactoring engine.
+          </p>
+        </div>
+
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <div style="font-weight:800;color:#182618;margin-bottom:8px;font-size:1rem;">Scenario B: The Web / Full-Stack Builder</div>
+          <p style="font-size:0.9rem;color:#45593e;line-height:1.6;margin:0;">
+            If you build React, Next.js, Node, or Python web apps and frequently scaffold new routes or refactor components, <strong>Cursor</strong> provides a noticeably faster feedback loop with Composer and Claude 3.5 Sonnet.
+          </p>
+        </div>
+
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <div style="font-weight:800;color:#182618;margin-bottom:8px;font-size:1rem;">Scenario C: The GitHub-Standardized Team</div>
+          <p style="font-size:0.9rem;color:#45593e;line-height:1.6;margin:0;">
+            For organizations already managing developer seats on GitHub Enterprise with strict SOC 2 compliance and IP indemnity requirements, <strong>GitHub Copilot Business/Enterprise</strong> integrates cleanly into existing billing.
+          </p>
+        </div>
+
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <div style="font-weight:800;color:#182618;margin-bottom:8px;font-size:1rem;">Scenario D: Heavy Multi-File Refactoring</div>
+          <p style="font-size:0.9rem;color:#45593e;line-height:1.6;margin:0;">
+            When updating an API contract across 10 files simultaneously, <strong>Cursor</strong> applies changes across the codebase in a single unified prompt, whereas Copilot requires reviewing individual files sequentially.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strengths and Constraints Comparison -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:24px;margin-bottom:28px;">
+      <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px;">
+        <h2 style="font-size:1.3rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Cursor AI Profile</h2>
+        
+        <div style="margin-bottom:16px;">
+          <div style="font-weight:800;color:#2D4522;font-size:0.95rem;margin-bottom:6px;">✓ Documented Strengths</div>
+          <ul style="margin:0;padding-left:18px;line-height:1.65;color:#182618;font-size:0.9rem;">
+            <li>Local vector embeddings enable deep whole-repository context awareness.</li>
+            <li>Composer (<code>Cmd+I</code>) executes multi-file code generation and refactorings.</li>
+            <li>Seamless 1-click import of VS Code extensions, settings, and keybindings.</li>
+            <li>Model switching between Claude 3.5 Sonnet, GPT-4o, and Cursor Tab fine-tunes.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-weight:800;color:#9A3412;font-size:0.95rem;margin-bottom:6px;">⚠ Documented Constraints</div>
+          <ul style="margin:0;padding-left:18px;line-height:1.65;color:#5C3E29;font-size:0.9rem;">
+            <li>Requires switching to a dedicated desktop editor; does not run inside JetBrains IDEs.</li>
+            <li>Requires cloud network connectivity for AI completions and remote vector indexing.</li>
+            <li>Higher starting price ($20/mo vs $10/mo for GitHub Copilot).</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:20px;">
+          <a href="/software/cursor-ai/" style="color:#82A735;font-weight:800;text-decoration:underline;font-size:0.92rem;">
+            View Full Cursor AI Review &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px;">
+        <h2 style="font-size:1.3rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">GitHub Copilot Profile</h2>
+        
+        <div style="margin-bottom:16px;">
+          <div style="font-weight:800;color:#2D4522;font-size:0.95rem;margin-bottom:6px;">✓ Documented Strengths</div>
+          <ul style="margin:0;padding-left:18px;line-height:1.65;color:#182618;font-size:0.9rem;">
+            <li>Universal editor support: VS Code, Visual Studio, JetBrains, and Neovim.</li>
+            <li>Lower starting price ($10/mo vs $20/mo) with free access for students and OSS maintainers.</li>
+            <li>Enterprise governance with SOC 2 compliance and IP copyright indemnity.</li>
+            <li>Native integration with GitHub CLI, PR summaries, and GitHub Mobile.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div style="font-weight:800;color:#9A3412;font-size:0.95rem;margin-bottom:6px;">⚠ Documented Constraints</div>
+          <ul style="margin:0;padding-left:18px;line-height:1.65;color:#5C3E29;font-size:0.9rem;">
+            <li>Operates as an extension without native whole-codebase workspace Composer workflows.</li>
+            <li>Multi-file refactoring requires individual file reviews in separate chat tabs.</li>
+          </ul>
+        </div>
+
+        <div style="margin-top:20px;">
+          <a href="/software/github-copilot/" style="color:#82A735;font-weight:800;text-decoration:underline;font-size:0.92rem;">
+            View Full GitHub Copilot Review &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final Verdict & Decision Summary -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Which Should You Choose?</h2>
+      <p style="font-size:0.98rem;color:#45593e;line-height:1.7;margin-bottom:16px;">
+        There is no single "winner" because Cursor and GitHub Copilot are engineered around different workflow models:
+      </p>
+      <ul style="margin:0 0 20px 0;padding-left:22px;line-height:1.75;color:#182618;font-size:0.95rem;">
+        <li><strong>Choose Cursor AI</strong> if you want the deepest possible AI assistance, regularly build complex full-stack web applications, and are excited about a dedicated editor built for multi-file Composer refactoring.</li>
+        <li><strong>Choose GitHub Copilot</strong> if you love your current IDE (especially JetBrains or Visual Studio), want an affordable $10/mo assistant, or work inside an enterprise with centralized GitHub security governance.</li>
+      </ul>
+      <p style="font-size:0.92rem;color:#5c7353;line-height:1.6;margin:0;">
+        <em>Note for power users:</em> Many developers maintain both tools—using Cursor for rapid greenfield feature development and multi-file refactoring, while using GitHub Copilot for day-to-day maintenance inside specialized IDEs.
+      </p>
+    </section>
+
+    <!-- Sources & Data Provenance -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 24, 2026 &bull; <strong>Product specifications corroborated from live official vendor documentation.</strong>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
+          <a href="https://www.cursor.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Cursor Pricing ↗</a>
+          <a href="https://docs.cursor.com" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Cursor Docs ↗</a>
+          <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Copilot Product ↗</a>
+          <a href="https://docs.github.com/en/copilot" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Copilot Docs ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
 const versusPairs = getVsPairsList(saasTools);
 
-versusPairs.forEach(({ tA, tB, vsSlug }) => {
+versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
   const targetFolder = path.join(versusDir, vsSlug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
@@ -632,7 +989,19 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
     ]
   };
 
-  const bodyHtml = `
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://stakdock.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Comparisons", "item": "https://stakdock.com/vs/" },
+      { "@type": "ListItem", "position": 3, "name": `${tA.name} vs ${tB.name}`, "item": `https://stakdock.com/vs/${vsSlug}/` }
+    ]
+  };
+
+  const bodyHtml = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
+    ? renderFlagshipCursorVsCopilotSsr(tA, tB, vsSlug)
+    : `
   ${renderSsrNavbar('/vs/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -713,11 +1082,19 @@ versusPairs.forEach(({ tA, tB, vsSlug }) => {
   </main>
   `;
 
+  const pageTitle = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
+    ? `Cursor AI vs GitHub Copilot: 2026 Developer Comparison & Decision Guide`
+    : `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`;
+
+  const pageDesc = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
+    ? `In-depth comparison of Cursor AI vs GitHub Copilot. Compare AI-native editor workflows, IDE extensions, codebase indexing, multi-file refactoring, and verified pricing.`
+    : `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`;
+
   const pageHtml = buildSeoPage({
-    title: `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`,
-    description: `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`,
+    title: pageTitle,
+    description: pageDesc,
     canonicalUrl: `https://stakdock.com/vs/${vsSlug}/`,
-    jsonLd: [vsItemListJsonLd],
+    jsonLd: [vsItemListJsonLd, breadcrumbJsonLd],
     bodyHtml
   });
 

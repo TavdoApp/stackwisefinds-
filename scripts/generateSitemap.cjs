@@ -161,10 +161,24 @@ saasTools.forEach(t => {
   }
 });
 
-// Add category-based pairwise comparison routes
+// Controlled explicit approved cross-category flagship comparisons
+const approvedFlagshipComparisons = [
+  { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot' }
+];
+
+// Add category-based pairwise comparison routes + approved flagship pairs
 function getVsPairsList(tools) {
   const map = new Map();
   const catMap = {};
+
+  // Register approved flagship cross-category pairs first
+  approvedFlagshipComparisons.forEach(f => {
+    const tA = tools.find(t => t.id === f.toolAId);
+    const tB = tools.find(t => t.id === f.toolBId);
+    if (tA && tB) {
+      map.set(f.vsSlug, { tA, tB, vsSlug: f.vsSlug, isFlagship: true });
+    }
+  });
 
   tools.forEach(t => {
     if (!t || !t.category) return;
@@ -180,7 +194,7 @@ function getVsPairsList(tools) {
       for (let j = i + 1; j < top.length; j++) {
         const slug = `${top[i].id}-vs-${top[j].id}`;
         if (!map.has(slug)) {
-          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug, isFlagship: false });
         }
       }
     }
