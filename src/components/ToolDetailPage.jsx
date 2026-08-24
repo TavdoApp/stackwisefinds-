@@ -475,11 +475,109 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
               {tool.description ? tool.description : `${tool.name} is a software platform engineered for founders, developers, and operational teams. Built to streamline workflows, eliminate manual overhead, and accelerate execution.`}
             </p>
 
+            {tool.bestFor && (
+              <div style={{ background: '#F4F8F0', borderLeft: '4px solid #82A735', padding: '14px 18px', borderRadius: '0 12px 12px 0', margin: '20px 0' }}>
+                <div style={{ fontSize: '0.8rem', fontWeight: '800', color: '#2D4522', textTransform: 'uppercase', marginBottom: '4px' }}>
+                  Target Audience &amp; Best For
+                </div>
+                <div style={{ fontSize: '0.95rem', color: 'var(--text-dark)', lineHeight: '1.5' }}>
+                  {tool.bestFor}
+                </div>
+              </div>
+            )}
+
+            {Array.isArray(tool.features) && tool.features.length > 0 && (
+              <div style={{ marginTop: '24px', marginBottom: '24px' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px', color: 'var(--text-dark)' }}>
+                  Key Features &amp; Capabilities
+                </h4>
+                <ul style={{ margin: 0, paddingLeft: '22px', lineHeight: '1.8', color: 'var(--text-muted)', fontSize: '0.96rem' }}>
+                  {tool.features.map((feat, idx) => (
+                    <li key={idx} style={{ marginBottom: '6px' }}>{feat}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {((Array.isArray(tool.pros) && tool.pros.length > 0) || (Array.isArray(tool.cons) && tool.cons.length > 0)) && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', margin: '24px 0' }}>
+                {Array.isArray(tool.pros) && tool.pros.length > 0 && (
+                  <div style={{ background: '#F7FAF5', border: '1px solid #DCE8D6', borderRadius: '14px', padding: '20px' }}>
+                    <div style={{ fontWeight: '800', color: '#2D4522', fontSize: '1rem', marginBottom: '10px' }}>
+                      ✓ Key Strengths
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: '18px', lineHeight: '1.7', color: 'var(--text-dark)', fontSize: '0.92rem' }}>
+                      {tool.pros.map((p, idx) => (
+                        <li key={idx} style={{ marginBottom: '4px' }}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {Array.isArray(tool.cons) && tool.cons.length > 0 && (
+                  <div style={{ background: '#FFFCF7', border: '1px solid #F2E2CF', borderRadius: '14px', padding: '20px' }}>
+                    <div style={{ fontWeight: '800', color: '#9A3412', fontSize: '1rem', marginBottom: '10px' }}>
+                      ⚠ Documented Constraints
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: '18px', lineHeight: '1.7', color: '#5C3E29', fontSize: '0.92rem' }}>
+                      {tool.cons.map((c, idx) => (
+                        <li key={idx} style={{ marginBottom: '4px' }}>{c}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {Array.isArray(tool.curatedAlternatives) && tool.curatedAlternatives.length > 0 && (
+              <div style={{ marginTop: '28px', marginBottom: '28px' }}>
+                <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px', color: 'var(--text-dark)' }}>
+                  Curated Direct Substitutes
+                </h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {tool.curatedAlternatives.map((alt, idx) => (
+                    <div key={idx} style={{ padding: '14px 18px', background: '#F9FBF8', border: '1px solid #E2EDE0', borderRadius: '12px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' }}>
+                        <a 
+                          href={`/software/${alt.toolId}/`} 
+                          onClick={(e) => {
+                            if (onSelectTool) {
+                              e.preventDefault();
+                              const targetTool = toolsArray.find(t => t.id === alt.toolId);
+                              if (targetTool) onSelectTool(targetTool);
+                              else window.location.href = `/software/${alt.toolId}/`;
+                            }
+                          }}
+                          style={{ color: 'var(--text-dark)', fontWeight: '800', textDecoration: 'none', fontSize: '1rem' }}
+                        >
+                          {alt.name}
+                        </a>
+                        <a 
+                          href={`/vs/${tool.id}-vs-${alt.toolId}/`} 
+                          onClick={(e) => {
+                            if (onNavigateVersus) {
+                              e.preventDefault();
+                              onNavigateVersus(tool.id, alt.toolId);
+                            }
+                          }}
+                          style={{ fontSize: '0.82rem', fontWeight: '700', color: '#82A735', textDecoration: 'underline' }}
+                        >
+                          Compare Head-to-Head &rarr;
+                        </a>
+                      </div>
+                      <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.5' }}>
+                        {alt.differentiator}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             <h4 style={{ fontSize: '1.2rem', fontWeight: '800', marginBottom: '12px' }}>Key Specifications:</h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '16px', marginBottom: '24px' }}>
               <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Category</div>
-                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.category}</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Primary Category</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.primaryCategory || tool.category}</div>
               </div>
 
               <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
@@ -488,10 +586,30 @@ export default function ToolDetailPage({ toolId, allTools, onBack, onOpenReviewM
               </div>
 
               <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Monthly Traffic</div>
-                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{visitsDisplay}</div>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>Free Tier</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.isFreeTier ? 'Yes (Available)' : 'Paid / Free Trial'}</div>
+              </div>
+
+              <div style={{ background: '#F6F7F2', padding: '14px 18px', borderRadius: '14px', border: '1px solid var(--border-color)' }}>
+                <div style={{ fontSize: '0.78rem', color: 'var(--text-light)', fontWeight: '800', textTransform: 'uppercase' }}>License Model</div>
+                <div style={{ fontSize: '0.95rem', fontWeight: '800', color: 'var(--text-dark)', marginTop: '4px' }}>{tool.licenseModel || (tool.isOpenSource ? 'Open Source' : 'Proprietary SaaS')}</div>
               </div>
             </div>
+
+            {Array.isArray(tool.sources) && tool.sources.length > 0 && (
+              <div style={{ marginTop: '24px', paddingTop: '18px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                  <strong>Pricing checked:</strong> {tool.sources[0].checkedAt ? new Date(tool.sources[0].checkedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Aug 24, 2026'} • <strong>Product information checked:</strong> Aug 24, 2026
+                </div>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                  {tool.sources.map((s, idx) => (
+                    <a key={idx} href={s.url} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.82rem', fontWeight: '700', color: '#82A735', textDecoration: 'underline' }}>
+                      {s.type} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div style={{ display: 'flex', gap: '12px', marginTop: '24px', flexWrap: 'wrap' }}>
               <button

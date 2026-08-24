@@ -34240,7 +34240,7 @@ export const staticSaasTools = [
     "pricingDetails": {
       "startingPrice": "$9/month",
       "billingCadence": "Annual ($108/yr) or $10.50/mo monthly",
-      "freeTierDetails": "Free plan includes 1,000 operations/month, 100 MB data transfer, and 15-minute intervals",
+      "freeTierDetails": "Free plan includes 1,000 credits/month, 100 MB data transfer, and 15-minute intervals",
       "sourceUrl": "https://www.make.com/en/pricing",
       "sourceType": "Official Pricing Page",
       "checkedAt": "2026-08-24T12:00:00Z",
@@ -34273,7 +34273,7 @@ export const staticSaasTools = [
       {
         "toolId": "n8n",
         "name": "n8n",
-        "differentiator": "Choose n8n if you require a self-hosted engine with zero per-operation execution fees and internal data control."
+        "differentiator": "Choose n8n if you want to self-host workflows on your own infrastructure rather than use a vendor-metered cloud plan."
       },
       {
         "toolId": "zapier",
@@ -34299,11 +34299,11 @@ export const staticSaasTools = [
     ],
     "pros": [
       "Visual canvas makes complex branching and array handling clearer than linear list-based tools",
-      "Generous Free tier with 1,000 monthly operations for testing",
+      "Generous Free tier with 1,000 monthly credits for testing",
       "Lower cost per execution compared to Zapier on multi-step workflows"
     ],
     "cons": [
-      "High-frequency polling triggers consume operation quotas quickly",
+      "High-frequency polling triggers consume credit quotas quickly",
       "Proprietary cloud platform without self-hosted on-premise execution options"
     ],
     "bestFor": "Operations teams, agencies, and automation architects designing sophisticated data flows that require visual branching, array transformations, and granular debugging."
@@ -34324,9 +34324,9 @@ export const staticSaasTools = [
     "description": "n8n is a fair-code licensed workflow automation platform. It allows engineering teams to connect 400+ APIs, run custom JavaScript/Python code nodes, and build autonomous AI agent pipelines either self-hosted behind internal firewalls or on managed cloud infrastructure.",
     "rating": 4.8,
     "reviewsCount": 940,
-    "pricing": "Free Self-Hosted / From €20/mo Cloud",
+    "pricing": "Free Self-Hosted / From €24/mo Cloud",
     "pricingDetails": {
-      "startingPrice": "€0 Self-Hosted / €20/mo Cloud",
+      "startingPrice": "€0 Self-Hosted / €24/mo Cloud",
       "billingCadence": "Annual or monthly",
       "freeTierDetails": "Free self-hosted community edition with unlimited workflow executions",
       "sourceUrl": "https://n8n.io/pricing/",

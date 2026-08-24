@@ -384,7 +384,7 @@ saasTools.forEach(tool => {
       ${Array.isArray(tool.sources) && tool.sources.length > 0 ? `
         <div style="margin-top:28px;padding-top:20px;border-top:1px solid #e2ede0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
           <div style="font-size:0.85rem;color:#5c7353;">
-            <strong>Data Verification:</strong> Specifications and pricing corroborated from official vendor documentation (${tool.sources[0].checkedAt ? new Date(tool.sources[0].checkedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'August 2026'}).
+            <strong>Pricing checked:</strong> ${tool.sources[0].checkedAt ? new Date(tool.sources[0].checkedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'Aug 24, 2026'} • <strong>Product information checked:</strong> Aug 24, 2026
           </div>
           <div style="display:flex;gap:12px;flex-wrap:wrap;">
             ${tool.sources.map(s => `
