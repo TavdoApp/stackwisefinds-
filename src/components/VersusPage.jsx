@@ -7,13 +7,12 @@ function resolveTool(targetSlug, pool = saasTools) {
   if (!targetSlug) return null;
   const slug = String(targetSlug).toLowerCase().trim();
   const cleanSlug = slug.replace(/[^a-z0-9]/g, '');
-  return pool.find(t => 
-    t.id.toLowerCase() === slug || 
-    t.id.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanSlug ||
-    t.name.toLowerCase().includes(slug) || 
-    slug.includes(t.id.toLowerCase()) ||
-    (t.domain && (slug.includes(t.domain.replace(/\..*$/, '')) || t.domain.toLowerCase().includes(slug)))
-  ) || null;
+  return pool.find(t => t.id && t.id.toLowerCase() === slug) ||
+    pool.find(t => t.id && t.id.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanSlug) ||
+    pool.find(t => t.name && t.name.toLowerCase() === slug) ||
+    pool.find(t => t.name && t.name.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanSlug) ||
+    pool.find(t => (t.id && t.id.toLowerCase().includes(slug)) || (t.name && t.name.toLowerCase().includes(slug))) ||
+    null;
 }
 
 export default function VersusPage({ toolAId, toolBId, allTools, onBack }) {

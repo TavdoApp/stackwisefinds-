@@ -17,14 +17,11 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
     return String(slug).split(/[-_]/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   };
 
-  const targetTool = toolPool.find(t => 
-    t.id === targetIdClean ||
-    t.id.replace(/-/g, '') === targetIdClean.replace(/-/g, '') ||
-    t.name.toLowerCase().trim() === targetIdClean ||
-    (t.domain && (targetIdClean.includes(t.domain.replace(/\..*$/, '')) || t.domain.toLowerCase().includes(targetIdClean))) ||
-    targetIdClean.startsWith(t.id) ||
-    t.id.startsWith(targetIdClean)
-  ) || {
+  const targetTool = toolPool.find(t => t.id && t.id.toLowerCase() === targetIdClean) ||
+    toolPool.find(t => t.id && t.id.toLowerCase().replace(/[^a-z0-9]/g, '') === targetIdClean.replace(/[^a-z0-9]/g, '')) ||
+    toolPool.find(t => t.name && t.name.toLowerCase() === targetIdClean) ||
+    toolPool.find(t => t.name && t.name.toLowerCase().replace(/[^a-z0-9]/g, '') === targetIdClean.replace(/[^a-z0-9]/g, '')) ||
+    toolPool.find(t => (t.id && t.id.toLowerCase().includes(targetIdClean)) || (t.name && t.name.toLowerCase().includes(targetIdClean))) || {
     id: targetIdClean,
     name: formatFallbackName(targetIdClean),
     domain: `${targetIdClean}.com`,
