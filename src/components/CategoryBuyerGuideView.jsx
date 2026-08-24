@@ -72,20 +72,15 @@ export default function CategoryBuyerGuideView({
   const [activeFilter, setActiveFilter] = useState('all');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  // Filter and sort tools for this category by ranking / rating / visits
+  // Sort tools for this category deterministically
   const categoryTools = useMemo(() => {
     const matched = tools.filter(t => t.category === categorySlug);
-    return matched.sort((a, b) => {
-      // Prioritize featured/partner tools, then highest rating & review count
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
-      return (b.rating || 4.5) - (a.rating || 4.5);
-    });
+    return matched.sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0) || a.name.localeCompare(b.name));
   }, [tools, categorySlug]);
 
   const topPick = categoryTools[0] || null;
 
-  // Executive Winners Segment
+  // Executive Options Segment
   const bestBudget = useMemo(() => {
     return categoryTools.find(t => (t.isFreeTier || (t.pricing && t.pricing.toLowerCase().includes('free'))) && t.id !== topPick?.id) 
       || categoryTools[1] 
@@ -125,14 +120,12 @@ export default function CategoryBuyerGuideView({
   // Category Buyer FAQs
   const faqs = useMemo(() => [
     {
-      question: `What is the best ${categoryName} software in 2026?`,
-      answer: topPick 
-        ? `Based on verified user ratings, feature completeness, and operational stability, ${topPick.name} ranks as the #1 overall choice in the ${categoryName} category on StakDock, followed by ${categoryTools.slice(1, 4).map(t => t.name).join(', ')}.`
-        : `Top ranked platforms in the ${categoryName} category are evaluated based on feature completeness, customer satisfaction, active monthly usage, and transparent pricing.`
+      question: `What ${categoryName} software options are available in 2026?`,
+      answer: `Software platforms indexed in the ${categoryName} directory include ${categoryTools.slice(0, 4).map(t => t.name).join(', ')}. Each profile details documented specifications, pricing models, and capabilities.`
     },
     {
       question: `Are there free or open-source options for ${categoryName}?`,
-      answer: `Yes! Many top ${categoryName} tools offer generous free tiers or self-hosted open-source editions. Use our "Free Tier" or "Open Source" filters above to view platforms with zero upfront licensing fees.`
+      answer: `Yes. Several ${categoryName} platforms offer free tiers or open-source repositories. Use the "Free Tier" or "Open Source" filters above to view platforms with zero upfront licensing fees.`
     },
     {
       question: `What hidden costs should buyers watch out for in ${categoryName}?`,
@@ -140,9 +133,9 @@ export default function CategoryBuyerGuideView({
     },
     {
       question: `How often is this ${categoryName} buyer guide updated?`,
-      answer: `Our software index and category buyer guides are refreshed continuously in 2026 to ensure all pricing plans, feature updates, and founder discount promotions remain 100% accurate.`
+      answer: `Our software index and category buyer guides are refreshed continuously in 2026 to ensure documented features and vendor website links remain accurate.`
     }
-  ], [categoryName, topPick, categoryTools]);
+  ], [categoryName, categoryTools]);
 
   return (
     <div className="container" style={{ padding: '32px 16px 80px', maxWidth: '1140px', margin: '0 auto' }}>
@@ -192,33 +185,33 @@ export default function CategoryBuyerGuideView({
             textTransform: 'uppercase',
             letterSpacing: '0.05em'
           }}>
-            ⚡ 2026 BUYER GUIDE & RANKINGS
+            ⚡ 2026 SOFTWARE BUYER GUIDE
           </span>
           <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.82rem' }}>
-            Updated August 2026 • Verified by StakDock Research Team
+            Updated August 2026 • StakDock Software Directory
           </span>
         </div>
 
         <h1 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: '900', margin: '0 0 16px', lineHeight: '1.25', letterSpacing: '-0.02em', color: '#FFFFFF' }}>
-          Best {categoryName} Software in 2026 (Ranked & Compared)
+          {categoryName} Software Directory & Options (2026)
         </h1>
 
         <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.8)', maxWidth: '780px', lineHeight: '1.6', margin: 0 }}>
-          Discover the top <strong>{categoryTools.length} verified {categoryName} tools</strong> evaluated by feature capabilities, pricing tiers, customer reviews, and operational performance.
+          Explore <strong>{categoryTools.length} documented {categoryName} platforms</strong> categorized by feature capabilities, pricing models, and deployment architectures.
         </p>
       </header>
 
-      {/* 🏆 Executive Winner Decision Matrix (Top of Page Answer Box) */}
+      {/* Software Options by Use Case */}
       <section style={{ marginBottom: '40px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
           <Award size={20} color="#82A735" />
           <h2 style={{ fontSize: '1.3rem', fontWeight: '800', margin: 0, color: 'var(--text-dark)' }}>
-            Quick Decision Matrix: Top Picks at a Glance
+            Software Options by Use Case
           </h2>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-          {/* Winner 1: Overall Pick */}
+          {/* Card 1: Featured Option */}
           {topPick && (
             <div 
               onClick={() => onSelectTool(topPick)}
@@ -238,21 +231,21 @@ export default function CategoryBuyerGuideView({
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
                   <span style={{ fontSize: '0.72rem', fontWeight: '800', background: 'rgba(130,167,53,0.15)', color: '#82A735', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
-                    🥇 #1 Best Overall
+                    ⭐ Featured Option
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
-                    <Star size={13} fill="#F59E0B" /> {topPick.rating || 4.9}
-                  </div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 6px', borderRadius: '4px' }}>
+                    Website Checked
+                  </span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
                   {topPick.name}
                 </h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
-                  {topPick.tagline || (topPick.description ? topPick.description.slice(0, 85) + '...' : 'Top-rated software')}
+                  {topPick.tagline || (topPick.description ? topPick.description.slice(0, 85) + '...' : 'Documented software profile')}
                 </p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
-                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{topPick.pricing || 'Freemium'}</span>
+                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{topPick.pricing || 'Check website'}</span>
                 <span style={{ color: '#82A735', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
                   View Profile <ArrowUpRight size={14} />
                 </span>
@@ -260,7 +253,7 @@ export default function CategoryBuyerGuideView({
             </div>
           )}
 
-          {/* Winner 2: Best Value / Free Tier */}
+          {/* Card 2: Value / Free Tier Option */}
           {bestBudget && (
             <div 
               onClick={() => onSelectTool(bestBudget)}
@@ -280,21 +273,21 @@ export default function CategoryBuyerGuideView({
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
                   <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#EBF0E1', color: '#536253', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
-                    💰 Best Value & Free
+                    💰 Free Tier Option
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
-                    <Star size={13} fill="#F59E0B" /> {bestBudget.rating || 4.8}
-                  </div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 6px', borderRadius: '4px' }}>
+                    Website Checked
+                  </span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
                   {bestBudget.name}
                 </h3>
                 <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
-                  {bestBudget.tagline || (bestBudget.description ? bestBudget.description.slice(0, 85) + '...' : 'Generous free tier')}
+                  {bestBudget.tagline || (bestBudget.description ? bestBudget.description.slice(0, 85) + '...' : 'Free plan available')}
                 </p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
-                <span style={{ fontWeight: '700', color: '#82A735' }}>{bestBudget.pricing || 'Free Plan'}</span>
+                <span style={{ fontWeight: '700', color: '#82A735' }}>{bestBudget.pricing || 'Free Tier'}</span>
                 <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
                   View Profile <ArrowUpRight size={14} />
                 </span>
@@ -302,7 +295,7 @@ export default function CategoryBuyerGuideView({
             </div>
           )}
 
-          {/* Winner 3: Best for Teams / Agencies */}
+          {/* Card 3: Team / Collaboration Option */}
           {bestTeamAgency && (
             <div 
               onClick={() => onSelectTool(bestTeamAgency)}
@@ -322,11 +315,11 @@ export default function CategoryBuyerGuideView({
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
                   <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#F1F5F9', color: '#475569', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
-                    🏢 Best for Teams
+                    🏢 Team & Agency
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
-                    <Star size={13} fill="#F59E0B" /> {bestTeamAgency.rating || 4.7}
-                  </div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 6px', borderRadius: '4px' }}>
+                    Website Checked
+                  </span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
                   {bestTeamAgency.name}
@@ -336,7 +329,7 @@ export default function CategoryBuyerGuideView({
                 </p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
-                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{bestTeamAgency.pricing || 'Pro / Scale'}</span>
+                <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{bestTeamAgency.pricing || 'Pro / Team'}</span>
                 <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
                   View Profile <ArrowUpRight size={14} />
                 </span>
@@ -344,7 +337,7 @@ export default function CategoryBuyerGuideView({
             </div>
           )}
 
-          {/* Winner 4: Best Open Source (if present) or Runner Up */}
+          {/* Card 4: Open Source Option */}
           {bestOpenSource ? (
             <div 
               onClick={() => onSelectTool(bestOpenSource)}
@@ -366,9 +359,9 @@ export default function CategoryBuyerGuideView({
                   <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#ECFDF5', color: '#059669', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
                     ⚡ Open Source
                   </span>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
-                    <Star size={13} fill="#F59E0B" /> {bestOpenSource.rating || 4.7}
-                  </div>
+                  <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 6px', borderRadius: '4px' }}>
+                    Repository
+                  </span>
                 </div>
                 <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
                   {bestOpenSource.name}
@@ -378,7 +371,7 @@ export default function CategoryBuyerGuideView({
                 </p>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
-                <span style={{ fontWeight: '700', color: '#059669' }}>100% Open-Source</span>
+                <span style={{ fontWeight: '700', color: '#059669' }}>Open-Source</span>
                 <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
                   View Profile <ArrowUpRight size={14} />
                 </span>
@@ -404,21 +397,21 @@ export default function CategoryBuyerGuideView({
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
                     <span style={{ fontSize: '0.72rem', fontWeight: '800', background: '#F8FAFC', color: '#64748B', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
-                      🌟 Top Contender
+                      🌟 Documented Tool
                     </span>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.82rem', fontWeight: '700', color: '#F59E0B' }}>
-                      <Star size={13} fill="#F59E0B" /> {categoryTools[3].rating || 4.7}
-                    </div>
+                    <span style={{ fontSize: '0.75rem', fontWeight: '700', color: '#536253', background: '#EBF0E1', padding: '2px 6px', borderRadius: '4px' }}>
+                      Website Checked
+                    </span>
                   </div>
                   <h3 style={{ fontSize: '1.1rem', fontWeight: '800', margin: '0 0 6px', color: 'var(--text-dark)' }}>
                     {categoryTools[3].name}
                   </h3>
                   <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', lineHeight: '1.4', margin: '0 0 12px' }}>
-                    {categoryTools[3].tagline || (categoryTools[3].description ? categoryTools[3].description.slice(0, 85) + '...' : 'Verified alternative')}
+                    {categoryTools[3].tagline || (categoryTools[3].description ? categoryTools[3].description.slice(0, 85) + '...' : 'Documented option')}
                   </p>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '10px', fontSize: '0.82rem' }}>
-                  <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{categoryTools[3].pricing || 'Freemium'}</span>
+                  <span style={{ fontWeight: '700', color: 'var(--text-dark)' }}>{categoryTools[3].pricing || 'Check website'}</span>
                   <span style={{ color: 'var(--text-dark)', fontWeight: '700', display: 'flex', alignItems: 'center', gap: '2px' }}>
                     View Profile <ArrowUpRight size={14} />
                   </span>
@@ -429,7 +422,7 @@ export default function CategoryBuyerGuideView({
         </div>
       </section>
 
-      {/* 🏆 Editor's #1 Overall Pick Spotlight Banner */}
+      {/* Featured Software Profile Spotlight Banner */}
       {topPick && (
         <section style={{
           background: '#FFFFFF',
@@ -455,7 +448,7 @@ export default function CategoryBuyerGuideView({
             gap: '6px',
             boxShadow: '0 4px 10px rgba(130,167,53,0.35)'
           }}>
-            <Award size={14} /> 🏆 #1 EDITOR'S OVERALL PICK 2026
+            <Award size={14} /> FEATURED SOFTWARE PROFILE
           </div>
 
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginTop: '8px' }}>
@@ -467,12 +460,15 @@ export default function CategoryBuyerGuideView({
                   {topPick.name}
                 </h2>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#F59E0B', fontWeight: '800', fontSize: '0.92rem' }}>
-                    <Star size={16} fill="#F59E0B" />
-                    <span>{topPick.rating || 4.9}</span>
-                  </div>
-                  <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                    ({(topPick.reviewsCount || 420).toLocaleString()} verified ratings)
+                  <span style={{
+                    background: '#EBF0E1',
+                    color: '#536253',
+                    fontSize: '0.75rem',
+                    fontWeight: '700',
+                    padding: '2px 8px',
+                    borderRadius: '4px'
+                  }}>
+                    🌐 Website Checked
                   </span>
                   <span style={{
                     background: '#EBF0E1',
@@ -482,7 +478,7 @@ export default function CategoryBuyerGuideView({
                     padding: '2px 8px',
                     borderRadius: '4px'
                   }}>
-                    {topPick.pricing || 'Freemium'}
+                    {topPick.pricing || 'Check website'}
                   </span>
                 </div>
               </div>

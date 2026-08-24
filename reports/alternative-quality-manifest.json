@@ -1,0 +1,1804 @@
+{
+  "timestamp": "2026-08-24T19:24:27.635Z",
+  "totalPairings": 12470,
+  "strongSubstitute": 4,
+  "partialAlternative": 1912,
+  "weakAlternative": 10337,
+  "irrelevant": 217,
+  "sampleFlaggedPairings": [
+    {
+      "sourceTool": "bookster",
+      "targetTool": "any-do",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "bookster",
+      "targetTool": "motion",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "bookster",
+      "targetTool": "toggl-track",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "bookster",
+      "targetTool": "obsidian",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "bookster",
+      "targetTool": "evernote",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "bookster",
+      "targetTool": "clockify",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "bookster",
+      "targetTool": "rescetime",
+      "category": "time-productivity",
+      "reason": "Broad category fallback match in high-cardinality category (45 tools)."
+    },
+    {
+      "sourceTool": "clickbank",
+      "targetTool": "maxbounty",
+      "category": "affiliate-cpa-networks",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickbank",
+      "targetTool": "impact-com",
+      "category": "affiliate-cpa-networks",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickbank",
+      "targetTool": "partnerstack",
+      "category": "affiliate-cpa-networks",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickbank",
+      "targetTool": "cj-affiliate",
+      "category": "affiliate-cpa-networks",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickbank",
+      "targetTool": "shareasale",
+      "category": "affiliate-cpa-networks",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickbank",
+      "targetTool": "perform-cb",
+      "category": "affiliate-cpa-networks",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "claap",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "mindstamp",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "viddyoze",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "offeo",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "waymark",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "biteable",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "zebracat-ai",
+      "targetTool": "promo-com",
+      "category": "trending-video-ai",
+      "reason": "Broad category fallback match in high-cardinality category (115 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "onelogin-iam",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "delinea-pam",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "manageengine-pam360",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "opal-security",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "sysdig-secure",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-guardduty",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "aws-security-hub",
+      "targetTool": "trendmicro-cloud-one",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "trendmicro-cloud-one",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "tenable-io",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "qualys-cloud-platform",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "opal-security",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "rapid7-insightvm",
+      "targetTool": "aws-security-hub",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "semgrep-sast",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "semgrep-sast",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "semgrep-sast",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Broad category fallback match in high-cardinality category (88 tools)."
+    },
+    {
+      "sourceTool": "kube-bench",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-bench",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-bench",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-bench",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-bench",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-hunter",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-hunter",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-hunter",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-hunter",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kube-hunter",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "security-onion",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "security-onion",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "security-onion",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "security-onion",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "security-onion",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "banyan-security",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "banyan-security",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "banyan-security",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "banyan-security",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "banyan-security",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "rancher-suse",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "linkerd",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "istio-mesh",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "cilium-ebpf",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "helm-sh",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "localstack-aws",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubecost-finops",
+      "targetTool": "traefik-proxy",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "headlamp-k8s",
+      "targetTool": "rancher-suse",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "headlamp-k8s",
+      "targetTool": "linkerd",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "headlamp-k8s",
+      "targetTool": "istio-mesh",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "headlamp-k8s",
+      "targetTool": "cilium-ebpf",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "headlamp-k8s",
+      "targetTool": "helm-sh",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "headlamp-k8s",
+      "targetTool": "localstack-aws",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "splitmatepro",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "sage-intacct",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "chargebee",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "recurly",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "maxio",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "invoicely",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docuclipper",
+      "targetTool": "invoice-ninja",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "strikingly",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "bigcommerce",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "ecwid-by-lightspeed",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "systeme-io",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "kartra",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "kajabi",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickfunnels",
+      "targetTool": "podia",
+      "category": "ecommerce-funnels",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "zebracat-ai",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "claap",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "mindstamp",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "viddyoze",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "offeo",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "waymark",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop",
+      "targetTool": "biteable",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "hootsuite",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "sprout-social",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "later",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "metricool",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "socialpilot",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "taplio",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "hypeauditor",
+      "targetTool": "agorapulse",
+      "category": "social-media",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "zebracat-ai",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "claap",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "mindstamp",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "viddyoze",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "offeo",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "waymark",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp",
+      "targetTool": "biteable",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "zebracat-ai",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "claap",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "mindstamp",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "viddyoze",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "offeo",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "waymark",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "flexclip",
+      "targetTool": "biteable",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "zebracat-ai",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "claap",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "mindstamp",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "viddyoze",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "offeo",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "waymark",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "opusclip",
+      "targetTool": "biteable",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "1password",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "bitwarden",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "dashlane",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "lastpass",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "keeper",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "proton-pass",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "duo-security",
+      "targetTool": "nordpass",
+      "category": "security-passwords",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "zebracat-ai",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "claap",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "mindstamp",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "viddyoze",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "offeo",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "waymark",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipdrop-uncrop",
+      "targetTool": "biteable",
+      "category": "trending-video-ai",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "tableau",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "power-bi",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "mixpanel",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "looker-studio",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "looker",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "amplitude",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse",
+      "targetTool": "google-analytics",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "supabase",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "raycast",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "aws",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "google-cloud",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "microsoft-azure",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "vercel",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "docker",
+      "targetTool": "netlify",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "supabase",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "raycast",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "aws",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "google-cloud",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "microsoft-azure",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "vercel",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "kubernetes",
+      "targetTool": "netlify",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "splitmatepro",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "sage-intacct",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "chargebee",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "recurly",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "maxio",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "invoicely",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "inflo-audit",
+      "targetTool": "invoice-ninja",
+      "category": "invoicing",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "chanty",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "otter-ai",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "fireflies-ai",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "fathom",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "avoma",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "supernormal",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "zoho-cliq",
+      "targetTool": "tl-dv",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "chanty",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "otter-ai",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "fireflies-ai",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "fathom",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "avoma",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "supernormal",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clipchamp-microsoft",
+      "targetTool": "tl-dv",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "chanty",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "otter-ai",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "fireflies-ai",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "fathom",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "avoma",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "supernormal",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickmeeting",
+      "targetTool": "tl-dv",
+      "category": "collaboration-chat",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "asana",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "notion",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "linear",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "jira-by-atlassian",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "trello",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "smartsheet",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickup",
+      "targetTool": "basecamp",
+      "category": "project-mgmt",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "supabase",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "raycast",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "aws",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "google-cloud",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "microsoft-azure",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "vercel",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "gitkraken",
+      "targetTool": "netlify",
+      "category": "dev-cloud",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "sailpoint-identity",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "sailpoint-identity",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "sailpoint-identity",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "sailpoint-identity",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "sailpoint-identity",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "orca-security",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "orca-security",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "orca-security",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "orca-security",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "orca-security",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "noname-security",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "noname-security",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "noname-security",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "noname-security",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "noname-security",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "salt-security",
+      "targetTool": "onelogin-iam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "salt-security",
+      "targetTool": "delinea-pam",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "salt-security",
+      "targetTool": "manageengine-pam360",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "salt-security",
+      "targetTool": "sysdig-secure",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "salt-security",
+      "targetTool": "aws-guardduty",
+      "category": "cybersecurity-identity",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "playwright",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "cypress",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "grafana-k6",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "applitools",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "selenium",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "appium",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testcontaines-org",
+      "targetTool": "browserstack",
+      "category": "testing-qa",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testkube-io",
+      "targetTool": "rancher-suse",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testkube-io",
+      "targetTool": "linkerd",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testkube-io",
+      "targetTool": "istio-mesh",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testkube-io",
+      "targetTool": "cilium-ebpf",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testkube-io",
+      "targetTool": "helm-sh",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "testkube-io",
+      "targetTool": "localstack-aws",
+      "category": "devops-infrastructure",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "tableau",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "power-bi",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "mixpanel",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "looker-studio",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "looker",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "amplitude",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    },
+    {
+      "sourceTool": "clickhouse-cloud",
+      "targetTool": "google-analytics",
+      "category": "analytics-heatmaps",
+      "reason": "Specialized DevOps/Security tool paired with general category software."
+    }
+  ]
+}

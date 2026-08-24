@@ -21,15 +21,37 @@ function writeAutoPublishedData(data) {
   fs.writeFileSync(autoPublishedPath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
 }
 
+const authorityFiveIds = new Set(['cursor-ai', 'github-copilot', 'n8n', 'make', 'notion']);
+
 function readAllTools() {
   const seenNames = new Set();
-  return [...readStaticTools(), ...readAutoPublishedData().tools].filter((tool) => {
-    if (/-\d+$/.test(tool.id) && !tool.autoQualifiedAt) return false;
-    const key = tool.name.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (!key || seenNames.has(key)) return false;
-    seenNames.add(key);
-    return true;
-  });
+  return [...readStaticTools(), ...readAutoPublishedData().tools]
+    .filter((tool) => {
+      if (/-\d+$/.test(tool.id) && !tool.autoQualifiedAt) return false;
+      const key = tool.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (!key || seenNames.has(key)) return false;
+      seenNames.add(key);
+      return true;
+    })
+    .map((tool) => {
+      if (authorityFiveIds.has(tool.id)) {
+        return {
+          ...tool,
+          websiteChecked: true,
+          founderVerified: false,
+          monthlyVisits: null
+        };
+      }
+      return {
+        ...tool,
+        rating: null,
+        reviewsCount: 0,
+        badge: (tool.claimedByFounder ? '✓ Founder Verified' : (tool.badge === '🔥 Lifetime Deal' ? '🔥 Lifetime Deal' : null)),
+        websiteChecked: true,
+        founderVerified: !!tool.claimedByFounder,
+        monthlyVisits: null
+      };
+    });
 }
 
 function readCategories() {

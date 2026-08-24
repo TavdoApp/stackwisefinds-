@@ -68,18 +68,13 @@ function run() {
       isAutoAnswer: true,
       qualityChecks: { sourceTitleOnly: true, copiedPostBody: false, toolClaimsIncluded: false, ratingsIncluded: false }
     };
-    answerData.answers.unshift(answer);
-    draft.status = 'auto_published';
-    draft.autoPublication = { publishedAt, canonicalUrl: answer.canonicalUrl, qualityChecks: answer.qualityChecks };
-    knownSources.add(draft.sourceUrl);
+    draft.status = 'review_required';
+    draft.autoPublication = { checkedAt: publishedAt, eligibleForReview: true, canonicalUrl: `https://stakdock.com/guides/${slug}/`, qualityChecks: { sourceTitleOnly: true, copiedPostBody: false } };
     published += 1;
   }
 
-  answerData.updatedAt = publishedAt;
-  answerData.answers = answerData.answers.slice(0, 500);
-  writeJson(answersPath, answerData);
   writeJson(draftsPath, drafts);
-  console.log(`Published ${published} original answer pages. Reddit post bodies were not copied.`);
+  console.log(`Processed ${published} answer drafts for editorial review. Automatic index publishing is disabled.`);
 }
 
 try { run(); } catch (error) { console.error(`Answer publishing failed: ${error.message}`); process.exit(1); }

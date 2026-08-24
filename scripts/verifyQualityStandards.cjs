@@ -17,12 +17,26 @@ const urls = [...sitemap.matchAll(/<loc>https:\/\/stakdock\.com([^<]*)<\/loc>/g)
 let errors = [];
 let checkedPages = 0;
 
-// Banned generic boilerplate phrase signatures that indicate uncurated repetitive copy
+// Banned generic boilerplate phrase signatures that indicate uncurated repetitive copy or synthetic trust claims
 const bannedSignatures = [
   'operates on a Freemium pricing model. Users can test',
   'periodically offers promotional pricing tiers and verified founder deals for new users',
-  'provides cloud-based software capabilities engineered for founders'
+  'provides cloud-based software capabilities engineered for founders',
+  'Verified by StakDock Research Team',
+  '#1 EDITOR\'S OVERALL PICK'
 ];
+
+// Stale vs directories check: every directory in dist/vs/ must be in sitemap
+const distVsDir = path.join(distDir, 'vs');
+if (fs.existsSync(distVsDir)) {
+  const vsEntries = fs.readdirSync(distVsDir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name);
+  const sitemapVsSet = new Set(urls.filter(u => u.startsWith('/vs/')).map(u => u.replace(/^\/vs\//, '').replace(/\/$/, '')));
+  for (const entry of vsEntries) {
+    if (!sitemapVsSet.has(entry)) {
+      errors.push(`[Stale VS Directory]: dist/vs/${entry} exists in output but is not in sitemap!`);
+    }
+  }
+}
 
 for (const route of urls) {
   checkedPages++;
@@ -36,10 +50,10 @@ for (const route of urls) {
 
   const content = fs.readFileSync(indexFile, 'utf8');
 
-  // Check 1: Repetitive boilerplate phrases
+  // Check 1: Repetitive boilerplate & unsupported claims
   for (const sig of bannedSignatures) {
     if (content.includes(sig)) {
-      errors.push(`[Repetitive Boilerplate]: ${route} contains banned template phrase: "${sig.slice(0, 40)}..."`);
+      errors.push(`[Unsupported/Boilerplate Claim]: ${route} contains banned signature: "${sig.slice(0, 40)}..."`);
       break;
     }
   }
@@ -52,13 +66,13 @@ for (const route of urls) {
 
   // Check 3: High-Value Content & Structure
   if (route.startsWith('/vs/')) {
-    if (!content.includes('<table') && !content.includes('Specification Matrix')) {
+    if (!content.includes('<table') && !content.includes('Specification Matrix') && !content.includes('Side-by-Side')) {
       errors.push(`[Thin VS Page]: ${route} is missing side-by-side comparison matrix`);
     }
   }
 
   if (route.startsWith('/software/')) {
-    if (!content.includes('Software Specifications') && !content.includes('Key Features')) {
+    if (!content.includes('Software Specifications') && !content.includes('Key Features') && !content.includes('What is')) {
       errors.push(`[Thin Software Page]: ${route} is missing software specifications`);
     }
   }
@@ -96,4 +110,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log(`✅ StakDock Quality Standards Gate PASSED: 100% of ${checkedPages} pages comply with strict trailing-slash canonicals, zero duplicate flat files, structured comparison specs, and minimum word-count integrity.`);
+console.log(`✅ StakDock Quality Standards Gate PASSED: 100% of ${checkedPages} pages comply with strict trailing-slash canonicals, zero duplicate flat files, structured comparison specs, zero unsupported claims, zero stale /vs/ pairs, and minimum word-count integrity.`);

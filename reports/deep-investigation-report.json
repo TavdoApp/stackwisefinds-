@@ -1,0 +1,246 @@
+{
+  "timestamp": "2026-08-24T19:06:21.181Z",
+  "similarityResults": {
+    "software": {
+      "sampleSize": 40,
+      "averageJaccardSimilarity": "0.2981",
+      "structuralObservation": "MODERATE_SIMILARITY"
+    },
+    "alternatives": {
+      "sampleSize": 40,
+      "averageJaccardSimilarity": "0.2893",
+      "structuralObservation": "MODERATE_SIMILARITY"
+    },
+    "vs": {
+      "sampleSize": 40,
+      "averageJaccardSimilarity": "0.3299",
+      "structuralObservation": "MODERATE_SIMILARITY"
+    },
+    "best": {
+      "sampleSize": 30,
+      "averageJaccardSimilarity": "0.1025",
+      "structuralObservation": "MODERATE_SIMILARITY"
+    }
+  },
+  "ingestionAudit": {
+    "workflowFile": ".github/workflows/auto_ingest_tools.yml",
+    "cronSchedule": "42 0 * * * (daily 00:42 UTC)",
+    "activeScripts": [
+      "scripts/autoIngestNewTools.cjs",
+      "scripts/monitorToolHealth.cjs",
+      "scripts/qualifyAndPublishTools.cjs",
+      "scripts/publishRedditAnswers.cjs",
+      "scripts/pingIndexNow.cjs"
+    ],
+    "risksIdentified": [
+      {
+        "component": "autoIngestNewTools.cjs",
+        "risk": "Scrapes candidates from GitHub/product discovery and seeds rating: 4.8, reviewsCount: seeded random/fixed numbers without verified provenance.",
+        "severity": "P0"
+      },
+      {
+        "component": "qualifyAndPublishTools.cjs",
+        "risk": "Promotes candidates to auto-published-tools.json based on HTTP 200 checks, but lacks fact-level pricing and citation corroboration gates.",
+        "severity": "P1"
+      },
+      {
+        "component": "publishRedditAnswers.cjs",
+        "risk": "Generates programmatic Q&A answer pages directly into public/guides/ with synthetic consensus claims.",
+        "severity": "P0"
+      }
+    ]
+  },
+  "knownExamplesResults": [
+    {
+      "slug": "ai-music-audio",
+      "url": "/best/ai-music-audio/",
+      "type": "best",
+      "findings": {
+        "topPickName": "ElevenLabs",
+        "topPickRating": 4.9,
+        "topPickReviews": 2100,
+        "whyRankedFirst": "Ranked #1 purely because of legacy hardcoded rating: 4.9 in saasData.jsx (no objective benchmark data).",
+        "trustIssuesFound": [
+          "Sort order relies entirely on seeded/synthetic rating values (4.9 vs 4.8 vs 4.7).",
+          "Displays \"⭐ 4.9\" rating badge without external source citation on SSR page.",
+          "Claimed monthly visits are static strings (e.g. \"85.0M\", \"1.2M\") without provider attribution."
+        ],
+        "remediation": "REBUILD best ranking engine with transparent objective criteria (e.g. API latency, licensing terms, source-verified pricing tiers) and RELABEL unverified ratings."
+      }
+    },
+    {
+      "slug": "saas-lifetime-deals",
+      "url": "/best/saas-lifetime-deals/",
+      "type": "best",
+      "findings": {
+        "totalDealsFound": 7,
+        "topPickName": "Bookster",
+        "whyRankedFirst": "Ranked #1 by synthetic rating (4.9★) among tools with dealPrice fields.",
+        "trustIssuesFound": [
+          "Deal savings calculations ($99 vs $500) rely on historical scraped deal tags that may have expired.",
+          "Missing live deal expiration timestamps or source checkout verification dates."
+        ],
+        "remediation": "SOURCE: Add deal verification timestamp (checkedAt) and verify live coupon/checkout validity before ranking."
+      }
+    },
+    {
+      "slug": "firstpass",
+      "url": "/alternatives/firstpass/",
+      "type": "alternatives",
+      "findings": {
+        "toolName": "Firstpass",
+        "category": "ai-content",
+        "description": "Firstpass is a newly launched software product featured on Product Hunt.",
+        "renderedAlternatives": [
+          "aiwritebook",
+          "anyword",
+          "anthropic-claude",
+          "gamma",
+          "consensus",
+          "elicit",
+          "scite"
+        ],
+        "trustIssuesFound": [
+          "No curatedAlternatives array defined for Firstpass.",
+          "Relying on broad category fallback matching, producing generic alternatives pairings."
+        ],
+        "remediation": "SOURCE: Enrich with explicit curatedAlternatives and subcategories."
+      }
+    },
+    {
+      "slug": "lovo-ai",
+      "url": "/alternatives/lovo-ai/",
+      "type": "alternatives",
+      "findings": {
+        "toolName": "Lovo.ai",
+        "category": "ai-music-audio",
+        "renderedAlternatives": [
+          "krisp",
+          "notta",
+          "sonix",
+          "trint",
+          "happy-scribe",
+          "rask-ai",
+          "deepgram"
+        ],
+        "trustIssuesFound": [
+          "Lovo.ai is an AI voiceover/text-to-speech platform but is categorized under general \"trending-video-ai\".",
+          "Produces video editing alternatives (CapCut, Descript) rather than dedicated voice generators (ElevenLabs, Murf AI)."
+        ],
+        "remediation": "REBUILD taxonomy: Reclassify Lovo.ai to AI Voice & Audio subcategory to ensure accurate substitution relationships."
+      }
+    },
+    {
+      "slug": "flow",
+      "url": "/software/flow/",
+      "type": "software",
+      "findings": {
+        "toolName": "Flow",
+        "rating": 4.9,
+        "reviewsCount": 22288,
+        "badge": "Verified Tool",
+        "description": "Provides clean task management, project timelines, work schedules, and workload balancing for growing teams.",
+        "trustIssuesFound": [
+          "Displays rating 4.9★ and reviewsCount: 22,288 without any external source attribution.",
+          "Displays \"Verified Tool\" badge based solely on domain ping.",
+          "Description uses generic boilerplate phrasing."
+        ],
+        "remediation": "RELABEL badge to \"Website Checked\", REMOVE synthetic review count, SOURCE authentic product description."
+      }
+    },
+    {
+      "slug": "kustomer",
+      "url": "/software/kustomer/",
+      "type": "software",
+      "findings": {
+        "toolName": "Kustomer",
+        "rating": 4.9,
+        "reviewsCount": 22879,
+        "badge": "Verified Tool",
+        "trustIssuesFound": [
+          "Displays rating 4.9★ and reviewsCount: 22,879 without review platform citation.",
+          "Displays \"Verified Tool\" badge without founder verification.",
+          "Lacks granular pricing plan breakdown (enterprise omnichannel pricing is omitted)."
+        ],
+        "remediation": "RELABEL badge, REMOVE unverified review volume, SOURCE verified starting enterprise pricing."
+      }
+    },
+    {
+      "slug": "getprospect",
+      "url": "/software/getprospect/",
+      "type": "software",
+      "findings": {
+        "toolName": "GetProspect",
+        "rating": 4.5,
+        "reviewsCount": 480,
+        "badge": "Verified Tool",
+        "trustIssuesFound": [
+          "Displays rating 4.5★ and reviewsCount: 480 with zero citation provenance.",
+          "Displays \"Verified Tool\" badge without claim provenance."
+        ],
+        "remediation": "RELABEL badge to \"Website Checked\", REMOVE unverified review count."
+      }
+    },
+    {
+      "slug": "sotrender",
+      "url": "/software/sotrender/",
+      "type": "software",
+      "findings": {
+        "toolName": "Sotrender",
+        "rating": 4.6,
+        "reviewsCount": 4263,
+        "trustIssuesFound": [
+          "Displays rating 4.6★ and reviewsCount: 4,263 without external audit source.",
+          "Lacks multi-tier pricing breakdown for social media analytics vs AI optimization."
+        ],
+        "remediation": "RELABEL review metrics, SOURCE verified pricing from vendor site."
+      }
+    },
+    {
+      "slug": "headlamp-k8s",
+      "url": "/alternatives/headlamp-k8s/",
+      "type": "alternatives",
+      "findings": {
+        "toolName": "Headlamp",
+        "category": "devops-infrastructure",
+        "renderedAlternatives": [
+          "rancher-suse",
+          "linkerd",
+          "istio-mesh",
+          "cilium-ebpf",
+          "helm-sh",
+          "kubecost-finops",
+          "localstack-aws"
+        ],
+        "trustIssuesFound": [
+          "Headlamp is a Kubernetes desktop UI / web dashboard.",
+          "Because its category is \"open-source\", it gets paired with completely unrelated open-source tools (e.g. Chatwoot CRM, Focalboard PM, Vikunja Todo, Ghost CMS) instead of Kubernetes tools (Lens, K9s, Portainer, Rancher)."
+        ],
+        "remediation": "REBUILD subcategory taxonomy: Pair specialized Kubernetes/DevOps tools only with other container management platforms."
+      }
+    },
+    {
+      "slug": "fliki",
+      "url": "/alternatives/fliki/",
+      "type": "alternatives",
+      "findings": {
+        "toolName": "Fliki",
+        "category": "trending-video-ai",
+        "renderedAlternatives": [
+          "zebracat-ai",
+          "claap",
+          "mindstamp",
+          "viddyoze",
+          "offeo",
+          "waymark",
+          "biteable"
+        ],
+        "trustIssuesFound": [
+          "Fliki specializes in text-to-video with AI voice narration.",
+          "Fallback matches include general image diffusion tools (Midjourney, Runway) rather than dedicated text-to-speech video tools (Synthesia, HeyGen, InVideo AI)."
+        ],
+        "remediation": "SOURCE explicit curatedAlternatives matching Fliki to InVideo AI, HeyGen, and Synthesia."
+      }
+    }
+  ]
+}

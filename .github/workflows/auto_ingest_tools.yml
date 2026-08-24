@@ -47,11 +47,6 @@ jobs:
       - name: Rebuild SEO Sitemap
         run: node scripts/generateSitemap.cjs
 
-      - name: Ping Search Engines (Bing & IndexNow)
-        env:
-          INDEXNOW_KEY: ${{ secrets.INDEXNOW_KEY }}
-        run: node scripts/pingIndexNow.cjs
-
       - name: Build Production Bundle
         run: npm run build
 

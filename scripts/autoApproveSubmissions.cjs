@@ -173,19 +173,22 @@ async function runAutoApprovalProcess() {
         domain: new URL(targetUrl).hostname.replace(/^www\./, ''),
         category: candidate.categorySuggestion || candidate.category || 'ai-content',
         tagline: candidate.tagline || candidate.description || `${candidate.name} AI & Software Solution`,
-        description: candidate.description || `${candidate.name} is a verified software solution indexed on StakDock.`,
-        rating: 4.8,
-        reviewsCount: 15,
-        pricing: candidate.pricing || 'Freemium',
+        description: candidate.description || `${candidate.name} is a software platform listed on StakDock.`,
+        rating: null,
+        reviewsCount: 0,
+        upvotes: 0,
+        pricing: candidate.pricing || 'Check website',
         affiliateUrl: targetUrl,
         website: targetUrl,
         featured: false,
-        badge: 'Verified Software',
-        isFreeTier: true,
+        badge: null,
+        websiteChecked: true,
+        founderVerified: false,
+        isFreeTier: false,
         isOpenSource: false,
-        features: candidate.features || ['Verified Security', 'Instant Access', 'Cloud Web App'],
-        pros: ['Active Domain', 'Verified Security'],
-        cons: ['Standard Free Tier'],
+        features: candidate.features || ['Active Web App', 'Cloud Hosted'],
+        pros: ['Active Domain Identified'],
+        cons: ['Standard Feature Tier'],
         bestFor: 'Founders & Teams',
         publishedAt: new Date().toISOString()
       };
@@ -209,16 +212,7 @@ async function runAutoApprovalProcess() {
 
     // Write back candidates status
     fs.writeFileSync(candidatesPath, `${JSON.stringify(candidatesData, null, 2)}\n`, 'utf8');
-    console.log(`[StakDock Auto-Approval] Successfully auto-approved and published ${newlyApproved.length} verified tools.`);
-
-    // Trigger instant sitemap update & IndexNow instant ping
-    try {
-      const { execSync } = require('child_process');
-      execSync('node scripts/generateSitemap.cjs && node scripts/pingIndexNow.cjs', { stdio: 'inherit' });
-      console.log('[IndexNow Auto-Trigger] Instant IndexNow search engine ping sent for newly approved tools!');
-    } catch (err) {
-      console.warn('[IndexNow Auto-Trigger Warning] IndexNow ping skipped or failed:', err.message);
-    }
+    console.log(`[StakDock Auto-Approval] Successfully approved ${newlyApproved.length} tools with clean zero-rating baseline.`);
   } else {
     console.log('[StakDock Auto-Approval] Process complete. 0 submissions approved in this cycle.');
   }

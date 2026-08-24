@@ -25,11 +25,9 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
     id: targetIdClean,
     name: formatFallbackName(targetIdClean),
     domain: `${targetIdClean}.com`,
-    category: 'e-commerce',
-    description: `${formatFallbackName(targetIdClean)} software platform and business suite.`,
-    pricing: 'Freemium',
-    rating: 4.8,
-    reviewsCount: 45
+    category: 'software',
+    description: `${formatFallbackName(targetIdClean)} software platform.`,
+    pricing: 'Check website'
   };
   
   // Intelligent Pro Alternatives Engine
@@ -46,28 +44,28 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
 
   const alternatives = filteredAlternatives.length > 0 ? filteredAlternatives : allAlternatives;
   const topWinner = allAlternatives[0] || targetTool;
-  const winnerTagline = topWinner.description || topWinner.tagline || topWinner.name || 'Verified Software Alternative';
+  const winnerTagline = topWinner.description || topWinner.tagline || topWinner.name || 'Related Software Alternative';
 
   const faqs = [
     {
-      question: `What is the best overall alternative to ${targetTool.name}?`,
-      answer: `The #1 rated overall alternative to ${targetTool.name} is ${topWinner.name} (${topWinner.rating || 4.8}/5 stars). It offers ${winnerTagline} with flexible pricing starting at ${topWinner.pricing || 'Free Tier'}.`
+      question: `What are common alternatives to ${targetTool.name}?`,
+      answer: `Documented alternatives to ${targetTool.name} include ${allAlternatives.slice(0, 4).map(a => a.name).join(', ')}. Each software profile details specific features, pricing models, and deployment architectures.`
     },
     {
-      question: `Are there 100% free alternatives to ${targetTool.name}?`,
+      question: `Are there free alternatives to ${targetTool.name}?`,
       answer: allAlternatives.some(a => a.isFreeTier) 
-        ? `Yes! Verified free alternatives include ${allAlternatives.filter(a => a.isFreeTier).slice(0, 4).map(a => a.name).join(', ')}. These tools offer freemium tiers with zero credit card required.`
-        : `While most premium tools require a subscription, many offer 7-day to 14-day free trials.`
+        ? `Yes. Documented free tier options include ${allAlternatives.filter(a => a.isFreeTier).slice(0, 4).map(a => a.name).join(', ')}.`
+        : `While most options require a paid license, many provide evaluation trials.`
     },
     {
       question: `Is there an open-source alternative to ${targetTool.name}?`,
       answer: allAlternatives.some(a => a.isOpenSource)
-        ? `Yes! Open-source and self-hosted alternatives to ${targetTool.name} include ${allAlternatives.filter(a => a.isOpenSource).map(a => a.name).join(', ')}. You can host these on your own VPS for complete data sovereignty.`
-        : `Currently, most top options in this category are cloud-hosted SaaS platforms, but free tiers are available.`
+        ? `Yes. Open-source options include ${allAlternatives.filter(a => a.isOpenSource).map(a => a.name).join(', ')}.`
+        : `Currently, options in this category are predominantly cloud-hosted platforms.`
     },
     {
-      question: `Why do software buyers look for ${targetTool.name} competitors?`,
-      answer: `Software buyers typically search for alternatives to ${targetTool.name} to lower monthly subscription costs, unlock specialized features, avoid vendor lock-in, or access open-source self-hosted privacy controls.`
+      question: `Why do software buyers look for ${targetTool.name} alternatives?`,
+      answer: `Buyers typically compare alternatives to ${targetTool.name} to optimize subscription pricing, integrate with specific tech stacks, or meet data sovereignty requirements.`
     }
   ];
 
@@ -83,16 +81,16 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
         <ArrowLeft size={16} /> Back to Software Directory
       </button>
 
-      {/* Programmatic Multi-Keyword SEO Header */}
+      {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '36px' }}>
         <div className="tag-uppercase" style={{ marginBottom: '10px', letterSpacing: '0.08em', color: '#82A735' }}>
-          VERIFIED SOFTWARE COMPARISON & REPLACEMENT HUB (2026)
+          SOFTWARE COMPARISON & ALTERNATIVES HUB (2026)
         </div>
         <h1 style={{ fontSize: '2.6rem', fontWeight: '800', marginBottom: '14px', lineHeight: '1.15', color: 'var(--text-dark)' }}>
-          Best <span className="serif-italic">{targetTool.name}</span> Free & Open-Source Alternatives
+          <span className="serif-italic">{targetTool.name}</span> Alternatives & Competitors
         </h1>
         <p style={{ color: 'var(--text-muted)', fontSize: '1.08rem', maxWidth: '720px', margin: '0 auto', lineHeight: '1.5' }}>
-          Looking to replace {targetTool.name}? We benchmarked feature matrices, pricing plans, open-source security, and buyer reviews to curate the top verified alternatives.
+          Compare documented software alternatives to {targetTool.name} categorized by feature capabilities, pricing models, and deployment options.
         </p>
 
         {/* Quick Semantic Sub-Filter Tabs */}
@@ -102,7 +100,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
             className={filterMode === 'all' ? 'btn-pill-green' : 'btn-pill-outline'}
             style={{ padding: '7px 16px', fontSize: '0.84rem' }}
           >
-            <span>All Alternatives ({allAlternatives.length})</span>
+            <span>All Options ({allAlternatives.length})</span>
           </button>
 
           <button
@@ -110,7 +108,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
             className={filterMode === 'free' ? 'btn-pill-green' : 'btn-pill-outline'}
             style={{ padding: '7px 16px', fontSize: '0.84rem' }}
           >
-            <span>🎁 100% Free Tier</span>
+            <span>🎁 Free Tier</span>
           </button>
 
           <button
@@ -140,7 +138,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
         </div>
       </div>
 
-      {/* #1 Rated Replacement Hero Banner */}
+      {/* Featured Alternative Hero Banner */}
       {topWinner && (
         <div style={{
           background: 'linear-gradient(135deg, #141E14 0%, #243524 100%)',
@@ -181,7 +179,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#A3D944', fontWeight: '800', fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                <Award size={16} /> #1 Rated Replacement for {targetTool.name}
+                <Award size={16} /> Featured Alternative to {targetTool.name}
               </div>
               <h3 style={{ fontSize: '1.7rem', fontWeight: '800', color: '#FFFFFF', margin: '2px 0 4px' }}>{topWinner.name}</h3>
               <p style={{ fontSize: '0.9rem', color: '#D0D8D0', margin: 0 }}>{winnerTagline}</p>
@@ -195,13 +193,13 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
             className="btn-pill-green"
             style={{ padding: '14px 26px', fontSize: '0.92rem' }}
           >
-            <span>Visit {topWinner.name} Winner</span>
+            <span>Visit {topWinner.name}</span>
             <ArrowUpRight size={18} />
           </a>
         </div>
       )}
 
-      {/* Community Switch Insight Box */}
+      {/* Product Considerations & Capabilities Box */}
       {switchInsight && (
         <div style={{
           background: 'linear-gradient(135deg, #FAFBF7 0%, #F3F6EC 100%)',
@@ -213,9 +211,9 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
             <span style={{ background: '#82A735', color: '#FFFFFF', padding: '4px 12px', borderRadius: '9999px', fontSize: '0.78rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '5px' }}>
-              <Quote size={13} /> Verified Community & Reddit Switch Insight
+              <Quote size={13} /> Product Considerations & Insights
             </span>
-            <span style={{ fontSize: '0.82rem', color: 'var(--text-light)', fontWeight: '700' }}>Aggregated Buyer Consensus</span>
+            <span style={{ fontSize: '0.82rem', color: 'var(--text-light)', fontWeight: '700' }}>Documented Characteristics</span>
           </div>
 
           <h3 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)', margin: '0 0 10px' }}>
@@ -242,7 +240,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
       <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '28px', marginBottom: '40px', boxShadow: 'var(--shadow-soft)' }}>
         <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '18px', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Layers size={20} color="#82A735" />
-          <span>{targetTool.name} vs Top Alternatives Feature Matrix</span>
+          <span>{targetTool.name} vs Related Alternatives Comparison</span>
         </h3>
 
         <div style={{ overflowX: 'auto' }}>
@@ -251,7 +249,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
               <tr style={{ borderBottom: '2px solid var(--border-color)', background: 'var(--bg-sage)' }}>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Software Name</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Key Differentiator</th>
-                <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Rating</th>
+                <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Model</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Free Tier?</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)' }}>Pricing Starting</th>
                 <th style={{ padding: '12px 14px', fontWeight: '800', color: 'var(--text-dark)', textAlign: 'right' }}>Action</th>
@@ -264,9 +262,9 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
                   {targetTool.name} <span style={{ fontSize: '0.7rem', color: '#888', fontWeight: '700' }}>(Current)</span>
                 </td>
                 <td style={{ padding: '14px', fontSize: '0.82rem', color: 'var(--text-muted)' }}>Baseline Reference</td>
-                <td style={{ padding: '14px', fontWeight: '700' }}>⭐ {targetTool.rating || 4.7}</td>
+                <td style={{ padding: '14px', fontWeight: '700', color: '#536253' }}>{targetTool.isOpenSource ? 'Open Source' : 'Cloud SaaS'}</td>
                 <td style={{ padding: '14px' }}>{targetTool.isFreeTier ? <Check size={16} color="#82A735" /> : <X size={16} color="#999" />}</td>
-                <td style={{ padding: '14px', fontWeight: '700', color: 'var(--primary-green-dark)' }}>{targetTool.pricing || 'Paid Subscription'}</td>
+                <td style={{ padding: '14px', fontWeight: '700', color: 'var(--primary-green-dark)' }}>{targetTool.pricing || 'Check website'}</td>
                 <td style={{ padding: '14px', textAlign: 'right' }}>
                   <a href={targetTool.affiliateUrl || `https://${targetTool.domain}`} target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textDecoration: 'none' }}>
                     Visit Website ↗
@@ -281,9 +279,9 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
                   <td style={{ padding: '14px', fontSize: '0.8rem', color: '#3A5311', fontWeight: '700' }}>
                     {tool.alternativeBadge || getToolStrengthBadge(tool, targetTool)}
                   </td>
-                  <td style={{ padding: '14px', fontWeight: '700' }}>⭐ {tool.rating || 4.8}</td>
+                  <td style={{ padding: '14px', fontWeight: '700', color: '#536253' }}>{tool.isOpenSource ? 'Open Source' : 'Cloud SaaS'}</td>
                   <td style={{ padding: '14px' }}>{tool.isFreeTier ? <Check size={16} color="#82A735" /> : <X size={16} color="#999" />}</td>
-                  <td style={{ padding: '14px', fontWeight: '700', color: 'var(--primary-green-dark)' }}>{tool.pricing || 'Free Tier'}</td>
+                  <td style={{ padding: '14px', fontWeight: '700', color: 'var(--primary-green-dark)' }}>{tool.pricing || 'Check website'}</td>
                   <td style={{ padding: '14px', textAlign: 'right' }}>
                     <a href={tool.affiliateUrl || `https://${tool.domain}`} target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', fontWeight: '800', fontSize: '0.82rem', textDecoration: 'none' }}>
                       Try Alternative ↗
@@ -296,10 +294,10 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
         </div>
       </div>
 
-      {/* Top Alternative List Cards */}
+      {/* Alternative List Cards */}
       <div style={{ marginBottom: '40px' }}>
         <h3 style={{ fontSize: '1.6rem', fontWeight: '800', marginBottom: '20px', color: 'var(--text-dark)' }}>
-          Top Verified Replacements for {targetTool.name} ({alternatives.length} Tools)
+          Related Software & Alternatives for {targetTool.name} ({alternatives.length} Options)
         </h3>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -332,7 +330,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
                 }}>
                   <img 
                     src={`https://www.google.com/s2/favicons?domain=${tool.domain}&sz=128`} 
-                    alt={tool.name}
+                    alt={tool.name} 
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                     onError={(e) => {
                       e.target.onerror = null;
@@ -343,6 +341,9 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
                     <h4 style={{ fontSize: '1.3rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0 }}>{tool.name}</h4>
+                    <span style={{ background: '#EBF0E1', color: '#536253', fontSize: '0.72rem', fontWeight: '700', padding: '2px 8px', borderRadius: '4px' }}>
+                      Website Checked
+                    </span>
                     {tool.isFreeTier && (
                       <span style={{ background: '#F0FDF4', color: '#166534', border: '1px solid #BBF7D0', fontSize: '0.72rem', fontWeight: '800', padding: '2px 8px', borderRadius: '9999px' }}>
                         🎁 Free Tier
@@ -364,10 +365,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
                   <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', margin: '6px 0 10px', lineHeight: '1.4' }}>{tool.description}</p>
 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', fontSize: '0.85rem' }}>
-                    <span style={{ fontWeight: '800', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      <Star size={14} fill="#82A735" color="#82A735" /> {tool.rating}
-                    </span>
-                    <span style={{ color: 'var(--primary-green-dark)', fontWeight: '700' }}>{tool.pricing}</span>
+                    <span style={{ color: 'var(--primary-green-dark)', fontWeight: '700' }}>{tool.pricing || 'Check website'}</span>
                   </div>
                 </div>
               </div>
@@ -389,7 +387,7 @@ export default function AlternativesView({ targetToolId, allTools, onBack, onSel
         </div>
       </div>
 
-      {/* Expanded Programmatic SEO FAQ Cluster */}
+      {/* Expanded FAQ Cluster */}
       <div style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '24px', padding: '28px', marginBottom: '40px', boxShadow: 'var(--shadow-soft)' }}>
         <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '18px', color: 'var(--text-dark)' }}>
           Frequently Asked Questions About {targetTool.name} Alternatives

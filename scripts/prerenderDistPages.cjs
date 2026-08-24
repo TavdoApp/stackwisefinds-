@@ -401,7 +401,7 @@ saasTools.forEach(tool => {
 
   const pageHtml = buildSeoPage({
     title: `${tool.name} Review 2026: Pricing, Free Trial & Deals`,
-    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), ratings (${tool.rating || '4.8'}★), and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, ratings (${tool.rating || '4.8'}★), and top verified deals on StakDock.`,
+    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free tier limits, and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, and top verified software options on StakDock.`,
     canonicalUrl: `https://stakdock.com/software/${tool.id}/`,
     jsonLd: [jsonLd],
     bodyHtml
@@ -429,8 +429,8 @@ saasTools.forEach(tool => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": `Top Alternatives & Competitors to ${tool.name}`,
-    "description": `Verified software alternatives and competitors to ${tool.name} on StakDock.`,
+    "name": `Alternatives & Competitors to ${tool.name}`,
+    "description": `Software alternatives and competitors to ${tool.name} on StakDock.`,
     "url": `https://stakdock.com/alternatives/${tool.id}/`,
     "numberOfItems": categoryMatches.length,
     "itemListElement": categoryMatches.map((altTool, idx) => ({
@@ -461,10 +461,10 @@ saasTools.forEach(tool => {
         ${escapeHtml(catLabel)} ALTERNATIVES
       </div>
       <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 12px 0;color:#182618;">
-        Top ${categoryMatches.length} Best ${escapeHtml(tool.name)} Alternatives &amp; Competitors (2026)
+        ${escapeHtml(tool.name)} Alternatives &amp; Competitor Options (2026)
       </h1>
       <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 0 16px 0;">
-        Looking for software like ${escapeHtml(tool.name)}? Explore verified competitors and alternative software platforms with transparent pricing, feature scorecards, and user reviews.
+        Looking for software alternatives to ${escapeHtml(tool.name)}? Explore documented competitors and options with transparent pricing, free tier limits, and software specifications.
       </p>
     </header>
 
@@ -473,7 +473,7 @@ saasTools.forEach(tool => {
         <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;">
           <div style="max-width:720px;">
             <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;margin-bottom:4px;">
-              #${idx + 1} Alternative to ${escapeHtml(tool.name)}
+              Alternative Option to ${escapeHtml(tool.name)}
             </div>
             <h2 style="font-size:1.35rem;font-weight:800;margin:0 0 8px 0;">
               <a href="/software/${alt.id}/" style="color:#182618;text-decoration:none;">${escapeHtml(alt.name)}</a>
@@ -502,7 +502,7 @@ saasTools.forEach(tool => {
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">How to Choose Between ${escapeHtml(tool.name)} and Competitors</h2>
       <p style="font-size:0.95rem;line-height:1.7;color:#2d4029;">
-        When switching from ${escapeHtml(tool.name)}, consider your team's budget, required third-party integrations, and API limits. ${categoryMatches[0] ? `${categoryMatches[0].name} is currently our top recommendation for teams seeking modern feature parity.` : ''}
+        When evaluating alternatives to ${escapeHtml(tool.name)}, consider your team's budget, required third-party integrations, and self-hosting requirements.
       </p>
     </section>
   </main>
@@ -510,7 +510,7 @@ saasTools.forEach(tool => {
 
   const pageHtml = buildSeoPage({
     title: `Best ${tool.name} Free & Open-Source Alternatives (2026)`,
-    description: `Looking for the best alternatives to ${tool.name}? Compare top verified ${tool.name} competitors in 2026 by features, pricing plans, free trials, and user ratings on StakDock.`,
+    description: `Looking for alternatives to ${tool.name}? Compare documented ${tool.name} competitors in 2026 by features, pricing plans, free tiers, and deployment models on StakDock.`,
     canonicalUrl: `https://stakdock.com/alternatives/${tool.id}/`,
     jsonLd: [jsonLd],
     bodyHtml
@@ -1084,11 +1084,11 @@ versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
 
   const pageTitle = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
     ? `Cursor AI vs GitHub Copilot: 2026 Developer Comparison & Decision Guide`
-    : `${tA.name} vs ${tB.name}: 2026 Comparison, Pricing & Winner`;
+    : `${tA.name} vs ${tB.name}: 2026 Side-by-Side Comparison & Specifications`;
 
   const pageDesc = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
     ? `In-depth comparison of Cursor AI vs GitHub Copilot. Compare AI-native editor workflows, IDE extensions, codebase indexing, multi-file refactoring, and verified pricing.`
-    : `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature matrix, pricing plans, integration capabilities, and user consensus to pick the winning software.`;
+    : `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature specifications, pricing models, and deployment architectures.`;
 
   const pageHtml = buildSeoPage({
     title: pageTitle,
@@ -1107,9 +1107,7 @@ saasCategories.forEach(cat => {
   if (!cat || !cat.id || cat.id === 'all') return;
 
   const matchedTools = saasTools.filter(t => t.category === cat.id).sort((a, b) => {
-    if (a.featured && !b.featured) return -1;
-    if (!a.featured && b.featured) return 1;
-    return (b.rating || 4.5) - (a.rating || 4.5);
+    return (b.upvotes || 0) - (a.upvotes || 0) || a.name.localeCompare(b.name);
   });
 
   if (matchedTools.length === 0) return;
@@ -1119,12 +1117,12 @@ saasCategories.forEach(cat => {
   const catJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": `Best ${catLabel} Software in 2026 (Ranked & Compared)`,
-    "description": `Rankings and in-depth buyer guide for top ${matchedTools.length} ${catLabel} software, tools, and platforms on StakDock.`,
+    "name": `${catLabel} Software Directory & Options (2026)`,
+    "description": `Comprehensive directory and guide for top ${matchedTools.length} ${catLabel} software, tools, and platforms on StakDock.`,
     "url": `https://stakdock.com/best/${cat.id}/`,
     "mainEntity": {
       "@type": "ItemList",
-      "name": `Top Ranked ${catLabel} Tools (2026)`,
+      "name": `${catLabel} Software Options (2026)`,
       "numberOfItems": matchedTools.length,
       "itemListElement": matchedTools.slice(0, 15).map((tool, idx) => ({
         "@type": "ListItem",
@@ -1177,13 +1175,13 @@ saasCategories.forEach(cat => {
 
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
-        VERIFIED DIRECTORY 2026
+        SOFTWARE DIRECTORY 2026
       </div>
       <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 12px 0;color:#182618;">
-        Best ${escapeHtml(catLabel)} Software in 2026 (Ranked &amp; Reviewed)
+        ${escapeHtml(catLabel)} Software Directory &amp; Options (2026)
       </h1>
       <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0;">
-        Explore top-rated ${escapeHtml(catLabel)} tools and software platforms. Compare pricing plans, free tier limits, user satisfaction scores, and feature breakdowns.
+        Explore documented ${escapeHtml(catLabel)} tools and software platforms. Compare pricing plans, free tier limits, and feature breakdowns.
       </p>
     </header>
 
@@ -1191,8 +1189,7 @@ saasCategories.forEach(cat => {
       ${matchedTools.slice(0, 15).map((tool, idx) => `
         <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:16px;padding:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
           <div>
-            <span style="font-size:0.8rem;font-weight:800;color:#82A735;">#${idx + 1}</span>
-            <h2 style="font-size:1.25rem;font-weight:800;margin:0 0 4px 0;display:inline-block;margin-left:8px;">
+            <h2 style="font-size:1.25rem;font-weight:800;margin:0 0 4px 0;display:inline-block;">
               <a href="/software/${tool.id}/" style="color:#182618;text-decoration:none;">${escapeHtml(tool.name)}</a>
             </h2>
             <p style="font-size:0.9rem;color:#45593e;margin:0;">${escapeHtml(tool.tagline || tool.description || '')}</p>
@@ -1208,8 +1205,8 @@ saasCategories.forEach(cat => {
   `;
 
   const pageHtml = buildSeoPage({
-    title: `Best ${catLabel} Software in 2026 (Ranked & Reviewed)`,
-    description: `Discover the best ${catLabel} software and tools of 2026 on StakDock. In-depth rankings, verified user reviews, pricing comparisons, and feature breakdowns.`,
+    title: `${catLabel} Software Directory & Options (2026)`,
+    description: `Explore ${catLabel} software and tools of 2026 on StakDock. Compare pricing models, free tiers, and feature breakdowns.`,
     canonicalUrl: `https://stakdock.com/best/${cat.id}/`,
     jsonLd: [catJsonLd, breadcrumbJsonLd],
     bodyHtml
@@ -1222,7 +1219,7 @@ saasCategories.forEach(cat => {
   // Also write to /category/:categorySlug/index.html with matching canonical tag
   const categoryPageHtml = buildSeoPage({
     title: `${catLabel} Software Directory 2026: Compare Tools & Pricing`,
-    description: `Browse all verified ${catLabel} software and tools on StakDock. Compare user ratings, pricing models, free tiers, and features.`,
+    description: `Browse all verified ${catLabel} software and tools on StakDock. Compare pricing models, free tiers, and features.`,
     canonicalUrl: `https://stakdock.com/category/${cat.id}/`,
     jsonLd: [catJsonLd, breadcrumbJsonLd],
     bodyHtml
@@ -1245,7 +1242,7 @@ const semanticBuyerAliases = [
 ];
 
 semanticBuyerAliases.forEach(alias => {
-  const matchedTools = saasTools.filter(t => t.category === alias.category).sort((a, b) => (b.rating || 4.5) - (a.rating || 4.5));
+  const matchedTools = saasTools.filter(t => t.category === alias.category).sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0) || a.name.localeCompare(b.name));
   if (matchedTools.length === 0) return;
 
   const bodyHtml = `
@@ -1255,15 +1252,15 @@ semanticBuyerAliases.forEach(alias => {
       <span style="color:#182618;font-weight:700;">${escapeHtml(alias.label)}</span>
     </nav>
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
-      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin:0 0 12px 0;">Best ${escapeHtml(alias.label)} (2026 Buyer Guide)</h1>
-      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0;">In-depth buyer guide and feature comparison for top ${escapeHtml(alias.label)}.</p>
+      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin:0 0 12px 0;">${escapeHtml(alias.label)} Directory (2026)</h1>
+      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0;">Directory and feature comparison for documented ${escapeHtml(alias.label)}.</p>
     </header>
   </main>
   `;
 
   const pageHtml = buildSeoPage({
-    title: `Best ${alias.label} in 2026 (Ranked & Reviewed)`,
-    description: `Discover the top ${alias.label} of 2026. Compare pricing, features, ratings, and alternatives on StakDock.`,
+    title: `${alias.label} Directory (2026)`,
+    description: `Discover ${alias.label} of 2026. Compare pricing, features, and alternatives on StakDock.`,
     canonicalUrl: `https://stakdock.com/best/${alias.slug}/`,
     bodyHtml
   });

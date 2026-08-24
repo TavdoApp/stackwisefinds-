@@ -50506,6 +50506,8 @@ export const staticSaasTools = [
   }
 ];
 
+const authorityFiveIds = new Set(['cursor-ai', 'github-copilot', 'n8n', 'make', 'notion']);
+
 const isLegacySyntheticTool = (tool) => /-\d+$/.test(tool.id) && !tool.autoQualifiedAt;
 const uniqueByName = (tools) => {
   const seen = new Set();
@@ -50520,4 +50522,22 @@ const uniqueByName = (tools) => {
 export const saasTools = uniqueByName([
   ...staticSaasTools,
   ...(Array.isArray(autoPublishedToolData.tools) ? autoPublishedToolData.tools : [])
-].filter((tool) => !isLegacySyntheticTool(tool)));
+].filter((tool) => !isLegacySyntheticTool(tool))).map(tool => {
+  if (authorityFiveIds.has(tool.id)) {
+    return {
+      ...tool,
+      websiteChecked: true,
+      founderVerified: false,
+      monthlyVisits: null
+    };
+  }
+  return {
+    ...tool,
+    rating: null,
+    reviewsCount: 0,
+    badge: (tool.claimedByFounder ? '✓ Founder Verified' : (tool.badge === '🔥 Lifetime Deal' ? '🔥 Lifetime Deal' : null)),
+    websiteChecked: true,
+    founderVerified: !!tool.claimedByFounder,
+    monthlyVisits: null
+  };
+});
