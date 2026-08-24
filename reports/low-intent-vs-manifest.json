@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T08:53:02.267Z",
+  "generatedAt": "2026-08-24T09:09:24.805Z",
   "totalLowIntentPairs": 237,
   "policy": "GRANDFATHERED_UNDER_REVIEW_DO_NOT_MASS_DELETE",
   "pairs": [
@@ -1443,7 +1443,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 35,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1462,7 +1462,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 35,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1481,7 +1481,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 35,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1500,7 +1500,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 35,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },

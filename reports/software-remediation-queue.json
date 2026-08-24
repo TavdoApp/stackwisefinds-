@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T08:53:02.269Z",
+  "generatedAt": "2026-08-24T09:09:24.809Z",
   "summary": {
     "totalSoftware": 1788,
     "tierA_HighestPriority": 230,
@@ -1232,25 +1232,22 @@
       "type": "software",
       "id": "notion",
       "name": "Notion",
-      "totalScore": 39,
-      "completenessScore": 33,
-      "provenanceScore": 20,
-      "provenanceLevel": "LOW",
-      "provenanceSource": "Untracked Historical Directory Record",
-      "band": "HOLD",
+      "totalScore": 92,
+      "completenessScore": 100,
+      "provenanceScore": 80,
+      "provenanceLevel": "HIGH",
+      "provenanceSource": "Primary Tracked Source: https://www.notion.so/pricing",
+      "band": "EXCELLENT",
       "remediationTier": "TIER_A",
       "breakdown": {
         "identity": 10,
-        "description": 16,
-        "features": 0,
-        "pricing": 10,
-        "useCase": 0,
-        "provenance": 3
+        "description": 25,
+        "features": 20,
+        "pricing": 12,
+        "useCase": 10,
+        "provenance": 15
       },
-      "issues": [
-        "Missing feature specifications (0 specs)",
-        "Missing explicit bestFor / target persona"
-      ]
+      "issues": []
     },
     {
       "url": "https://stakdock.com/software/linear/",

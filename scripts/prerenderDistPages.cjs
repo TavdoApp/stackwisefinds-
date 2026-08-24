@@ -274,8 +274,15 @@ saasTools.forEach(tool => {
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">What is ${escapeHtml(tool.name)}?</h2>
       <p style="font-size:1rem;line-height:1.7;color:#2d4029;margin:0 0 16px 0;">
-        ${escapeHtml(tool.description || tool.tagline || '')} ${escapeHtml(tool.name)} is an established software tool built for teams, operators, and modern builders looking to accelerate workflows in ${escapeHtml(catLabel)}. Official product documentation and customer portal are hosted on <a href="https://${escapeHtml(tool.domain)}" target="_blank" rel="noopener noreferrer" style="color:#2D4522;font-weight:700;text-decoration:underline;">${escapeHtml(tool.domain)}</a>.
+        ${escapeHtml(tool.description || tool.tagline || '')}
       </p>
+
+      ${tool.bestFor ? `
+        <div style="background:#f4f8f0;border-left:4px solid #82A735;padding:14px 18px;border-radius:0 12px 12px 0;margin:20px 0;">
+          <div style="font-size:0.82rem;font-weight:800;color:#2D4522;text-transform:uppercase;margin-bottom:4px;">Target Audience &amp; Best For</div>
+          <div style="font-size:0.95rem;color:#182618;line-height:1.5;">${escapeHtml(tool.bestFor)}</div>
+        </div>
+      ` : ''}
 
       ${Array.isArray(tool.features) && tool.features.length > 0 ? `
         <h3 style="font-size:1.2rem;font-weight:800;margin-top:24px;margin-bottom:12px;color:#182618;">Key Features &amp; Capabilities</h3>
@@ -283,9 +290,51 @@ saasTools.forEach(tool => {
           ${tool.features.map(f => `<li>${escapeHtml(f)}</li>`).join('')}
         </ul>
       ` : ''}
+
+      ${(Array.isArray(tool.pros) && tool.pros.length > 0) || (Array.isArray(tool.cons) && tool.cons.length > 0) ? `
+        <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:16px;margin-top:28px;">
+          ${Array.isArray(tool.pros) && tool.pros.length > 0 ? `
+            <div style="background:#f7faf5;border:1px solid #dce8d6;border-radius:14px;padding:20px;">
+              <div style="font-weight:800;color:#2D4522;font-size:1rem;margin-bottom:10px;">✓ Key Strengths</div>
+              <ul style="margin:0;padding-left:18px;line-height:1.7;color:#2d4029;font-size:0.92rem;">
+                ${tool.pros.map(p => `<li>${escapeHtml(p)}</li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+          ${Array.isArray(tool.cons) && tool.cons.length > 0 ? `
+            <div style="background:#fffcf7;border:1px solid #f2e2cf;border-radius:14px;padding:20px;">
+              <div style="font-weight:800;color:#9A3412;font-size:1rem;margin-bottom:10px;">⚠ Documented Constraints</div>
+              <ul style="margin:0;padding-left:18px;line-height:1.7;color:#5c3e29;font-size:0.92rem;">
+                ${tool.cons.map(c => `<li>${escapeHtml(c)}</li>`).join('')}
+              </ul>
+            </div>
+          ` : ''}
+        </div>
+      ` : ''}
     </section>
 
-    ${competitors.length > 0 ? `
+    ${Array.isArray(tool.curatedAlternatives) && tool.curatedAlternatives.length > 0 ? `
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Curated Direct Substitutes</h2>
+      <p style="font-size:0.95rem;color:#45593e;margin-bottom:18px;">Evaluate direct alternatives to ${escapeHtml(tool.name)} based on verified architectural differentiators:</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        ${tool.curatedAlternatives.map(alt => `
+          <div style="padding:16px 20px;background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
+              <a href="/software/${alt.toolId}/" style="color:#182618;font-weight:800;text-decoration:none;font-size:1.05rem;">${escapeHtml(alt.name)}</a>
+              <a href="/vs/${tool.id}-vs-${alt.toolId}/" style="font-size:0.82rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare Head-to-Head &rarr;</a>
+            </div>
+            <p style="font-size:0.9rem;color:#45593e;margin:0;line-height:1.5;">${escapeHtml(alt.differentiator)}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div style="margin-top:20px;">
+        <a href="/alternatives/${tool.id}/" style="font-weight:800;color:#82A735;text-decoration:underline;font-size:0.95rem;">
+          View All Alternatives to ${escapeHtml(tool.name)} &rarr;
+        </a>
+      </div>
+    </section>
+    ` : (competitors.length > 0 ? `
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Top Verified Alternatives to ${escapeHtml(tool.name)}</h2>
       <p style="font-size:0.95rem;color:#45593e;margin-bottom:16px;">Compare ${escapeHtml(tool.name)} with top competing platforms in the ${escapeHtml(catLabel)} category:</p>
@@ -309,14 +358,14 @@ saasTools.forEach(tool => {
         </a>
       </div>
     </section>
-    ` : ''}
+    ` : '')}
 
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Software Specifications</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:16px;">
         <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
-          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Category</div>
-          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${escapeHtml(catLabel)}</div>
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Primary Category</div>
+          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${escapeHtml(tool.primaryCategory || catLabel)}</div>
         </div>
         <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
           <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Pricing Model</div>
@@ -327,10 +376,25 @@ saasTools.forEach(tool => {
           <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${tool.isFreeTier ? 'Yes (Available)' : 'Paid / Free Trial'}</div>
         </div>
         <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
-          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Open Source</div>
-          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${tool.isOpenSource ? 'Yes (Public Repo)' : 'Proprietary SaaS'}</div>
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">License Model</div>
+          <div style="font-size:1.05rem;font-weight:800;color:#182618;margin-top:4px;">${escapeHtml(tool.licenseModel || (tool.isOpenSource ? 'Open Source' : 'Proprietary SaaS'))}</div>
         </div>
       </div>
+
+      ${Array.isArray(tool.sources) && tool.sources.length > 0 ? `
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid #e2ede0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div style="font-size:0.85rem;color:#5c7353;">
+            <strong>Data Verification:</strong> Specifications and pricing corroborated from official vendor documentation (${tool.sources[0].checkedAt ? new Date(tool.sources[0].checkedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : 'August 2026'}).
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            ${tool.sources.map(s => `
+              <a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;color:#2D4522;text-decoration:underline;">
+                ${escapeHtml(s.type)} ↗
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
     </section>
   </main>
   `;

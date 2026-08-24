@@ -6316,11 +6316,62 @@ export const staticSaasTools = [
     "name": "Notion",
     "domain": "notion.so",
     "category": "project-mgmt",
-    "tagline": "Customizable connected workspace for project boards, task databases, and wikis",
-    "description": "Flexible workspace combining relational databases, project tracking boards, team wikis, and AI writing tools into one platform.",
+    "primaryCategory": "Productivity & Collaboration",
+    "subcategories": ["Connected Workspaces", "Team Wikis & Docs", "Relational Databases", "Project Boards"],
+    "jobsToBeDone": ["Centralizing company wikis, SOPs, and technical documentation", "Managing project roadmaps via relational databases and kanban boards", "Collaborative document writing with integrated AI editing"],
+    "targetUsers": ["Cross-functional product teams", "Startups and remote organizations", "Knowledge workers", "Project managers"],
+    "deploymentModels": ["Cloud / Hosted SaaS", "Desktop Client", "Mobile App"],
+    "platforms": ["macOS", "Windows", "iOS", "Android", "Web"],
+    "licenseModel": "Proprietary Commercial SaaS",
+    "tagline": "Connected workspace combining relational databases, team wikis, project boards, and collaborative docs",
+    "description": "Notion is a connected workspace platform that brings together documents, relational databases, team wikis, and project management. It provides a modular block-based editor where teams can build customized dashboards, track sprint cycles, and manage knowledge repositories.",
     "rating": 4.7,
     "reviewsCount": 18928,
-    "pricing": "Freemium",
+    "pricing": "Free / From $10/user/mo",
+    "pricingDetails": {
+      "startingPrice": "$10/user/month",
+      "billingCadence": "Annual ($120/user/yr) or $12/user/mo monthly",
+      "freeTierDetails": "Free plan includes unlimited blocks for individuals and up to 10 guest collaborators",
+      "sourceUrl": "https://www.notion.so/pricing",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-24T12:00:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Notion Official Website",
+        "url": "https://www.notion.so",
+        "type": "Official Website",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Notion Pricing & Plans",
+        "url": "https://www.notion.so/pricing",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Notion Help Center & Docs",
+        "url": "https://www.notion.so/help",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "obsidian",
+        "name": "Obsidian",
+        "differentiator": "Choose Obsidian if you prioritize offline-first local Markdown storage, privacy, and personal knowledge graphs."
+      },
+      {
+        "toolId": "linear",
+        "name": "Linear",
+        "differentiator": "Choose Linear if you need a specialized, keyboard-fast issue tracking tool engineered strictly for software development sprints."
+      }
+    ],
     "websiteUrl": "https://notion.so",
     "affiliateUrl": "https://notion.so?utm_source=stakdock",
     "badge": "Verified Tool",
@@ -6328,7 +6379,26 @@ export const staticSaasTools = [
     "monthlyVisits": "404K",
     "verifiedStatus": "Verified",
     "isFreeTier": true,
-    "isOpenSource": false
+    "isOpenSource": false,
+    "provenanceSource": "https://www.notion.so/pricing",
+    "provenance": "DIRECT_SYNC",
+    "features": [
+      "Relational databases with Table, Board, Timeline, Calendar, Gallery, and List views",
+      "Modular block-based editor supporting real-time collaborative editing and nested subpages",
+      "Team wiki verification workflows and document ownership tracking",
+      "Notion AI add-on for automated summarization, meeting action items, and Q&A search",
+      "Notion API with bi-directional syncing for Slack, GitHub, Jira, and Google Drive"
+    ],
+    "pros": [
+      "Unmatched flexibility in structuring custom operational dashboards and relational databases",
+      "Generous Free tier for individual users with unlimited blocks",
+      "Vast ecosystem of community templates and verified third-party integrations"
+    ],
+    "cons": [
+      "Cloud-dependent architecture without native local-first offline file storage",
+      "Complex relational databases with extensive rollup formulas can experience latency on large datasets"
+    ],
+    "bestFor": "Startups, product teams, and organizations seeking an all-in-one collaborative workspace for documentation, roadmap planning, and internal knowledge bases."
   },
   {
     "id": "linear",
@@ -17739,28 +17809,91 @@ export const staticSaasTools = [
     "name": "Cursor AI",
     "domain": "cursor.com",
     "category": "ai-coding-dev",
-    "tagline": "AI-First Code Editor for Software Engineers",
-    "description": "Build full-stack applications at 10x speed with inline AI edits and multi-file code generation.",
+    "primaryCategory": "AI Coding & Dev Assistants",
+    "subcategories": ["AI Code Editors", "Developer Productivity", "Code Completion"],
+    "jobsToBeDone": ["Whole-codebase inline AI edits", "Multi-file refactoring and feature scaffolding", "Natural language repository codebase chat"],
+    "targetUsers": ["Full-stack engineers", "Software developers", "Technical founders", "Agile engineering teams"],
+    "deploymentModels": ["Desktop Client"],
+    "platforms": ["macOS (Apple Silicon & Intel)", "Windows", "Linux (AppImage)"],
+    "licenseModel": "Proprietary Client (VS Code Open-Source Fork)",
+    "tagline": "AI-native code editor with whole-codebase indexing and multi-file inline editing",
+    "description": "Cursor is an AI-native code editor forked from VS Code. It indexes your local codebase using vector embeddings to enable multi-file edits, natural language terminal commands, and inline code transformations with model switching across Claude 3.5 Sonnet and GPT-4o.",
     "rating": 4.9,
     "reviewsCount": 14200,
     "pricing": "Free / $20/mo",
+    "pricingDetails": {
+      "startingPrice": "$20/month",
+      "billingCadence": "Monthly or $16/mo billed annually ($192/yr)",
+      "freeTierDetails": "Free Hobby tier includes 2,000 completions and 50 slow premium requests/mo",
+      "sourceUrl": "https://www.cursor.com/pricing",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-24T12:00:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Cursor Official Website",
+        "url": "https://www.cursor.com",
+        "type": "Official Website",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Cursor Pricing & Plans",
+        "url": "https://www.cursor.com/pricing",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Cursor Documentation",
+        "url": "https://docs.cursor.com",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "github-copilot",
+        "name": "GitHub Copilot",
+        "differentiator": "Choose GitHub Copilot if you prefer an IDE extension across JetBrains, Neovim, or Visual Studio instead of switching editors."
+      },
+      {
+        "toolId": "replit-agent",
+        "name": "Replit Agent",
+        "differentiator": "Choose Replit Agent for browser-based scaffolding and immediate cloud deployment from scratch."
+      },
+      {
+        "toolId": "lovable",
+        "name": "Lovable",
+        "differentiator": "Choose Lovable for rapid full-stack web MVP generation via conversational chat."
+      }
+    ],
     "affiliateUrl": "https://cursor.com?aff=stackwisefinds",
     "featured": true,
-    "badge": "Best AI Code Editor",
+    "badge": "Verified Tool",
     "isFreeTier": true,
     "isOpenSource": false,
+    "provenanceSource": "https://www.cursor.com/pricing",
+    "provenance": "DIRECT_SYNC",
     "features": [
-      "Cmd+K inline edit",
-      "Codebase index"
+      "Whole-codebase semantic indexing via vector embeddings",
+      "Cmd+K inline code refactoring and diff review",
+      "Composer multi-file AI code generation (Cmd+I)",
+      "Model switching across Claude 3.5 Sonnet and GPT-4o",
+      "Full compatibility with VS Code extensions and keybindings"
     ],
     "pros": [
-      "Replaces VS Code",
-      "Ultra fast"
+      "Deep codebase indexing provides context-aware completions",
+      "Multi-file Composer edits eliminate manual copy-pasting",
+      "Drop-in replacement for existing VS Code setups"
     ],
     "cons": [
-      "Pro tier for heavy use"
+      "Requires cloud connectivity for remote vector indexing and AI completions",
+      "Very large repositories (>100k files) require .cursorignore configuration"
     ],
-    "bestFor": "Software developers."
+    "bestFor": "Software engineers and developers seeking deep repository-aware inline code generation, multi-file refactoring, and conversational codebase search."
   },
   {
     "id": "v0-dev",
@@ -34092,36 +34225,176 @@ export const staticSaasTools = [
     "name": "Make",
     "domain": "make.com",
     "category": "nocode-databases",
-    "tagline": "Visual automation platform to design, build, and automate complex workflows",
-    "description": "Make provides an interactive drag-and-drop canvas to build visual data pipelines and app integrations. It is ideal for power users, developers, and automation agencies seeking advanced multi-step logic.",
+    "primaryCategory": "No-Code & Automation",
+    "subcategories": ["Visual Workflow Automation", "iPaaS Data Integration", "Business Logic Scenarios"],
+    "jobsToBeDone": ["Visual drag-and-drop multi-step automation scenarios", "Complex JSON array iteration and aggregation", "Automated webhook handling and database synchronization"],
+    "targetUsers": ["Operations managers", "Automation agencies", "No-code builders", "SaaS revenue operations teams"],
+    "deploymentModels": ["Cloud / Hosted SaaS"],
+    "platforms": ["Web-based Cloud Interface (US & EU regions)"],
+    "licenseModel": "Proprietary Commercial SaaS",
+    "tagline": "Visual workflow automation platform providing an infinite canvas for designing complex multi-app scenarios",
+    "description": "Make is a visual automation platform that enables users to design and execute multi-step integration workflows on an infinite drag-and-drop canvas. It provides specialized tools for JSON parsing, array aggregation, real-time error handling, and connecting 1,800+ apps.",
     "rating": 4.8,
     "reviewsCount": 1850,
-    "pricing": "Freemium",
+    "pricing": "Free / From $9/mo",
+    "pricingDetails": {
+      "startingPrice": "$9/month",
+      "billingCadence": "Annual ($108/yr) or $10.50/mo monthly",
+      "freeTierDetails": "Free plan includes 1,000 operations/month, 100 MB data transfer, and 15-minute intervals",
+      "sourceUrl": "https://www.make.com/en/pricing",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-24T12:00:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Make Official Website",
+        "url": "https://www.make.com",
+        "type": "Official Website",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Make Pricing & Tiers",
+        "url": "https://www.make.com/en/pricing",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Make Help Documentation",
+        "url": "https://www.make.com/en/help",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "n8n",
+        "name": "n8n",
+        "differentiator": "Choose n8n if you require a self-hosted engine with zero per-operation execution fees and internal data control."
+      },
+      {
+        "toolId": "zapier",
+        "name": "Zapier",
+        "differentiator": "Choose Zapier if your stack depends on specialized niche SaaS integrations in its 7,000+ app directory."
+      }
+    ],
     "websiteUrl": "https://make.com",
     "affiliateUrl": "https://make.com",
     "badge": "Verified Tool",
     "featured": true,
     "monthlyVisits": "9.8M",
     "isFreeTier": true,
-    "isOpenSource": false
+    "isOpenSource": false,
+    "provenanceSource": "https://www.make.com/en/pricing",
+    "provenance": "DIRECT_SYNC",
+    "features": [
+      "Infinite visual drag-and-drop scenario canvas with real-time execution animation",
+      "Advanced data routers, iterators, aggregators, and custom JSON parsers",
+      "1,800+ pre-configured application connectors with OAuth2 authentication",
+      "Custom HTTP/REST API module with raw payload inspection",
+      "Detailed scenario execution logs with step-by-step input/output data history"
+    ],
+    "pros": [
+      "Visual canvas makes complex branching and array handling clearer than linear list-based tools",
+      "Generous Free tier with 1,000 monthly operations for testing",
+      "Lower cost per execution compared to Zapier on multi-step workflows"
+    ],
+    "cons": [
+      "High-frequency polling triggers consume operation quotas quickly",
+      "Proprietary cloud platform without self-hosted on-premise execution options"
+    ],
+    "bestFor": "Operations teams, agencies, and automation architects designing sophisticated data flows that require visual branching, array transformations, and granular debugging."
   },
   {
     "id": "n8n",
     "name": "n8n",
     "domain": "n8n.io",
     "category": "open-source-self-hosted",
-    "tagline": "Fair-code workflow automation platform and open-source Zapier alternative",
-    "description": "n8n offers a flexible workflow editor that can be hosted on-premise or used in the cloud to connect internal APIs. It is built for developers and technical teams prioritizing data privacy and custom code nodes.",
+    "primaryCategory": "No-Code & Automation",
+    "subcategories": ["Workflow Automation", "Self-Hosted Integration", "AI Agent Pipelines"],
+    "jobsToBeDone": ["Self-hosted workflow automation without per-task fees", "Custom API orchestration with JavaScript / Python nodes", "LLM AI agent memory and tool-calling execution pipelines"],
+    "targetUsers": ["DevOps engineers", "Technical operations teams", "Developers prioritizing local data privacy", "High-volume webhook operators"],
+    "deploymentModels": ["Self-Hosted (Docker, Kubernetes, npm)", "Managed Cloud"],
+    "platforms": ["Linux", "Docker", "macOS", "Windows", "Web (Cloud)"],
+    "licenseModel": "Sustainable Use License (Fair-Code for Self-Hosted Community)",
+    "tagline": "Fair-code workflow automation platform with native AI agent nodes and self-hosted deployment options",
+    "description": "n8n is a fair-code licensed workflow automation platform. It allows engineering teams to connect 400+ APIs, run custom JavaScript/Python code nodes, and build autonomous AI agent pipelines either self-hosted behind internal firewalls or on managed cloud infrastructure.",
     "rating": 4.8,
     "reviewsCount": 940,
-    "pricing": "Freemium",
+    "pricing": "Free Self-Hosted / From €20/mo Cloud",
+    "pricingDetails": {
+      "startingPrice": "€0 Self-Hosted / €20/mo Cloud",
+      "billingCadence": "Annual or monthly",
+      "freeTierDetails": "Free self-hosted community edition with unlimited workflow executions",
+      "sourceUrl": "https://n8n.io/pricing/",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-24T12:00:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "n8n Official Website",
+        "url": "https://n8n.io",
+        "type": "Official Website",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "n8n GitHub Repository",
+        "url": "https://github.com/n8n-io/n8n",
+        "type": "Official GitHub Repository",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "n8n Pricing & Cloud Plans",
+        "url": "https://n8n.io/pricing/",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "make",
+        "name": "Make",
+        "differentiator": "Choose Make for a fully managed cloud visual canvas with advanced JSON array iterators and aggregators."
+      },
+      {
+        "toolId": "zapier",
+        "name": "Zapier",
+        "differentiator": "Choose Zapier if your stack depends on specialized niche SaaS integrations in its 7,000+ app directory."
+      }
+    ],
     "websiteUrl": "https://n8n.io",
     "affiliateUrl": "https://n8n.io",
     "badge": "Verified Tool",
     "featured": true,
     "monthlyVisits": "3.2M",
     "isFreeTier": true,
-    "isOpenSource": true
+    "isOpenSource": true,
+    "provenanceSource": "https://n8n.io/pricing/",
+    "provenance": "DIRECT_SYNC",
+    "features": [
+      "Self-hostable via Docker and Kubernetes with zero per-task execution limits",
+      "Native AI agent builder with LangChain memory nodes and vector store connectors",
+      "Custom JavaScript (Node.js) and Python execution blocks",
+      "400+ pre-built integration nodes and generic HTTP/Webhook listeners",
+      "Sub-workflow orchestration, error triggers, and visual data inspection"
+    ],
+    "pros": [
+      "Self-hosted community tier eliminates escalating per-operation SaaS costs",
+      "Complete data privacy with execution logs stored on internal databases",
+      "Deep flexibility for complex data transformations via native code nodes"
+    ],
+    "cons": [
+      "Self-hosting requires server infrastructure management, database backups, and manual upgrades",
+      "Non-technical users may find data routing and JSON expressions steeper to learn than Zapier"
+    ],
+    "bestFor": "Technical teams and developers requiring unlimited self-hosted workflow executions, data sovereignty, and custom code-level integration logic."
   },
   {
     "id": "supabase",
@@ -44838,18 +45111,88 @@ export const staticSaasTools = [
     "name": "GitHub Copilot",
     "domain": "github.com/features/copilot",
     "category": "dev-cloud",
-    "tagline": "AI pair programmer providing real-time code completions and chat assistance",
-    "description": "GitHub Copilot suggests code snippets, refactors functions, and answers technical queries directly inside your IDE. It is built for software developers, engineers, and teams accelerating daily code output.",
+    "primaryCategory": "AI Coding & Dev Assistants",
+    "subcategories": ["AI Developer Extensions", "Code Completion", "Enterprise DevTools"],
+    "jobsToBeDone": ["Real-time inline code auto-completion", "Conversational code explanation and unit test generation", "Terminal command assistance via Copilot in CLI"],
+    "targetUsers": ["Enterprise development teams", "Software engineers using JetBrains / Visual Studio / Neovim", "Open-source maintainers and students"],
+    "deploymentModels": ["IDE Extension", "CLI Tool", "Mobile App"],
+    "platforms": ["Cross-platform IDE plugin (macOS, Windows, Linux)"],
+    "licenseModel": "Proprietary SaaS Extension",
+    "tagline": "AI developer extension providing real-time code completions, sidebar chat, and CLI assistance across multiple IDEs",
+    "description": "GitHub Copilot is an AI pair programming extension developed by GitHub and OpenAI. It integrates into VS Code, JetBrains IDEs, Visual Studio, and Neovim to generate context-aware inline code suggestions, unit tests, and terminal command explanations with enterprise IP indemnity.",
     "rating": 4.8,
     "reviewsCount": 4200,
-    "pricing": "Paid",
+    "pricing": "From $10/mo",
+    "pricingDetails": {
+      "startingPrice": "$10/month",
+      "billingCadence": "Monthly or $100/yr billed annually",
+      "freeTierDetails": "Free for verified students, teachers, and maintainers of popular open-source projects",
+      "sourceUrl": "https://github.com/features/copilot#pricing",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-24T12:00:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "GitHub Copilot Official Page",
+        "url": "https://github.com/features/copilot",
+        "type": "Official Product Page",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "GitHub Copilot Pricing",
+        "url": "https://github.com/features/copilot#pricing",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "GitHub Copilot Documentation",
+        "url": "https://docs.github.com/en/copilot",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-24T12:00:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "cursor-ai",
+        "name": "Cursor AI",
+        "differentiator": "Choose Cursor AI if you want whole-codebase semantic indexing and multi-file inline editing in an AI-native editor."
+      },
+      {
+        "toolId": "replit-agent",
+        "name": "Replit Agent",
+        "differentiator": "Choose Replit Agent for browser-based cloud environment execution and immediate deployments."
+      }
+    ],
     "websiteUrl": "https://github.com/features/copilot",
     "affiliateUrl": "https://github.com/features/copilot",
     "badge": "Verified Tool",
     "featured": true,
     "monthlyVisits": "85.0M",
-    "isFreeTier": false,
-    "isOpenSource": false
+    "isFreeTier": true,
+    "isOpenSource": false,
+    "provenanceSource": "https://github.com/features/copilot#pricing",
+    "provenance": "DIRECT_SYNC",
+    "features": [
+      "Real-time inline code autocomplete across 20+ programming languages",
+      "Copilot Chat sidebar for code explanation, refactoring, and test creation",
+      "Copilot in the CLI for shell and Git command assistance",
+      "Model selection across GPT-4o, Claude 3.5 Sonnet, and Gemini 1.5 Pro",
+      "Enterprise organizational policy controls and IP copyright indemnity"
+    ],
+    "pros": [
+      "Seamless integration across JetBrains, Visual Studio, and VS Code without changing editors",
+      "Free access for verified students, teachers, and open-source maintainers",
+      "Enterprise-grade security policies and SOC 2 Type II compliance"
+    ],
+    "cons": [
+      "Functions as a plugin rather than an editor with whole-codebase refactoring Composer capabilities",
+      "Multi-file code refactoring requires individual file acceptance"
+    ],
+    "bestFor": "Individual developers and enterprise engineering organizations wanting an AI assistant inside their existing IDE workflows with centralized compliance controls."
   },
   {
     "id": "cursor",

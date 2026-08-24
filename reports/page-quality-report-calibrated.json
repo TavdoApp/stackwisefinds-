@@ -1,82 +1,82 @@
 {
-  "generatedAt": "2026-08-24T08:53:02.270Z",
+  "generatedAt": "2026-08-24T09:09:24.810Z",
   "auditMode": "STEP_3_CONTROLLED_SEO_RECOVERY_BASELINE",
   "summary": {
     "totalRoutesEvaluated": 4126,
     "globalStats": {
       "total": 4126,
-      "avg": 45,
+      "avg": 45.1,
       "median": 44,
       "min": 21,
-      "max": 96,
+      "max": 98,
       "counts": {
-        "excellent": 20,
-        "good": 36,
-        "needsImprovement": 1428,
-        "hold": 2642
+        "excellent": 28,
+        "good": 39,
+        "needsImprovement": 1425,
+        "hold": 2634
       },
       "percentages": {
-        "excellent": 0.5,
+        "excellent": 0.7,
         "good": 0.9,
-        "needsImprovement": 34.6,
-        "hold": 64
+        "needsImprovement": 34.5,
+        "hold": 63.8
       }
     },
     "byTemplate": {
       "software": {
         "total": 1788,
-        "avg": 43.6,
+        "avg": 43.7,
         "median": 44,
         "min": 26,
-        "max": 86,
+        "max": 92,
         "counts": {
-          "excellent": 3,
+          "excellent": 8,
           "good": 0,
-          "needsImprovement": 583,
-          "hold": 1202
+          "needsImprovement": 582,
+          "hold": 1198
         },
         "percentages": {
-          "excellent": 0.2,
+          "excellent": 0.4,
           "good": 0,
           "needsImprovement": 32.6,
-          "hold": 67.2
+          "hold": 67
         }
       },
       "alternatives": {
         "total": 1788,
-        "avg": 45.7,
+        "avg": 45.8,
         "median": 40,
         "min": 23,
-        "max": 96,
+        "max": 98,
         "counts": {
-          "excellent": 1,
-          "good": 2,
-          "needsImprovement": 582,
-          "hold": 1203
+          "excellent": 3,
+          "good": 5,
+          "needsImprovement": 581,
+          "hold": 1199
         },
         "percentages": {
-          "excellent": 0.1,
-          "good": 0.1,
-          "needsImprovement": 32.6,
-          "hold": 67.3
+          "excellent": 0.2,
+          "good": 0.3,
+          "needsImprovement": 32.5,
+          "hold": 67.1
         }
       },
       "versus": {
         "total": 507,
-        "avg": 44.3,
+        "avg": 44.5,
         "median": 60,
         "min": 21,
         "max": 84,
         "counts": {
-          "excellent": 8,
+          "excellent": 9,
           "good": 2,
-          "needsImprovement": 260,
+          "needsImprovement": 259,
           "hold": 237
         },
         "percentages": {
-          "excellent": 1.6,
+          "excellent": 1.8,
           "good": 0.4,
-          "needsImprovement": 51.3,
+          "needsImprovement": 51.1,
           "hold": 46.7
         }
       },
