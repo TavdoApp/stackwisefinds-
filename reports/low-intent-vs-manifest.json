@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T08:43:19.929Z",
+  "generatedAt": "2026-08-24T08:53:02.267Z",
   "totalLowIntentPairs": 237,
   "policy": "GRANDFATHERED_UNDER_REVIEW_DO_NOT_MASS_DELETE",
   "pairs": [
@@ -37,7 +37,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 36,
+      "totalScore": 35,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -56,7 +56,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 36,
+      "totalScore": 35,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -75,7 +75,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 32,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -94,7 +94,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 34,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -113,7 +113,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -132,7 +132,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -151,7 +151,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -170,7 +170,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -189,7 +189,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 35,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -208,7 +208,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 35,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -227,7 +227,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -246,7 +246,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -265,7 +265,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -284,7 +284,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 32,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -303,7 +303,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 32,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -322,7 +322,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 32,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -341,7 +341,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -360,7 +360,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 31,
+      "totalScore": 30,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -379,7 +379,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 31,
+      "totalScore": 30,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -398,7 +398,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 31,
+      "totalScore": 30,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -417,7 +417,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 31,
+      "totalScore": 30,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -436,7 +436,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 31,
+      "totalScore": 30,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -455,7 +455,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 31,
+      "totalScore": 30,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -474,7 +474,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 34,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -493,7 +493,7 @@
       },
       "intent": "LOW",
       "intentReason": "Target audience mismatch: Consumer Bill Splitter vs Enterprise Billing SaaS",
-      "totalScore": 34,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -512,7 +512,7 @@
       },
       "intent": "LOW",
       "intentReason": "Target audience mismatch: Consumer Bill Splitter vs Enterprise Billing SaaS",
-      "totalScore": 34,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -531,7 +531,7 @@
       },
       "intent": "LOW",
       "intentReason": "Target audience mismatch: Consumer Bill Splitter vs Enterprise Billing SaaS",
-      "totalScore": 34,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -550,7 +550,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 34,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -569,7 +569,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -588,7 +588,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -607,7 +607,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -626,7 +626,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -645,7 +645,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -664,7 +664,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -683,7 +683,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -702,7 +702,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -721,7 +721,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -740,7 +740,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -759,7 +759,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -778,7 +778,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -797,7 +797,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -816,7 +816,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -835,7 +835,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -854,7 +854,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -873,7 +873,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -892,7 +892,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -911,7 +911,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -930,7 +930,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -949,7 +949,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -968,7 +968,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -987,7 +987,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1006,7 +1006,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 22,
+      "totalScore": 21,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1025,7 +1025,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1044,7 +1044,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1063,7 +1063,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1082,7 +1082,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1101,7 +1101,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1120,7 +1120,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1139,7 +1139,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1158,7 +1158,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1177,7 +1177,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1196,7 +1196,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1215,7 +1215,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1234,7 +1234,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1253,7 +1253,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1272,7 +1272,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1291,7 +1291,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1310,7 +1310,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1329,7 +1329,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1348,7 +1348,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1367,7 +1367,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1386,7 +1386,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1405,7 +1405,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1424,7 +1424,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1443,7 +1443,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1462,7 +1462,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1481,7 +1481,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1500,7 +1500,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1519,7 +1519,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1538,7 +1538,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1557,7 +1557,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1576,7 +1576,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1595,7 +1595,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1614,7 +1614,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1633,7 +1633,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1652,7 +1652,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1671,7 +1671,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1690,7 +1690,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1709,7 +1709,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1728,7 +1728,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1747,7 +1747,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1766,7 +1766,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1785,7 +1785,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1804,7 +1804,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1823,7 +1823,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1842,7 +1842,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1861,7 +1861,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1880,7 +1880,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1899,7 +1899,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1918,7 +1918,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1937,7 +1937,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 32,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1956,7 +1956,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1975,7 +1975,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -1994,7 +1994,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2013,7 +2013,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2032,7 +2032,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2051,7 +2051,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 33,
+      "totalScore": 31,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2070,7 +2070,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2089,7 +2089,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2108,7 +2108,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2127,7 +2127,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2146,7 +2146,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2165,7 +2165,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2184,7 +2184,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2203,7 +2203,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2222,7 +2222,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2241,7 +2241,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2260,7 +2260,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2279,7 +2279,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2298,7 +2298,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2317,7 +2317,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2336,7 +2336,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2355,7 +2355,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2374,7 +2374,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2393,7 +2393,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2412,7 +2412,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2431,7 +2431,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2450,7 +2450,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2469,7 +2469,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2488,7 +2488,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2507,7 +2507,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2526,7 +2526,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 22,
+      "totalScore": 21,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2545,7 +2545,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2564,7 +2564,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2583,7 +2583,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2602,7 +2602,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 23,
+      "totalScore": 22,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2621,7 +2621,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Meeting Assistant vs Code Editor",
-      "totalScore": 24,
+      "totalScore": 23,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2640,7 +2640,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Video Ad Generator vs Screen Recorder",
-      "totalScore": 41,
+      "totalScore": 39,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2659,7 +2659,7 @@
       },
       "intent": "LOW",
       "intentReason": "Sub-niche mismatch: Video Ad Generator vs Screen Recorder",
-      "totalScore": 41,
+      "totalScore": 39,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2678,7 +2678,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2697,7 +2697,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2716,7 +2716,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2735,7 +2735,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2754,7 +2754,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2773,7 +2773,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2792,7 +2792,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2811,7 +2811,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2830,7 +2830,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2849,7 +2849,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2868,7 +2868,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2887,7 +2887,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2906,7 +2906,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2925,7 +2925,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2944,7 +2944,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2963,7 +2963,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -2982,7 +2982,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3001,7 +3001,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3020,7 +3020,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3039,7 +3039,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3058,7 +3058,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3077,7 +3077,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3096,7 +3096,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3115,7 +3115,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3134,7 +3134,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3153,7 +3153,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3172,7 +3172,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3191,7 +3191,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3210,7 +3210,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3229,7 +3229,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3248,7 +3248,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3267,7 +3267,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3286,7 +3286,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3305,7 +3305,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3324,7 +3324,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3343,7 +3343,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3362,7 +3362,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3381,7 +3381,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3400,7 +3400,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3419,7 +3419,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3438,7 +3438,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3457,7 +3457,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3476,7 +3476,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3495,7 +3495,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3514,7 +3514,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3533,7 +3533,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3552,7 +3552,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3571,7 +3571,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3590,7 +3590,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3609,7 +3609,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3628,7 +3628,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3647,7 +3647,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3666,7 +3666,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3685,7 +3685,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3704,7 +3704,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3723,7 +3723,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3742,7 +3742,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3761,7 +3761,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3780,7 +3780,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3799,7 +3799,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3818,7 +3818,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3837,7 +3837,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3856,7 +3856,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3875,7 +3875,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3894,7 +3894,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3913,7 +3913,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3932,7 +3932,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3951,7 +3951,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3970,7 +3970,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -3989,7 +3989,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4008,7 +4008,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4027,7 +4027,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4046,7 +4046,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4065,7 +4065,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4084,7 +4084,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4103,7 +4103,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4122,7 +4122,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4141,7 +4141,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4160,7 +4160,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4179,7 +4179,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4198,7 +4198,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4217,7 +4217,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4236,7 +4236,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4255,7 +4255,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4274,7 +4274,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4293,7 +4293,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4312,7 +4312,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4331,7 +4331,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4350,7 +4350,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4369,7 +4369,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4388,7 +4388,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4407,7 +4407,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4426,7 +4426,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4445,7 +4445,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4464,7 +4464,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 26,
+      "totalScore": 25,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4483,7 +4483,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     },
@@ -4502,7 +4502,7 @@
       },
       "intent": "LOW",
       "intentReason": "Shared category but thin uncorroborated specs",
-      "totalScore": 25,
+      "totalScore": 24,
       "band": "HOLD",
       "recommendedAction": "NOINDEX"
     }

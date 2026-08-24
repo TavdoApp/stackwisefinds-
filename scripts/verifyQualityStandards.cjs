@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🛡️  Running Google Algorithm Defense & Quality Compliance Gate (2026 Policy)...');
+console.log('🛡️  Running StakDock Internal Quality Standards & Integrity Gate...');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
@@ -17,7 +17,7 @@ const urls = [...sitemap.matchAll(/<loc>https:\/\/stakdock\.com([^<]*)<\/loc>/g)
 let errors = [];
 let checkedPages = 0;
 
-// Banned generic boilerplate phrase signatures that trigger Scaled Content Abuse filters
+// Banned generic boilerplate phrase signatures that indicate uncurated repetitive copy
 const bannedSignatures = [
   'operates on a Freemium pricing model. Users can test',
   'periodically offers promotional pricing tiers and verified founder deals for new users',
@@ -36,21 +36,21 @@ for (const route of urls) {
 
   const content = fs.readFileSync(indexFile, 'utf8');
 
-  // Guard 1: Anti-Scaled Content Abuse (Banned Generic FAQ loops)
+  // Check 1: Repetitive boilerplate phrases
   for (const sig of bannedSignatures) {
     if (content.includes(sig)) {
-      errors.push(`[Scaled Content Abuse]: ${route} contains repetitive boilerplate spam: "${sig.slice(0, 40)}..."`);
+      errors.push(`[Repetitive Boilerplate]: ${route} contains banned template phrase: "${sig.slice(0, 40)}..."`);
       break;
     }
   }
 
-  // Guard 2: Strict Canonical URL Format (Trailing Slash & HTTPS)
+  // Check 2: Strict Canonical URL Format (Trailing Slash & HTTPS)
   const canonicalExpected = `https://stakdock.com${route.endsWith('/') ? route : route + '/'}`;
   if (!content.includes(`rel="canonical" href="${canonicalExpected}"`) && !content.includes(`href="${canonicalExpected}" rel="canonical"`)) {
-    errors.push(`[Canonical Error]: ${route} does not have strict trailing-slash canonical ${canonicalExpected}`);
+    errors.push(`[Canonical Error]: ${route} does not match expected canonical format ${canonicalExpected}`);
   }
 
-  // Guard 3: High-Value Content & Structure
+  // Check 3: High-Value Content & Structure
   if (route.startsWith('/vs/')) {
     if (!content.includes('<table') && !content.includes('Specification Matrix')) {
       errors.push(`[Thin VS Page]: ${route} is missing side-by-side comparison matrix`);
@@ -63,7 +63,7 @@ for (const route of urls) {
     }
   }
 
-  // Guard 4: Word count threshold for programmatic content pages
+  // Check 4: Word count threshold for content pages
   if (cleanRoute !== '') {
     const textOnly = content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
     const wordCount = textOnly.split(' ').length;
@@ -73,12 +73,12 @@ for (const route of urls) {
   }
 
   if (errors.length >= 10) {
-    console.error(`❌ Premature exit: First 10 Google Algorithm Defense violations:\n`, errors.join('\n'));
+    console.error(`❌ Premature exit: First 10 Quality Standards violations:\n`, errors.join('\n'));
     process.exit(1);
   }
 }
 
-// Guard 5: Zero Loose .html Duplicates in dist/
+// Check 5: Zero Loose .html Duplicates in dist/
 const subdirsToCheck = ['software', 'alternatives', 'vs', 'best', 'category', 'guides'];
 for (const sub of subdirsToCheck) {
   const dirPath = path.join(distDir, sub);
@@ -86,14 +86,14 @@ for (const sub of subdirsToCheck) {
     const files = fs.readdirSync(dirPath);
     const looseHtml = files.filter(f => f.endsWith('.html') && f !== 'index.html');
     if (looseHtml.length > 0) {
-      errors.push(`[Duplicate URL Risk]: Found ${looseHtml.length} loose .html files in dist/${sub}/ (e.g. ${looseHtml[0]}). These must be removed to prevent GSC URL cannibalization.`);
+      errors.push(`[Duplicate URL Risk]: Found ${looseHtml.length} loose .html files in dist/${sub}/ (e.g. ${looseHtml[0]}). Clean directory structure requires index.html inside route folders.`);
     }
   }
 }
 
 if (errors.length > 0) {
-  console.error(`❌ Google Algorithm Compliance Check FAILED with ${errors.length} violations:\n`, errors.slice(0, 10).join('\n'));
+  console.error(`❌ StakDock Quality Standards Gate FAILED with ${errors.length} violations:\n`, errors.slice(0, 10).join('\n'));
   process.exit(1);
 }
 
-console.log(`✅ Google Algorithm Defense Gate PASSED: 100% of ${checkedPages} pages comply with Anti-Scaled Content Abuse, strict trailing-slash canonicals, zero loose duplicates, and high-entropy comparison matrices!`);
+console.log(`✅ StakDock Quality Standards Gate PASSED: 100% of ${checkedPages} pages comply with strict trailing-slash canonicals, zero duplicate flat files, structured comparison specs, and minimum word-count integrity.`);

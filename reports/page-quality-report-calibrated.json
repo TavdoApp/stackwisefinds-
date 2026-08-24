@@ -1,82 +1,82 @@
 {
-  "generatedAt": "2026-08-24T08:43:19.933Z",
+  "generatedAt": "2026-08-24T08:53:02.270Z",
   "auditMode": "STEP_3_CONTROLLED_SEO_RECOVERY_BASELINE",
   "summary": {
     "totalRoutesEvaluated": 4126,
     "globalStats": {
       "total": 4126,
-      "avg": 51.7,
-      "median": 52,
-      "min": 22,
-      "max": 98,
+      "avg": 45,
+      "median": 44,
+      "min": 21,
+      "max": 96,
       "counts": {
-        "excellent": 85,
-        "good": 478,
-        "needsImprovement": 2171,
-        "hold": 1392
+        "excellent": 20,
+        "good": 36,
+        "needsImprovement": 1428,
+        "hold": 2642
       },
       "percentages": {
-        "excellent": 2.1,
-        "good": 11.6,
-        "needsImprovement": 52.6,
-        "hold": 33.7
+        "excellent": 0.5,
+        "good": 0.9,
+        "needsImprovement": 34.6,
+        "hold": 64
       }
     },
     "byTemplate": {
       "software": {
         "total": 1788,
-        "avg": 51.2,
-        "median": 49,
+        "avg": 43.6,
+        "median": 44,
         "min": 26,
-        "max": 88,
+        "max": 86,
         "counts": {
-          "excellent": 6,
-          "good": 199,
-          "needsImprovement": 1006,
-          "hold": 577
+          "excellent": 3,
+          "good": 0,
+          "needsImprovement": 583,
+          "hold": 1202
         },
         "percentages": {
-          "excellent": 0.3,
-          "good": 11.1,
-          "needsImprovement": 56.3,
-          "hold": 32.3
+          "excellent": 0.2,
+          "good": 0,
+          "needsImprovement": 32.6,
+          "hold": 67.2
         }
       },
       "alternatives": {
         "total": 1788,
-        "avg": 53.2,
-        "median": 53,
-        "min": 26,
-        "max": 98,
+        "avg": 45.7,
+        "median": 40,
+        "min": 23,
+        "max": 96,
         "counts": {
-          "excellent": 63,
-          "good": 142,
-          "needsImprovement": 1005,
-          "hold": 578
+          "excellent": 1,
+          "good": 2,
+          "needsImprovement": 582,
+          "hold": 1203
         },
         "percentages": {
-          "excellent": 3.5,
-          "good": 7.9,
-          "needsImprovement": 56.2,
-          "hold": 32.3
+          "excellent": 0.1,
+          "good": 0.1,
+          "needsImprovement": 32.6,
+          "hold": 67.3
         }
       },
       "versus": {
         "total": 507,
-        "avg": 46.3,
-        "median": 61,
-        "min": 22,
-        "max": 86,
+        "avg": 44.3,
+        "median": 60,
+        "min": 21,
+        "max": 84,
         "counts": {
           "excellent": 8,
-          "good": 105,
-          "needsImprovement": 157,
+          "good": 2,
+          "needsImprovement": 260,
           "hold": 237
         },
         "percentages": {
           "excellent": 1.6,
-          "good": 20.7,
-          "needsImprovement": 31,
+          "good": 0.4,
+          "needsImprovement": 51.3,
           "hold": 46.7
         }
       },
@@ -123,9 +123,9 @@
   "remediationQueues": {
     "lowIntentVsCount": 237,
     "softwareTiers": {
-      "tierA": 303,
-      "tierB": 1386,
-      "tierC": 99
+      "tierA": 230,
+      "tierB": 523,
+      "tierC": 1035
     }
   }
 }

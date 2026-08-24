@@ -212,7 +212,7 @@ export default function ArticleView({ article, onBack }) {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', color: 'var(--text-muted)', fontSize: '0.88rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '20px', flexWrap: 'wrap' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <User size={14} color="#82A735" /> <span>{article.author || 'Ossama Tbili'}</span>
+            <User size={14} color="#82A735" /> <span>{article.author || 'StakDock Directory Editors'}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <Calendar size={14} color="#82A735" /> <span>{formattedDate}</span>
@@ -293,6 +293,64 @@ export default function ArticleView({ article, onBack }) {
           <strong>Transparency Disclosure:</strong> StakDock is reader-supported. When you purchase software through partner links on our site, we may earn an affiliate commission at zero extra cost to you.
         </p>
       </div>
+
+      {/* Executive Summary Box */}
+      {article.executiveSummary && (
+        <div style={{
+          background: 'var(--bg-sage, #F4F8F0)',
+          border: '1px solid #D2E4C8',
+          borderRadius: '18px',
+          padding: '24px',
+          marginBottom: '28px'
+        }}>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: '800', marginTop: 0, marginBottom: '8px', color: 'var(--text-dark, #182618)' }}>
+            Executive Summary & Key Findings
+          </h3>
+          <p style={{ fontSize: '0.98rem', lineHeight: '1.6', color: 'var(--text-muted, #2d4029)', margin: 0 }}>
+            {article.executiveSummary}
+          </p>
+        </div>
+      )}
+
+      {/* Structured Comparison Table */}
+      {Array.isArray(article.comparisonTable) && article.comparisonTable.length > 0 && (
+        <div style={{
+          background: '#FFFFFF',
+          border: '1px solid var(--border-color, #dce8d6)',
+          borderRadius: '20px',
+          padding: '28px',
+          marginBottom: '28px',
+          overflowX: 'auto'
+        }}>
+          <h3 style={{ fontSize: '1.35rem', fontWeight: '800', marginTop: 0, marginBottom: '16px', color: 'var(--text-dark, #182618)' }}>
+            Specification & Pricing Matrix
+          </h3>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.92rem' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid var(--border-color, #e2ede0)' }}>
+                <th style={{ padding: '10px', color: '#5c7353', fontWeight: '800' }}>Software Platform</th>
+                <th style={{ padding: '10px', color: '#5c7353', fontWeight: '800' }}>Primary Focus / Specialization</th>
+                <th style={{ padding: '10px', color: '#5c7353', fontWeight: '800' }}>Pricing Model</th>
+                <th style={{ padding: '10px', color: '#5c7353', fontWeight: '800' }}>Free Tier</th>
+                <th style={{ padding: '10px', color: '#5c7353', fontWeight: '800' }}>Key Characteristic</th>
+              </tr>
+            </thead>
+            <tbody>
+              {article.comparisonTable.map((row, idx) => (
+                <tr key={idx} style={{ borderBottom: '1px solid #f0f4ee' }}>
+                  <td style={{ padding: '10px', fontWeight: '800', color: 'var(--text-dark, #182618)' }}>{row.tool}</td>
+                  <td style={{ padding: '10px', color: 'var(--text-muted, #45593e)' }}>{row.bestFor}</td>
+                  <td style={{ padding: '10px', color: 'var(--text-dark, #182618)', fontWeight: '700' }}>{row.pricing}</td>
+                  <td style={{ padding: '10px', color: '#2D4522' }}>{row.freeTier}</td>
+                  <td style={{ padding: '10px', color: '#2D4522', fontWeight: '700' }}>
+                    <span style={{ display: 'inline-block', padding: '2px 8px', borderRadius: '6px', background: '#f0f4ee', fontSize: '0.85rem' }}>{row.badge || 'Verified Specs'}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
 
       {/* Formatted Article Body */}
       {article.content && (

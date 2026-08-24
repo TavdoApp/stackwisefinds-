@@ -484,7 +484,20 @@ function getVsPairsList(tools) {
   return Array.from(map.values());
 }
 
-// Factual dynamic intro generator for VS comparisons
+function sanitizeMarketingClaims(str) {
+  if (!str || typeof str !== 'string') return '';
+  return str
+    .replace(/\b10x\s+(faster|speed)?\b/gi, '')
+    .replace(/\b#1\b/gi, '')
+    .replace(/\bworld['’]?s\s+best\b/gi, '')
+    .replace(/\bthe\s+best\b/gi, 'a')
+    .replace(/\bindustry-leading\b/gi, 'established')
+    .replace(/\bultimate\b/gi, 'comprehensive')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// Factual dynamic intro generator for VS comparisons (sanitized, zero-hyperbole)
 function generateFactualVsIntro(tA, tB) {
   let intro = `Comparing ${escapeHtml(tA.name)} and ${escapeHtml(tB.name)} in 2026. `;
   
@@ -502,8 +515,12 @@ function generateFactualVsIntro(tA, tB) {
     intro += `${escapeHtml(tA.name)} is open-source for self-hosting teams, while ${escapeHtml(tB.name)} is a proprietary hosted platform. `;
   } else if (!tA.isOpenSource && tB.isOpenSource) {
     intro += `${escapeHtml(tB.name)} provides an open-source codebase, compared to the proprietary architecture of ${escapeHtml(tA.name)}. `;
-  } else if (tA.tagline && tB.tagline && tA.tagline !== tB.tagline) {
-    intro += `${escapeHtml(tA.name)} focuses on ${escapeHtml(tA.tagline.toLowerCase())}, whereas ${escapeHtml(tB.name)} specializes in ${escapeHtml(tB.tagline.toLowerCase())}. `;
+  } else {
+    const cleanTagA = sanitizeMarketingClaims(tA.tagline);
+    const cleanTagB = sanitizeMarketingClaims(tB.tagline);
+    if (cleanTagA && cleanTagB && cleanTagA !== cleanTagB) {
+      intro += `${escapeHtml(tA.name)} specializes in ${escapeHtml(cleanTagA.toLowerCase())}, whereas ${escapeHtml(tB.name)} focuses on ${escapeHtml(cleanTagB.toLowerCase())}. `;
+    }
   }
 
   intro += `Review the side-by-side specification matrix, pricing tiers, and direct software reviews below to determine the best choice for your stack.`;
@@ -817,263 +834,13 @@ semanticBuyerAliases.forEach(alias => {
   bestCount++;
 });
 
-// 6. Prerender Editorial Answer Guides with Full Structured Semantic Bodies
-const guideEditorialContent = {
-  "guide-best-all-in-one-seo-software-2026": {
-    readTime: "8 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Choosing an all-in-one SEO platform in 2026 requires balancing crawl budget intelligence, backlink graph freshness, and integrated AI keyword clustering. While desktop crawlers excel at deep technical hygiene, cloud suites offer comprehensive rank tracking and competitor gap analysis.",
-    comparisonTable: [
-      { tool: "Ahrefs", bestFor: "Backlink Intelligence & Content Gap Analysis", pricing: "From $129/mo", freeTier: "Free Webmaster Tools", score: "9.6/10" },
-      { tool: "Semrush", bestFor: "Keyword Research, PPC & Omnichannel Search", pricing: "From $139/mo", freeTier: "7-Day Trial", score: "9.5/10" },
-      { tool: "Screaming Frog", bestFor: "Deep Desktop Technical Crawling & Log File Audits", pricing: "Free (500 URLs) / £209/yr", freeTier: "✓ Yes (500 URLs)", score: "9.4/10" },
-      { tool: "SE Ranking", bestFor: "Agency White-Labeling & High-Accuracy Rank Tracking", pricing: "From $55/mo", freeTier: "14-Day Trial", score: "9.1/10" },
-      { tool: "Moz Pro", bestFor: "Domain Authority Metrics & Beginner Friendly Audits", pricing: "From $99/mo", freeTier: "30-Day Trial", score: "8.7/10" }
-    ],
-    sections: [
-      {
-        heading: "1. The 2026 Technical SEO Landscape",
-        content: "Modern search engines prioritize information gain, entity validation, and strict technical crawlability. Platforms that offer real-time site health monitoring and JS-rendering simulation provide an essential advantage over legacy rank checkers."
-      },
-      {
-        heading: "2. Key Evaluation Criteria for SEO Buyers",
-        content: "When selecting an SEO suite, evaluate: 1) Index Freshness (how quickly new backlinks and rank changes are reported), 2) SERP Feature Tracking (tracking AI Overviews, Local Packs, and Knowledge Graph panels), and 3) API Access limits for custom reporting dashboards."
-      },
-      {
-        heading: "3. Top Recommendations by Organization Stage",
-        content: "For enterprise marketing teams managing global portfolios, Semrush and Ahrefs deliver the necessary data depth. For technical agencies and developer-led teams, combining Screaming Frog with SE Ranking offers unmatched cost-to-performance efficiency."
-      }
-    ]
-  },
-  "guide-best-workflow-automation-tools-2026": {
-    readTime: "7 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Workflow automation in 2026 has split into two dominant models: managed cloud iPaaS platforms with massive app ecosystems, and self-hosted open-source engines offering zero execution limits and local data sovereignty.",
-    comparisonTable: [
-      { tool: "Make", bestFor: "Complex Visual Multi-Step Logic & JSON Array Operations", pricing: "Free / From $9/mo", freeTier: "✓ 1,000 ops/mo", score: "9.7/10" },
-      { tool: "n8n", bestFor: "Self-Hosted Privacy, Fair-Code Licensing & AI Nodes", pricing: "Free Self-Hosted / From $20/mo", freeTier: "✓ Open Source", score: "9.6/10" },
-      { tool: "Zapier", bestFor: "Largest App Ecosystem (7,000+ Integrations)", pricing: "Free / From $20/mo", freeTier: "✓ 100 tasks/mo", score: "9.3/10" },
-      { tool: "Activepieces", bestFor: "Lightweight Open-Source Zapier Alternative", pricing: "Free Self-Hosted / Cloud", freeTier: "✓ Open Source", score: "9.0/10" }
-    ],
-    sections: [
-      {
-        heading: "1. Cloud iPaaS vs. Self-Hosted Engines",
-        content: "High-volume businesses running millions of webhook triggers per month face escalating per-task fees on cloud platforms. Deploying self-hosted engines like n8n or Activepieces on a VPS eliminates per-execution costs while keeping customer data behind internal firewalls."
-      },
-      {
-        heading: "2. Integrating AI Agents into Event Pipelines",
-        content: "Modern workflows increasingly embed LLM reasoning steps between SaaS triggers and destination webhooks. Make and n8n lead the industry with native LLM agent memory nodes and structured JSON tool-calling capabilities."
-      }
-    ]
-  },
-  "guide-best-document-automation-tools-2026": {
-    readTime: "6 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Contract automation and electronic signatures require balancing rigorous legal compliance (eIDAS, ESIGN) with frictionless mobile signing and CRM data auto-fill.",
-    comparisonTable: [
-      { tool: "PandaDoc", bestFor: "Interactive CPQ Sales Quotes & Payment Collection", pricing: "From $19/mo", freeTier: "Free eSign Trial", score: "9.5/10" },
-      { tool: "DocuSign", bestFor: "Global Enterprise Standard & Complex Security Policies", pricing: "From $10/mo", freeTier: "30-Day Trial", score: "9.3/10" },
-      { tool: "Dropbox Sign", bestFor: "Clean Lightweight Developer API & Fast Setup", pricing: "From $15/mo", freeTier: "✓ 3 free docs/mo", score: "9.1/10" },
-      { tool: "SignWell", bestFor: "Cost-Effective Compliant eSignatures for Small Teams", pricing: "From $8/mo", freeTier: "✓ 3 free docs/mo", score: "8.9/10" }
-    ],
-    sections: [
-      {
-        heading: "1. Legally Binding Audit Trails & Security Standards",
-        content: "Enforceable electronic signature solutions must produce a tamper-evident certificate of completion recording cryptographic hash checksums, signer IP addresses, and exact timestamps."
-      },
-      {
-        heading: "2. CPQ Quoting vs. Static PDF Signing",
-        content: "Modern sales organizations benefit significantly from dynamic quoting platforms (like PandaDoc) where prospects can select item quantities and sign contracts directly inside interactive browser documents."
-      }
-    ]
-  },
-  "guide-best-ai-video-generators-2026": {
-    readTime: "9 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Generative AI video in 2026 has matured from short erratic clips to 1080p full-motion simulations with realistic camera physics, consistent character rendering, and native sound generation.",
-    comparisonTable: [
-      { tool: "Higgsfield AI", bestFor: "Mobile-First Camera Physics & Multi-Model Generation", pricing: "Freemium / Paid", freeTier: "✓ Daily credits", score: "9.6/10" },
-      { tool: "Runway", bestFor: "Professional Timeline Video Editing & Motion Brush", pricing: "From $12/mo", freeTier: "✓ Free tier", score: "9.5/10" },
-      { tool: "Kling AI", bestFor: "Cinematic Long Video Clips & Natural Lighting", pricing: "Freemium / Paid", freeTier: "✓ Free tier", score: "9.4/10" },
-      { tool: "Synthesia", bestFor: "Enterprise Training Videos & Multilingual Avatars", pricing: "From $22/mo", freeTier: "Free Demo", score: "9.3/10" },
-      { tool: "HeyGen", bestFor: "Studio-Quality Avatar Lip-Sync & Voice Translation", pricing: "From $24/mo", freeTier: "✓ Free tier", score: "9.2/10" }
-    ],
-    sections: [
-      {
-        heading: "1. Motion Physics and Visual Consistency",
-        content: "The defining differentiator in 2026 video models is physical realism—ensuring fluid dynamics, lighting bounce, and character facial structures remain stable across sequential camera pans."
-      },
-      {
-        heading: "2. Commercial Licensing and Output Resolutions",
-        content: "Always verify whether generation tiers grant full commercial usage rights and native 1080p/4K upscaling before deploying generative video assets in paid media campaigns."
-      }
-    ]
-  },
-  "guide-best-real-estate-crms-2026": {
-    readTime: "7 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Real estate brokerages require specialized sales CRMs featuring multi-portal lead capture, automated messaging sequences, visual deal pipelines, and agent commission tracking.",
-    comparisonTable: [
-      { tool: "XusCRM", bestFor: "Automated WhatsApp Lead Routing & Property Portal Sync", pricing: "From $49/mo", freeTier: "Free Demo", score: "9.6/10" },
-      { tool: "HubSpot CRM", bestFor: "Enterprise Marketing Automation & Content Funnels", pricing: "Free / From $20/mo", freeTier: "✓ Free CRM tier", score: "9.4/10" },
-      { tool: "Pipedrive", bestFor: "Visual Deal Stages & Fast Activity-Based Selling", pricing: "From $14/mo", freeTier: "14-Day Trial", score: "9.2/10" },
-      { tool: "Zoho CRM", bestFor: "Customizable High-Volume Pipelines & Deep Analytics", pricing: "From $14/mo", freeTier: "✓ Free tier (3 users)", score: "8.9/10" }
-    ],
-    sections: [
-      {
-        heading: "1. The Critical Role of Instant Lead Response",
-        content: "Real estate inquiries convert at exponentially higher rates when contacted within five minutes. CRMs with automated WhatsApp and SMS lead routing provide an immediate competitive edge."
-      },
-      {
-        heading: "2. Commission Management and Deal Pipelines",
-        content: "Tracking split agent commissions, escrow milestones, and mortgage approval statuses directly inside the CRM dashboard prevents deal slip and automates closing reporting."
-      }
-    ]
-  },
-  "guide-best-ai-coding-tools-2026": {
-    readTime: "9 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "AI-assisted software development in 2026 has evolved from basic line auto-completion to whole-codebase indexing, multi-file agentic refactoring, and natural language app builders.",
-    comparisonTable: [
-      { tool: "Cursor AI", bestFor: "Whole-Codebase Indexing & Multi-File Inline AI Edits", pricing: "Free / $20/mo", freeTier: "✓ Free tier", score: "9.8/10" },
-      { tool: "GitHub Copilot", bestFor: "Enterprise Compliance & Universal IDE Integration", pricing: "$10/mo", freeTier: "Free for OSS", score: "9.4/10" },
-      { tool: "Lovable", bestFor: "Full-Stack Web App Development via Chat", pricing: "Free / From $20/mo", freeTier: "✓ Free tier", score: "9.3/10" },
-      { tool: "Replit Agent", bestFor: "Browser-Based Full-Stack Scaffolding & Instant Cloud Deploy", pricing: "From $25/mo", freeTier: "✓ Free tier", score: "9.1/10" }
-    ],
-    sections: [
-      {
-        heading: "1. Codebase Indexing vs. Isolated Prompting",
-        content: "AI code editors like Cursor maintain vector embeddings of your entire repository, allowing the model to understand local utility functions, type definitions, and architectural conventions with high precision."
-      },
-      {
-        heading: "2. Rapid Prototyping vs. Production Engineering",
-        content: "While prompt-to-app tools (like Lovable and Replit Agent) excel at generating functional full-stack MVPs in minutes, IDE-native assistants (Cursor, Copilot) remain the standard for maintaining scalable, existing codebases."
-      }
-    ]
-  },
-  "guide-best-ai-music-audio-2026": {
-    readTime: "6 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Generative AI audio tools enable creator studios to produce full-length commercial songs, vocal clones, and synchronized soundscapes in seconds with high acoustic fidelity.",
-    comparisonTable: [
-      { tool: "ElevenLabs", bestFor: "Hyper-Realistic Voice Cloning & Emotional Speech Synthesis", pricing: "Free / From $5/mo", freeTier: "✓ 10k chars/mo", score: "9.8/10" },
-      { tool: "Suno", bestFor: "Complete Song Generation with Vocals & Songwriting", pricing: "Free / From $8/mo", freeTier: "✓ 50 credits/day", score: "9.6/10" },
-      { tool: "Udio", bestFor: "High-Fidelity Musical Arrangements & Advanced Stem Splitting", pricing: "Free / From $10/mo", freeTier: "✓ Free tier", score: "9.5/10" },
-      { tool: "Murf AI", bestFor: "Studio Narration & E-Learning Slide Synchronization", pricing: "Free / From $19/mo", freeTier: "✓ Free trial", score: "9.0/10" }
-    ],
-    sections: [
-      {
-        heading: "1. Voice Synthesis and Vocal Emotional Range",
-        content: "Modern neural voice models capture human breath patterns, pacing, and emotional inflection, making them ideal for high-volume audiobooks, podcast intros, and localized video voiceovers."
-      },
-      {
-        heading: "2. Stem Separation and Commercial Rights",
-        content: "Generative music engines now output separated audio stems (vocals, drums, bass, instruments), allowing music producers to remix AI-generated motifs directly into professional DAWs."
-      }
-    ]
-  },
-  "guide-best-ecommerce-stack-2026": {
-    readTime: "8 min read",
-    author: "StakDock Research Team",
-    executiveSummary: "Scaling a modern direct-to-consumer brand to $1M+ ARR requires an integrated tech stack: high-converting storefronts, predictive email/SMS lifecycle marketing, global contractor payroll, and fraud-resistant payment processing.",
-    comparisonTable: [
-      { tool: "Shopify", bestFor: "Core E-Commerce Storefront, Checkout & Inventory Engine", pricing: "From $39/mo", freeTier: "3-Day Free Trial", score: "9.8/10" },
-      { tool: "Klaviyo", bestFor: "Predictive SMS/Email Sequences & Customer LTV Analytics", pricing: "Free / From $20/mo", freeTier: "✓ 250 contacts", score: "9.7/10" },
-      { tool: "Stripe", bestFor: "Global Payment Processing, Multi-Currency & Radar Fraud Defense", pricing: "2.9% + 30¢ / transaction", freeTier: "Pay as you go", score: "9.9/10" },
-      { tool: "Deel", bestFor: "Global Contractor Hiring, Compliance & Automated Invoicing", pricing: "From $49/mo", freeTier: "Free HR tier", score: "9.5/10" }
-    ],
-    sections: [
-      {
-        heading: "1. Checkout Optimization and Conversion Architecture",
-        content: "Frictionless one-click checkouts, localized payment methods (Apple Pay, Shop Pay), and automated cart abandonment sequences form the foundational revenue engine for scaling e-commerce brands."
-      },
-      {
-        heading: "2. Data-Driven Customer Retention with Predictive Segments",
-        content: "Leveraging predictive purchase timing and dynamic product recommendation blocks in Klaviyo flows typically generates 30% to 45% of total store revenue with near-zero marginal acquisition cost."
-      }
-    ]
-  }
-};
+// 6. Prerender Editorial Answer Guides with Full Structured Semantic Bodies (from Single Source of Truth)
+const { officialGuides } = require('./guidesData.cjs');
 
-const allGuides = [
-  {
-    id: "guide-best-all-in-one-seo-software-2026",
-    slug: "best-all-in-one-seo-software-2026",
-    title: "Best All-in-One SEO Software in 2026: Comprehensive Buyer Matrix",
-    summary: "Discover the top all-in-one SEO platforms for technical audits, keyword tracking, and backlink monitoring compared side by side.",
-    category: "SEO & Keyword Research",
-    publishDate: "January 2026"
-  },
-  {
-    id: "guide-best-workflow-automation-tools-2026",
-    slug: "best-workflow-automation-tools-2026",
-    title: "Best Workflow Automation Software in 2026: Top Integration Platforms",
-    summary: "Compare the leading workflow automation platforms for founders and operations teams with pricing models, webhook reliability, and ease of use.",
-    category: "No-Code & Automation",
-    publishDate: "January 2026"
-  },
-  {
-    id: "guide-best-document-automation-tools-2026",
-    slug: "best-document-automation-tools-2026",
-    title: "Best Document Automation & eSign Software 2026: Top Contract Platforms",
-    summary: "A practical breakdown of enterprise-grade and indie document signing tools, compliant audit trails, and automated contract workflows.",
-    category: "Document Management",
-    publishDate: "February 2026"
-  },
-  {
-    id: "guide-best-ai-video-generators-2026",
-    slug: "best-ai-video-generators-2026",
-    title: "Best AI Video Generators in 2026: Top Text-to-Video & Avatar Engines",
-    summary: "An in-depth review of generative AI video platforms, rendering quality, commercial licenses, and realistic avatar lip-sync capabilities.",
-    category: "AI Video & Motion",
-    publishDate: "February 2026"
-  },
-  {
-    id: "guide-best-real-estate-crms-2026",
-    slug: "best-real-estate-crms-2026",
-    title: "Best Real Estate CRM Software in 2026: Top Brokerage Platforms",
-    summary: "Compare top real estate CRMs with automated WhatsApp lead routing, Bayut/Property Finder sync, and commission pipeline tracking.",
-    category: "CRM & Sales",
-    publishDate: "March 2026"
-  },
-  {
-    id: "guide-best-ai-coding-tools-2026",
-    slug: "best-ai-coding-tools-2026",
-    title: "Best AI Coding Assistants & IDE Tools in 2026: Cursor vs Copilot vs Lovable",
-    summary: "In-depth speed, multi-file code editing, and model accuracy comparison for modern developers and engineering teams.",
-    category: "AI Coding & Dev Assistants",
-    publishDate: "March 2026"
-  },
-  {
-    id: "guide-best-ai-music-audio-2026",
-    slug: "best-ai-music-audio-2026",
-    title: "Top Generative AI Music Generators in 2026: Suno AI vs Udio AI",
-    summary: "Testing studio vocal acoustics, arrangement versatility, and commercial licensing for generative AI music production.",
-    category: "AI Music & Audio",
-    publishDate: "April 2026"
-  },
-  {
-    id: "guide-best-ecommerce-stack-2026",
-    slug: "best-ecommerce-stack-2026",
-    title: "The Ultimate E-Commerce SaaS Stack 2026: Shopify + Klaviyo + Deel + Stripe",
-    summary: "How D2C brands scale from $0 to $1M ARR with automated checkout conversion, predictive SMS flows, and global contractor payroll.",
-    category: "E-Commerce & Tech",
-    publishDate: "April 2026"
-  }
-];
-
-allGuides.forEach(guide => {
+officialGuides.forEach(guide => {
   const guideSlug = guide.slug || guide.id;
   const targetFolder = path.join(guidesDir, guideSlug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
-
-  const editorialData = guideEditorialContent[guide.id] || {
-    readTime: "7 min read",
-    author: "StakDock Research Team",
-    executiveSummary: guide.summary,
-    comparisonTable: [],
-    sections: []
-  };
 
   const bodyHtml = `
   ${renderSsrNavbar('/guides/')}
@@ -1090,7 +857,7 @@ allGuides.forEach(guide => {
           ${escapeHtml(guide.category)}
         </span>
         <span style="font-size:0.82rem;color:#536253;font-weight:700;">
-          UPDATED ${escapeHtml(guide.publishDate)} &bull; ${escapeHtml(editorialData.readTime)}
+          UPDATED ${escapeHtml(guide.publishDate)} &bull; ${escapeHtml(guide.readTime || '7 min read')}
         </span>
       </div>
       <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 16px 0;color:#182618;">
@@ -1105,32 +872,34 @@ allGuides.forEach(guide => {
     <section style="background:#F4F8F0;border:1px solid #D2E4C8;border-radius:18px;padding:24px;margin-bottom:28px;">
       <h2 style="font-size:1.2rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">Executive Summary &amp; Key Findings</h2>
       <p style="font-size:0.98rem;line-height:1.6;color:#2d4029;margin:0;">
-        ${escapeHtml(editorialData.executiveSummary)}
+        ${escapeHtml(guide.executiveSummary)}
       </p>
     </section>
 
     <!-- Comparative Specification Benchmark Matrix -->
-    ${editorialData.comparisonTable.length > 0 ? `
+    ${Array.isArray(guide.comparisonTable) && guide.comparisonTable.length > 0 ? `
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px;margin-bottom:28px;overflow-x:auto;">
-      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Top Rated Software Comparison Matrix</h2>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Specification &amp; Pricing Matrix</h2>
       <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;">
         <thead>
           <tr style="border-bottom:2px solid #e2ede0;">
             <th style="padding:10px;color:#5c7353;font-weight:800;">Software Platform</th>
-            <th style="padding:10px;color:#5c7353;font-weight:800;">Best For</th>
-            <th style="padding:10px;color:#5c7353;font-weight:800;">Pricing</th>
+            <th style="padding:10px;color:#5c7353;font-weight:800;">Primary Focus / Specialization</th>
+            <th style="padding:10px;color:#5c7353;font-weight:800;">Pricing Model</th>
             <th style="padding:10px;color:#5c7353;font-weight:800;">Free Tier</th>
-            <th style="padding:10px;color:#5c7353;font-weight:800;">Verdict Score</th>
+            <th style="padding:10px;color:#5c7353;font-weight:800;">Key Characteristic</th>
           </tr>
         </thead>
         <tbody>
-          ${editorialData.comparisonTable.map(row => `
+          ${guide.comparisonTable.map(row => `
           <tr style="border-bottom:1px solid #f0f4ee;">
             <td style="padding:10px;font-weight:800;color:#182618;">${escapeHtml(row.tool)}</td>
             <td style="padding:10px;color:#45593e;">${escapeHtml(row.bestFor)}</td>
             <td style="padding:10px;color:#182618;font-weight:700;">${escapeHtml(row.pricing)}</td>
             <td style="padding:10px;color:#2D4522;">${escapeHtml(row.freeTier)}</td>
-            <td style="padding:10px;color:#82A735;font-weight:800;">${escapeHtml(row.score)}</td>
+            <td style="padding:10px;color:#2D4522;font-weight:700;">
+              <span style="display:inline-block;padding:2px 8px;border-radius:6px;background:#f0f4ee;font-size:0.85rem;color:#2D4522;font-weight:700;">${escapeHtml(row.badge || 'Verified Specs')}</span>
+            </td>
           </tr>
           `).join('')}
         </tbody>
@@ -1139,7 +908,7 @@ allGuides.forEach(guide => {
     ` : ''}
 
     <!-- In-Depth Editorial Article Sections -->
-    ${editorialData.sections.map(sec => `
+    ${(guide.sections || []).map(sec => `
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px;margin-bottom:24px;">
       <h2 style="font-size:1.35rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">${escapeHtml(sec.heading)}</h2>
       <p style="font-size:1rem;line-height:1.7;color:#374a33;margin:0;">${escapeHtml(sec.content)}</p>
@@ -1149,8 +918,9 @@ allGuides.forEach(guide => {
     <!-- Article Author and Methodology Attribution -->
     <footer style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:32px;">
       <div>
-        <span style="font-size:0.85rem;color:#536253;">Authored by:</span>
-        <strong style="color:#182618;margin-left:4px;font-size:0.95rem;">${escapeHtml(editorialData.author)}</strong>
+        <span style="font-size:0.85rem;color:#536253;">Compiled by:</span>
+        <strong style="color:#182618;margin-left:4px;font-size:0.95rem;">${escapeHtml(guide.author || 'StakDock Directory Editors')}</strong>
+        <p style="font-size:0.8rem;color:#6b7d67;margin:4px 0 0 0;">${escapeHtml(guide.methodologyNote || 'Based on publicly available vendor documentation and published pricing.')}</p>
       </div>
       <div>
         <a href="/categories/" style="color:#82A735;font-weight:800;text-decoration:underline;font-size:0.9rem;">Explore All StakDock Software Categories &rarr;</a>
@@ -1168,7 +938,7 @@ allGuides.forEach(guide => {
     "dateModified": "2026-04-01T00:00:00+00:00",
     "author": {
       "@type": "Organization",
-      "name": "StakDock Research Team",
+      "name": guide.author || "StakDock Directory Editors",
       "url": "https://stakdock.com/"
     },
     "publisher": {

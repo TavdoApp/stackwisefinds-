@@ -56,6 +56,7 @@ function calculateCompletenessScore(tool) {
 function calculateStrictProvenanceScore(tool) {
   if (!tool) return { score: 0, level: 'UNKNOWN', source: 'None' };
 
+  // VERIFIED (100): Explicit Founder Verification on Cloudflare D1 or Authenticated Deal Partner Contract
   if (tool.claimedByFounder || tool.isFounderVerified) {
     return { score: 100, level: 'VERIFIED', source: 'Founder Claimed D1' };
   }
@@ -63,23 +64,22 @@ function calculateStrictProvenanceScore(tool) {
     return { score: 100, level: 'VERIFIED', source: tool.dealPlatform ? `${tool.dealPlatform} Partner Feed` : 'Verified Partner Feed' };
   }
 
-  const validFeats = (tool.features || []).filter(f => !isGenericFeature(f));
-  const hasDesc = tool.description && tool.description.length >= 150;
-  const hasPricingDetail = tool.pricing && tool.pricing !== 'Unlisted' && tool.pricing !== 'Freemium / Paid';
-
-  if (tool.domain && validFeats.length >= 3 && hasDesc && hasPricingDetail) {
-    return { score: 80, level: 'HIGH', source: 'Official Domain & Multi-Field Corroborated' };
+  // HIGH (80): Explicit Primary Source URL or Verified API Sync
+  if (tool.provenanceSource || tool.officialPricingUrl || tool.githubRepo) {
+    return { score: 80, level: 'HIGH', source: `Primary Tracked Source: ${tool.provenanceSource || 'Official Repository/Pricing'}` };
   }
 
-  if (tool.domain && tool.description && tool.description.length >= 90) {
-    return { score: 50, level: 'MEDIUM', source: 'Direct Domain Crawl' };
+  // MEDIUM (50): Direct metadata inspection / validated live domain sync
+  if (tool.domain && tool.domain.includes('.') && (tool.provenance === 'DIRECT_SYNC' || tool.verifiedDomainSync)) {
+    return { score: 50, level: 'MEDIUM', source: 'Direct Domain Inspection Sync' };
   }
 
-  if (tool.description && tool.description.length >= 40) {
-    return { score: 20, level: 'LOW', source: 'Unverified Directory Ingestion' };
+  // LOW / UNTRACKED_HISTORICAL (20): Legacy Directory Ingestion without primary source record
+  if (tool.domain && tool.domain.includes('.')) {
+    return { score: 20, level: 'LOW', source: 'Untracked Historical Directory Record' };
   }
 
-  return { score: 0, level: 'UNKNOWN', source: 'Unresolved' };
+  return { score: 0, level: 'UNKNOWN', source: 'Unresolved / Missing Domain' };
 }
 
 // -------------------------------------------------------------
@@ -459,19 +459,63 @@ const vsScores = versusPairs.map(p => scoreVs(p, scoreMap));
 console.log('Evaluating Category hubs...');
 const bestScores = saasCategories.filter(c => c.id !== 'all').map(c => scoreBest(c));
 
-const allGuidesList = [
-  { slug: "best-all-in-one-seo-software-2026", title: "Best All-in-One SEO Software in 2026" },
-  { slug: "best-workflow-automation-tools-2026", title: "Best Workflow Automation Software in 2026" },
-  { slug: "best-document-automation-tools-2026", title: "Best Document Automation & eSign Software 2026" },
-  { slug: "best-ai-video-generators-2026", title: "Best AI Video Generators in 2026" },
-  { slug: "best-real-estate-crms-2026", title: "Best Real Estate CRM Software in 2026" },
-  { slug: "best-ai-coding-tools-2026", title: "Best AI Coding Assistants & IDE Tools in 2026" },
-  { slug: "best-ai-music-audio-2026", title: "Top Generative AI Music Generators in 2026" },
-  { slug: "best-ecommerce-stack-2026", title: "The Ultimate E-Commerce SaaS Stack 2026" }
-];
+const { officialGuides } = require('./guidesData.cjs');
 
 console.log('Evaluating Buyer Guides...');
-const guideScores = allGuidesList.map(g => scoreGuide(g));
+const guideScores = officialGuides.map(g => scoreGuide(g));
+
+// Normalized VS template similarity analyzer (stripping entity names, pricing, features, categories)
+function calculateNormalizedVsSimilarity(vsList) {
+  if (!vsList || vsList.length < 2) return 0;
+  
+  function normalizeVsStructure(pair) {
+    const slug = pair.slug || `${pair.toolA.id}-vs-${pair.toolB.id}`;
+    const vsFilePath = path.join(__dirname, '..', 'dist', 'vs', slug, 'index.html');
+    if (!fs.existsSync(vsFilePath)) return '';
+    const html = fs.readFileSync(vsFilePath, 'utf8');
+    
+    // Extract main content
+    const match = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+    const body = match ? match[1] : html;
+
+    return body
+      .toLowerCase()
+      .replace(new RegExp(pair.toolA.name.toLowerCase(), 'g'), '{tool_a}')
+      .replace(new RegExp(pair.toolB.name.toLowerCase(), 'g'), '{tool_b}')
+      .replace(/\$[0-9]+(\/[a-z]+)?/g, '{price}')
+      .replace(/\b(freemium|paid|free|open-source|trial)\b/g, '{pricing_type}')
+      .replace(/<[^>]*>/g, ' ')
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+
+  const sampleSize = Math.min(25, vsList.length);
+  const samplePairs = vsList.slice(0, sampleSize);
+  const normalizedTexts = samplePairs.map(p => normalizeVsStructure(p)).filter(t => t.length > 50);
+
+  if (normalizedTexts.length < 2) return 0;
+
+  let totalSim = 0;
+  let comparisons = 0;
+
+  for (let i = 0; i < normalizedTexts.length; i++) {
+    for (let j = i + 1; j < normalizedTexts.length; j++) {
+      const wordsA = new Set(normalizedTexts[i].split(' '));
+      const wordsB = new Set(normalizedTexts[j].split(' '));
+      const intersection = [...wordsA].filter(x => wordsB.has(x)).length;
+      const union = new Set([...wordsA, ...wordsB]).size;
+      const jaccard = union > 0 ? intersection / union : 0;
+      totalSim += jaccard;
+      comparisons++;
+    }
+  }
+
+  return comparisons > 0 ? Math.round((totalSim / comparisons) * 1000) / 10 : 0;
+}
+
+const normalizedVsSimilarityScore = calculateNormalizedVsSimilarity(vsScores);
+console.log(`📊 Normalized Invariant VS Template Similarity: ${normalizedVsSimilarityScore}%`);
 
 // -------------------------------------------------------------
 // 6. BUILD MANIFESTS & REPORTS
