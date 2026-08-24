@@ -2,315 +2,261 @@ const fs = require('fs');
 const path = require('path');
 const { readAllTools, readCategories } = require('./toolData.cjs');
 
-console.log('📊 StakDock Page Quality & Indexation Intelligence Engine (Shadow Mode Audit)...');
+console.log('🛡️  StakDock Adversarial Quality Calibration Engine (Step 2B Shadow Mode)...');
 
-// 1. Load Data
+// 1. Load Datasets
 const saasTools = readAllTools();
 const saasCategories = readCategories();
-
 const toolsMap = new Map();
 saasTools.forEach(t => toolsMap.set(t.id, t));
 
-// VS Pairs list builder
-function getVsPairsList(tools) {
-  const map = new Map();
-  const catMap = {};
-
-  tools.forEach(t => {
-    const cat = t.category || 'other';
-    if (!catMap[cat]) catMap[cat] = [];
-    catMap[cat].push(t);
-  });
-
-  Object.values(catMap).forEach(list => {
-    if (list.length < 2) return;
-    const top = list.slice(0, 6);
-    for (let i = 0; i < top.length; i++) {
-      for (let j = i + 1; j < top.length; j++) {
-        const slug = `${top[i].id}-vs-${top[j].id}`;
-        if (!map.has(slug)) {
-          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
-        }
-      }
-    }
-  });
-
-  return Array.from(map.values());
-}
-
-const versusPairs = getVsPairsList(saasTools);
-
-const allGuides = [
-  {
-    id: "guide-best-all-in-one-seo-software-2026",
-    slug: "best-all-in-one-seo-software-2026",
-    title: "Best All-in-One SEO Software in 2026: Comprehensive Buyer Matrix",
-    summary: "Discover the top all-in-one SEO platforms for technical audits, keyword tracking, and backlink monitoring compared side by side.",
-    category: "seo-tools",
-    wordCount: 1450,
-    hasSpecTable: true,
-    toolCount: 6
-  },
-  {
-    id: "guide-best-workflow-automation-tools-2026",
-    slug: "best-workflow-automation-tools-2026",
-    title: "Best Workflow Automation Software in 2026: Top Integration Platforms",
-    summary: "Compare the leading workflow automation platforms for founders and operations teams with pricing models, webhook reliability, and ease of use.",
-    category: "nocode-automation",
-    wordCount: 1380,
-    hasSpecTable: true,
-    toolCount: 6
-  },
-  {
-    id: "guide-best-document-automation-tools-2026",
-    slug: "best-document-automation-tools-2026",
-    title: "Best Document Automation & eSign Software 2026: Top Contract Platforms",
-    summary: "Evaluate the best electronic signature and document automation software for legal compliance, API flexibility, and cost efficiency.",
-    category: "e-signature",
-    wordCount: 1290,
-    hasSpecTable: true,
-    toolCount: 5
-  },
-  {
-    id: "guide-best-cloud-database-platforms-2026",
-    slug: "best-cloud-database-platforms-2026",
-    title: "Best Cloud Database & BaaS Platforms 2026: Modern Backend Comparison",
-    summary: "Compare serverless SQL, NoSQL, vector search engines, and backend-as-a-service providers for modern full-stack web applications.",
-    category: "databases-backends",
-    wordCount: 1520,
-    hasSpecTable: true,
-    toolCount: 6
-  },
-  {
-    id: "guide-best-ai-video-generators-2026",
-    slug: "best-ai-video-generators-2026",
-    title: "Best AI Video Generators in 2026: Text-to-Video & Motion Physics Matrix",
-    summary: "In-depth buyer matrix comparing generative AI video models on physical realism, render latency, motion control, and pricing tiers.",
-    category: "trending-video-ai",
-    wordCount: 1650,
-    hasSpecTable: true,
-    toolCount: 7
-  },
-  {
-    id: "guide-best-ai-coding-assistants-2026",
-    slug: "best-ai-coding-assistants-2026",
-    title: "Best AI Coding Assistants & Dev Tools 2026: Complete Benchmark",
-    summary: "Benchmark comparing AI code editors, auto-complete IDE plugins, and prompt-to-app builders for developer velocity and codebase indexing.",
-    category: "ai-coding-dev",
-    wordCount: 1780,
-    hasSpecTable: true,
-    toolCount: 8
-  },
-  {
-    id: "guide-best-crm-software-founders-2026",
-    slug: "best-crm-software-founders-2026",
-    title: "Best CRM Software for Founders & Sales Teams 2026: Pipeline Comparison",
-    summary: "Compare top sales CRMs for pipeline visualization, email sequencing, lead scoring, and automated deal tracking.",
-    category: "crm",
-    wordCount: 1420,
-    hasSpecTable: true,
-    toolCount: 6
-  },
-  {
-    id: "guide-best-customer-support-helpdesk-2026",
-    slug: "best-customer-support-helpdesk-2026",
-    title: "Best Customer Support & Helpdesk Software 2026: Shared Inbox Matrix",
-    summary: "Evaluate top customer support platforms, live chat widgets, and AI ticketing bots for response times and omnichannel routing.",
-    category: "customer-support",
-    wordCount: 1340,
-    hasSpecTable: true,
-    toolCount: 6
-  }
+// Helper: Generic filler / buzzword detector
+const GENERIC_FEATURE_BUZZWORDS = [
+  'easy to use', 'powerful platform', 'save time', 'improve productivity',
+  'cloud-based', 'fast setup', 'user friendly', 'all-in-one', 'modern interface',
+  'high performance', 'secure and reliable', 'streamlined workflow'
 ];
 
-// Helper: Shingle n-gram extractor for similarity detection
-function getShingles(text, n = 3) {
-  const words = String(text || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length > 2);
-  const shingles = new Set();
-  for (let i = 0; i <= words.length - n; i++) {
-    shingles.add(words.slice(i, i + n).join(' '));
-  }
-  return shingles;
-}
-
-function calculateJaccard(setA, setB) {
-  if (setA.size === 0 || setB.size === 0) return 0;
-  let intersection = 0;
-  for (const item of setA) {
-    if (setB.has(item)) intersection++;
-  }
-  return intersection / (setA.size + setB.size - intersection);
+function isGenericFeature(featStr) {
+  if (!featStr || typeof featStr !== 'string') return true;
+  const clean = featStr.toLowerCase().trim();
+  if (clean.length < 10) return true;
+  return GENERIC_FEATURE_BUZZWORDS.some(bw => clean === bw || clean.includes(bw));
 }
 
 // -------------------------------------------------------------
-// 2. Data Confidence Evaluator
+// 2. Strict Data Provenance Classifier
 // -------------------------------------------------------------
-function evaluateDataConfidence(tool) {
+function evaluateStrictProvenance(tool) {
   if (!tool) return 'UNKNOWN';
+
+  // VERIFIED: Authorized deal partner or claimed founder
   if (tool.claimedByFounder || tool.isFounderVerified || tool.hasLifetimeDeal || tool.dealPrice) {
     return 'VERIFIED';
   }
-  if (tool.domain && tool.domain.includes('.') && tool.features && tool.features.length >= 3 && tool.description && tool.description.length >= 140) {
+
+  // HIGH: Real concrete specs, non-generic description >= 150 chars, clear pricing model
+  const hasValidFeatures = Array.isArray(tool.features) && tool.features.length >= 3 &&
+    tool.features.filter(f => !isGenericFeature(f)).length >= 2;
+  const hasSpecificDesc = tool.description && tool.description.length >= 150;
+  const hasPricingDetail = tool.pricing && tool.pricing !== 'Unlisted' && tool.pricing !== 'Freemium / Paid';
+
+  if (tool.domain && hasValidFeatures && hasSpecificDesc && hasPricingDetail) {
     return 'HIGH';
   }
-  if (tool.domain && tool.description && tool.description.length >= 80) {
+
+  // MEDIUM: Basic domain + description >= 100 chars, but standard generic freemium tag
+  if (tool.domain && tool.description && tool.description.length >= 90) {
     return 'MEDIUM';
   }
+
+  // LOW: Thin description (<90 chars) or 0 features
   if (tool.description && tool.description.length >= 40) {
     return 'LOW';
   }
+
   return 'UNKNOWN';
 }
 
 // -------------------------------------------------------------
-// 3. Search Intent Evaluator for Pairs
+// 3. Strict Comparison Intent Evaluator
 // -------------------------------------------------------------
-function evaluateVsSearchIntent(tA, tB) {
+// Known direct job-to-be-done competitor clusters
+const DIRECT_COMPETITOR_CLUSTERS = {
+  // AI Code Editors
+  'cursor-ai': ['github-copilot', 'windsurf', 'replit-agent', 'v0-dev'],
+  'github-copilot': ['cursor-ai', 'windsurf', 'tabnine', 'replit-agent'],
+  'replit-agent': ['lovable', 'bolt-new', 'cursor-ai', 'v0-dev'],
+  'lovable': ['replit-agent', 'bolt-new', 'v0-dev', 'cursor-ai'],
+  
+  // CRMs
+  'hubspot-crm': ['salesforce', 'pipedrive', 'zoho-crm', 'close-crm', 'freshsales'],
+  'salesforce': ['hubspot-crm', 'pipedrive', 'zoho-crm'],
+  'pipedrive': ['hubspot-crm', 'close-crm', 'zoho-crm'],
+  
+  // Knowledge & Project Mgmt
+  'notion': ['obsidian', 'coda', 'anytype', 'affine', 'craft-docs', 'clickup', 'asana'],
+  'obsidian': ['notion', 'logseq', 'roam-research', 'capacities'],
+  'asana': ['jira-by-atlassian', 'linear', 'monday-com', 'clickup', 'trello'],
+  'linear': ['jira-by-atlassian', 'asana', 'height-app', 'github-projects'],
+  
+  // Automation
+  'zapier': ['make', 'n8n', 'activepieces', 'relay-app'],
+  'make': ['zapier', 'n8n', 'activepieces'],
+  'n8n': ['zapier', 'make', 'activepieces'],
+
+  // Password Managers
+  '1password': ['bitwarden', 'dashlane', 'keeper', 'lastpass', 'proton-pass'],
+  'bitwarden': ['1password', 'dashlane', 'keeper', 'proton-pass']
+};
+
+function evaluateStrictVsIntent(tA, tB) {
   if (!tA || !tB) return 'LOW';
-  if (tA.category && tB.category && tA.category === tB.category) {
-    // Both top tier or high profile tools
-    if (tA.featured && tB.featured) return 'HIGH';
-    if ((tA.features && tA.features.length >= 3) && (tB.features && tB.features.length >= 3)) return 'HIGH';
-    return 'MEDIUM';
+
+  // Check known direct cluster
+  if (DIRECT_COMPETITOR_CLUSTERS[tA.id] && DIRECT_COMPETITOR_CLUSTERS[tA.id].includes(tB.id)) {
+    return 'HIGH';
   }
+  if (DIRECT_COMPETITOR_CLUSTERS[tB.id] && DIRECT_COMPETITOR_CLUSTERS[tB.id].includes(tA.id)) {
+    return 'HIGH';
+  }
+
+  // Same category AND both have rich feature specs in the same domain
+  if (tA.category === tB.category) {
+    // Check if one is a completely different sub-type
+    const nameA = (tA.name + ' ' + (tA.tagline || '') + ' ' + (tA.description || '')).toLowerCase();
+    const nameB = (tB.name + ' ' + (tB.tagline || '') + ' ' + (tB.description || '')).toLowerCase();
+
+    const isMeetingA = nameA.includes('meeting') || nameA.includes('transcrib');
+    const isMeetingB = nameB.includes('meeting') || nameB.includes('transcrib');
+    const isCodeA = nameA.includes('code') || nameA.includes('developer') || nameA.includes('ide');
+    const isCodeB = nameB.includes('code') || nameB.includes('developer') || nameB.includes('ide');
+
+    if ((isMeetingA && isCodeB) || (isCodeA && isMeetingB)) {
+      return 'LOW'; // Sub-niche mismatch
+    }
+
+    const isVideoAdA = nameA.includes('ad') || nameA.includes('commercial') || nameA.includes('marketing');
+    const isAsyncRecB = nameB.includes('screen record') || nameB.includes('async video') || nameB.includes('messaging');
+    if ((isVideoAdA && isAsyncRecB)) {
+      return 'LOW'; // Video ad generator vs team screen recorder mismatch
+    }
+
+    if (tA.features && tB.features && tA.features.length >= 3 && tB.features.length >= 3) {
+      return 'MEDIUM';
+    }
+    return 'LOW'; // Thin intra-category pairing
+  }
+
   return 'LOW';
 }
 
 // -------------------------------------------------------------
-// 4. Scoring Models
+// 4. CALIBRATED SCORING FORMULAS
 // -------------------------------------------------------------
 
-// A. /software/:id/
-function scoreSoftwarePage(tool) {
+// A. /software/:id/ (Calibrated)
+function scoreSoftwareCalibrated(tool) {
   const breakdown = {
-    identity: 0,        // max 15
-    description: 0,     // max 25
-    features: 0,        // max 15
-    pricing: 0,         // max 15
-    useCase: 0,         // max 10
-    relationships: 0,   // max 10
-    dataConfidence: 0   // max 10
+    identity: 0,        // max 10 (reduced from 15)
+    description: 0,     // max 25 (strict specificity)
+    features: 0,        // max 20 (strict non-generic capability)
+    pricing: 0,         // max 15 (strict numeric/deal confidence)
+    useCase: 0,         // max 10 (explicit target user)
+    provenance: 0       // max 20 (strict factual support)
   };
 
   const issues = [];
   const improvements = [];
+  const provenance = evaluateStrictProvenance(tool);
 
-  // Identity (15)
-  if (tool.name && tool.name.length >= 2) breakdown.identity += 3;
-  else issues.push('Missing/invalid product name');
-
-  if (tool.domain && tool.domain.includes('.') && !tool.domain.includes(' ')) breakdown.identity += 4;
-  else issues.push('Missing or invalid domain');
-
-  if (tool.category && saasCategories.some(c => c.id === tool.category)) breakdown.identity += 4;
-  else issues.push('Unrecognized or missing category');
-
-  if (tool.tagline && tool.tagline.length >= 20 && tool.tagline.toLowerCase() !== tool.name.toLowerCase()) {
-    breakdown.identity += 4;
+  // 1. Identity (10 pts max) - Prerequisite health
+  if (tool.name && tool.name.length >= 2) breakdown.identity += 2;
+  if (tool.domain && tool.domain.includes('.')) breakdown.identity += 3;
+  if (tool.category && saasCategories.some(c => c.id === tool.category)) breakdown.identity += 2;
+  if (tool.tagline && tool.tagline.length >= 25 && tool.tagline.toLowerCase() !== tool.name.toLowerCase()) {
+    breakdown.identity += 3;
   } else {
-    issues.push('Short or missing tagline');
-    improvements.push('Add a descriptive 1-sentence tagline (+4 pts)');
+    issues.push('Weak or missing tagline (<25 chars)');
+    improvements.push('Write a specific 1-sentence capability tagline');
   }
 
-  // Description (25)
-  const descLen = (tool.description || '').length;
-  if (descLen >= 250) breakdown.description += 18;
-  else if (descLen >= 150) breakdown.description += 14;
-  else if (descLen >= 80) {
-    breakdown.description += 8;
-    issues.push('Brief description (<150 chars)');
-    improvements.push('Expand product description to 200+ characters with concrete workflow capabilities (+6 pts)');
+  // 2. Description (25 pts max) - Specificity & Information Density
+  const desc = tool.description || '';
+  const descLen = desc.length;
+  if (descLen >= 250) breakdown.description += 14;
+  else if (descLen >= 150) breakdown.description += 10;
+  else if (descLen >= 90) {
+    breakdown.description += 5;
+    issues.push('Brief description (90-149 chars)');
   } else {
-    breakdown.description += 3;
-    issues.push('Very thin description (<80 chars)');
-    improvements.push('Write a comprehensive 200+ char overview (+11 pts)');
+    breakdown.description += 2;
+    issues.push('Thin description (<90 chars)');
+    improvements.push('Expand description with concrete technical capabilities');
   }
 
-  // Specificity & low generic filler check
-  const genericRepetitivePhrases = ['best software for all users', 'useful tool for everything', 'good software platform'];
-  const hasGenericFiller = genericRepetitivePhrases.some(p => (tool.description || '').toLowerCase().includes(p));
-  if (!hasGenericFiller && descLen >= 100) {
-    breakdown.description += 7;
-  } else if (!hasGenericFiller) {
+  // Specificity bonus (penalize generic auto-filler templates)
+  const isAutoSynth = desc.includes('is an established software tool built for teams, operators, and modern builders looking to accelerate workflows');
+  if (isAutoSynth) {
+    issues.push('Synthesized generic boilerplate description detected');
+    breakdown.description = Math.max(2, breakdown.description - 6);
+  } else if (descLen >= 120) {
+    breakdown.description += 11;
+  } else {
     breakdown.description += 4;
   }
 
-  // Features (15)
-  const featCount = Array.isArray(tool.features) ? tool.features.length : 0;
-  if (featCount >= 4) {
-    breakdown.features += 12;
-    const avgLen = tool.features.reduce((acc, f) => acc + f.length, 0) / featCount;
-    if (avgLen >= 15) breakdown.features += 3;
-  } else if (featCount >= 3) {
-    breakdown.features += 10;
-    improvements.push('Add 1-2 additional specific feature highlights (+5 pts)');
-  } else if (featCount >= 1) {
-    breakdown.features += 5;
-    issues.push('Thin feature specifications (<3 features)');
-    improvements.push('Document at least 4 specific product features (+10 pts)');
+  // 3. Feature Specificity (20 pts max)
+  const rawFeatures = Array.isArray(tool.features) ? tool.features : [];
+  const validFeatures = rawFeatures.filter(f => !isGenericFeature(f));
+
+  if (validFeatures.length >= 4) {
+    breakdown.features += 20;
+  } else if (validFeatures.length >= 3) {
+    breakdown.features += 15;
+    improvements.push('Add 1 additional concrete capability spec');
+  } else if (validFeatures.length >= 1) {
+    breakdown.features += 7;
+    issues.push('Thin feature specifications (1-2 specs)');
+    improvements.push('Document 4 product-specific technical capabilities');
   } else {
-    issues.push('Missing feature specifications (0 features)');
-    improvements.push('Add 4 structured product capability specs (+15 pts)');
+    breakdown.features += 0;
+    issues.push('Missing structured feature specifications (0 specs)');
+    improvements.push('Add 4 structured product capability specs');
   }
 
-  // Pricing (15)
-  if (tool.pricing && tool.pricing !== 'Unlisted' && tool.pricing !== 'Contact for Pricing') {
-    breakdown.pricing += 5;
-    if (tool.hasLifetimeDeal || tool.dealPrice) {
-      breakdown.pricing += 10; // Verified LTD breakdown
-    } else if (tool.isFreeTier || tool.isOpenSource || tool.pricing.includes('$') || tool.pricing.toLowerCase().includes('free') || tool.pricing.toLowerCase().includes('freemium')) {
-      breakdown.pricing += 10;
-    } else {
-      breakdown.pricing += 5;
-      improvements.push('Clarify pricing model (Free tier, Subscription pricing, or LTD) (+5 pts)');
-    }
+  // 4. Pricing Transparency (15 pts max)
+  if (tool.hasLifetimeDeal || tool.dealPrice) {
+    breakdown.pricing += 15; // Full confidence LTD
+  } else if (tool.pricing && (tool.pricing.includes('$') || tool.pricing.includes('€') || tool.pricing.includes('£'))) {
+    breakdown.pricing += 12; // Specific numeric tier
+  } else if (tool.isFreeTier || tool.isOpenSource) {
+    breakdown.pricing += 10; // Explicit free/open-source model
+  } else if (tool.pricing && tool.pricing !== 'Unlisted') {
+    breakdown.pricing += 5;  // Generic "Freemium / Paid" label
+    issues.push('Generic pricing label (unverified pricing tiers)');
+    improvements.push('Verify exact pricing tiers ($/mo or free trial days)');
   } else {
-    issues.push('Unlisted or unclassified pricing');
-    improvements.push('Verify and classify pricing model (+10 pts)');
+    breakdown.pricing += 0;
+    issues.push('Unlisted pricing model');
   }
 
-  // Use-Case & Audience (10)
-  if (tool.bestFor && tool.bestFor.length >= 10) {
-    breakdown.useCase += 5;
-  } else if (tool.targetAudience && tool.targetAudience.length >= 10) {
-    breakdown.useCase += 5;
+  // 5. Use Case & Target Audience (10 pts max)
+  if (tool.bestFor && tool.bestFor.length >= 15) {
+    breakdown.useCase += 7;
+  } else if (tool.targetAudience && tool.targetAudience.length >= 15) {
+    breakdown.useCase += 7;
   } else {
-    issues.push('Missing specific target audience / bestFor');
-    improvements.push('Define explicit target audience / bestFor use-case (+5 pts)');
+    issues.push('Missing explicit bestFor / target audience persona');
+    improvements.push('Define concrete target buyer persona and workflow');
   }
 
-  if (tool.pros && Array.isArray(tool.pros) && tool.pros.length > 0) {
-    breakdown.useCase += 5;
-  } else if (tool.category) {
+  if (tool.pros && Array.isArray(tool.pros) && tool.pros.length >= 2) {
     breakdown.useCase += 3;
   }
 
-  // Relationships (10)
-  const categoryTools = saasTools.filter(t => t.category === tool.category && t.id !== tool.id);
-  if (categoryTools.length >= 3) breakdown.relationships += 5;
-  else breakdown.relationships += Math.min(categoryTools.length * 1.5, 4);
+  // 6. Strict Provenance (20 pts max)
+  if (provenance === 'VERIFIED') breakdown.provenance += 20;
+  else if (provenance === 'HIGH') breakdown.provenance += 15;
+  else if (provenance === 'MEDIUM') breakdown.provenance += 8;
+  else if (provenance === 'LOW') breakdown.provenance += 3;
+  else breakdown.provenance += 0;
 
-  const hasVs = versusPairs.some(p => p.tA.id === tool.id || p.tB.id === tool.id);
-  if (hasVs) breakdown.relationships += 5;
-  else breakdown.relationships += 2;
-
-  // Data Confidence (10)
-  const confidence = evaluateDataConfidence(tool);
-  if (confidence === 'VERIFIED') breakdown.dataConfidence += 10;
-  else if (confidence === 'HIGH') breakdown.dataConfidence += 8;
-  else if (confidence === 'MEDIUM') breakdown.dataConfidence += 6;
-  else if (confidence === 'LOW') breakdown.dataConfidence += 3;
-  else breakdown.dataConfidence += 0;
-
-  const totalScore = Math.min(100, Math.round(
+  let totalScore = Math.min(100, Math.round(
     breakdown.identity +
     breakdown.description +
     breakdown.features +
     breakdown.pricing +
     breakdown.useCase +
-    breakdown.relationships +
-    breakdown.dataConfidence
+    breakdown.provenance
   ));
+
+  // Adversarial Quality Cap
+  if (provenance === 'LOW' || isAutoSynth) {
+    totalScore = Math.min(totalScore, 50); // Cannot reach GOOD (65+)
+  } else if (provenance === 'MEDIUM' && validFeatures.length === 0) {
+    totalScore = Math.min(totalScore, 62); // Cannot reach GOOD (65+) without features
+  }
 
   let band = 'HOLD';
   if (totalScore >= 80) band = 'EXCELLENT';
@@ -325,71 +271,79 @@ function scoreSoftwarePage(tool) {
     name: tool.name,
     totalScore,
     band,
-    confidence,
+    provenance,
+    validFeatureCount: validFeatures.length,
     breakdown,
     issues,
     improvements
   };
 }
 
-// B. /alternatives/:id/
-function scoreAlternativesPage(tool, sourceScore) {
+// B. /alternatives/:id/ (Calibrated)
+function scoreAlternativesCalibrated(tool, sourceScore) {
   const breakdown = {
     sourceQuality: 0,          // max 20
-    alternativeRelevance: 0,   // max 25
+    alternativeRelevance: 0,   // max 30
     differentiation: 0,        // max 25
-    searchIntent: 0,           // max 15
-    editorialGuidance: 0       // max 15
+    decisionGuidance: 0        // max 25
   };
 
   const issues = [];
   const improvements = [];
 
-  // Source Quality (20)
+  // Source quality foundation (20)
   breakdown.sourceQuality = Math.round((sourceScore.totalScore / 100) * 20);
 
-  // Alternative Relevance (25)
+  // Alternative relevance (30)
   const categoryAlts = saasTools.filter(t => t.category === tool.category && t.id !== tool.id);
   const altCount = categoryAlts.length;
 
-  if (altCount >= 6) breakdown.alternativeRelevance += 25;
-  else if (altCount >= 3) breakdown.alternativeRelevance += 18;
+  if (altCount >= 5) breakdown.alternativeRelevance += 30;
+  else if (altCount >= 3) breakdown.alternativeRelevance += 20;
   else if (altCount >= 1) {
     breakdown.alternativeRelevance += 10;
-    issues.push(`Limited category competitors (${altCount} found)`);
-    improvements.push('Expand category ecosystem to 4+ competitors (+7 pts)');
+    issues.push(`Sparse category cluster (${altCount} competitors)`);
   } else {
-    issues.push('No direct category alternatives found');
-    improvements.push('Map at least 3 relevant alternative tools (+15 pts)');
+    breakdown.alternativeRelevance += 0;
+    issues.push('Zero alternatives found (empty list)');
   }
 
   // Differentiation (25)
-  const altsWithPricing = categoryAlts.filter(a => a.pricing && a.pricing !== 'Unlisted').length;
-  if (altCount > 0 && altsWithPricing / altCount >= 0.7) breakdown.differentiation += 10;
-  else breakdown.differentiation += 5;
+  const altsWithSpecs = categoryAlts.filter(a => Array.isArray(a.features) && a.features.length >= 3).length;
+  if (altCount > 0 && altsWithSpecs / altCount >= 0.6) {
+    breakdown.differentiation += 25;
+  } else if (altCount > 0 && altsWithSpecs / altCount >= 0.3) {
+    breakdown.differentiation += 15;
+  } else {
+    breakdown.differentiation += 5;
+    issues.push('Alternatives lack structured feature differentiation');
+  }
 
-  const altsWithSpecs = categoryAlts.filter(a => a.features && a.features.length >= 2).length;
-  if (altCount > 0 && altsWithSpecs / altCount >= 0.7) breakdown.differentiation += 10;
-  else breakdown.differentiation += 5;
+  // Decision guidance (25)
+  if (sourceScore.band === 'EXCELLENT' && altCount >= 4) {
+    breakdown.decisionGuidance += 25;
+  } else if (sourceScore.band === 'GOOD' && altCount >= 3) {
+    breakdown.decisionGuidance += 18;
+  } else {
+    breakdown.decisionGuidance += 8;
+    issues.push('Weak comparative decision context');
+  }
 
-  const hasFreeOrOpen = categoryAlts.some(a => a.isFreeTier || a.isOpenSource);
-  if (hasFreeOrOpen) breakdown.differentiation += 5;
-
-  // Search Intent (15)
-  if (altCount >= 3 && tool.category) breakdown.searchIntent += 15;
-  else if (altCount >= 1) breakdown.searchIntent += 8;
-
-  // Editorial Guidance (15)
-  if (altCount >= 3) breakdown.editorialGuidance += 15;
-  else breakdown.editorialGuidance += 8;
-
-  const totalScore = Math.min(100, Math.round(
+  let totalScore = Math.min(100, Math.round(
     breakdown.sourceQuality +
     breakdown.alternativeRelevance +
     breakdown.differentiation +
-    breakdown.searchIntent +
-    breakdown.editorialGuidance
+    breakdown.decisionGuidance
   ));
+
+  // Adversarial Quality Caps
+  if (altCount === 0) {
+    totalScore = Math.min(totalScore, 30); // HOLD
+  } else if (sourceScore.band === 'NEEDS IMPROVEMENT') {
+    totalScore = Math.min(totalScore, 58); // Needs Improvement cap
+  } else if (sourceScore.band === 'HOLD') {
+    totalScore = Math.min(totalScore, 40); // HOLD cap
+  }
 
   let band = 'HOLD';
   if (totalScore >= 80) band = 'EXCELLENT';
@@ -411,67 +365,72 @@ function scoreAlternativesPage(tool, sourceScore) {
   };
 }
 
-// C. /vs/:slug/
-function scoreVsPage(pair, scoreMap) {
+// C. /vs/:slug/ (Calibrated)
+function scoreVsCalibrated(pair, scoreMap) {
   const { tA, tB, vsSlug } = pair;
   const breakdown = {
-    productRelevance: 0,       // max 25
-    specMatrix: 0,             // max 25
-    contentGuidance: 0,        // max 25
-    baselineQuality: 0,        // max 15
-    navigationalIntegrity: 0   // max 10
+    comparisonIntent: 0,       // max 35 (strict job-to-be-done overlap)
+    specDifferentiation: 0,    // max 25 (concrete side-by-side specs)
+    guidanceValue: 0,          // max 20 (buyer tradeoff context)
+    toolBaselineQuality: 0     // max 20 (quality of underlying tools)
   };
 
   const issues = [];
   const improvements = [];
+  const intent = evaluateStrictVsIntent(tA, tB);
 
-  const intent = evaluateVsSearchIntent(tA, tB);
-
-  // Product Relevance (25)
-  if (tA.category === tB.category) {
-    breakdown.productRelevance += 15;
-    if (intent === 'HIGH') breakdown.productRelevance += 10;
-    else if (intent === 'MEDIUM') breakdown.productRelevance += 6;
-    else breakdown.productRelevance += 2;
+  // 1. Comparison Intent (35 pts max)
+  if (intent === 'HIGH') {
+    breakdown.comparisonIntent += 35;
+  } else if (intent === 'MEDIUM') {
+    breakdown.comparisonIntent += 20;
+    issues.push('Partial workflow overlap (secondary comparison intent)');
   } else {
-    breakdown.productRelevance += 8;
-    issues.push('Cross-category comparison (lower direct buyer substitution intent)');
+    breakdown.comparisonIntent += 5;
+    issues.push('Low direct substitution intent (sub-niche or workflow mismatch)');
   }
 
-  // Spec Matrix (25)
-  if (tA.pricing && tB.pricing) breakdown.specMatrix += 8;
+  // 2. Spec Differentiation (25 pts max)
+  const hasValidPriceA = tA.pricing && tA.pricing.includes('$');
+  const hasValidPriceB = tB.pricing && tB.pricing.includes('$');
+  if (hasValidPriceA && hasValidPriceB) breakdown.specDifferentiation += 12;
+  else if (tA.pricing && tB.pricing) breakdown.specDifferentiation += 6;
+
+  const hasFeatsA = Array.isArray(tA.features) && tA.features.length >= 3;
+  const hasFeatsB = Array.isArray(tB.features) && tB.features.length >= 3;
+  if (hasFeatsA && hasFeatsB) breakdown.specDifferentiation += 13;
+  else if (hasFeatsA || hasFeatsB) breakdown.specDifferentiation += 6;
   else {
-    breakdown.specMatrix += 4;
-    improvements.push('Enrich pricing metadata for both products (+4 pts)');
+    issues.push('Both tools lack structured feature specs in matrix');
   }
 
-  if (tA.isFreeTier !== undefined && tB.isFreeTier !== undefined) breakdown.specMatrix += 8;
-  else breakdown.specMatrix += 4;
-
-  if (tA.domain && tB.domain) breakdown.specMatrix += 9;
-  else breakdown.specMatrix += 4;
-
-  // Content Guidance (25)
-  breakdown.contentGuidance += 20; // Structured side-by-side spec matrix table + contextual guidance
-  if (tA.description && tB.description && tA.description.length >= 100 && tB.description.length >= 100) {
-    breakdown.contentGuidance += 5;
+  // 3. Guidance Value (20 pts max)
+  if (intent === 'HIGH' && (hasFeatsA || hasFeatsB)) {
+    breakdown.guidanceValue += 20;
+  } else if (intent === 'MEDIUM') {
+    breakdown.guidanceValue += 12;
+  } else {
+    breakdown.guidanceValue += 5;
   }
 
-  // Baseline Quality (15)
-  const scoreA = scoreMap.get(tA.id)?.totalScore || 60;
-  const scoreB = scoreMap.get(tB.id)?.totalScore || 60;
-  breakdown.baselineQuality = Math.round(((scoreA + scoreB) / 200) * 15);
+  // 4. Underlying Tool Baseline (20 pts max)
+  const scoreA = scoreMap.get(tA.id)?.totalScore || 50;
+  const scoreB = scoreMap.get(tB.id)?.totalScore || 50;
+  breakdown.toolBaselineQuality = Math.round(((scoreA + scoreB) / 200) * 20);
 
-  // Navigational Integrity (10)
-  breakdown.navigationalIntegrity = 10;
-
-  const totalScore = Math.min(100, Math.round(
-    breakdown.productRelevance +
-    breakdown.specMatrix +
-    breakdown.contentGuidance +
-    breakdown.baselineQuality +
-    breakdown.navigationalIntegrity
+  let totalScore = Math.min(100, Math.round(
+    breakdown.comparisonIntent +
+    breakdown.specDifferentiation +
+    breakdown.guidanceValue +
+    breakdown.toolBaselineQuality
   ));
+
+  // Adversarial Quality Cap for Low Intent Pairs
+  if (intent === 'LOW') {
+    totalScore = Math.min(totalScore, 48); // HOLD / NEEDS IMPROVEMENT cap
+  } else if (!hasFeatsA && !hasFeatsB) {
+    totalScore = Math.min(totalScore, 62); // NEEDS IMPROVEMENT cap
+  }
 
   let band = 'HOLD';
   if (totalScore >= 80) band = 'EXCELLENT';
@@ -493,54 +452,55 @@ function scoreVsPage(pair, scoreMap) {
   };
 }
 
-// D. /best/:category/
-function scoreBestPage(cat) {
+// D. /best/:category/ (Calibrated)
+function scoreBestCalibrated(cat) {
   const breakdown = {
     categoryDepth: 0,          // max 25
-    rankingIntegrity: 0,       // max 25
-    editorialGuidance: 0,      // max 25
-    structuredData: 0,         // max 15
-    internalLinking: 0         // max 10
+    selectionMethodology: 0,   // max 25 (curation vs raw DB dump)
+    buyerGuidanceTradeoffs: 0, // max 25 (persona specific trade-offs)
+    technicalHealth: 0         // max 25 (structured data & links)
   };
 
   const issues = [];
   const improvements = [];
-
   const matched = saasTools.filter(t => t.category === cat.id);
   const count = matched.length;
 
-  // Category Depth (25)
+  // 1. Category Depth (25)
   if (count >= 15) breakdown.categoryDepth += 25;
-  else if (count >= 8) breakdown.categoryDepth += 20;
+  else if (count >= 8) breakdown.categoryDepth += 18;
   else if (count >= 4) {
-    breakdown.categoryDepth += 14;
+    breakdown.categoryDepth += 10;
     issues.push(`Small category inventory (${count} tools)`);
-    improvements.push('Add 5+ verified software tools to this category (+6 pts)');
   } else {
-    breakdown.categoryDepth += 8;
+    breakdown.categoryDepth += 4;
     issues.push(`Thin category (<4 tools)`);
-    improvements.push('Ingest tools to expand category breadth (+12 pts)');
   }
 
-  // Ranking Integrity (25)
-  breakdown.rankingIntegrity += 25; // Deterministic leaderboard sorting with genuine baseline votes
+  // 2. Selection Methodology (25)
+  // Current ranking is deterministic baseline votes + database order; lacks explicit per-persona curation criteria
+  breakdown.selectionMethodology += 12; // Modest baseline credit for deterministic order
+  issues.push('Rankings based on baseline array order without published scoring methodology');
+  improvements.push('Add published multi-criteria evaluation scoring breakdown per tool');
 
-  // Editorial Guidance (25)
-  breakdown.editorialGuidance += 25; // Pre-rendered buyer guidance summary, evaluation criteria & FAQ
+  // 3. Buyer Guidance & Tradeoffs (25)
+  // Current page has general FAQ and category overview, but lacks "Best for X vs Best for Y" persona tradeoffs
+  breakdown.buyerGuidanceTradeoffs += 14;
+  issues.push('Lacks persona-specific tradeoff matrices (e.g. Best for Enterprise vs Best for Solo)');
+  improvements.push('Add persona-specific recommendations and pros/cons callouts');
 
-  // Structured Data (15)
-  breakdown.structuredData += 15; // CollectionPage & ItemList schema with BreadcrumbList
+  // 4. Technical Health (25)
+  breakdown.technicalHealth += 25; // Clean CollectionPage & ItemList JSON-LD + Breadcrumbs
 
-  // Internal Linking (10)
-  breakdown.internalLinking += 10; // Links to individual /software/ profiles and /alternatives/
-
-  const totalScore = Math.min(100, Math.round(
+  let totalScore = Math.min(100, Math.round(
     breakdown.categoryDepth +
-    breakdown.rankingIntegrity +
-    breakdown.editorialGuidance +
-    breakdown.structuredData +
-    breakdown.internalLinking
+    breakdown.selectionMethodology +
+    breakdown.buyerGuidanceTradeoffs +
+    breakdown.technicalHealth
   ));
+
+  // Adversarial Quality Cap: Without explicit editorial persona tradeoffs, /best/ cannot exceed 76 (GOOD)
+  totalScore = Math.min(totalScore, 76);
 
   let band = 'HOLD';
   if (totalScore >= 80) band = 'EXCELLENT';
@@ -562,32 +522,56 @@ function scoreBestPage(cat) {
   };
 }
 
-// E. /guides/:slug/
-function scoreGuidePage(guide) {
+// E. /guides/:slug/ (Calibrated)
+function scoreGuideCalibrated(guide) {
   const breakdown = {
-    editorialDepth: 0,         // max 30
-    originality: 0,            // max 25
-    intentSatisfaction: 0,     // max 20
-    internalLinking: 0,        // max 15
-    schemaMetadata: 0          // max 10
+    editorialOriginality: 0,   // max 30 (first-party data/testing)
+    comparativeDepth: 0,       // max 25 (detailed matrix)
+    ssrPayloadDepth: 0,        // max 25 (real SSR rendered body)
+    technicalHealth: 0         // max 20 (schema & links)
   };
 
-  if (guide.wordCount >= 1400) breakdown.editorialDepth += 30;
-  else if (guide.wordCount >= 1000) breakdown.editorialDepth += 24;
-  else breakdown.editorialDepth += 15;
+  const issues = [];
+  const improvements = [];
 
-  breakdown.originality += 25;       // Zero generic spun paragraphs, unique curated comparison matrices
-  breakdown.intentSatisfaction += 20; // Directly answers enterprise buyer criteria
-  breakdown.internalLinking += 15;    // Cross-links to directory software pages
-  breakdown.schemaMetadata += 10;     // Article & Breadcrumb schema
+  // 1. Editorial Originality (30)
+  breakdown.editorialOriginality += 16; // Solid summary and criteria, but lacks published primary benchmark test data
+  issues.push('Lacks published primary benchmark test data (speed, latency, output samples)');
 
-  const totalScore = Math.min(100, Math.round(
-    breakdown.editorialDepth +
-    breakdown.originality +
-    breakdown.intentSatisfaction +
-    breakdown.internalLinking +
-    breakdown.schemaMetadata
+  // 2. Comparative Depth (25)
+  breakdown.comparativeDepth += 20; // 5-8 tool comparison scope
+
+  // 3. SSR Payload Depth (25)
+  // Prerendering check: Does SSR HTML contain full body or header stub?
+  const guideFilePath = path.join(__dirname, '..', 'dist', 'guides', guide.slug, 'index.html');
+  let hasFullSsr = false;
+  if (fs.existsSync(guideFilePath)) {
+    const html = fs.readFileSync(guideFilePath, 'utf8');
+    hasFullSsr = html.length >= 12000;
+  }
+
+  if (hasFullSsr) {
+    breakdown.ssrPayloadDepth += 25;
+  } else {
+    breakdown.ssrPayloadDepth += 8; // Header-only SSR stub
+    issues.push('Prerendered HTML contains only header summary (React-only body hydration)');
+    improvements.push('Prerender complete markdown/article body into static HTML for crawlers');
+  }
+
+  // 4. Technical Health (20)
+  breakdown.technicalHealth += 20;
+
+  let totalScore = Math.min(100, Math.round(
+    breakdown.editorialOriginality +
+    breakdown.comparativeDepth +
+    breakdown.ssrPayloadDepth +
+    breakdown.technicalHealth
   ));
+
+  // Adversarial Quality Cap: If SSR payload is only header stub, cap at 72 (GOOD)
+  if (!hasFullSsr) {
+    totalScore = Math.min(totalScore, 72);
+  }
 
   let band = 'HOLD';
   if (totalScore >= 80) band = 'EXCELLENT';
@@ -601,49 +585,83 @@ function scoreGuidePage(guide) {
     slug: guide.slug,
     title: guide.title,
     wordCount: guide.wordCount,
+    hasFullSsr,
     totalScore,
     band,
     breakdown,
-    issues: [],
-    improvements: []
+    issues,
+    improvements
   };
 }
 
 // -------------------------------------------------------------
-// 5. EXECUTE AUDIT ACROSS ALL INVENTORY
+// 5. EXECUTE CALIBRATED AUDIT ACROSS ALL INVENTORY
 // -------------------------------------------------------------
 
-console.log(`Evaluating ${saasTools.length} /software/ routes...`);
-const softwareScores = saasTools.map(t => scoreSoftwarePage(t));
-const scoreMap = new Map();
-softwareScores.forEach(s => scoreMap.set(s.id, s));
+console.log(`Recalibrating ${saasTools.length} /software/ routes...`);
+const softwareScoresCalibrated = saasTools.map(t => scoreSoftwareCalibrated(t));
+const scoreMapCalibrated = new Map();
+softwareScoresCalibrated.forEach(s => scoreMapCalibrated.set(s.id, s));
 
-console.log(`Evaluating ${saasTools.length} /alternatives/ routes...`);
-const alternativesScores = saasTools.map(t => scoreAlternativesPage(t, scoreMap.get(t.id)));
+console.log(`Recalibrating ${saasTools.length} /alternatives/ routes...`);
+const alternativesScoresCalibrated = saasTools.map(t => scoreAlternativesCalibrated(t, scoreMapCalibrated.get(t.id)));
 
-console.log(`Evaluating ${versusPairs.length} /vs/ comparison routes...`);
-const vsScores = versusPairs.map(p => scoreVsPage(p, scoreMap));
+// VS pairs list
+function getVsPairsList(tools) {
+  const map = new Map();
+  const catMap = {};
+  tools.forEach(t => {
+    const cat = t.category || 'other';
+    if (!catMap[cat]) catMap[cat] = [];
+    catMap[cat].push(t);
+  });
+  Object.values(catMap).forEach(list => {
+    if (list.length < 2) return;
+    const top = list.slice(0, 6);
+    for (let i = 0; i < top.length; i++) {
+      for (let j = i + 1; j < top.length; j++) {
+        const slug = `${top[i].id}-vs-${top[j].id}`;
+        if (!map.has(slug)) {
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug });
+        }
+      }
+    }
+  });
+  return Array.from(map.values());
+}
+const versusPairs = getVsPairsList(saasTools);
 
-console.log(`Evaluating ${saasCategories.filter(c => c.id !== 'all').length} /best/ category routes...`);
-const bestScores = saasCategories.filter(c => c.id !== 'all').map(c => scoreBestPage(c));
+console.log(`Recalibrating ${versusPairs.length} /vs/ comparison routes...`);
+const vsScoresCalibrated = versusPairs.map(p => scoreVsCalibrated(p, scoreMapCalibrated));
 
-console.log(`Evaluating ${allGuides.length} /guides/ editorial routes...`);
-const guideScores = allGuides.map(g => scoreGuidePage(g));
+console.log(`Recalibrating ${saasCategories.filter(c => c.id !== 'all').length} /best/ category routes...`);
+const bestScoresCalibrated = saasCategories.filter(c => c.id !== 'all').map(c => scoreBestCalibrated(c));
 
-const allScores = [
-  ...softwareScores,
-  ...alternativesScores,
-  ...vsScores,
-  ...bestScores,
-  ...guideScores
+const allGuidesList = [
+  { id: "guide-best-all-in-one-seo-software-2026", slug: "best-all-in-one-seo-software-2026", title: "Best All-in-One SEO Software in 2026: Comprehensive Buyer Matrix", wordCount: 1450 },
+  { id: "guide-best-workflow-automation-tools-2026", slug: "best-workflow-automation-tools-2026", title: "Best Workflow Automation Software in 2026: Top Integration Platforms", wordCount: 1380 },
+  { id: "guide-best-document-automation-tools-2026", slug: "best-document-automation-tools-2026", title: "Best Document Automation & eSign Software 2026: Top Contract Platforms", wordCount: 1290 },
+  { id: "guide-best-cloud-database-platforms-2026", slug: "best-cloud-database-platforms-2026", title: "Best Cloud Database & BaaS Platforms 2026: Modern Backend Comparison", wordCount: 1520 },
+  { id: "guide-best-ai-video-generators-2026", slug: "best-ai-video-generators-2026", title: "Best AI Video Generators in 2026: Text-to-Video & Motion Physics Matrix", wordCount: 1650 },
+  { id: "guide-best-ai-coding-assistants-2026", slug: "best-ai-coding-assistants-2026", title: "Best AI Coding Assistants & Dev Tools 2026: Complete Benchmark", wordCount: 1780 },
+  { id: "guide-best-crm-software-founders-2026", slug: "best-crm-software-founders-2026", title: "Best CRM Software for Founders & Sales Teams 2026: Pipeline Comparison", wordCount: 1420 },
+  { id: "guide-best-customer-support-helpdesk-2026", slug: "best-customer-support-helpdesk-2026", title: "Best Customer Support & Helpdesk Software 2026: Shared Inbox Matrix", wordCount: 1340 }
 ];
 
-// -------------------------------------------------------------
-// 6. STATISTICAL CALCULATIONS
-// -------------------------------------------------------------
+console.log(`Recalibrating ${allGuidesList.length} /guides/ editorial routes...`);
+const guideScoresCalibrated = allGuidesList.map(g => scoreGuideCalibrated(g));
 
+const allScoresCalibrated = [
+  ...softwareScoresCalibrated,
+  ...alternativesScoresCalibrated,
+  ...vsScoresCalibrated,
+  ...bestScoresCalibrated,
+  ...guideScoresCalibrated
+];
+
+// Helper: Statistical computer
 function computeStats(items) {
-  if (!items || items.length === 0) return { total: 0, avg: 0, median: 0, min: 0, max: 0, excellent: 0, good: 0, needsImprovement: 0, hold: 0 };
+  if (!items || items.length === 0) return { total: 0, avg: 0, median: 0, min: 0, max: 0, counts: { excellent: 0, good: 0, needsImprovement: 0, hold: 0 }, percentages: { excellent: 0, good: 0, needsImprovement: 0, hold: 0 } };
   const scores = items.map(i => i.totalScore).sort((a, b) => a - b);
   const total = scores.length;
   const sum = scores.reduce((a, b) => a + b, 0);
@@ -673,218 +691,157 @@ function computeStats(items) {
   };
 }
 
-const softwareStats = computeStats(softwareScores);
-const alternativesStats = computeStats(alternativesScores);
-const vsStats = computeStats(vsScores);
-const bestStats = computeStats(bestScores);
-const guideStats = computeStats(guideScores);
-const globalStats = computeStats(allScores);
+const softwareStatsCal = computeStats(softwareScoresCalibrated);
+const alternativesStatsCal = computeStats(alternativesScoresCalibrated);
+const vsStatsCal = computeStats(vsScoresCalibrated);
+const bestStatsCal = computeStats(bestScoresCalibrated);
+const guideStatsCal = computeStats(guideScoresCalibrated);
+const globalStatsCal = computeStats(allScoresCalibrated);
 
 // -------------------------------------------------------------
-// 7. ANTI-BOILERPLATE SIMILARITY SAMPLING
+// 6. NORMALIZED SKELETAL BOILERPLATE SIMILARITY TEST
 // -------------------------------------------------------------
-console.log('Running Anti-Boilerplate Shingle Similarity Sampling...');
+console.log('Running Normalized Structural Anti-Boilerplate Test...');
 
-const sampleSoftware = saasTools.slice(0, 100).map(t => ({
-  id: t.id,
-  shingles: getShingles(`${t.name} ${t.tagline} ${t.description} ${Array.isArray(t.features) ? t.features.join(' ') : ''}`)
+function normalizeSkeletalText(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/https?:\/\/[^\s]+/g, ' ')
+    .replace(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/g, ' ')
+    .replace(/\$\d+(\/\w+)?/g, 'PRICE_TOKEN')
+    .replace(/\b(stakdock|review|pricing|alternatives|compare|overview|features|website checked|founder verified|open source|free tier)\b/g, ' ')
+    .replace(/[^a-z\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function getShingles(text, n = 3) {
+  const words = text.split(/\s+/).filter(w => w.length > 2);
+  const shingles = new Set();
+  for (let i = 0; i <= words.length - n; i++) {
+    shingles.add(words.slice(i, i + n).join(' '));
+  }
+  return shingles;
+}
+
+function calculateJaccard(setA, setB) {
+  if (setA.size === 0 || setB.size === 0) return 0;
+  let intersection = 0;
+  for (const item of setA) {
+    if (setB.has(item)) intersection++;
+  }
+  return intersection / (setA.size + setB.size - intersection);
+}
+
+// Sample across templates
+const sampleNormalizedVs = versusPairs.slice(0, 50).map(p => ({
+  slug: p.vsSlug,
+  shingles: getShingles(normalizeSkeletalText(`Comparing ${p.tA.name} and ${p.tB.name}. Explore pricing breakdown, feature matrices, customer sentiment, and user ratings to determine the right software for your workflow.`))
 }));
 
-let highSimCount = 0;
-let medSimCount = 0;
-let lowSimCount = 0;
-let nearDupCount = 0;
-let pairComparisons = 0;
+let vsHighSim = 0;
+let vsMedSim = 0;
+let vsLowSim = 0;
+let vsPairTotal = 0;
 
-for (let i = 0; i < sampleSoftware.length; i++) {
-  for (let j = i + 1; j < sampleSoftware.length; j++) {
-    pairComparisons++;
-    const sim = calculateJaccard(sampleSoftware[i].shingles, sampleSoftware[j].shingles);
-    if (sim >= 0.75) nearDupCount++;
-    else if (sim >= 0.55) highSimCount++;
-    else if (sim >= 0.30) medSimCount++;
-    else lowSimCount++;
+for (let i = 0; i < sampleNormalizedVs.length; i++) {
+  for (let j = i + 1; j < sampleNormalizedVs.length; j++) {
+    vsPairTotal++;
+    const sim = calculateJaccard(sampleNormalizedVs[i].shingles, sampleNormalizedVs[j].shingles);
+    if (sim >= 0.70) vsHighSim++;
+    else if (sim >= 0.40) vsMedSim++;
+    else vsLowSim++;
   }
 }
 
-const similarityDistribution = {
-  highlyUniquePercent: Math.round((lowSimCount / pairComparisons) * 1000) / 10,
-  acceptableSimilarityPercent: Math.round((medSimCount / pairComparisons) * 1000) / 10,
-  suspiciouslySimilarPercent: Math.round((highSimCount / pairComparisons) * 1000) / 10,
-  nearDuplicatePercent: Math.round((nearDupCount / pairComparisons) * 1000) / 10
+const normalizedVsBoilerplate = {
+  highStructuralRepetitionPercent: Math.round((vsHighSim / vsPairTotal) * 1000) / 10,
+  moderateStructuralRepetitionPercent: Math.round((vsMedSim / vsPairTotal) * 1000) / 10,
+  uniquePercent: Math.round((vsLowSim / vsPairTotal) * 1000) / 10
 };
 
 // -------------------------------------------------------------
-// 8. SYSTEMIC WEAKNESSES AGGREGATION
+// 7. STRICT PROVENANCE & INTENT SUMMARY
 // -------------------------------------------------------------
-let missingTaglines = 0;
-let shortDescriptions = 0;
-let thinDescriptions = 0;
-let missingFeatures = 0;
-let thinFeatures = 0;
-let unlistedPricing = 0;
-let missingUseCases = 0;
-let thinCategories = 0;
-let lowConfidenceVs = 0;
+let countVerified = 0;
+let countHigh = 0;
+let countMed = 0;
+let countLow = 0;
+let countUnknown = 0;
 
 saasTools.forEach(t => {
-  if (!t.tagline || t.tagline.length < 20) missingTaglines++;
-  if (!t.description || t.description.length < 80) thinDescriptions++;
-  else if (t.description.length < 150) shortDescriptions++;
-
-  if (!t.features || !Array.isArray(t.features) || t.features.length === 0) missingFeatures++;
-  else if (t.features.length < 3) thinFeatures++;
-
-  if (!t.pricing || t.pricing === 'Unlisted' || t.pricing === 'Contact for Pricing') unlistedPricing++;
-  if (!t.bestFor && !t.targetAudience) missingUseCases++;
+  const p = evaluateStrictProvenance(t);
+  if (p === 'VERIFIED') countVerified++;
+  else if (p === 'HIGH') countHigh++;
+  else if (p === 'MEDIUM') countMed++;
+  else if (p === 'LOW') countLow++;
+  else countUnknown++;
 });
 
-saasCategories.forEach(c => {
-  if (c.id !== 'all') {
-    const count = saasTools.filter(t => t.category === c.id).length;
-    if (count < 5) thinCategories++;
-  }
-});
+let countVsHigh = 0;
+let countVsMed = 0;
+let countVsLow = 0;
 
 versusPairs.forEach(p => {
-  if (evaluateVsSearchIntent(p.tA, p.tB) === 'LOW') lowConfidenceVs++;
+  const intent = evaluateStrictVsIntent(p.tA, p.tB);
+  if (intent === 'HIGH') countVsHigh++;
+  else if (intent === 'MEDIUM') countVsMed++;
+  else countVsLow++;
 });
 
-const systemicWeaknesses = {
-  thinDescriptions: { count: thinDescriptions, percent: Math.round((thinDescriptions / saasTools.length) * 1000) / 10 },
-  shortDescriptions: { count: shortDescriptions, percent: Math.round((shortDescriptions / saasTools.length) * 1000) / 10 },
-  missingFeatures: { count: missingFeatures, percent: Math.round((missingFeatures / saasTools.length) * 1000) / 10 },
-  thinFeatures: { count: thinFeatures, percent: Math.round((thinFeatures / saasTools.length) * 1000) / 10 },
-  missingTaglines: { count: missingTaglines, percent: Math.round((missingTaglines / saasTools.length) * 1000) / 10 },
-  missingUseCases: { count: missingUseCases, percent: Math.round((missingUseCases / saasTools.length) * 1000) / 10 },
-  unlistedPricing: { count: unlistedPricing, percent: Math.round((unlistedPricing / saasTools.length) * 1000) / 10 },
-  thinCategories: { count: thinCategories, percent: Math.round((thinCategories / (saasCategories.length - 1)) * 1000) / 10 },
-  lowConfidenceVs: { count: lowConfidenceVs, percent: Math.round((lowConfidenceVs / versusPairs.length) * 1000) / 10 }
-};
-
 // -------------------------------------------------------------
-// 9. QUALITY IMPROVEMENT OPPORTUNITY MAP
-// -------------------------------------------------------------
-// Calculate how many tools would upgrade bands by solving specific data gaps
-let canUpgradeFromNeedsImprovementToGood = 0;
-let canUpgradeFromGoodToExcellent = 0;
-let canUpgradeFromHoldToNeedsImprovement = 0;
-
-softwareScores.forEach(item => {
-  const t = toolsMap.get(item.id);
-  if (!t) return;
-
-  // Potential gain if we add 4 features (+10 pts) + clarify pricing (+5 pts) + bestFor (+5 pts) = +20 pts
-  let potentialGain = 0;
-  if (!t.features || t.features.length < 3) potentialGain += 10;
-  if (!t.pricing || t.pricing === 'Unlisted') potentialGain += 5;
-  if (!t.bestFor && !t.targetAudience) potentialGain += 5;
-  if (!t.description || t.description.length < 150) potentialGain += 6;
-
-  const upgradedScore = item.totalScore + potentialGain;
-
-  if (item.band === 'HOLD' && upgradedScore >= 45) canUpgradeFromHoldToNeedsImprovement++;
-  if (item.band === 'NEEDS IMPROVEMENT' && upgradedScore >= 65) canUpgradeFromNeedsImprovementToGood++;
-  if (item.band === 'GOOD' && upgradedScore >= 80) canUpgradeFromGoodToExcellent++;
-});
-
-const improvementOpportunities = {
-  holdToNeedsImprovement: canUpgradeFromHoldToNeedsImprovement,
-  needsImprovementToGood: canUpgradeFromNeedsImprovementToGood,
-  goodToExcellent: canUpgradeFromGoodToExcellent
-};
-
-// -------------------------------------------------------------
-// 10. GENERATE ARTIFACTS
+// 8. WRITE CALIBRATED REPORT
 // -------------------------------------------------------------
 const reportsDir = path.join(__dirname, '..', 'reports');
 if (!fs.existsSync(reportsDir)) fs.mkdirSync(reportsDir, { recursive: true });
 
-const reportJsonPath = path.join(reportsDir, 'page-quality-report.json');
-const reportSummaryPath = path.join(reportsDir, 'page-quality-summary.md');
+const reportCalibratedPath = path.join(reportsDir, 'page-quality-report-calibrated.json');
+const summaryCalibratedPath = path.join(reportsDir, 'page-quality-summary-calibrated.md');
 
-const reportData = {
+const reportDataCalibrated = {
   generatedAt: new Date().toISOString(),
-  auditMode: 'SHADOW_MODE_READ_ONLY',
+  auditMode: 'STEP_2B_ADVERSARIAL_CALIBRATION_SHADOW_MODE',
   summary: {
-    totalRoutesEvaluated: allScores.length,
-    globalStats,
+    totalRoutesEvaluated: allScoresCalibrated.length,
+    globalStats: globalStatsCal,
     byTemplate: {
-      software: softwareStats,
-      alternatives: alternativesStats,
-      versus: vsStats,
-      best: bestStats,
-      guides: guideStats
+      software: softwareStatsCal,
+      alternatives: alternativesStatsCal,
+      versus: vsStatsCal,
+      best: bestStatsCal,
+      guides: guideStatsCal
     }
   },
-  similarityDistribution,
-  systemicWeaknesses,
-  improvementOpportunities,
+  strictProvenance: {
+    verified: { count: countVerified, percent: Math.round((countVerified / saasTools.length) * 1000) / 10 },
+    high: { count: countHigh, percent: Math.round((countHigh / saasTools.length) * 1000) / 10 },
+    medium: { count: countMed, percent: Math.round((countMed / saasTools.length) * 1000) / 10 },
+    low: { count: countLow, percent: Math.round((countLow / saasTools.length) * 1000) / 10 },
+    unknown: { count: countUnknown, percent: Math.round((countUnknown / saasTools.length) * 1000) / 10 }
+  },
+  strictVsIntent: {
+    high: { count: countVsHigh, percent: Math.round((countVsHigh / versusPairs.length) * 1000) / 10 },
+    medium: { count: countVsMed, percent: Math.round((countVsMed / versusPairs.length) * 1000) / 10 },
+    low: { count: countVsLow, percent: Math.round((countVsLow / versusPairs.length) * 1000) / 10 }
+  },
+  normalizedVsBoilerplate,
   topPagesByTemplate: {
-    software: softwareScores.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
-    alternatives: alternativesScores.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
-    versus: vsScores.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
-    best: bestScores.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
-    guides: guideScores.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5)
+    software: softwareScoresCalibrated.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
+    alternatives: alternativesScoresCalibrated.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
+    versus: vsScoresCalibrated.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
+    best: bestScoresCalibrated.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5),
+    guides: guideScoresCalibrated.sort((a, b) => b.totalScore - a.totalScore).slice(0, 5)
   },
   lowestPagesByTemplate: {
-    software: softwareScores.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
-    alternatives: alternativesScores.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
-    versus: vsScores.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
-    best: bestScores.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10)
+    software: softwareScoresCalibrated.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
+    alternatives: alternativesScoresCalibrated.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
+    versus: vsScoresCalibrated.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
+    best: bestScoresCalibrated.sort((a, b) => a.totalScore - b.totalScore).slice(0, 10),
+    guides: guideScoresCalibrated.sort((a, b) => a.totalScore - b.totalScore).slice(0, 8)
   }
 };
 
-fs.writeFileSync(reportJsonPath, JSON.stringify(reportData, null, 2), 'utf8');
+fs.writeFileSync(reportCalibratedPath, JSON.stringify(reportDataCalibrated, null, 2), 'utf8');
 
-// Generate Markdown Summary
-const summaryMd = `# StakDock Page Quality & Indexation Intelligence Audit Summary
-
-> **Audit Mode:** SHADOW MODE (Read-Only Internal Quality Intelligence)  
-> **Evaluated Inventory:** ${allScores.length} Canonical Routes  
-> **Scoring Scale:** 0–100 Internal StakDock Quality Score
-
----
-
-## 1. Global Score Distribution
-
-| Template | Total Pages | Average Score | Median | Highest | Lowest | % Excellent (80–100) | % Good (65–79) | % Needs Impr. (45–64) | % Hold (0–44) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **/software/** | ${softwareStats.total} | **${softwareStats.avg}** | ${softwareStats.median} | ${softwareStats.max} | ${softwareStats.min} | ${softwareStats.percentages.excellent}% | ${softwareStats.percentages.good}% | ${softwareStats.percentages.needsImprovement}% | ${softwareStats.percentages.hold}% |
-| **/alternatives/** | ${alternativesStats.total} | **${alternativesStats.avg}** | ${alternativesStats.median} | ${alternativesStats.max} | ${alternativesStats.min} | ${alternativesStats.percentages.excellent}% | ${alternativesStats.percentages.good}% | ${alternativesStats.percentages.needsImprovement}% | ${alternativesStats.percentages.hold}% |
-| **/vs/** | ${vsStats.total} | **${vsStats.avg}** | ${vsStats.median} | ${vsStats.max} | ${vsStats.min} | ${vsStats.percentages.excellent}% | ${vsStats.percentages.good}% | ${vsStats.percentages.needsImprovement}% | ${vsStats.percentages.hold}% |
-| **/best/** | ${bestStats.total} | **${bestStats.avg}** | ${bestStats.median} | ${bestStats.max} | ${bestStats.min} | ${bestStats.percentages.excellent}% | ${bestStats.percentages.good}% | ${bestStats.percentages.needsImprovement}% | ${bestStats.percentages.hold}% |
-| **/guides/** | ${guideStats.total} | **${guideStats.avg}** | ${guideStats.median} | ${guideStats.max} | ${guideStats.min} | ${guideStats.percentages.excellent}% | ${guideStats.percentages.good}% | ${guideStats.percentages.needsImprovement}% | ${guideStats.percentages.hold}% |
-| **ALL PAGES** | **${globalStats.total}** | **${globalStats.avg}** | **${globalStats.median}** | **${globalStats.max}** | **${globalStats.min}** | **${globalStats.percentages.excellent}%** | **${globalStats.percentages.good}%** | **${globalStats.percentages.needsImprovement}%** | **${globalStats.percentages.hold}%** |
-
----
-
-## 2. Anti-Boilerplate Similarity Findings
-* **Highly Unique Content (<30% overlap):** ${similarityDistribution.highlyUniquePercent}% of sampled pairs
-* **Acceptable Template Overlap (30–54%):** ${similarityDistribution.acceptableSimilarityPercent}% of sampled pairs
-* **Suspiciously Similar (55–74%):** ${similarityDistribution.suspiciouslySimilarPercent}% of sampled pairs
-* **Near Duplicate (≥75%):** ${similarityDistribution.nearDuplicatePercent}% of sampled pairs
-
----
-
-## 3. Systemic Weaknesses & Inventory Counts
-* **Missing / Thin Feature Specs (<3 features):** ${systemicWeaknesses.missingFeatures.count + systemicWeaknesses.thinFeatures.count} software listings (${Math.round(((systemicWeaknesses.missingFeatures.count + systemicWeaknesses.thinFeatures.count)/saasTools.length)*100)}%)
-* **Short Descriptions (<150 chars):** ${systemicWeaknesses.shortDescriptions.count + systemicWeaknesses.thinDescriptions.count} software listings (${Math.round(((systemicWeaknesses.shortDescriptions.count + systemicWeaknesses.thinDescriptions.count)/saasTools.length)*100)}%)
-* **Missing Target Audience / Use Case (\`bestFor\` undefined):** ${systemicWeaknesses.missingUseCases.count} software listings (${systemicWeaknesses.missingUseCases.percent}%)
-* **Unlisted Pricing:** ${systemicWeaknesses.unlistedPricing.count} software listings (${systemicWeaknesses.unlistedPricing.percent}%)
-* **Thin Categories (<5 tools):** ${systemicWeaknesses.thinCategories.count} categories (${systemicWeaknesses.thinCategories.percent}%)
-* **Low Direct Comparison Intent:** ${systemicWeaknesses.lowConfidenceVs.count} comparison pairs (${systemicWeaknesses.lowConfidenceVs.percent}%)
-
----
-
-## 4. Quality Upgrade Opportunities (Targeted Data Enrichment)
-* **${improvementOpportunities.needsImprovementToGood} pages** could move from **NEEDS IMPROVEMENT → GOOD** by attaching 4 structured feature bullets, explicit pricing classifications, and \`bestFor\` target audience definitions.
-* **${improvementOpportunities.goodToExcellent} pages** could move from **GOOD → EXCELLENT** with deep workflow specs and verified founder/deal information.
-* **${improvementOpportunities.holdToNeedsImprovement} pages** currently on **HOLD** could be elevated to index-worthy thresholds.
-`;
-
-fs.writeFileSync(reportSummaryPath, summaryMd, 'utf8');
-
-console.log('✅ Page Quality Audit complete!');
-console.log(`📄 JSON Report: ${reportJsonPath}`);
-console.log(`📄 Markdown Summary: ${reportSummaryPath}`);
+console.log('✅ Adversarial Quality Recalibration Audit Complete!');
+console.log(`📄 Calibrated JSON: ${reportCalibratedPath}`);
