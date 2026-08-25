@@ -14,27 +14,27 @@ export const officialGuides = [
     readTime: "8 min read",
     author: "Compiled by StakDock Directory Editors",
     methodologyNote: "Specification matrix compiled from publicly available vendor documentation, published pricing plans, and verified API capabilities.",
-    recommendedToolIds: ["ahrefs", "semrush", "screaming-frog-seo-spider", "se-ranking", "moz-pro"],
+    recommendedToolIds: ["ahrefs", "semrush", "screaming-frog-seo-spider", "se-ranking", "moz-pro", "all-in-one-seo-aioseo"],
     executiveSummary: "Selecting an SEO platform in 2026 requires balancing technical crawling depth, backlink index freshness, and SERP feature tracking. Desktop crawlers offer granular log file analysis, while cloud platforms provide continuous rank monitoring and competitor gap discovery.",
     comparisonTable: [
       { tool: "Ahrefs", bestFor: "Backlink Intelligence & Content Gap Analysis", pricing: "From $129/mo", freeTier: "Free Webmaster Tools", badge: "Live Backlink Index" },
       { tool: "Semrush", bestFor: "Keyword Research, PPC & Omnichannel Search", pricing: "From $139/mo", freeTier: "7-Day Trial", badge: "Omnichannel Data" },
-      { tool: "Screaming Frog", bestFor: "Deep Desktop Technical Crawling & Log File Audits", pricing: "Free (500 URLs) / £209/yr", freeTier: "✓ Yes (500 URLs)", badge: "Desktop Crawler" },
+      { tool: "Screaming Frog", bestFor: "Deep Desktop Technical Crawling & Log File Audits", pricing: "Free (500 URLs) / £199/yr", freeTier: "✓ Yes (500 URLs)", badge: "Desktop Crawler" },
       { tool: "SE Ranking", bestFor: "Agency White-Labeling & High-Accuracy Rank Tracking", pricing: "From $55/mo", freeTier: "14-Day Trial", badge: "White-Label Reporting" },
       { tool: "Moz Pro", bestFor: "Domain Authority Metrics & Beginner Audits", pricing: "From $99/mo", freeTier: "30-Day Trial", badge: "DA / PA Metrics" }
     ],
     sections: [
       {
         heading: "1. Technical Crawling vs. Cloud SERP Monitoring",
-        content: "Enterprise technical audits benefit from local desktop crawlers that simulate JavaScript rendering without cloud execution limits. For ongoing rank tracking and backlink monitoring, cloud suites provide automated daily alerts."
+        content: "Enterprise technical audits benefit from local desktop crawlers like <a href=\"/software/screaming-frog-seo-spider/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">Screaming Frog SEO Spider</a> that simulate JavaScript rendering without cloud execution limits. For ongoing rank tracking and backlink monitoring, cloud suites like <a href=\"/software/se-ranking/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">SE Ranking</a> and <a href=\"/software/moz-pro/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">Moz Pro</a> provide automated daily alerts. See our head-to-head breakdown in <a href=\"/vs/moz-pro-vs-se-ranking/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">Moz Pro vs SE Ranking</a>."
       },
       {
         heading: "2. Key Criteria for Software Buyers",
-        content: "Evaluate index update frequency, keyword database scale, API rate limits, and multi-user seat pricing before selecting an enterprise tier."
+        content: "Evaluate index update frequency, keyword database scale, API rate limits, and multi-user seat pricing before selecting an enterprise tier. For WordPress publishers seeking on-page optimization rather than crawler forensics, specialized plugins such as <a href=\"/software/all-in-one-seo-aioseo/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">All in One SEO (AIOSEO)</a> handle TruSEO content scoring and structured schema publishing natively."
       },
       {
         heading: "3. Workflow Alignment by Team Size",
-        content: "Independent consultants and technical agencies often pair Screaming Frog for audits with SE Ranking for client rank reporting. Larger in-house marketing teams typically centralize on Semrush or Ahrefs for cross-functional workflows."
+        content: "Independent consultants and technical agencies often pair Screaming Frog for audits with SE Ranking for client rank reporting (explore <a href=\"/vs/screaming-frog-seo-spider-vs-se-ranking/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">Screaming Frog vs SE Ranking</a> for workflow differences). Larger in-house marketing teams typically centralize on Semrush or Ahrefs for cross-functional workflows, while exploring <a href=\"/alternatives/se-ranking/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">SE Ranking alternatives</a> for budget-conscious team scaling."
       }
     ]
   },
@@ -48,22 +48,23 @@ export const officialGuides = [
     readTime: "7 min read",
     author: "Compiled by StakDock Directory Editors",
     methodologyNote: "Specification matrix compiled from publicly available vendor documentation, published pricing plans, and verified API capabilities.",
-    recommendedToolIds: ["make", "n8n", "zapier", "activepieces"],
-    executiveSummary: "Workflow automation has divided into managed cloud integration suites with extensive pre-built connectors and self-hostable engines offering local data control and zero execution fees.",
+    recommendedToolIds: ["make", "n8n", "microsoft-power-automate", "zapier", "activepieces"],
+    executiveSummary: "Workflow automation has divided into managed cloud integration suites with extensive pre-built connectors, enterprise RPA platforms, and self-hostable engines offering local data control and zero execution fees.",
     comparisonTable: [
       { tool: "Make", bestFor: "Visual Multi-Step Logic & JSON Data Routing", pricing: "Free / From $9/mo", freeTier: "✓ 1,000 ops/mo", badge: "Visual Data Router" },
       { tool: "n8n", bestFor: "Self-Hosted Privacy, Fair-Code Licensing & AI Nodes", pricing: "Free Self-Hosted / From $20/mo", freeTier: "✓ Open Source", badge: "Self-Hosted Engine" },
+      { tool: "Microsoft Power Automate", bestFor: "Enterprise Windows RPA & M365 Ecosystem", pricing: "Free Desktop / $15/user/mo", freeTier: "✓ Free Win10/11 Desktop", badge: "Enterprise RPA" },
       { tool: "Zapier", bestFor: "Largest App Ecosystem (7,000+ Integrations)", pricing: "Free / From $20/mo", freeTier: "✓ 100 tasks/mo", badge: "7,000+ Connectors" },
       { tool: "Activepieces", bestFor: "Lightweight Open-Source Zapier Alternative", pricing: "Free Self-Hosted / Cloud", freeTier: "✓ Open Source", badge: "Open Source" }
     ],
     sections: [
       {
         heading: "1. Cloud Managed iPaaS vs. Self-Hosted Execution",
-        content: "High-frequency webhook workflows running hundreds of thousands of operations monthly incur escalating fees on managed clouds. Deploying n8n or Activepieces on internal infrastructure eliminates task-based execution billing."
+        content: "High-frequency webhook workflows running hundreds of thousands of operations monthly incur escalating fees on managed clouds. Deploying <a href=\"/software/n8n/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">n8n</a> or Activepieces on internal infrastructure eliminates task-based execution billing, while enterprise organizations deeply embedded in Microsoft 365 leverage <a href=\"/software/microsoft-power-automate/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">Microsoft Power Automate</a> for native SharePoint, Teams, and desktop RPA execution."
       },
       {
         heading: "2. AI Agent Integration & JSON Manipulation",
-        content: "Modern workflows frequently incorporate LLM transformation steps between trigger events and destination databases. Make and n8n offer dedicated nodes for structured JSON output formatting."
+        content: "Modern workflows frequently incorporate LLM transformation steps between trigger events and destination databases. <a href=\"/software/make/\" style=\"color:#82A735;font-weight:700;text-decoration:underline;\">Make</a> and n8n offer dedicated nodes for structured JSON output formatting, while Power Automate includes AI Builder for automated document and invoice processing."
       }
     ]
   },

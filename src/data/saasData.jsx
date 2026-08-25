@@ -9090,24 +9090,99 @@ export const staticSaasTools = [
     "name": "Invoice Ninja",
     "domain": "invoiceninja.com",
     "category": "invoicing",
-    "tagline": "Open-source invoicing, expense tracking, and client payment portal",
-    "description": "Invoice Ninja provides open-source invoice creation, vendor payment tracking, client portals, and proposal generation. It is designed for freelancers and small businesses requiring self-hosted or cloud billing.",
+    "primaryCategory": "Invoicing & Billing Software",
+    "subcategories": ["Open Source Invoicing", "Client Billing Portals", "Recurring Invoicing", "Time Tracking"],
+    "jobsToBeDone": [
+      "Create professional branded invoices, quotes, and credit notes",
+      "Self-host billing software on private Docker/PHP servers for complete data ownership",
+      "Automate recurring subscription billing with credit card and ACH payment gateways",
+      "Provide clients a self-service portal to view invoice histories, pay balances, and approve quotes"
+    ],
+    "targetUsers": ["Freelancers", "Independent consultants", "Agencies & service providers", "Self-hosting developers", "Privacy-conscious small businesses"],
+    "deploymentModels": ["Self-Hosted (Docker, PHP/MySQL)", "Hosted Cloud SaaS"],
+    "platforms": ["Web Browser", "macOS", "Windows", "Linux", "iOS", "Android"],
+    "licenseModel": "Open Source (AGPLv3) / Commercial Hosted SaaS",
+    "tagline": "Open-source invoicing, recurring billing, and client payment portal with self-hosted and cloud options",
+    "description": "Invoice Ninja is an open-source invoicing, billing, and time-tracking platform built with Flutter and Laravel. Available as a free self-hosted package or a hosted cloud subscription, it enables businesses to generate custom invoices, automate recurring payments, accept multi-currency credit card/ACH payments via 40+ gateways (Stripe, PayPal, Authorize.net), track billable project time, and provide client self-service payment portals.",
     "rating": 4.7,
     "reviewsCount": 490,
-    "pricing": "Freemium",
-    "affiliateUrl": "https://invoiceninja.com",
-    "featured": false,
-    "isFreeTier": true,
-    "isOpenSource": true,
-    "features": [
-      "Invoicing & Billing",
-      "Expense Tracking",
-      "Financial Analytics",
-      "Tax & Payment Sync"
+    "pricing": "Free Self-Hosted / $14/mo Cloud",
+    "pricingDetails": {
+      "startingPrice": "$14/month (Ninja Pro, billed monthly) or $140/year",
+      "billingCadence": "Monthly or Annual ($140/yr for Pro; Enterprise starts at $18/mo for 2 users)",
+      "freeTierDetails": "Self-hosted community edition is 100% free under AGPLv3 license; hosted cloud free plan includes up to 5 clients with unlimited invoices",
+      "sourceUrl": "https://www.invoiceninja.com",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-25T11:30:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Invoice Ninja Official Website",
+        "url": "https://www.invoiceninja.com",
+        "type": "Official Website",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Invoice Ninja GitHub Repository",
+        "url": "https://github.com/invoiceninja/invoiceninja",
+        "type": "Official GitHub Repository",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Invoice Ninja Official Documentation",
+        "url": "https://invoiceninja.github.io",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      }
     ],
-    "websiteUrl": "https://invoiceninja.com",
-    "badge": "Verified Tool",
-    "monthlyVisits": "510K"
+    "curatedAlternatives": [
+      {
+        "toolId": "wave-invoicing",
+        "name": "Wave Invoicing",
+        "differentiator": "Choose Wave if you want 100% free hosted invoicing and basic bookkeeping without server setup or subscription costs."
+      },
+      {
+        "toolId": "zoho-invoice",
+        "name": "Zoho Invoice",
+        "differentiator": "Choose Zoho Invoice for a completely free hosted invoicing tool with mobile apps, client portals, and no client limits."
+      },
+      {
+        "toolId": "quickbooks-online",
+        "name": "QuickBooks Online",
+        "differentiator": "Choose QuickBooks Online if your business requires comprehensive double-entry accounting, automated bank feed reconciliations, and tax preparation."
+      },
+      {
+        "toolId": "bonsai",
+        "name": "Bonsai",
+        "differentiator": "Choose Bonsai if you need an all-in-one freelance management suite bundling legal contracts, proposals, and project management with billing."
+      }
+    ],
+    "pros": [
+      "100% open-source codebase (AGPLv3) provides complete data ownership and zero software costs when self-hosted.",
+      "Integrates with over 40 payment gateways including Stripe, PayPal, Square, Authorize.net, and Mollie.",
+      "Dedicated client portal allows customers to view invoices, download PDF receipts, and make partial payments.",
+      "Multi-currency support with real-time exchange rates and customizable multi-lingual invoice templates."
+    ],
+    "cons": [
+      "Not a full double-entry accounting platform; does not include a native general ledger or automated bank reconciliation like QuickBooks or Xero.",
+      "Self-hosting requires server administration knowledge (Docker, Nginx, PHP, MySQL, cron jobs).",
+      "Hosted free tier is limited to 5 clients; unlimited clients requires Ninja Pro ($14/mo)."
+    ],
+    "features": [
+      "Customizable Invoice & Quote Generation",
+      "Self-Hosted Docker Deployment Support",
+      "Client Self-Service Payment Portal",
+      "Automated Recurring Billing & Reminders",
+      "Multi-Currency & Multi-Lingual Invoicing",
+      "40+ Payment Gateway Integrations",
+      "Integrated Project Time Tracking",
+      "REST API & Webhook Integration"
+    ],
+    "bestFor": "Developers, freelancers, and privacy-focused businesses wanting full control over client invoicing via self-hosted open-source software or affordable cloud billing."
   },
   {
     "id": "bonsai",
@@ -11735,63 +11810,282 @@ export const staticSaasTools = [
     "name": "Moz Pro",
     "domain": "moz.com",
     "category": "seo-analytics",
-    "tagline": "Proven SEO software for keyword research, link metrics, and domain authority",
-    "description": "Pioneered Domain Authority metrics while providing reliable site audits, keyword rank tracking, and on-page optimization guidance.",
+    "primaryCategory": "SEO & Search Analytics",
+    "subcategories": ["Keyword Research", "Backlink Analysis", "Domain Authority Metrics", "SERP Rank Tracking"],
+    "jobsToBeDone": [
+      "Track keyword rankings across desktop and mobile SERPs (Google, Bing, Yahoo)",
+      "Evaluate domain backlink equity and identify toxic links with Moz Spam Score",
+      "Analyze competitor search visibility using proprietary Domain Authority (DA) and Page Authority (PA)",
+      "Discover organic keyword opportunities with accurate Keyword Difficulty and Search Intent scoring"
+    ],
+    "targetUsers": ["SEO agencies", "In-house marketing teams", "Content strategists", "Brand managers"],
+    "deploymentModels": ["Cloud SaaS"],
+    "platforms": ["Web Browser"],
+    "licenseModel": "Commercial Subscription SaaS",
+    "tagline": "Pioneering SEO software suite powered by Domain Authority metrics and link equity intelligence",
+    "description": "Moz Pro is an established cloud SEO software suite best known for pioneering Domain Authority (DA) and Page Authority (PA) metrics. It delivers comprehensive keyword research, weekly SERP rank tracking, technical site crawling, on-page optimization recommendations, and backlink analysis via Link Explorer with automated Spam Score filtering and Brand Authority tracking.",
     "rating": 4.9,
     "reviewsCount": 2817,
-    "pricing": "Paid Trial",
-    "affiliateUrl": "https://moz.com?aff=stakdock",
-    "featured": false,
-    "isFreeTier": false,
-    "isOpenSource": false,
+    "pricing": "$99/mo (Standard) / $179/mo (Medium)",
+    "pricingDetails": {
+      "startingPrice": "$99/month (Standard plan, $79/mo billed annually at $948/yr)",
+      "billingCadence": "Monthly or Annual (20% discount on annual plans)",
+      "freeTierDetails": "Free 30-day evaluation trial available; free community tools available on Moz.com (limited queries per day for DA lookup and Keyword Explorer)",
+      "sourceUrl": "https://moz.com/pricing",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-25T11:30:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Moz Pro Official Platform",
+        "url": "https://moz.com/products/pro",
+        "type": "Official Website",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Moz Pro Pricing & Plans",
+        "url": "https://moz.com/pricing",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Moz Link Explorer & DA Documentation",
+        "url": "https://moz.com/link-explorer",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "se-ranking",
+        "name": "SE Ranking",
+        "differentiator": "Choose SE Ranking for daily rank tracking updates, a larger keyword database, white-label agency reporting, and lower starting prices ($55/mo vs $99/mo)."
+      },
+      {
+        "toolId": "screaming-frog-seo-spider",
+        "name": "Screaming Frog SEO Spider",
+        "differentiator": "Choose Screaming Frog if your primary requirement is granular local technical crawling and JavaScript rendering rather than cloud link indices."
+      },
+      {
+        "toolId": "all-in-one-seo-aioseo",
+        "name": "All in One SEO (AIOSEO)",
+        "differentiator": "Choose AIOSEO for native on-page WordPress schema generation and XML sitemap publishing."
+      }
+    ],
+    "pros": [
+      "Industry-standard Domain Authority (DA) and Page Authority (PA) metrics widely accepted in agency client reports.",
+      "Link Explorer accurately calculates Moz Spam Score to identify risky inbound backlink profiles.",
+      "Keyword Difficulty metric provides highly reliable estimations of ranking competitiveness.",
+      "Clean, intuitive interface with comprehensive on-page optimization grader recommendations."
+    ],
+    "cons": [
+      "Higher starting price ($99/mo) with only 300 tracked keywords on Standard plan compared to competitors.",
+      "Rank tracking updates occur weekly on standard plans rather than daily.",
+      "Competitor keyword database is smaller than Semrush or Ahrefs for non-English search markets."
+    ],
     "features": [
-      "Keyword Research",
-      "SERP Rank Tracking",
-      "Site Audit",
-      "Competitor Intelligence"
-    ]
+      "Domain Authority (DA) & Page Authority (PA)",
+      "Keyword Research & Search Intent Grader",
+      "Weekly SERP Rank Tracking",
+      "Link Explorer with Spam Score Analysis",
+      "Technical Site Crawl Auditing",
+      "On-Page Optimization Suggestions",
+      "Brand Authority Scoring",
+      "Custom PDF SEO Reporting"
+    ],
+    "bestFor": "SEO agencies, consultants, and digital marketing teams requiring recognized Domain Authority reporting and backlink spam analysis."
   },
   {
     "id": "screaming-frog-seo-spider",
     "name": "Screaming Frog SEO Spider",
     "domain": "screamingfrog.co.uk",
     "category": "seo-analytics",
-    "tagline": "Industry-standard website crawler for deep technical SEO audits",
-    "description": "Desktop crawler that analyzes site structure, identifies broken links, checks redirect chains, and audits canonical and schema tags.",
+    "primaryCategory": "Technical SEO & Website Crawlers",
+    "subcategories": ["Website Crawlers", "Technical SEO Diagnostics", "Site Architecture Analyzers", "Schema Validators"],
+    "jobsToBeDone": [
+      "Deep technical website audit for broken links (404s), redirect chains (301/302), and server errors (500s)",
+      "Audit canonical tags, hreflang annotations, and duplicate content (near-duplicate MinHash analysis)",
+      "Headless Chromium JavaScript rendering to inspect client-rendered SPAs (React, Vue, Angular)",
+      "Custom scraping and extraction using XPath, CSS Selectors, and Regex"
+    ],
+    "targetUsers": ["Technical SEO specialists", "SEO agency auditors", "Web developers", "Site migration managers", "E-commerce webmasters"],
+    "deploymentModels": ["Desktop Client (Local Machine Execution)"],
+    "platforms": ["macOS (Apple Silicon & Intel)", "Windows (64-bit)", "Ubuntu / Debian Linux"],
+    "licenseModel": "Commercial Proprietary Desktop Freeware / Annual Subscription (£199/yr)",
+    "tagline": "Industry-standard desktop website crawler for forensic technical SEO audits and JavaScript rendering",
+    "description": "Screaming Frog SEO Spider is the industry-standard desktop website crawler for technical SEO diagnostics. Installed locally on macOS, Windows, or Linux, it crawls website URLs to evaluate status codes, redirect loops, canonical compliance, meta robots directives, structured data validation, and hreflang consistency. It includes integrated headless Chromium rendering for client-side JavaScript apps, custom data extraction via XPath/regex, automated XML sitemap generation, and direct API integrations with Google Search Console, Google Analytics 4, PageSpeed Insights, and Ahrefs.",
     "rating": 4.9,
     "reviewsCount": 7296,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://screamingfrog.co.uk?aff=stakdock",
-    "featured": false,
-    "isFreeTier": true,
-    "isOpenSource": true,
+    "pricing": "Free (500 URLs) / £199/yr",
+    "pricingDetails": {
+      "startingPrice": "£199/year (approx. $259/year per user license)",
+      "billingCadence": "Billed annually per user license",
+      "freeTierDetails": "Free version allows crawling up to 500 URLs per session with basic technical crawl diagnostics; paid license removes URL caps and unlocks JS rendering, scheduling, and API integrations",
+      "sourceUrl": "https://www.screamingfrog.co.uk/seo-spider/pricing/",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-25T11:30:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Screaming Frog SEO Spider Official Website",
+        "url": "https://www.screamingfrog.co.uk/seo-spider/",
+        "type": "Official Website",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Screaming Frog License Pricing",
+        "url": "https://www.screamingfrog.co.uk/seo-spider/pricing/",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Screaming Frog User Guide & Documentation",
+        "url": "https://www.screamingfrog.co.uk/seo-spider/user-guide/",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "se-ranking",
+        "name": "SE Ranking",
+        "differentiator": "Choose SE Ranking for automated continuous cloud-scheduled audits, daily keyword rank tracking, and competitor backlink monitoring without running local desktop software."
+      },
+      {
+        "toolId": "moz-pro",
+        "name": "Moz Pro",
+        "differentiator": "Choose Moz Pro for cloud-based link equity metrics (Domain Authority / Page Authority) and monthly SEO reporting dashboards."
+      },
+      {
+        "toolId": "all-in-one-seo-aioseo",
+        "name": "All in One SEO (AIOSEO)",
+        "differentiator": "Choose AIOSEO if you need native on-page WordPress publishing optimization and automatic XML sitemap generation inside WP admin."
+      }
+    ],
+    "pros": [
+      "Executes granular, ad-hoc technical audits locally without per-URL cloud credit meter charges.",
+      "Headless Chromium engine accurately renders client-side JavaScript frameworks (React, Next.js, Vue).",
+      "Custom XPath, CSS Path, and Regex extractors extract any HTML element, price, stock status, or meta tag.",
+      "Direct API connectors pull performance telemetry directly from Google Search Console, GA4, PageSpeed Insights, and Ahrefs."
+    ],
+    "cons": [
+      "Requires local desktop hardware resources; massive enterprise crawls (>1M URLs) demand 16GB–64GB RAM and local SSD database storage.",
+      "Does not provide automated daily keyword rank tracking (requires integration with external rank trackers).",
+      "Free version is strictly limited to 500 URLs per crawl session and disables JavaScript rendering, custom extraction, and saved configurations."
+    ],
     "features": [
-      "Keyword Research",
-      "SERP Rank Tracking",
-      "Site Audit",
-      "Competitor Intelligence"
-    ]
+      "Broken Link & Error Code Auditing (404/500)",
+      "Redirect Chain & Loop Detection (301/302)",
+      "Headless Chromium JavaScript Rendering",
+      "Canonical Tag & Duplicate Content Analysis",
+      "XML & Image Sitemap Generator",
+      "Custom XPath, CSS & Regex Data Extraction",
+      "Google Search Console & GA4 API Integrations",
+      "Schema.org & Structured Data Validation"
+    ],
+    "bestFor": "Technical SEO auditors, web developers, and SEO agencies conducting deep forensic audits, migration checks, and JavaScript site diagnostics."
   },
   {
     "id": "se-ranking",
     "name": "SE Ranking",
     "domain": "seranking.com",
     "category": "seo-analytics",
-    "tagline": "All-in-one SEO and AI search visibility platform for growing teams",
-    "description": "Delivers accurate rank tracking, keyword discovery, backlink monitoring, site auditing, and AI Overviews tracking at competitive pricing.",
-    "rating": 4.6,
+    "primaryCategory": "SEO & Search Analytics",
+    "subcategories": ["SERP Rank Tracking", "Competitive Intelligence", "Cloud Site Auditing", "Content Optimization"],
+    "jobsToBeDone": [
+      "Daily keyword rank tracking across Google, Bing, Yahoo, and YouTube across multiple geolocations",
+      "Competitor organic keyword research and Google Ads historical budget analysis",
+      "Automated scheduled cloud website audits with issue tracking and White Label client reporting",
+      "Content marketing optimization with real-time NLP keyword recommendations"
+    ],
+    "targetUsers": ["SEO agencies", "Small-to-midsize business marketers", "Freelance SEO consultants", "In-house growth teams"],
+    "deploymentModels": ["Cloud SaaS"],
+    "platforms": ["Web Browser", "iOS", "Android"],
+    "licenseModel": "Commercial Subscription SaaS",
+    "tagline": "All-in-one cloud SEO platform featuring daily rank tracking, competitive research, and agency white-labeling",
+    "description": "SE Ranking is a cloud-based all-in-one SEO platform designed for marketing teams and agencies. It offers daily keyword rank tracking across desktop and mobile search engines with localized ZIP-code granularity. The platform includes a 3B+ keyword database for organic and paid competitor research, continuous cloud-scheduled site audits, backlink monitoring with Domain Trust scoring, an NLP content editor, and customizable white-label client reporting portals.",
+    "rating": 4.8,
     "reviewsCount": 7487,
-    "pricing": "Paid Trial",
-    "affiliateUrl": "https://seranking.com?aff=stakdock",
-    "featured": false,
-    "isFreeTier": false,
-    "isOpenSource": false,
+    "pricing": "$55/mo (Essential) / $109/mo (Pro)",
+    "pricingDetails": {
+      "startingPrice": "$55/month (Essential plan, $44/mo billed annually at $528/yr)",
+      "billingCadence": "Monthly or Annual (20% discount on annual billing)",
+      "freeTierDetails": "14-day full-featured free trial with no credit card required",
+      "sourceUrl": "https://seranking.com/pricing.html",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-25T11:30:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "SE Ranking Official Platform",
+        "url": "https://seranking.com",
+        "type": "Official Website",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "SE Ranking Pricing & Plans",
+        "url": "https://seranking.com/pricing.html",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "SE Ranking Feature Documentation",
+        "url": "https://seranking.com/features.html",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "moz-pro",
+        "name": "Moz Pro",
+        "differentiator": "Choose Moz Pro if your agency requires recognized Domain Authority (DA) benchmarks and Moz Spam Score for client deliverables."
+      },
+      {
+        "toolId": "screaming-frog-seo-spider",
+        "name": "Screaming Frog SEO Spider",
+        "differentiator": "Choose Screaming Frog for desktop forensic crawls, custom XPath extraction, and local JS rendering without cloud usage quotas."
+      },
+      {
+        "toolId": "all-in-one-seo-aioseo",
+        "name": "All in One SEO (AIOSEO)",
+        "differentiator": "Choose AIOSEO for native on-page WordPress optimization and internal link assistant recommendations."
+      }
+    ],
+    "pros": [
+      "Daily keyword rank tracking updates included standard across all plans (750 keywords on $55/mo Essential plan).",
+      "Comprehensive 3B+ keyword database for organic and Google Ads competitor research.",
+      "White-label agency reporting and custom domain client portals available on Pro and Business plans.",
+      "Integrated Content Marketing editor with NLP term recommendations and AI writing assistant."
+    ],
+    "cons": [
+      "Domain Trust metric is proprietary to SE Ranking and less universally cited by third parties than Moz DA or Ahrefs DR.",
+      "Historical search data and page changes monitoring require Pro ($109/mo) or higher tier.",
+      "API access is restricted to higher-tier enterprise or add-on packages."
+    ],
     "features": [
-      "Keyword Research",
-      "SERP Rank Tracking",
-      "Site Audit",
-      "Competitor Intelligence"
-    ]
+      "Daily SERP Rank Tracking (Geo & Device Granular)",
+      "Organic & Paid Competitor Research (3B+ Keywords)",
+      "Automated Cloud Website Audit",
+      "Backlink Monitoring & Domain Trust Metric",
+      "On-Page SEO Checker & Issue Prioritizer",
+      "NLP Content Optimization Editor",
+      "White-Label Client Reporting Portal",
+      "Google Search Console & GA4 Integration"
+    ],
+    "bestFor": "Growing marketing agencies, SMB marketers, and freelance SEOs needing daily rank tracking, competitor intelligence, and white-label reporting at high value-for-money."
   },
   {
     "id": "clearscope",
@@ -12433,21 +12727,101 @@ export const staticSaasTools = [
     "name": "All in One SEO (AIOSEO)",
     "domain": "aioseo.com",
     "category": "seo-analytics",
-    "tagline": "Comprehensive WordPress SEO plugin and local business toolkit",
-    "description": "Provides local SEO optimization, smart XML sitemaps, link assistant suggestions, and WooCommerce product SEO tools.",
+    "primaryCategory": "SEO & Search Analytics",
+    "subcategories": ["WordPress SEO Plugins", "On-Page SEO", "Schema Markup Generators", "Local SEO"],
+    "jobsToBeDone": [
+      "Automated XML & video sitemap generation for WordPress",
+      "On-page TruSEO content optimization and focus keyword analysis",
+      "Rich snippets structured data schema generation (Product, FAQ, Recipe, Software)",
+      "Internal Link Assistant suggestions and automated anchor link reporting"
+    ],
+    "targetUsers": ["WordPress site owners", "Content publishers", "Local businesses", "WooCommerce store managers", "SEO agencies managing client WP sites"],
+    "deploymentModels": ["WordPress Plugin (.org / self-hosted & VIP)"],
+    "platforms": ["WordPress 5.3+ (PHP 7.4+)"],
+    "licenseModel": "Freemium WordPress Plugin (GPLv2 core / Commercial add-ons)",
+    "tagline": "WordPress SEO plugin with TruSEO on-page auditing, rich schema generation, and smart XML sitemaps",
+    "description": "All in One SEO (AIOSEO) is a dedicated WordPress SEO plugin with over 3 million active installations. It features TruSEO on-page scoring, a point-and-click rich snippets Schema generator, automated smart XML sitemaps, WooCommerce product SEO, local business SEO with Google Maps integration, and an internal link assistant that provides automated linking suggestions across blog posts without manual audits.",
     "rating": 4.8,
     "reviewsCount": 5366,
-    "pricing": "Freemium / Paid",
-    "affiliateUrl": "https://aioseo.com?aff=stakdock",
-    "featured": false,
-    "isFreeTier": true,
-    "isOpenSource": false,
+    "pricing": "Free / $49.50/yr",
+    "pricingDetails": {
+      "startingPrice": "$49.50/year (1 site)",
+      "billingCadence": "Billed annually (Renewals standard rate $124/yr without introductory discount)",
+      "freeTierDetails": "Free core plugin available on WordPress.org includes basic TruSEO analysis, XML sitemaps, and standard schema tags",
+      "sourceUrl": "https://aioseo.com/pricing/",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-25T11:30:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "AIOSEO Official Website",
+        "url": "https://aioseo.com",
+        "type": "Official Website",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "AIOSEO Pricing & Plan Comparison",
+        "url": "https://aioseo.com/pricing/",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "AIOSEO WordPress.org Repository Listing",
+        "url": "https://wordpress.org/plugins/all-in-one-seo-pack/",
+        "type": "Official Repository",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "AIOSEO Schema Documentation",
+        "url": "https://aioseo.com/docs/schema-generator/",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "seopress",
+        "name": "SEOPress",
+        "differentiator": "Choose SEOPress if you want a lightweight, white-label WordPress SEO plugin without administrative upsell notices."
+      },
+      {
+        "toolId": "screaming-frog-seo-spider",
+        "name": "Screaming Frog SEO Spider",
+        "differentiator": "Choose Screaming Frog for deep technical site-wide crawl diagnostics and JavaScript rendering analysis rather than on-page WP publishing."
+      },
+      {
+        "toolId": "se-ranking",
+        "name": "SE Ranking",
+        "differentiator": "Choose SE Ranking for cloud-based daily rank tracking, competitor traffic intelligence, and multi-search engine monitoring."
+      }
+    ],
+    "pros": [
+      "TruSEO on-page analysis provides actionable readability and focus keyword recommendations directly in Gutenberg editor.",
+      "Comprehensive Schema Generator supports custom JSON-LD graphs without coding (Articles, FAQs, Products, Recipes).",
+      "Internal Link Assistant audits site content to identify orphan pages and suggests contextually relevant internal links.",
+      "Dedicated WooCommerce SEO module optimizes product schemas, category titles, and dynamically cleans product URLs."
+    ],
+    "cons": [
+      "Operates exclusively inside WordPress; cannot crawl or optimize static sites, Webflow, Shopify, or custom web applications.",
+      "Free version frequently displays dashboard upgrade banners and marketing notices.",
+      "Advanced modules like Link Assistant, Redirection Manager, and Local SEO require Pro ($199.50/yr) or higher tiers."
+    ],
     "features": [
-      "Keyword Research",
-      "SERP Rank Tracking",
-      "Site Audit",
-      "Competitor Intelligence"
-    ]
+      "TruSEO On-Page Optimization",
+      "Rich Snippets Schema Generator",
+      "Smart XML & Video Sitemaps",
+      "Internal Link Assistant",
+      "Redirection Manager with 404 Logging",
+      "WooCommerce & E-Commerce SEO",
+      "Local Business Knowledge Graph",
+      "Robots.txt & .htaccess Editor"
+    ],
+    "bestFor": "WordPress website owners, local businesses, and content bloggers requiring automated on-page SEO and structured schema markup without code."
   },
   {
     "id": "seopress",
@@ -34724,19 +35098,95 @@ export const staticSaasTools = [
     "id": "microsoft-power-automate",
     "name": "Microsoft Power Automate",
     "domain": "powerautomate.microsoft.com",
-    "category": "nocode-databases",
-    "tagline": "Streamline repetitive tasks and business processes with automated workflows",
-    "description": "Power Automate automates workflows between enterprise cloud services, desktop legacy software, and Microsoft applications. It serves corporate teams optimizing operational tasks.",
+    "category": "workflow-automation",
+    "primaryCategory": "Workflow Automation & RPA",
+    "subcategories": ["Robotic Process Automation (RPA)", "Cloud Workflow Automation", "Business Process Management", "Process Mining"],
+    "jobsToBeDone": [
+      "Automate repetitive multi-system desktop and browser workflows (attended & unattended RPA)",
+      "Connect Microsoft 365, SharePoint, Teams, and Dataverse with enterprise SaaS apps",
+      "Document processing and text extraction with AI Builder models",
+      "Process Mining to detect operational bottlenecks across enterprise workflows"
+    ],
+    "targetUsers": ["Enterprise IT administrators", "Operations managers", "Citizen developers", "System integrators", "Microsoft 365 power users"],
+    "deploymentModels": ["Cloud SaaS (Azure Hosted)", "Desktop Client (Windows 10/11)"],
+    "platforms": ["Web Browser", "Windows 10/11", "iOS", "Android"],
+    "licenseModel": "Commercial Proprietary SaaS (Included in Microsoft 365 / Standalone Premium & Process Licenses)",
+    "tagline": "Enterprise workflow automation and robotic process automation across cloud services and legacy desktop apps",
+    "description": "Microsoft Power Automate is an enterprise automation platform combining cloud API orchestration with desktop Robotic Process Automation (RPA). It connects over 1,000 pre-built cloud connectors (Office 365, SharePoint, Salesforce, SAP) with desktop UI flows to automate legacy software interactions without APIs. It features native AI Builder document processing, Process Mining analytics, and deep governance controls inside the Microsoft Power Platform ecosystem.",
     "rating": 4.6,
     "reviewsCount": 1890,
-    "pricing": "Paid",
-    "websiteUrl": "https://powerautomate.microsoft.com",
-    "affiliateUrl": "https://powerautomate.microsoft.com",
-    "badge": "Verified Tool",
-    "featured": false,
-    "monthlyVisits": "6.2M",
-    "isFreeTier": false,
-    "isOpenSource": false
+    "pricing": "Free Desktop / $15/user/mo",
+    "pricingDetails": {
+      "startingPrice": "$15/user/month (Power Automate Premium, billed annually)",
+      "billingCadence": "Per-user/month ($15) or Per-bot/month ($150 Process license for unattended automation)",
+      "freeTierDetails": "Power Automate Desktop is included free with Windows 10/11 for personal attended RPA workflows on local machines",
+      "sourceUrl": "https://powerautomate.microsoft.com/en-us/pricing/",
+      "sourceType": "Official Pricing Page",
+      "checkedAt": "2026-08-25T11:30:00Z",
+      "confidence": "HIGH"
+    },
+    "sources": [
+      {
+        "title": "Microsoft Power Automate Official Platform",
+        "url": "https://powerautomate.microsoft.com",
+        "type": "Official Website",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Microsoft Power Automate Pricing & Licensing",
+        "url": "https://powerautomate.microsoft.com/en-us/pricing/",
+        "type": "Official Pricing Page",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      },
+      {
+        "title": "Microsoft Learn: Power Automate Documentation",
+        "url": "https://learn.microsoft.com/en-us/power-automate/",
+        "type": "Official Documentation",
+        "checkedAt": "2026-08-25T11:30:00Z",
+        "confidence": "HIGH"
+      }
+    ],
+    "curatedAlternatives": [
+      {
+        "toolId": "n8n",
+        "name": "n8n",
+        "differentiator": "Choose n8n if you want a self-hosted, open-source workflow automation engine with code-level JavaScript/Python flexibility and zero per-run fees."
+      },
+      {
+        "toolId": "make",
+        "name": "Make",
+        "differentiator": "Choose Make for complex visual JSON payload routing, webhook transformations, and intuitive drag-and-drop cloud integrations."
+      },
+      {
+        "toolId": "activepieces",
+        "name": "Activepieces",
+        "differentiator": "Choose Activepieces for a lightweight, MIT-licensed open-source automation alternative that can be embedded into SaaS products."
+      }
+    ],
+    "pros": [
+      "Native seamless integration with Microsoft 365, SharePoint, Teams, Azure, and Dataverse databases.",
+      "Power Automate Desktop provides free attended RPA automation for Windows 10 and Windows 11 users.",
+      "Over 1,000 verified connectors spanning enterprise ERPs (SAP, Oracle) and modern cloud SaaS APIs.",
+      "AI Builder integration allows structured data extraction from invoices, receipts, and identity documents."
+    ],
+    "cons": [
+      "Licensing is notoriously complex; premium connectors (SQL Server, Salesforce, HTTP webhooks) require the $15/user/mo plan.",
+      "Unattended background server automation requires a separate $150/bot/month Process license or $215/bot/mo hosted VM license.",
+      "Non-Microsoft ecosystem integrations can be slower to build compared to lightweight visual tools like Make or n8n."
+    ],
+    "features": [
+      "Cloud API Flow Orchestration",
+      "Attended & Unattended Desktop RPA",
+      "Over 1,000 Pre-Built Cloud Connectors",
+      "AI Builder Document Intelligence",
+      "Process & Task Mining Analytics",
+      "Enterprise Dataverse Synchronization",
+      "Role-Based Access Governance",
+      "Scheduled & Event-Driven Triggers"
+    ],
+    "bestFor": "Enterprises and Microsoft 365 organizations automating cross-departmental operations, legacy Windows UI tasks, and ERP database syncs."
   },
   {
     "id": "directus",

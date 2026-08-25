@@ -1,6 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 const { readAllTools, readCategories } = require('./toolData.cjs');
+const {
+  renderMozProVsSeRankingSsr,
+  renderScreamingFrogVsSeRankingSsr,
+  renderInvoiceNinjaAlternativesSsr,
+  renderInvoicingCategoryBuyerGuideSsr
+} = require('./customRecoveryWaveRenderers.cjs');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const indexPath = path.join(distDir, 'index.html');
@@ -460,9 +466,23 @@ saasTools.forEach(tool => {
   </main>
   `;
 
+  let softwarePageTitle = `${tool.name} Review 2026: Pricing, Free Trial & Deals`;
+  let softwarePageDesc = tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free tier limits, and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, and top verified software options on StakDock.`;
+
+  if (tool.id === 'all-in-one-seo-aioseo') {
+    softwarePageTitle = 'All in One SEO (AIOSEO) Review 2026: Pricing, Features & WordPress SEO';
+    softwarePageDesc = 'In-depth All in One SEO (AIOSEO) review (2026). Compare TruSEO on-page analysis, rich schema generator, Link Assistant, pricing plans ($49.50/yr), and top WordPress alternatives.';
+  } else if (tool.id === 'microsoft-power-automate') {
+    softwarePageTitle = 'Microsoft Power Automate Review 2026: Pricing, Desktop RPA & Connectors';
+    softwarePageDesc = 'In-depth Microsoft Power Automate review (2026). Compare free Windows desktop RPA, 1,000+ cloud connectors, AI Builder document extraction, and $15/user/mo pricing.';
+  } else if (tool.id === 'screaming-frog-seo-spider') {
+    softwarePageTitle = 'Screaming Frog SEO Spider Review 2026: Pricing, Desktop Crawling & Limits';
+    softwarePageDesc = 'In-depth Screaming Frog SEO Spider review (2026). Compare free 500-URL tier, £199/yr license, JavaScript rendering, XPath scraping, and technical audit workflows.';
+  }
+
   const pageHtml = buildSeoPage({
-    title: `${tool.name} Review 2026: Pricing, Free Trial & Deals`,
-    description: tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free tier limits, and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, and top verified software options on StakDock.`,
+    title: softwarePageTitle,
+    description: softwarePageDesc,
     canonicalUrl: `https://stakdock.com/software/${tool.id}/`,
     jsonLd: [jsonLd],
     bodyHtml
@@ -508,7 +528,10 @@ saasTools.forEach(tool => {
     }))
   };
 
-  const bodyHtml = `
+  const isInvoiceNinja = tool.id === 'invoice-ninja';
+  const bodyHtml = isInvoiceNinja
+    ? renderInvoiceNinjaAlternativesSsr(tool, categoryMatches)
+    : `
   ${renderSsrNavbar('/alternatives/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -569,9 +592,17 @@ saasTools.forEach(tool => {
   </main>
   `;
 
+  const altPageTitle = isInvoiceNinja
+    ? `Best Invoice Ninja Alternatives & Competitors (2026)`
+    : `Best ${tool.name} Free & Open-Source Alternatives (2026)`;
+
+  const altPageDesc = isInvoiceNinja
+    ? `Compare top Invoice Ninja alternatives in 2026. Evaluate Wave, Zoho Invoice, QuickBooks Online, Xero, Bonsai, and Stripe Invoicing for self-hosted billing, free plans, and accounting.`
+    : `Looking for alternatives to ${tool.name}? Compare documented ${tool.name} competitors in 2026 by features, pricing plans, free tiers, and deployment models on StakDock.`;
+
   const pageHtml = buildSeoPage({
-    title: `Best ${tool.name} Free & Open-Source Alternatives (2026)`,
-    description: `Looking for alternatives to ${tool.name}? Compare documented ${tool.name} competitors in 2026 by features, pricing plans, free tiers, and deployment models on StakDock.`,
+    title: altPageTitle,
+    description: altPageDesc,
     canonicalUrl: `https://stakdock.com/alternatives/${tool.id}/`,
     jsonLd: [jsonLd],
     bodyHtml
@@ -583,7 +614,9 @@ saasTools.forEach(tool => {
 
 // Controlled explicit approved cross-category flagship comparisons
 const approvedFlagshipComparisons = [
-  { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot', isFlagship: true }
+  { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot', isFlagship: true },
+  { toolAId: 'moz-pro', toolBId: 'se-ranking', vsSlug: 'moz-pro-vs-se-ranking', isFlagship: true },
+  { toolAId: 'screaming-frog-seo-spider', toolBId: 'se-ranking', vsSlug: 'screaming-frog-seo-spider-vs-se-ranking', isFlagship: true }
 ];
 
 // 3. Generate pairwise dist/vs/:vsSlug/index.html
@@ -1060,9 +1093,24 @@ versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
     ]
   };
 
-  const bodyHtml = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
-    ? renderFlagshipCursorVsCopilotSsr(tA, tB, vsSlug)
-    : `
+  let bodyHtml;
+  let pageTitle;
+  let pageDesc;
+
+  if (vsSlug === 'cursor-ai-vs-github-copilot') {
+    bodyHtml = renderFlagshipCursorVsCopilotSsr(tA, tB, vsSlug);
+    pageTitle = `Cursor AI vs GitHub Copilot: 2026 Developer Comparison & Decision Guide`;
+    pageDesc = `In-depth comparison of Cursor AI vs GitHub Copilot. Compare AI-native editor workflows, IDE extensions, codebase indexing, multi-file refactoring, and verified pricing.`;
+  } else if (vsSlug === 'moz-pro-vs-se-ranking' || vsSlug === 'se-ranking-vs-moz-pro') {
+    bodyHtml = renderMozProVsSeRankingSsr(tA, tB, vsSlug);
+    pageTitle = `Moz Pro vs SE Ranking: Full 2026 Comparison & Feature Analysis`;
+    pageDesc = `Compare Moz Pro vs SE Ranking on keyword rank tracking accuracy, backlink index freshness, site audit crawlers, agency white-labeling, and verified 2026 pricing.`;
+  } else if (vsSlug === 'screaming-frog-seo-spider-vs-se-ranking' || vsSlug === 'se-ranking-vs-screaming-frog-seo-spider') {
+    bodyHtml = renderScreamingFrogVsSeRankingSsr(tA, tB, vsSlug);
+    pageTitle = `Screaming Frog vs SE Ranking: Desktop Crawler vs Cloud SEO Suite (2026)`;
+    pageDesc = `Compare Screaming Frog SEO Spider and SE Ranking in 2026. Understand the differences between a local desktop technical crawler and an all-in-one cloud SEO suite.`;
+  } else {
+    bodyHtml = `
   ${renderSsrNavbar('/vs/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -1142,14 +1190,9 @@ versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
     </div>
   </main>
   `;
-
-  const pageTitle = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
-    ? `Cursor AI vs GitHub Copilot: 2026 Developer Comparison & Decision Guide`
-    : `${tA.name} vs ${tB.name}: 2026 Side-by-Side Comparison & Specifications`;
-
-  const pageDesc = (vsSlug === 'cursor-ai-vs-github-copilot' || isFlagship)
-    ? `In-depth comparison of Cursor AI vs GitHub Copilot. Compare AI-native editor workflows, IDE extensions, codebase indexing, multi-file refactoring, and verified pricing.`
-    : `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature specifications, pricing models, and deployment architectures.`;
+    pageTitle = `${tA.name} vs ${tB.name}: 2026 Side-by-Side Comparison & Specifications`;
+    pageDesc = `Detailed ${tA.name} vs ${tB.name} comparison (2026). Compare feature specifications, pricing models, and deployment architectures.`;
+  }
 
   const pageHtml = buildSeoPage({
     title: pageTitle,
@@ -1225,7 +1268,10 @@ saasCategories.forEach(cat => {
     ]
   };
 
-  const bodyHtml = `
+  const isInvoicing = cat.id === 'invoicing';
+  const bodyHtml = isInvoicing
+    ? renderInvoicingCategoryBuyerGuideSsr(cat, matchedTools)
+    : `
   ${renderSsrNavbar('/categories/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -1265,9 +1311,17 @@ saasCategories.forEach(cat => {
   </main>
   `;
 
+  const bestCatTitle = isInvoicing
+    ? `Best Invoicing & Billing Software in 2026: Comprehensive Buyer Matrix`
+    : `${catLabel} Software Directory & Options (2026)`;
+
+  const bestCatDesc = isInvoicing
+    ? `Compare the best invoicing software in 2026. Side-by-side comparison of Invoice Ninja, Wave, Zoho Invoice, QuickBooks Online, Xero, FreshBooks, and Bonsai.`
+    : `Explore ${catLabel} software and tools of 2026 on StakDock. Compare pricing models, free tiers, and feature breakdowns.`;
+
   const pageHtml = buildSeoPage({
-    title: `${catLabel} Software Directory & Options (2026)`,
-    description: `Explore ${catLabel} software and tools of 2026 on StakDock. Compare pricing models, free tiers, and feature breakdowns.`,
+    title: bestCatTitle,
+    description: bestCatDesc,
     canonicalUrl: `https://stakdock.com/best/${cat.id}/`,
     jsonLd: [catJsonLd, breadcrumbJsonLd],
     bodyHtml
