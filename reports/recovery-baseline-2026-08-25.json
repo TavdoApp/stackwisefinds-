@@ -1,0 +1,483 @@
+{
+  "baselineDate": "2026-08-25",
+  "domain": "https://stakdock.com",
+  "summary": {
+    "totalSystemRoutes": 4174,
+    "activeIndexableSitemapUrls": 841,
+    "recoveryBreakdown": {
+      "P": 73,
+      "R": 740,
+      "K": 28,
+      "Q": 3330,
+      "T": 3
+    }
+  },
+  "searchMetrics": {
+    "preCrash": {
+      "period": "2026-08-02 to 2026-08-16 (15 days)",
+      "totalImpressions": 37547,
+      "totalClicks": 92,
+      "dailyImpressionsAverage": 2503,
+      "dailyClicksAverage": "6.1",
+      "averageCtr": "0.25%",
+      "averagePosition": "55.4",
+      "totalQueriesTracked": 1004,
+      "totalPagesTracked": 1000
+    },
+    "crashPeriod": {
+      "period": "2026-08-18 to 2026-08-24 (7 days)",
+      "totalImpressions": 1102,
+      "totalClicks": 1,
+      "dailyImpressionsAverage": 157,
+      "dailyClicksAverage": "0.1",
+      "averageCtr": "0.09%",
+      "averagePosition": "42.6",
+      "impressionDropPercentage": "93.7%"
+    },
+    "currentDayBaseline": {
+      "date": "2026-08-24",
+      "dailyImpressions": 17,
+      "dailyClicks": 0,
+      "ctr": "0%",
+      "position": 67.2,
+      "recoveryRatio": "0.68%"
+    }
+  },
+  "wave1Baseline": [
+    {
+      "url": "/alternatives/invoice-ninja/",
+      "name": "Invoice Ninja Alternatives",
+      "cluster": "Invoicing & Billing",
+      "recoveryState": "P",
+      "primaryQuery": "invoice ninja alternatives",
+      "rationale": "High commercial intent; top-converting category page with multiple direct open-source & SaaS substitutes.",
+      "preCrash": {
+        "impressions": 38,
+        "clicks": 0,
+        "position": "29.7"
+      },
+      "postCrash": {
+        "impressions": 451,
+        "clicks": 0,
+        "position": "6.5"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    },
+    {
+      "url": "/software/microsoft-power-automate/",
+      "name": "Microsoft Power Automate",
+      "cluster": "Workflow Automation",
+      "recoveryState": "P",
+      "primaryQuery": "microsoft power automate pricing / review",
+      "rationale": "Enterprise automation keyword earner; high search volume for desktop vs cloud pricing models.",
+      "preCrash": {
+        "impressions": 1994,
+        "clicks": 0,
+        "position": "43.9"
+      },
+      "postCrash": {
+        "impressions": 149,
+        "clicks": 0,
+        "position": "49.6"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    },
+    {
+      "url": "/software/all-in-one-seo-aioseo/",
+      "name": "All in One SEO (AIOSEO)",
+      "cluster": "SEO Software",
+      "recoveryState": "P",
+      "primaryQuery": "aioseo review / aioseo pricing",
+      "rationale": "High-volume WordPress SEO query earner with strong pre-crash impressions.",
+      "preCrash": {
+        "impressions": 1206,
+        "clicks": 3,
+        "position": "60.4"
+      },
+      "postCrash": {
+        "impressions": 9,
+        "clicks": 0,
+        "position": "51.6"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    },
+    {
+      "url": "/software/screaming-frog-seo-spider/",
+      "name": "Screaming Frog SEO Spider",
+      "cluster": "SEO Software",
+      "recoveryState": "P",
+      "primaryQuery": "screaming frog seo spider review / pricing",
+      "rationale": "Industry-standard technical audit tool; core pillar of the SEO tooling cluster.",
+      "preCrash": {
+        "impressions": 609,
+        "clicks": 0,
+        "position": "70.7"
+      },
+      "postCrash": {
+        "impressions": 48,
+        "clicks": 0,
+        "position": "71.1"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    },
+    {
+      "url": "/vs/moz-pro-vs-se-ranking/",
+      "name": "Moz Pro vs SE Ranking",
+      "cluster": "SEO Software",
+      "recoveryState": "P",
+      "primaryQuery": "moz pro vs se ranking",
+      "rationale": "High-intent agency buyer query comparing Domain Authority vs daily tracking.",
+      "preCrash": {
+        "impressions": 150,
+        "clicks": 1,
+        "position": "58.2"
+      },
+      "postCrash": {
+        "impressions": 25,
+        "clicks": 0,
+        "position": "56.7"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    },
+    {
+      "url": "/vs/screaming-frog-seo-spider-vs-se-ranking/",
+      "name": "Screaming Frog vs SE Ranking",
+      "cluster": "SEO Software",
+      "recoveryState": "P",
+      "primaryQuery": "screaming frog vs se ranking",
+      "rationale": "Architectural comparison between desktop crawlers and cloud suites with strong organic search demand.",
+      "preCrash": {
+        "impressions": 101,
+        "clicks": 1,
+        "position": "54.5"
+      },
+      "postCrash": {
+        "impressions": 19,
+        "clicks": 0,
+        "position": "55.5"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    },
+    {
+      "url": "/best/invoicing/",
+      "name": "Best Invoicing Software",
+      "cluster": "Invoicing & Billing",
+      "recoveryState": "P",
+      "primaryQuery": "best invoicing software 2026",
+      "rationale": "High commercial CPC category hub connecting Invoice Ninja, Wave, Zoho, QBO, and Xero.",
+      "preCrash": {
+        "impressions": 171,
+        "clicks": 0,
+        "position": "78.9"
+      },
+      "postCrash": {
+        "impressions": 113,
+        "clicks": 0,
+        "position": "79.4"
+      },
+      "deploymentDate": "2026-08-25",
+      "status": "LIVE"
+    }
+  ],
+  "manual15Queue": [
+    {
+      "priorityIndex": 1,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/alternatives/invoice-ninja/",
+      "recoveryState": "P",
+      "reason": "High commercial intent; top-converting category page with multiple direct open-source & SaaS substitutes.",
+      "preCrashImps": 38,
+      "preCrashClicks": 0
+    },
+    {
+      "priorityIndex": 2,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/software/microsoft-power-automate/",
+      "recoveryState": "P",
+      "reason": "Enterprise automation keyword earner; high search volume for desktop vs cloud pricing models.",
+      "preCrashImps": 1994,
+      "preCrashClicks": 0
+    },
+    {
+      "priorityIndex": 3,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/software/all-in-one-seo-aioseo/",
+      "recoveryState": "P",
+      "reason": "High-volume WordPress SEO query earner with strong pre-crash impressions.",
+      "preCrashImps": 1206,
+      "preCrashClicks": 3
+    },
+    {
+      "priorityIndex": 4,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/software/screaming-frog-seo-spider/",
+      "recoveryState": "P",
+      "reason": "Industry-standard technical audit tool; core pillar of the SEO tooling cluster.",
+      "preCrashImps": 609,
+      "preCrashClicks": 0
+    },
+    {
+      "priorityIndex": 5,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/vs/moz-pro-vs-se-ranking/",
+      "recoveryState": "P",
+      "reason": "High-intent agency buyer query comparing Domain Authority vs daily tracking.",
+      "preCrashImps": 150,
+      "preCrashClicks": 1
+    },
+    {
+      "priorityIndex": 6,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/vs/screaming-frog-seo-spider-vs-se-ranking/",
+      "recoveryState": "P",
+      "reason": "Architectural comparison between desktop crawlers and cloud suites with strong organic search demand.",
+      "preCrashImps": 101,
+      "preCrashClicks": 1
+    },
+    {
+      "priorityIndex": 7,
+      "category": "Wave 1 (Deployed & Live)",
+      "url": "/best/invoicing/",
+      "recoveryState": "P",
+      "reason": "High commercial CPC category hub connecting Invoice Ninja, Wave, Zoho, QBO, and Xero.",
+      "preCrashImps": 171,
+      "preCrashClicks": 0
+    },
+    {
+      "priorityIndex": 8,
+      "category": "High-Value Recovery Candidate",
+      "url": "/software/wave-invoicing/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (2 clicks, 41 imps, avg pos 42.0) with demonstrated organic demand.",
+      "preCrashImps": 41,
+      "preCrashClicks": 2
+    },
+    {
+      "priorityIndex": 9,
+      "category": "High-Value Recovery Candidate",
+      "url": "/alternatives/kuzu-db/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (2 clicks, 31 imps, avg pos 7.5) with demonstrated organic demand.",
+      "preCrashImps": 31,
+      "preCrashClicks": 2
+    },
+    {
+      "priorityIndex": 10,
+      "category": "High-Value Recovery Candidate",
+      "url": "/alternatives/telegraph/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (2 clicks, 24 imps, avg pos 10.4) with demonstrated organic demand.",
+      "preCrashImps": 24,
+      "preCrashClicks": 2
+    },
+    {
+      "priorityIndex": 11,
+      "category": "High-Value Recovery Candidate",
+      "url": "/alternatives/headlamp-k8s/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (2 clicks, 14 imps, avg pos 9.7) with demonstrated organic demand.",
+      "preCrashImps": 14,
+      "preCrashClicks": 2
+    },
+    {
+      "priorityIndex": 12,
+      "category": "High-Value Recovery Candidate",
+      "url": "/software/joinly/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (2 clicks, 13 imps, avg pos 10.2) with demonstrated organic demand.",
+      "preCrashImps": 13,
+      "preCrashClicks": 2
+    },
+    {
+      "priorityIndex": 13,
+      "category": "High-Value Recovery Candidate",
+      "url": "/software/vendure/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (2 clicks, 6 imps, avg pos 28.0) with demonstrated organic demand.",
+      "preCrashImps": 6,
+      "preCrashClicks": 2
+    },
+    {
+      "priorityIndex": 14,
+      "category": "High-Value Recovery Candidate",
+      "url": "/software/seoclarity/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (1 clicks, 345 imps, avg pos 54.2) with demonstrated organic demand.",
+      "preCrashImps": 345,
+      "preCrashClicks": 1
+    },
+    {
+      "priorityIndex": 15,
+      "category": "High-Value Recovery Candidate",
+      "url": "/alternatives/funnel-io/",
+      "recoveryState": "P",
+      "reason": "Proven historical earner (1 clicks, 189 imps, avg pos 79.1) with demonstrated organic demand.",
+      "preCrashImps": 189,
+      "preCrashClicks": 1
+    }
+  ],
+  "wave2Candidates": [
+    {
+      "rank": 1,
+      "url": "/alternatives/databox/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "175 impressions, 1 clicks (avg pos 70.3)",
+      "primaryQuery": "databox",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "High"
+    },
+    {
+      "rank": 2,
+      "url": "/vs/aws-vs-google-cloud/",
+      "recoveryState": "P",
+      "pageType": "vs",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "135 impressions, 1 clicks (avg pos 77.4)",
+      "primaryQuery": "aws vs google cloud",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "High"
+    },
+    {
+      "rank": 3,
+      "url": "/alternatives/albacross/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "76 impressions, 1 clicks (avg pos 45.6)",
+      "primaryQuery": "albacross",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "High"
+    },
+    {
+      "rank": 4,
+      "url": "/alternatives/homarr-dashboard/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "72 impressions, 1 clicks (avg pos 10.2)",
+      "primaryQuery": "homarr dashboard",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "High"
+    },
+    {
+      "rank": 5,
+      "url": "/software/authy/",
+      "recoveryState": "P",
+      "pageType": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "65 impressions, 1 clicks (avg pos 45.1)",
+      "primaryQuery": "authy",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "Commercial Evaluation Intent",
+      "priority": "High"
+    },
+    {
+      "rank": 6,
+      "url": "/software/hetzner/",
+      "recoveryState": "P",
+      "pageType": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "55 impressions, 1 clicks (avg pos 47.5)",
+      "primaryQuery": "hetzner",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "Commercial Evaluation Intent",
+      "priority": "Medium"
+    },
+    {
+      "rank": 7,
+      "url": "/software/security-onion/",
+      "recoveryState": "P",
+      "pageType": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "47 impressions, 1 clicks (avg pos 40.4)",
+      "primaryQuery": "security onion",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "Commercial Evaluation Intent",
+      "priority": "Medium"
+    },
+    {
+      "rank": 8,
+      "url": "/alternatives/apache-guacamole/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "41 impressions, 1 clicks (avg pos 21.1)",
+      "primaryQuery": "apache guacamole",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "Medium"
+    },
+    {
+      "rank": 9,
+      "url": "/alternatives/rank-math/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "SEO Software",
+      "preCrashOpportunity": "36 impressions, 1 clicks (avg pos 68.0)",
+      "primaryQuery": "rank math",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "Medium"
+    },
+    {
+      "rank": 10,
+      "url": "/alternatives/audiobookshelf/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "34 impressions, 1 clicks (avg pos 27.8)",
+      "primaryQuery": "audiobookshelf",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "Medium"
+    },
+    {
+      "rank": 11,
+      "url": "/software/vultr/",
+      "recoveryState": "P",
+      "pageType": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "34 impressions, 1 clicks (avg pos 47.2)",
+      "primaryQuery": "vultr",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "Commercial Evaluation Intent",
+      "priority": "Medium"
+    },
+    {
+      "rank": 12,
+      "url": "/alternatives/opensearch/",
+      "recoveryState": "P",
+      "pageType": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpportunity": "32 impressions, 1 clicks (avg pos 46.4)",
+      "primaryQuery": "opensearch",
+      "currentQualityWeakness": "Baseline directory template; lacks rich comparative spec matrices, verified pricing tiers, and vendor documentation citations.",
+      "expectedImprovement": "Enrich with corroborated spec comparison table, transparent pricing breakdown, and evidence-grounded pros/cons.",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)",
+      "priority": "Medium"
+    }
+  ]
+}
