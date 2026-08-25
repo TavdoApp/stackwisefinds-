@@ -452,6 +452,253 @@ export default function VersusPage({ toolAId, toolBId, allTools, onBack }) {
     );
   }
 
+  const isFlagshipMozVsSeRanking = (toolA.id === 'moz-pro' && toolB.id === 'se-ranking') || (toolA.id === 'se-ranking' && toolB.id === 'moz-pro');
+  if (isFlagshipMozVsSeRanking) {
+    const mozTool = toolA.id === 'moz-pro' ? toolA : toolB;
+    const seTool = toolA.id === 'se-ranking' ? toolA : toolB;
+
+    return (
+      <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '1040px' }}>
+        {injectSoftwareApplicationSchema(mozTool)}
+        {injectSoftwareApplicationSchema(seTool)}
+
+        <button onClick={onBack} className="btn-pill-outline" style={{ marginBottom: '24px' }} aria-label="Back to Directory">
+          <ArrowLeft size={16} /> Back to Comparisons
+        </button>
+
+        <header style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '36px 32px', marginBottom: '28px', textAlign: 'center', boxShadow: 'var(--shadow-soft)' }}>
+          <div style={{ display: 'inline-block', background: '#EBF3DE', color: '#2D4522', fontSize: '0.75rem', fontWeight: '800', padding: '4px 14px', borderRadius: '9999px', textTransform: 'uppercase', marginBottom: '14px', letterSpacing: '0.04em' }}>
+            SEO PLATFORM COMPARISON • 2026
+          </div>
+          <h1 style={{ fontSize: 'clamp(1.9rem, 3.8vw, 2.7rem)', fontWeight: '800', lineHeight: '1.18', margin: '0 0 14px 0', color: 'var(--text-dark)' }}>
+            Moz Pro vs SE Ranking: Full 2026 Comparison &amp; Feature Analysis
+          </h1>
+          <p style={{ fontSize: '1.08rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: '0 auto', maxWidth: '820px' }}>
+            An evidence-based comparison of keyword rank tracking frequency, backlink index freshness, site audit crawl engines, agency white-label reporting, and verified pricing.
+          </p>
+        </header>
+
+        {/* 30s Summary */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', marginTop: 0, marginBottom: '12px', color: 'var(--text-dark)' }}>The Core Difference in 30 Seconds</h2>
+          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.65', marginBottom: '24px' }}>
+            <strong>Moz Pro</strong> is an industry-pioneering SEO suite renowned for establishing Domain Authority (DA), Page Authority (PA), and Link Explorer Spam Score metrics. It features weekly rank tracking updates starting at $99/month. <strong>SE Ranking</strong> is a modern, high-agility all-in-one SEO platform providing daily rank tracking updates, a 3-billion-keyword database, custom white-label agency client portals, and an entry price of $55/month (nearly 45% lower than Moz Pro).
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+            <div style={{ background: '#F7FAF5', border: '1.5px solid #DCE8D6', borderRadius: '16px', padding: '24px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '12px' }}>
+                <span>Choose Moz Pro if:</span>
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.94rem' }}>
+                <li>Your executive reporting or PR workflows rely strictly on proprietary <strong>Domain Authority (DA)</strong> and <strong>Page Authority (PA)</strong> benchmarks.</li>
+                <li>You need detailed historical backlink spam scores to audit toxic incoming links and disavow files.</li>
+                <li>Your team prefers weekly SERP tracking summaries rather than high-frequency daily volatility alerts.</li>
+                <li>You value structured on-page optimization checklists designed for marketing generalists.</li>
+              </ul>
+            </div>
+
+            <div style={{ background: '#F9F8FD', border: '1.5px solid #E0DBF5', borderRadius: '16px', padding: '24px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#37286B', marginBottom: '12px' }}>
+                <span>Choose SE Ranking if:</span>
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.94rem' }}>
+                <li>You require <strong>daily keyword rank updates</strong> across Google, Bing, and Yahoo included at base tiers.</li>
+                <li>You run a digital agency requiring automated white-label PDF reports and custom-branded client login portals.</li>
+                <li>You want more tracked keywords for your budget (750 keywords at $55/mo vs 300 keywords at $99/mo on Moz).</li>
+                <li>You need an integrated AI/NLP Content Editor to optimize copy directly against live SERP competitors.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Spec Matrix Table */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)', overflowX: 'auto' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', marginTop: 0, marginBottom: '16px', color: 'var(--text-dark)' }}>Side-by-Side Specification Matrix</h2>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.92rem', minWidth: '620px' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid #e2ede0', background: '#f9fbf8' }}>
+                <th style={{ padding: '14px 16px', color: '#5c7353', fontWeight: '800', width: '28%' }}>Capability / Spec</th>
+                <th style={{ padding: '14px 16px', color: '#182618', fontWeight: '800', width: '36%' }}>Moz Pro</th>
+                <th style={{ padding: '14px 16px', color: '#182618', fontWeight: '800', width: '36%' }}>SE Ranking</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid #f0f4ee' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Rank Update Frequency</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>Weekly default</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>Daily updates standard</strong></td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee', background: '#fafcf9' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Tracked Keywords (Base Tier)</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>300 ($99/mo)</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>750 ($55/mo)</strong></td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Proprietary Link Metrics</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>Domain Authority (DA)</strong>, Spam Score</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>Domain Trust (DT), Page Trust</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee', background: '#fafcf9' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Agency White-Labeling</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>Large tier ($299/mo+)</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>Pro tier ($109/mo+)</strong></td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Starting Monthly Price</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>$99/month ($79/mo annual)</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>$55/month</strong> ($44/mo annual)</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        {/* Decision Verdict */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', marginTop: 0, marginBottom: '14px', color: 'var(--text-dark)' }}>Which Should You Choose?</h2>
+          <ul style={{ margin: 0, paddingLeft: '22px', lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
+            <li><strong>Choose SE Ranking</strong> if you want the highest keyword quota per dollar, daily position tracking, agency white-labeling, and integrated content optimization at a fraction of standard market prices.</li>
+            <li><strong>Choose Moz Pro</strong> if your organization requires authoritative Domain Authority metrics, comprehensive link spam analysis, and a straightforward interface built for in-house corporate marketing teams.</li>
+          </ul>
+        </section>
+
+        {/* Sources Block */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '24px 32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+            <div style={{ fontSize: '0.85rem', color: '#5c7353' }}>
+              <strong>Pricing checked:</strong> Aug 25, 2026 • <strong>Product specifications corroborated from live official vendor documentation.</strong>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.82rem', fontWeight: '700' }}>
+              <a href="https://moz.com/pricing" target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', textDecoration: 'underline' }}>Moz Pricing ↗</a>
+              <a href="https://seranking.com/pricing.html" target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', textDecoration: 'underline' }}>SE Ranking Pricing ↗</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
+  const isFlagshipScreamingFrogVsSeRanking = (toolA.id === 'screaming-frog-seo-spider' && toolB.id === 'se-ranking') || (toolA.id === 'se-ranking' && toolB.id === 'screaming-frog-seo-spider');
+  if (isFlagshipScreamingFrogVsSeRanking) {
+    const sfTool = toolA.id === 'screaming-frog-seo-spider' ? toolA : toolB;
+    const seTool = toolA.id === 'se-ranking' ? toolA : toolB;
+
+    return (
+      <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '1040px' }}>
+        {injectSoftwareApplicationSchema(sfTool)}
+        {injectSoftwareApplicationSchema(seTool)}
+
+        <button onClick={onBack} className="btn-pill-outline" style={{ marginBottom: '24px' }} aria-label="Back to Directory">
+          <ArrowLeft size={16} /> Back to Comparisons
+        </button>
+
+        <header style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '36px 32px', marginBottom: '28px', textAlign: 'center', boxShadow: 'var(--shadow-soft)' }}>
+          <div style={{ display: 'inline-block', background: '#EBF3DE', color: '#2D4522', fontSize: '0.75rem', fontWeight: '800', padding: '4px 14px', borderRadius: '9999px', textTransform: 'uppercase', marginBottom: '14px', letterSpacing: '0.04em' }}>
+            TECHNICAL AUDITOR vs ALL-IN-ONE SUITE • 2026
+          </div>
+          <h1 style={{ fontSize: 'clamp(1.9rem, 3.8vw, 2.7rem)', fontWeight: '800', lineHeight: '1.18', margin: '0 0 14px 0', color: 'var(--text-dark)' }}>
+            Screaming Frog vs SE Ranking: Desktop Crawler vs Cloud SEO Suite (2026)
+          </h1>
+          <p style={{ fontSize: '1.08rem', color: 'var(--text-muted)', lineHeight: '1.6', margin: '0 auto', maxWidth: '820px' }}>
+            Understand the architectural and operational differences between a local desktop technical crawler and a comprehensive cloud-based rank tracking and competitor research platform.
+          </p>
+        </header>
+
+        {/* 30s Summary */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', marginTop: 0, marginBottom: '12px', color: 'var(--text-dark)' }}>The Fundamental Architectural Distinction</h2>
+          <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.65', marginBottom: '24px' }}>
+            Comparing <strong>Screaming Frog SEO Spider</strong> and <strong>SE Ranking</strong> is not an apples-to-apples comparison because they serve fundamentally different functions in an SEO workflow. <strong>Screaming Frog</strong> is an installed desktop application for deep technical crawler forensics, JavaScript execution, and custom XPath scraping with an annual flat license (£199/yr). <strong>SE Ranking</strong> is a cloud SaaS platform designed for continuous daily keyword rank tracking, competitor intelligence, backlink monitoring, and automated client reporting ($55–$239/mo).
+          </p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '20px' }}>
+            <div style={{ background: '#F7FAF5', border: '1.5px solid #DCE8D6', borderRadius: '16px', padding: '24px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '12px' }}>
+                <span>Choose Screaming Frog if:</span>
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.94rem' }}>
+                <li>You need to execute exhaustive <strong>deep technical site audits</strong>, staging server crawls, or pre-launch migration 301 redirect mapping.</li>
+                <li>You require headless Chromium <strong>JavaScript rendering</strong> to crawl React, Angular, or Vue single-page web applications.</li>
+                <li>You need custom data extraction using XPath, CSS selectors, or regex patterns to scrape HTML structures.</li>
+                <li>You prefer a local desktop client with zero monthly subscription fees (£199/year flat).</li>
+              </ul>
+            </div>
+
+            <div style={{ background: '#F9F8FD', border: '1.5px solid #E0DBF5', borderRadius: '16px', padding: '24px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: '800', color: '#37286B', marginBottom: '12px' }}>
+                <span>Choose SE Ranking if:</span>
+              </div>
+              <ul style={{ margin: 0, paddingLeft: '20px', lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.94rem' }}>
+                <li>You need <strong>daily keyword rank tracking</strong> and visibility monitoring across search engines.</li>
+                <li>You need global competitor keyword research, search volume history, and organic traffic estimations.</li>
+                <li>You manage client campaigns requiring scheduled cloud audits and white-label PDF reports.</li>
+                <li>You want an all-in-one cloud platform that runs without taxing your local machine's RAM or CPU.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Spec Matrix Table */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)', overflowX: 'auto' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', marginTop: 0, marginBottom: '16px', color: 'var(--text-dark)' }}>Side-by-Side Technical Specification Matrix</h2>
+          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.92rem', minWidth: '620px' }}>
+            <thead>
+              <tr style={{ borderBottom: '2px solid #e2ede0', background: '#f9fbf8' }}>
+                <th style={{ padding: '14px 16px', color: '#5c7353', fontWeight: '800', width: '28%' }}>Capability / Spec</th>
+                <th style={{ padding: '14px 16px', color: '#182618', fontWeight: '800', width: '36%' }}>Screaming Frog SEO Spider</th>
+                <th style={{ padding: '14px 16px', color: '#182618', fontWeight: '800', width: '36%' }}>SE Ranking</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid #f0f4ee' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Architecture &amp; Hosting</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>Desktop Application</strong> (macOS, Win, Linux)</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>100% Cloud SaaS</strong></td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee', background: '#fafcf9' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>JavaScript Rendering</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>Integrated Headless Chromium</strong></td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>Cloud JS crawler</td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Daily Keyword Rank Tracking</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>Not supported</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>750 to 5,000+ keywords daily</strong></td>
+              </tr>
+              <tr style={{ borderBottom: '1px solid #f0f4ee', background: '#fafcf9' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#2d4029' }}>Pricing &amp; Licensing</td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}><strong>Free (500 URLs)</strong> or <strong>£199/year</strong></td>
+                <td style={{ padding: '12px 16px', color: '#182618' }}>$55 to $239/month</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        {/* Verdict */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)' }}>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: '800', marginTop: 0, marginBottom: '14px', color: 'var(--text-dark)' }}>Summary &amp; Recommendation</h2>
+          <ul style={{ margin: 0, paddingLeft: '22px', lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
+            <li>If you need an in-depth technical crawler for website architecture, site migrations, and JavaScript audits, purchase a <strong>Screaming Frog SEO Spider license (£199/yr)</strong>.</li>
+            <li>If you need a complete cloud SEO suite for daily keyword tracking, competitor intelligence, and client reporting, choose <strong>SE Ranking ($55/mo)</strong>.</li>
+          </ul>
+        </section>
+
+        {/* Sources Block */}
+        <section style={{ background: '#FFFFFF', border: '1px solid var(--border-color)', borderRadius: '20px', padding: '24px 32px', marginBottom: '28px', boxShadow: 'var(--shadow-soft)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+            <div style={{ fontSize: '0.85rem', color: '#5c7353' }}>
+              <strong>Pricing checked:</strong> Aug 25, 2026 • <strong>Product specifications corroborated from live official vendor documentation.</strong>
+            </div>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', fontSize: '0.82rem', fontWeight: '700' }}>
+              <a href="https://www.screamingfrog.co.uk/seo-spider/pricing/" target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', textDecoration: 'underline' }}>Screaming Frog Pricing ↗</a>
+              <a href="https://seranking.com/pricing.html" target="_blank" rel="noopener noreferrer" style={{ color: '#82A735', textDecoration: 'underline' }}>SE Ranking Pricing ↗</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="container" style={{ padding: '40px 16px 80px', maxWidth: '960px' }}>
       {/* Schema.org Rich Snippet Ingestion */}

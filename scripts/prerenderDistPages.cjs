@@ -226,7 +226,8 @@ function getDealBreakdown(dealPriceRaw, dealDiscountRaw) {
 }
 
 // 0. Root Homepage (dist/index.html) is preserved as the clean SPA client entry shell
-console.log('Preserving dist/index.html as clean SPA client shell (eliminating homepage layout flicker)...');
+const rootRecovery = getRouteRecoveryState('https://stakdock.com/');
+console.log(`Preserving dist/index.html as clean SPA client shell (Recovery State: ${rootRecovery.recoveryState})...`);
 
 // 1. Generate dist/software/:id/index.html with rich high-entropy SSR body
 saasTools.forEach(tool => {
