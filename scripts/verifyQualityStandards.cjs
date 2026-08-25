@@ -26,14 +26,20 @@ const bannedSignatures = [
   '#1 EDITOR\'S OVERALL PICK'
 ];
 
-// Stale vs directories check: every directory in dist/vs/ must be in sitemap
+// Directory check: every directory in dist/vs/ must either be in sitemap (P/R/K) or have noindex (Q)
 const distVsDir = path.join(distDir, 'vs');
 if (fs.existsSync(distVsDir)) {
   const vsEntries = fs.readdirSync(distVsDir, { withFileTypes: true }).filter(d => d.isDirectory()).map(d => d.name);
   const sitemapVsSet = new Set(urls.filter(u => u.startsWith('/vs/')).map(u => u.replace(/^\/vs\//, '').replace(/\/$/, '')));
   for (const entry of vsEntries) {
-    if (!sitemapVsSet.has(entry)) {
-      errors.push(`[Stale VS Directory]: dist/vs/${entry} exists in output but is not in sitemap!`);
+    const indexPath = path.join(distVsDir, entry, 'index.html');
+    if (!fs.existsSync(indexPath)) {
+      errors.push(`[Missing Index File]: dist/vs/${entry}/index.html does not exist!`);
+    } else if (!sitemapVsSet.has(entry)) {
+      const html = fs.readFileSync(indexPath, 'utf8');
+      if (!html.includes('content="noindex, follow"')) {
+        errors.push(`[Unindexed VS Directory]: dist/vs/${entry} is not in sitemap and lacks noindex directive!`);
+      }
     }
   }
 }

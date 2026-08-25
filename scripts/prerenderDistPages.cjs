@@ -4,10 +4,56 @@ const { readAllTools, readCategories } = require('./toolData.cjs');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const indexPath = path.join(distDir, 'index.html');
+const recoveryMapPath = path.join(__dirname, '..', 'reports', 'gsc-recovery-map.json');
 
 if (!fs.existsSync(indexPath)) {
   console.error('Error: dist/index.html does not exist. Run vite build first.');
   process.exit(1);
+}
+
+if (!fs.existsSync(recoveryMapPath)) {
+  console.error('❌ FATAL: reports/gsc-recovery-map.json missing! Prerendering cannot proceed without recovery state source of truth.');
+  process.exit(1);
+}
+
+const recoveryData = JSON.parse(fs.readFileSync(recoveryMapPath, 'utf8'));
+const recoveryMap = new Map((recoveryData.items || []).map(item => [item.url, item]));
+
+let prerenderStats = {
+  total: 0,
+  indexed: 0,
+  quarantined: 0,
+  technical: 0
+};
+
+function getRouteRecoveryState(canonicalUrl) {
+  let pathOnly = canonicalUrl.replace(/^https?:\/\/[^\/]+/, '');
+  if (!pathOnly.startsWith('/')) pathOnly = '/' + pathOnly;
+  if (!pathOnly.endsWith('/')) pathOnly = pathOnly + '/';
+
+  const item = recoveryMap.get(pathOnly);
+  if (!item) {
+    // Rule #18 Future Index-Admission Gate: Fail-closed default to Q
+    prerenderStats.quarantined++;
+    return { recoveryState: 'Q', isNoindex: true };
+  }
+
+  if (item.recoveryState === 'T') {
+    prerenderStats.technical++;
+    return { recoveryState: 'T', isNoindex: true };
+  }
+
+  const isNoindex = item.recoveryState === 'Q';
+  if (isNoindex) {
+    prerenderStats.quarantined++;
+  } else {
+    prerenderStats.indexed++;
+  }
+
+  return {
+    recoveryState: item.recoveryState,
+    isNoindex
+  };
 }
 
 const baseIndexHtml = fs.readFileSync(indexPath, 'utf8');
@@ -22,10 +68,15 @@ function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
-function buildSeoPage({ title, description, canonicalUrl, jsonLd, bodyHtml }) {
+function buildSeoPage({ title, description, canonicalUrl, jsonLd, bodyHtml, isNoindex }) {
   const safeTitle = escapeHtml(title);
   const safeDesc = escapeHtml(description);
   const safeCanonical = escapeHtml(canonicalUrl);
+
+  if (isNoindex === undefined) {
+    isNoindex = getRouteRecoveryState(canonicalUrl).isNoindex;
+  }
+  prerenderStats.total++;
 
   let html = baseIndexHtml;
 
@@ -37,6 +88,16 @@ function buildSeoPage({ title, description, canonicalUrl, jsonLd, bodyHtml }) {
   html = html.replace(/<meta property="og:url" content="[\s\S]*?" \/>/i, `<meta property="og:url" content="${safeCanonical}" />`);
   html = html.replace(/<meta name="twitter:title" content="[\s\S]*?" \/>/i, `<meta name="twitter:title" content="${safeTitle}" />`);
   html = html.replace(/<meta name="twitter:description" content="[\s\S]*?" \/>/i, `<meta name="twitter:description" content="${safeDesc}" />`);
+
+  if (isNoindex) {
+    html = html.replace(/<meta name="robots" content="[\s\S]*?" \/>/i, `<meta name="robots" content="noindex, follow" />`);
+    html = html.replace(/<meta name="googlebot" content="[\s\S]*?" \/>/i, `<meta name="googlebot" content="noindex, follow" />`);
+    html = html.replace(/<meta name="bingbot" content="[\s\S]*?" \/>/i, `<meta name="bingbot" content="noindex, follow" />`);
+  } else {
+    html = html.replace(/<meta name="robots" content="[\s\S]*?" \/>/i, `<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />`);
+    html = html.replace(/<meta name="googlebot" content="[\s\S]*?" \/>/i, `<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />`);
+    html = html.replace(/<meta name="bingbot" content="[\s\S]*?" \/>/i, `<meta name="bingbot" content="index, follow, max-image-preview:large" />`);
+  }
 
   if (jsonLd) {
     const scripts = Array.isArray(jsonLd)
@@ -1446,3 +1507,4 @@ coreStaticPages.forEach(page => {
 });
 
 console.log(`Prerendered ${softwareCount} /software/, ${altCount} /alternatives/, ${vsCount} /vs/, ${bestCount} /best/, ${guideCount} /guides/, and ${coreStaticPages.length} core pages into dist/ (100% strict trailing-slash canonicals, zero duplicate flat files)!`);
+console.log(`🛡️  Prerender Recovery Directives Applied: ${prerenderStats.indexed} Indexable (P/R/K), ${prerenderStats.quarantined} Quarantined (noindex, follow), ${prerenderStats.technical} Technical`);
