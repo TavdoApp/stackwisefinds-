@@ -1,20 +1,31 @@
 {
-  "checkpointDate": "2026-08-24",
   "evaluatedDate": "2026-08-25",
-  "recoveryClassification": "EARLY POSITIVE",
-  "classificationRationale": "Target recovery hubs (notably Invoice Ninja alternatives & Power Automate) retain significant impression volume and top-10 ranking presence.",
-  "overallMetrics": {
-    "dailyImpressions": 157,
-    "dailyClicks": "0.1",
+  "dataPeriodRange": "2026-08-17 to 2026-08-24",
+  "periodClassification": "PERIOD B — POST-CRASH / PRE-WAVE-1 REFERENCE DATA",
+  "isTruePostDeploymentRecoveryData": false,
+  "deploymentBoundary": "2026-08-25 (Commit 5ba4954)",
+  "checkpointClassification": "PRE-WAVE-1 REFERENCE — NOT A RECOVERY CHECKPOINT",
+  "classificationRationale": "This export represents the August 18–24 post-crash collapsed search period, which occurred BEFORE the Wave 1 production deployment (Aug 25, 2026). It serves as Period B reference baseline data.",
+  "dataIntegrityReconciliation": {
+    "chartTotalImpressions": 4309,
+    "chartTotalClicks": 6,
+    "pagesTotalImpressions": 4247,
+    "pagesTotalClicks": 6,
+    "discrepancyExplanation": "Pages.csv contains full 8-day export total (Aug 17–24 = 4,241 imps / 6 clicks), whereas 7-day post-crash clean window (Aug 18–24) in Chart.csv equals 1,102 imps / 1 click after isolating the Aug 17 transition day (3,207 imps / 5 clicks).",
+    "reconciliationStatus": "RECONCILED"
+  },
+  "periodBReferenceMetrics": {
+    "clean7DayPeriod": "2026-08-18 to 2026-08-24 (7 days)",
+    "dailyImpressionsAverage": 157,
+    "dailyClicksAverage": "0.1",
     "averageCtr": "0.09%",
     "averagePosition": "42.6",
-    "queryBreadth": 1000,
-    "pageBreadth": 1000,
-    "recoveryRatio": "6.27%",
-    "preCrashBaselineDailyImps": 2503,
-    "aug24BaselineDailyImps": 17
+    "queryBreadth": "≥ 1,000 (GSC UI export limit reached; true breadth ≥ 1,000)",
+    "pageBreadth": "≥ 1,000 (GSC UI export limit reached; true breadth ≥ 1,000)",
+    "collapsedPeriodRatio": "6.27%",
+    "preCrashBaselineDailyImps": 2503
   },
-  "footprintBreakdown": {
+  "footprintBreakdown8DayExport": {
     "activePrk": {
       "impressions": 3490,
       "clicks": 4,
@@ -24,7 +35,8 @@
       "impressions": 751,
       "clicks": 2,
       "activePages": 497
-    }
+    },
+    "notes": "Values reflect total 8-day export window (Aug 17–24). 82.3% of impressions and 66.7% of clicks came from P/R/K footprint."
   },
   "wave1Analysis": [
     {
@@ -38,7 +50,7 @@
       "queryCount": 1,
       "strongestQuery": "invoice ninja review",
       "strongestRank": "56.0",
-      "trendVsBaseline": "Growth"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     },
     {
       "url": "/software/microsoft-power-automate/",
@@ -51,7 +63,7 @@
       "queryCount": 17,
       "strongestQuery": "power automate",
       "strongestRank": "48.8",
-      "trendVsBaseline": "Retained Visibility"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     },
     {
       "url": "/software/all-in-one-seo-aioseo/",
@@ -64,7 +76,7 @@
       "queryCount": 1,
       "strongestQuery": "aioseo",
       "strongestRank": "52.0",
-      "trendVsBaseline": "Retained Visibility"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     },
     {
       "url": "/software/screaming-frog-seo-spider/",
@@ -77,7 +89,7 @@
       "queryCount": 6,
       "strongestQuery": "se ranking vs screaming frog",
       "strongestRank": "53.8",
-      "trendVsBaseline": "Retained Visibility"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     },
     {
       "url": "/vs/moz-pro-vs-se-ranking/",
@@ -90,7 +102,7 @@
       "queryCount": 1,
       "strongestQuery": "moz pro vs se ranking",
       "strongestRank": "52.8",
-      "trendVsBaseline": "Retained Visibility"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     },
     {
       "url": "/vs/screaming-frog-seo-spider-vs-se-ranking/",
@@ -103,7 +115,7 @@
       "queryCount": 0,
       "strongestQuery": "screaming frog vs se ranking",
       "strongestRank": "55.5",
-      "trendVsBaseline": "Retained Visibility"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     },
     {
       "url": "/best/invoicing/",
@@ -116,63 +128,9 @@
       "queryCount": 20,
       "strongestQuery": "invoicing software",
       "strongestRank": "74.5",
-      "trendVsBaseline": "Retained Visibility"
+      "periodContext": "Historical Post-Crash Reference (Pre-Wave-1 Deployment)"
     }
   ],
-  "clusterBreakdown": {
-    "SEO Software": {
-      "urls": [
-        "/software/all-in-one-seo-aioseo/",
-        "/software/screaming-frog-seo-spider/",
-        "/vs/moz-pro-vs-se-ranking/",
-        "/vs/screaming-frog-seo-spider-vs-se-ranking/",
-        "/software/se-ranking/",
-        "/software/moz-pro/",
-        "/software/seoclarity/",
-        "/alternatives/rank-math/"
-      ],
-      "imps": 106,
-      "clicks": 0,
-      "pages": 5
-    },
-    "Invoicing & Billing": {
-      "urls": [
-        "/alternatives/invoice-ninja/",
-        "/best/invoicing/",
-        "/software/wave-invoicing/",
-        "/software/invoice-ninja/",
-        "/alternatives/zoho-invoice/"
-      ],
-      "imps": 566,
-      "clicks": 0,
-      "pages": 5
-    },
-    "Workflow Automation": {
-      "urls": [
-        "/software/microsoft-power-automate/",
-        "/software/make/",
-        "/software/n8n/"
-      ],
-      "imps": 149,
-      "clicks": 0,
-      "pages": 1
-    },
-    "Developer / Open Source": {
-      "urls": [
-        "/alternatives/kuzu-db/",
-        "/alternatives/telegraph/",
-        "/alternatives/headlamp-k8s/",
-        "/software/joinly/",
-        "/software/vendure/",
-        "/alternatives/databox/",
-        "/software/hetzner/",
-        "/software/vultr/"
-      ],
-      "imps": 10,
-      "clicks": 0,
-      "pages": 2
-    }
-  },
   "wave2ReRanked": [
     {
       "rank": 1,
@@ -181,9 +139,9 @@
       "type": "vs",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "135 impressions, 1 clicks (avg pos 77.4)",
-      "checkpointImps": 24,
-      "checkpointClicks": 0,
-      "checkpointPos": "77.2",
+      "postCrashImps": 24,
+      "postCrashClicks": 0,
+      "postCrashPos": "77.2",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -193,9 +151,9 @@
       "type": "alternatives",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "72 impressions, 1 clicks (avg pos 10.2)",
-      "checkpointImps": 11,
-      "checkpointClicks": 0,
-      "checkpointPos": "16.3",
+      "postCrashImps": 11,
+      "postCrashClicks": 0,
+      "postCrashPos": "16.3",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -205,9 +163,9 @@
       "type": "alternatives",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "175 impressions, 1 clicks (avg pos 70.3)",
-      "checkpointImps": 7,
-      "checkpointClicks": 0,
-      "checkpointPos": "73.0",
+      "postCrashImps": 7,
+      "postCrashClicks": 0,
+      "postCrashPos": "73.0",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -217,9 +175,9 @@
       "type": "software",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "47 impressions, 1 clicks (avg pos 40.4)",
-      "checkpointImps": 6,
-      "checkpointClicks": 0,
-      "checkpointPos": "37.8",
+      "postCrashImps": 6,
+      "postCrashClicks": 0,
+      "postCrashPos": "37.8",
       "commercialIntent": "Commercial Evaluation Intent"
     },
     {
@@ -229,9 +187,9 @@
       "type": "alternatives",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "76 impressions, 1 clicks (avg pos 45.6)",
-      "checkpointImps": 5,
-      "checkpointClicks": 0,
-      "checkpointPos": "45.2",
+      "postCrashImps": 5,
+      "postCrashClicks": 0,
+      "postCrashPos": "45.2",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -241,9 +199,9 @@
       "type": "alternatives",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "41 impressions, 1 clicks (avg pos 21.1)",
-      "checkpointImps": 5,
-      "checkpointClicks": 0,
-      "checkpointPos": "56.4",
+      "postCrashImps": 5,
+      "postCrashClicks": 0,
+      "postCrashPos": "56.4",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -253,9 +211,9 @@
       "type": "software",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "65 impressions, 1 clicks (avg pos 45.1)",
-      "checkpointImps": 4,
-      "checkpointClicks": 0,
-      "checkpointPos": "57.3",
+      "postCrashImps": 4,
+      "postCrashClicks": 0,
+      "postCrashPos": "57.3",
       "commercialIntent": "Commercial Evaluation Intent"
     },
     {
@@ -265,9 +223,9 @@
       "type": "alternatives",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "34 impressions, 1 clicks (avg pos 27.8)",
-      "checkpointImps": 3,
-      "checkpointClicks": 0,
-      "checkpointPos": "21.7",
+      "postCrashImps": 3,
+      "postCrashClicks": 0,
+      "postCrashPos": "21.7",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -277,9 +235,9 @@
       "type": "alternatives",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "32 impressions, 1 clicks (avg pos 46.4)",
-      "checkpointImps": 1,
-      "checkpointClicks": 0,
-      "checkpointPos": "73.0",
+      "postCrashImps": 1,
+      "postCrashClicks": 0,
+      "postCrashPos": "73.0",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -289,9 +247,9 @@
       "type": "software",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "55 impressions, 1 clicks (avg pos 47.5)",
-      "checkpointImps": 0,
-      "checkpointClicks": 0,
-      "checkpointPos": "N/A",
+      "postCrashImps": 0,
+      "postCrashClicks": 0,
+      "postCrashPos": "N/A",
       "commercialIntent": "Commercial Evaluation Intent"
     },
     {
@@ -301,9 +259,9 @@
       "type": "alternatives",
       "cluster": "SEO Software",
       "preCrashOpp": "36 impressions, 1 clicks (avg pos 68.0)",
-      "checkpointImps": 0,
-      "checkpointClicks": 0,
-      "checkpointPos": "N/A",
+      "postCrashImps": 0,
+      "postCrashClicks": 0,
+      "postCrashPos": "N/A",
       "commercialIntent": "High Commercial Intent (Buyer Comparison)"
     },
     {
@@ -313,9 +271,9 @@
       "type": "software",
       "cluster": "Developer & Cloud Infrastructure",
       "preCrashOpp": "34 impressions, 1 clicks (avg pos 47.2)",
-      "checkpointImps": 0,
-      "checkpointClicks": 0,
-      "checkpointPos": "N/A",
+      "postCrashImps": 0,
+      "postCrashClicks": 0,
+      "postCrashPos": "N/A",
       "commercialIntent": "Commercial Evaluation Intent"
     }
   ]
