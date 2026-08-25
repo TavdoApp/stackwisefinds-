@@ -1,0 +1,322 @@
+{
+  "checkpointDate": "2026-08-24",
+  "evaluatedDate": "2026-08-25",
+  "recoveryClassification": "EARLY POSITIVE",
+  "classificationRationale": "Target recovery hubs (notably Invoice Ninja alternatives & Power Automate) retain significant impression volume and top-10 ranking presence.",
+  "overallMetrics": {
+    "dailyImpressions": 157,
+    "dailyClicks": "0.1",
+    "averageCtr": "0.09%",
+    "averagePosition": "42.6",
+    "queryBreadth": 1000,
+    "pageBreadth": 1000,
+    "recoveryRatio": "6.27%",
+    "preCrashBaselineDailyImps": 2503,
+    "aug24BaselineDailyImps": 17
+  },
+  "footprintBreakdown": {
+    "activePrk": {
+      "impressions": 3490,
+      "clicks": 4,
+      "activePages": 503
+    },
+    "quarantinedQ": {
+      "impressions": 751,
+      "clicks": 2,
+      "activePages": 497
+    }
+  },
+  "wave1Analysis": [
+    {
+      "url": "/alternatives/invoice-ninja/",
+      "name": "Invoice Ninja Alternatives",
+      "cluster": "Invoicing & Billing",
+      "impressions": 451,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "6.5",
+      "queryCount": 1,
+      "strongestQuery": "invoice ninja review",
+      "strongestRank": "56.0",
+      "trendVsBaseline": "Growth"
+    },
+    {
+      "url": "/software/microsoft-power-automate/",
+      "name": "Microsoft Power Automate",
+      "cluster": "Workflow Automation",
+      "impressions": 149,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "49.6",
+      "queryCount": 17,
+      "strongestQuery": "power automate",
+      "strongestRank": "48.8",
+      "trendVsBaseline": "Retained Visibility"
+    },
+    {
+      "url": "/software/all-in-one-seo-aioseo/",
+      "name": "All in One SEO (AIOSEO)",
+      "cluster": "SEO Software",
+      "impressions": 9,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "51.6",
+      "queryCount": 1,
+      "strongestQuery": "aioseo",
+      "strongestRank": "52.0",
+      "trendVsBaseline": "Retained Visibility"
+    },
+    {
+      "url": "/software/screaming-frog-seo-spider/",
+      "name": "Screaming Frog SEO Spider",
+      "cluster": "SEO Software",
+      "impressions": 48,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "71.1",
+      "queryCount": 6,
+      "strongestQuery": "se ranking vs screaming frog",
+      "strongestRank": "53.8",
+      "trendVsBaseline": "Retained Visibility"
+    },
+    {
+      "url": "/vs/moz-pro-vs-se-ranking/",
+      "name": "Moz Pro vs SE Ranking",
+      "cluster": "SEO Software",
+      "impressions": 25,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "56.7",
+      "queryCount": 1,
+      "strongestQuery": "moz pro vs se ranking",
+      "strongestRank": "52.8",
+      "trendVsBaseline": "Retained Visibility"
+    },
+    {
+      "url": "/vs/screaming-frog-seo-spider-vs-se-ranking/",
+      "name": "Screaming Frog vs SE Ranking",
+      "cluster": "SEO Software",
+      "impressions": 19,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "55.5",
+      "queryCount": 0,
+      "strongestQuery": "screaming frog vs se ranking",
+      "strongestRank": "55.5",
+      "trendVsBaseline": "Retained Visibility"
+    },
+    {
+      "url": "/best/invoicing/",
+      "name": "Best Invoicing Software",
+      "cluster": "Invoicing & Billing",
+      "impressions": 109,
+      "clicks": 0,
+      "ctr": "0%",
+      "averagePosition": "78.2",
+      "queryCount": 20,
+      "strongestQuery": "invoicing software",
+      "strongestRank": "74.5",
+      "trendVsBaseline": "Retained Visibility"
+    }
+  ],
+  "clusterBreakdown": {
+    "SEO Software": {
+      "urls": [
+        "/software/all-in-one-seo-aioseo/",
+        "/software/screaming-frog-seo-spider/",
+        "/vs/moz-pro-vs-se-ranking/",
+        "/vs/screaming-frog-seo-spider-vs-se-ranking/",
+        "/software/se-ranking/",
+        "/software/moz-pro/",
+        "/software/seoclarity/",
+        "/alternatives/rank-math/"
+      ],
+      "imps": 106,
+      "clicks": 0,
+      "pages": 5
+    },
+    "Invoicing & Billing": {
+      "urls": [
+        "/alternatives/invoice-ninja/",
+        "/best/invoicing/",
+        "/software/wave-invoicing/",
+        "/software/invoice-ninja/",
+        "/alternatives/zoho-invoice/"
+      ],
+      "imps": 566,
+      "clicks": 0,
+      "pages": 5
+    },
+    "Workflow Automation": {
+      "urls": [
+        "/software/microsoft-power-automate/",
+        "/software/make/",
+        "/software/n8n/"
+      ],
+      "imps": 149,
+      "clicks": 0,
+      "pages": 1
+    },
+    "Developer / Open Source": {
+      "urls": [
+        "/alternatives/kuzu-db/",
+        "/alternatives/telegraph/",
+        "/alternatives/headlamp-k8s/",
+        "/software/joinly/",
+        "/software/vendure/",
+        "/alternatives/databox/",
+        "/software/hetzner/",
+        "/software/vultr/"
+      ],
+      "imps": 10,
+      "clicks": 0,
+      "pages": 2
+    }
+  },
+  "wave2ReRanked": [
+    {
+      "rank": 1,
+      "url": "/vs/aws-vs-google-cloud/",
+      "state": "P",
+      "type": "vs",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "135 impressions, 1 clicks (avg pos 77.4)",
+      "checkpointImps": 24,
+      "checkpointClicks": 0,
+      "checkpointPos": "77.2",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 2,
+      "url": "/alternatives/homarr-dashboard/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "72 impressions, 1 clicks (avg pos 10.2)",
+      "checkpointImps": 11,
+      "checkpointClicks": 0,
+      "checkpointPos": "16.3",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 3,
+      "url": "/alternatives/databox/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "175 impressions, 1 clicks (avg pos 70.3)",
+      "checkpointImps": 7,
+      "checkpointClicks": 0,
+      "checkpointPos": "73.0",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 4,
+      "url": "/software/security-onion/",
+      "state": "P",
+      "type": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "47 impressions, 1 clicks (avg pos 40.4)",
+      "checkpointImps": 6,
+      "checkpointClicks": 0,
+      "checkpointPos": "37.8",
+      "commercialIntent": "Commercial Evaluation Intent"
+    },
+    {
+      "rank": 5,
+      "url": "/alternatives/albacross/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "76 impressions, 1 clicks (avg pos 45.6)",
+      "checkpointImps": 5,
+      "checkpointClicks": 0,
+      "checkpointPos": "45.2",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 6,
+      "url": "/alternatives/apache-guacamole/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "41 impressions, 1 clicks (avg pos 21.1)",
+      "checkpointImps": 5,
+      "checkpointClicks": 0,
+      "checkpointPos": "56.4",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 7,
+      "url": "/software/authy/",
+      "state": "P",
+      "type": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "65 impressions, 1 clicks (avg pos 45.1)",
+      "checkpointImps": 4,
+      "checkpointClicks": 0,
+      "checkpointPos": "57.3",
+      "commercialIntent": "Commercial Evaluation Intent"
+    },
+    {
+      "rank": 8,
+      "url": "/alternatives/audiobookshelf/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "34 impressions, 1 clicks (avg pos 27.8)",
+      "checkpointImps": 3,
+      "checkpointClicks": 0,
+      "checkpointPos": "21.7",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 9,
+      "url": "/alternatives/opensearch/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "32 impressions, 1 clicks (avg pos 46.4)",
+      "checkpointImps": 1,
+      "checkpointClicks": 0,
+      "checkpointPos": "73.0",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 10,
+      "url": "/software/hetzner/",
+      "state": "P",
+      "type": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "55 impressions, 1 clicks (avg pos 47.5)",
+      "checkpointImps": 0,
+      "checkpointClicks": 0,
+      "checkpointPos": "N/A",
+      "commercialIntent": "Commercial Evaluation Intent"
+    },
+    {
+      "rank": 11,
+      "url": "/alternatives/rank-math/",
+      "state": "P",
+      "type": "alternatives",
+      "cluster": "SEO Software",
+      "preCrashOpp": "36 impressions, 1 clicks (avg pos 68.0)",
+      "checkpointImps": 0,
+      "checkpointClicks": 0,
+      "checkpointPos": "N/A",
+      "commercialIntent": "High Commercial Intent (Buyer Comparison)"
+    },
+    {
+      "rank": 12,
+      "url": "/software/vultr/",
+      "state": "P",
+      "type": "software",
+      "cluster": "Developer & Cloud Infrastructure",
+      "preCrashOpp": "34 impressions, 1 clicks (avg pos 47.2)",
+      "checkpointImps": 0,
+      "checkpointClicks": 0,
+      "checkpointPos": "N/A",
+      "commercialIntent": "Commercial Evaluation Intent"
+    }
+  ]
+}
