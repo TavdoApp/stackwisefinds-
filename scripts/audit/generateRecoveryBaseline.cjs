@@ -1,6 +1,13 @@
 /**
- * StakDock Recovery Baseline & Cluster Analyzer (Phase 3C)
- * Generates reports/recovery-baseline-2026-08-25.json and reports/recovery-baseline-2026-08-25.md
+ * StakDock Recovery Baseline & Checkpoint Analyzer (Phase 3C / 3D)
+ * 
+ * Usage:
+ *   node scripts/audit/generateRecoveryBaseline.cjs
+ *     -> Generates/refreshes reports/recovery-baseline-2026-08-25.json & .md
+ * 
+ *   node scripts/audit/generateRecoveryBaseline.cjs --checkpoint <path_to_gsc_export_dir>
+ *     -> Evaluates a new post-deployment checkpoint against the baseline
+ *     -> Generates reports/recovery-checkpoint-[date].json & .md
  */
 
 const fs = require('fs');
@@ -52,6 +59,119 @@ function parseCsv(filePath) {
   return rows;
 }
 
+// Parse command-line args for checkpoint mode
+const args = process.argv.slice(2);
+const checkpointFlagIdx = args.indexOf('--checkpoint');
+const isCheckpointMode = checkpointFlagIdx !== -1 && args[checkpointFlagIdx + 1];
+const checkpointDir = isCheckpointMode ? path.resolve(args[checkpointFlagIdx + 1]) : null;
+
+if (isCheckpointMode) {
+  console.log(`🔍 Processing Checkpoint from: ${checkpointDir}`);
+  if (!fs.existsSync(checkpointDir)) {
+    console.error(`❌ Checkpoint directory not found: ${checkpointDir}`);
+    process.exit(1);
+  }
+
+  const cpChart = parseCsv(path.join(checkpointDir, 'Chart.csv'));
+  const cpPages = parseCsv(path.join(checkpointDir, 'Pages.csv'));
+  const cpQueries = parseCsv(path.join(checkpointDir, 'Queries.csv'));
+
+  const baselineJsonPath = path.join(__dirname, '..', '..', 'reports', 'recovery-baseline-2026-08-25.json');
+  if (!fs.existsSync(baselineJsonPath)) {
+    console.error(`❌ Baseline file not found: ${baselineJsonPath}`);
+    process.exit(1);
+  }
+  const baseline = JSON.parse(fs.readFileSync(baselineJsonPath, 'utf8'));
+
+  let cpClicks = 0;
+  let cpImps = 0;
+  let cpWeightedPosSum = 0;
+  cpChart.forEach(r => {
+    const c = parseInt(r.Clicks, 10) || 0;
+    const i = parseInt(r.Impressions, 10) || 0;
+    const p = parseFloat(r.Position) || 0;
+    cpClicks += c;
+    cpImps += i;
+    cpWeightedPosSum += p * i;
+  });
+
+  const cpDays = cpChart.length || 1;
+  const cpDailyImps = Math.round(cpImps / cpDays);
+  const cpDailyClicks = (cpClicks / cpDays).toFixed(1);
+  const cpAvgCtr = ((cpClicks / (cpImps || 1)) * 100).toFixed(2) + '%';
+  const cpAvgPos = (cpWeightedPosSum / (cpImps || 1)).toFixed(1);
+  const cpRecoveryRatio = ((cpDailyImps / baseline.searchMetrics.preCrash.dailyImpressionsAverage) * 100).toFixed(2) + '%';
+
+  const cpDate = cpChart[cpChart.length - 1] ? cpChart[cpChart.length - 1].Date : new Date().toISOString().split('T')[0];
+
+  // Evaluate Decision Signal
+  let decisionSignal = 'NEUTRAL';
+  let decisionReason = 'Performance is within stable observation variance.';
+  if (cpDailyImps >= baseline.searchMetrics.preCrash.dailyImpressionsAverage * 0.1 || cpDailyClicks >= 1.0) {
+    decisionSignal = 'STRONG POSITIVE';
+    decisionReason = 'Daily impressions have increased beyond 10% milestone or regular clicks have resumed.';
+  } else if (cpDailyImps < 10 && cpDays >= 7) {
+    decisionSignal = 'NEGATIVE';
+    decisionReason = 'Active URL search impressions continue to trend downwards after 7+ days of recrawl.';
+  }
+
+  const checkpointData = {
+    checkpointDate: cpDate,
+    evaluationDate: new Date().toISOString().split('T')[0],
+    decisionSignal,
+    decisionReason,
+    metrics: {
+      dailyImpressions: cpDailyImps,
+      dailyClicks: cpDailyClicks,
+      averageCtr: cpAvgCtr,
+      averagePosition: cpAvgPos,
+      trackedQueries: cpQueries.length,
+      trackedPages: cpPages.length,
+      recoveryRatio: cpRecoveryRatio,
+      preCrashBaselineDailyImps: baseline.searchMetrics.preCrash.dailyImpressionsAverage
+    }
+  };
+
+  const cpOutJson = path.join(__dirname, '..', '..', 'reports', `recovery-checkpoint-${cpDate}.json`);
+  fs.writeFileSync(cpOutJson, JSON.stringify(checkpointData, null, 2), 'utf8');
+
+  const cpOutMd = path.join(__dirname, '..', '..', 'reports', `recovery-checkpoint-${cpDate}.md`);
+  const cpMdContent = `# StakDock Recovery Checkpoint — ${cpDate}
+
+**Checkpoint Date**: ${cpDate}  
+**Decision Signal**: **\`${decisionSignal}\`**  
+**Assessment**: ${decisionReason}  
+
+---
+
+## 1. Checkpoint Performance Summary
+
+| Metric | Pre-Crash Baseline | 2026-08-25 Baseline | Current Checkpoint (${cpDate}) | Delta vs Baseline |
+| :--- | :--- | :--- | :--- | :--- |
+| **Daily Impressions** | ${baseline.searchMetrics.preCrash.dailyImpressionsAverage} / day | 17 / day | **${cpDailyImps} / day** | ${cpDailyImps - 17 >= 0 ? '+' : ''}${cpDailyImps - 17} imps/day |
+| **Daily Clicks** | ${baseline.searchMetrics.preCrash.dailyClicksAverage} / day | 0.0 / day | **${cpDailyClicks} / day** | ${cpDailyClicks} clicks/day |
+| **Average CTR** | ${baseline.searchMetrics.preCrash.averageCtr} | 0.00% | **${cpAvgCtr}** | — |
+| **Average Position** | ${baseline.searchMetrics.preCrash.averagePosition} | 67.2 | **${cpAvgPos}** | — |
+| **Recovery Ratio** | 100.0% | 0.68% | **${cpRecoveryRatio}** | — |
+
+---
+
+## 2. Recommended Next Step
+
+${decisionSignal === 'STRONG POSITIVE' 
+  ? 'Positive momentum confirmed. Prepare Wave 2 candidate specs for review.' 
+  : (decisionSignal === 'NEUTRAL' 
+      ? 'Continue holding in observation mode. Do not make architectural changes.' 
+      : 'Perform root-cause diagnostics on crawl errors or index coverage before any page modifications.')}
+`;
+
+  fs.writeFileSync(cpOutMd, cpMdContent, 'utf8');
+  console.log(`✅ Generated ${cpOutJson}`);
+  console.log(`✅ Generated ${cpOutMd}`);
+  process.exit(0);
+}
+
+// Default Mode: Generate Baseline
 const preChart = parseCsv(path.join(preCrashDir, 'Chart.csv'));
 const prePages = parseCsv(path.join(preCrashDir, 'Pages.csv'));
 const preQueries = parseCsv(path.join(preCrashDir, 'Queries.csv'));
