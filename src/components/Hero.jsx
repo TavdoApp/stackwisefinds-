@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowDown, Sparkles, Wand2, Search, Flame, Rocket, Star, Tag, Gift, Award, ArrowUpRight } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
+import { STACK_PRESETS } from '../utils/stackIntelligenceEngine.js';
 
 const rotatingSponsors = [
   {
