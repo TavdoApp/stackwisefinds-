@@ -82,7 +82,7 @@ export default function App() {
 
   const [currentView, setCurrentView] = useState(() => {
     if (typeof window === 'undefined') return 'directory';
-    const p = window.location.pathname.toLowerCase();
+    const p = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
     if (p.startsWith('/vs/')) return 'versus-detail';
     if (p.startsWith('/software/') || p.startsWith('/tool/')) return 'tool-detail';
     if (p.startsWith('/alternatives/')) return 'alternatives-detail';
@@ -91,7 +91,7 @@ export default function App() {
     if (p === '/categories') return 'category-grid';
     if (p === '/ranking') return 'ranking';
     if (p === '/advertise' || p === '/pricing') return 'advertise';
-    if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure') return p.slice(1);
+    if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure' || p === '/about' || p === '/methodology') return p.slice(1);
     return 'directory';
   });
   const [currentLang, setCurrentLang] = useState('en');
@@ -113,8 +113,8 @@ export default function App() {
   });
   const [legalView, setLegalView] = useState(() => {
     if (typeof window === 'undefined') return null;
-    const p = window.location.pathname.toLowerCase();
-    if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure') return p.slice(1);
+    const p = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+    if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure' || p === '/about' || p === '/methodology') return p.slice(1);
     return null;
   });
   const [searchTerm, setSearchTerm] = useState('');
@@ -1235,7 +1235,7 @@ export default function App() {
               />
             )}
 
-            {(currentView === 'privacy' || currentView === 'terms' || currentView === 'refund' || currentView === 'disclosure' || currentView === 'legal-view') && (
+            {(currentView === 'privacy' || currentView === 'terms' || currentView === 'refund' || currentView === 'disclosure' || currentView === 'about' || currentView === 'methodology' || currentView === 'legal-view') && (
               <LegalViews
                 view={legalView || currentView}
                 onBack={() => {

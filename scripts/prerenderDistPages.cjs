@@ -4,9 +4,10 @@ const { readAllTools, readCategories } = require('./toolData.cjs');
 const {
   renderMozProVsSeRankingSsr,
   renderScreamingFrogVsSeRankingSsr,
-  renderInvoiceNinjaAlternativesSsr,
   renderInvoicingCategoryBuyerGuideSsr
 } = require('./customRecoveryWaveRenderers.cjs');
+
+const authorityRenderers = require('./authorityCoreRenderers.cjs');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const indexPath = path.join(distDir, 'index.html');
@@ -225,6 +226,52 @@ function getDealBreakdown(dealPriceRaw, dealDiscountRaw) {
   };
 }
 
+// Controlled explicit approved cross-category flagship comparisons
+const approvedFlagshipComparisons = [
+  { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot', isFlagship: true },
+  { toolAId: 'moz-pro', toolBId: 'se-ranking', vsSlug: 'moz-pro-vs-se-ranking', isFlagship: true },
+  { toolAId: 'screaming-frog-seo-spider', toolBId: 'se-ranking', vsSlug: 'screaming-frog-seo-spider-vs-se-ranking', isFlagship: true },
+  { toolAId: 'aws', toolBId: 'google-cloud', vsSlug: 'aws-vs-google-cloud', isFlagship: true }
+];
+
+function getVsPairsList(tools) {
+  const map = new Map();
+  const catMap = {};
+
+  approvedFlagshipComparisons.forEach(f => {
+    const tA = tools.find(t => t.id === f.toolAId);
+    const tB = tools.find(t => t.id === f.toolBId);
+    if (tA && tB) {
+      map.set(f.vsSlug, { tA, tB, vsSlug: f.vsSlug, isFlagship: true });
+    }
+  });
+
+  tools.forEach(t => {
+    if (!t || !t.category) return;
+    const c = String(t.category).toLowerCase();
+    if (!catMap[c]) catMap[c] = [];
+    catMap[c].push(t);
+  });
+
+  Object.values(catMap).forEach(list => {
+    if (list.length < 2) return;
+    const top = list.slice(0, 6);
+    for (let i = 0; i < top.length; i++) {
+      for (let j = i + 1; j < top.length; j++) {
+        const slug = `${top[i].id}-vs-${top[j].id}`;
+        if (!map.has(slug)) {
+          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug, isFlagship: false });
+        }
+      }
+    }
+  });
+
+  return Array.from(map.values());
+}
+
+const versusPairs = getVsPairsList(saasTools);
+const allVsSlugs = new Set(versusPairs.map(p => p.vsSlug));
+
 // 0. Root Homepage (dist/index.html) is preserved as the clean SPA client entry shell
 const rootRecovery = getRouteRecoveryState('https://stakdock.com/');
 console.log(`Preserving dist/index.html as clean SPA client shell (Recovery State: ${rootRecovery.recoveryState})...`);
@@ -269,7 +316,7 @@ saasTools.forEach(tool => {
     };
   }
 
-  const bodyHtml = `
+  const defaultBodyHtml = `
   ${renderSsrNavbar('/software/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -390,7 +437,7 @@ saasTools.forEach(tool => {
           <div style="padding:16px 20px;background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;">
             <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px;">
               <a href="/software/${alt.toolId}/" style="color:#182618;font-weight:800;text-decoration:none;font-size:1.05rem;">${escapeHtml(alt.name)}</a>
-              <a href="/vs/${tool.id}-vs-${alt.toolId}/" style="font-size:0.82rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare Head-to-Head &rarr;</a>
+              ${allVsSlugs.has(`${tool.id}-vs-${alt.toolId}`) ? `<a href="/vs/${tool.id}-vs-${alt.toolId}/" style="font-size:0.82rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare Head-to-Head &rarr;</a>` : `<a href="/software/${alt.toolId}/" style="font-size:0.82rem;font-weight:700;color:#82A735;text-decoration:underline;">View Review &rarr;</a>`}
             </div>
             <p style="font-size:0.9rem;color:#45593e;margin:0;line-height:1.5;">${escapeHtml(alt.differentiator)}</p>
           </div>
@@ -415,7 +462,7 @@ saasTools.forEach(tool => {
             </div>
             <div style="display:flex;align-items:center;gap:8px;">
               <span style="font-size:0.82rem;font-weight:700;color:#2D4522;">${escapeHtml(alt.pricing || 'Freemium')}</span>
-              <a href="/vs/${tool.id}-vs-${alt.id}/" style="font-size:0.8rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare vs ${escapeHtml(tool.name)}</a>
+              ${allVsSlugs.has(`${tool.id}-vs-${alt.id}`) ? `<a href="/vs/${tool.id}-vs-${alt.id}/" style="font-size:0.8rem;font-weight:700;color:#82A735;text-decoration:underline;">Compare vs ${escapeHtml(tool.name)}</a>` : `<a href="/software/${alt.id}/" style="font-size:0.8rem;font-weight:700;color:#82A735;text-decoration:underline;">View Review</a>`}
             </div>
           </div>
         `).join('')}
@@ -463,9 +510,50 @@ saasTools.forEach(tool => {
           </div>
         </div>
       ` : ''}
-    </section>
-  </main>
   `;
+
+  let bodyHtml;
+  if (tool.id === 'wave-invoicing') {
+    bodyHtml = authorityRenderers.renderWaveInvoicingSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'invoice-ninja') {
+    bodyHtml = authorityRenderers.renderInvoiceNinjaSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'seoclarity') {
+    bodyHtml = authorityRenderers.renderSeoClaritySoftwareSsr(tool, competitors);
+  } else if (tool.id === 'cursor-ai') {
+    bodyHtml = authorityRenderers.renderCursorAiSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'github-copilot') {
+    bodyHtml = authorityRenderers.renderGithubCopilotSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'make') {
+    bodyHtml = authorityRenderers.renderMakeSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'n8n') {
+    bodyHtml = authorityRenderers.renderN8nSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'moz-pro') {
+    bodyHtml = authorityRenderers.renderMozProSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'se-ranking') {
+    bodyHtml = authorityRenderers.renderSeRankingSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'hetzner') {
+    bodyHtml = authorityRenderers.renderHetznerSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'security-onion') {
+    bodyHtml = authorityRenderers.renderSecurityOnionSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'vultr') {
+    bodyHtml = authorityRenderers.renderVultrSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'appsheet') {
+    bodyHtml = authorityRenderers.renderAppsheetSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'zerotier-one') {
+    bodyHtml = authorityRenderers.renderZeroTierOneSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'accuranker') {
+    bodyHtml = authorityRenderers.renderAccuRankerSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'proranktracker') {
+    bodyHtml = authorityRenderers.renderProRankTrackerSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'aws-guardduty') {
+    bodyHtml = authorityRenderers.renderAwsGuardDutySoftwareSsr(tool, competitors);
+  } else if (tool.id === 'elasticsearch') {
+    bodyHtml = authorityRenderers.renderElasticsearchSoftwareSsr(tool, competitors);
+  } else if (tool.id === 'google-cloud') {
+    bodyHtml = authorityRenderers.renderGoogleCloudSoftwareSsr(tool, competitors);
+  } else {
+    bodyHtml = defaultBodyHtml;
+  }
 
   let softwarePageTitle = `${tool.name} Review 2026: Pricing, Free Trial & Deals`;
   let softwarePageDesc = tool.description ? `${tool.name} review (2026): ${tool.description} Compare pricing (${tool.pricing || 'Freemium'}), free tier limits, and top verified alternatives on StakDock.` : `In-depth ${tool.name} review (2026). Compare ${tool.name} pricing (${tool.pricing || 'Freemium'}), features, and top verified software options on StakDock.`;
@@ -479,6 +567,63 @@ saasTools.forEach(tool => {
   } else if (tool.id === 'screaming-frog-seo-spider') {
     softwarePageTitle = 'Screaming Frog SEO Spider Review 2026: Pricing, Desktop Crawling & Limits';
     softwarePageDesc = 'In-depth Screaming Frog SEO Spider review (2026). Compare free 500-URL tier, £199/yr license, JavaScript rendering, XPath scraping, and technical audit workflows.';
+  } else if (tool.id === 'wave-invoicing') {
+    softwarePageTitle = 'Wave Invoicing & Payments Review 2026: Pricing, Fees & Limits';
+    softwarePageDesc = 'In-depth Wave Invoicing review (2026). Compare $0 free double-entry accounting, credit card rates (2.9% + 60¢), 1% ACH processing, and Pro plan upgrades.';
+  } else if (tool.id === 'invoice-ninja') {
+    softwarePageTitle = 'Invoice Ninja Review 2026: Self-Hosted Docker vs Cloud Pricing';
+    softwarePageDesc = 'In-depth Invoice Ninja review (2026). Compare free AGPLv3 Docker self-hosting, 50+ payment gateways with 0% extra fees, client portals, and $12/mo Cloud Pro.';
+  } else if (tool.id === 'seoclarity') {
+    softwarePageTitle = 'seoClarity Review 2026: Enterprise Rank Tracking & ClarityGrid';
+    softwarePageDesc = 'In-depth seoClarity review (2026). Evaluate enterprise ClarityGrid uncapped rank tracking, ClarityAutomate edge schema execution, and total cost of ownership.';
+  } else if (tool.id === 'cursor-ai') {
+    softwarePageTitle = 'Cursor AI Review 2026: Claude 3.7 Sonnet, Composer & Pricing';
+    softwarePageDesc = 'In-depth Cursor review (2026). Evaluate Claude 3.7 Sonnet, multi-file Composer refactoring, $20/mo Pro plan, and codebase indexing.';
+  } else if (tool.id === 'github-copilot') {
+    softwarePageTitle = 'GitHub Copilot Review 2026: Pricing, Multi-Model Chat & Limits';
+    softwarePageDesc = 'In-depth GitHub Copilot review (2026). Compare $10/mo Individual vs $19/mo Business, Claude 3.5 Sonnet / GPT-4o switching, and IDE extension support.';
+  } else if (tool.id === 'make') {
+    softwarePageTitle = 'Make Review 2026: Visual Workflow Builder & Operation Pricing';
+    softwarePageDesc = 'In-depth Make review (2026). Evaluate 10k operation $9/mo Core pricing, visual routers, and workflow execution vs Zapier and n8n.';
+  } else if (tool.id === 'n8n') {
+    softwarePageTitle = 'n8n Review 2026: Free Fair-Code Self-Hosting & Cloud Pricing';
+    softwarePageDesc = 'In-depth n8n review (2026). Compare free self-hosted Docker deployment, AI agent nodes, LangChain connectors, and €20/mo Cloud Starter.';
+  } else if (tool.id === 'moz-pro') {
+    softwarePageTitle = 'Moz Pro Review 2026: Domain Authority, Link Explorer & Plans';
+    softwarePageDesc = 'In-depth Moz Pro review (2026). Compare $99/mo Standard plan, Link Explorer backlink index, Domain Authority metrics, and weekly rank tracking.';
+  } else if (tool.id === 'se-ranking') {
+    softwarePageTitle = 'SE Ranking Review 2026: Daily Rank Tracking & Suite Pricing';
+    softwarePageDesc = 'In-depth SE Ranking review (2026). Compare $55/mo Essential plan (750 daily keywords), website audit crawlers, and backlink monitoring.';
+  } else if (tool.id === 'hetzner') {
+    softwarePageTitle = 'Hetzner Review 2026: Cloud VPS, Server Auctions & 20TB Traffic';
+    softwarePageDesc = 'In-depth Hetzner review (2026). Compare €3.79/mo CAX11 Arm64 VPS, 20TB included bandwidth per VM, and bare metal server auctions.';
+  } else if (tool.id === 'security-onion') {
+    softwarePageTitle = 'Security Onion Review 2026: Open-Source SIEM & Threat Hunting';
+    softwarePageDesc = 'In-depth Security Onion review (2026). Evaluate Suricata/Zeek packet inspection, OpenSearch backend, and distributed sensor architecture.';
+  } else if (tool.id === 'vultr') {
+    softwarePageTitle = 'Vultr Review 2026: High-Frequency Compute, VKE & GPU Cloud';
+    softwarePageDesc = 'In-depth Vultr review (2026). Compare 32 global datacenters, high frequency NVMe compute from $6/mo, and $0 control plane Kubernetes (VKE).';
+  } else if (tool.id === 'appsheet') {
+    softwarePageTitle = 'Google AppSheet Review 2026: No-Code App Builder & Workspace';
+    softwarePageDesc = 'In-depth Google AppSheet review (2026). Evaluate $5/user/mo Starter plans, Workspace Enterprise bundling, and Google Sheets database sync.';
+  } else if (tool.id === 'zerotier-one') {
+    softwarePageTitle = 'ZeroTier One Review 2026: Virtual Ethernet Mesh Architecture';
+    softwarePageDesc = 'In-depth ZeroTier One review (2026). Compare Layer 2 virtual Ethernet networking, free 25-node tier, and P2P encrypted tunnels vs Tailscale.';
+  } else if (tool.id === 'accuranker') {
+    softwarePageTitle = 'AccuRanker Review 2026: High-Speed SERP Tracking & API Pricing';
+    softwarePageDesc = 'In-depth AccuRanker review (2026). Evaluate $129/mo 1,000 keyword on-demand rank tracking, Share of Voice metrics, and agency reporting.';
+  } else if (tool.id === 'proranktracker') {
+    softwarePageTitle = 'ProRankTracker Review 2026: Multi-Engine Agency SERP Tracking';
+    softwarePageDesc = 'In-depth ProRankTracker review (2026). Compare $13.50/mo Starter plan, Google 3-pack tracking, Bing/Amazon SERPs, and white-label client reports.';
+  } else if (tool.id === 'aws-guardduty') {
+    softwarePageTitle = 'AWS GuardDuty Review 2026: Threat Detection & Log Pricing';
+    softwarePageDesc = 'In-depth Amazon GuardDuty review (2026). Evaluate ML threat analysis across CloudTrail, VPC Flow, and EKS audit log volume pricing.';
+  } else if (tool.id === 'elasticsearch') {
+    softwarePageTitle = 'Elasticsearch Review 2026: AGPLv3/SSPL Licensing, ES|QL & Search';
+    softwarePageDesc = 'In-depth Elasticsearch review (2026). Compare AGPLv3/SSPL licensing, dense vector hybrid search, ES|QL query processing, and Elastic Cloud.';
+  } else if (tool.id === 'google-cloud') {
+    softwarePageTitle = 'Google Cloud Review 2026: GKE Autopilot, BigQuery & Vertex AI';
+    softwarePageDesc = 'In-depth Google Cloud review (2026). Compare GKE container management, BigQuery serverless data warehousing, and sustained use discounts.';
   }
 
   const pageHtml = buildSeoPage({
@@ -529,10 +674,7 @@ saasTools.forEach(tool => {
     }))
   };
 
-  const isInvoiceNinja = tool.id === 'invoice-ninja';
-  const bodyHtml = isInvoiceNinja
-    ? renderInvoiceNinjaAlternativesSsr(tool, categoryMatches)
-    : `
+  const defaultAltBodyHtml = `
   ${renderSsrNavbar('/alternatives/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -576,9 +718,13 @@ saasTools.forEach(tool => {
             <a href="/software/${alt.id}/" style="background:#82A735;color:#FFFFFF;padding:8px 16px;border-radius:9999px;font-weight:700;font-size:0.85rem;text-decoration:none;text-align:center;">
               Read ${escapeHtml(alt.name)} Review
             </a>
+            ${allVsSlugs.has(`${tool.id}-vs-${alt.id}`) ? `
             <a href="/vs/${tool.id}-vs-${alt.id}/" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:600;font-size:0.8rem;text-decoration:none;text-align:center;">
               ${escapeHtml(tool.name)} vs ${escapeHtml(alt.name)}
-            </a>
+            </a>` : (allVsSlugs.has(`${alt.id}-vs-${tool.id}`) ? `
+            <a href="/vs/${alt.id}-vs-${tool.id}/" style="border:1px solid #dce8d6;color:#182618;background:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:600;font-size:0.8rem;text-decoration:none;text-align:center;">
+              ${escapeHtml(tool.name)} vs ${escapeHtml(alt.name)}
+            </a>` : '')}
           </div>
         </article>
       `).join('')}
@@ -593,13 +739,95 @@ saasTools.forEach(tool => {
   </main>
   `;
 
-  const altPageTitle = isInvoiceNinja
-    ? `Best Invoice Ninja Alternatives & Competitors (2026)`
-    : `Best ${tool.name} Free & Open-Source Alternatives (2026)`;
+  let bodyHtml;
+  if (tool.id === 'invoice-ninja') {
+    bodyHtml = authorityRenderers.renderInvoiceNinjaAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'quickbooks') {
+    bodyHtml = authorityRenderers.renderQuickBooksAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'se-ranking') {
+    bodyHtml = authorityRenderers.renderSeRankingAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'moz-pro') {
+    bodyHtml = authorityRenderers.renderMozProAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'all-in-one-seo-aioseo') {
+    bodyHtml = authorityRenderers.renderAioseoAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'rank-math') {
+    bodyHtml = authorityRenderers.renderRankMathAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'accuranker') {
+    bodyHtml = authorityRenderers.renderAccuRankerAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'kuzu-db') {
+    bodyHtml = authorityRenderers.renderKuzuDbAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'headlamp-k8s') {
+    bodyHtml = authorityRenderers.renderHeadlampK8sAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'databox') {
+    bodyHtml = authorityRenderers.renderDataboxAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'homarr-dashboard') {
+    bodyHtml = authorityRenderers.renderHomarrDashboardAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'apache-guacamole') {
+    bodyHtml = authorityRenderers.renderApacheGuacamoleAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'opensearch') {
+    bodyHtml = authorityRenderers.renderOpenSearchAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'mangools') {
+    bodyHtml = authorityRenderers.renderMangoolsAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'majestic') {
+    bodyHtml = authorityRenderers.renderMajesticAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'dataforseo') {
+    bodyHtml = authorityRenderers.renderDataForSeoAlternativesSsr(tool, categoryMatches);
+  } else {
+    bodyHtml = defaultAltBodyHtml;
+  }
 
-  const altPageDesc = isInvoiceNinja
-    ? `Compare top Invoice Ninja alternatives in 2026. Evaluate Wave, Zoho Invoice, QuickBooks Online, Xero, Bonsai, and Stripe Invoicing for self-hosted billing, free plans, and accounting.`
-    : `Looking for alternatives to ${tool.name}? Compare documented ${tool.name} competitors in 2026 by features, pricing plans, free tiers, and deployment models on StakDock.`;
+  let altPageTitle = `Best ${tool.name} Free & Open-Source Alternatives (2026)`;
+  let altPageDesc = `Looking for alternatives to ${tool.name}? Compare documented ${tool.name} competitors in 2026 by features, pricing plans, free tiers, and deployment models on StakDock.`;
+
+  if (tool.id === 'invoice-ninja') {
+    altPageTitle = 'Best Invoice Ninja Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top Invoice Ninja alternatives in 2026. Evaluate Wave, Zoho Invoice, QuickBooks Online, Xero, Bonsai, and Stripe Invoicing for self-hosted billing, free plans, and accounting.';
+  } else if (tool.id === 'quickbooks') {
+    altPageTitle = 'Best QuickBooks Online Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top QuickBooks Online alternatives in 2026. Evaluate Wave ($0 free), Invoice Ninja (free self-hosted), Xero ($15/mo), and Zoho Invoice to avoid Intuit subscription price hikes.';
+  } else if (tool.id === 'se-ranking') {
+    altPageTitle = 'Best SE Ranking Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top SE Ranking alternatives in 2026. Evaluate Moz Pro, Screaming Frog, Semrush, Ahrefs, and AccuRanker for daily rank tracking, backlink indexes, and site audits.';
+  } else if (tool.id === 'moz-pro') {
+    altPageTitle = 'Best Moz Pro Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top Moz Pro alternatives in 2026. Evaluate SE Ranking ($55/mo daily tracking), Screaming Frog (£199/yr crawler), and seoClarity for modern SEO workflows.';
+  } else if (tool.id === 'all-in-one-seo-aioseo') {
+    altPageTitle = 'Best All in One SEO (AIOSEO) Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top All in One SEO alternatives in 2026. Evaluate Rank Math ($69.99/yr unlimited sites), SEOPress ($49/yr white-label), and Yoast SEO for WordPress optimization.';
+  } else if (tool.id === 'rank-math') {
+    altPageTitle = 'Best Rank Math Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top Rank Math alternatives in 2026. Evaluate AIOSEO, SEOPress, Yoast SEO, and The SEO Framework for WordPress speed, schema generation, and readability.';
+  } else if (tool.id === 'accuranker') {
+    altPageTitle = 'Best AccuRanker Alternatives & Rank Tracking Competitors (2026)';
+    altPageDesc = 'Compare top AccuRanker alternatives in 2026. Evaluate SE Ranking ($55/mo all-in-one), Nightwatch ($39/mo local tracking), and seoClarity for enterprise SERP monitoring.';
+  } else if (tool.id === 'kuzu-db') {
+    altPageTitle = 'Best Kuzu Graph DB Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top Kuzu embedded graph database alternatives in 2026. Evaluate Neo4j, Memgraph, DuckDB, and FalkorDB for Cypher query performance.';
+  } else if (tool.id === 'headlamp-k8s') {
+    altPageTitle = 'Best Headlamp Alternatives & Kubernetes UIs (2026)';
+    altPageDesc = 'Compare top Headlamp Kubernetes web UI alternatives in 2026. Evaluate Lens, k9s, Portainer, and standard Kubernetes Dashboard.';
+  } else if (tool.id === 'databox') {
+    altPageTitle = 'Best Databox Alternatives & KPI Dashboards (2026)';
+    altPageDesc = 'Compare top Databox dashboard alternatives in 2026. Evaluate Google Looker Studio ($0 free), Metabase, Geckoboard, and Klipfolio.';
+  } else if (tool.id === 'homarr-dashboard') {
+    altPageTitle = 'Best Homarr Alternatives & Self-Hosted Dashboards (2026)';
+    altPageDesc = 'Compare top Homarr homelab dashboard alternatives in 2026. Evaluate Homepage (YAML declarative), Dashy, and Heimdall for Docker monitoring.';
+  } else if (tool.id === 'apache-guacamole') {
+    altPageTitle = 'Best Apache Guacamole Alternatives & Remote Gateways (2026)';
+    altPageDesc = 'Compare top Apache Guacamole clientless remote desktop alternatives in 2026. Evaluate Teleport, RustDesk, and Kasm Workspaces.';
+  } else if (tool.id === 'opensearch') {
+    altPageTitle = 'Best OpenSearch Alternatives & Search Engines (2026)';
+    altPageDesc = 'Compare top OpenSearch search engine alternatives in 2026. Evaluate Elasticsearch, Meilisearch, Typesense, and ClickHouse.';
+  } else if (tool.id === 'mangools') {
+    altPageTitle = 'Best Mangools (KWFinder) Alternatives & Competitors (2026)';
+    altPageDesc = 'Compare top Mangools alternatives in 2026. Evaluate SE Ranking ($55/mo daily tracking), Ahrefs Lite, and Ubersuggest for keyword research.';
+  } else if (tool.id === 'majestic') {
+    altPageTitle = 'Best Majestic SEO Alternatives & Backlink Checkers (2026)';
+    altPageDesc = 'Compare top Majestic SEO alternatives in 2026. Evaluate Ahrefs, SE Ranking, and Moz Pro for Trust Flow and backlink index depth.';
+  } else if (tool.id === 'dataforseo') {
+    altPageTitle = 'Best DataForSEO Alternatives & SERP APIs (2026)';
+    altPageDesc = 'Compare top DataForSEO API alternatives in 2026. Evaluate SerpApi, Bright Data, and ScrapingBee for pay-as-you-go Google search scraping.';
+  }
 
   const pageHtml = buildSeoPage({
     title: altPageTitle,
@@ -613,49 +841,7 @@ saasTools.forEach(tool => {
   altCount++;
 });
 
-// Controlled explicit approved cross-category flagship comparisons
-const approvedFlagshipComparisons = [
-  { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot', isFlagship: true },
-  { toolAId: 'moz-pro', toolBId: 'se-ranking', vsSlug: 'moz-pro-vs-se-ranking', isFlagship: true },
-  { toolAId: 'screaming-frog-seo-spider', toolBId: 'se-ranking', vsSlug: 'screaming-frog-seo-spider-vs-se-ranking', isFlagship: true }
-];
-
 // 3. Generate pairwise dist/vs/:vsSlug/index.html
-function getVsPairsList(tools) {
-  const map = new Map();
-  const catMap = {};
-
-  // Register approved flagship cross-category pairs first
-  approvedFlagshipComparisons.forEach(f => {
-    const tA = tools.find(t => t.id === f.toolAId);
-    const tB = tools.find(t => t.id === f.toolBId);
-    if (tA && tB) {
-      map.set(f.vsSlug, { tA, tB, vsSlug: f.vsSlug, isFlagship: true });
-    }
-  });
-
-  tools.forEach(t => {
-    if (!t || !t.category) return;
-    const c = String(t.category).toLowerCase();
-    if (!catMap[c]) catMap[c] = [];
-    catMap[c].push(t);
-  });
-
-  Object.values(catMap).forEach(list => {
-    if (list.length < 2) return;
-    const top = list.slice(0, 6);
-    for (let i = 0; i < top.length; i++) {
-      for (let j = i + 1; j < top.length; j++) {
-        const slug = `${top[i].id}-vs-${top[j].id}`;
-        if (!map.has(slug)) {
-          map.set(slug, { tA: top[i], tB: top[j], vsSlug: slug, isFlagship: false });
-        }
-      }
-    }
-  });
-
-  return Array.from(map.values());
-}
 
 function sanitizeMarketingClaims(str) {
   if (!str || typeof str !== 'string') return '';
@@ -1043,8 +1229,6 @@ function renderFlagshipCursorVsCopilotSsr(tA, tB, vsSlug) {
   `;
 }
 
-const versusPairs = getVsPairsList(saasTools);
-
 versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
   const targetFolder = path.join(versusDir, vsSlug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
@@ -1110,6 +1294,10 @@ versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
     bodyHtml = renderScreamingFrogVsSeRankingSsr(tA, tB, vsSlug);
     pageTitle = `Screaming Frog vs SE Ranking: Desktop Crawler vs Cloud SEO Suite (2026)`;
     pageDesc = `Compare Screaming Frog SEO Spider and SE Ranking in 2026. Understand the differences between a local desktop technical crawler and an all-in-one cloud SEO suite.`;
+  } else if (vsSlug === 'aws-vs-google-cloud' || vsSlug === 'google-cloud-vs-aws') {
+    bodyHtml = authorityRenderers.renderAwsVsGoogleCloudSsr(tA, tB);
+    pageTitle = `AWS vs Google Cloud (2026): Compute, GKE/EKS, BigQuery & Pricing`;
+    pageDesc = `Compare Amazon Web Services (AWS) and Google Cloud Platform (GCP) in 2026. Evaluate Kubernetes (EKS vs GKE), BigQuery vs Redshift, and committed use pricing economics.`;
   } else {
     bodyHtml = `
   ${renderSsrNavbar('/vs/')}
@@ -1270,9 +1458,15 @@ saasCategories.forEach(cat => {
   };
 
   const isInvoicing = cat.id === 'invoicing';
-  const bodyHtml = isInvoicing
-    ? renderInvoicingCategoryBuyerGuideSsr(cat, matchedTools)
-    : `
+  const isEmail = cat.id === 'email-marketing';
+
+  let bodyHtml;
+  if (isInvoicing) {
+    bodyHtml = renderInvoicingCategoryBuyerGuideSsr(cat, matchedTools);
+  } else if (isEmail) {
+    bodyHtml = authorityRenderers.renderEmailMarketingBestSsr(cat, matchedTools);
+  } else {
+    bodyHtml = `
   ${renderSsrNavbar('/categories/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -1311,14 +1505,18 @@ saasCategories.forEach(cat => {
     </section>
   </main>
   `;
+  }
 
-  const bestCatTitle = isInvoicing
-    ? `Best Invoicing & Billing Software in 2026: Comprehensive Buyer Matrix`
-    : `${catLabel} Software Directory & Options (2026)`;
+  let bestCatTitle = `${catLabel} Software Directory & Options (2026)`;
+  let bestCatDesc = `Explore ${catLabel} software and tools of 2026 on StakDock. Compare pricing models, free tiers, and feature breakdowns.`;
 
-  const bestCatDesc = isInvoicing
-    ? `Compare the best invoicing software in 2026. Side-by-side comparison of Invoice Ninja, Wave, Zoho Invoice, QuickBooks Online, Xero, FreshBooks, and Bonsai.`
-    : `Explore ${catLabel} software and tools of 2026 on StakDock. Compare pricing models, free tiers, and feature breakdowns.`;
+  if (isInvoicing) {
+    bestCatTitle = `Best Invoicing & Billing Software in 2026: Comprehensive Buyer Matrix`;
+    bestCatDesc = `Compare the best invoicing software in 2026. Side-by-side comparison of Invoice Ninja, Wave, Zoho Invoice, QuickBooks Online, Xero, FreshBooks, and Bonsai.`;
+  } else if (isEmail) {
+    bestCatTitle = `Best Email Marketing Software & Automation Platforms (2026)`;
+    bestCatDesc = `Compare the best email marketing software in 2026. Evaluate Kit (ConvertKit), Brevo, MailerLite, Mailchimp, and ActiveCampaign for subscriber limits and automation.`;
+  }
 
   const pageHtml = buildSeoPage({
     title: bestCatTitle,
@@ -1396,7 +1594,13 @@ officialGuides.forEach(guide => {
   const targetFolder = path.join(guidesDir, guideSlug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
-  const bodyHtml = `
+  let bodyHtml;
+  if (guideSlug === 'best-all-in-one-seo-software-2026') {
+    bodyHtml = authorityRenderers.renderBestAllInOneSeoGuideSsr(guide, null);
+  } else if (guideSlug === 'best-workflow-automation-tools-2026') {
+    bodyHtml = authorityRenderers.renderBestWorkflowAutomationGuideSsr(guide, null);
+  } else {
+    bodyHtml = `
   ${renderSsrNavbar('/guides/')}
   <main class="stakdock-ssr-main" style="max-width:900px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
@@ -1482,6 +1686,7 @@ officialGuides.forEach(guide => {
     </footer>
   </main>
   `;
+  }
 
   const guideJsonLd = {
     "@context": "https://schema.org",
@@ -1530,26 +1735,35 @@ const coreStaticPages = [
   { slug: 'submit', title: 'Submit & List Your SaaS Product Free', description: 'List your software tool on StakDock directory in 60 seconds with instant domain inspection and automated competitor matching.' },
   { slug: 'terms', title: 'Terms of Service', description: 'StakDock Terms of Service and user agreements.' },
   { slug: 'privacy', title: 'Privacy Policy', description: 'StakDock Privacy Policy and data protection standards.' },
-  { slug: 'refund', title: 'Refund Policy', description: 'StakDock sponsorship and premium listing refund policies.' }
+  { slug: 'refund', title: 'Refund Policy', description: 'StakDock sponsorship and premium listing refund policies.' },
+  { slug: 'about', title: 'About StakDock | Software Directory & Intelligence', description: 'Learn about StakDock, our independent software research mission, and our transparent evaluation standards.' },
+  { slug: 'methodology', title: 'StakDock Evaluation & Research Methodology', description: 'How StakDock evaluates software products, verifies technical specifications, and normalizes pricing tiers.' }
 ];
 
 coreStaticPages.forEach(page => {
   const targetFolder = path.join(distDir, page.slug);
   if (!fs.existsSync(targetFolder)) fs.mkdirSync(targetFolder, { recursive: true });
 
-  const bodyHtml = `
-  ${renderSsrNavbar('/' + page.slug + '/')}
-  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
-    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
-      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
-      <span style="color:#141E14;font-weight:700;">${escapeHtml(page.title)}</span>
-    </nav>
-    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
-      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin:0 0 12px 0;">${escapeHtml(page.title)}</h1>
-      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0;">${escapeHtml(page.description)}</p>
-    </header>
-  </main>
-  `;
+  let bodyHtml;
+  if (page.slug === 'about') {
+    bodyHtml = authorityRenderers.renderAboutPageSsr();
+  } else if (page.slug === 'methodology') {
+    bodyHtml = authorityRenderers.renderMethodologyPageSsr();
+  } else {
+    bodyHtml = `
+    ${renderSsrNavbar('/' + page.slug + '/')}
+    <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+      <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+        <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+        <span style="color:#141E14;font-weight:700;">${escapeHtml(page.title)}</span>
+      </nav>
+      <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+        <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;margin:0 0 12px 0;">${escapeHtml(page.title)}</h1>
+        <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0;">${escapeHtml(page.description)}</p>
+      </header>
+    </main>
+    `;
+  }
 
   const pageHtml = buildSeoPage({
     title: page.title,

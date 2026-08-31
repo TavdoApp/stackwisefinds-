@@ -275,8 +275,110 @@ export function AffiliateDisclosureView({ onBack }) {
   );
 }
 
+export function AboutView({ onBack }) {
+  return (
+    <div className="container" style={{ padding: '60px 16px', maxWidth: '820px' }}>
+      <button onClick={onBack} className="btn-pill-outline" style={{ marginBottom: '24px' }}>
+        <ArrowLeft size={16} /> Back to Directory
+      </button>
+
+      <div style={{ background: '#FFFFFF', padding: '40px', borderRadius: '24px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-soft)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#82A735', fontWeight: '800', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px' }}>
+          <ShieldCheck size={16} /> About StakDock
+        </div>
+        <h1 style={{ fontSize: '2.4rem', fontWeight: '800', marginBottom: '8px', color: 'var(--text-dark)' }}>About StakDock</h1>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Independent Software Intelligence &bull; August 2026</p>
+
+        <div style={{ lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>Our Mission</h2>
+          <p style={{ marginBottom: '16px' }}>
+            Traditional software review portals are frequently crowded with pay-to-play rankings, unverified star ratings, and vague marketing descriptions that obscure real pricing tiers, self-hosting options, and API limitations.
+          </p>
+          <p style={{ marginBottom: '20px' }}>
+            <strong>StakDock</strong> was built to provide developer-first and founder-focused decision support: normalized feature matrices, concrete pricing breakdowns, direct deployment comparisons, and transparent disclosures.
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '28px', marginBottom: '12px' }}>How StakDock Operates</h2>
+          <p style={{ marginBottom: '16px' }}>
+            StakDock is an independent project operated by its founder using automated research pipelines, structured software data ingestion, and AI-assisted analysis tools to monitor pricing updates, API changes, and open-source software repositories.
+          </p>
+          <p style={{ marginBottom: '20px' }}>
+            We do not invent fake testing laboratories or fabricate employee profiles. All product evaluations are synthesized from verified primary sources: official documentation, public GitHub repositories, published pricing schedules, and live API specifications.
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '28px', marginBottom: '12px' }}>Contact & Corrections</h2>
+          <p>
+            Have a question, feedback, or a pricing update? Contact our team directly at:<br/>
+            Email: <a href="mailto:support@stakdock.com" style={{ color: '#82A735', fontWeight: '700' }}>support@stakdock.com</a><br/>
+            Website: <a href="https://stakdock.com" style={{ color: '#82A735', fontWeight: '700' }}>stakdock.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function MethodologyView({ onBack }) {
+  return (
+    <div className="container" style={{ padding: '60px 16px', maxWidth: '820px' }}>
+      <button onClick={onBack} className="btn-pill-outline" style={{ marginBottom: '24px' }}>
+        <ArrowLeft size={16} /> Back to Directory
+      </button>
+
+      <div style={{ background: '#FFFFFF', padding: '40px', borderRadius: '24px', border: '1px solid var(--border-color)', boxShadow: 'var(--shadow-soft)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#82A735', fontWeight: '800', fontSize: '0.85rem', textTransform: 'uppercase', marginBottom: '8px' }}>
+          <CheckCircle2 size={16} /> Evaluation Protocol
+        </div>
+        <h1 style={{ fontSize: '2.4rem', fontWeight: '800', marginBottom: '8px', color: 'var(--text-dark)' }}>StakDock Evaluation Methodology</h1>
+        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '32px' }}>Research Standards &bull; August 2026</p>
+
+        <div style={{ lineHeight: '1.75', color: 'var(--text-dark)', fontSize: '0.95rem' }}>
+          <h2 style={{ fontSize: '1.3rem', fontWeight: '800', marginTop: '24px', marginBottom: '12px' }}>The 5-Step Evaluation Framework</h2>
+          
+          <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '6px' }}>1. Primary Source Verification</h3>
+            <p style={{ margin: 0, color: 'var(--text-dark)' }}>
+              Every software profile is corroborated directly against official vendor documentation, live pricing schedules, API endpoint specifications, and public GitHub codebases where applicable.
+            </p>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '6px' }}>2. Pricing Normalization</h3>
+            <p style={{ margin: 0, color: 'var(--text-dark)' }}>
+              We break down entry prices, seat costs, annual vs monthly discounts, usage quotas, transaction surcharges, and free-tier limitations to ensure buyers understand total cost of ownership.
+            </p>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '6px' }}>3. Objective Decision Criteria</h3>
+            <p style={{ margin: 0, color: 'var(--text-dark)' }}>
+              Instead of generic star ratings, we highlight specific tradeoffs (e.g., when a tool is ideal for a solo freelancer vs when an enterprise requires a multi-user alternative).
+            </p>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '6px' }}>4. Zero Pay-to-Play Rankings</h3>
+            <p style={{ margin: 0, color: 'var(--text-dark)' }}>
+              Sponsors and featured tools can purchase visibility badges, but commercial relationships never alter objective comparison data, technical specs, or alternative recommendations.
+            </p>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <h3 style={{ fontSize: '1.1rem', fontWeight: '800', color: '#2D4522', marginBottom: '6px' }}>5. Corrections &amp; Updates</h3>
+            <p style={{ margin: 0, color: 'var(--text-dark)' }}>
+              Software vendors and users can submit corrections, pricing updates, or bug reports to <a href="mailto:support@stakdock.com" style={{ color: '#82A735', fontWeight: '700' }}>support@stakdock.com</a>. Verified corrections are deployed within 48 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function LegalViews({ view, legalView, onBack }) {
   const activeView = view || legalView;
+  if (activeView === 'about') return <AboutView onBack={onBack} />;
+  if (activeView === 'methodology') return <MethodologyView onBack={onBack} />;
   if (activeView === 'terms') return <TermsOfServiceView onBack={onBack} />;
   if (activeView === 'refund') return <RefundPolicyView onBack={onBack} />;
   if (activeView === 'disclosure') return <AffiliateDisclosureView onBack={onBack} />;

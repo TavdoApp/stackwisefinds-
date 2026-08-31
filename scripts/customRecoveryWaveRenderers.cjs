@@ -27,8 +27,8 @@ function renderSsrNavbar(currentPath) {
       </a>
       <nav style="display:flex;align-items:center;gap:20px;font-size:0.9rem;font-weight:700;">
         <a href="/categories/" style="color:${currentPath.startsWith('/cat') || currentPath.startsWith('/best') ? '#82A735' : '#5c7353'};text-decoration:none;">Categories</a>
-        <a href="/vs/" style="color:${currentPath.startsWith('/vs') ? '#82A735' : '#5c7353'};text-decoration:none;">Comparisons</a>
-        <a href="/guides/" style="color:${currentPath.startsWith('/guides') ? '#82A735' : '#5c7353'};text-decoration:none;">Guides</a>
+        <a href="/ranking/" style="color:${currentPath.startsWith('/vs') ? '#82A735' : '#5c7353'};text-decoration:none;">Comparisons</a>
+        <a href="/categories/" style="color:${currentPath.startsWith('/guides') ? '#82A735' : '#5c7353'};text-decoration:none;">Guides</a>
         <a href="/" style="background:#82A735;color:#FFFFFF;padding:7px 16px;border-radius:9999px;text-decoration:none;font-size:0.85rem;">Browse All</a>
       </nav>
     </div>
@@ -43,7 +43,7 @@ function renderMozProVsSeRankingSsr(tA, tB, vsSlug) {
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
       <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/vs/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <a href="/ranking/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
       <span style="color:#141E14;font-weight:700;">Moz Pro vs SE Ranking</span>
     </nav>
 
@@ -266,7 +266,7 @@ function renderScreamingFrogVsSeRankingSsr(tA, tB, vsSlug) {
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
     <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
       <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/vs/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <a href="/ranking/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
       <span style="color:#141E14;font-weight:700;">Screaming Frog vs SE Ranking</span>
     </nav>
 
@@ -532,7 +532,7 @@ function renderInvoiceNinjaAlternativesSsr(tool, categoryMatches) {
               <td style="padding:12px 16px;color:#182618;">Free client portal with iOS/Android mobile apps</td>
             </tr>
             <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
-              <td style="padding:12px 16px;font-weight:800;"><a href="/software/quickbooks-online/" style="color:#182618;text-decoration:none;">QuickBooks Online</a></td>
+              <td style="padding:12px 16px;font-weight:800;"><a href="/alternatives/quickbooks/" style="color:#182618;text-decoration:none;">QuickBooks Online</a></td>
               <td style="padding:12px 16px;color:#182618;">From $30/month</td>
               <td style="padding:12px 16px;color:#182618;">Hosted Cloud SaaS</td>
               <td style="padding:12px 16px;color:#1b6e1b;">✓ Full Double-Entry</td>
@@ -595,11 +595,11 @@ function renderInvoiceNinjaAlternativesSsr(tool, categoryMatches) {
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
           <div>
             <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Full Accounting Alternative</div>
-            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/quickbooks-online/" style="color:#182618;text-decoration:none;">QuickBooks Online</a></h3>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/alternatives/quickbooks/" style="color:#182618;text-decoration:none;">QuickBooks Online</a></h3>
           </div>
           <div style="display:flex;gap:8px;align-items:center;">
             <span style="background:#f4f7f2;color:#182618;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">From $30/mo</span>
-            <a href="/software/quickbooks-online/" style="background:#82A735;color:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:700;font-size:0.82rem;text-decoration:none;">View Profile</a>
+            <a href="/alternatives/quickbooks/" style="background:#82A735;color:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:700;font-size:0.82rem;text-decoration:none;">View Profile</a>
           </div>
         </div>
         <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 12px 0;">
@@ -731,7 +731,7 @@ function renderInvoicingCategoryBuyerGuideSsr(cat, matchedTools) {
               <td style="padding:12px 16px;color:#5c7353;">Cloud only</td>
             </tr>
             <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
-              <td style="padding:12px 16px;font-weight:800;"><a href="/software/quickbooks-online/" style="color:#182618;text-decoration:none;">QuickBooks Online</a></td>
+              <td style="padding:12px 16px;font-weight:800;"><a href="/alternatives/quickbooks/" style="color:#182618;text-decoration:none;">QuickBooks Online</a></td>
               <td style="padding:12px 16px;color:#182618;">From $30/mo</td>
               <td style="padding:12px 16px;color:#182618;">2.99% (Cards) / 1% ACH ($10 max)</td>
               <td style="padding:12px 16px;color:#1b6e1b;">✓ Included</td>
