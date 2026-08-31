@@ -1,9 +1,14 @@
 /**
- * StakDock 2.0: Stack Intelligence Schema V1
+ * StakDock 2.0: Stack Intelligence Schema V1.1 (Adversarial Hardened)
  *
  * Defines the normalized schema, capability taxonomy, pricing models,
- * deployment flags, integration types, and business profiles required
+ * deployment flags, integration types, license types, and business profiles required
  * for the StakDock Stack Intelligence Engine and Stack Builder.
+ *
+ * GOVERNANCE RULES:
+ * - 3-State / Multi-state handling: Unknown is distinct from False/Negative.
+ * - Software License Cost is strictly decoupled from Infrastructure Operating Cost.
+ * - Evidence Classification distinguishes Vendor Source Facts from Editorial Analysis.
  */
 
 export const PRICING_MODELS = {
@@ -18,10 +23,10 @@ export const PRICING_MODELS = {
 };
 
 export const COST_CONFIDENCE = {
-  HIGH: 'HIGH',       // Explicit published numeric price verified via official pricing page
-  MEDIUM: 'MEDIUM',   // Published base price + variable tier/usage thresholds
-  VARIABLE: 'VARIABLE', // Open-source self-hosted: software $0, but server/infrastructure cost applies
-  UNKNOWN: 'UNKNOWN'   // Contact Sales / Quote required
+  HIGH: 'HIGH',         // Explicit published numeric price verified via official pricing page
+  MEDIUM: 'MEDIUM',     // Published base price + variable tier/usage thresholds
+  VARIABLE: 'VARIABLE', // Open-source self-hosted: software $0, server/infrastructure cost applies
+  UNKNOWN: 'UNKNOWN'     // Contact Sales / Custom Quote
 };
 
 export const DEPLOYMENT_MODELS = {
@@ -41,23 +46,39 @@ export const LICENSE_TYPES = {
   APACHE_2_0: 'APACHE_2_0',
   GPL_V3: 'GPL_V3',
   BSL_FAIR_CODE: 'BSL_FAIR_CODE',
-  ELASTIC_2_0: 'ELASTIC_2_0'
+  ELASTIC_2_0: 'ELASTIC_2_0',
+  POSTGRESQL_LICENSE: 'POSTGRESQL_LICENSE'
 };
 
 export const INTEGRATION_STATUS = {
-  NATIVE: 'NATIVE',                     // First-party native plugin/integration documented
-  API_COMPATIBLE: 'API_COMPATIBLE',     // Documented REST / GraphQL / gRPC API available
-  WEBHOOK_COMPATIBLE: 'WEBHOOK_COMPATIBLE', // Inbound / Outbound webhooks supported
-  AUTOMATION_BRIDGE: 'AUTOMATION_BRIDGE',   // Connects via n8n, Make, or Zapier
-  NO_KNOWN_INTEGRATION: 'NO_KNOWN_INTEGRATION',
-  UNKNOWN: 'UNKNOWN'
+  NATIVE_VERIFIED: 'NATIVE_VERIFIED',                     // First-party native plugin/integration verified in docs
+  AUTOMATION_BRIDGE_VERIFIED: 'AUTOMATION_BRIDGE_VERIFIED', // Verified connector via n8n, Make, or Zapier
+  API_COMPATIBLE: 'API_COMPATIBLE',                       // Public REST/GraphQL APIs documented on both ends
+  CUSTOM_INTEGRATION_REQUIRED: 'CUSTOM_INTEGRATION_REQUIRED', // API exists but requires webhook/middleware development
+  NO_INTEGRATION_VERIFIED: 'NO_INTEGRATION_VERIFIED',     // Explicitly known to lack interoperability
+  UNKNOWN: 'UNKNOWN'                                       // Unverified integration status
 };
 
 export const OVERLAP_LEVELS = {
-  PRIMARY_OVERLAP: 'PRIMARY_OVERLAP',     // Core capability is identical (paying for both is wasteful)
-  PARTIAL_OVERLAP: 'PARTIAL_OVERLAP',     // Secondary features overlap (may be justified by workflow)
+  HIGH_OVERLAP: 'HIGH_OVERLAP',           // Core capabilities heavily duplicate (paying for both is usually wasteful)
+  MODERATE_OVERLAP: 'MODERATE_OVERLAP',   // Shared secondary features (may be justified by specific workflow needs)
+  LOW_OVERLAP: 'LOW_OVERLAP',             // Minor auxiliary overlap
   COMPLEMENTARY: 'COMPLEMENTARY',         // Distinct capabilities that integrate naturally
-  NO_OVERLAP: 'NO_OVERLAP'
+  UNKNOWN: 'UNKNOWN'
+};
+
+export const EVIDENCE_CLASSIFICATION = {
+  SOURCE_FACT: 'SOURCE_FACT',                             // Verifiable from official vendor docs/pricing
+  STAKDOCK_EDITORIAL_CLASSIFICATION: 'STAKDOCK_EDITORIAL', // StakDock expert analysis/recommendation heuristic
+  ENGINE_DERIVED: 'ENGINE_DERIVED',                       // Computed algorithmically by Stack Intelligence engine
+  UNKNOWN: 'UNKNOWN'
+};
+
+export const FRESHNESS_CLASSES = {
+  VERY_VOLATILE: 'VERY_VOLATILE',   // Pricing, promotional tiers, limits, transaction fees (Review: 30 days)
+  VOLATILE: 'VOLATILE',             // Features, free plan quotas, native integrations (Review: 90 days)
+  MODERATE: 'MODERATE',             // Deployment methods, API architecture (Review: 180 days)
+  LOW_VOLATILITY: 'LOW_VOLATILITY'  // License type, legal entity, foundational tech (Review: 365 days)
 };
 
 export const BUSINESS_PROFILES = {
@@ -66,49 +87,56 @@ export const BUSINESS_PROFILES = {
     label: 'Solo Freelancer',
     defaultTeamSize: 1,
     budgetGuidance: 50,
-    priorityNeeds: ['INVOICING', 'PROJECT_MANAGEMENT', 'EMAIL_MARKETING']
+    priorityNeeds: ['INVOICING', 'PROJECT_MANAGEMENT', 'EMAIL_MARKETING'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   },
   SOLO_FOUNDER: {
     id: 'solo_founder',
     label: 'Solo Founder / Bootstrapper',
     defaultTeamSize: 1,
     budgetGuidance: 100,
-    priorityNeeds: ['CRM', 'AUTOMATION', 'HOSTING', 'PAYMENTS', 'ANALYTICS']
+    priorityNeeds: ['CRM', 'AUTOMATION', 'HOSTING', 'PAYMENTS', 'ANALYTICS'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   },
   SMALL_AGENCY: {
     id: 'small_agency',
     label: 'Small Agency (2–10 team)',
     defaultTeamSize: 5,
     budgetGuidance: 150,
-    priorityNeeds: ['CRM', 'PROJECT_MANAGEMENT', 'INVOICING', 'AUTOMATION', 'EMAIL_MARKETING']
+    priorityNeeds: ['CRM', 'PROJECT_MANAGEMENT', 'INVOICING', 'AUTOMATION', 'EMAIL_MARKETING'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   },
   GROWING_AGENCY: {
     id: 'growing_agency',
     label: 'Growing Agency (11–50 team)',
     defaultTeamSize: 20,
     budgetGuidance: 500,
-    priorityNeeds: ['CRM', 'PROJECT_MANAGEMENT', 'INVOICING', 'HELP_DESK', 'AUTOMATION']
+    priorityNeeds: ['CRM', 'PROJECT_MANAGEMENT', 'INVOICING', 'HELP_DESK', 'AUTOMATION'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   },
   SAAS_STARTUP: {
     id: 'saas_startup',
     label: 'SaaS Startup',
     defaultTeamSize: 3,
     budgetGuidance: 250,
-    priorityNeeds: ['HOSTING', 'DATABASE', 'AUTH', 'ANALYTICS', 'HELP_DESK', 'EMAIL_MARKETING']
+    priorityNeeds: ['HOSTING', 'DATABASE', 'AUTH', 'ANALYTICS', 'HELP_DESK', 'EMAIL_MARKETING'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   },
   CREATOR_MEDIA: {
     id: 'creator_media',
     label: 'Creator / Media Brand',
     defaultTeamSize: 2,
     budgetGuidance: 75,
-    priorityNeeds: ['EMAIL_MARKETING', 'WEBSITE_CMS', 'PAYMENTS', 'ANALYTICS']
+    priorityNeeds: ['EMAIL_MARKETING', 'WEBSITE_CMS', 'PAYMENTS', 'ANALYTICS'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   },
   TECHNICAL_FOUNDER_OSS: {
     id: 'technical_founder_oss',
     label: 'Technical Founder (Self-Hosted / OSS Preference)',
     defaultTeamSize: 2,
     budgetGuidance: 100,
-    priorityNeeds: ['CRM', 'AUTOMATION', 'ANALYTICS', 'INVOICING', 'DATABASE']
+    priorityNeeds: ['CRM', 'AUTOMATION', 'ANALYTICS', 'INVOICING', 'DATABASE'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   }
 };
 
