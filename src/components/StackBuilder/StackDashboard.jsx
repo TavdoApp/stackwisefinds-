@@ -38,6 +38,10 @@ import {
   getAvailableToolsForCapability,
   calculateToolCost
 } from '../../utils/stackIntelligenceEngine.js';
+import {
+  trackProductEvent,
+  trackAffiliateClick
+} from '../../utils/affiliateTracker.js';
 
 export default function StackDashboard({
   stackResult,
@@ -66,6 +70,28 @@ export default function StackDashboard({
     filterConflicts
   } = stackResult;
 
+  // Track stack generation and budget conflict on mount
+  useEffect(() => {
+    trackProductEvent('stack_generated', {
+      business_profile: inputSummary.businessType,
+      team_size: inputSummary.teamSize,
+      budget: inputSummary.monthlyBudgetUsd,
+      budget_type: inputSummary.budgetConstraintType,
+      estimated_monthly_spend: costSummary.totalNewMonthlyCost,
+      recommendation_confidence: confidenceSummary.recommendationConfidence,
+      cost_confidence: confidenceSummary.costConfidence,
+      tool_count: recommendedStack.length,
+      status
+    });
+    if (status === 'NO_STACK_WITHIN_BUDGET') {
+      trackProductEvent('budget_conflict', {
+        budget: inputSummary.monthlyBudgetUsd,
+        closest_spend: costSummary.totalNewMonthlyCost,
+        gap: costSummary.budgetGapUsd
+      });
+    }
+  }, []);
+
   // Keyboard accessibility: Escape key closes active modals
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -80,6 +106,13 @@ export default function StackDashboard({
 
   // Handle Export / Copy Stack Markdown
   const handleCopyMarkdown = () => {
+    trackProductEvent('stack_exported', {
+      format: 'markdown',
+      tool_count: recommendedStack.length,
+      estimated_monthly_spend: costSummary.totalNewMonthlyCost,
+      business_profile: inputSummary.businessType
+    });
+
     let md = `# StakDock Recommended Software Stack\n`;
     md += `**Operating Profile:** ${inputSummary.businessType.replace('_', ' ')} | **Team Size:** ${inputSummary.teamSize} seats\n`;
     md += `**New Incremental Software Spend:** $${costSummary.totalNewMonthlyCost.toFixed(2)}/mo ($${costSummary.totalNewAnnualCost.toFixed(2)}/yr)\n`;
@@ -431,7 +464,10 @@ export default function StackDashboard({
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--border-color)', paddingTop: '14px', marginTop: '10px' }}>
                     <button
                       type="button"
-                      onClick={() => setInspectingTool(tool)}
+                      onClick={() => {
+                        trackProductEvent('source_opened', { tool_id: tool.toolId, capability: item.capability });
+                        setInspectingTool(tool);
+                      }}
                       style={{
                         background: 'none',
                         border: 'none',
@@ -738,6 +774,13 @@ export default function StackDashboard({
                   <div
                     key={opt.tool.toolId}
                     onClick={() => {
+                      const prevTool = recommendedStack.find(s => s.capability === swappingCapability)?.selectedTool.toolId;
+                      trackProductEvent('tool_swapped', {
+                        capability: swappingCapability,
+                        new_tool_id: opt.tool.toolId,
+                        previous_tool_id: prevTool,
+                        new_cost: opt.cloudCost.totalEstimatedMonthlyCost
+                      });
                       onSwapTool(swappingCapability, opt.tool.toolId);
                       setSwappingCapability(null);
                     }}
@@ -859,6 +902,7 @@ export default function StackDashboard({
                   href={src.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackAffiliateClick(inspectingTool.toolId, src.url, { sourceContext: 'stack_builder_sources', stackCapability: inspectingTool.primaryCapability })}
                   style={{
                     display: 'flex',
                     alignItems: 'center',

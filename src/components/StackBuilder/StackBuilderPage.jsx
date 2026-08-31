@@ -1,11 +1,4 @@
-/**
- * StakDock 2.0: Stack Builder Main Product Page Container
- *
- * Route: /stack-builder/
- * Noindex, Follow • Grounded in 41-tool Seed Dataset • 100% Deterministic
- */
-
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import StackWizard from './StackWizard';
 import StackDashboard from './StackDashboard';
 import {
@@ -17,10 +10,15 @@ import {
   seedTools
 } from '../../utils/stackIntelligenceEngine';
 import { OVERLAP_LEVELS } from '../../data/stackIntelligenceSchema';
+import { trackProductEvent } from '../../utils/affiliateTracker';
 import { Layers, ArrowLeft } from 'lucide-react';
 
 export default function StackBuilderPage({ onBackToDirectory }) {
   const [viewMode, setViewMode] = useState('wizard'); // 'wizard' | 'dashboard'
+
+  useEffect(() => {
+    trackProductEvent('stack_builder_opened', { referrer: typeof document !== 'undefined' ? document.referrer : '' });
+  }, []);
 
   const [wizardState, setWizardState] = useState({
     businessType: 'solo_founder',

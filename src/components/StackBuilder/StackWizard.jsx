@@ -11,6 +11,7 @@ import {
   CAPABILITY_TAXONOMY
 } from '../../data/stackIntelligenceSchema.js';
 import { seedTools } from '../../utils/stackIntelligenceEngine.js';
+import { trackProductEvent } from '../../utils/affiliateTracker.js';
 import {
   Layers,
   Users,
@@ -673,7 +674,14 @@ export default function StackWizard({
         {step < 6 ? (
           <button
             type="button"
-            onClick={() => setStep(step + 1)}
+            onClick={() => {
+              if (step === 1) {
+                trackProductEvent('stack_builder_started', { business_profile: businessType });
+              } else if (step === 4) {
+                trackProductEvent('capabilities_selected', { capability_count: requiredCapabilities.length, capabilities: requiredCapabilities });
+              }
+              setStep(step + 1);
+            }}
             className="btn-pill-green"
             style={{ padding: '10px 26px', fontSize: '0.95rem' }}
           >
@@ -682,7 +690,17 @@ export default function StackWizard({
         ) : (
           <button
             type="button"
-            onClick={onCompleteWizard}
+            onClick={() => {
+              trackProductEvent('stack_builder_completed', {
+                business_profile: businessType,
+                team_size: teamSize,
+                budget: monthlyBudgetUsd,
+                budget_type: budgetConstraintType,
+                hosting_preference: preferredDeployment,
+                capability_count: requiredCapabilities.length
+              });
+              onCompleteWizard();
+            }}
             className="btn-pill-green"
             style={{ padding: '12px 32px', fontSize: '1rem', boxShadow: '0 4px 18px rgba(130, 167, 53, 0.35)' }}
           >
