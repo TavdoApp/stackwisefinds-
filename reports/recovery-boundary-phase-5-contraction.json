@@ -1,0 +1,99 @@
+{
+  "boundaryVersion": "1.0.0",
+  "boundaryName": "PHASE_5_AUTHORITY_CORE_CONTRACTION",
+  "deploymentTimestampUtc": "2026-08-31T18:30:55Z",
+  "deploymentDateLocal": "2026-08-31",
+  "deploymentTimeLocal": "22:30:55",
+  "timezone": "UTC+04:00 (Asia/Dubai / Gulf Standard Time)",
+  "gitCommit": "8ee5b91e009b04c813060be45975f55e38ada8d4",
+  "deploymentTarget": "Cloudflare Pages (Production)",
+  "domain": "https://stakdock.com",
+  "footprint": {
+    "strategy": "CONSERVATIVE_RECOVERY_FOOTPRINT",
+    "finalIndexableSitemapUrlsCount": 48,
+    "heldCandidateUrlsCount": 1,
+    "heldUrls": [
+      "/alternatives/quickbooks/"
+    ],
+    "totalSystemRoutes": 4176,
+    "stateBreakdown": {
+      "P": 48,
+      "R": 0,
+      "K": 0,
+      "Q": 4125,
+      "T": 3
+    }
+  },
+  "architectureComparison": {
+    "preContractionPhase2C": {
+      "sitemapUrls": 841,
+      "indexableUrls": 841,
+      "quarantineUrls": 3330,
+      "technicalUrls": 3
+    },
+    "postContractionPhase5": {
+      "sitemapUrls": 48,
+      "indexableUrls": 48,
+      "quarantineUrls": 4125,
+      "technicalUrls": 3
+    }
+  },
+  "finalIndexableAuthorityUrls": [
+    "/",
+    "/about/",
+    "/methodology/",
+    "/guides/best-all-in-one-seo-software-2026/",
+    "/guides/best-workflow-automation-tools-2026/",
+    "/best/email-marketing/",
+    "/best/invoicing/",
+    "/best/seo-analytics/",
+    "/vs/aws-vs-google-cloud/",
+    "/vs/moz-pro-vs-se-ranking/",
+    "/vs/screaming-frog-seo-spider-vs-se-ranking/",
+    "/software/accuranker/",
+    "/software/all-in-one-seo-aioseo/",
+    "/software/appsheet/",
+    "/software/aws-guardduty/",
+    "/software/cursor-ai/",
+    "/software/elasticsearch/",
+    "/software/github-copilot/",
+    "/software/google-cloud/",
+    "/software/hetzner/",
+    "/software/invoice-ninja/",
+    "/software/make/",
+    "/software/microsoft-power-automate/",
+    "/software/moz-pro/",
+    "/software/n8n/",
+    "/software/proranktracker/",
+    "/software/screaming-frog-seo-spider/",
+    "/software/se-ranking/",
+    "/software/security-onion/",
+    "/software/seoclarity/",
+    "/software/vultr/",
+    "/software/wave-invoicing/",
+    "/software/zerotier-one/",
+    "/alternatives/accuranker/",
+    "/alternatives/all-in-one-seo-aioseo/",
+    "/alternatives/apache-guacamole/",
+    "/alternatives/databox/",
+    "/alternatives/dataforseo/",
+    "/alternatives/headlamp-k8s/",
+    "/alternatives/homarr-dashboard/",
+    "/alternatives/invoice-ninja/",
+    "/alternatives/kuzu-db/",
+    "/alternatives/majestic/",
+    "/alternatives/mangools/",
+    "/alternatives/moz-pro/",
+    "/alternatives/opensearch/",
+    "/alternatives/rank-math/",
+    "/alternatives/se-ranking/"
+  ],
+  "verificationStatus": {
+    "sitemapLiveVerified": true,
+    "homepageLiveVerified": true,
+    "trustPagesLiveVerified": true,
+    "quickbooksHeldNoindexVerified": true,
+    "internalLinkSafetyDZero": true,
+    "allGatesPassed": true
+  }
+}
