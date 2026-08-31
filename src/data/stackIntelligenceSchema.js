@@ -137,6 +137,22 @@ export const BUSINESS_PROFILES = {
     budgetGuidance: 100,
     priorityNeeds: ['CRM', 'AUTOMATION', 'ANALYTICS', 'INVOICING', 'DATABASE'],
     evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+  },
+  LOCAL_BUSINESS: {
+    id: 'local_business',
+    label: 'Local & Service Business',
+    defaultTeamSize: 3,
+    budgetGuidance: 100,
+    priorityNeeds: ['CRM', 'INVOICING', 'WEBSITE_CMS', 'SCHEDULING', 'HELP_DESK'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+  },
+  ECOMMERCE_BRAND: {
+    id: 'ecommerce_brand',
+    label: 'E-Commerce / Online Store',
+    defaultTeamSize: 3,
+    budgetGuidance: 150,
+    priorityNeeds: ['ECOMMERCE', 'PAYMENTS', 'EMAIL_MARKETING', 'HELP_DESK', 'ANALYTICS'],
+    evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
   }
 };
 
@@ -208,5 +224,21 @@ export const CAPABILITY_TAXONOMY = {
   WEBSITE_CMS: {
     label: 'Website Builder & CMS',
     subCapabilities: ['visual_page_builder', 'headless_api_cms', 'blog_publishing', 'custom_domains', 'seo_metadata_control']
+  },
+  ECOMMERCE: {
+    label: 'E-Commerce & Storefront',
+    subCapabilities: ['online_storefront', 'product_catalog', 'inventory_tracking', 'checkout_cart', 'shipping_fulfillment', 'order_management']
+  },
+  FORMS_SURVEYS: {
+    label: 'Forms & Survey Builder',
+    subCapabilities: ['form_builder', 'conditional_logic', 'file_upload_fields', 'survey_scoring', 'webhook_dispatch', 'embed_widgets']
+  },
+  E_SIGNATURES: {
+    label: 'E-Signatures & Document Workflow',
+    subCapabilities: ['contract_signing', 'audit_trail', 'reusable_templates', 'multi_signer_flow', 'legally_binding_compliance']
+  },
+  MONITORING_DEVOPS: {
+    label: 'Error Tracking & System APM',
+    subCapabilities: ['exception_tracking', 'performance_apm', 'uptime_alerts', 'log_aggregation', 'release_health_metrics']
   }
 };

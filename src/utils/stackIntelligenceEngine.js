@@ -332,6 +332,13 @@ export function synthesizeStack(input) {
       } else {
         filterConflicts.push(`No verified self-hostable tool in dataset for '${cap}'. Showing available cloud alternatives.`);
       }
+    } else if (preferredDeployment === 'cloud_saas') {
+      const cloudOnly = pool.filter(t => t.deployment?.cloudAvailable);
+      if (cloudOnly.length > 0) {
+        pool = cloudOnly;
+      } else {
+        filterConflicts.push(`No verified cloud SaaS tool in dataset for '${cap}'. Showing available self-hosted alternatives.`);
+      }
     } else if (preferredDeployment === 'open_source_preferred') {
       // Prefer OSS but keep SaaS as fallbacks
       const oss = pool.filter(t => t.licensing?.openSource);
@@ -705,4 +712,173 @@ export function getAvailableToolsForCapability(capability, teamSize = 1, preferA
       selfHostCost
     };
   });
+}
+
+/**
+ * 6. POPULAR STACK PRESETS (Phase 7A Growth Engine)
+ * Reusable parameter presets that initialize canonical Stack Builder inputs.
+ */
+export const STACK_PRESETS = [
+  {
+    id: 'solo_bootstrapper',
+    title: '$0 Solo Bootstrapper Stack',
+    tagline: 'Launch a lean online business with zero recurring software spend.',
+    targetAudience: 'Solo Founders & Indie Hackers',
+    startingCost: '$0/mo',
+    statusType: 'Cloud & Open-Source (100% Free Tiers)',
+    presetState: {
+      businessType: 'solo_founder',
+      teamSize: 1,
+      monthlyBudgetUsd: 0.01,
+      budgetConstraintType: 'hard',
+      requiredCapabilities: ['CRM', 'INVOICING', 'AUTOMATION', 'ANALYTICS', 'WEBSITE_CMS'],
+      preferredDeployment: 'no_preference',
+      technicalSkill: 'moderate'
+    }
+  },
+  {
+    id: 'growth_agency',
+    title: '$125 5-Person Agency Stack',
+    tagline: 'Client management, invoicing, project delivery, and automated outreach.',
+    targetAudience: 'B2B Agencies & Consultancies',
+    startingCost: '$125/mo',
+    statusType: 'Managed SaaS & Hybrid OSS',
+    presetState: {
+      businessType: 'small_agency',
+      teamSize: 5,
+      monthlyBudgetUsd: 150,
+      budgetConstraintType: 'hard',
+      requiredCapabilities: ['CRM', 'PROJECT_MANAGEMENT', 'INVOICING', 'AUTOMATION', 'EMAIL_MARKETING'],
+      preferredDeployment: 'no_preference',
+      technicalSkill: 'moderate'
+    }
+  },
+  {
+    id: 'oss_founder',
+    title: 'Self-Hosted OSS Founder Stack',
+    tagline: '100% data sovereignty and unlimited scale with containerized Docker tools.',
+    targetAudience: 'Technical Founders & DevOps',
+    startingCost: '~$25–$45/mo VPS',
+    statusType: '100% Self-Hosted Docker',
+    presetState: {
+      businessType: 'technical_founder_oss',
+      teamSize: 2,
+      monthlyBudgetUsd: 100,
+      budgetConstraintType: 'hard',
+      requiredCapabilities: ['CRM', 'AUTOMATION', 'DATABASE', 'ANALYTICS', 'INVOICING'],
+      preferredDeployment: 'self_hosted_only',
+      technicalSkill: 'developer'
+    }
+  },
+  {
+    id: 'saas_startup',
+    title: 'SaaS Startup Launch Stack',
+    tagline: 'Serverless backend, auth, product analytics, APM monitoring, and support.',
+    targetAudience: 'Early-Stage SaaS & Product Teams',
+    startingCost: '~$95/mo',
+    statusType: 'Managed Developer Cloud',
+    presetState: {
+      businessType: 'saas_startup',
+      teamSize: 3,
+      monthlyBudgetUsd: 250,
+      budgetConstraintType: 'soft',
+      requiredCapabilities: ['HOSTING', 'DATABASE', 'AUTH', 'ANALYTICS', 'MONITORING_DEVOPS', 'HELP_DESK', 'EMAIL_MARKETING'],
+      preferredDeployment: 'no_preference',
+      technicalSkill: 'developer'
+    }
+  },
+  {
+    id: 'creator_newsletter',
+    title: 'Creator & Newsletter Stack',
+    tagline: 'Publish content, grow newsletter subscribers, and sell digital products.',
+    targetAudience: 'Creators, Writers & Media Brands',
+    startingCost: '~$15–$75/mo',
+    statusType: 'Managed Cloud SaaS',
+    presetState: {
+      businessType: 'creator_media',
+      teamSize: 1,
+      monthlyBudgetUsd: 75,
+      budgetConstraintType: 'soft',
+      requiredCapabilities: ['EMAIL_MARKETING', 'WEBSITE_CMS', 'PAYMENTS', 'FORMS_SURVEYS', 'ANALYTICS'],
+      preferredDeployment: 'cloud_saas',
+      technicalSkill: 'none'
+    }
+  },
+  {
+    id: 'local_business',
+    title: 'Local Small Business Stack',
+    tagline: 'Online booking appointments, invoicing, web presence, and customer desk.',
+    targetAudience: 'Services, Clinics & Local SMBs',
+    startingCost: '~$35–$100/mo',
+    statusType: 'Managed Cloud SaaS',
+    presetState: {
+      businessType: 'local_business',
+      teamSize: 3,
+      monthlyBudgetUsd: 100,
+      budgetConstraintType: 'hard',
+      requiredCapabilities: ['CRM', 'INVOICING', 'WEBSITE_CMS', 'SCHEDULING', 'HELP_DESK'],
+      preferredDeployment: 'cloud_saas',
+      technicalSkill: 'none'
+    }
+  }
+];
+
+/**
+ * 7. STATE ENCODING & DECODING FOR SHAREABLE STACKS (Phase 7A)
+ * Generates transparent, human-readable, non-sensitive query parameter URLs.
+ */
+export function encodeStackState(wizardState) {
+  const params = new URLSearchParams();
+  if (wizardState.businessType) params.set('b', wizardState.businessType);
+  if (wizardState.teamSize) params.set('t', String(wizardState.teamSize));
+  if (typeof wizardState.monthlyBudgetUsd === 'number') params.set('m', String(wizardState.monthlyBudgetUsd));
+  if (wizardState.budgetConstraintType) params.set('bc', wizardState.budgetConstraintType);
+  if (wizardState.requiredCapabilities && wizardState.requiredCapabilities.length > 0) {
+    params.set('c', wizardState.requiredCapabilities.join(','));
+  }
+  if (wizardState.preferredDeployment) params.set('d', wizardState.preferredDeployment);
+  if (wizardState.technicalSkill) params.set('sk', wizardState.technicalSkill);
+  if (wizardState.existingToolsToKeep && wizardState.existingToolsToKeep.length > 0) {
+    params.set('k', wizardState.existingToolsToKeep.join(','));
+  }
+  return params.toString();
+}
+
+export function decodeStackState(searchString) {
+  if (!searchString) return null;
+  const params = new URLSearchParams(searchString.startsWith('?') ? searchString.slice(1) : searchString);
+
+  // Check preset first
+  const presetId = params.get('preset');
+  if (presetId) {
+    const matchedPreset = STACK_PRESETS.find(p => p.id === presetId);
+    if (matchedPreset) {
+      return { ...matchedPreset.presetState };
+    }
+  }
+
+  // Check granular query params
+  const state = {};
+  if (params.has('b')) state.businessType = params.get('b');
+  if (params.has('t')) {
+    const team = parseInt(params.get('t'), 10);
+    if (!isNaN(team) && team > 0) state.teamSize = team;
+  }
+  if (params.has('m')) {
+    const budget = parseFloat(params.get('m'));
+    if (!isNaN(budget) && budget >= 0) state.monthlyBudgetUsd = budget;
+  }
+  if (params.has('bc')) state.budgetConstraintType = params.get('bc');
+  if (params.has('c')) {
+    const caps = params.get('c').split(',').map(s => s.trim()).filter(Boolean);
+    if (caps.length > 0) state.requiredCapabilities = caps;
+  }
+  if (params.has('d')) state.preferredDeployment = params.get('d');
+  if (params.has('sk')) state.technicalSkill = params.get('sk');
+  if (params.has('k')) {
+    const kept = params.get('k').split(',').map(s => s.trim()).filter(Boolean);
+    if (kept.length > 0) state.existingToolsToKeep = kept;
+  }
+
+  return Object.keys(state).length > 0 ? state : null;
 }

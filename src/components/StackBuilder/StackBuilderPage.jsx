@@ -7,18 +7,17 @@ import {
   evaluateToolOverlap,
   evaluateIntegration,
   toolsMap,
-  seedTools
+  seedTools,
+  decodeStackState,
+  encodeStackState,
+  STACK_PRESETS
 } from '../../utils/stackIntelligenceEngine';
 import { OVERLAP_LEVELS } from '../../data/stackIntelligenceSchema';
 import { trackProductEvent } from '../../utils/affiliateTracker';
 import { Layers, ArrowLeft } from 'lucide-react';
 
-export default function StackBuilderPage({ onBackToDirectory }) {
+export default function StackBuilderPage({ onBackToDirectory, initialPresetId = null }) {
   const [viewMode, setViewMode] = useState('wizard'); // 'wizard' | 'dashboard'
-
-  useEffect(() => {
-    trackProductEvent('stack_builder_opened', { referrer: typeof document !== 'undefined' ? document.referrer : '' });
-  }, []);
 
   const [wizardState, setWizardState] = useState({
     businessType: 'solo_founder',
@@ -33,6 +32,39 @@ export default function StackBuilderPage({ onBackToDirectory }) {
     advancedFilters: {},
     toolOverrides: {} // { [capability]: toolId }
   });
+
+  useEffect(() => {
+    trackProductEvent('stack_builder_opened', { referrer: typeof document !== 'undefined' ? document.referrer : '' });
+
+    // 1. Check initialPresetId prop if passed directly
+    if (initialPresetId) {
+      const matched = STACK_PRESETS.find(p => p.id === initialPresetId);
+      if (matched) {
+        setWizardState(prev => ({ ...prev, ...matched.presetState }));
+        setViewMode('dashboard');
+        trackProductEvent('preset_selected', { preset_id: initialPresetId, business_profile: matched.presetState.businessType });
+        return;
+      }
+    }
+
+    // 2. Decode URL query params / preset on mount
+    if (typeof window !== 'undefined' && window.location.search) {
+      const decoded = decodeStackState(window.location.search);
+      if (decoded) {
+        setWizardState(prev => ({
+          ...prev,
+          ...decoded
+        }));
+        setViewMode('dashboard');
+
+        const params = new URLSearchParams(window.location.search);
+        const presetId = params.get('preset');
+        if (presetId) {
+          trackProductEvent('preset_selected', { preset_id: presetId, business_profile: decoded.businessType });
+        }
+      }
+    }
+  }, [initialPresetId]);
 
   const handleUpdateWizardState = (updates) => {
     setWizardState(prev => ({

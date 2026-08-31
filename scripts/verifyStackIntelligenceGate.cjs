@@ -27,8 +27,8 @@ async function runGate() {
   console.log(`📋 Auditing Seed Dataset: ${tools.length} High-Value Software Tools`);
 
   // GATE 1: Seed Count & Coverage
-  if (tools.length !== 41) {
-    errors.push(`[Seed Count Error]: Expected exactly 41 seed tools, found ${tools.length}`);
+  if (tools.length !== 71) {
+    errors.push(`[Seed Count Error]: Expected exactly 71 seed tools, found ${tools.length}`);
   }
 
   const requiredFields = [

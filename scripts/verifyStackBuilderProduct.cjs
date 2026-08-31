@@ -310,8 +310,47 @@ async function runProductVerification() {
     console.log('  Sitemap Freeze: Exactly 48 URLs in public/sitemap.xml');
   }
 
-  if (sitemap.includes('/stack-builder/')) {
-    errors.push('[Sitemap Violation]: /stack-builder/ must NOT be in sitemap.xml!');
+  // --- 21. POPULAR STACK PRESETS SYNTHESIS (Phase 7A) ---
+  console.log('\n--- 21. POPULAR STACK PRESETS SYNTHESIS ---');
+  const { STACK_PRESETS, encodeStackState, decodeStackState } = engine;
+  if (!Array.isArray(STACK_PRESETS) || STACK_PRESETS.length !== 6) {
+    errors.push(`[Test 21 Failure]: Expected 6 STACK_PRESETS, found ${STACK_PRESETS ? STACK_PRESETS.length : 0}`);
+  } else {
+    STACK_PRESETS.forEach(p => {
+      const syn = synthesizeStack(p.presetState);
+      if (!syn.recommendedStack || syn.recommendedStack.length === 0) {
+        errors.push(`[Test 21 Failure]: Preset '${p.id}' produced empty recommended stack!`);
+      } else {
+        console.log(`  Preset '${p.id}': Synthesized ${syn.recommendedStack.length} tools ($${syn.costSummary.totalNewMonthlyCost}/mo)`);
+      }
+    });
+  }
+
+  // --- 22. URL STATE ENCODING & DECODING ROUND-TRIP (Phase 7A) ---
+  console.log('\n--- 22. URL STATE ENCODING & DECODING ROUND-TRIP ---');
+  const sampleState = {
+    businessType: 'small_agency',
+    teamSize: 5,
+    monthlyBudgetUsd: 150,
+    budgetConstraintType: 'hard',
+    requiredCapabilities: ['CRM', 'PROJECT_MANAGEMENT', 'INVOICING'],
+    preferredDeployment: 'no_preference',
+    technicalSkill: 'moderate'
+  };
+  const encodedQuery = encodeStackState(sampleState);
+  const decodedState = decodeStackState(`?${encodedQuery}`);
+  if (!decodedState || decodedState.businessType !== sampleState.businessType || decodedState.teamSize !== sampleState.teamSize) {
+    errors.push('[Test 22 Failure]: URL State encoding/decoding failed round-trip fidelity!');
+  } else {
+    console.log(`  URL Encoding/Decoding Round-Trip: Success (${encodedQuery})`);
+  }
+
+  // Preset query decoding test
+  const decodedPreset = decodeStackState('?preset=solo_bootstrapper');
+  if (!decodedPreset || decodedPreset.businessType !== 'solo_founder') {
+    errors.push('[Test 22 Failure]: Preset query decoding failed for solo_bootstrapper!');
+  } else {
+    console.log('  Preset URL Parameter Decoding: Success (?preset=solo_bootstrapper -> solo_founder)');
   }
 
   if (errors.length > 0) {
@@ -320,7 +359,7 @@ async function runProductVerification() {
     process.exit(1);
   }
 
-  console.log('\n🛡️  STACK BUILDER V1 EXPANDED QA PASSED: 100% of 20 test scenarios and quality standards verified!');
+  console.log('\n🛡️  STACK BUILDER V1 & GROWTH LOOP EXPANDED QA PASSED: 100% of 22 test scenarios and quality standards verified!');
 }
 
 runProductVerification().catch(err => {

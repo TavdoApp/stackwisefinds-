@@ -39,6 +39,7 @@ export default function Hero({
   onExploreClick, 
   onReadGuidesClick, 
   onOpenWizardClick, 
+  onSelectPreset,
   onOpenSubmitClick,
   searchTerm = '',
   onSearchChange,
@@ -77,7 +78,7 @@ export default function Hero({
 
   return (
     <section className="hero-section" style={{ padding: '40px 0 24px' }}>
-      <div className="container" style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto' }}>
+      <div className="container" style={{ textAlign: 'center', maxWidth: '1080px', margin: '0 auto' }}>
         
         {/* Rotating "Sponsored by [Tool]" Toolify-Style Hero Pill */}
         <div style={{
@@ -101,87 +102,84 @@ export default function Hero({
             color: '#FFFFFF',
             padding: '2px 8px',
             borderRadius: '9999px',
-            letterSpacing: '0.04em',
             textTransform: 'uppercase',
-            flexShrink: 0
+            letterSpacing: '0.04em'
           }}>
             SPONSORED
           </span>
-          <a 
-            href={currentSponsor.url} 
+          <span style={{ fontSize: '0.84rem', fontWeight: '700', color: 'var(--text-dark)' }}>
+            {currentSponsor.name}
+          </span>
+          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+            — {currentSponsor.tagline}
+          </span>
+          <a
+            href={currentSponsor.url}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              textDecoration: 'none',
-              color: 'var(--text-dark)',
-              fontSize: '0.84rem',
+              gap: '2px',
+              fontSize: '0.78rem',
               fontWeight: '700',
-              minWidth: 0,
-              overflow: 'hidden'
+              color: '#82A735',
+              textDecoration: 'none',
+              marginLeft: '4px'
             }}
           >
-            <img 
-              src={`https://www.google.com/s2/favicons?domain=${currentSponsor.domain}&sz=64`} 
-              alt={currentSponsor.name} 
-              style={{ width: '16px', height: '16px', borderRadius: '4px', flexShrink: 0 }} 
-            />
-            <span style={{
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              maxWidth: 'min(500px, calc(100vw - 160px))'
-            }}>
-              <strong>{currentSponsor.name}</strong> — {currentSponsor.tagline}
-            </span>
-            <span style={{ color: '#82A735', fontWeight: '800', flexShrink: 0 }}>&rarr;</span>
+            Visit <ArrowUpRight size={12} />
           </a>
         </div>
 
         {/* Main Headline */}
-        <h1 style={{ fontSize: 'clamp(2.4rem, 5vw, 3.8rem)', fontWeight: '800', lineHeight: '1.08', marginBottom: '16px', letterSpacing: '-0.03em', color: 'var(--text-dark)' }}>
-          Discover The Best <span style={{ color: '#82A735' }}>SaaS &amp; AI Tools</span>
+        <h1 style={{
+          fontSize: 'clamp(2.1rem, 5vw, 3.4rem)',
+          fontWeight: '900',
+          lineHeight: '1.15',
+          color: 'var(--text-dark)',
+          marginBottom: '14px',
+          letterSpacing: '-0.03em'
+        }}>
+          Discover &amp; Assemble Your <span style={{ color: '#82A735' }}>Software Stack</span>
         </h1>
 
-        {/* Toolify-Style Live Telemetry Subtitle */}
-        <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.15rem)', color: 'var(--text-muted)', lineHeight: '1.6', maxWidth: '680px', margin: '0 auto 28px' }}>
-          <strong style={{ color: '#82A735' }}>{totalToolsCount}+ quality-checked tools</strong> across <strong style={{ color: 'var(--text-dark)' }}>40+ categories</strong>. Discover, compare, and verify software before you commit.
+        <p style={{
+          fontSize: 'clamp(1rem, 2vw, 1.18rem)',
+          color: 'var(--text-muted)',
+          maxWidth: '680px',
+          margin: '0 auto 28px',
+          lineHeight: '1.55'
+        }}>
+          Compare 1,700+ SaaS platforms and open-source tools. Calculate true cost per seat, eliminate feature overlap, and launch with confidence.
         </p>
 
-        {/* Toolify Prominent Hero Search Bar */}
-        <div 
-          className="hero-search-container"
-          style={{
-            maxWidth: '640px',
-            margin: '0 auto 24px',
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'center',
-            background: '#FFFFFF',
-            borderRadius: '9999px',
-            padding: '6px 6px 6px 18px',
-            boxShadow: '0 10px 30px rgba(20, 30, 20, 0.08)',
-            border: '2px solid #82A735'
-          }}
-        >
-          <Search size={20} color="#82A735" style={{ marginRight: '10px', flexShrink: 0 }} />
+        {/* Hero Search Bar */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          maxWidth: '620px',
+          margin: '0 auto 20px',
+          background: '#FFFFFF',
+          borderRadius: '9999px',
+          border: '1.5px solid var(--border-color)',
+          padding: '6px 6px 6px 18px',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.06)'
+        }}>
+          <Search size={18} color="var(--text-muted)" style={{ flexShrink: 0, marginRight: '10px' }} />
           <input
             type="text"
-            placeholder={t.searchPlaceholder || "Search by tool name, e.g. Video AI, CRM, Automation..."}
             value={searchTerm}
             onChange={(e) => onSearchChange && onSearchChange(e.target.value)}
             onKeyDown={handleKeyDown}
-            aria-label="Search software and AI tools"
+            placeholder="Search 1,780+ tools, categories, or alternatives (e.g. CRM, Linear, Ghost)..."
             style={{
-              flex: 1,
               border: 'none',
               outline: 'none',
-              fontSize: '0.96rem',
-              fontWeight: '600',
-              color: 'var(--text-dark)',
+              width: '100%',
+              fontSize: '0.92rem',
               background: 'transparent',
-              minWidth: 0
+              color: 'var(--text-dark)'
             }}
+            aria-label="Search software tools"
           />
           <button
             onClick={() => {
@@ -189,13 +187,7 @@ export default function Hero({
               if (onExploreClick) onExploreClick();
             }}
             className="btn-pill-green"
-            style={{
-              padding: '10px 20px',
-              fontSize: '0.88rem',
-              borderRadius: '9999px',
-              flexShrink: 0
-            }}
-            aria-label="Submit Search"
+            style={{ padding: '9px 20px', fontSize: '0.86rem', flexShrink: 0 }}
           >
             <span>Search</span>
           </button>
@@ -243,7 +235,7 @@ export default function Hero({
         </div>
 
         {/* Action CTAs */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '24px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '32px' }}>
           <button 
             onClick={() => {
               if (onOpenWizardClick) onOpenWizardClick();
@@ -252,7 +244,7 @@ export default function Hero({
             style={{ padding: '12px 24px', fontSize: '0.94rem', boxShadow: '0 4px 16px rgba(130, 167, 53, 0.28)' }}
           >
             <Wand2 size={17} />
-            <span>Build My Software Stack</span>
+            <span>Build My Custom Stack</span>
           </button>
 
           <button onClick={onExploreClick} className="btn-pill-outline" style={{ padding: '12px 22px', fontSize: '0.9rem' }}>
@@ -261,41 +253,101 @@ export default function Hero({
           </button>
         </div>
 
-        {/* Stack Builder Value Proposition Banner */}
-        <div 
-          onClick={onOpenWizardClick}
-          style={{
-            background: '#FFFFFF',
-            border: '1px solid #E2E8D8',
-            borderRadius: '16px',
-            padding: '16px 20px',
-            maxWidth: '680px',
-            margin: '0 auto 20px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
-            cursor: 'pointer',
-            boxShadow: 'var(--shadow-soft)',
-            textAlign: 'left'
-          }}
-        >
-          <div>
-            <div style={{ fontSize: '0.92rem', fontWeight: '800', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ color: '#82A735' }}>⚡</span> Build Your Software Stack
+        {/* POPULAR SOFTWARE STACKS SECTION (Phase 7A Growth Loop) */}
+        <div style={{
+          background: '#FFFFFF',
+          border: '1px solid #E2E8D8',
+          borderRadius: '20px',
+          padding: '28px 24px',
+          margin: '0 auto 28px',
+          boxShadow: 'var(--shadow-soft)',
+          textAlign: 'left'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '20px' }}>
+            <div>
+              <div style={{ fontSize: '0.75rem', fontWeight: '800', letterSpacing: '0.06em', color: 'var(--primary-green-dark)', textTransform: 'uppercase', marginBottom: '4px' }}>
+                ⚡ INSTANT BLUEPRINTS
+              </div>
+              <h2 style={{ fontSize: '1.45rem', fontWeight: '800', color: 'var(--text-dark)', margin: 0 }}>
+                Popular Software Stacks
+              </h2>
             </div>
-            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '2px', lineHeight: '1.4' }}>
-              Tell us what you're building. StakDock compares true cost, capability overlap, and open-source alternatives.
+            <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              1-click tailored stacks verified with 2026 pricing &amp; integration guarantees.
             </div>
           </div>
-          <button
-            type="button"
-            className="btn-pill-green"
-            style={{ padding: '8px 16px', fontSize: '0.82rem', flexShrink: 0 }}
-          >
-            <span>Launch Builder</span>
-            <ArrowUpRight size={14} />
-          </button>
+
+          {/* 6 Preset Cards Grid */}
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gap: '16px'
+          }}>
+            {STACK_PRESETS.map((preset) => (
+              <div
+                key={preset.id}
+                style={{
+                  background: '#FBFDF9',
+                  border: '1px solid #E5EADF',
+                  borderRadius: '14px',
+                  padding: '18px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'transform 0.15s ease, box-shadow 0.15s ease'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <span style={{ fontSize: '0.7rem', fontWeight: '800', color: 'var(--primary-green-dark)', background: '#EBF2DE', padding: '3px 8px', borderRadius: '6px', textTransform: 'uppercase' }}>
+                      {preset.targetAudience}
+                    </span>
+                    <span style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--text-dark)' }}>
+                      {preset.startingCost}
+                    </span>
+                  </div>
+
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '4px' }}>
+                    {preset.title}
+                  </h3>
+
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.4', marginBottom: '12px' }}>
+                    {preset.tagline}
+                  </p>
+
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px', marginBottom: '14px' }}>
+                    {preset.presetState.requiredCapabilities.map(cap => (
+                      <span key={cap} style={{ fontSize: '0.68rem', fontWeight: '700', padding: '2px 6px', borderRadius: '4px', background: '#F1F4EB', color: '#3B4D1C' }}>
+                        {cap.replace(/_/g, ' ')}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #EAEFE4', paddingTop: '12px' }}>
+                  <span style={{ fontSize: '0.72rem', fontWeight: '700', color: 'var(--text-light)' }}>
+                    {preset.statusType}
+                  </span>
+
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (onSelectPreset) {
+                        onSelectPreset(preset.id);
+                      } else if (onOpenWizardClick) {
+                        onOpenWizardClick();
+                      }
+                    }}
+                    className="btn-pill-green"
+                    style={{ padding: '6px 14px', fontSize: '0.78rem', fontWeight: '800' }}
+                    aria-label={`Build ${preset.title}`}
+                  >
+                    Build Stack <ArrowUpRight size={13} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Founder Claim Callout Banner */}

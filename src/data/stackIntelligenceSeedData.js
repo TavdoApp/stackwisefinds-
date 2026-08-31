@@ -185,7 +185,7 @@ export const seedSoftwareTools = [
       freeTrialAvailable: true,
       freeTierLimits: 'Self-hosted edition has unlimited contacts, users, and pipelines free forever on your server. Cloud managed tier is $9/user/mo.',
       baseMonthlyPriceUsd: 0,
-      pricePerSeatMonthlyUsd: 0,
+      pricePerSeatMonthlyUsd: 9,
       minimumSeats: 1,
       annualDiscountPercent: 0,
       transactionFeePercent: 0,
@@ -2636,15 +2636,15 @@ export const seedSoftwareTools = [
     website: 'https://www.chatwoot.com',
     category: 'crm',
     primaryCapability: 'HELP_DESK',
-    secondaryCapabilities: ['CRM'],
+    secondaryCapabilities: [],
     featureTags: ['live_chat_widget', 'shared_team_inbox', 'knowledge_base', 'ticket_management', 'omnichannel_messaging', 'contact_management'],
     commercialModel: {
       pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
       freePlanAvailable: true,
       freeTrialAvailable: true,
-      freeTierLimits: 'Self-hosted Community edition has unlimited agents and inboxes free forever. Cloud Hacker tier is free for up to 2 agents.',
+      freeTierLimits: 'Self-hosted Community edition has unlimited agents and inboxes free forever. Cloud Hacker tier is free for up to 2 agents. Cloud Startups tier is $19/agent/mo.',
       baseMonthlyPriceUsd: 0,
-      pricePerSeatMonthlyUsd: 0,
+      pricePerSeatMonthlyUsd: 19,
       minimumSeats: 1,
       annualDiscountPercent: 20,
       transactionFeePercent: 0,
@@ -2710,14 +2710,14 @@ export const seedSoftwareTools = [
     website: 'https://crisp.chat',
     category: 'crm',
     primaryCapability: 'HELP_DESK',
-    secondaryCapabilities: ['CRM'],
+    secondaryCapabilities: [],
     featureTags: ['live_chat_widget', 'shared_team_inbox', 'knowledge_base', 'ticket_management', 'contact_management'],
     commercialModel: {
       pricingModel: PRICING_MODELS.FLAT_MONTHLY,
       freePlanAvailable: true,
       freeTrialAvailable: true,
-      freeTierLimits: 'Basic plan is free forever for up to 2 seats (live chat only; 30-day contact history).',
-      baseMonthlyPriceUsd: 0,
+      freeTierLimits: 'Basic plan is free forever for up to 2 seats (live chat only; 30-day contact history). Pro plan is $25/mo for up to 4 seats.',
+      baseMonthlyPriceUsd: 25,
       pricePerSeatMonthlyUsd: 0,
       minimumSeats: 1,
       annualDiscountPercent: 20,
@@ -3070,6 +3070,2076 @@ export const seedSoftwareTools = [
     },
     sources: [
       { title: 'Screaming Frog Official Pricing', url: 'https://www.screamingfrog.co.uk/seo-spider/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'calendly',
+    name: 'Calendly',
+    vendor: 'Calendly LLC',
+    website: 'https://calendly.com',
+    category: 'Scheduling & Appointments',
+    primaryCapability: 'SCHEDULING',
+    secondaryCapabilities: ['CRM', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 10,
+      pricePerSeatMonthlyUsd: 10,
+      annualDiscountPercent: 20,
+      freePlanAvailable: true,
+      freeTierLimits: '1 active event type, 1 calendar connection (Google/Outlook), automated event notifications',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://calendly.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Fully managed cloud calendar service with zero server setup.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://calendly.com/terms'
+    },
+    businessFit: {
+      businessTypes: ['solo_freelancer', 'small_agency', 'growing_agency', 'local_business'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Agencies, consultants, sales teams, and local businesses wanting automated meeting scheduling, calendar sync, and booking widgets.',
+      notRecommendedFor: 'Self-hosted and air-gapped security environments.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'stripe', 'notion', 'google-analytics', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Calendly Official Pricing', url: 'https://calendly.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'cal-com',
+    name: 'Cal.com',
+    vendor: 'Cal.com, Inc.',
+    website: 'https://cal.com',
+    category: 'Open-Source Scheduling',
+    primaryCapability: 'SCHEDULING',
+    secondaryCapabilities: ['AUTOMATION', 'PAYMENTS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: 'Self-hosted AGPL is 100% free with unlimited event types and booking links; Cloud individual is $0, Team is $15/seat/mo',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://cal.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1 vCPU, 2GB RAM, Node.js + PostgreSQL (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 10 },
+      maintenanceBurden: 'LOW',
+      tcoNotes: 'Lightweight containerized booking infrastructure easily deployed on a $4.50/mo Hetzner or Vultr VPS.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.AGPL_V3,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/calcom/cal.com'
+    },
+    businessFit: {
+      businessTypes: ['solo_founder', 'small_agency', 'technical_founder_oss', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Privacy-focused founders, developers, and agencies needing customizable meeting scheduling with self-hosting support.',
+      notRecommendedFor: 'Non-technical teams without server administration experience.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['stripe', 'hubspot', 'n8n', 'make', 'zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n', 'make', 'zapier']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'sql', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Cal.com Official Pricing', url: 'https://cal.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'framer',
+    name: 'Framer',
+    vendor: 'Framer B.V.',
+    website: 'https://www.framer.com',
+    category: 'Visual Web Design & CMS',
+    primaryCapability: 'WEBSITE_CMS',
+    secondaryCapabilities: ['SEO', 'ANALYTICS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FLAT_MONTHLY,
+      baseMonthlyPriceUsd: 5,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 20,
+      freePlanAvailable: true,
+      freeTierLimits: 'Framer banner domain, 1,000 visitors/month, 10 CMS collection items',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.framer.com/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed global edge CDN hosting included in monthly subscription.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: true,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.framer.com/terms/'
+    },
+    businessFit: {
+      businessTypes: ['solo_founder', 'small_agency', 'creator_media', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'none',
+      bestFor: 'Designers, startups, and agencies building high-converting landing pages, marketing sites, and visual CMS blogs with Figma-like speed.',
+      notRecommendedFor: 'Complex enterprise web apps requiring custom backend databases.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['google-analytics', 'hubspot', 'mailchimp'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['html', 'csv'],
+      migrationDifficulty: 'moderate',
+      vendorLockInRisk: 'moderate'
+    },
+    sources: [
+      { title: 'Framer Official Pricing', url: 'https://www.framer.com/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'webflow',
+    name: 'Webflow',
+    vendor: 'Webflow, Inc.',
+    website: 'https://webflow.com',
+    category: 'Visual Web Development & CMS',
+    primaryCapability: 'WEBSITE_CMS',
+    secondaryCapabilities: ['ECOMMERCE', 'SEO'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FLAT_MONTHLY,
+      baseMonthlyPriceUsd: 14,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 22,
+      freePlanAvailable: true,
+      freeTierLimits: 'webflow.io subdomain, 2 static pages, 50 CMS items, 1GB bandwidth',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://webflow.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Fully managed AWS CloudFront global edge hosting included.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://webflow.com/legal/terms'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'saas_startup', 'local_business'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Marketing teams and design agencies creating clean responsive websites with semantic HTML/CSS control and granular CMS models.',
+      notRecommendedFor: 'Self-hosted or open-source infrastructure teams.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'google-analytics', 'stripe', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['html', 'css', 'js', 'csv'],
+      migrationDifficulty: 'moderate',
+      vendorLockInRisk: 'moderate'
+    },
+    sources: [
+      { title: 'Webflow Official Pricing', url: 'https://webflow.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'strapi',
+    name: 'Strapi',
+    vendor: 'Strapi Solutions SAS',
+    website: 'https://strapi.io',
+    category: 'Open-Source Headless CMS',
+    primaryCapability: 'WEBSITE_CMS',
+    secondaryCapabilities: ['DATABASE', 'AUTH'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: 'Community Edition is 100% open-source free forever with unlimited content types, API requests, and webhooks',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://strapi.io/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1-2 vCPU, 2GB RAM, Node.js + Postgres (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 12 },
+      maintenanceBurden: 'MODERATE',
+      tcoNotes: 'Runs on standard Linux VPS with automated SQLite/PostgreSQL backups.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'moderate'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.MIT,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/strapi/strapi'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'small_agency', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'developer',
+      bestFor: 'Developers building custom frontends (Next.js, Remix, mobile apps) needing an open-source, customizable REST/GraphQL headless CMS backend.',
+      notRecommendedFor: 'Non-technical bloggers wanting an out-of-the-box visual theme editor.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['postgresql', 'sendgrid', 'aws'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n', 'make', 'zapier']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'sql', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Strapi Official Pricing', url: 'https://strapi.io/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'ghost',
+    name: 'Ghost',
+    vendor: 'Ghost Foundation',
+    website: 'https://ghost.org',
+    category: 'Publishing & Newsletter CMS',
+    primaryCapability: 'WEBSITE_CMS',
+    secondaryCapabilities: ['EMAIL_MARKETING', 'PAYMENTS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 9,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: false,
+      freeTierLimits: 'Self-hosted version is 100% free MIT open source; Ghost(Pro) managed cloud starts at $9/mo for up to 500 members',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://ghost.org/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1 vCPU, 1GB RAM (Docker or Ubuntu + MySQL)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 10 },
+      maintenanceBurden: 'LOW',
+      tcoNotes: 'Runs cleanly on a $4.50/mo Hetzner VPS with minimal maintenance.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.MIT,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/TryGhost/Ghost'
+    },
+    businessFit: {
+      businessTypes: ['creator_media', 'solo_founder', 'small_agency', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 20,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Creators, journalists, and media publishers wanting a fast, distraction-free blogging platform with built-in email newsletters and paid subscriptions.',
+      notRecommendedFor: 'E-commerce stores with physical product catalogs.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['stripe', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'markdown', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Ghost Official Pricing', url: 'https://ghost.org/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'wordpress-org',
+    name: 'WordPress.org',
+    vendor: 'WordPress Foundation',
+    website: 'https://wordpress.org',
+    category: 'Open-Source CMS & Web Engine',
+    primaryCapability: 'WEBSITE_CMS',
+    secondaryCapabilities: ['ECOMMERCE', 'SEO'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: '100% free GPLv2 open-source software; requires user-provided hosting',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://wordpress.org/about/license/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1 vCPU, 1GB RAM, PHP 8.1+ & MySQL (Docker or standard shared/VPS)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 10 },
+      maintenanceBurden: 'MODERATE',
+      tcoNotes: 'Inexpensive server compute, but regular plugin, theme, and core security updates are required.'
+    },
+    deployment: {
+      cloudAvailable: false,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.GPL_V3,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://wordpress.org/about/license/'
+    },
+    businessFit: {
+      businessTypes: ['local_business', 'small_agency', 'creator_media', 'solo_freelancer'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Local businesses, agencies, and publishers needing maximum plugin flexibility, SEO control, and vast third-party theme ecosystems.',
+      notRecommendedFor: 'Teams demanding zero-maintenance cloud architectures.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['woocommerce', 'hubspot', 'mailchimp', 'stripe', 'google-analytics'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['xml', 'sql', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'WordPress.org Open Source License', url: 'https://wordpress.org/about/license/', type: 'Official License Repository', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'shopify',
+    name: 'Shopify',
+    vendor: 'Shopify Inc.',
+    website: 'https://www.shopify.com',
+    category: 'E-Commerce Platform',
+    primaryCapability: 'ECOMMERCE',
+    secondaryCapabilities: ['PAYMENTS', 'WEBSITE_CMS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FLAT_MONTHLY,
+      baseMonthlyPriceUsd: 39,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 25,
+      freePlanAvailable: false,
+      freeTierLimits: '3-day free trial; basic plan starts at $39/month',
+      freeTrialDays: 3,
+      transactionFeePercent: 2.9,
+      transactionFeeFixedUsd: 0.30,
+      pricingSourceUrl: 'https://www.shopify.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Fully managed multi-tenant cloud commerce infrastructure.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.shopify.com/legal/terms'
+    },
+    businessFit: {
+      businessTypes: ['ecommerce_brand', 'local_business', 'small_agency', 'creator_media'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Direct-to-consumer online stores, retailers, and merchants needing checkout optimization, inventory tracking, shipping discounts, and global payment processing.',
+      notRecommendedFor: 'SaaS software subscriptions or open-source self-hosters.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['stripe', 'klaviyo', 'mailchimp', 'hubspot', 'google-analytics'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv'],
+      migrationDifficulty: 'moderate',
+      vendorLockInRisk: 'moderate'
+    },
+    sources: [
+      { title: 'Shopify Official Pricing', url: 'https://www.shopify.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'woocommerce',
+    name: 'WooCommerce',
+    vendor: 'Automattic Inc.',
+    website: 'https://woocommerce.com',
+    category: 'Open-Source E-Commerce',
+    primaryCapability: 'ECOMMERCE',
+    secondaryCapabilities: ['PAYMENTS', 'WEBSITE_CMS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: '100% free open-source WordPress plugin; merchant pays payment processor fees',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://woocommerce.com/document/woocommerce-pricing-breakdown/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1-2 vCPU, 2GB+ RAM on WordPress PHP/MySQL host',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 15 },
+      maintenanceBurden: 'MODERATE',
+      tcoNotes: 'Runs inside WordPress installation; server cost varies with product catalog and traffic.'
+    },
+    deployment: {
+      cloudAvailable: false,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.GPL_V3,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/woocommerce/woocommerce'
+    },
+    businessFit: {
+      businessTypes: ['ecommerce_brand', 'local_business', 'small_agency', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'WordPress site owners and agencies wanting 100% store ownership without recurring SaaS software subscription fees.',
+      notRecommendedFor: 'Teams without WordPress maintenance capabilities.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['wordpress-org', 'stripe', 'hubspot', 'mailchimp'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'xml', 'sql'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'WooCommerce Official Open Source Details', url: 'https://woocommerce.com/document/woocommerce-pricing-breakdown/', type: 'Official Documentation', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'medusa',
+    name: 'Medusa.js',
+    vendor: 'Medusa Commerce ApS',
+    website: 'https://medusajs.com',
+    category: 'Open-Source Headless Commerce',
+    primaryCapability: 'ECOMMERCE',
+    secondaryCapabilities: ['PAYMENTS', 'DATABASE'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: '100% open-source MIT engine; unlimited products, orders, and regions',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://medusajs.com/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1-2 vCPU, 2GB RAM, Node.js + Postgres + Redis (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 8, maxUsd: 20 },
+      maintenanceBurden: 'MODERATE',
+      tcoNotes: 'Modern headless modular backend running on standard containerized cloud compute.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'moderate'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.MIT,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/medusajs/medusa'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'small_agency', 'technical_founder_oss', 'ecommerce_brand'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'developer',
+      bestFor: 'Software developers building custom headless e-commerce experiences (Next.js, Remix, mobile) with full control over data, logic, and checkout.',
+      notRecommendedFor: 'Non-technical merchants looking for drag-and-drop store themes.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['stripe', 'resend', 'sendgrid', 'postgresql'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n', 'zapier']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'sql', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Medusa Official Open Source Engine', url: 'https://medusajs.com/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'tally',
+    name: 'Tally Forms',
+    vendor: 'Tally BV',
+    website: 'https://tally.so',
+    category: 'Form & Survey Builder',
+    primaryCapability: 'FORMS_SURVEYS',
+    secondaryCapabilities: ['AUTOMATION', 'PAYMENTS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FREEMIUM,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 17,
+      freePlanAvailable: true,
+      freeTierLimits: '99% of features free forever: unlimited forms, unlimited submissions, custom domains, file uploads up to 10MB',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://tally.so/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud form service.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://tally.so/terms'
+    },
+    businessFit: {
+      businessTypes: ['solo_founder', 'solo_freelancer', 'small_agency', 'saas_startup', 'local_business'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'none',
+      bestFor: 'Founders, agencies, and creators wanting Notion-like document-style form creation with free unlimited responses and webhook automations.',
+      notRecommendedFor: 'Strict on-premise government compliance requirements.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['notion', 'hubspot', 'airtable', 'google-analytics', 'stripe'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n', 'make', 'zapier']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Tally Official Pricing', url: 'https://tally.so/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'typeform',
+    name: 'Typeform',
+    vendor: 'TYPEFORM S.L.',
+    website: 'https://www.typeform.com',
+    category: 'Conversational Forms & Surveys',
+    primaryCapability: 'FORMS_SURVEYS',
+    secondaryCapabilities: ['ANALYTICS', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FLAT_MONTHLY,
+      baseMonthlyPriceUsd: 25,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 16,
+      freePlanAvailable: true,
+      freeTierLimits: '10 responses/month, 10 questions/form on free tier; Basic plan is $25/mo for 100 responses',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.typeform.com/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud SaaS.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.typeform.com/terms-service/'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Marketing teams and agencies needing high-engagement conversational surveys, customer intake quizzes, and lead capture forms.',
+      notRecommendedFor: 'High-volume forms with limited budgets.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'notion', 'slack', 'google-analytics', 'stripe'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'excel', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Typeform Official Pricing', url: 'https://www.typeform.com/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'documenso',
+    name: 'Documenso',
+    vendor: 'Documenso, Inc.',
+    website: 'https://documenso.com',
+    category: 'Open-Source Document Signing',
+    primaryCapability: 'E_SIGNATURES',
+    secondaryCapabilities: ['AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: 'Self-hosted AGPL is 100% free with unlimited documents; Cloud individual is $30/mo',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://documenso.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1 vCPU, 2GB RAM, Node.js + PostgreSQL (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 12 },
+      maintenanceBurden: 'LOW',
+      tcoNotes: 'Clean containerized e-signing stack that ensures complete contract confidentiality on private VPS.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.AGPL_V3,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/documenso/documenso'
+    },
+    businessFit: {
+      businessTypes: ['solo_founder', 'small_agency', 'technical_founder_oss', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Privacy-focused agencies, legal teams, and developers wanting complete sovereignty over signed agreements and PDF audit trails.',
+      notRecommendedFor: 'Non-technical users wanting phone support.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['stripe', 'n8n', 'zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n', 'zapier']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['pdf', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Documenso Official Pricing', url: 'https://documenso.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'docusign',
+    name: 'DocuSign',
+    vendor: 'DocuSign, Inc.',
+    website: 'https://www.docusign.com',
+    category: 'Enterprise Electronic Signature',
+    primaryCapability: 'E_SIGNATURES',
+    secondaryCapabilities: ['CRM'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 10,
+      pricePerSeatMonthlyUsd: 10,
+      annualDiscountPercent: 33,
+      freePlanAvailable: false,
+      freeTierLimits: '30-day free trial; Personal plan is $10/mo (up to 5 envelopes/mo), Standard is $25/seat/mo',
+      freeTrialDays: 30,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.docusign.com/products-and-pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Proprietary enterprise cloud service.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.docusign.com/company/terms-and-conditions'
+    },
+    businessFit: {
+      businessTypes: ['growing_agency', 'small_agency', 'local_business'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Established businesses and corporate teams needing universally recognized, legally binding e-signature compliance (eIDAS, ESIGN Act).',
+      notRecommendedFor: 'Budget-constrained bootstrappers needing unlimited signatures.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'quickbooks-online', 'stripe', 'zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['pdf'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'DocuSign Official Pricing', url: 'https://www.docusign.com/products-and-pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'pandadoc',
+    name: 'PandaDoc',
+    vendor: 'PandaDoc, Inc.',
+    website: 'https://www.pandadoc.com',
+    category: 'Document Automation & E-Signatures',
+    primaryCapability: 'E_SIGNATURES',
+    secondaryCapabilities: ['CRM', 'PAYMENTS'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 19,
+      pricePerSeatMonthlyUsd: 19,
+      annualDiscountPercent: 24,
+      freePlanAvailable: true,
+      freeTierLimits: 'Free eSign plan: upload, sign, and collect payments on unlimited documents',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.pandadoc.com/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud SaaS.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.pandadoc.com/terms-of-use/'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'local_business', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Agencies and sales teams wanting interactive proposal creation, CPQ quotes, client e-signing, and payment collection in a single document.',
+      notRecommendedFor: 'Self-hosted infrastructure requirements.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'pipedrive', 'stripe', 'quickbooks-online', 'zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['pdf', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'PandaDoc Official Pricing', url: 'https://www.pandadoc.com/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'neon',
+    name: 'Neon Serverless Postgres',
+    vendor: 'Neon, Inc.',
+    website: 'https://neon.tech',
+    category: 'Serverless Postgres',
+    primaryCapability: 'DATABASE',
+    secondaryCapabilities: ['HOSTING'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FREEMIUM,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: 'Free tier: 0.5 GiB storage, 1 project, 10 database branches, 100 compute hours/month free forever',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://neon.tech/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed serverless cloud architecture with scale-to-zero compute.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.APACHE_2_0,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/neondatabase/neon'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'solo_founder', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'developer',
+      bestFor: 'Full-stack developers and SaaS startups building on Postgres who require instant database branching for CI/CD and scale-to-zero pricing.',
+      notRecommendedFor: 'Non-technical business owners.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['clerk', 'render', 'supabase', 'aws'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: []
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['sql', 'pg_dump', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Neon Official Pricing', url: 'https://neon.tech/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'planetscale',
+    name: 'PlanetScale',
+    vendor: 'PlanetScale, Inc.',
+    website: 'https://planetscale.com',
+    category: 'Serverless MySQL Platform',
+    primaryCapability: 'DATABASE',
+    secondaryCapabilities: ['HOSTING'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FLAT_MONTHLY,
+      baseMonthlyPriceUsd: 39,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: false,
+      freeTierLimits: 'Scaler tier starts at $39/mo (includes 10GB storage, 25B row reads, 10M row writes)',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://planetscale.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed serverless Vitess MySQL cluster.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://planetscale.com/legal/terms'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'growing_agency'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'developer',
+      bestFor: 'High-scale web applications needing zero-downtime database schema migrations, sharding, and managed MySQL infrastructure.',
+      notRecommendedFor: 'Projects wanting free-forever hobby tiers or relational PostgreSQL.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['clerk', 'render', 'aws'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: []
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['sql', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'PlanetScale Official Pricing', url: 'https://planetscale.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'upstash',
+    name: 'Upstash',
+    vendor: 'Upstash Inc.',
+    website: 'https://upstash.com',
+    category: 'Serverless Redis & Message Queue',
+    primaryCapability: 'DATABASE',
+    secondaryCapabilities: ['AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FREEMIUM,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: '10,000 commands/day, 256MB storage free; Pay-as-you-go is $0.20 per 100k requests',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://upstash.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed serverless Redis and message queue.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://upstash.com/trust/terms.pdf'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'solo_founder', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'developer',
+      bestFor: 'Serverless web apps (Next.js, Cloudflare Workers) needing instant low-latency Redis caching, API rate limiting, and background queues.',
+      notRecommendedFor: 'Primary relational business data.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['clerk', 'supabase', 'render', 'aws'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: []
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'rdb'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Upstash Official Pricing', url: 'https://upstash.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'appwrite',
+    name: 'Appwrite',
+    vendor: 'Appwrite Ltd.',
+    website: 'https://appwrite.io',
+    category: 'Open-Source Backend-as-a-Service',
+    primaryCapability: 'DATABASE',
+    secondaryCapabilities: ['AUTH', 'HOSTING'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: 'Self-hosted version is 100% open-source free forever; Cloud Starter tier is free for 1 project and 75k MAU',
+      freeTrialDays: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://appwrite.io/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1-2 vCPU, 2GB RAM (Docker Compose)',
+      estimatedServerCostMonthlyRange: { minUsd: 8, maxUsd: 15 },
+      maintenanceBurden: 'LOW',
+      tcoNotes: 'Single command Docker Compose deployment with complete database, auth, and storage services.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.BSD_3_CLAUSE || LICENSE_TYPES.MIT,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/appwrite/appwrite'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'solo_founder', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'developer',
+      bestFor: 'Web and mobile developers seeking a direct, self-hostable open-source Firebase and Supabase alternative with authentication, databases, and functions.',
+      notRecommendedFor: 'Non-technical business owners.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['stripe', 'postgresql', 'render', 'hetzner'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'sql'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Appwrite Official Pricing', url: 'https://appwrite.io/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'sentry',
+    name: 'Sentry',
+    vendor: 'Functional Software, Inc.',
+    website: 'https://sentry.io',
+    category: 'Error Tracking & System APM',
+    primaryCapability: 'MONITORING_DEVOPS',
+    secondaryCapabilities: ['DEVELOPMENT_AI'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 15,
+      freePlanAvailable: true,
+      freeTierLimits: 'Self-hosted BSL is free; Cloud Developer tier is free forever for 5,000 errors/month and 10,000 performance transactions',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://sentry.io/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '2-4 vCPU, 8GB+ RAM (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 15, maxUsd: 35 },
+      maintenanceBurden: 'MODERATE',
+      tcoNotes: 'Self-hosted Sentry requires substantial RAM (Kafka, ClickHouse, Redis, Postgres); managed cloud is often more cost-effective for small teams.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'moderate'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.BSL_FAIR_CODE,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/getsentry/self-hosted'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'small_agency', 'growing_agency', 'technical_founder_oss'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'developer',
+      bestFor: 'Software engineering teams needing real-time exception alerts, stack trace forensics, performance bottleneck tracing, and session replays.',
+      notRecommendedFor: 'Non-technical business operations.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['github-copilot', 'slack', 'linear', 'jira', 'render'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Sentry Official Pricing', url: 'https://sentry.io/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'instantly',
+    name: 'Instantly.ai',
+    vendor: 'Instantly Technologies Inc.',
+    website: 'https://instantly.ai',
+    category: 'Cold Email Outreach & Deliverability',
+    primaryCapability: 'EMAIL_MARKETING',
+    secondaryCapabilities: ['AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.FLAT_MONTHLY,
+      baseMonthlyPriceUsd: 37,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 20,
+      freePlanAvailable: false,
+      freeTierLimits: '14-day free trial; Growth plan starts at $37/mo with unlimited email accounts warmup and 5,000 monthly emails',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://instantly.ai/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud outreach infrastructure.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://instantly.ai/terms'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'solo_founder', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'none',
+      bestFor: 'B2B lead generation agencies, SDR teams, and founders executing multi-inbox cold email campaigns with automated warmup and deliverability rotation.',
+      notRecommendedFor: 'Permission-based opt-in newsletter broadcasts.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'pipedrive', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Instantly.ai Official Pricing', url: 'https://instantly.ai/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'lemlist',
+    name: 'Lemlist',
+    vendor: 'Lemlist SAS',
+    website: 'https://www.lemlist.com',
+    category: 'Sales Outreach & Multichannel Engagement',
+    primaryCapability: 'EMAIL_MARKETING',
+    secondaryCapabilities: ['CRM', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 39,
+      pricePerSeatMonthlyUsd: 39,
+      annualDiscountPercent: 20,
+      freePlanAvailable: false,
+      freeTierLimits: '14-day free trial; Email Starter plan is $39/seat/mo',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.lemlist.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud SaaS.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: false,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.lemlist.com/terms-and-conditions'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'saas_startup'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'none',
+      bestFor: 'Sales development reps and agencies needing personalized cold outreach with dynamic image/video personalization and multi-channel LinkedIn touches.',
+      notRecommendedFor: 'Inbound newsletter marketing.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'pipedrive', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Lemlist Official Pricing', url: 'https://www.lemlist.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'freshdesk',
+    name: 'Freshdesk',
+    vendor: 'Freshworks Inc.',
+    website: 'https://www.freshworks.com/freshdesk/',
+    category: 'Customer Support & Ticketing',
+    primaryCapability: 'HELP_DESK',
+    secondaryCapabilities: ['CRM', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 15,
+      pricePerSeatMonthlyUsd: 15,
+      annualDiscountPercent: 20,
+      freePlanAvailable: true,
+      freeTierLimits: 'Free plan includes up to 10 support agents with email/social ticketing, knowledge base, and ticket dispatch',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.freshworks.com/freshdesk/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud customer support workspace.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.freshworks.com/terms/'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'local_business', 'growing_agency', 'ecommerce_brand'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Customer support teams and service businesses wanting an organized shared inbox, SLA automation, and self-service help center without high entry costs.',
+      notRecommendedFor: 'Real-time conversational developer widgets.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'mailchimp', 'jira', 'shopify', 'zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Freshdesk Official Pricing', url: 'https://www.freshworks.com/freshdesk/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'zendesk',
+    name: 'Zendesk',
+    vendor: 'Zendesk, Inc.',
+    website: 'https://www.zendesk.com',
+    category: 'Enterprise Customer Service Platform',
+    primaryCapability: 'HELP_DESK',
+    secondaryCapabilities: ['CRM', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 19,
+      pricePerSeatMonthlyUsd: 19,
+      annualDiscountPercent: 20,
+      freePlanAvailable: false,
+      freeTierLimits: '14-day free trial; Support Team plan is $19/seat/mo, Suite Team is $55/seat/mo',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.zendesk.com/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Enterprise cloud customer support platform.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.zendesk.com/company/agreements-and-terms/terms-of-use/'
+    },
+    businessFit: {
+      businessTypes: ['growing_agency', 'saas_startup', 'ecommerce_brand'],
+      teamSizeMin: 5,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Growing and enterprise customer operations teams requiring omnichannel ticket routing (email, chat, phone), custom workflows, and deep SLA analytics.',
+      notRecommendedFor: 'Early-stage solo bootstrappers.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'jira', 'shopify', 'slack', 'zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'csv', 'xml'],
+      migrationDifficulty: 'moderate',
+      vendorLockInRisk: 'moderate'
+    },
+    sources: [
+      { title: 'Zendesk Official Pricing', url: 'https://www.zendesk.com/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'asana',
+    name: 'Asana',
+    vendor: 'Asana, Inc.',
+    website: 'https://asana.com',
+    category: 'Project Management & Team Collaboration',
+    primaryCapability: 'PROJECT_MANAGEMENT',
+    secondaryCapabilities: ['AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 10.99,
+      pricePerSeatMonthlyUsd: 10.99,
+      annualDiscountPercent: 20,
+      freePlanAvailable: true,
+      freeTierLimits: 'Personal plan free up to 10 teammates with unlimited tasks, projects, and messages',
+      freeTrialDays: 30,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://asana.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud project workspace.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: true,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://asana.com/terms'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'local_business'],
+      teamSizeMin: 2,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Agencies and cross-functional business teams needing timeline Gantt views, workload balancing, and clear task assignment dependencies.',
+      notRecommendedFor: 'Pure software bug tracking with GitHub PR integrations.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'slack', 'google-analytics', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Asana Official Pricing', url: 'https://asana.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'basecamp',
+    name: 'Basecamp',
+    vendor: '37signals LLC',
+    website: 'https://basecamp.com',
+    category: 'All-in-One Project Management',
+    primaryCapability: 'PROJECT_MANAGEMENT',
+    secondaryCapabilities: ['HELP_DESK'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 15,
+      pricePerSeatMonthlyUsd: 15,
+      annualDiscountPercent: 0,
+      freePlanAvailable: false,
+      freeTierLimits: '30-day free trial; Standard is $15/user/mo, or Pro Unlimited flat $299/mo for unlimited users and 5TB storage',
+      freeTrialDays: 30,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://basecamp.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud project collaboration platform.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: true,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://basecamp.com/about/policies/terms-of-service'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'local_business'],
+      teamSizeMin: 3,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Agencies and companies seeking an all-in-one message board, to-do list, file storage, and client portal with flat predictable pricing.',
+      notRecommendedFor: 'Teams demanding agile sprint burn-down charts.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['zapier'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['html', 'zip', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Basecamp Official Pricing', url: 'https://basecamp.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'airtable',
+    name: 'Airtable',
+    vendor: 'Formagrid, Inc.',
+    website: 'https://www.airtable.com',
+    category: 'Relational Database & App Platform',
+    primaryCapability: 'PROJECT_MANAGEMENT',
+    secondaryCapabilities: ['DATABASE', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 20,
+      pricePerSeatMonthlyUsd: 20,
+      annualDiscountPercent: 17,
+      freePlanAvailable: true,
+      freeTierLimits: 'Free plan: up to 5 editors, 1,000 records per base, 1GB attachments',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.airtable.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud relational database and no-code app workspace.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: true,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.airtable.com/terms'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'solo_founder', 'creator_media'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Teams building customizable relational databases, production schedules, content editorial calendars, and internal operations tools.',
+      notRecommendedFor: 'High-throughput transactional databases with millions of rows.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'notion', 'slack', 'google-analytics', 'stripe'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'json'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'moderate'
+    },
+    sources: [
+      { title: 'Airtable Official Pricing', url: 'https://www.airtable.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'metabase',
+    name: 'Metabase',
+    vendor: 'Metabase, Inc.',
+    website: 'https://www.metabase.com',
+    category: 'Open-Source Business Intelligence & Analytics',
+    primaryCapability: 'ANALYTICS',
+    secondaryCapabilities: ['DATABASE'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 0,
+      freePlanAvailable: true,
+      freeTierLimits: 'Open-source AGPL edition is 100% free with unlimited dashboards, questions, and database connections; Pro cloud is $85/mo',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.metabase.com/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1-2 vCPU, 2GB RAM (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 12 },
+      maintenanceBurden: 'LOW',
+      tcoNotes: 'Single JAR or Docker container easily connected to Postgres or MySQL.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.AGPL_V3,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/metabase/metabase'
+    },
+    businessFit: {
+      businessTypes: ['saas_startup', 'small_agency', 'technical_founder_oss', 'growing_agency'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Companies wanting easy SQL query building, interactive internal BI dashboards, and automated email/Slack reports on existing business databases.',
+      notRecommendedFor: 'Teams without an existing database to connect.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['postgresql', 'supabase', 'slack'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv', 'json', 'xlsx'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Metabase Official Pricing', url: 'https://www.metabase.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'umami',
+    name: 'Umami Analytics',
+    vendor: 'Umami Software, Inc.',
+    website: 'https://umami.is',
+    category: 'Open-Source Privacy-Focused Web Analytics',
+    primaryCapability: 'ANALYTICS',
+    secondaryCapabilities: ['DATABASE'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.OPEN_SOURCE_FREE,
+      baseMonthlyPriceUsd: 0,
+      pricePerSeatMonthlyUsd: 0,
+      annualDiscountPercent: 15,
+      freePlanAvailable: true,
+      freeTierLimits: 'Self-hosted MIT version is 100% free with unlimited websites and events; Cloud Hobby tier is free for 10,000 events/month',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://umami.is/pricing',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: true, softwareLicenseCostMonthly: 0,
+      minServerSpecs: '1 vCPU, 1GB RAM, Node.js + PostgreSQL (Docker)',
+      estimatedServerCostMonthlyRange: { minUsd: 4.50, maxUsd: 8 },
+      maintenanceBurden: 'LOW',
+      tcoNotes: 'Extremely lightweight cookieless tracking script (~2KB) with minimal server load.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: true,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: true,
+      kubernetesAvailable: true,
+      deploymentComplexity: 'low'
+    },
+    licensing: {
+      openSource: true,
+      licenseType: LICENSE_TYPES.MIT,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://github.com/umami-software/umami'
+    },
+    businessFit: {
+      businessTypes: ['solo_founder', 'small_agency', 'technical_founder_oss', 'saas_startup', 'creator_media'],
+      teamSizeMin: 1,
+      teamSizeMax: 50,
+      technicalSkillRequired: 'moderate',
+      bestFor: 'Founders and agencies wanting clean, lightweight, privacy-compliant Google Analytics alternative with zero cookie consent banner requirements.',
+      notRecommendedFor: 'Deep product session replay or event funnel exploration.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['postgresql', 'supabase'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['json', 'sql', 'csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'Umami Official Pricing', url: 'https://umami.is/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
+    ]
+  },
+  {
+    toolId: 'activecampaign',
+    name: 'ActiveCampaign',
+    vendor: 'ActiveCampaign, LLC',
+    website: 'https://www.activecampaign.com',
+    category: 'Marketing Automation & CRM',
+    primaryCapability: 'EMAIL_MARKETING',
+    secondaryCapabilities: ['CRM', 'AUTOMATION'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      baseMonthlyPriceUsd: 15,
+      pricePerSeatMonthlyUsd: 15,
+      annualDiscountPercent: 20,
+      freePlanAvailable: false,
+      freeTierLimits: '14-day free trial; Starter plan starts at $15/seat/mo for up to 1,000 marketing contacts',
+      freeTrialDays: 14,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      pricingSourceUrl: 'https://www.activecampaign.com/pricing/',
+      pricingVerifiedAt: '2026-08-31T00:00:00Z',
+      costConfidence: COST_CONFIDENCE.HIGH
+    },
+    selfHostModel: {
+      supported: false, softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: { minUsd: 0, maxUsd: 0 },
+      maintenanceBurden: 'NONE',
+      tcoNotes: 'Managed cloud marketing platform.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: false,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'none'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.activecampaign.com/legal/terms-of-service'
+    },
+    businessFit: {
+      businessTypes: ['small_agency', 'growing_agency', 'ecommerce_brand', 'local_business'],
+      teamSizeMin: 1,
+      teamSizeMax: 100,
+      technicalSkillRequired: 'none',
+      bestFor: 'Agencies and e-commerce stores wanting sophisticated visual email automation funnels, behavioral segmentation, and integrated deal pipeline CRM.',
+      notRecommendedFor: 'Developers seeking simple transactional SMTP APIs.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['shopify', 'wordpress-org', 'stripe', 'zapier', 'make'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['zapier', 'make', 'n8n']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['csv'],
+      migrationDifficulty: 'low',
+      vendorLockInRisk: 'low'
+    },
+    sources: [
+      { title: 'ActiveCampaign Official Pricing', url: 'https://www.activecampaign.com/pricing/', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
     ]
   }
 ];

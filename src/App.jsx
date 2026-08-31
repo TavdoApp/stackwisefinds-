@@ -122,6 +122,7 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [quickFilter, setQuickFilter] = useState('all'); // 'all' | 'new' | 'upvoted' | 'deals' | 'free'
+  const [selectedPresetId, setSelectedPresetId] = useState(null);
 
   // Bookmarking / Saved Stack State with LocalStorage Persistence
   const [showBookmarkDrawer, setShowBookmarkDrawer] = useState(false);
@@ -319,6 +320,10 @@ export default function App() {
 
       if (pathname === '/stack-builder' || pathname === '/stack-builder/' || hash === 'stack-builder') {
         setCurrentView('stack-builder');
+        const params = new URLSearchParams(search);
+        if (params.has('preset')) {
+          setSelectedPresetId(params.get('preset'));
+        }
         return;
       }
 
@@ -683,8 +688,15 @@ export default function App() {
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
                 onOpenWizardClick={() => {
+                  setSelectedPresetId(null);
                   setCurrentView('stack-builder');
                   window.history.pushState(null, '', '/stack-builder/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                onSelectPreset={(presetId) => {
+                  setSelectedPresetId(presetId);
+                  setCurrentView('stack-builder');
+                  window.history.pushState(null, '', `/stack-builder/?preset=${presetId}`);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 onOpenSubmitClick={() => setShowVendorModal(true)}
@@ -1246,8 +1258,10 @@ export default function App() {
 
             {currentView === 'stack-builder' && (
               <StackBuilderPage
+                initialPresetId={selectedPresetId}
                 onBackToDirectory={() => {
                   setCurrentView('directory');
+                  setSelectedPresetId(null);
                   window.history.pushState(null, '', '/');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
