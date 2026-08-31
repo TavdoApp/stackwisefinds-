@@ -243,15 +243,58 @@ export default function Hero({
         </div>
 
         {/* Action CTAs */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '20px' }}>
-          <button onClick={onOpenWizardClick} className="btn-pill-green" style={{ padding: '12px 24px', fontSize: '0.92rem' }}>
-            <Wand2 size={16} />
-            <span>{t.heroRunWizard}</span>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap', marginBottom: '24px' }}>
+          <button 
+            onClick={() => {
+              if (onOpenWizardClick) onOpenWizardClick();
+            }} 
+            className="btn-pill-green" 
+            style={{ padding: '12px 24px', fontSize: '0.94rem', boxShadow: '0 4px 16px rgba(130, 167, 53, 0.28)' }}
+          >
+            <Wand2 size={17} />
+            <span>Build My Software Stack</span>
           </button>
 
           <button onClick={onExploreClick} className="btn-pill-outline" style={{ padding: '12px 22px', fontSize: '0.9rem' }}>
             <ArrowDown size={16} />
             <span>{t.heroExploreTools}</span>
+          </button>
+        </div>
+
+        {/* Stack Builder Value Proposition Banner */}
+        <div 
+          onClick={onOpenWizardClick}
+          style={{
+            background: '#FFFFFF',
+            border: '1px solid #E2E8D8',
+            borderRadius: '16px',
+            padding: '16px 20px',
+            maxWidth: '680px',
+            margin: '0 auto 20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '16px',
+            cursor: 'pointer',
+            boxShadow: 'var(--shadow-soft)',
+            textAlign: 'left'
+          }}
+        >
+          <div>
+            <div style={{ fontSize: '0.92rem', fontWeight: '800', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <span style={{ color: '#82A735' }}>⚡</span> Build Your Software Stack
+            </div>
+            <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginTop: '2px', lineHeight: '1.4' }}>
+              Tell us what you're building. StakDock compares true cost, capability overlap, and open-source alternatives.
+            </div>
+          </div>
+          <button
+            type="button"
+            className="btn-pill-green"
+            style={{ padding: '8px 16px', fontSize: '0.82rem', flexShrink: 0 }}
+          >
+            <span>Launch Builder</span>
+            <ArrowUpRight size={14} />
           </button>
         </div>
 

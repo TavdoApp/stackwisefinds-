@@ -108,6 +108,16 @@ export default function Navbar({
               <span>{t.navDirectory || 'Directory'}</span>
             </button>
             <button 
+              onClick={() => { setCurrentView('stack-builder'); window.history.pushState(null, '', '/stack-builder/'); window.scrollTo(0, 0); }}
+              className={currentView === 'stack-builder' ? 'btn-pill-dark' : 'btn-pill-outline'}
+              style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '5px' }}
+              aria-label="Stack Builder"
+            >
+              <Wand2 size={14} color="#82A735" />
+              <span>Stack Builder</span>
+              <span style={{ fontSize: '0.62rem', background: '#82A735', color: '#FFFFFF', padding: '1px 5px', borderRadius: '4px', fontWeight: '800' }}>NEW</span>
+            </button>
+            <button 
               onClick={() => { setCurrentView('category-grid'); window.history.pushState(null, '', '/categories'); window.scrollTo(0, 0); }}
               className={currentView === 'category-grid' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
@@ -319,6 +329,7 @@ export default function Navbar({
                   Navigate
                 </div>
                 {[
+                  { label: 'Stack Builder', icon: <Wand2 size={18} color="#82A735" />, view: 'stack-builder', path: '/stack-builder/', badge: 'NEW' },
                   { label: t.navDirectory || 'Software Directory', icon: <Compass size={18} color="#82A735" />, view: 'directory', path: '/' },
                   { label: 'Browse Categories', icon: <Compass size={18} color="#82A735" />, view: 'category-grid', path: '/categories' },
                   { label: 'Leaderboard & Rankings', icon: <Sparkles size={18} color="#82A735" />, view: 'ranking', path: '/ranking' },

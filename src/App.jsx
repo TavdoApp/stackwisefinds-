@@ -35,6 +35,7 @@ import LegalViews from './components/LegalViews';
 import BookmarkDrawer from './components/BookmarkDrawer';
 import BadgeEmbedModal from './components/BadgeEmbedModal';
 import ClaimListingModal from './components/ClaimListingModal';
+import StackBuilderPage from './components/StackBuilder/StackBuilderPage';
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -88,6 +89,7 @@ export default function App() {
     if (p.startsWith('/alternatives/')) return 'alternatives-detail';
     if (p.startsWith('/best/') || p.startsWith('/category/')) return 'category-buyer-guide';
     if (p.startsWith('/guides/')) return 'article-detail';
+    if (p === '/stack-builder' || p === '/stack-builder/') return 'stack-builder';
     if (p === '/categories') return 'category-grid';
     if (p === '/ranking') return 'ranking';
     if (p === '/advertise' || p === '/pricing') return 'advertise';
@@ -312,6 +314,11 @@ export default function App() {
       if (pathname === '/disclosure' || hash === 'disclosure' || search.includes('page=disclosure')) {
         setLegalView('disclosure');
         setCurrentView('disclosure');
+        return;
+      }
+
+      if (pathname === '/stack-builder' || pathname === '/stack-builder/' || hash === 'stack-builder') {
+        setCurrentView('stack-builder');
         return;
       }
 
@@ -634,7 +641,11 @@ export default function App() {
         compareCount={selectedCompareIds.length}
         onOpenCompareModal={() => setShowCompareModal(true)}
         onOpenVendorModal={() => setShowVendorModal(true)}
-        onOpenWizardModal={() => setShowWizardModal(true)}
+        onOpenWizardModal={() => {
+          setCurrentView('stack-builder');
+          window.history.pushState(null, '', '/stack-builder/');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
         bookmarkCount={bookmarkedIds.length}
         onOpenBookmarkDrawer={() => setShowBookmarkDrawer(true)}
         currentLang={currentLang}
@@ -671,7 +682,11 @@ export default function App() {
                   const el = document.getElementById('guides-section');
                   if (el) el.scrollIntoView({ behavior: 'smooth' });
                 }}
-                onOpenWizardClick={() => setShowWizardModal(true)}
+                onOpenWizardClick={() => {
+                  setCurrentView('stack-builder');
+                  window.history.pushState(null, '', '/stack-builder/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
                 onOpenSubmitClick={() => setShowVendorModal(true)}
               />
 
@@ -1226,6 +1241,16 @@ export default function App() {
                   window.history.pushState(null, '', '/');
                 }}
                 onOpenSubmitModal={() => setIsVendorModalOpen(true)}
+              />
+            )}
+
+            {currentView === 'stack-builder' && (
+              <StackBuilderPage
+                onBackToDirectory={() => {
+                  setCurrentView('directory');
+                  window.history.pushState(null, '', '/');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
               />
             )}
 

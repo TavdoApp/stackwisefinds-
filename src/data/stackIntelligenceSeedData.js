@@ -3058,7 +3058,7 @@ export const seedSoftwareTools = [
     },
     integrations: {
       nativeIntegrations: ['google-analytics', 'google-search-console'],
-      apiAvailable: true,
+      apiAvailable: false,
       webhooksAvailable: false,
       automationPlatforms: []
     },
