@@ -5,11 +5,10 @@
  * optimal software stack without lead-gen forms or fake AI claims.
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BUSINESS_PROFILES,
-  CAPABILITY_TAXONOMY,
-  DEPLOYMENT_MODELS
+  CAPABILITY_TAXONOMY
 } from '../../data/stackIntelligenceSchema.js';
 import { seedTools } from '../../utils/stackIntelligenceEngine.js';
 import {
@@ -25,7 +24,9 @@ import {
   Search,
   Sliders,
   Check,
-  X
+  X,
+  Lock,
+  Sparkles
 } from 'lucide-react';
 
 const profileList = Object.values(BUSINESS_PROFILES);
@@ -56,7 +57,7 @@ const budgetOptions = [
 
 const hostingOptions = [
   {
-    id: 'all',
+    id: 'no_preference',
     title: 'No Preference / Best Fit',
     desc: 'Selects the best balance of cost, ease of use, and capability across SaaS and open source.'
   },
@@ -66,9 +67,14 @@ const hostingOptions = [
     desc: 'Prioritizes zero-maintenance cloud services. No server setup or DevOps required.'
   },
   {
-    id: 'self_hosted_open_source',
-    title: 'Open-Source & Self-Hosted Only',
-    desc: 'Filters strictly for self-hostable open-source software with full data ownership.'
+    id: 'open_source_preferred',
+    title: 'Open-Source Preferred',
+    desc: 'Prefers open-source tools with self-hosting options, but permits managed cloud alternatives where necessary.'
+  },
+  {
+    id: 'self_hosted_only',
+    title: 'Self-Hosted & Docker Only',
+    desc: 'Strictly filters for self-hostable software to ensure 100% data ownership and infrastructure sovereignty.'
   }
 ];
 
@@ -85,10 +91,12 @@ export default function StackWizard({
     businessType,
     teamSize,
     monthlyBudgetUsd,
+    budgetConstraintType,
     requiredCapabilities,
     preferredDeployment,
     technicalSkill,
     existingToolsToKeep,
+    existingToolCosts,
     advancedFilters
   } = wizardState;
 
@@ -115,8 +123,11 @@ export default function StackWizard({
 
   const toggleExistingTool = (toolId) => {
     if (existingToolsToKeep.includes(toolId)) {
+      const newCosts = { ...existingToolCosts };
+      delete newCosts[toolId];
       onUpdateState({
-        existingToolsToKeep: existingToolsToKeep.filter(id => id !== toolId)
+        existingToolsToKeep: existingToolsToKeep.filter(id => id !== toolId),
+        existingToolCosts: newCosts
       });
     } else {
       onUpdateState({
@@ -126,8 +137,8 @@ export default function StackWizard({
   };
 
   const isLowSkillSelfHostedConflict =
-    preferredDeployment === 'self_hosted_open_source' &&
-    (technicalSkill === 'none' || technicalSkill === 'low');
+    preferredDeployment === 'self_hosted_only' &&
+    technicalSkill === 'none';
 
   return (
     <div style={{ maxWidth: '860px', margin: '0 auto', padding: '20px 16px' }}>
@@ -267,23 +278,27 @@ export default function StackWizard({
         </div>
       )}
 
-      {/* STEP 3: MONTHLY BUDGET */}
+      {/* STEP 3: MONTHLY BUDGET & HARD/SOFT CONSTRAINT */}
       {step === 3 && (
         <div>
           <h2 style={{ fontSize: '1.85rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
             What is your target monthly software budget?
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '24px', lineHeight: '1.5' }}>
-            StakDock alerts you when requested tools exceed your cap, detects budget gaps, and shows where open-source cuts costs.
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px', lineHeight: '1.5' }}>
+            StakDock searches for credible combinations within your limit and alerts you if requested capabilities require paid tiers.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '14px', marginBottom: '32px' }}>
+          {/* Budget Options */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '14px', marginBottom: '24px' }}>
             {budgetOptions.map(opt => {
               const isSelected = monthlyBudgetUsd === opt.value;
               return (
                 <div
                   key={opt.label}
-                  onClick={() => onUpdateState({ monthlyBudgetUsd: opt.value })}
+                  onClick={() => onUpdateState({
+                    monthlyBudgetUsd: opt.value,
+                    budgetConstraintType: opt.value === 0 ? 'none' : (budgetConstraintType === 'none' ? 'hard' : budgetConstraintType)
+                  })}
                   style={{
                     border: isSelected ? '2px solid #82A735' : '1px solid var(--border-color)',
                     background: isSelected ? '#F4F7EE' : '#FFFFFF',
@@ -305,6 +320,36 @@ export default function StackWizard({
               );
             })}
           </div>
+
+          {/* Hard vs Soft Budget Selector */}
+          {monthlyBudgetUsd > 0 && (
+            <div style={{ background: '#F8F9F5', padding: '18px 20px', borderRadius: '14px', border: '1px solid var(--border-color)', marginBottom: '24px' }}>
+              <div style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
+                Budget Strictness:
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '10px' }}>
+                {[
+                  { id: 'hard', label: 'Hard Budget (Cannot exceed this limit)', desc: 'Engine strictly seeks combinations within this cap.' },
+                  { id: 'soft', label: 'Soft Budget (Target amount)', desc: 'May recommend higher-tier tools if materially better.' }
+                ].map(b => (
+                  <div
+                    key={b.id}
+                    onClick={() => onUpdateState({ budgetConstraintType: b.id })}
+                    style={{
+                      padding: '12px 14px',
+                      borderRadius: '10px',
+                      border: budgetConstraintType === b.id ? '2px solid #82A735' : '1px solid var(--border-color)',
+                      background: budgetConstraintType === b.id ? '#FFFFFF' : 'transparent',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <div style={{ fontWeight: '800', fontSize: '0.86rem', color: 'var(--text-dark)' }}>{b.label}</div>
+                    <div style={{ fontSize: '0.74rem', color: 'var(--text-muted)', marginTop: '2px' }}>{b.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -410,13 +455,12 @@ export default function StackWizard({
           {/* Technical Skill Level Selector */}
           <div style={{ background: '#F8F9F5', padding: '18px 20px', borderRadius: '14px', border: '1px solid var(--border-color)', marginBottom: '24px' }}>
             <div style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--text-dark)', marginBottom: '8px' }}>
-              Your Team's Technical Skill Level:
+              Your Team's Technical Comfort:
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
               {[
-                { id: 'none', label: 'Non-Technical (No code/server experience)' },
-                { id: 'low', label: 'Comfortable with basic SaaS & settings' },
-                { id: 'moderate', label: 'Familiar with Docker & webhooks' },
+                { id: 'none', label: 'Non-Technical (No server/Docker experience)' },
+                { id: 'moderate', label: 'Comfortable with software setup & settings' },
                 { id: 'developer', label: 'Full Software Engineer / DevOps' }
               ].map(lvl => (
                 <button
@@ -458,7 +502,7 @@ export default function StackWizard({
             Are you already using software you want to keep?
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '20px', lineHeight: '1.5' }}>
-            Select any active tools. StakDock will retain them at $0 incremental cost and avoid suggesting redundant replacements.
+            Select any active tools. StakDock will retain them at $0 new incremental cost and avoid suggesting redundant replacements.
           </p>
 
           {/* Search Bar for Existing Tools */}

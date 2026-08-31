@@ -1,13 +1,13 @@
 /**
- * StakDock 2.0: Client-Side Stack Intelligence Engine (ES Module)
+ * StakDock 2.0: Authoritative Stack Intelligence & Optimization Engine
  *
- * Direct browser-compatible implementation of the deterministic engine.
- * Reuses:
- * - src/data/stackIntelligenceSeedData.js
- * - src/data/stackIntelligenceSchema.js
- *
- * ZERO SYNTHETIC METRICS:
- * 100% deterministic, explainable, and grounded in primary source verification.
+ * CANONICAL SOURCE OF TRUTH:
+ * - Single authoritative module used across browser UI, SSR, and verification tests.
+ * - Deterministic constrained combinatorial stack optimization.
+ * - Decoupled Software License, Infrastructure VPS, and Variable Quotas.
+ * - Distinct Recommendation Confidence (HIGH/MEDIUM/LOW) vs Cost Confidence (FIXED/ESTIMATED/VARIABLE/UNKNOWN).
+ * - Multi-State Integration Graph & Granular Overlap Detection.
+ * - Zero synthetic ratings, zero fake reviews, zero arbitrary AI scores.
  */
 
 import { seedSoftwareTools } from '../data/stackIntelligenceSeedData.js';
@@ -39,7 +39,8 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
       calculationDetails: 'No tool specified.',
       infrastructureDetails: null,
       transactionFeesNote: null,
-      freeTierLimitsNote: null
+      freeTierLimitsNote: null,
+      freeTierUncertaintyNote: null
     };
   }
 
@@ -50,13 +51,14 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
   let estimatedInfrastructureMonthlyCost = 0;
   let estimatedMaintenanceBurden = 'NOT_APPLICABLE';
   let totalEstimatedMonthlyCost = 0;
-  let costConfidence = cm.costConfidence || 'HIGH';
+  let costConfidence = 'FIXED';
   let calculationDetails = '';
   let transactionFeesNote = null;
   let freeTierLimitsNote = cm.freeTierLimits || null;
+  let freeTierUncertaintyNote = null;
   let infrastructureDetails = null;
 
-  const isSelfHostedChoice = hostingPreference === 'self_hosted' && Boolean(sh.supported);
+  const isSelfHostedChoice = (hostingPreference === 'self_hosted' || hostingPreference === 'self_hosted_only') && Boolean(sh.supported);
 
   if (isSelfHostedChoice) {
     softwareLicenseMonthlyCost = sh.softwareLicenseCostMonthly || 0;
@@ -65,10 +67,10 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
     if (sh.estimatedServerCostMonthlyRange) {
       estimatedInfrastructureMonthlyCost = sh.estimatedServerCostMonthlyRange.minUsd;
       infrastructureDetails = `Requires server infrastructure: ${sh.minServerSpecs} (~$${sh.estimatedServerCostMonthlyRange.minUsd}–$${sh.estimatedServerCostMonthlyRange.maxUsd}/mo estimated VPS).`;
-      costConfidence = 'VARIABLE';
+      costConfidence = 'ESTIMATED';
     } else {
       infrastructureDetails = 'Local desktop execution; $0 server compute.';
-      costConfidence = 'HIGH';
+      costConfidence = 'FIXED';
     }
 
     totalEstimatedMonthlyCost = softwareLicenseMonthlyCost + estimatedInfrastructureMonthlyCost;
@@ -78,7 +80,7 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
     softwareLicenseMonthlyCost = 0;
     totalEstimatedMonthlyCost = 0;
     calculationDetails = '100% Free plan.';
-    costConfidence = 'HIGH';
+    costConfidence = 'FIXED';
 
   } else if (cm.pricingModel === 'PER_SEAT_MONTHLY' || cm.pricePerSeatMonthlyUsd > 0) {
     const effectiveSeats = Math.max(teamSize, cm.minimumSeats || 1);
@@ -89,7 +91,7 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
     softwareLicenseMonthlyCost = seatPrice * effectiveSeats;
     totalEstimatedMonthlyCost = softwareLicenseMonthlyCost;
     calculationDetails = `${effectiveSeats} seats × $${seatPrice.toFixed(2)}/seat/mo${preferAnnual ? ' (annual discount)' : ''}.`;
-    costConfidence = 'HIGH';
+    costConfidence = 'FIXED';
 
   } else if (cm.pricingModel === 'FLAT_MONTHLY') {
     let basePrice = cm.baseMonthlyPriceUsd;
@@ -99,32 +101,39 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
     softwareLicenseMonthlyCost = basePrice;
     totalEstimatedMonthlyCost = softwareLicenseMonthlyCost;
     calculationDetails = `Flat rate $${basePrice.toFixed(2)}/month${preferAnnual ? ' (annual discount)' : ''}.`;
-    costConfidence = 'HIGH';
+    costConfidence = 'FIXED';
 
   } else if (cm.pricingModel === 'USAGE_BASED') {
     softwareLicenseMonthlyCost = cm.baseMonthlyPriceUsd || 0;
     totalEstimatedMonthlyCost = softwareLicenseMonthlyCost;
     calculationDetails = `Base metered rate starts at $${softwareLicenseMonthlyCost.toFixed(2)}/mo plus variable volume.`;
-    costConfidence = 'MEDIUM';
+    costConfidence = 'VARIABLE';
 
   } else if (cm.pricingModel === 'FREEMIUM') {
     if (teamSize === 1 && cm.freePlanAvailable) {
       softwareLicenseMonthlyCost = 0;
       totalEstimatedMonthlyCost = 0;
       calculationDetails = 'Included in Free Tier allowance.';
-      costConfidence = 'HIGH';
+      costConfidence = 'FIXED';
+      if (cm.freeTierLimits) {
+        freeTierUncertaintyNote = `Free plan may be sufficient for early usage; limits apply: ${cm.freeTierLimits}`;
+      }
     } else {
       const effectiveSeats = Math.max(teamSize, cm.minimumSeats || 1);
       const seatPrice = cm.pricePerSeatMonthlyUsd || cm.baseMonthlyPriceUsd || 15;
       softwareLicenseMonthlyCost = seatPrice * effectiveSeats;
       totalEstimatedMonthlyCost = softwareLicenseMonthlyCost;
       calculationDetails = `Paid tier: ${effectiveSeats} seats × $${seatPrice.toFixed(2)}/seat/mo.`;
-      costConfidence = 'HIGH';
+      costConfidence = 'FIXED';
     }
   } else {
     softwareLicenseMonthlyCost = cm.baseMonthlyPriceUsd || 0;
     totalEstimatedMonthlyCost = softwareLicenseMonthlyCost;
     calculationDetails = `Base plan $${softwareLicenseMonthlyCost.toFixed(2)}/mo.`;
+  }
+
+  if (cm.freePlanAvailable && cm.freeTierLimits) {
+    freeTierUncertaintyNote = `Free plan may be sufficient for early usage; limits apply: ${cm.freeTierLimits}`;
   }
 
   if (cm.transactionFeePercent > 0 || cm.transactionFeeFixedUsd > 0) {
@@ -141,7 +150,8 @@ export function calculateToolCost(tool, teamSize = 1, preferAnnual = false, host
     calculationDetails,
     infrastructureDetails,
     transactionFeesNote,
-    freeTierLimitsNote
+    freeTierLimitsNote,
+    freeTierUncertaintyNote
   };
 }
 
@@ -213,7 +223,7 @@ export function evaluateIntegration(toolA, toolB) {
     return {
       status: INTEGRATION_STATUS.NATIVE_VERIFIED,
       bridge: null,
-      note: `Direct first-party native integration verified between ${toolA.name} and ${toolB.name}.`
+      note: `Direct native integration documented between ${toolA.name} and ${toolB.name}.`
     };
   }
 
@@ -225,201 +235,328 @@ export function evaluateIntegration(toolA, toolB) {
     return {
       status: INTEGRATION_STATUS.AUTOMATION_BRIDGE_VERIFIED,
       bridge: commonBridge[0],
-      note: `Connects via verified ${commonBridge[0].toUpperCase()} automation connector.`
+      note: `Connects via documented ${commonBridge[0].toUpperCase()} automation connector.`
     };
   }
 
-  if (toolA.integrations?.apiAvailable && toolB.integrations?.apiAvailable) {
-    return {
-      status: INTEGRATION_STATUS.API_COMPATIBLE,
-      bridge: 'custom_rest_webhook',
-      note: `Both provide documented REST/GraphQL APIs; custom webhook or middleware required for synchronization.`
-    };
-  }
-
-  if (toolA.integrations?.apiAvailable === false || toolB.integrations?.apiAvailable === false) {
+  // Affirmative absence check: if vendor docs specifically confirm no external connectivity or strict isolation
+  if (toolA.integrations?.apiAvailable === false && toolB.integrations?.apiAvailable === false) {
     return {
       status: INTEGRATION_STATUS.NO_INTEGRATION_VERIFIED,
       bridge: null,
-      note: `At least one tool lacks a public API, preventing automated data synchronization.`
+      note: `Both tools lack external REST/GraphQL APIs, preventing automated data synchronization.`
+    };
+  }
+
+  if (toolA.integrations?.apiAvailable && toolB.integrations?.apiAvailable && (toolA.integrations?.webhooksAvailable || toolB.integrations?.webhooksAvailable)) {
+    return {
+      status: INTEGRATION_STATUS.CUSTOM_INTEGRATION_REQUIRED,
+      bridge: 'custom_rest_webhook',
+      note: `Both tools expose public REST/GraphQL APIs; custom webhook or middleware required for synchronization.`
     };
   }
 
   return {
     status: INTEGRATION_STATUS.UNKNOWN,
     bridge: null,
-    note: 'Integration status between these tools is unverified in primary sources.'
+    note: `Integration status between ${toolA.name} and ${toolB.name} is unverified in primary sources.`
   };
 }
 
 /**
- * 4. TRANSPARENT TIERED STACK SYNTHESIS ENGINE
+ * 4. COMBINATORIAL STACK SYNTHESIS & OPTIMIZATION ENGINE
  */
 export function synthesizeStack(input) {
   const {
     businessType = 'solo_founder',
     teamSize = 1,
     monthlyBudgetUsd = 100,
+    budgetConstraintType = monthlyBudgetUsd > 0 ? 'hard' : 'none', // 'hard' | 'soft' | 'none'
     requiredCapabilities = ['INVOICING', 'PROJECT_MANAGEMENT'],
-    preferredDeployment = 'all', // 'all' | 'cloud_saas' | 'self_hosted_open_source'
-    preferAnnual = false,
-    technicalSkill = 'low',      // 'none' | 'low' | 'moderate' | 'developer'
-    existingToolsToKeep = [],    // e.g. ['hubspot']
-    advancedFilters = {}         // { freePlanRequired, openSourceRequired, apiRequired, dataExportRequired, lowLockInPreferred, dockerPreferred }
+    preferredDeployment = 'no_preference', // 'no_preference' | 'cloud_saas' | 'open_source_preferred' | 'self_hosted_only'
+    technicalSkill = 'moderate',           // 'none' | 'moderate' | 'developer'
+    existingToolsToKeep = [],              // e.g. ['hubspot']
+    existingToolCosts = {},                // e.g. { hubspot: 50 } or { hubspot: 'unknown' }
+    advancedFilters = {}                   // { freePlanRequired, openSourceRequired, apiRequired, dataExportRequired, lowLockInPreferred, dockerPreferred }
   } = input;
 
-  const stackItems = [];
-  let totalSoftwareCost = 0;
-  let totalInfrastructureCost = 0;
   const warnings = [];
   const unknowns = [];
+  const filterConflicts = [];
 
-  // Track existing preserved capabilities
+  // --- STEP 1: CONFLICT & COMPATIBILITY CHECKS ---
+  if (preferredDeployment === 'cloud_saas' && advancedFilters.dockerPreferred) {
+    filterConflicts.push('Managed Cloud SaaS preference conflicts with Docker Compose requirement.');
+  }
+  if (preferredDeployment === 'self_hosted_only' && technicalSkill === 'none') {
+    warnings.push('Technical Burden Notice: Self-hosted software requires Linux server administration, Docker configuration, and database backups. Non-technical teams will face significant setup friction.');
+  }
+
+  // --- STEP 2: EXISTING TOOL RETENTION HANDLING ---
   const preservedTools = existingToolsToKeep.map(id => toolsMap.get(id)).filter(Boolean);
-  const preservedCapabilities = new Set();
-  preservedTools.forEach(t => {
-    preservedCapabilities.add(t.primaryCapability);
-    (t.secondaryCapabilities || []).forEach(c => preservedCapabilities.add(c));
+  const coveredByExisting = new Map(); // capability -> existingTool
+
+  preservedTools.forEach(tool => {
+    coveredByExisting.set(tool.primaryCapability, tool);
+    (tool.secondaryCapabilities || []).forEach(secCap => {
+      if (!coveredByExisting.has(secCap)) {
+        coveredByExisting.set(secCap, tool);
+      }
+    });
   });
 
-  requiredCapabilities.forEach(capability => {
-    // If capability is already fully satisfied by an existing tool user wants to keep, acknowledge and retain
-    const existingProvider = preservedTools.find(t => t.primaryCapability === capability || (t.secondaryCapabilities || []).includes(capability));
-    if (existingProvider) {
+  // Calculate pre-owned cost totals
+  let existingToolsTotalMonthlyCost = 0;
+  let hasUnknownExistingCost = false;
+  preservedTools.forEach(tool => {
+    const specifiedCost = existingToolCosts[tool.toolId];
+    if (typeof specifiedCost === 'number' && specifiedCost >= 0) {
+      existingToolsTotalMonthlyCost += specifiedCost;
+    } else {
+      hasUnknownExistingCost = true;
+    }
+  });
+
+  // --- STEP 3: CANDIDATE POOL GATHERING PER UNMET CAPABILITY ---
+  const candidatePools = {};
+  const unfulfilledCapabilities = requiredCapabilities.filter(cap => !coveredByExisting.has(cap));
+
+  unfulfilledCapabilities.forEach(cap => {
+    let pool = seedTools.filter(t => t.primaryCapability === cap || (t.secondaryCapabilities || []).includes(cap));
+
+    // Apply strict deployment filtering
+    if (preferredDeployment === 'self_hosted_only') {
+      const shOnly = pool.filter(t => t.deployment?.selfHostedAvailable);
+      if (shOnly.length > 0) {
+        pool = shOnly;
+      } else {
+        filterConflicts.push(`No verified self-hostable tool in dataset for '${cap}'. Showing available cloud alternatives.`);
+      }
+    } else if (preferredDeployment === 'open_source_preferred') {
+      // Prefer OSS but keep SaaS as fallbacks
+      const oss = pool.filter(t => t.licensing?.openSource);
+      if (oss.length === 0) {
+        warnings.push(`No open-source tool found for '${cap}'. Cloud SaaS options provided.`);
+      }
+    }
+
+    // Apply advanced filters
+    if (advancedFilters.openSourceRequired) {
+      const ossOnly = pool.filter(t => t.licensing?.openSource);
+      if (ossOnly.length > 0) pool = ossOnly;
+      else filterConflicts.push(`No open-source tool found for '${cap}'.`);
+    }
+    if (advancedFilters.freePlanRequired) {
+      const freeOnly = pool.filter(t => t.commercialModel?.freePlanAvailable);
+      if (freeOnly.length > 0) pool = freeOnly;
+      else filterConflicts.push(`No free plan tool found for '${cap}'.`);
+    }
+    if (advancedFilters.apiRequired) {
+      const apiOnly = pool.filter(t => t.integrations?.apiAvailable);
+      if (apiOnly.length > 0) pool = apiOnly;
+    }
+    if (advancedFilters.dockerPreferred) {
+      const dockerOnly = pool.filter(t => t.deployment?.dockerAvailable);
+      if (dockerOnly.length > 0) pool = dockerOnly;
+    }
+
+    if (pool.length === 0) {
+      unknowns.push(`No verified tool in current catalog satisfies all filters for capability: ${cap}`);
+    } else {
+      candidatePools[cap] = pool;
+    }
+  });
+
+  // --- STEP 4: COMBINATORIAL STACK-LEVEL OPTIMIZATION ---
+  // Generate combinations and score globally
+  const validCaps = Object.keys(candidatePools);
+
+  function getCombinations(capIndex, currentStack) {
+    if (capIndex >= validCaps.length) {
+      return [currentStack];
+    }
+    const cap = validCaps[capIndex];
+    const tools = candidatePools[cap] || [];
+    const results = [];
+    for (const tool of tools) {
+      const nextStack = { ...currentStack, [cap]: tool };
+      results.push(...getCombinations(capIndex + 1, nextStack));
+    }
+    return results;
+  }
+
+  const allCombinations = validCaps.length > 0 ? getCombinations(0, {}) : [{}];
+
+  // Score each combination
+  const scoredStacks = allCombinations.map(comb => {
+    let softwareLicenseCost = 0;
+    let infrastructureCost = 0;
+    let score = 1000;
+    const selectedToolsList = [];
+
+    // Track unique tools in this combination
+    const uniqueTools = new Set();
+    Object.entries(comb).forEach(([cap, tool]) => {
+      uniqueTools.add(tool.toolId);
+      selectedToolsList.push({ cap, tool });
+
+      const hostingMode = (preferredDeployment === 'self_hosted_only' || (preferredDeployment === 'open_source_preferred' && tool.deployment?.selfHostedAvailable) || (tool.deployment?.selfHostedAvailable && !tool.deployment?.cloudAvailable))
+        ? 'self_hosted'
+        : 'cloud';
+
+      const costObj = calculateToolCost(tool, teamSize, false, hostingMode);
+      softwareLicenseCost += costObj.softwareLicenseMonthlyCost;
+      infrastructureCost += costObj.estimatedInfrastructureMonthlyCost;
+
+      // Fit score adjustments
+      if (tool.primaryCapability === cap) score += 300;
+      else score += 100;
+
+      if ((tool.businessFit?.businessTypes || []).includes(businessType)) score += 150;
+      if (teamSize >= tool.businessFit?.teamSizeMin && teamSize <= tool.businessFit?.teamSizeMax) score += 100;
+
+      if (preferredDeployment === 'open_source_preferred' && tool.licensing?.openSource) score += 200;
+      if (preferredDeployment === 'cloud_saas' && tool.deployment?.cloudAvailable) score += 100;
+    });
+
+    // Multi-capability efficiency bonus: using one tool for multiple tasks reduces subscription sprawl
+    if (uniqueTools.size < Object.keys(comb).length) {
+      score += (Object.keys(comb).length - uniqueTools.size) * 150;
+    }
+
+    // Technical burden penalty if user is non-technical and stack has self-hosted tools
+    if (technicalSkill === 'none' && selectedToolsList.some(s => s.tool.deployment?.selfHostedAvailable && !s.tool.deployment?.cloudAvailable)) {
+      score -= 500;
+    }
+
+    const totalCost = softwareLicenseCost + infrastructureCost;
+
+    // Budget compliance
+    const isWithinBudget = monthlyBudgetUsd === 0 || totalCost <= monthlyBudgetUsd;
+    if (isWithinBudget) {
+      score += 500; // Strong bonus for satisfying budget
+    } else {
+      score -= (totalCost - monthlyBudgetUsd) * 10; // Proportional penalty for overage
+    }
+
+    return {
+      combination: comb,
+      softwareLicenseCost: Math.round(softwareLicenseCost * 100) / 100,
+      infrastructureCost: Math.round(infrastructureCost * 100) / 100,
+      totalCost: Math.round(totalCost * 100) / 100,
+      score,
+      isWithinBudget
+    };
+  });
+
+  // Sort: First by within-budget status if hard budget, then by score
+  scoredStacks.sort((a, b) => {
+    if (budgetConstraintType === 'hard' && monthlyBudgetUsd > 0) {
+      if (a.isWithinBudget && !b.isWithinBudget) return -1;
+      if (!a.isWithinBudget && b.isWithinBudget) return 1;
+    }
+    return b.score - a.score;
+  });
+
+  const bestStack = scoredStacks[0] || { combination: {}, softwareLicenseCost: 0, infrastructureCost: 0, totalCost: 0, isWithinBudget: true };
+
+  // --- STEP 5: ASSEMBLE RECOMMENDED STACK ITEMS ---
+  const stackItems = [];
+
+  // Add preserved tools first
+  coveredByExisting.forEach((tool, cap) => {
+    if (requiredCapabilities.includes(cap)) {
+      const hostingType = tool.deployment?.selfHostedAvailable && !tool.deployment?.cloudAvailable ? 'Self-Hosted' : 'Cloud SaaS';
       stackItems.push({
-        capability,
+        capability: cap,
         selectedTool: {
-          ...existingProvider,
+          ...tool,
           monthlyCost: 0,
           annualCost: 0,
           softwareLicenseCost: 0,
           infrastructureCost: 0,
-          costConfidence: 'HIGH',
-          costCalculationDetails: `Retained from your existing stack (${existingProvider.name}). Zero incremental software cost.`,
-          whyItFits: `You already have ${existingProvider.name} active, which natively covers '${capability}'.`,
-          hostingType: existingProvider.deployment?.selfHostedAvailable ? 'Self-Hosted / Cloud' : 'Cloud SaaS',
+          costConfidence: 'FIXED',
+          costCalculationDetails: `Pre-owned tool in active company stack (${tool.name}). $0.00 new incremental software spend.`,
+          infrastructureDetails: null,
+          transactionFeesNote: null,
+          freeTierLimitsNote: null,
+          whyItFits: `${tool.name} is already active in your stack and natively satisfies '${cap.replace('_', ' ')}'. Retaining it avoids redundant subscription spend and migration overhead.`,
+          hostingType,
           isRetainedExisting: true,
-          evidenceFact: `Active tool in your company stack: ${existingProvider.name}.`,
-          editorialReason: `Retaining existing tools avoids unnecessary migration friction and redundant software spend.`,
-          calculationNote: `$0.00 incremental subscription cost.`
+          evidenceFact: `Active tool in your company stack: ${tool.name}.`,
+          editorialReason: `Retaining existing tools prevents migration friction and double-paying.`,
+          calculationNote: `$0.00 incremental subscription spend.`
         },
         alternativeOption: null,
         freeOssOption: null
       });
-      return;
     }
+  });
 
-    // 1. FILTER CANDIDATE POOL
-    let candidates = seedTools.filter(t => {
-      const matchPrimary = t.primaryCapability === capability;
-      const matchSecondary = (t.secondaryCapabilities || []).includes(capability);
-      return matchPrimary || matchSecondary;
-    });
+  // Add newly recommended tools
+  Object.entries(bestStack.combination).forEach(([cap, tool]) => {
+    const hostingMode = (preferredDeployment === 'self_hosted_only' || (preferredDeployment === 'open_source_preferred' && tool.deployment?.selfHostedAvailable) || (tool.deployment?.selfHostedAvailable && !tool.deployment?.cloudAvailable))
+      ? 'self_hosted'
+      : 'cloud';
 
-    // Apply strict deployment filter
-    if (preferredDeployment === 'self_hosted_open_source') {
-      const ossOnly = candidates.filter(t => t.licensing.openSource && t.deployment.selfHostedAvailable);
-      if (ossOnly.length > 0) candidates = ossOnly;
-      else warnings.push(`No native open-source tool found for capability '${capability}'. Showing available cloud alternatives.`);
-    }
+    const costObj = calculateToolCost(tool, teamSize, false, hostingMode);
 
-    // Apply Advanced Filters if specified
-    if (advancedFilters.freePlanRequired) {
-      const freeOnly = candidates.filter(t => t.commercialModel?.freePlanAvailable);
-      if (freeOnly.length > 0) candidates = freeOnly;
-    }
-    if (advancedFilters.openSourceRequired) {
-      const ossOnly = candidates.filter(t => t.licensing?.openSource);
-      if (ossOnly.length > 0) candidates = ossOnly;
-    }
-    if (advancedFilters.apiRequired) {
-      const apiOnly = candidates.filter(t => t.integrations?.apiAvailable);
-      if (apiOnly.length > 0) candidates = apiOnly;
-    }
-    if (advancedFilters.dataExportRequired) {
-      const exportOnly = candidates.filter(t => t.dataAndPortability?.dataExportAvailable);
-      if (exportOnly.length > 0) candidates = exportOnly;
-    }
-    if (advancedFilters.lowLockInPreferred) {
-      const lowLockOnly = candidates.filter(t => t.dataAndPortability?.vendorLockInRisk === 'low');
-      if (lowLockOnly.length > 0) candidates = lowLockOnly;
-    }
-    if (advancedFilters.dockerPreferred) {
-      const dockerOnly = candidates.filter(t => t.deployment?.dockerAvailable);
-      if (dockerOnly.length > 0) candidates = dockerOnly;
-    }
-
-    if (candidates.length === 0) {
-      unknowns.push(`No verified tool in current catalog satisfies all filters for capability: ${capability}`);
-      return;
-    }
-
-    // 2. DETERMINISTIC TIERED SELECTION
-    const scoredCandidates = candidates.map(tool => {
-      let priorityScore = 0;
-      if (tool.primaryCapability === capability) priorityScore += 1000;
-      else priorityScore += 500;
-
-      if ((tool.businessFit?.businessTypes || []).includes(businessType)) priorityScore += 200;
-      if (teamSize >= tool.businessFit?.teamSizeMin && teamSize <= tool.businessFit?.teamSizeMax) priorityScore += 100;
-
-      const hostingMode = (preferredDeployment === 'self_hosted_open_source' || (tool.deployment?.selfHostedAvailable && !tool.deployment?.cloudAvailable)) ? 'self_hosted' : 'cloud';
-      const costObj = calculateToolCost(tool, teamSize, preferAnnual, hostingMode);
-
-      if (monthlyBudgetUsd > 0 && costObj.totalEstimatedMonthlyCost > monthlyBudgetUsd) {
-        priorityScore -= 400;
-      }
-
-      return { tool, priorityScore, costObj, hostingMode };
-    });
-
-    scoredCandidates.sort((a, b) => b.priorityScore - a.priorityScore);
-    const winner = scoredCandidates[0];
-    const alternative = scoredCandidates[1] || null;
-    const ossOption = candidates.find(t => t.licensing.openSource && t.toolId !== winner.tool.toolId) || null;
-
-    if (winner.hostingMode === 'self_hosted' && (technicalSkill === 'none' || technicalSkill === 'low')) {
-      warnings.push(`Technical Burden Alert: ${winner.tool.name} requires Linux/Docker server setup and database backups. If you lack developer experience, managed SaaS is recommended.`);
+    // Natural human explanation generator
+    let naturalWhy = '';
+    if (hostingMode === 'self_hosted') {
+      naturalWhy = `${tool.name} satisfies your '${cap.replace('_', ' ')}' requirement with full data ownership. There is no software license fee, but server infrastructure (~$${costObj.estimatedInfrastructureMonthlyCost}/mo) and Docker maintenance are required.`;
+    } else if (costObj.totalEstimatedMonthlyCost === 0) {
+      naturalWhy = `${tool.name} fulfills '${cap.replace('_', ' ')}' within its free tier for a ${teamSize}-person team.`;
+    } else {
+      naturalWhy = `${tool.name} is selected for '${cap.replace('_', ' ')}' because it fits a ${teamSize}-person ${businessType.replace('_', ' ')} workflow at a verified rate of $${costObj.totalEstimatedMonthlyCost.toFixed(2)}/mo.`;
     }
 
     stackItems.push({
-      capability,
+      capability: cap,
       selectedTool: {
-        ...winner.tool,
-        monthlyCost: winner.costObj.totalEstimatedMonthlyCost,
-        annualCost: winner.costObj.totalEstimatedAnnualCost,
-        softwareLicenseCost: winner.costObj.softwareLicenseMonthlyCost,
-        infrastructureCost: winner.costObj.estimatedInfrastructureMonthlyCost,
-        costConfidence: winner.costObj.costConfidence,
-        costCalculationDetails: winner.costObj.calculationDetails,
-        infrastructureDetails: winner.costObj.infrastructureDetails,
-        transactionFeesNote: winner.costObj.transactionFeesNote,
-        freeTierLimitsNote: winner.costObj.freeTierLimitsNote,
-        whyItFits: `${winner.tool.name} matches '${capability}', supports a ${teamSize}-person team, and fits your ${businessType.replace('_', ' ')} requirements.`,
-        hostingType: winner.hostingMode === 'self_hosted' ? 'Self-Hosted' : 'Cloud SaaS',
-        evidenceFact: `Primary source: Verified on ${winner.tool.commercialModel?.pricingVerifiedAt?.slice(0, 10) || '2026-08-31'} via official vendor docs.`,
-        editorialReason: winner.tool.businessFit?.bestFor || `Selected for ${businessType.replace('_', ' ')} compatibility.`,
-        calculationNote: winner.costObj.calculationDetails
+        ...tool,
+        monthlyCost: costObj.totalEstimatedMonthlyCost,
+        annualCost: costObj.totalEstimatedAnnualCost,
+        softwareLicenseCost: costObj.softwareLicenseMonthlyCost,
+        infrastructureCost: costObj.estimatedInfrastructureMonthlyCost,
+        costConfidence: costObj.costConfidence,
+        costCalculationDetails: costObj.calculationDetails,
+        infrastructureDetails: costObj.infrastructureDetails,
+        transactionFeesNote: costObj.transactionFeesNote,
+        freeTierLimitsNote: costObj.freeTierLimitsNote,
+        freeTierUncertaintyNote: costObj.freeTierUncertaintyNote,
+        whyItFits: naturalWhy,
+        hostingType: hostingMode === 'self_hosted' ? 'Self-Hosted' : 'Cloud SaaS',
+        evidenceFact: `Pricing source checked ${tool.commercialModel?.pricingVerifiedAt ? tool.commercialModel.pricingVerifiedAt.slice(0, 10) : '2026-08-31'} via official vendor documentation.`,
+        editorialReason: tool.businessFit?.bestFor || `Selected for ${businessType.replace('_', ' ')} compatibility.`,
+        calculationNote: costObj.calculationDetails
       },
-      alternativeOption: alternative ? {
-        ...alternative.tool,
-        monthlyCost: alternative.costObj.totalEstimatedMonthlyCost,
-        tradeoff: `Alternative option at $${alternative.costObj.totalEstimatedMonthlyCost}/mo.`
-      } : null,
-      freeOssOption: ossOption ? {
-        ...ossOption,
-        savingsNote: `Free self-hosted edition saves subscription fees (server compute ~$${ossOption.selfHostModel?.estimatedServerCostMonthlyRange?.minUsd || 5}/mo).`
-      } : null
+      alternativeOption: null,
+      freeOssOption: null
     });
-
-    totalSoftwareCost += winner.costObj.softwareLicenseMonthlyCost;
-    totalInfrastructureCost += winner.costObj.estimatedInfrastructureMonthlyCost;
   });
 
-  const totalMonthlyCost = totalSoftwareCost + totalInfrastructureCost;
-  const totalAnnualCost = totalMonthlyCost * 12;
+  // Calculate totals
+  let totalNewSoftwareCost = 0;
+  let totalNewInfrastructureCost = 0;
+  let minConsolidatedVPS = 0;
+  let maxConsolidatedVPS = 0;
+  let selfHostAppCount = 0;
 
-  // 3. OVERLAP ANALYSIS
+  stackItems.forEach(s => {
+    totalNewSoftwareCost += s.selectedTool.softwareLicenseCost;
+    totalNewInfrastructureCost += s.selectedTool.infrastructureCost;
+    if (s.selectedTool.hostingType === 'Self-Hosted' && s.selectedTool.selfHostModel?.estimatedServerCostMonthlyRange) {
+      selfHostAppCount++;
+      minConsolidatedVPS += s.selectedTool.selfHostModel.estimatedServerCostMonthlyRange.minUsd;
+      maxConsolidatedVPS += s.selectedTool.selfHostModel.estimatedServerCostMonthlyRange.maxUsd;
+    }
+  });
+
+  const totalNewMonthlyCost = Math.round((totalNewSoftwareCost + totalNewInfrastructureCost) * 100) / 100;
+  const totalNewAnnualCost = Math.round(totalNewMonthlyCost * 12 * 100) / 100;
+
+  // --- STEP 6: OVERLAP ANALYSIS ---
   const overlapWarnings = [];
   for (let i = 0; i < stackItems.length; i++) {
     for (let j = i + 1; j < stackItems.length; j++) {
@@ -439,7 +576,7 @@ export function synthesizeStack(input) {
     }
   }
 
-  // 4. INTEGRATION MATRIX
+  // --- STEP 7: INTEGRATION MATRIX ---
   const integrationMatrix = [];
   for (let i = 0; i < stackItems.length; i++) {
     for (let j = i + 1; j < stackItems.length; j++) {
@@ -457,81 +594,106 @@ export function synthesizeStack(input) {
     }
   }
 
-  // 5. BUDGET REALISM & FIT ASSESSMENT
+  // --- STEP 8: BUDGET STATUS & FEASIBILITY ASSESSMENT ---
+  let status = 'OPTIMAL_STACK_FOUND';
   let fitAssessment = 'EXCELLENT FIT';
-  if (monthlyBudgetUsd > 0 && totalMonthlyCost > monthlyBudgetUsd) {
-    fitAssessment = 'EXCEEDS BUDGET';
-    warnings.push(`Budget Realism Warning: Your requested capabilities for a ${teamSize}-person team require a minimum of $${totalMonthlyCost.toFixed(2)}/mo, which exceeds your $${monthlyBudgetUsd}/mo budget limit by $${(totalMonthlyCost - monthlyBudgetUsd).toFixed(2)}/mo.`);
-  } else if (monthlyBudgetUsd > 0 && totalMonthlyCost > monthlyBudgetUsd * 0.9) {
+  let budgetGapUsd = 0;
+  let budgetGapExplanation = null;
+
+  if (monthlyBudgetUsd > 0 && totalNewMonthlyCost > monthlyBudgetUsd) {
+    budgetGapUsd = Math.round((totalNewMonthlyCost - monthlyBudgetUsd) * 100) / 100;
+    if (budgetConstraintType === 'hard') {
+      status = 'NO_STACK_WITHIN_BUDGET';
+      fitAssessment = 'NO STACK FOUND WITHIN BUDGET';
+      const paidDrivers = stackItems.filter(s => s.selectedTool.monthlyCost > 0).map(s => `${s.capability} (${s.selectedTool.name} at $${s.selectedTool.monthlyCost}/mo)`);
+      budgetGapExplanation = `No verified stack in our current dataset satisfies all ${requiredCapabilities.length} requirements within $${monthlyBudgetUsd}/month. Closest available verified option is $${totalNewMonthlyCost.toFixed(2)}/month (a $${budgetGapUsd.toFixed(2)}/mo difference), driven by paid requirements in: ${paidDrivers.join(', ')}.`;
+      warnings.push(`Budget Realism Warning: ${budgetGapExplanation}`);
+    } else {
+      status = 'EXCEEDS_SOFT_BUDGET';
+      fitAssessment = 'EXCEEDS TARGET BUDGET';
+      warnings.push(`Target Budget Exceeded: The recommended stack costs $${totalNewMonthlyCost.toFixed(2)}/mo ($${budgetGapUsd.toFixed(2)}/mo over target $${monthlyBudgetUsd}/mo) to satisfy team and capability requirements.`);
+    }
+  } else if (monthlyBudgetUsd > 0 && totalNewMonthlyCost > monthlyBudgetUsd * 0.9) {
     fitAssessment = 'AT BUDGET CAP';
-  } else if (overlapWarnings.some(w => w.level === OVERLAP_LEVELS.HIGH_OVERLAP)) {
-    fitAssessment = 'CONDITIONAL FIT (HIGH OVERLAP DETECTED)';
   }
 
-  // 6. CONFIDENCE METRICS
-  const recommendationConfidence = unknowns.length > 0 ? 'MEDIUM' : 'HIGH';
-  const costConfidence = stackItems.some(s => s.selectedTool.costConfidence === 'VARIABLE') ? 'VARIABLE' : 'HIGH';
-  const integrationConfidence = integrationMatrix.some(m => m.status === 'UNKNOWN') ? 'MEDIUM' : 'HIGH';
+  // --- STEP 9: CONFIDENCE SEPARATION ---
+  let recommendationConfidence = 'HIGH';
+  if (unknowns.length > 0 || filterConflicts.length > 0 || status === 'NO_STACK_WITHIN_BUDGET') {
+    recommendationConfidence = 'MEDIUM';
+  }
+  if (stackItems.length < requiredCapabilities.length) {
+    recommendationConfidence = 'LOW';
+  }
 
-  // 7. OPEN SOURCE SAVINGS ESTIMATE
-  let ossEquivalentCost = 0;
-  let ossPotentialAvailable = false;
-  stackItems.forEach(item => {
-    const candidateOss = seedTools.find(t => (t.primaryCapability === item.capability || (t.secondaryCapabilities || []).includes(item.capability)) && t.licensing?.openSource && t.deployment?.selfHostedAvailable);
-    if (candidateOss) {
-      ossPotentialAvailable = true;
-      const ossCost = calculateToolCost(candidateOss, teamSize, preferAnnual, 'self_hosted');
-      ossEquivalentCost += ossCost.totalEstimatedMonthlyCost;
-    } else {
-      ossEquivalentCost += item.selectedTool.monthlyCost;
-    }
-  });
+  let overallCostConfidence = 'FIXED';
+  if (stackItems.some(s => s.selectedTool.costConfidence === 'VARIABLE')) {
+    overallCostConfidence = 'VARIABLE';
+  } else if (stackItems.some(s => s.selectedTool.costConfidence === 'ESTIMATED')) {
+    overallCostConfidence = 'ESTIMATED';
+  }
 
-  const ossMonthlySavings = ossPotentialAvailable && totalMonthlyCost > ossEquivalentCost
-    ? Math.round((totalMonthlyCost - ossEquivalentCost) * 100) / 100
-    : 0;
+  // Self-hosting consolidated range
+  const selfHostRange = selfHostAppCount > 0 ? {
+    independentMinUsd: minConsolidatedVPS,
+    independentMaxUsd: maxConsolidatedVPS,
+    consolidatedMinUsd: selfHostAppCount > 1 ? Math.round(minConsolidatedVPS * 0.65) : minConsolidatedVPS,
+    consolidatedMaxUsd: maxConsolidatedVPS,
+    note: 'Estimated independently per application; infrastructure may sometimes be consolidated depending on workload and deployment.'
+  } : null;
 
   return {
+    status,
     inputSummary: {
       businessType,
       teamSize,
       monthlyBudgetUsd,
+      budgetConstraintType,
       requiredCapabilities,
       preferredDeployment,
       technicalSkill,
       existingToolsToKeep,
+      existingToolsTotalMonthlyCost: hasUnknownExistingCost ? 'Pre-owned (cost not provided)' : existingToolsTotalMonthlyCost,
       advancedFilters
     },
     costSummary: {
-      totalSoftwareLicenseMonthlyCost: Math.round(totalSoftwareCost * 100) / 100,
-      totalEstimatedInfrastructureMonthlyCost: Math.round(totalInfrastructureCost * 100) / 100,
-      totalEstimatedMonthlyCost: Math.round(totalMonthlyCost * 100) / 100,
-      totalEstimatedAnnualCost: Math.round(totalAnnualCost * 100) / 100,
-      budgetDifferenceUsd: monthlyBudgetUsd > 0 ? Math.round((monthlyBudgetUsd - totalMonthlyCost) * 100) / 100 : null,
+      totalNewSoftwareLicenseMonthlyCost: Math.round(totalNewSoftwareCost * 100) / 100,
+      totalNewInfrastructureMonthlyCost: Math.round(totalNewInfrastructureCost * 100) / 100,
+      totalNewMonthlyCost,
+      totalNewAnnualCost,
+      existingToolsMonthlyCost: hasUnknownExistingCost ? 'Pre-owned (cost not provided)' : existingToolsTotalMonthlyCost,
+      totalEstimatedStackMonthlyCost: hasUnknownExistingCost ? `~$${totalNewMonthlyCost} + pre-owned tools` : Math.round((totalNewMonthlyCost + existingToolsTotalMonthlyCost) * 100) / 100,
+      budgetDifferenceUsd: monthlyBudgetUsd > 0 ? Math.round((monthlyBudgetUsd - totalNewMonthlyCost) * 100) / 100 : null,
+      budgetGapUsd,
+      budgetGapExplanation,
       fitAssessment,
-      costConfidence,
-      ossMonthlySavings,
-      ossEquivalentMonthlyCost: Math.round(ossEquivalentCost * 100) / 100
+      costConfidence: overallCostConfidence,
+      selfHostRange
     },
     confidenceSummary: {
       recommendationConfidence,
-      costConfidence,
-      integrationConfidence,
-      dataFreshness: 'VERIFIED_2026'
+      costConfidence: overallCostConfidence,
+      pricingCheckedDate: '2026-08-31'
     },
     recommendedStack: stackItems,
     overlapAnalysis: overlapWarnings,
     integrationMatrix,
     warnings,
-    unknowns
+    unknowns,
+    filterConflicts
   };
 }
 
 /**
- * Get all available replacement tools for a capability
+ * 5. GET AVAILABLE REPLACEMENTS FOR SWAP TOOL
  */
-export function getAvailableToolsForCapability(capability, teamSize = 1, preferAnnual = false) {
-  const tools = seedTools.filter(t => t.primaryCapability === capability || (t.secondaryCapabilities || []).includes(capability));
+export function getAvailableToolsForCapability(capability, teamSize = 1, preferAnnual = false, preferredDeployment = 'no_preference') {
+  let tools = seedTools.filter(t => t.primaryCapability === capability || (t.secondaryCapabilities || []).includes(capability));
+
+  if (preferredDeployment === 'self_hosted_only') {
+    tools = tools.filter(t => t.deployment?.selfHostedAvailable);
+  }
+
   return tools.map(tool => {
     const cloudCost = calculateToolCost(tool, teamSize, preferAnnual, 'cloud');
     const selfHostCost = tool.deployment?.selfHostedAvailable

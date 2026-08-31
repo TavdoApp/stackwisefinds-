@@ -26,10 +26,12 @@ export default function StackBuilderPage({ onBackToDirectory }) {
     businessType: 'solo_founder',
     teamSize: 1,
     monthlyBudgetUsd: 100,
+    budgetConstraintType: 'hard',
     requiredCapabilities: ['CRM', 'INVOICING', 'PROJECT_MANAGEMENT'],
-    preferredDeployment: 'all',
-    technicalSkill: 'low',
+    preferredDeployment: 'no_preference',
+    technicalSkill: 'moderate',
     existingToolsToKeep: [],
+    existingToolCosts: {},
     advancedFilters: {},
     toolOverrides: {} // { [capability]: toolId }
   });
@@ -73,14 +75,16 @@ export default function StackBuilderPage({ onBackToDirectory }) {
       businessType: wizardState.businessType,
       teamSize: wizardState.teamSize,
       monthlyBudgetUsd: wizardState.monthlyBudgetUsd,
+      budgetConstraintType: wizardState.budgetConstraintType,
       requiredCapabilities: wizardState.requiredCapabilities,
       preferredDeployment: wizardState.preferredDeployment,
       technicalSkill: wizardState.technicalSkill,
       existingToolsToKeep: wizardState.existingToolsToKeep,
+      existingToolCosts: wizardState.existingToolCosts,
       advancedFilters: wizardState.advancedFilters
     });
 
-    // If there are manual tool overrides from the user swapping tools, apply them deterministically
+    // If there are manual tool overrides from user swaps, apply deterministically
     const hasOverrides = Object.keys(wizardState.toolOverrides).length > 0;
     if (!hasOverrides) return baseSynthesis;
 
@@ -88,7 +92,10 @@ export default function StackBuilderPage({ onBackToDirectory }) {
       const overrideToolId = wizardState.toolOverrides[item.capability];
       if (overrideToolId && toolsMap.has(overrideToolId)) {
         const overrideTool = toolsMap.get(overrideToolId);
-        const hostingMode = (wizardState.preferredDeployment === 'self_hosted_open_source' || (overrideTool.deployment?.selfHostedAvailable && !overrideTool.deployment?.cloudAvailable)) ? 'self_hosted' : 'cloud';
+        const hostingMode = (wizardState.preferredDeployment === 'self_hosted_only' || (overrideTool.deployment?.selfHostedAvailable && !overrideTool.deployment?.cloudAvailable))
+          ? 'self_hosted'
+          : 'cloud';
+
         const costObj = calculateToolCost(overrideTool, wizardState.teamSize, false, hostingMode);
 
         return {
@@ -104,9 +111,10 @@ export default function StackBuilderPage({ onBackToDirectory }) {
             infrastructureDetails: costObj.infrastructureDetails,
             transactionFeesNote: costObj.transactionFeesNote,
             freeTierLimitsNote: costObj.freeTierLimitsNote,
-            whyItFits: `Manually chosen replacement for '${item.capability}' (${overrideTool.name}).`,
+            freeTierUncertaintyNote: costObj.freeTierUncertaintyNote,
+            whyItFits: `Manually chosen replacement for '${item.capability.replace('_', ' ')}' (${overrideTool.name}).`,
             hostingType: hostingMode === 'self_hosted' ? 'Self-Hosted' : 'Cloud SaaS',
-            evidenceFact: `Primary source verified via official vendor documentation.`,
+            evidenceFact: `Pricing source checked ${overrideTool.commercialModel?.pricingVerifiedAt ? overrideTool.commercialModel.pricingVerifiedAt.slice(0, 10) : '2026-08-31'} via official vendor documentation.`,
             editorialReason: overrideTool.businessFit?.bestFor || `User chosen replacement.`,
             calculationNote: costObj.calculationDetails
           }
@@ -122,8 +130,8 @@ export default function StackBuilderPage({ onBackToDirectory }) {
       totalInfrastructureCost += s.selectedTool.infrastructureCost;
     });
 
-    const totalMonthlyCost = totalSoftwareCost + totalInfrastructureCost;
-    const totalAnnualCost = totalMonthlyCost * 12;
+    const totalNewMonthlyCost = Math.round((totalSoftwareCost + totalInfrastructureCost) * 100) / 100;
+    const totalNewAnnualCost = Math.round(totalNewMonthlyCost * 12 * 100) / 100;
 
     // Recalculate Overlaps
     const overlapWarnings = [];
@@ -164,24 +172,37 @@ export default function StackBuilderPage({ onBackToDirectory }) {
     }
 
     let fitAssessment = 'EXCELLENT FIT';
-    if (wizardState.monthlyBudgetUsd > 0 && totalMonthlyCost > wizardState.monthlyBudgetUsd) {
-      fitAssessment = 'EXCEEDS BUDGET';
-    } else if (wizardState.monthlyBudgetUsd > 0 && totalMonthlyCost > wizardState.monthlyBudgetUsd * 0.9) {
+    let budgetGapUsd = 0;
+    let budgetGapExplanation = null;
+    let status = 'OPTIMAL_STACK_FOUND';
+
+    if (wizardState.monthlyBudgetUsd > 0 && totalNewMonthlyCost > wizardState.monthlyBudgetUsd) {
+      budgetGapUsd = Math.round((totalNewMonthlyCost - wizardState.monthlyBudgetUsd) * 100) / 100;
+      if (wizardState.budgetConstraintType === 'hard') {
+        status = 'NO_STACK_WITHIN_BUDGET';
+        fitAssessment = 'NO STACK FOUND WITHIN BUDGET';
+        budgetGapExplanation = `The selected tool combination costs $${totalNewMonthlyCost.toFixed(2)}/mo, exceeding your $${wizardState.monthlyBudgetUsd}/mo budget limit by $${budgetGapUsd.toFixed(2)}/mo.`;
+      } else {
+        status = 'EXCEEDS_SOFT_BUDGET';
+        fitAssessment = 'EXCEEDS TARGET BUDGET';
+      }
+    } else if (wizardState.monthlyBudgetUsd > 0 && totalNewMonthlyCost > wizardState.monthlyBudgetUsd * 0.9) {
       fitAssessment = 'AT BUDGET CAP';
-    } else if (overlapWarnings.some(w => w.level === OVERLAP_LEVELS.HIGH_OVERLAP)) {
-      fitAssessment = 'CONDITIONAL FIT (HIGH OVERLAP DETECTED)';
     }
 
     return {
       ...baseSynthesis,
+      status,
       recommendedStack: modifiedStack,
       costSummary: {
         ...baseSynthesis.costSummary,
-        totalSoftwareLicenseMonthlyCost: Math.round(totalSoftwareCost * 100) / 100,
-        totalEstimatedInfrastructureMonthlyCost: Math.round(totalInfrastructureCost * 100) / 100,
-        totalEstimatedMonthlyCost: Math.round(totalMonthlyCost * 100) / 100,
-        totalEstimatedAnnualCost: Math.round(totalAnnualCost * 100) / 100,
-        budgetDifferenceUsd: wizardState.monthlyBudgetUsd > 0 ? Math.round((wizardState.monthlyBudgetUsd - totalMonthlyCost) * 100) / 100 : null,
+        totalNewSoftwareLicenseMonthlyCost: Math.round(totalSoftwareCost * 100) / 100,
+        totalNewInfrastructureMonthlyCost: Math.round(totalInfrastructureCost * 100) / 100,
+        totalNewMonthlyCost,
+        totalNewAnnualCost,
+        budgetDifferenceUsd: wizardState.monthlyBudgetUsd > 0 ? Math.round((wizardState.monthlyBudgetUsd - totalNewMonthlyCost) * 100) / 100 : null,
+        budgetGapUsd,
+        budgetGapExplanation,
         fitAssessment
       },
       overlapAnalysis: overlapWarnings,
@@ -191,7 +212,7 @@ export default function StackBuilderPage({ onBackToDirectory }) {
 
   return (
     <div style={{ minHeight: '80vh', background: 'var(--bg-main)', paddingTop: '20px', paddingBottom: '60px' }}>
-      {/* Back Button */}
+      {/* Back to Directory Button */}
       <div className="container" style={{ marginBottom: '16px' }}>
         <button
           type="button"
@@ -208,6 +229,7 @@ export default function StackBuilderPage({ onBackToDirectory }) {
             gap: '6px',
             padding: 0
           }}
+          aria-label="Return to StakDock Software Directory"
         >
           <ArrowLeft size={16} /> Return to Software Directory
         </button>
