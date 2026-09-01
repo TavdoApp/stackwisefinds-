@@ -1,0 +1,1183 @@
+/**
+ * StakDock 2.0: Fast Growth Money Page SSR Renderers (Phase 7A)
+ *
+ * Evidence-grounded, high-entropy, objective templates for:
+ * 1. n8n vs Zapier (/vs/n8n-vs-zapier/)
+ * 2. Make vs Zapier (/vs/make-vs-zapier/)
+ * 3. HubSpot CRM vs Pipedrive (/vs/hubspot-crm-vs-pipedrive/)
+ * 4. Shopify vs WooCommerce (/vs/shopify-vs-woocommerce/)
+ * 5. Zapier Alternatives (/alternatives/zapier/)
+ * 6. HubSpot CRM Alternatives (/alternatives/hubspot-crm/)
+ * 7. Notion Alternatives (/alternatives/notion/)
+ * 8. Typeform Alternatives (/alternatives/typeform/)
+ * 9. Shopify Alternatives (/alternatives/shopify/)
+ * 10. Supabase Alternatives (/alternatives/supabase/)
+ * 11. Calendly Alternatives (/alternatives/calendly/)
+ * 12. 2026 Software Stack Cost Index (/guides/software-stack-cost-index-2026/)
+ */
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function renderSsrNavbar(currentPath) {
+  return `
+  <header style="background:#FFFFFF;border-bottom:1px solid #e2ede0;padding:12px 24px;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px);background:rgba(255,255,255,0.95);">
+    <div style="max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#182618;font-weight:900;font-size:1.25rem;letter-spacing:-0.02em;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#82A735;color:#FFFFFF;border-radius:8px;font-size:1rem;font-weight:900;">S</span>
+        <span>StakDock</span>
+      </a>
+      <nav style="display:flex;align-items:center;gap:20px;font-size:0.9rem;font-weight:700;">
+        <a href="/categories/" style="color:${currentPath.startsWith('/cat') || currentPath.startsWith('/best') ? '#82A735' : '#5c7353'};text-decoration:none;">Categories</a>
+        <a href="/ranking/" style="color:${currentPath.startsWith('/vs') ? '#82A735' : '#5c7353'};text-decoration:none;">Comparisons</a>
+        <a href="/guides/" style="color:${currentPath.startsWith('/guides') ? '#82A735' : '#5c7353'};text-decoration:none;">Guides</a>
+        <a href="/stack-builder/" style="background:#82A735;color:#FFFFFF;padding:7px 16px;border-radius:9999px;text-decoration:none;font-size:0.85rem;">Stack Builder</a>
+      </nav>
+    </div>
+  </header>
+  `;
+}
+
+function renderStackBuilderCta(presetId = 'growth_agency', title = 'Synthesize Your Optimal Stack in 60 Seconds') {
+  return `
+  <section style="background:linear-gradient(135deg, #182618 0%, #253d25 100%);color:#FFFFFF;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+    <div style="display:inline-block;background:rgba(130,167,53,0.25);color:#A4D348;border:1px solid rgba(130,167,53,0.4);font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+      INTERACTIVE STACK INTELLIGENCE
+    </div>
+    <h3 style="font-size:1.6rem;font-weight:800;margin:0 0 10px 0;color:#FFFFFF;">${escapeHtml(title)}</h3>
+    <p style="font-size:0.98rem;color:#c2d8be;max-width:680px;margin:0 auto 22px auto;line-height:1.6;">
+      Calculate true per-seat software costs, evaluate capability overlap across tools, and discover self-hosted VPS savings tailored to your exact team size and budget.
+    </p>
+    <a href="/stack-builder/?preset=${escapeHtml(presetId)}" style="display:inline-block;background:#82A735;color:#FFFFFF;padding:12px 28px;border-radius:9999px;font-weight:800;font-size:0.95rem;text-decoration:none;box-shadow:0 4px 14px rgba(130,167,53,0.39);">
+      Launch Stack Builder &rarr;
+    </a>
+  </section>
+  `;
+}
+
+// =========================================================================
+// 1. n8n vs Zapier (/vs/n8n-vs-zapier/)
+// =========================================================================
+function renderN8nVsZapierSsr() {
+  return `
+  ${renderSsrNavbar('/vs/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/ranking/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">n8n vs Zapier</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        WORKFLOW AUTOMATION COMPARISON &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        n8n vs Zapier: Complete 2026 Comparison &amp; Cost Analysis
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        An evidence-backed breakdown comparing execution-based vs task-based pricing models, self-hosted Docker deployment, JavaScript/Python function nodes, and total cost of ownership.
+      </p>
+    </header>
+
+    <!-- Core Decision Summary -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
+      <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
+        <strong>Zapier</strong> is the industry standard for turnkey, no-code integrations with 7,000+ app connectors, priced per task starting at $19.99/mo (billed annually) for 750 tasks. <strong>n8n</strong> is a fair-code workflow automation engine designed for technical teams and privacy-conscious businesses. When self-hosted on a $4.50/mo VPS, n8n offers <strong>unlimited workflow executions and zero per-task fees</strong> with native AI agent nodes and custom JavaScript execution.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#2D4522;margin-bottom:12px;">Choose n8n if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You process high-volume automation (10,000+ operations/month) where Zapier task limits would cost hundreds of dollars.</li>
+            <li>You want complete data privacy by hosting workflows and credentials on your own server or VPC.</li>
+            <li>You need complex data transformation using custom JavaScript / Python code nodes.</li>
+            <li>You want native LangChain AI agent integration with custom OpenAI/Anthropic tool calling.</li>
+          </ul>
+        </div>
+
+        <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#37286B;margin-bottom:12px;">Choose Zapier if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You have zero developer resources and want simple 2-step triggers set up in under 5 minutes.</li>
+            <li>You rely on niche, proprietary SaaS tools that only offer official Zapier integrations.</li>
+            <li>You utilize Zapier's built-in ecosystem including Zapier Tables, Interfaces, and Canvas.</li>
+            <li>Your monthly automation volume is low (&lt;750 tasks/month).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Spec Matrix -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Side-by-Side Specification Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Feature</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">n8n</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Zapier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Licensing</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Fair-Code (Sustainable Use License / Open Source)</td>
+            <td style="padding:12px 16px;color:#5c7353;">Proprietary Closed-Source SaaS</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Pricing Model</td>
+            <td style="padding:12px 16px;">$0 Self-Hosted / $20/mo Cloud (2.5k execs)</td>
+            <td style="padding:12px 16px;">$19.99/mo Starter (750 tasks) / $49/mo Pro (2k tasks)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Self-Hosting Support</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">✓ Yes (Docker Compose, npm, Kubernetes)</td>
+            <td style="padding:12px 16px;color:#8a3030;">✗ No (Managed Cloud Only)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Execution Metric</td>
+            <td style="padding:12px 16px;"><strong>Per Workflow Run</strong> (unlimited steps per run)</td>
+            <td style="padding:12px 16px;"><strong>Per Task Step</strong> (every action costs 1 task)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Custom Code Support</td>
+            <td style="padding:12px 16px;">JavaScript &amp; Python nodes with full library access</td>
+            <td style="padding:12px 16px;">Code by Zapier (limited memory &amp; execution time)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Connector Library</td>
+            <td style="padding:12px 16px;">400+ native nodes + community node registry</td>
+            <td style="padding:12px 16px;">7,000+ verified app connectors</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- TCO Breakdown -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">True Cost of Ownership at Scale (10,000 Monthly Events)</h2>
+      <p style="font-size:0.98rem;color:#45593e;line-height:1.7;margin-bottom:16px;">
+        For a workflow consisting of 4 steps (Trigger &rarr; Filter &rarr; AI Enrichment &rarr; CRM Update) executing 10,000 times per month (30,000 tasks):
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #82A735;border-radius:16px;padding:24px;">
+          <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#2D4522;">n8n Self-Hosted (Hetzner VPS)</h4>
+          <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">~$4.50 / mo</div>
+          <p style="font-size:0.88rem;color:#45593e;line-height:1.5;margin:0;">
+            100% free software license + $4.50/mo for 2 vCPU 4GB RAM VPS compute. Unlimited executions.
+          </p>
+        </div>
+        <div style="background:#FFF9F5;border:1.5px solid #E08C5D;border-radius:16px;padding:24px;">
+          <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#853D16;">Zapier Cloud (30,000 Tasks)</h4>
+          <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">~$299.00 / mo</div>
+          <p style="font-size:0.88rem;color:#45593e;line-height:1.5;margin:0;">
+            Professional Tier scaled to 30,000 tasks/mo billed annually. Zero server maintenance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    ${renderStackBuilderCta('oss_founder', 'Compare Automation Costs in Stack Builder')}
+
+    <!-- Data Provenance -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from official vendor pricing documentation.</strong>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
+          <a href="https://n8n.io/pricing/" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">n8n Pricing ↗</a>
+          <a href="https://zapier.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Zapier Pricing ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+// =========================================================================
+// 2. Make vs Zapier (/vs/make-vs-zapier/)
+// =========================================================================
+function renderMakeVsZapierSsr() {
+  return `
+  ${renderSsrNavbar('/vs/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/ranking/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Make vs Zapier</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        NO-CODE INTEGRATION COMPARISON &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Make vs Zapier: 2026 Pricing, Operations &amp; Architecture Comparison
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare operations economics, multi-route visual canvas mapping, error-handling routers, and pricing benchmarks across leading cloud workflow platforms.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
+      <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
+        <strong>Make (formerly Integromat)</strong> is a visual integration platform built around node-graph canvas routing, offering 10,000 operations starting at $9/mo. <strong>Zapier</strong> is a sequential workflow builder offering 750 tasks at $19.99/mo with an extensive 7,000+ app connector library. For complex multi-branch integrations and JSON array manipulation, Make typically costs <strong>70% to 85% less</strong> than Zapier.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#2D4522;margin-bottom:12px;">Choose Make if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You need visual branching with routers, iterators, and aggregators for nested JSON payloads.</li>
+            <li>You want 10,000 operations for $9/mo instead of paying $49/mo for 2,000 tasks on Zapier.</li>
+            <li>You require sophisticated error-handling directives (Rollback, Commit, Resume, Ignore).</li>
+            <li>You build complex data sync pipelines across databases, CRMs, and webhooks.</li>
+          </ul>
+        </div>
+
+        <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#37286B;margin-bottom:12px;">Choose Zapier if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You prefer a simple, vertical linear step-by-step wizard interface.</li>
+            <li>Your stack relies on niche SaaS apps not yet supported in Make's 1,800+ app directory.</li>
+            <li>You use Zapier Central, Tables, or Chatbots natively within your company.</li>
+            <li>You have a small volume of linear trigger-action workflows.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Spec Matrix -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Feature &amp; Pricing Specification Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Metric</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Make</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Zapier</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Free Tier Allowance</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">1,000 operations/mo (Free Forever)</td>
+            <td style="padding:12px 16px;">100 tasks/mo (Free Forever)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Entry Paid Tier</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">$9.00/mo (10,000 ops)</td>
+            <td style="padding:12px 16px;">$19.99/mo (750 tasks)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Visual Canvas</td>
+            <td style="padding:12px 16px;">Infinite 2D Node Graph with Visual Flow</td>
+            <td style="padding:12px 16px;">Linear Step-by-Step Sequence</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Array / JSON Handling</td>
+            <td style="padding:12px 16px;">Native Iterator, Aggregator &amp; Array Nodes</td>
+            <td style="padding:12px 16px;">Requires Looping by Zapier &amp; Custom Code</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Test Make & Zapier Costs in Stack Builder')}
+
+    <!-- Data Provenance -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from live official vendor pricing documentation.</strong>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
+          <a href="https://www.make.com/en/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Make Pricing ↗</a>
+          <a href="https://zapier.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Zapier Pricing ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+// =========================================================================
+// 3. HubSpot vs Pipedrive (/vs/hubspot-crm-vs-pipedrive/)
+// =========================================================================
+function renderHubSpotVsPipedriveSsr() {
+  return `
+  ${renderSsrNavbar('/vs/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/ranking/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">HubSpot vs Pipedrive</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        SALES CRM COMPARISON &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        HubSpot CRM vs Pipedrive: 2026 Full Spec &amp; Seat Pricing Analysis
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Detailed breakdown of sales pipeline management, per-user pricing tiers, marketing automation integration, email tracking, and agency team scaling costs.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
+      <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
+        <strong>HubSpot CRM</strong> offers a broad, unified all-in-one ecosystem encompassing sales pipelines, email marketing, live chat widgets, and customer support, starting with a free core tier and scaling to $15/seat/mo on Starter and $90/seat/mo on Professional. <strong>Pipedrive</strong> is an activity-focused sales CRM built exclusively around visual Kanban deal progression, starting at $14/user/mo with no permanent free tier.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#2D4522;margin-bottom:12px;">Choose HubSpot CRM if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You want marketing automation, sales pipelines, forms, and customer support inside one single login.</li>
+            <li>You need a generous free CRM for up to 2,500 contacts and basic deal tracking.</li>
+            <li>Your company plans to scale into HubSpot Marketing Hub and Service Hub suites.</li>
+          </ul>
+        </div>
+
+        <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#37286B;margin-bottom:12px;">Choose Pipedrive if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>Your SDRs and account executives want an uncluttered, lightning-fast activity pipeline without marketing bloat.</li>
+            <li>You want advanced sales automation at $29/user/mo rather than paying HubSpot Professional's $90/user/mo tier.</li>
+            <li>You prioritize custom deal stages, call logging, and email sync metrics.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Specification Matrix -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Side-by-Side Specification Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Capability / Metric</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">HubSpot CRM</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Pipedrive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Free Plan Availability</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">✓ Free Forever (up to 2,500 contacts)</td>
+            <td style="padding:12px 16px;color:#8a3030;">✗ 14-Day Free Trial Only</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Starting Paid Price</td>
+            <td style="padding:12px 16px;">$15/seat/month (Starter)</td>
+            <td style="padding:12px 16px;">$14/user/month (Essential)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Sales Pipeline UI</td>
+            <td style="padding:12px 16px;">Visual Deals + Comprehensive Contact Timelines</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">High-Velocity Kanban Board Focused on Next Action</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Marketing Automation</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Native Forms, Newsletters &amp; Landing Pages</td>
+            <td style="padding:12px 16px;">Add-on Campaigns / Third-Party Integration</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Pricing Comparison for 5-Person Team -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">5-Person Sales Team Cost Comparison</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #82A735;border-radius:16px;padding:24px;">
+          <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#2D4522;">HubSpot Sales Starter (5 Seats)</h4>
+          <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">$75 / mo</div>
+          <p style="font-size:0.88rem;color:#45593e;line-height:1.5;margin:0;">
+            5 seats &times; $15/seat/mo billed annually. Includes deal tracking, email scheduling, and simple e-signatures.
+          </p>
+        </div>
+        <div style="background:#F9F8FD;border:1.5px solid #37286B;border-radius:16px;padding:24px;">
+          <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#37286B;">Pipedrive Essential (5 Seats)</h4>
+          <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">$70 / mo</div>
+          <p style="font-size:0.88rem;color:#45593e;line-height:1.5;margin:0;">
+            5 seats &times; $14/user/mo billed annually. Includes customizable Kanban pipelines and 3,000 open deals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Synthesize Your Agency CRM Stack')}
+
+    <!-- Data Provenance -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from official vendor documentation.</strong>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
+          <a href="https://www.hubspot.com/pricing/sales" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">HubSpot Pricing ↗</a>
+          <a href="https://www.pipedrive.com/en/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Pipedrive Pricing ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+// =========================================================================
+// 4. Shopify vs WooCommerce (/vs/shopify-vs-woocommerce/)
+// =========================================================================
+function renderShopifyVsWooCommerceSsr() {
+  return `
+  ${renderSsrNavbar('/vs/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/ranking/" style="color:#536253;text-decoration:none;">Comparisons</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Shopify vs WooCommerce</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        ECOMMERCE PLATFORM COMPARISON &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Shopify vs WooCommerce: 2026 Total Cost of Ownership &amp; Spec Matrix
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare transaction fees, hosting infrastructure overhead, plugin subscription sprawl, checkout customization limits, and open-source data sovereignty.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
+      <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
+        <strong>Shopify</strong> is a fully managed cloud e-commerce SaaS platform providing zero server maintenance, hosted high-converting checkout, and 24/7 security starting at $39/month (+2.9% + $0.30/txn). <strong>WooCommerce</strong> is a 100% free open-source WordPress plugin (GPLv3) requiring self-hosted web hosting (~$6–$25/mo), offering complete data ownership and zero software transaction fees.
+      </p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#2D4522;margin-bottom:12px;">Choose Shopify if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You want zero server setup, automated PCI-DSS compliance, and zero DevOps maintenance.</li>
+            <li>You value Shop Pay's 1-click accelerated checkout conversion rates.</li>
+            <li>You need built-in omnichannel POS hardware for physical retail locations.</li>
+          </ul>
+        </div>
+
+        <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
+          <div style="font-size:1.1rem;font-weight:800;color:#37286B;margin-bottom:12px;">Choose WooCommerce if:</div>
+          <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
+            <li>You already operate a WordPress site and want full content-commerce integration.</li>
+            <li>You require custom database schemas, bespoke checkout flows, or restricted product categories.</li>
+            <li>You want zero vendor lock-in and 100% data sovereignty on your own server.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side-by-Side Specification Matrix -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Side-by-Side Specification Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Infrastructure / Feature</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Shopify</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">WooCommerce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Software License</td>
+            <td style="padding:12px 16px;">From $39/mo (Basic) / $105/mo (Shopify)</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">100% Free Open Source (GPLv3)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Hosting Requirement</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Fully Managed Cloud (Zero Ops)</td>
+            <td style="padding:12px 16px;">Self-Hosted VPS / WordPress Host (~$6–$25/mo)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:700;">Transaction Surcharge</td>
+            <td style="padding:12px 16px;">0.5%–2% unless using Shopify Payments</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">0% Platform Fee on Any Payment Gateway</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:700;">Codebase Extensibility</td>
+            <td style="padding:12px 16px;">Liquid Templates, Apps &amp; Storefront API</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Full Source Code Access &amp; PHP/Hooks</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('local_business', 'Build Your E-Commerce Software Stack')}
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Corroborated from official platform documentation.</strong>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
+          <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Shopify Pricing ↗</a>
+          <a href="https://woocommerce.com" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">WooCommerce ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+// =========================================================================
+// 5. Zapier Alternatives (/alternatives/zapier/)
+// =========================================================================
+function renderZapierAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Zapier Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        BUYER'S GUIDE &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best Zapier Alternatives in 2026: Cost, Self-Hosting &amp; Logic Matrix
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare the top workflow automation platforms for founders, developers, and operations teams seeking lower task pricing, self-hosted deployment, and visual branch routing.
+      </p>
+    </header>
+
+    <!-- Alternatives Matrix -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Direct Alternatives Specification Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:20%;">Software</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Pricing / Free Tier</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Deployment</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Execution Metric</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best Differentiator</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/n8n/" style="color:#182618;text-decoration:none;">n8n</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Free Self-Hosted / $20/mo Cloud</td>
+            <td style="padding:12px 16px;">Self-Hosted + Cloud</td>
+            <td style="padding:12px 16px;">Per Workflow Run</td>
+            <td style="padding:12px 16px;color:#182618;">Unlimited self-hosted runs &amp; native AI agent nodes</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/make/" style="color:#182618;text-decoration:none;">Make (Integromat)</a></td>
+            <td style="padding:12px 16px;color:#182618;">Free (1k ops) / $9/mo (10k ops)</td>
+            <td style="padding:12px 16px;">Cloud SaaS</td>
+            <td style="padding:12px 16px;">Per Operation</td>
+            <td style="padding:12px 16px;color:#182618;">70–85% cheaper than Zapier for multi-step logic</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/microsoft-power-automate/" style="color:#182618;text-decoration:none;">Power Automate</a></td>
+            <td style="padding:12px 16px;color:#182618;">Free Desktop / $15/user/mo</td>
+            <td style="padding:12px 16px;">Cloud + Desktop RPA</td>
+            <td style="padding:12px 16px;">Per User / Flow</td>
+            <td style="padding:12px 16px;color:#182618;">Deep Microsoft 365 and Windows desktop RPA</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/activecampaign/" style="color:#182618;text-decoration:none;">ActiveCampaign</a></td>
+            <td style="padding:12px 16px;color:#182618;">From $15/seat/mo</td>
+            <td style="padding:12px 16px;">Cloud SaaS</td>
+            <td style="padding:12px 16px;">Per Contact Tier</td>
+            <td style="padding:12px 16px;color:#182618;">Integrated marketing automation &amp; deal CRM</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Deep Dives -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Open-Source &amp; Self-Hosted Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/n8n/" style="color:#182618;text-decoration:none;">n8n</a></h3>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Free Self-Hosted</span>
+            <a href="/vs/n8n-vs-zapier/" style="background:#82A735;color:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:700;font-size:0.82rem;text-decoration:none;">Compare vs Zapier</a>
+          </div>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          n8n is the premier fair-code workflow automation tool. It allows developers to host their own automation engine on Docker, run custom JavaScript/Python transformations, and execute unlimited workflows with zero per-task billing. See our in-depth <a href="/vs/n8n-vs-zapier/" style="color:#82A735;font-weight:700;text-decoration:underline;">n8n vs Zapier breakdown</a>.
+        </p>
+      </article>
+
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Cloud Visual Flow Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/make/" style="color:#182618;text-decoration:none;">Make (formerly Integromat)</a></h3>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">From $9/mo</span>
+            <a href="/vs/make-vs-zapier/" style="background:#82A735;color:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:700;font-size:0.82rem;text-decoration:none;">Compare vs Zapier</a>
+          </div>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Make offers a visual 2D node-canvas builder with powerful data manipulators, routers, and JSON aggregators. It includes 10,000 operations for just $9/month. Explore our complete <a href="/vs/make-vs-zapier/" style="color:#82A735;font-weight:700;text-decoration:underline;">Make vs Zapier comparison</a>.
+        </p>
+      </article>
+    </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Test Automation Replacements in Stack Builder')}
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from official vendor documentation.</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+// =========================================================================
+// 6. HubSpot Alternatives (/alternatives/hubspot-crm/)
+// =========================================================================
+function renderHubSpotAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">HubSpot Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        BUYER'S GUIDE &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best HubSpot Alternatives in 2026: Sales CRM, Marketing &amp; Open Source
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare agile sales CRMs, open-source self-hostable databases, and marketing automation platforms that avoid steep enterprise tier lock-in.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">HubSpot Alternatives Comparison Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:20%;">Software</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Pricing per Seat</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Free Plan</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Deployment</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/pipedrive/" style="color:#182618;text-decoration:none;">Pipedrive</a></td>
+            <td style="padding:12px 16px;color:#182618;">From $14/seat/mo</td>
+            <td style="padding:12px 16px;color:#8a3030;">14-Day Trial</td>
+            <td style="padding:12px 16px;">Cloud SaaS</td>
+            <td style="padding:12px 16px;">Visual sales pipeline without marketing bloat</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/twenty/" style="color:#182618;text-decoration:none;">Twenty CRM</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">$0 Self-Hosted / $9/seat Cloud</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Free Unlimited</td>
+            <td style="padding:12px 16px;">Self-Hosted (AGPLv3) + Cloud</td>
+            <td style="padding:12px 16px;">Open-source PostgreSQL data ownership</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/activecampaign/" style="color:#182618;text-decoration:none;">ActiveCampaign</a></td>
+            <td style="padding:12px 16px;color:#182618;">From $15/seat/mo</td>
+            <td style="padding:12px 16px;color:#8a3030;">14-Day Trial</td>
+            <td style="padding:12px 16px;">Cloud SaaS</td>
+            <td style="padding:12px 16px;">Visual email funnel automation + deal CRM</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/clickup/" style="color:#182618;text-decoration:none;">ClickUp</a></td>
+            <td style="padding:12px 16px;color:#182618;">From $7/seat/mo</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Free Core</td>
+            <td style="padding:12px 16px;">Cloud SaaS</td>
+            <td style="padding:12px 16px;">Unified project management &amp; sales tasks</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Synthesize Your CRM Stack')}
+  </main>
+  `;
+}
+
+// =========================================================================
+// 7. Notion Alternatives (/alternatives/notion/)
+// =========================================================================
+function renderNotionAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Notion Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        PRODUCTIVITY &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best Notion Alternatives in 2026: Local-First, Agile PM &amp; Docs
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare Markdown note-taking engines, specialized sprint trackers, and relational workspace databases.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Notion Alternatives Feature Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:20%;">Software</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Pricing</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Data Storage</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Offline Mode</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/obsidian/" style="color:#182618;text-decoration:none;">Obsidian</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">100% Free (Personal)</td>
+            <td style="padding:12px 16px;">Local Markdown Files</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ 100% Offline</td>
+            <td style="padding:12px 16px;">Knowledge graph &amp; personal second brain</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/linear/" style="color:#182618;text-decoration:none;">Linear</a></td>
+            <td style="padding:12px 16px;">Free (250 issues) / $8/seat</td>
+            <td style="padding:12px 16px;">Cloud Sync (Sync Engine)</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Local Cache Sync</td>
+            <td style="padding:12px 16px;">High-speed software engineering sprint cycles</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/airtable/" style="color:#182618;text-decoration:none;">Airtable</a></td>
+            <td style="padding:12px 16px;">Free (1k records) / $20/seat</td>
+            <td style="padding:12px 16px;">Cloud Relational DB</td>
+            <td style="padding:12px 16px;color:#8a3030;">✗ Cloud Only</td>
+            <td style="padding:12px 16px;">Complex multi-table relational business apps</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('solo_bootstrapper', 'Find Your Project Management Stack')}
+  </main>
+  `;
+}
+
+// =========================================================================
+// 8. Typeform Alternatives (/alternatives/typeform/)
+// =========================================================================
+function renderTypeformAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Typeform Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        FORMS &amp; SURVEYS &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best Typeform Alternatives in 2026: Unlimited Free Forms &amp; Notion-Style UX
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare conversational form builders that eliminate Typeform's 10-response monthly free limit with generous free tiers, custom domains, and webhook web integrations.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Typeform Alternatives Comparison Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:22%;">Software</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Free Response Limit</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Paid Starting Price</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Payment Collection</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/tally/" style="color:#182618;text-decoration:none;">Tally.so</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Unlimited Responses Free</td>
+            <td style="padding:12px 16px;">$29/mo (Pro with custom domain)</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Stripe (0% Tally fee)</td>
+            <td style="padding:12px 16px;">Notion-like document builder with 99% free features</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/typeform/" style="color:#182618;text-decoration:none;">Typeform</a></td>
+            <td style="padding:12px 16px;color:#8a3030;">10 responses / month</td>
+            <td style="padding:12px 16px;">$25/mo (Basic 100 resp)</td>
+            <td style="padding:12px 16px;">✓ Stripe</td>
+            <td style="padding:12px 16px;">High-end enterprise brand survey animations</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('creator_newsletter', 'Configure Your Form & Survey Stack')}
+  </main>
+  `;
+}
+
+// =========================================================================
+// 9. Shopify Alternatives (/alternatives/shopify/)
+// =========================================================================
+function renderShopifyAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Shopify Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        ECOMMERCE PLATFORMS &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best Shopify Alternatives in 2026: Open-Source, Headless &amp; Zero Fee
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare self-hosted and headless e-commerce alternatives that eliminate monthly app subscriptions and payment transaction fees.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Shopify Alternatives Comparison Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:20%;">Software</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">License / Cost</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Transaction Fee</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Architecture</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/woocommerce/" style="color:#182618;text-decoration:none;">WooCommerce</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">100% Free Open Source</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">0% Software Fee</td>
+            <td style="padding:12px 16px;">WordPress Plugin</td>
+            <td style="padding:12px 16px;">Content-first sites wanting zero subscription fees</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/medusa/" style="color:#182618;text-decoration:none;">Medusa.js</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">100% Free MIT Open Source</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">0% Software Fee</td>
+            <td style="padding:12px 16px;">Node.js Headless API</td>
+            <td style="padding:12px 16px;">Next.js developers building custom shopping experiences</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('local_business', 'Configure Your E-Commerce Stack')}
+  </main>
+  `;
+}
+
+// =========================================================================
+// 10. Supabase Alternatives (/alternatives/supabase/)
+// =========================================================================
+function renderSupabaseAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Supabase Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        BACKEND INFRASTRUCTURE &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best Supabase Alternatives in 2026: PostgreSQL, Serverless &amp; Backend-as-a-Service
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare developer backends including Appwrite, Neon, PlanetScale, and PocketBase across authentication, database architecture, and serverless compute pricing.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Supabase Alternatives Comparison Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:20%;">Platform</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Database Engine</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">License / Open Source</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Auth Included</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/appwrite/" style="color:#182618;text-decoration:none;">Appwrite</a></td>
+            <td style="padding:12px 16px;">MariaDB / PostgreSQL</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">100% Free BSD-3 Open Source</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Full Auth Suite</td>
+            <td style="padding:12px 16px;">Mobile (Flutter/React Native) and web BaaS</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/neon/" style="color:#182618;text-decoration:none;">Neon</a></td>
+            <td style="padding:12px 16px;">Serverless PostgreSQL</td>
+            <td style="padding:12px 16px;">Open-Source Engine / Managed Cloud</td>
+            <td style="padding:12px 16px;color:#8a3030;">✗ DB Only (Pair with Clerk)</td>
+            <td style="padding:12px 16px;">Instant database branching and autoscaling to zero</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('saas_startup', 'Configure Your Tech Stack in Stack Builder')}
+  </main>
+  `;
+}
+
+// =========================================================================
+// 11. Zendesk Alternatives (/alternatives/zendesk/)
+// =========================================================================
+function renderZendeskAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/categories/" style="color:#536253;text-decoration:none;">Categories</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Zendesk Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        CUSTOMER SUPPORT &bull; 2026
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        Best Zendesk Alternatives in 2026: Open-Source Support, Live Chat &amp; Omnichannel Helpdesks
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        Compare customer support platforms offering self-hosted open-source ticketing, generous free agent tiers, and conversational AI without steep enterprise minimums.
+      </p>
+    </header>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Zendesk Alternatives Comparison Matrix</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:20%;">Platform</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Pricing per Agent</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:20%;">Free Plan</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:18%;">Open Source</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:22%;">Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/chatwoot/" style="color:#182618;text-decoration:none;">Chatwoot</a></td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">$0 Self-Hosted / $19/agent Cloud</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Free 2 Agents (Cloud) / Unlimited Self-Hosted</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ MIT Open Source</td>
+            <td style="padding:12px 16px;">Live chat widgets &amp; omnichannel shared inboxes</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/freshdesk/" style="color:#182618;text-decoration:none;">Freshdesk</a></td>
+            <td style="padding:12px 16px;">From $15/agent/mo</td>
+            <td style="padding:12px 16px;color:#1b6e1b;">✓ Free for up to 10 agents</td>
+            <td style="padding:12px 16px;color:#8a3030;">✗ Proprietary</td>
+            <td style="padding:12px 16px;">Growing support teams needing free multi-agent ticketing</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/intercom/" style="color:#182618;text-decoration:none;">Intercom</a></td>
+            <td style="padding:12px 16px;">From $39/seat/mo</td>
+            <td style="padding:12px 16px;color:#8a3030;">14-Day Trial</td>
+            <td style="padding:12px 16px;color:#8a3030;">✗ Proprietary</td>
+            <td style="padding:12px 16px;">Product-led onboarding &amp; Fin AI Copilot workflows</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Configure Your Customer Support Stack')}
+  </main>
+  `;
+}
+
+// =========================================================================
+// 12. 2026 Software Stack Cost Index Research Report (/guides/software-stack-cost-index-2026/)
+// =========================================================================
+function renderSoftwareStackCostIndex2026Ssr() {
+  return `
+  ${renderSsrNavbar('/guides/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/guides/" style="color:#536253;text-decoration:none;">Research &amp; Guides</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">2026 Software Stack Cost Index</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
+        STAKDOCK RESEARCH REPORT &bull; 2026 BENCHMARK
+      </div>
+      <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
+        2026 Software Stack Cost Index: Benchmark Report on SaaS Pricing, Seat Scaling &amp; Self-Hosted TCO
+      </h1>
+      <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
+        An empirical benchmark study analyzing verified software licenses, per-seat scaling economics, open-source hosting TCO, and subscription overlap across 71 audited tools and 20 business capabilities.
+      </p>
+    </header>
+
+    <!-- Key Benchmark Findings -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Executive Summary &amp; Key Findings</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;margin-bottom:24px;">
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:20px;text-align:center;">
+          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">$0 &ndash; $10/mo</div>
+          <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Solo Founder Baseline</div>
+          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">Satisfies CRM, Invoicing, Email, and Docs using free allowances.</p>
+        </div>
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:20px;text-align:center;">
+          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">$29.40</div>
+          <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Average Cost Per User/Mo</div>
+          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">For 5-person agencies across 5 core software capabilities ($147/mo total).</p>
+        </div>
+        <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:20px;text-align:center;">
+          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">74% Savings</div>
+          <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Self-Hosted OSS TCO</div>
+          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">Hosting n8n, Twenty CRM, and Supabase on a $37/mo VPS vs $140+/mo SaaS seats.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Benchmark Table -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">2026 Software Stack Cost Benchmarks by Team Stage</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;">Business Profile</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Seats</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Core Capabilities Included</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Recommended Stack</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Benchmark Monthly Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;">Solo Bootstrapper</td>
+            <td style="padding:12px 16px;">1</td>
+            <td style="padding:12px 16px;">Invoicing, PM, Email, Automation, Payments</td>
+            <td style="padding:12px 16px;">Invoice Ninja + Notion + Brevo + n8n + Stripe</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:800;">$0.00 / mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;">5-Person Growth Agency</td>
+            <td style="padding:12px 16px;">5</td>
+            <td style="padding:12px 16px;">CRM, PM, Invoicing, Outreach, Automation</td>
+            <td style="padding:12px 16px;">HubSpot + ClickUp + Invoice Ninja + Instantly + n8n</td>
+            <td style="padding:12px 16px;font-weight:800;">$147.00 / mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;">Self-Hosted OSS Founder</td>
+            <td style="padding:12px 16px;">1–5</td>
+            <td style="padding:12px 16px;">CRM, DB, Analytics, Invoicing, Automation</td>
+            <td style="padding:12px 16px;">Twenty CRM + Supabase + PostHog + n8n (Hetzner)</td>
+            <td style="padding:12px 16px;font-weight:800;">$45.00 / mo (VPS)</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;">3-Person SaaS Startup</td>
+            <td style="padding:12px 16px;">3</td>
+            <td style="padding:12px 16px;">Hosting, DB, Auth, Analytics, Support, Email</td>
+            <td style="padding:12px 16px;">Hetzner + Supabase + Clerk + PostHog + Chatwoot + Brevo</td>
+            <td style="padding:12px 16px;font-weight:800;">$151.50 / mo</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Calculate Your Team’s Custom Benchmark in Stack Builder')}
+
+    <!-- Methodology -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <h3 style="font-size:1.2rem;font-weight:800;margin-top:0;margin-bottom:10px;color:#182618;">Methodology &amp; Data Provenance</h3>
+      <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 12px 0;">
+        Data compiled by StakDock editorial engineers across 71 audited commercial and open-source software tools. Software license pricing is based on public vendor rates as of August 2026. Self-hosted infrastructure calculations reflect actual virtual private server requirements (RAM, vCPU, storage) modeled against standard NVMe cloud compute benchmarks (Hetzner, Vultr, DigitalOcean).
+      </p>
+      <div style="font-size:0.82rem;color:#5c7353;">
+        Zero synthetic reviews, zero ungrounded claims. Sample size: 71 verified software tools across 20 functional capability taxonomy nodes.
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+module.exports = {
+  renderN8nVsZapierSsr,
+  renderMakeVsZapierSsr,
+  renderHubSpotVsPipedriveSsr,
+  renderShopifyVsWooCommerceSsr,
+  renderZapierAlternativesSsr,
+  renderHubSpotAlternativesSsr,
+  renderNotionAlternativesSsr,
+  renderTypeformAlternativesSsr,
+  renderShopifyAlternativesSsr,
+  renderSupabaseAlternativesSsr,
+  renderZendeskAlternativesSsr,
+  renderSoftwareStackCostIndex2026Ssr
+};

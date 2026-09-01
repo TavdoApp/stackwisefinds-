@@ -8,6 +8,7 @@ const {
 } = require('./customRecoveryWaveRenderers.cjs');
 
 const authorityRenderers = require('./authorityCoreRenderers.cjs');
+const growthMoneyRenderers = require('./growthMoneyPageRenderers.cjs');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const indexPath = path.join(distDir, 'index.html');
@@ -231,7 +232,11 @@ const approvedFlagshipComparisons = [
   { toolAId: 'cursor-ai', toolBId: 'github-copilot', vsSlug: 'cursor-ai-vs-github-copilot', isFlagship: true },
   { toolAId: 'moz-pro', toolBId: 'se-ranking', vsSlug: 'moz-pro-vs-se-ranking', isFlagship: true },
   { toolAId: 'screaming-frog-seo-spider', toolBId: 'se-ranking', vsSlug: 'screaming-frog-seo-spider-vs-se-ranking', isFlagship: true },
-  { toolAId: 'aws', toolBId: 'google-cloud', vsSlug: 'aws-vs-google-cloud', isFlagship: true }
+  { toolAId: 'aws', toolBId: 'google-cloud', vsSlug: 'aws-vs-google-cloud', isFlagship: true },
+  { toolAId: 'n8n', toolBId: 'zapier', vsSlug: 'n8n-vs-zapier', isFlagship: true },
+  { toolAId: 'make', toolBId: 'zapier', vsSlug: 'make-vs-zapier', isFlagship: true },
+  { toolAId: 'hubspot-crm', toolBId: 'pipedrive', vsSlug: 'hubspot-crm-vs-pipedrive', isFlagship: true },
+  { toolAId: 'shopify', toolBId: 'woocommerce', vsSlug: 'shopify-vs-woocommerce', isFlagship: true }
 ];
 
 function getVsPairsList(tools) {
@@ -772,6 +777,20 @@ saasTools.forEach(tool => {
     bodyHtml = authorityRenderers.renderMajesticAlternativesSsr(tool, categoryMatches);
   } else if (tool.id === 'dataforseo') {
     bodyHtml = authorityRenderers.renderDataForSeoAlternativesSsr(tool, categoryMatches);
+  } else if (tool.id === 'zapier') {
+    bodyHtml = growthMoneyRenderers.renderZapierAlternativesSsr();
+  } else if (tool.id === 'hubspot-crm') {
+    bodyHtml = growthMoneyRenderers.renderHubSpotAlternativesSsr();
+  } else if (tool.id === 'notion') {
+    bodyHtml = growthMoneyRenderers.renderNotionAlternativesSsr();
+  } else if (tool.id === 'typeform') {
+    bodyHtml = growthMoneyRenderers.renderTypeformAlternativesSsr();
+  } else if (tool.id === 'shopify') {
+    bodyHtml = growthMoneyRenderers.renderShopifyAlternativesSsr();
+  } else if (tool.id === 'supabase') {
+    bodyHtml = growthMoneyRenderers.renderSupabaseAlternativesSsr();
+  } else if (tool.id === 'zendesk') {
+    bodyHtml = growthMoneyRenderers.renderZendeskAlternativesSsr();
   } else {
     bodyHtml = defaultAltBodyHtml;
   }
@@ -1298,6 +1317,22 @@ versusPairs.forEach(({ tA, tB, vsSlug, isFlagship }) => {
     bodyHtml = authorityRenderers.renderAwsVsGoogleCloudSsr(tA, tB);
     pageTitle = `AWS vs Google Cloud (2026): Compute, GKE/EKS, BigQuery & Pricing`;
     pageDesc = `Compare Amazon Web Services (AWS) and Google Cloud Platform (GCP) in 2026. Evaluate Kubernetes (EKS vs GKE), BigQuery vs Redshift, and committed use pricing economics.`;
+  } else if (vsSlug === 'n8n-vs-zapier' || vsSlug === 'zapier-vs-n8n') {
+    bodyHtml = growthMoneyRenderers.renderN8nVsZapierSsr();
+    pageTitle = `n8n vs Zapier: 2026 Comparison, Self-Hosting & Cost Matrix`;
+    pageDesc = `Compare n8n and Zapier in 2026. Evaluate execution-based vs task-based pricing, self-hosted Docker deployment, JavaScript/Python function nodes, and AI agents.`;
+  } else if (vsSlug === 'make-vs-zapier' || vsSlug === 'zapier-vs-make') {
+    bodyHtml = growthMoneyRenderers.renderMakeVsZapierSsr();
+    pageTitle = `Make vs Zapier: 2026 Pricing, Operations & Architecture Comparison`;
+    pageDesc = `Compare Make (formerly Integromat) and Zapier in 2026. Evaluate visual node-graph routing, operations vs tasks economics, and complex array handling.`;
+  } else if (vsSlug === 'hubspot-crm-vs-pipedrive' || vsSlug === 'pipedrive-vs-hubspot-crm') {
+    bodyHtml = growthMoneyRenderers.renderHubSpotVsPipedriveSsr();
+    pageTitle = `HubSpot CRM vs Pipedrive: 2026 Full Spec & Seat Pricing Analysis`;
+    pageDesc = `Compare HubSpot CRM and Pipedrive in 2026. Detailed breakdown of sales pipelines, per-user pricing, email sync, and marketing automation integration.`;
+  } else if (vsSlug === 'shopify-vs-woocommerce' || vsSlug === 'woocommerce-vs-shopify') {
+    bodyHtml = growthMoneyRenderers.renderShopifyVsWooCommerceSsr();
+    pageTitle = `Shopify vs WooCommerce: 2026 Total Cost of Ownership & Spec Matrix`;
+    pageDesc = `Compare Shopify and WooCommerce in 2026. Evaluate transaction fees, hosting infrastructure overhead, plugin subscriptions, and open-source data sovereignty.`;
   } else {
     bodyHtml = `
   ${renderSsrNavbar('/vs/')}
@@ -1599,6 +1634,8 @@ officialGuides.forEach(guide => {
     bodyHtml = authorityRenderers.renderBestAllInOneSeoGuideSsr(guide, null);
   } else if (guideSlug === 'best-workflow-automation-tools-2026') {
     bodyHtml = authorityRenderers.renderBestWorkflowAutomationGuideSsr(guide, null);
+  } else if (guideSlug === 'software-stack-cost-index-2026') {
+    bodyHtml = growthMoneyRenderers.renderSoftwareStackCostIndex2026Ssr();
   } else {
     bodyHtml = `
   ${renderSsrNavbar('/guides/')}

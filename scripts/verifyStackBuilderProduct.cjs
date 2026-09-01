@@ -304,10 +304,10 @@ async function runProductVerification() {
   const sitemap = fs.readFileSync(sitemapPath, 'utf8');
   const sitemapUrls = [...sitemap.matchAll(/<loc>https:\/\/stakdock\.com([^<]*)<\/loc>/g)].map(m => m[1]);
 
-  if (sitemapUrls.length !== 48) {
-    errors.push(`[Sitemap Contamination]: Expected 48 URLs, found ${sitemapUrls.length}!`);
+  if (sitemapUrls.length !== 60) {
+    errors.push(`[Sitemap Contamination]: Expected 60 URLs, found ${sitemapUrls.length}!`);
   } else {
-    console.log('  Sitemap Freeze: Exactly 48 URLs in public/sitemap.xml');
+    console.log('  Controlled Sitemap Expansion: Exactly 60 URLs in public/sitemap.xml');
   }
 
   // --- 21. POPULAR STACK PRESETS SYNTHESIS (Phase 7A) ---

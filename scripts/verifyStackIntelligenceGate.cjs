@@ -259,10 +259,10 @@ async function runGate() {
   const sitemap = fs.readFileSync(sitemapPath, 'utf8');
   const sitemapUrls = [...sitemap.matchAll(/<loc>https:\/\/stakdock\.com([^<]*)<\/loc>/g)].map(m => m[1]);
 
-  if (sitemapUrls.length !== 48) {
-    errors.push(`[Sitemap Contamination]: Expected exactly 48 URLs in sitemap, found ${sitemapUrls.length}!`);
+  if (sitemapUrls.length !== 60) {
+    errors.push(`[Sitemap Contamination]: Expected exactly 60 URLs in sitemap, found ${sitemapUrls.length}!`);
   } else {
-    console.log(`✅ Sitemap Freeze Verified: Exactly 48 URLs in public/sitemap.xml`);
+    console.log(`✅ Controlled Sitemap Expansion Verified: Exactly 60 URLs in public/sitemap.xml`);
   }
 
   if (errors.length > 0) {

@@ -1,6 +1,6 @@
 {
   "timestamp": "2026-08-31T18:25:29.108Z",
-  "totalUrls": 4176,
+  "totalUrls": 4180,
   "preCrashTotals": {
     "dates": "Aug 2 – Aug 17, 2026",
     "totalImpressions": 40754,
@@ -24081,7 +24081,7 @@
       "url": "/alternatives/notion/",
       "pageType": "alternatives",
       "previousClass": "B",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 46,
       "qSafetyTier": null,
       "preCrash": {
@@ -24104,7 +24104,8 @@
       "relationshipQuality": "PARTIAL",
       "reasons": [
         "Strategic market entity / high-intent buyer comparison requiring enrichment"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for note-taking & sprint management alternatives"
     },
     {
       "url": "/software/linear/",
@@ -52242,7 +52243,7 @@
       "url": "/alternatives/hubspot-crm/",
       "pageType": "alternatives",
       "previousClass": "B",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 41,
       "qSafetyTier": null,
       "preCrash": {
@@ -52265,7 +52266,8 @@
       "relationshipQuality": "PARTIAL",
       "reasons": [
         "Strategic market entity / high-intent buyer comparison requiring enrichment"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for sales & marketing CRM alternatives"
     },
     {
       "url": "/software/pipedrive/",
@@ -60066,7 +60068,7 @@
       "url": "/alternatives/zapier/",
       "pageType": "alternatives",
       "previousClass": "B",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 41,
       "qSafetyTier": null,
       "preCrash": {
@@ -60089,7 +60091,8 @@
       "relationshipQuality": "PARTIAL",
       "reasons": [
         "Strategic market entity / high-intent buyer comparison requiring enrichment"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for workflow automation alternatives"
     },
     {
       "url": "/software/make/",
@@ -60242,7 +60245,7 @@
       "url": "/alternatives/supabase/",
       "pageType": "alternatives",
       "previousClass": "B",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 41,
       "qSafetyTier": null,
       "preCrash": {
@@ -60265,7 +60268,8 @@
       "relationshipQuality": "PARTIAL",
       "reasons": [
         "Strategic market entity / high-intent buyer comparison requiring enrichment"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for backend-as-a-service & Postgres alternatives"
     },
     {
       "url": "/software/xano/",
@@ -79409,7 +79413,7 @@
       "url": "/alternatives/zendesk/",
       "pageType": "alternatives",
       "previousClass": "B",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 41,
       "qSafetyTier": null,
       "preCrash": {
@@ -79432,7 +79436,8 @@
       "relationshipQuality": "PARTIAL",
       "reasons": [
         "Strategic market entity / high-intent buyer comparison requiring enrichment"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for customer support & ticketing alternatives"
     },
     {
       "url": "/software/freshdesk/",
@@ -88663,7 +88668,7 @@
       "url": "/alternatives/shopify/",
       "pageType": "alternatives",
       "previousClass": "B",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 41,
       "qSafetyTier": null,
       "preCrash": {
@@ -88686,7 +88691,8 @@
       "relationshipQuality": "PARTIAL",
       "reasons": [
         "Strategic market entity / high-intent buyer comparison requiring enrichment"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for e-commerce & storefront alternatives"
     },
     {
       "url": "/software/woocommerce/",
@@ -91432,7 +91438,7 @@
       "url": "/alternatives/typeform/",
       "pageType": "alternatives",
       "previousClass": "C",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 12,
       "qSafetyTier": "Q1_VERY_SAFE",
       "preCrash": {
@@ -91455,7 +91461,8 @@
       "relationshipQuality": "WEAK_CATEGORY_FALLBACK",
       "reasons": [
         "Low current quality, generic broad-category fallback, and negligible historical search traction"
-      ]
+      ],
+      "rationale": "High-intent buyer guide for form & survey builder alternatives"
     },
     {
       "url": "/software/google-forms/",
@@ -124665,7 +124672,7 @@
       "url": "/vs/hubspot-crm-vs-pipedrive/",
       "pageType": "vs",
       "previousClass": "A",
-      "recoveryState": "Q",
+      "recoveryState": "R",
       "recoveryPriority": 52,
       "qSafetyTier": null,
       "preCrash": {
@@ -124691,7 +124698,8 @@
       "relationshipQuality": "STRONG",
       "reasons": [
         "High Google visibility volume (74 pre / 3 post impressions)"
-      ]
+      ],
+      "rationale": "Flagship CRM comparison with per-seat scaling & pipeline management"
     },
     {
       "url": "/vs/hubspot-crm-vs-zoho-crm/",
@@ -128099,6 +128107,30 @@
       "reasons": [
         "Foundational Trust Layer: objective testing & verification framework"
       ]
+    },
+    {
+      "url": "/guides/software-stack-cost-index-2026/",
+      "pageType": "guides",
+      "recoveryState": "R",
+      "rationale": "StakDock 2026 Software Stack Cost Index empirical research benchmark"
+    },
+    {
+      "url": "/vs/n8n-vs-zapier/",
+      "pageType": "vs",
+      "recoveryState": "R",
+      "rationale": "Flagship automation comparison with verified self-host VPS & per-execution pricing"
+    },
+    {
+      "url": "/vs/make-vs-zapier/",
+      "pageType": "vs",
+      "recoveryState": "R",
+      "rationale": "Flagship integration comparison with verified operations vs tasks economics"
+    },
+    {
+      "url": "/vs/shopify-vs-woocommerce/",
+      "pageType": "vs",
+      "recoveryState": "R",
+      "rationale": "Flagship e-commerce comparison with transaction fees & open-source hosting TCO"
     }
   ]
 }

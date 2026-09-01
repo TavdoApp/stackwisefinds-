@@ -31,6 +31,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/guides/software-stack-cost-index-2026/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/best/email-marketing/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -55,16 +61,40 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/vs/hubspot-crm-vs-pipedrive/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/make-vs-zapier/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/vs/moz-pro-vs-se-ranking/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/vs/n8n-vs-zapier/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/vs/screaming-frog-seo-spider-vs-se-ranking/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/vs/shopify-vs-woocommerce/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://stakdock.com/software/accuranker/</loc>
@@ -241,6 +271,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/alternatives/hubspot-crm/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/alternatives/invoice-ninja/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -271,6 +307,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://stakdock.com/alternatives/notion/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://stakdock.com/alternatives/opensearch/</loc>
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -287,5 +329,35 @@
     <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/shopify/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/supabase/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/typeform/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/zapier/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stakdock.com/alternatives/zendesk/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
