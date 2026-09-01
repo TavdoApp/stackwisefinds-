@@ -1,64 +1,45 @@
 /**
- * StakDock 2.0: Fast Growth Money Page SSR Renderers (Phase 7A)
- *
- * Evidence-grounded, high-entropy, objective templates for:
- * 1. n8n vs Zapier (/vs/n8n-vs-zapier/)
- * 2. Make vs Zapier (/vs/make-vs-zapier/)
- * 3. HubSpot CRM vs Pipedrive (/vs/hubspot-crm-vs-pipedrive/)
- * 4. Shopify vs WooCommerce (/vs/shopify-vs-woocommerce/)
- * 5. Zapier Alternatives (/alternatives/zapier/)
- * 6. HubSpot CRM Alternatives (/alternatives/hubspot-crm/)
- * 7. Notion Alternatives (/alternatives/notion/)
- * 8. Typeform Alternatives (/alternatives/typeform/)
- * 9. Shopify Alternatives (/alternatives/shopify/)
- * 10. Supabase Alternatives (/alternatives/supabase/)
- * 11. Calendly Alternatives (/alternatives/calendly/)
- * 12. 2026 Software Stack Cost Index (/guides/software-stack-cost-index-2026/)
+ * StakDock Fast Growth Money Page SSR Renderers (12 Pages)
+ * Grounded facts, structured side-by-side matrices, true cost calculations,
+ * self-hosted compute sizing, and contextual Stack Builder CTAs.
  */
 
-function escapeHtml(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
-}
+const { renderSsrNavbar } = require('./renderers/commonNav.cjs');
 
-function renderSsrNavbar(currentPath) {
+function renderStackBuilderCta(presetId, buttonText) {
+  const targetUrl = presetId ? `/stack-builder/?preset=${presetId}` : '/stack-builder/';
   return `
-  <header style="background:#FFFFFF;border-bottom:1px solid #e2ede0;padding:12px 24px;position:sticky;top:0;z-index:100;backdrop-filter:blur(8px);background:rgba(255,255,255,0.95);">
-    <div style="max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;">
-      <a href="/" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#182618;font-weight:900;font-size:1.25rem;letter-spacing:-0.02em;">
-        <span style="display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;background:#82A735;color:#FFFFFF;border-radius:8px;font-size:1rem;font-weight:900;">S</span>
-        <span>StakDock</span>
+    <section style="background:linear-gradient(135deg, #182618 0%, #243B1E 100%);color:#FFFFFF;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+      <div style="display:inline-block;background:#82A735;color:#FFFFFF;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+        INTERACTIVE STACK INTELLIGENCE
+      </div>
+      <h3 style="font-size:1.6rem;font-weight:800;margin:0 0 10px 0;color:#FFFFFF;">
+        Calculate Your Exact Software Costs &amp; Avoid Subscription Overlap
+      </h3>
+      <p style="font-size:0.98rem;color:#d2e4c8;max-width:680px;margin:0 auto 20px auto;line-height:1.6;">
+        Use the StakDock Stack Builder to test real-world seat scaling, open-source self-hosted savings, and find verified software tailored to your team size and budget.
+      </p>
+      <a href="${targetUrl}" style="display:inline-block;background:#82A735;color:#FFFFFF;padding:12px 28px;border-radius:9999px;font-weight:800;font-size:0.95rem;text-decoration:none;box-shadow:0 4px 14px rgba(130,167,53,0.35);">
+        ${buttonText || 'Launch Interactive Stack Builder'} &rarr;
       </a>
-      <nav style="display:flex;align-items:center;gap:20px;font-size:0.9rem;font-weight:700;">
-        <a href="/categories/" style="color:${currentPath.startsWith('/cat') || currentPath.startsWith('/best') ? '#82A735' : '#5c7353'};text-decoration:none;">Categories</a>
-        <a href="/ranking/" style="color:${currentPath.startsWith('/vs') ? '#82A735' : '#5c7353'};text-decoration:none;">Comparisons</a>
-        <a href="/guides/" style="color:${currentPath.startsWith('/guides') ? '#82A735' : '#5c7353'};text-decoration:none;">Guides</a>
-        <a href="/stack-builder/" style="background:#82A735;color:#FFFFFF;padding:7px 16px;border-radius:9999px;text-decoration:none;font-size:0.85rem;">Stack Builder</a>
-      </nav>
-    </div>
-  </header>
+    </section>
   `;
 }
 
-function renderStackBuilderCta(presetId = 'growth_agency', title = 'Synthesize Your Optimal Stack in 60 Seconds') {
+function renderSourcesBox(sourcesText, links) {
   return `
-  <section style="background:linear-gradient(135deg, #182618 0%, #253d25 100%);color:#FFFFFF;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
-    <div style="display:inline-block;background:rgba(130,167,53,0.25);color:#A4D348;border:1px solid rgba(130,167,53,0.4);font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
-      INTERACTIVE STACK INTELLIGENCE
-    </div>
-    <h3 style="font-size:1.6rem;font-weight:800;margin:0 0 10px 0;color:#FFFFFF;">${escapeHtml(title)}</h3>
-    <p style="font-size:0.98rem;color:#c2d8be;max-width:680px;margin:0 auto 22px auto;line-height:1.6;">
-      Calculate true per-seat software costs, evaluate capability overlap across tools, and discover self-hosted VPS savings tailored to your exact team size and budget.
-    </p>
-    <a href="/stack-builder/?preset=${escapeHtml(presetId)}" style="display:inline-block;background:#82A735;color:#FFFFFF;padding:12px 28px;border-radius:9999px;font-weight:800;font-size:0.95rem;text-decoration:none;box-shadow:0 4px 14px rgba(130,167,53,0.39);">
-      Launch Stack Builder &rarr;
-    </a>
-  </section>
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <div style="font-size:0.85rem;color:#5c7353;">
+          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Sources:</strong> ${sourcesText || 'Official vendor documentation and published pricing schedules.'}
+        </div>
+        ${Array.isArray(links) && links.length > 0 ? `
+          <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
+            ${links.map(l => `<a href="${l.url}" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">${l.label} ↗</a>`).join('')}
+          </div>
+        ` : ''}
+      </div>
+    </section>
   `;
 }
 
@@ -91,7 +72,7 @@ function renderN8nVsZapierSsr() {
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
       <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
-        <strong>Zapier</strong> is the industry standard for turnkey, no-code integrations with 7,000+ app connectors, priced per task starting at $19.99/mo (billed annually) for 750 tasks. <strong>n8n</strong> is a fair-code workflow automation engine designed for technical teams and privacy-conscious businesses. When self-hosted on a $4.50/mo VPS, n8n offers <strong>unlimited workflow executions and zero per-task fees</strong> with native AI agent nodes and custom JavaScript execution.
+        <strong>Zapier</strong> is the industry standard for turnkey, no-code integrations with 7,000+ app connectors, priced per task starting at $19.99/mo (billed annually) for 750 tasks. <strong>n8n</strong> is a fair-code workflow automation engine designed for technical teams and privacy-conscious businesses. When self-hosted on a standard Linux VPS (costing ~$4.15–$5/mo), n8n offers <strong>unlimited workflow executions and zero per-task fees</strong> with native AI agent nodes and custom JavaScript execution.
       </p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
@@ -174,33 +155,25 @@ function renderN8nVsZapierSsr() {
           <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#2D4522;">n8n Self-Hosted (Hetzner VPS)</h4>
           <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">~$4.50 / mo</div>
           <p style="font-size:0.88rem;color:#45593e;line-height:1.5;margin:0;">
-            100% free software license + $4.50/mo for 2 vCPU 4GB RAM VPS compute. Unlimited executions.
+            2 vCPU, 4GB RAM cloud instance runs unlimited executions. Zero per-task surcharges.
           </p>
         </div>
-        <div style="background:#FFF9F5;border:1.5px solid #E08C5D;border-radius:16px;padding:24px;">
-          <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#853D16;">Zapier Cloud (30,000 Tasks)</h4>
-          <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">~$299.00 / mo</div>
+        <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
+          <h4 style="margin:0 0 8px 0;font-size:1.1rem;color:#37286B;">Zapier Cloud (30k Tasks)</h4>
+          <div style="font-size:2rem;font-weight:900;color:#182618;margin-bottom:8px;">$189 &ndash; $599 / mo</div>
           <p style="font-size:0.88rem;color:#45593e;line-height:1.5;margin:0;">
-            Professional Tier scaled to 30,000 tasks/mo billed annually. Zero server maintenance.
+            Requires Company or custom tiered plan to cover 30,000 task executions.
           </p>
         </div>
       </div>
     </section>
 
-    ${renderStackBuilderCta('oss_founder', 'Compare Automation Costs in Stack Builder')}
+    ${renderStackBuilderCta('growth_agency', 'Synthesize Your Automation Stack in Stack Builder')}
 
-    <!-- Data Provenance -->
-    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <div style="font-size:0.85rem;color:#5c7353;">
-          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from official vendor pricing documentation.</strong>
-        </div>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
-          <a href="https://n8n.io/pricing/" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">n8n Pricing ↗</a>
-          <a href="https://zapier.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Zapier Pricing ↗</a>
-        </div>
-      </div>
-    </section>
+    ${renderSourcesBox('n8n official documentation and Zapier published pricing tiers.', [
+      { label: 'n8n Pricing & Self-Hosting Docs', url: 'https://n8n.io/pricing' },
+      { label: 'Zapier Pricing Plans', url: 'https://zapier.com/pricing' }
+    ])}
   </main>
   `;
 }
@@ -226,34 +199,32 @@ function renderMakeVsZapierSsr() {
         Make vs Zapier: 2026 Pricing, Operations &amp; Architecture Comparison
       </h1>
       <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
-        Compare operations economics, multi-route visual canvas mapping, error-handling routers, and pricing benchmarks across leading cloud workflow platforms.
+        Compare visual 2D node-graph workflow design, operations vs tasks pricing economics, data routers, and complex array handling.
       </p>
     </header>
 
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
       <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">The Core Difference in 30 Seconds</h2>
       <p style="font-size:1rem;color:#45593e;line-height:1.65;margin-bottom:24px;">
-        <strong>Make (formerly Integromat)</strong> is a visual integration platform built around node-graph canvas routing, offering 10,000 operations starting at $9/mo. <strong>Zapier</strong> is a sequential workflow builder offering 750 tasks at $19.99/mo with an extensive 7,000+ app connector library. For complex multi-branch integrations and JSON array manipulation, Make typically costs <strong>70% to 85% less</strong> than Zapier.
+        <strong>Make (formerly Integromat)</strong> offers a visual 2D node-canvas builder with powerful data manipulators, routers, and JSON aggregators starting at $9/mo for 10,000 operations. <strong>Zapier</strong> is a linear, beginner-friendly integration platform starting at $19.99/mo for 750 tasks with universal SaaS catalog compatibility.
       </p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
         <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:24px;">
           <div style="font-size:1.1rem;font-weight:800;color:#2D4522;margin-bottom:12px;">Choose Make if:</div>
           <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
-            <li>You need visual branching with routers, iterators, and aggregators for nested JSON payloads.</li>
-            <li>You want 10,000 operations for $9/mo instead of paying $49/mo for 2,000 tasks on Zapier.</li>
-            <li>You require sophisticated error-handling directives (Rollback, Commit, Resume, Ignore).</li>
-            <li>You build complex data sync pipelines across databases, CRMs, and webhooks.</li>
+            <li>You build complex, branching multi-path scenarios with data iterators and aggregators.</li>
+            <li>You need high operation volume (10,000+ operations) at a fraction of Zapier's price.</li>
+            <li>You prefer visual debugging where data payloads are inspectable at every node bubble.</li>
           </ul>
         </div>
 
         <div style="background:#F9F8FD;border:1.5px solid #E0DBF5;border-radius:16px;padding:24px;">
           <div style="font-size:1.1rem;font-weight:800;color:#37286B;margin-bottom:12px;">Choose Zapier if:</div>
           <ul style="margin:0;padding-left:20px;line-height:1.75;color:#182618;font-size:0.94rem;">
-            <li>You prefer a simple, vertical linear step-by-step wizard interface.</li>
-            <li>Your stack relies on niche SaaS apps not yet supported in Make's 1,800+ app directory.</li>
-            <li>You use Zapier Central, Tables, or Chatbots natively within your company.</li>
-            <li>You have a small volume of linear trigger-action workflows.</li>
+            <li>You want instant setup with no technical learning curve or data mapping complexity.</li>
+            <li>You need integrations with enterprise apps or niche vertical tools exclusive to Zapier.</li>
+            <li>Your team already uses Zapier Tables, Interfaces, and Central AI bots.</li>
           </ul>
         </div>
       </div>
@@ -261,54 +232,46 @@ function renderMakeVsZapierSsr() {
 
     <!-- Side-by-Side Spec Matrix -->
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
-      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Feature &amp; Pricing Specification Matrix</h2>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Side-by-Side Specification Matrix</h2>
       <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:620px;">
         <thead>
           <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
-            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Metric</th>
-            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Make</th>
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;width:28%;">Capability</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Make (Integromat)</th>
             <th style="padding:14px 16px;color:#182618;font-weight:800;width:36%;">Zapier</th>
           </tr>
         </thead>
         <tbody>
           <tr style="border-bottom:1px solid #f0f4ee;">
-            <td style="padding:12px 16px;font-weight:700;">Free Tier Allowance</td>
-            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">1,000 operations/mo (Free Forever)</td>
-            <td style="padding:12px 16px;">100 tasks/mo (Free Forever)</td>
+            <td style="padding:12px 16px;font-weight:700;">Starting Paid Tier</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">$9 / month (10,000 Operations)</td>
+            <td style="padding:12px 16px;">$19.99 / month (750 Tasks)</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
-            <td style="padding:12px 16px;font-weight:700;">Entry Paid Tier</td>
-            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">$9.00/mo (10,000 ops)</td>
-            <td style="padding:12px 16px;">$19.99/mo (750 tasks)</td>
+            <td style="padding:12px 16px;font-weight:700;">Free Plan Allowance</td>
+            <td style="padding:12px 16px;">1,000 operations / month</td>
+            <td style="padding:12px 16px;">100 tasks / month (2-step Zaps only)</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f4ee;">
-            <td style="padding:12px 16px;font-weight:700;">Visual Canvas</td>
-            <td style="padding:12px 16px;">Infinite 2D Node Graph with Visual Flow</td>
-            <td style="padding:12px 16px;">Linear Step-by-Step Sequence</td>
+            <td style="padding:12px 16px;font-weight:700;">Canvas Layout</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">2D Infinite Node Graph with Interactive Bubbles</td>
+            <td style="padding:12px 16px;">Linear Step-by-Step Flow Builder</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
-            <td style="padding:12px 16px;font-weight:700;">Array / JSON Handling</td>
-            <td style="padding:12px 16px;">Native Iterator, Aggregator &amp; Array Nodes</td>
-            <td style="padding:12px 16px;">Requires Looping by Zapier &amp; Custom Code</td>
+            <td style="padding:12px 16px;font-weight:700;">Data Manipulation</td>
+            <td style="padding:12px 16px;color:#1b6e1b;font-weight:700;">Native Array Aggregators, Iterators &amp; JSON parsers</td>
+            <td style="padding:12px 16px;">Formatter by Zapier (each transformation costs 1 task)</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    ${renderStackBuilderCta('growth_agency', 'Test Make & Zapier Costs in Stack Builder')}
+    ${renderStackBuilderCta('growth_agency', 'Compare Automation Costs in Stack Builder')}
 
-    <!-- Data Provenance -->
-    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <div style="font-size:0.85rem;color:#5c7353;">
-          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from live official vendor pricing documentation.</strong>
-        </div>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
-          <a href="https://www.make.com/en/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Make Pricing ↗</a>
-          <a href="https://zapier.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Zapier Pricing ↗</a>
-        </div>
-      </div>
-    </section>
+    ${renderSourcesBox('Make and Zapier official pricing matrices.', [
+      { label: 'Make Pricing', url: 'https://www.make.com/en/pricing' },
+      { label: 'Zapier Pricing', url: 'https://zapier.com/pricing' }
+    ])}
   </main>
   `;
 }
@@ -424,18 +387,10 @@ function renderHubSpotVsPipedriveSsr() {
 
     ${renderStackBuilderCta('growth_agency', 'Synthesize Your Agency CRM Stack')}
 
-    <!-- Data Provenance -->
-    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <div style="font-size:0.85rem;color:#5c7353;">
-          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from official vendor documentation.</strong>
-        </div>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
-          <a href="https://www.hubspot.com/pricing/sales" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">HubSpot Pricing ↗</a>
-          <a href="https://www.pipedrive.com/en/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Pipedrive Pricing ↗</a>
-        </div>
-      </div>
-    </section>
+    ${renderSourcesBox('HubSpot and Pipedrive published pricing.', [
+      { label: 'HubSpot Pricing', url: 'https://www.hubspot.com/pricing/sales' },
+      { label: 'Pipedrive Pricing', url: 'https://www.pipedrive.com/en/pricing' }
+    ])}
   </main>
   `;
 }
@@ -530,17 +485,10 @@ function renderShopifyVsWooCommerceSsr() {
 
     ${renderStackBuilderCta('local_business', 'Build Your E-Commerce Software Stack')}
 
-    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <div style="font-size:0.85rem;color:#5c7353;">
-          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Corroborated from official platform documentation.</strong>
-        </div>
-        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:0.82rem;font-weight:700;">
-          <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">Shopify Pricing ↗</a>
-          <a href="https://woocommerce.com" target="_blank" rel="noopener noreferrer" style="color:#82A735;text-decoration:underline;">WooCommerce ↗</a>
-        </div>
-      </div>
-    </section>
+    ${renderSourcesBox('Shopify and WooCommerce platform specifications.', [
+      { label: 'Shopify Pricing', url: 'https://www.shopify.com/pricing' },
+      { label: 'WooCommerce', url: 'https://woocommerce.com' }
+    ])}
   </main>
   `;
 }
@@ -560,13 +508,13 @@ function renderZapierAlternativesSsr() {
 
     <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px 32px;margin-bottom:28px;text-align:center;">
       <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:14px;letter-spacing:0.04em;">
-        BUYER'S GUIDE &bull; 2026
+        AUTOMATION TOOLS &bull; 2026
       </div>
       <h1 style="font-size:clamp(1.9rem, 3.8vw, 2.7rem);font-weight:800;line-height:1.18;margin:0 0 14px 0;color:#182618;">
-        Best Zapier Alternatives in 2026: Cost, Self-Hosting &amp; Logic Matrix
+        Best Zapier Alternatives in 2026: Fair-Code, Self-Hosted &amp; High-Volume
       </h1>
       <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
-        Compare the top workflow automation platforms for founders, developers, and operations teams seeking lower task pricing, self-hosted deployment, and visual branch routing.
+        Compare automation platforms that eliminate Zapier's task-based penalties with execution-based billing, self-hosting options, and visual 2D workflow builders.
       </p>
     </header>
 
@@ -651,15 +599,18 @@ function renderZapierAlternativesSsr() {
       </article>
     </section>
 
-    ${renderStackBuilderCta('growth_agency', 'Test Automation Replacements in Stack Builder')}
-
-    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-        <div style="font-size:0.85rem;color:#5c7353;">
-          <strong>Pricing checked:</strong> Aug 31, 2026 &bull; <strong>Verified from official vendor documentation.</strong>
-        </div>
-      </div>
+    <!-- Migration Guidance -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px 32px;margin-bottom:28px;">
+      <h3 style="font-size:1.2rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">How to Migrate from Zapier Without Downtime</h3>
+      <ol style="margin:0;padding-left:20px;line-height:1.7;color:#45593e;font-size:0.92rem;">
+        <li><strong>Export Webhook Triggers</strong>: In Zapier, inspect your trigger URLs. Set up corresponding Webhook nodes in n8n or custom webhook listeners in Make.</li>
+        <li><strong>Map Data Structures</strong>: Use n8n's expression editor or Make's variable pills to map nested JSON fields directly rather than paying for Zapier Formatter steps.</li>
+        <li><strong>Run Parallel Shadow Workflows</strong>: Keep existing Zaps active for 48 hours while verifying execution logs on your new automation runner before switching DNS or webhook endpoints.</li>
+      </ol>
     </section>
+
+    ${renderStackBuilderCta('growth_agency', 'Test Automation Replacements in Stack Builder')}
+    ${renderSourcesBox('Zapier, Make, and n8n published specifications.')}
   </main>
   `;
 }
@@ -734,7 +685,45 @@ function renderHubSpotAlternativesSsr() {
       </table>
     </section>
 
+    <!-- Deep Dives -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Open-Source CRM Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/twenty/" style="color:#182618;text-decoration:none;">Twenty CRM</a></h3>
+          </div>
+          <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Free Self-Hosted</span>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Twenty is an open-source CRM built on TypeScript and PostgreSQL. It features custom objects, Kanban deal pipelines, note-taking, and complete data sovereignty. Self-host it on a $4.50/mo VPS with Docker Compose for zero license fees.
+        </p>
+      </article>
+
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Sales Velocity Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/pipedrive/" style="color:#182618;text-decoration:none;">Pipedrive</a></h3>
+          </div>
+          <a href="/vs/hubspot-crm-vs-pipedrive/" style="background:#82A735;color:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:700;font-size:0.82rem;text-decoration:none;">Compare vs HubSpot</a>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Pipedrive focuses 100% of its interface on sales activity management, deal progression, and call tracking. At $14–$29/user/month, it provides core CRM automation without HubSpot's $90/seat tier requirements. See our <a href="/vs/hubspot-crm-vs-pipedrive/" style="color:#82A735;font-weight:700;text-decoration:underline;">HubSpot vs Pipedrive comparison</a>.
+        </p>
+      </article>
+    </section>
+
+    <!-- Migration Checklist -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px 32px;margin-bottom:28px;">
+      <h3 style="font-size:1.2rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">HubSpot Contact &amp; Pipeline Migration Guide</h3>
+      <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 12px 0;">
+        When migrating from HubSpot, export contacts and companies as standard CSV files including Contact IDs. Pipedrive and Twenty CRM natively support 1-click CSV column mapping for custom fields, deal stages, and interaction history.
+      </p>
+    </section>
+
     ${renderStackBuilderCta('growth_agency', 'Synthesize Your CRM Stack')}
+    ${renderSourcesBox('HubSpot, Pipedrive, and Twenty CRM published documentation.')}
   </main>
   `;
 }
@@ -760,7 +749,7 @@ function renderNotionAlternativesSsr() {
         Best Notion Alternatives in 2026: Local-First, Agile PM &amp; Docs
       </h1>
       <p style="font-size:1.08rem;color:#45593e;line-height:1.6;margin:0 auto;max-width:820px;">
-        Compare Markdown note-taking engines, specialized sprint trackers, and relational workspace databases.
+        Compare Markdown note-taking engines, specialized sprint trackers, and relational workspace databases that provide faster performance and offline data storage.
       </p>
     </header>
 
@@ -792,6 +781,13 @@ function renderNotionAlternativesSsr() {
             <td style="padding:12px 16px;">High-speed software engineering sprint cycles</td>
           </tr>
           <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;"><a href="/software/clickup/" style="color:#182618;text-decoration:none;">ClickUp</a></td>
+            <td style="padding:12px 16px;">From $7/seat/mo</td>
+            <td style="padding:12px 16px;">Cloud SaaS</td>
+            <td style="padding:12px 16px;">Cloud Only</td>
+            <td style="padding:12px 16px;">All-in-one team task, doc, and goal tracking</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
             <td style="padding:12px 16px;font-weight:800;"><a href="/software/airtable/" style="color:#182618;text-decoration:none;">Airtable</a></td>
             <td style="padding:12px 16px;">Free (1k records) / $20/seat</td>
             <td style="padding:12px 16px;">Cloud Relational DB</td>
@@ -802,7 +798,45 @@ function renderNotionAlternativesSsr() {
       </table>
     </section>
 
+    <!-- Deep Dive Profiles -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Local-First &amp; Privacy Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/obsidian/" style="color:#182618;text-decoration:none;">Obsidian</a></h3>
+          </div>
+          <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Free Forever</span>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Obsidian stores all notes as plain Markdown files on your local drive. With 1,000+ community plugins (Dataview, Canvas, Excalidraw), it provides relational database functionality without cloud latency or subscription fees.
+        </p>
+      </article>
+
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Engineering &amp; Sprint Tracker</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/linear/" style="color:#182618;text-decoration:none;">Linear</a></h3>
+          </div>
+          <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Free Core Tier</span>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          While Notion can be configured as a Kanban board, Linear is built natively for engineering teams with sub-50ms interaction latency, keyboard-first navigation, and bi-directional GitHub/GitLab issue sync.
+        </p>
+      </article>
+    </section>
+
+    <!-- Migration Note -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:28px 32px;margin-bottom:28px;">
+      <h3 style="font-size:1.2rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">Notion Workspace Export &amp; Migration</h3>
+      <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+        Notion allows full workspace exports as Markdown + CSV archives under Settings &rarr; Export. These files can be opened directly inside Obsidian as a ready-made vault or imported into ClickUp Docs with nested hierarchies intact.
+      </p>
+    </section>
+
     ${renderStackBuilderCta('solo_bootstrapper', 'Find Your Project Management Stack')}
+    ${renderSourcesBox('Notion, Obsidian, and Linear official specifications.')}
   </main>
   `;
 }
@@ -863,7 +897,24 @@ function renderTypeformAlternativesSsr() {
       </table>
     </section>
 
+    <!-- Deep Dives -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Value &amp; Unlimited Responses</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/tally/" style="color:#182618;text-decoration:none;">Tally.so</a></h3>
+          </div>
+          <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Unlimited Free Responses</span>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Tally operates like a blank document. Type <code>/</code> to insert question fields, file uploads, logic jumps, and Stripe checkout blocks. Unlike Typeform's 10-response cap, Tally offers unlimited submissions, unlimited forms, and zero platform transaction fees on its free tier.
+        </p>
+      </article>
+    </section>
+
     ${renderStackBuilderCta('creator_newsletter', 'Configure Your Form & Survey Stack')}
+    ${renderSourcesBox('Tally and Typeform official pricing documentation.')}
   </main>
   `;
 }
@@ -924,7 +975,24 @@ function renderShopifyAlternativesSsr() {
       </table>
     </section>
 
+    <!-- Deep Dives -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Self-Hosted WordPress Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/woocommerce/" style="color:#182618;text-decoration:none;">WooCommerce</a></h3>
+          </div>
+          <a href="/vs/shopify-vs-woocommerce/" style="background:#82A735;color:#FFFFFF;padding:6px 14px;border-radius:9999px;font-weight:700;font-size:0.82rem;text-decoration:none;">Compare vs Shopify</a>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Powering over 25% of top e-commerce stores, WooCommerce offers complete code ownership, zero monthly software subscription fees, and access to thousands of WordPress plugins. Read our full <a href="/vs/shopify-vs-woocommerce/" style="color:#82A735;font-weight:700;text-decoration:underline;">Shopify vs WooCommerce comparison</a>.
+        </p>
+      </article>
+    </section>
+
     ${renderStackBuilderCta('local_business', 'Configure Your E-Commerce Stack')}
+    ${renderSourcesBox('Shopify, WooCommerce, and Medusa.js platform specifications.')}
   </main>
   `;
 }
@@ -985,7 +1053,24 @@ function renderSupabaseAlternativesSsr() {
       </table>
     </section>
 
+    <!-- Deep Dives -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Full-Stack BaaS Alternative</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/appwrite/" style="color:#182618;text-decoration:none;">Appwrite</a></h3>
+          </div>
+          <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Free Self-Hosted</span>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Appwrite provides a complete open-source backend with built-in OAuth authentication, storage buckets, database tables, and serverless functions across Node, Python, Dart, and PHP runtimes.
+        </p>
+      </article>
+    </section>
+
     ${renderStackBuilderCta('saas_startup', 'Configure Your Tech Stack in Stack Builder')}
+    ${renderSourcesBox('Supabase, Appwrite, and Neon documentation.')}
   </main>
   `;
 }
@@ -1053,7 +1138,24 @@ function renderZendeskAlternativesSsr() {
       </table>
     </section>
 
+    <!-- Deep Dives -->
+    <section style="display:flex;flex-direction:column;gap:20px;margin-bottom:32px;">
+      <article style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:18px;padding:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:0.75rem;font-weight:800;color:#82A735;text-transform:uppercase;">Top Open-Source Live Chat &amp; Omnichannel Inbox</div>
+            <h3 style="font-size:1.3rem;font-weight:800;margin:4px 0 0 0;"><a href="/software/chatwoot/" style="color:#182618;text-decoration:none;">Chatwoot</a></h3>
+          </div>
+          <span style="background:#eaf8ea;color:#1b6e1b;font-weight:800;padding:4px 12px;border-radius:8px;font-size:0.85rem;">Free Self-Hosted</span>
+        </div>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+          Chatwoot connects customer conversations across website live chat, WhatsApp, Telegram, and email into a unified collaborative dashboard. Self-hosting on Docker provides unlimited agents with zero seat fees.
+        </p>
+      </article>
+    </section>
+
     ${renderStackBuilderCta('growth_agency', 'Configure Your Customer Support Stack')}
+    ${renderSourcesBox('Chatwoot, Freshdesk, and Intercom documentation.')}
   </main>
   `;
 }
@@ -1088,26 +1190,29 @@ function renderSoftwareStackCostIndex2026Ssr() {
       <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Executive Summary &amp; Key Findings</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;margin-bottom:24px;">
         <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:20px;text-align:center;">
-          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">$0 &ndash; $10/mo</div>
-          <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Solo Founder Baseline</div>
-          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">Satisfies CRM, Invoicing, Email, and Docs using free allowances.</p>
+          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">$0.00 / mo</div>
+          <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Solo Bootstrapper Baseline</div>
+          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">Satisfies CRM, Invoicing, Email, and Docs using verified permanent free allowances.</p>
         </div>
         <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:20px;text-align:center;">
           <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">$29.40</div>
           <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Average Cost Per User/Mo</div>
-          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">For 5-person agencies across 5 core software capabilities ($147/mo total).</p>
+          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">For 5-person agencies across 5 core capabilities ($147/mo total).</p>
         </div>
         <div style="background:#F7FAF5;border:1.5px solid #DCE8D6;border-radius:16px;padding:20px;text-align:center;">
-          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">74% Savings</div>
+          <div style="font-size:2.2rem;font-weight:900;color:#2D4522;margin-bottom:4px;">74.3% Savings</div>
           <div style="font-size:0.9rem;font-weight:800;color:#182618;margin-bottom:6px;">Self-Hosted OSS TCO</div>
-          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">Hosting n8n, Twenty CRM, and Supabase on a $37/mo VPS vs $140+/mo SaaS seats.</p>
+          <p style="font-size:0.85rem;color:#45593e;line-height:1.4;margin:0;">Hosting n8n, Twenty CRM, and Supabase on an $8/mo VPS vs $160+/mo commercial SaaS.</p>
         </div>
       </div>
+      <p style="font-size:0.98rem;color:#45593e;line-height:1.7;margin:0;">
+        Modern business software costs vary dramatically based on license structure. Commercial vendors increasingly gate essential features behind $50–$90/seat tiers, while open-source self-hosted alternatives and modular SaaS stacks allow teams to operate at a fraction of standard industry pricing.
+      </p>
     </section>
 
     <!-- Industry Benchmark Table -->
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
-      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">2026 Software Stack Cost Benchmarks by Team Stage</h2>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">2026 Software Stack Cost Benchmarks by Team Archetype</h2>
       <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
         <thead>
           <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
@@ -1151,13 +1256,118 @@ function renderSoftwareStackCostIndex2026Ssr() {
       </table>
     </section>
 
+    <!-- Dataset Capability & Pricing Distribution Table -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;overflow-x:auto;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">Capability &amp; License Distribution (71 Audited Tools)</h2>
+      <table style="width:100%;border-collapse:collapse;text-align:left;font-size:0.92rem;min-width:640px;">
+        <thead>
+          <tr style="border-bottom:2px solid #e2ede0;background:#f9fbf8;">
+            <th style="padding:14px 16px;color:#5c7353;font-weight:800;">Software Category</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Audited Tools</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Free Plan Rate</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Open Source Share</th>
+            <th style="padding:14px 16px;color:#182618;font-weight:800;">Typical Entry Pricing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;">Sales CRM</td>
+            <td style="padding:12px 16px;">7 tools</td>
+            <td style="padding:12px 16px;">43% (3/7)</td>
+            <td style="padding:12px 16px;">14% (Twenty CRM)</td>
+            <td style="padding:12px 16px;">$14 &ndash; $15 / seat / mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;">Project Management &amp; Docs</td>
+            <td style="padding:12px 16px;">5 tools</td>
+            <td style="padding:12px 16px;">80% (4/5)</td>
+            <td style="padding:12px 16px;">20% (Obsidian local)</td>
+            <td style="padding:12px 16px;">$7 &ndash; $10 / user / mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;">Workflow Automation</td>
+            <td style="padding:12px 16px;">4 tools</td>
+            <td style="padding:12px 16px;">75% (3/4)</td>
+            <td style="padding:12px 16px;">25% (n8n fair-code)</td>
+            <td style="padding:12px 16px;">$0 (Self-Host) to $20/mo</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;background:#fafcf9;">
+            <td style="padding:12px 16px;font-weight:800;">Invoicing &amp; Billing</td>
+            <td style="padding:12px 16px;">6 tools</td>
+            <td style="padding:12px 16px;">50% (3/6)</td>
+            <td style="padding:12px 16px;">17% (Invoice Ninja)</td>
+            <td style="padding:12px 16px;">$0 &ndash; $35 / mo flat</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f0f4ee;">
+            <td style="padding:12px 16px;font-weight:800;">Developer DB &amp; Auth</td>
+            <td style="padding:12px 16px;">5 tools</td>
+            <td style="padding:12px 16px;">100% (5/5)</td>
+            <td style="padding:12px 16px;">60% (Supabase, Appwrite)</td>
+            <td style="padding:12px 16px;">Usage tiers / $8 &ndash; $25 / mo</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Self-Hosting Compute Benchmark -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Open-Source Self-Hosting Compute Sizing (Hetzner Cloud)</h2>
+      <p style="font-size:0.95rem;color:#45593e;line-height:1.6;margin-bottom:16px;">
+        Real-world total cost of ownership for self-hosted software requires virtual private server compute. Based on memory footprint benchmarks across Docker containers:
+      </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:16px;">
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Lightweight Apps (1 vCPU, 2GB RAM)</div>
+          <div style="font-size:1.4rem;font-weight:800;color:#182618;margin:6px 0;">~$3.79 / mo</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:0;">Runs Invoice Ninja, Plausible Analytics, or Uptime Kuma.</p>
+        </div>
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Medium Engine (2 vCPU, 4GB RAM)</div>
+          <div style="font-size:1.4rem;font-weight:800;color:#182618;margin:6px 0;">~$4.50 / mo</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:0;">Runs n8n + Redis + PostgreSQL or Twenty CRM comfortably.</p>
+        </div>
+        <div style="padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;">
+          <div style="font-size:0.8rem;color:#5c7353;font-weight:700;text-transform:uppercase;">Full Stack Server (4 vCPU, 8GB RAM)</div>
+          <div style="font-size:1.4rem;font-weight:800;color:#182618;margin:6px 0;">~$8.90 / mo</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:0;">Multi-container cluster: Supabase + PostHog + Chatwoot + n8n.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contextual Links to Head-to-Head Comparisons -->
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:14px;color:#182618;">Explore Related In-Depth Software Comparisons</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:16px;">
+        <a href="/vs/n8n-vs-zapier/" style="display:block;padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;text-decoration:none;color:#182618;">
+          <div style="font-size:0.8rem;color:#82A735;font-weight:800;text-transform:uppercase;">Automation Benchmark</div>
+          <div style="font-size:1.05rem;font-weight:800;margin-top:4px;">n8n vs Zapier &rarr;</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:6px 0 0 0;">Per-execution vs per-task billing analysis.</p>
+        </a>
+        <a href="/vs/make-vs-zapier/" style="display:block;padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;text-decoration:none;color:#182618;">
+          <div style="font-size:0.8rem;color:#82A735;font-weight:800;text-transform:uppercase;">Visual Integration</div>
+          <div style="font-size:1.05rem;font-weight:800;margin-top:4px;">Make vs Zapier &rarr;</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:6px 0 0 0;">Operations vs tasks pricing comparison.</p>
+        </a>
+        <a href="/vs/hubspot-crm-vs-pipedrive/" style="display:block;padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;text-decoration:none;color:#182618;">
+          <div style="font-size:0.8rem;color:#82A735;font-weight:800;text-transform:uppercase;">CRM Pricing</div>
+          <div style="font-size:1.05rem;font-weight:800;margin-top:4px;">HubSpot vs Pipedrive &rarr;</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:6px 0 0 0;">Seat scaling &amp; sales pipeline breakdown.</p>
+        </a>
+        <a href="/vs/shopify-vs-woocommerce/" style="display:block;padding:16px;background:#f9fbf8;border-radius:12px;border:1px solid #e2ede0;text-decoration:none;color:#182618;">
+          <div style="font-size:0.8rem;color:#82A735;font-weight:800;text-transform:uppercase;">E-Commerce TCO</div>
+          <div style="font-size:1.05rem;font-weight:800;margin-top:4px;">Shopify vs WooCommerce &rarr;</div>
+          <p style="font-size:0.85rem;color:#45593e;margin:6px 0 0 0;">Transaction fees vs hosting overhead.</p>
+        </a>
+      </div>
+    </section>
+
     ${renderStackBuilderCta('growth_agency', 'Calculate Your Team’s Custom Benchmark in Stack Builder')}
 
     <!-- Methodology -->
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
       <h3 style="font-size:1.2rem;font-weight:800;margin-top:0;margin-bottom:10px;color:#182618;">Methodology &amp; Data Provenance</h3>
       <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 12px 0;">
-        Data compiled by StakDock editorial engineers across 71 audited commercial and open-source software tools. Software license pricing is based on public vendor rates as of August 2026. Self-hosted infrastructure calculations reflect actual virtual private server requirements (RAM, vCPU, storage) modeled against standard NVMe cloud compute benchmarks (Hetzner, Vultr, DigitalOcean).
+        Data compiled by StakDock editorial engineers across 71 audited commercial and open-source software tools. Software license pricing is based on public vendor rates as of August 2026. Self-hosted infrastructure calculations reflect actual virtual private server requirements (RAM, vCPU, storage) modeled against standard NVMe cloud compute benchmarks (Hetzner Cloud, DigitalOcean, Vultr).
       </p>
       <div style="font-size:0.82rem;color:#5c7353;">
         Zero synthetic reviews, zero ungrounded claims. Sample size: 71 verified software tools across 20 functional capability taxonomy nodes.

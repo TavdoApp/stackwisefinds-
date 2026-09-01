@@ -178,9 +178,16 @@ function renderMakeSoftwareSsr(tool, competitors) {
       </div>
     </section>
 
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <h3 style="font-size:1.15rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">Head-to-Head Comparisons &amp; Alternatives</h3>
+      <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+        Evaluating automation platforms? Read our in-depth <a href="/vs/make-vs-zapier/" style="color:#82A735;font-weight:700;text-decoration:underline;">Make vs Zapier comparison</a>, or explore our <a href="/alternatives/zapier/" style="color:#82A735;font-weight:700;text-decoration:underline;">Top Zapier Alternatives Guide</a>.
+      </p>
+    </section>
+
     <!-- Sources & Data Provenance -->
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:gap:12px;">
         <div style="font-size:0.85rem;color:#5c7353;">
           <strong>Data Verified:</strong> Aug 31, 2026 &bull; <strong>Sources:</strong> Make (Celonis) official pricing schedule and documentation.
         </div>
@@ -239,6 +246,13 @@ function renderN8nSoftwareSsr(tool, competitors) {
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:24px 32px;margin-bottom:28px;">
+      <h3 style="font-size:1.15rem;font-weight:800;margin-top:0;margin-bottom:12px;color:#182618;">Head-to-Head Comparisons &amp; Guides</h3>
+      <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">
+        Read our full <a href="/vs/n8n-vs-zapier/" style="color:#82A735;font-weight:700;text-decoration:underline;">n8n vs Zapier breakdown</a>, explore <a href="/alternatives/zapier/" style="color:#82A735;font-weight:700;text-decoration:underline;">Zapier Alternatives</a>, or read our <a href="/guides/best-workflow-automation-tools-2026/" style="color:#82A735;font-weight:700;text-decoration:underline;">2026 Workflow Automation Guide</a>.
+      </p>
     </section>
 
     <!-- Sources & Data Provenance -->
