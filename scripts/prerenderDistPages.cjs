@@ -791,6 +791,8 @@ saasTools.forEach(tool => {
     bodyHtml = growthMoneyRenderers.renderSupabaseAlternativesSsr();
   } else if (tool.id === 'zendesk') {
     bodyHtml = growthMoneyRenderers.renderZendeskAlternativesSsr();
+  } else if (tool.id === 'microsoft-power-automate') {
+    bodyHtml = growthMoneyRenderers.renderPowerAutomateAlternativesSsr();
   } else {
     bodyHtml = defaultAltBodyHtml;
   }
@@ -1786,6 +1788,12 @@ coreStaticPages.forEach(page => {
     bodyHtml = authorityRenderers.renderAboutPageSsr();
   } else if (page.slug === 'methodology') {
     bodyHtml = authorityRenderers.renderMethodologyPageSsr();
+  } else if (page.slug === 'categories') {
+    bodyHtml = growthMoneyRenderers.renderCategoriesPageSsr(saasCategories);
+  } else if (page.slug === 'ranking') {
+    bodyHtml = growthMoneyRenderers.renderRankingsPageSsr();
+  } else if (page.slug === 'advertise') {
+    bodyHtml = growthMoneyRenderers.renderAdvertisePageSsr();
   } else {
     bodyHtml = `
     ${renderSsrNavbar('/' + page.slug + '/')}

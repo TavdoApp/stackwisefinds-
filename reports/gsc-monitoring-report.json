@@ -1,0 +1,6981 @@
+{
+  "reportDate": "2026-09-04T11:01:14.118Z",
+  "newWinners": [
+    {
+      "url": "/alternatives/invoice-ninja/",
+      "preImpr": 38,
+      "preClicks": 0,
+      "prePos": 29.66,
+      "postImpr": 451,
+      "postClicks": 0,
+      "postPos": 6.46
+    }
+  ],
+  "rising": [
+    {
+      "url": "/alternatives/majestic/",
+      "preImpr": 16,
+      "preClicks": 0,
+      "prePos": 65.56,
+      "postImpr": 31,
+      "postClicks": 0,
+      "postPos": 66.97
+    },
+    {
+      "url": "/software/zerotier-one/",
+      "preImpr": 13,
+      "preClicks": 0,
+      "prePos": 45.38,
+      "postImpr": 28,
+      "postClicks": 0,
+      "postPos": 59.61
+    },
+    {
+      "url": "/software/appgyver-composer/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 32.22,
+      "postImpr": 16,
+      "postClicks": 1,
+      "postPos": 46.69
+    },
+    {
+      "url": "/software/readwise-reader/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 39.5,
+      "postImpr": 12,
+      "postClicks": 0,
+      "postPos": 61.75
+    },
+    {
+      "url": "/software/aws-guardduty/",
+      "preImpr": 15,
+      "preClicks": 0,
+      "prePos": 44.27,
+      "postImpr": 23,
+      "postClicks": 0,
+      "postPos": 75.65
+    },
+    {
+      "url": "/alternatives/invideo-ai/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 81.56,
+      "postImpr": 11,
+      "postClicks": 0,
+      "postPos": 82.27
+    },
+    {
+      "url": "/software/vimeo/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 38.33,
+      "postImpr": 12,
+      "postClicks": 0,
+      "postPos": 32.25
+    },
+    {
+      "url": "/software/appium/",
+      "preImpr": 12,
+      "preClicks": 0,
+      "prePos": 51.92,
+      "postImpr": 37,
+      "postClicks": 0,
+      "postPos": 73.22
+    },
+    {
+      "url": "/software/obs-studio/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 64.09,
+      "postImpr": 14,
+      "postClicks": 0,
+      "postPos": 65.71
+    },
+    {
+      "url": "/software/gather-town/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 35
+    },
+    {
+      "url": "/software/sauce-labs/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 21,
+      "postClicks": 0,
+      "postPos": 48.52
+    },
+    {
+      "url": "/software/medusa-js/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 20,
+      "postClicks": 0,
+      "postPos": 78
+    },
+    {
+      "url": "/software/warp-terminal/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 13,
+      "postClicks": 0,
+      "postPos": 75.62
+    },
+    {
+      "url": "/software/flux-cd/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 10,
+      "postClicks": 0,
+      "postPos": 75.6
+    },
+    {
+      "url": "/vs/jira-by-atlassian-vs-kanten-kanbanflow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 9,
+      "postClicks": 0,
+      "postPos": 65
+    },
+    {
+      "url": "/alternatives/perimeter81/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 9,
+      "postClicks": 0,
+      "postPos": 66.22
+    },
+    {
+      "url": "/software/partnerstack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 8,
+      "postClicks": 0,
+      "postPos": 71.75
+    },
+    {
+      "url": "/alternatives/google-forms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 76.14
+    },
+    {
+      "url": "/software/kube-bench/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 80.29
+    },
+    {
+      "url": "/best/social-media/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 77.4
+    },
+    {
+      "url": "/software/snyk-sec/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 53.33
+    },
+    {
+      "url": "/alternatives/checkout-com/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 65.17
+    },
+    {
+      "url": "/software/selenium/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 72.83
+    },
+    {
+      "url": "/software/yubico/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 42.8
+    },
+    {
+      "url": "/software/wiz-cloud/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 60.8
+    },
+    {
+      "url": "/alternatives/passbolt/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 69.4
+    },
+    {
+      "url": "/software/flick/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/prefect/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 28.5
+    },
+    {
+      "url": "/software/allure-report/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 31.5
+    },
+    {
+      "url": "/alternatives/youtrack-by-jetbrains/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/best/testing-qa/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/software/cursor/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 45.25
+    },
+    {
+      "url": "/software/a2x-accounting/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/software/crowdstrike-falcon/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 55.25
+    },
+    {
+      "url": "/software/digitalocean/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 74.25
+    },
+    {
+      "url": "/vs/123formbuilder-vs-react-hook-form/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 83
+    },
+    {
+      "url": "/alternatives/drift/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 94.25
+    },
+    {
+      "url": "/vs/valkey-vs-elasticsearch/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 1.67
+    },
+    {
+      "url": "/vs/trello-vs-youtrack-by-jetbrains/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 9.33
+    },
+    {
+      "url": "/alternatives/clarizen-planview/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 33
+    },
+    {
+      "url": "/alternatives/mermaid-js/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 23.67
+    },
+    {
+      "url": "/alternatives/curl/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 7.5
+    },
+    {
+      "url": "/alternatives/elisity-segmentation/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 37
+    },
+    {
+      "url": "/software/dealmirror/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 39
+    },
+    {
+      "url": "/alternatives/pitchground/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 40
+    },
+    {
+      "url": "/software/draftbit/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 41
+    },
+    {
+      "url": "/alternatives/gocardless/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 29
+    },
+    {
+      "url": "/software/instapaper/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 45.67
+    },
+    {
+      "url": "/software/flair-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/software/grafana-k6/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/software/fluent-forms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 57.33
+    },
+    {
+      "url": "/best/ai-music-audio/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 69.33
+    },
+    {
+      "url": "/software/lemon-squeezy/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/software/davinci-resolve/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/freelancer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/bruno-api/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/mockoon-app/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/partnerstack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/software/twingate/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 64.67
+    },
+    {
+      "url": "/alternatives/krisp/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/vs/meilisearch-vs-typesense/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/alternatives/tactiq/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 67.67
+    },
+    {
+      "url": "/alternatives/freshbooks-payments/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/deputy/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/vs/docusign-vs-signwell/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 71.67
+    },
+    {
+      "url": "/alternatives/deep-art-effects/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/software/typeform/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/jira-by-atlassian/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 75.67
+    },
+    {
+      "url": "/best/ai-coding-dev/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 76
+    },
+    {
+      "url": "/vs/aws-vs-microsoft-azure/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 79
+    },
+    {
+      "url": "/alternatives/soundtrap-storytellers/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 80.67
+    },
+    {
+      "url": "/alternatives/hunter-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 75
+    },
+    {
+      "url": "/category/meeting-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/alternatives/clickup/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 84.5
+    },
+    {
+      "url": "/alternatives/rewatch/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 90.33
+    },
+    {
+      "url": "/best/design-creative/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 90.33
+    },
+    {
+      "url": "/alternatives/shopware/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 96.67
+    },
+    {
+      "url": "/alternatives/testkube-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 4
+    },
+    {
+      "url": "/vs/focalboard-vs-leantime/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 4.5
+    },
+    {
+      "url": "/vs/greenshift-wp-vs-elementor/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 4.5
+    },
+    {
+      "url": "/vs/linear-vs-redmine/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/alternatives/cyberduck/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 5.5
+    },
+    {
+      "url": "/alternatives/klarna/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 5.5
+    },
+    {
+      "url": "/alternatives/microiks-envoy/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/keda-sh/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 6.5
+    },
+    {
+      "url": "/vs/vikunja-vs-leantime/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/software/beyondtrust/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 7.5
+    },
+    {
+      "url": "/alternatives/apache-pinot/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/vs/cognito-forms-vs-microsoft-forms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 10.5
+    },
+    {
+      "url": "/alternatives/vcluster-loft/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 11
+    },
+    {
+      "url": "/alternatives/super-so/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 12.5
+    },
+    {
+      "url": "/alternatives/kantata/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 26
+    },
+    {
+      "url": "/alternatives/semperis-directory/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 21
+    },
+    {
+      "url": "/alternatives/proxyman/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 29.5
+    },
+    {
+      "url": "/software/cypress/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 25
+    },
+    {
+      "url": "/software/foxit-esign/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 38
+    },
+    {
+      "url": "/software/orbstack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 33
+    },
+    {
+      "url": "/alternatives/allure-report/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/alternatives/axonius-asset/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/alternatives/wazuh-siem/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 36.5
+    },
+    {
+      "url": "/alternatives/bokio-accounting/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 37
+    },
+    {
+      "url": "/alternatives/testing-library/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 40
+    },
+    {
+      "url": "/alternatives/boundary-hashicorp/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 40.5
+    },
+    {
+      "url": "/alternatives/cilium-ebpf/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 41
+    },
+    {
+      "url": "/alternatives/bazaarvoice/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 44
+    },
+    {
+      "url": "/software/slack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 59.5
+    },
+    {
+      "url": "/software/sisense/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 47
+    },
+    {
+      "url": "/alternatives/gitpod/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 48.5
+    },
+    {
+      "url": "/software/deepl/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 48.5
+    },
+    {
+      "url": "/software/hasura/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 49.5
+    },
+    {
+      "url": "/alternatives/stax-payments/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 51
+    },
+    {
+      "url": "/best/dev-cloud/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 52.5
+    },
+    {
+      "url": "/best/time-productivity/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 52.5
+    },
+    {
+      "url": "/alternatives/formbricks/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/software/kong-gateway/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 54.5
+    },
+    {
+      "url": "/vs/surveymonkey-vs-paperform/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/best/ecommerce-funnels/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/vs/impact-com-vs-partnerstack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 56.5
+    },
+    {
+      "url": "/software/appsmith/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/best/esign-documents/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/vs/hashnode-vs-dev-to/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/vs/wix-vs-carrd/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/capsule-crm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/sellfi/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 61.5
+    },
+    {
+      "url": "/vs/delinea-pam-vs-rapid7-insightvm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 61.5
+    },
+    {
+      "url": "/vs/read-ai-vs-limitless-rewind/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 61.5
+    },
+    {
+      "url": "/alternatives/scite/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/software/maximizer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/software/netmaker/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 63
+    },
+    {
+      "url": "/software/breezy-hr/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/alternatives/melio/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 65
+    },
+    {
+      "url": "/alternatives/wave-accounting/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/software/adapt-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/software/artillery-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 66.5
+    },
+    {
+      "url": "/alternatives/aws/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/best/devops-infrastructure/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/software/cj-affiliate/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/alternatives/posthog/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/terraform/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/vs/notion-vs-kanten-kanbanflow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/kajabi/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/fliki/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 71.5
+    },
+    {
+      "url": "/alternatives/polar-sh/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/alternatives/viddyoze/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/software/playwright-ct/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/freeagent/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 71.5
+    },
+    {
+      "url": "/alternatives/microsoft-designer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 71.5
+    },
+    {
+      "url": "/best/customer-support/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/flutterflow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/software/splitwise/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/vs/intercom-vs-front/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/software/apigee-google/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 73.5
+    },
+    {
+      "url": "/vs/power-bi-vs-looker-studio/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 73.5
+    },
+    {
+      "url": "/alternatives/streak/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/vs/asana-vs-teamwork/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 74.5
+    },
+    {
+      "url": "/alternatives/read-me-docs/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 75.5
+    },
+    {
+      "url": "/software/earthly-ci/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 75.5
+    },
+    {
+      "url": "/alternatives/apache-airflow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 77.5
+    },
+    {
+      "url": "/alternatives/karate-labs/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 77.5
+    },
+    {
+      "url": "/alternatives/authoredup/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 79.5
+    },
+    {
+      "url": "/vs/jotform-vs-cognito-forms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 79.5
+    },
+    {
+      "url": "/alternatives/less-annoying-crm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 80
+    },
+    {
+      "url": "/software/square/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 80
+    },
+    {
+      "url": "/vs/elasticsearch-vs-questdb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 80
+    },
+    {
+      "url": "/alternatives/mattermost/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 80.5
+    },
+    {
+      "url": "/alternatives/homepage-gethomepage/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 82
+    },
+    {
+      "url": "/alternatives/paypal/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 82
+    },
+    {
+      "url": "/software/linktree/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 82.5
+    },
+    {
+      "url": "/alternatives/fathom/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 83
+    },
+    {
+      "url": "/software/maze-co/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 83.5
+    },
+    {
+      "url": "/vs/opensearch-vs-elasticsearch/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 83.5
+    },
+    {
+      "url": "/software/libib-fern/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/alternatives/proposify/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 85
+    },
+    {
+      "url": "/alternatives/smallpdf/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 85.5
+    },
+    {
+      "url": "/alternatives/tailwind/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 88
+    },
+    {
+      "url": "/alternatives/gnucash/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/software/firstpass/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 99
+    },
+    {
+      "url": "/alternatives/myob-business/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 100
+    },
+    {
+      "url": "/alternatives/authentik/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/big-cartel/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/codesandbox/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/detox-wix/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/easy-digital-downloads/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/alternatives/portable-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/twingate/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/wso2-api-manager/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/zephyr-scale/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/best/forms-leadgen/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/software/adinspirer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/software/hashicorp-nomad/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/vs/impact-com-vs-clickbank/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 1
+    },
+    {
+      "url": "/alternatives/divvy-bill-com/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 2
+    },
+    {
+      "url": "/alternatives/elai-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 2
+    },
+    {
+      "url": "/alternatives/outline-wiki/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 2
+    },
+    {
+      "url": "/alternatives/starlark-yarp/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 2
+    },
+    {
+      "url": "/software/tantivy-engine/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 2
+    },
+    {
+      "url": "/vs/delinea-pam-vs-subfinder-projectdiscovery/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 2
+    },
+    {
+      "url": "/alternatives/ada/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/alternatives/apache-druid/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/alternatives/kyverno-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/alternatives/orbstack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/vs/onelogin-iam-vs-subfinder-projectdiscovery/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/vs/typesense-vs-turbopuffer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/vs/vespa-vs-turbopuffer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 3
+    },
+    {
+      "url": "/alternatives/metronome/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 4
+    },
+    {
+      "url": "/alternatives/vocaroo-wave-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 4
+    },
+    {
+      "url": "/software/tikv-cncf/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 4
+    },
+    {
+      "url": "/vs/notion-vs-plane/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 4
+    },
+    {
+      "url": "/alternatives/adinspirer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/alternatives/google-cloud/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/alternatives/smartlead/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/alternatives/tikv-cncf/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/alternatives/avalara/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/k3s-rancher/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/pulumi/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/subfinder-projectdiscovery/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/zoho-invoice/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/software/seaart/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/vs/defectdojo-vs-subfinder-projectdiscovery/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/aws-guardduty/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/benthos-redpanda/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/alternatives/bundlephobia/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/dagger-engine/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/mongodb-atlas/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/packer-hashicorp/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/tripetto/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/webhookdeck-api/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/software/cilium-ebpf/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/vs/dragonfly-vs-scylladb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/vs/dragonfly-vs-turbopuffer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/vs/linear-vs-youtrack-by-jetbrains/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/vs/wrike-vs-youtrack-by-jetbrains/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/crossplane/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/alternatives/falco-runtime/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/alternatives/getresponser/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/alternatives/kong-gateway/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/alternatives/mealie/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/category/design-creative/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/software/biteable/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/software/martez-openmetadata/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/software/rankiq/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/software/tight-studio/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/software/veed-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/vs/gamma-vs-consensus/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/vs/sanity-vs-zapier/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/vs/sysdig-secure-vs-subfinder-projectdiscovery/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/vs/trendmicro-cloud-one-vs-rapid7-insightvm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 8
+    },
+    {
+      "url": "/alternatives/cloudflare/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/alternatives/open-feature/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/alternatives/railway/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/alternatives/soda-data/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/alternatives/terragrunt/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/alternatives/yugabyte-db/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/vs/creatopy-vs-foreplay/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/vs/manageengine-pam360-vs-aws-security-hub/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 9
+    },
+    {
+      "url": "/alternatives/adobe-commerce/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/affirm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/atlan/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/coolify/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/excalidraw/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/growthbook/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/quickwit/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/testrail/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/vayu/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/alternatives/velero-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 39
+    },
+    {
+      "url": "/software/billomat/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/software/magnet-mac/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/software/opal-security/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/vs/aws-guardduty-vs-rapid7-insightvm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/vs/checkov-bridgecrew-vs-subfinder-projectdiscovery/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/vs/onelogin-iam-vs-sysdig-secure/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/vs/playwright-vs-grafana-k6/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 11
+    },
+    {
+      "url": "/vs/semgrep-sast-vs-checkov-bridgecrew/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 11
+    },
+    {
+      "url": "/alternatives/spinnaker-cd/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 45
+    },
+    {
+      "url": "/alternatives/adyen/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 14
+    },
+    {
+      "url": "/alternatives/vultr/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 14
+    },
+    {
+      "url": "/alternatives/wiremock-net/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 18
+    },
+    {
+      "url": "/alternatives/zenhub/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 18
+    },
+    {
+      "url": "/software/nuwtonic/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 24
+    },
+    {
+      "url": "/alternatives/cyberhaven-data/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 28
+    },
+    {
+      "url": "/software/pytest-org/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 28
+    },
+    {
+      "url": "/alternatives/billomat/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 30
+    },
+    {
+      "url": "/alternatives/weblium/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 35
+    },
+    {
+      "url": "/alternatives/higgsfield-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 35
+    },
+    {
+      "url": "/alternatives/nimble/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/onepagecrm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 38
+    },
+    {
+      "url": "/vs/qualtrics-xm-vs-react-hook-form/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 38
+    },
+    {
+      "url": "/alternatives/engagebay/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 39
+    },
+    {
+      "url": "/alternatives/123formbuilder/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 42
+    },
+    {
+      "url": "/software/maxbounty/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/spiceworks-cloud-help-desk/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 47
+    },
+    {
+      "url": "/alternatives/domo/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 48
+    },
+    {
+      "url": "/vs/sonix-vs-trint/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 48
+    },
+    {
+      "url": "/alternatives/2checkout-verifone/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/alternatives/estuary-flow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/software/mage-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 50
+    },
+    {
+      "url": "/alternatives/stonly/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 51
+    },
+    {
+      "url": "/alternatives/culture-amp/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/inlinks/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/opal-security/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/rapidapi-enterprise/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/revv-so/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/zscaler-private-access/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/software/formbricks/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/vs/medium-vs-hashnode/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/vs/motion-vs-foreplay/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/vs/timescaledb-vs-questdb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/appgyver-composer/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/alternatives/docmost/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/alternatives/hostinger-website-builder/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/alternatives/hour-one/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/software/dagster/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/software/microsoft-forms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/software/quickbooks/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/vs/docusign-vs-documenso/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/alternatives/airslate/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/alternatives/infracost/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/alternatives/kdp-kindle-direct-publishing/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/software/grafana/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/software/smallpdf/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/software/substack/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/vs/wordpress-com-vs-carrd/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/alternatives/napoleoncat/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/alternatives/postman/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/alternatives/shortcut-formerly-clubhouse/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/software/cratedb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/software/shadowsocks/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/software/vikunja/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/vs/1password-vs-keeper/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/vs/squarespace-vs-hostinger-website-builder/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/alternatives/auphonic/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/alternatives/landr/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/software/mode-analytics/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/software/viddyoze/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/vs/scylladb-vs-influxdb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/vs/tally-vs-react-hook-form/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/alternatives/app-builder-weweb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/alternatives/descript/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/alternatives/limitless-rewind/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/alternatives/mocklab-wiremock/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/alternatives/omnifocus/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/alternatives/payhip/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/vs/tenable-io-vs-rapid7-insightvm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/alternatives/circleci/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/alternatives/civicrm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/alternatives/granola/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/alternatives/lightdash/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/alternatives/pdf24/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/alternatives/skillspec/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/software/jan-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/vs/kong-gateway-vs-mulesoft-anypoint/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/alternatives/charles-proxy/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/clipdrop/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/murf-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/software/signnow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/bill-com/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/alternatives/fly-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/alternatives/notta/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/alternatives/pebblely/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/software/forest-app/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/software/mixmax/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/alternatives/getresponse/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/sonar-sonarqube/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/alternatives/visla/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/adobe-acrobat-sign/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/lancedb/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/smartsuite/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/vs/cognito-forms-vs-123formbuilder/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/vs/resend-vs-postmark/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/vs/surrealdb-vs-couchbase/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/alternatives/formstack-documents/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/gitlab-ci/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/issuu/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/surecart/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/banyan-security/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 63
+    },
+    {
+      "url": "/alternatives/campaign-monitor/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/alternatives/ecwid-by-lightspeed/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 63
+    },
+    {
+      "url": "/software/pactflow-io/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 63
+    },
+    {
+      "url": "/vs/rancher-suse-vs-istio-mesh/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 63
+    },
+    {
+      "url": "/alternatives/benchmark-email/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/alternatives/fantastical/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/alternatives/jumpcloud/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/alternatives/webhooks-site/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/software/circleback/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/software/kaspr/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/alternatives/close/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 65
+    },
+    {
+      "url": "/alternatives/leadsquared/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 65
+    },
+    {
+      "url": "/alternatives/link-whisper/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 65
+    },
+    {
+      "url": "/alternatives/todoist/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 65
+    },
+    {
+      "url": "/alternatives/bannerflow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/alternatives/invoice-simple/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/alternatives/limitless/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/best/saas-lifetime-deals/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/software/google-meet/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/software/storybook-test/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/alternatives/appium/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/software/glide/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/alternatives/brightpay-payroll/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/harvest/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/sage-intacct/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/typefully/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/software/gumroad/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/software/paste-app/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/software/vaultwarden/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/vs/fiverr-vs-upwork/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/vs/postmark-vs-sendgrid/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/vs/semgrep-sast-vs-openvas-greenbone/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/alternatives/animatediff/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/cj-affiliate/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/ganttpro/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/publishdrive/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/suitedash/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/software/riverside-fm/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/alternatives/fulcrum/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/alternatives/payload-cms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/alternatives/reflect-app/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/software/chainguard-images/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/vs/jira-by-atlassian-vs-plane/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/vs/partnerstack-vs-shareasale/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 70
+    },
+    {
+      "url": "/alternatives/caldera-mitre/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/fastly/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/recraft/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/sentry/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/signaturely/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/vs/notion-vs-linear/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/vs/timescaledb-vs-elasticsearch/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/civitai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/flexclip/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/plausible/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/suno-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/survey-sparrow/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/software/getresponse/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/artbreeder/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/elementor/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/let-s-enhance/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/playwright-ct/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/tripo3d/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/software/activecampaign/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/software/suno-ai/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/vs/tally-vs-microsoft-forms/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/apigee-google/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/alternatives/pytest-org/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/alternatives/spryker/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/software/brandwatch/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/alternatives/external-dns/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 75
+    },
+    {
+      "url": "/alternatives/klaus-kustomer-qa-zendesk-qa/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 75
+    },
+    {
+      "url": "/alternatives/postmark/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 75
+    },
+    {
+      "url": "/alternatives/telepresence-datawire/",
+      "preImpr": 0,
+      "preClicks": 0,
+      "prePos": 0,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 75
+    }
+  ],
+  "flat": [
+    {
+      "url": "/software/wave-invoicing/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 40.2,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 54.75
+    },
+    {
+      "url": "/alternatives/funnel-io/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 83.2,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/vs/moz-pro-vs-se-ranking/",
+      "preImpr": 31,
+      "preClicks": 1,
+      "prePos": 56.16,
+      "postImpr": 25,
+      "postClicks": 0,
+      "postPos": 56.68
+    },
+    {
+      "url": "/alternatives/smartsheet/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 50.18,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 44.6
+    },
+    {
+      "url": "/vs/screaming-frog-seo-spider-vs-se-ranking/",
+      "preImpr": 22,
+      "preClicks": 0,
+      "prePos": 57.18,
+      "postImpr": 19,
+      "postClicks": 0,
+      "postPos": 55.47
+    },
+    {
+      "url": "/alternatives/homarr-dashboard/",
+      "preImpr": 14,
+      "preClicks": 0,
+      "prePos": 10.07,
+      "postImpr": 11,
+      "postClicks": 0,
+      "postPos": 16.27
+    },
+    {
+      "url": "/alternatives/apache-guacamole/",
+      "preImpr": 14,
+      "preClicks": 0,
+      "prePos": 9.29,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 56.4
+    },
+    {
+      "url": "/software/bear-blog/",
+      "preImpr": 8,
+      "preClicks": 1,
+      "prePos": 18.25,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 8.5
+    },
+    {
+      "url": "/alternatives/defectdojo/",
+      "preImpr": 4,
+      "preClicks": 1,
+      "prePos": 9.5,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 24.67
+    },
+    {
+      "url": "/alternatives/shadowsocks/",
+      "preImpr": 9,
+      "preClicks": 1,
+      "prePos": 14.78,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/vs/wufoo-by-surveymonkey-vs-kobotoolbox/",
+      "preImpr": 6,
+      "preClicks": 1,
+      "prePos": 15.67,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/visual-studio-code/",
+      "preImpr": 3,
+      "preClicks": 1,
+      "prePos": 45.33,
+      "postImpr": 3,
+      "postClicks": 1,
+      "postPos": 45.33
+    },
+    {
+      "url": "/vs/opensearch-vs-meilisearch/",
+      "preImpr": 2,
+      "preClicks": 1,
+      "prePos": 30,
+      "postImpr": 1,
+      "postClicks": 1,
+      "postPos": 9
+    },
+    {
+      "url": "/software/getresponser/",
+      "preImpr": 1,
+      "preClicks": 1,
+      "prePos": 1,
+      "postImpr": 1,
+      "postClicks": 1,
+      "postPos": 1
+    },
+    {
+      "url": "/software/web3forms/",
+      "preImpr": 1,
+      "preClicks": 1,
+      "prePos": 6,
+      "postImpr": 1,
+      "postClicks": 1,
+      "postPos": 6
+    },
+    {
+      "url": "/alternatives/help-scout/",
+      "preImpr": 21,
+      "preClicks": 0,
+      "prePos": 75.76,
+      "postImpr": 19,
+      "postClicks": 0,
+      "postPos": 78.11
+    },
+    {
+      "url": "/software/kdp-kindle-direct-publishing/",
+      "preImpr": 14,
+      "preClicks": 0,
+      "prePos": 33.64,
+      "postImpr": 10,
+      "postClicks": 0,
+      "postPos": 50.9
+    },
+    {
+      "url": "/alternatives/dataforseo/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 69.89,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 71.33
+    },
+    {
+      "url": "/alternatives/serpstat/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 70.11,
+      "postImpr": 8,
+      "postClicks": 0,
+      "postPos": 81.5
+    },
+    {
+      "url": "/alternatives/rb2b/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 53.5,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 47.33
+    },
+    {
+      "url": "/software/ping-identity/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 53.89,
+      "postImpr": 8,
+      "postClicks": 0,
+      "postPos": 54.25
+    },
+    {
+      "url": "/alternatives/beyondtrust/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 51.73,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 68.67
+    },
+    {
+      "url": "/software/happy-scribe/",
+      "preImpr": 12,
+      "preClicks": 0,
+      "prePos": 52.67,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 69.4
+    },
+    {
+      "url": "/alternatives/sprinklr/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 60.09,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 51
+    },
+    {
+      "url": "/software/magic-brief/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 42.27,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 39.25
+    },
+    {
+      "url": "/software/deepgram/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 55.75,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/toggl-track/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 75.89,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 74
+    },
+    {
+      "url": "/alternatives/brain-fm/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 43.88,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 66.67
+    },
+    {
+      "url": "/software/rustdesk/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 60.2,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/vs/dropbox-sign-vs-pandadoc/",
+      "preImpr": 15,
+      "preClicks": 0,
+      "prePos": 74.67,
+      "postImpr": 10,
+      "postClicks": 0,
+      "postPos": 65.9
+    },
+    {
+      "url": "/alternatives/ovhcloud/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 73.44,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/alternatives/pictory/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 71.11,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/software/aws-security-hub/",
+      "preImpr": 13,
+      "preClicks": 0,
+      "prePos": 37,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 30.43
+    },
+    {
+      "url": "/alternatives/magnet-mac/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 35.88,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/alternatives/teleport/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 46.89,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/software/foxit-pdf-editor/",
+      "preImpr": 17,
+      "preClicks": 0,
+      "prePos": 51.82,
+      "postImpr": 13,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/best/open-source-self-hosted/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 50.11,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 70.83
+    },
+    {
+      "url": "/software/spline-3d/",
+      "preImpr": 13,
+      "preClicks": 0,
+      "prePos": 37.77,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 61.4
+    },
+    {
+      "url": "/alternatives/magnific-ai/",
+      "preImpr": 16,
+      "preClicks": 0,
+      "prePos": 63.06,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 59.29
+    },
+    {
+      "url": "/software/looker-studio/",
+      "preImpr": 19,
+      "preClicks": 0,
+      "prePos": 75.21,
+      "postImpr": 10,
+      "postClicks": 0,
+      "postPos": 81.7
+    },
+    {
+      "url": "/alternatives/rvc-beta/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 24.3,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 41
+    },
+    {
+      "url": "/software/homarr-dashboard/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 39.22,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/software/checkov-bridgecrew/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 29.1,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 85
+    },
+    {
+      "url": "/alternatives/worldpay/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 78.1,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 54.67
+    },
+    {
+      "url": "/software/stacksocial/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 39.5,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 21.67
+    },
+    {
+      "url": "/software/apache-guacamole/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 43.38,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 38.33
+    },
+    {
+      "url": "/alternatives/anthropic-claude/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 70.27,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 83
+    },
+    {
+      "url": "/alternatives/ripx-daw/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 30.18,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 23.5
+    },
+    {
+      "url": "/alternatives/motion/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 59.62,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 77.5
+    },
+    {
+      "url": "/software/atomic-red-team/",
+      "preImpr": 16,
+      "preClicks": 0,
+      "prePos": 49.19,
+      "postImpr": 16,
+      "postClicks": 0,
+      "postPos": 67.88
+    },
+    {
+      "url": "/software/playwright/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 43.88,
+      "postImpr": 8,
+      "postClicks": 0,
+      "postPos": 51.12
+    },
+    {
+      "url": "/alternatives/linktree/",
+      "preImpr": 12,
+      "preClicks": 0,
+      "prePos": 83.83,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 85
+    },
+    {
+      "url": "/software/garnet-ms/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 29.44,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/software/redash/",
+      "preImpr": 13,
+      "preClicks": 0,
+      "prePos": 61.54,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 72.25
+    },
+    {
+      "url": "/best/project-mgmt/",
+      "preImpr": 13,
+      "preClicks": 0,
+      "prePos": 67.08,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 67
+    },
+    {
+      "url": "/best/hr-payroll/",
+      "preImpr": 13,
+      "preClicks": 0,
+      "prePos": 82.46,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 82.8
+    },
+    {
+      "url": "/software/formik/",
+      "preImpr": 12,
+      "preClicks": 0,
+      "prePos": 42.17,
+      "postImpr": 12,
+      "postClicks": 0,
+      "postPos": 52.08
+    },
+    {
+      "url": "/alternatives/fiverr/",
+      "preImpr": 12,
+      "preClicks": 0,
+      "prePos": 68.75,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 72.67
+    },
+    {
+      "url": "/vs/defectdojo-vs-openvas-greenbone/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 19.36,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 39
+    },
+    {
+      "url": "/software/sysdig-secure/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 29.45,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 64.5
+    },
+    {
+      "url": "/software/plooto/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 46.36,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/defectdojo/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 51.64,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 44.2
+    },
+    {
+      "url": "/software/posthog/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 52.27,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 67.5
+    },
+    {
+      "url": "/vs/teamwork-vs-kanten-kanbanflow/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 54.09,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/vs/supabase-vs-vercel/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 66.18,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 68.5
+    },
+    {
+      "url": "/best/meeting-ai/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 80.82,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 78.2
+    },
+    {
+      "url": "/vs/asana-vs-jira-by-atlassian/",
+      "preImpr": 11,
+      "preClicks": 0,
+      "prePos": 84.27,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 84.5
+    },
+    {
+      "url": "/vs/valkey-vs-opensearch/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 2.8,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 3.67
+    },
+    {
+      "url": "/vs/tenable-io-vs-defectdojo/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 7.7,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 15
+    },
+    {
+      "url": "/vs/vespa-vs-elasticsearch/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 22.3,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/software/mailster/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 36.3,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 24
+    },
+    {
+      "url": "/software/hashicorp-sentinel/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 36.4,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/software/faunadb/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 45.5,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 76.75
+    },
+    {
+      "url": "/alternatives/oneflow/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 47.9,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 39
+    },
+    {
+      "url": "/software/orangehrm/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 48.6,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 82.5
+    },
+    {
+      "url": "/alternatives/float/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 50.9,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 18.5
+    },
+    {
+      "url": "/software/descope/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 52.6,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 60.33
+    },
+    {
+      "url": "/software/airgram/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 55.5,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 44
+    },
+    {
+      "url": "/alternatives/cyberghost-vpn/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 55.9,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 61.2
+    },
+    {
+      "url": "/alternatives/speechify/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 62.3,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/alternatives/builder-io/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 78.6,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 74.5
+    },
+    {
+      "url": "/alternatives/customer-io/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 79.7,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 84.5
+    },
+    {
+      "url": "/alternatives/captions/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 82.6,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/alternatives/vizard/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 84.1,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 86
+    },
+    {
+      "url": "/alternatives/zoho-crm/",
+      "preImpr": 10,
+      "preClicks": 0,
+      "prePos": 84.3,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 85.33
+    },
+    {
+      "url": "/vs/anthropic-claude-vs-elicit/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 10.22,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/alternatives/firefly-iii/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 19.56,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/vs/qualtrics-xm-vs-microsoft-forms/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 26.44,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 79
+    },
+    {
+      "url": "/software/dashy-dashboard/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 28.56,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 26.33
+    },
+    {
+      "url": "/software/scoreapp/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 37.11,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    },
+    {
+      "url": "/software/pitchground/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 41.11,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 27
+    },
+    {
+      "url": "/software/zoho-books/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 44.78,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/cpanel/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 48,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 85.5
+    },
+    {
+      "url": "/alternatives/hex-tech/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 49.11,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 11
+    },
+    {
+      "url": "/software/linkerd/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 52.89,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 69
+    },
+    {
+      "url": "/software/gorgias/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 54.11,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/software/deep-art-effects/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 56.33,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 56
+    },
+    {
+      "url": "/alternatives/morgen/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 58,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 67.33
+    },
+    {
+      "url": "/alternatives/typesense/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 59,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 52
+    },
+    {
+      "url": "/alternatives/synthesys/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 62.67,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 61.4
+    },
+    {
+      "url": "/vs/rippling-vs-gusto/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 64.22,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 71
+    },
+    {
+      "url": "/alternatives/minea/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 66.11,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 60
+    },
+    {
+      "url": "/alternatives/splitter-ai/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 67.78,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 63
+    },
+    {
+      "url": "/alternatives/hevo-data/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 68.56,
+      "postImpr": 9,
+      "postClicks": 0,
+      "postPos": 68.56
+    },
+    {
+      "url": "/software/hey-reach/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 78.56,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 72
+    },
+    {
+      "url": "/alternatives/resend/",
+      "preImpr": 9,
+      "preClicks": 0,
+      "prePos": 81.11,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 83.5
+    },
+    {
+      "url": "/alternatives/vikunja/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 7,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 5
+    },
+    {
+      "url": "/software/tackly/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 9.38,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 16
+    },
+    {
+      "url": "/software/lucidspark-ai/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 16,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 10
+    },
+    {
+      "url": "/vs/jira-by-atlassian-vs-youtrack-by-jetbrains/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 17.25,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 7
+    },
+    {
+      "url": "/software/emissary-ingress/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 21.12,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 40
+    },
+    {
+      "url": "/software/craft-my-pdf/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 32.75,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 26.5
+    },
+    {
+      "url": "/alternatives/yellowfin-bi/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 35.12,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 46
+    },
+    {
+      "url": "/software/blocksurvey/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 36.75,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/alternatives/sked-social/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 40.62,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 40.75
+    },
+    {
+      "url": "/software/duo-security/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 40.88,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 54
+    },
+    {
+      "url": "/software/helpjuice/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 46,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 41.5
+    },
+    {
+      "url": "/alternatives/joomag/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 52.5,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 53
+    },
+    {
+      "url": "/software/assembly-ai/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 54.62,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/best/collaboration-chat/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 55.5,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/vs/jira-by-atlassian-vs-teamwork/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 59.12,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 49
+    },
+    {
+      "url": "/alternatives/autopod/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 60.12,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/software/fireflies-ai/",
+      "preImpr": 8,
+      "preClicks": 0,
+      "prePos": 62.12,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 57
+    }
+  ],
+  "declining": [
+    {
+      "url": "/software/all-in-one-seo-aioseo/",
+      "preImpr": 1206,
+      "preClicks": 3,
+      "prePos": 60.37,
+      "postImpr": 9,
+      "postClicks": 0,
+      "postPos": 51.56
+    },
+    {
+      "url": "/software/seoclarity/",
+      "preImpr": 57,
+      "preClicks": 0,
+      "prePos": 54.67,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 66
+    },
+    {
+      "url": "/alternatives/databox/",
+      "preImpr": 175,
+      "preClicks": 1,
+      "prePos": 70.27,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 73
+    },
+    {
+      "url": "/software/authy/",
+      "preImpr": 65,
+      "preClicks": 1,
+      "prePos": 45.15,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 57.25
+    },
+    {
+      "url": "/software/bright-manager/",
+      "preImpr": 56,
+      "preClicks": 0,
+      "prePos": 10.21,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/alternatives/accuranker/",
+      "preImpr": 60,
+      "preClicks": 0,
+      "prePos": 67.37,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/software/netsuite/",
+      "preImpr": 67,
+      "preClicks": 0,
+      "prePos": 57.52,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/paycom/",
+      "preImpr": 171,
+      "preClicks": 0,
+      "prePos": 58.13,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 59.33
+    },
+    {
+      "url": "/alternatives/sprout-social/",
+      "preImpr": 86,
+      "preClicks": 0,
+      "prePos": 77.21,
+      "postImpr": 9,
+      "postClicks": 0,
+      "postPos": 72.56
+    },
+    {
+      "url": "/alternatives/mangools/",
+      "preImpr": 112,
+      "preClicks": 0,
+      "prePos": 67.42,
+      "postImpr": 8,
+      "postClicks": 0,
+      "postPos": 66.75
+    },
+    {
+      "url": "/alternatives/microsoft-power-apps/",
+      "preImpr": 153,
+      "preClicks": 0,
+      "prePos": 70.84,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/ramp/",
+      "preImpr": 133,
+      "preClicks": 0,
+      "prePos": 55.98,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 58
+    },
+    {
+      "url": "/software/accuranker/",
+      "preImpr": 127,
+      "preClicks": 0,
+      "prePos": 66.72,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/pitchbox/",
+      "preImpr": 115,
+      "preClicks": 0,
+      "prePos": 63.23,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 37
+    },
+    {
+      "url": "/alternatives/intercom/",
+      "preImpr": 114,
+      "preClicks": 0,
+      "prePos": 81.66,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/proranktracker/",
+      "preImpr": 110,
+      "preClicks": 0,
+      "prePos": 69.31,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/alternatives/brightlocal/",
+      "preImpr": 78,
+      "preClicks": 0,
+      "prePos": 70.83,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 59
+    },
+    {
+      "url": "/alternatives/microsoft-power-automate/",
+      "preImpr": 97,
+      "preClicks": 0,
+      "prePos": 80.19,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/convex/",
+      "preImpr": 94,
+      "preClicks": 0,
+      "prePos": 46.45,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 71.75
+    },
+    {
+      "url": "/alternatives/obsidian/",
+      "preImpr": 94,
+      "preClicks": 0,
+      "prePos": 68.51,
+      "postImpr": 9,
+      "postClicks": 0,
+      "postPos": 68.78
+    },
+    {
+      "url": "/software/ninjaoutreach/",
+      "preImpr": 88,
+      "preClicks": 0,
+      "prePos": 71.25,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 62
+    },
+    {
+      "url": "/vs/alchemer-formerly-surveygizmo-vs-wufoo-by-surveymonkey/",
+      "preImpr": 78,
+      "preClicks": 0,
+      "prePos": 51.65,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/formspree/",
+      "preImpr": 76,
+      "preClicks": 0,
+      "prePos": 36.34,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 35.83
+    },
+    {
+      "url": "/vs/jira-by-atlassian-vs-redmine/",
+      "preImpr": 74,
+      "preClicks": 0,
+      "prePos": 68.53,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 75.33
+    },
+    {
+      "url": "/alternatives/rocketreach/",
+      "preImpr": 62,
+      "preClicks": 0,
+      "prePos": 75.68,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 76
+    },
+    {
+      "url": "/software/arangodb/",
+      "preImpr": 71,
+      "preClicks": 0,
+      "prePos": 52.7,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 43.67
+    },
+    {
+      "url": "/alternatives/freedom/",
+      "preImpr": 70,
+      "preClicks": 0,
+      "prePos": 45.76,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/alternatives/forest-app/",
+      "preImpr": 70,
+      "preClicks": 0,
+      "prePos": 53.6,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/wireguard/",
+      "preImpr": 68,
+      "preClicks": 0,
+      "prePos": 66.03,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 55
+    },
+    {
+      "url": "/alternatives/sisense/",
+      "preImpr": 52,
+      "preClicks": 0,
+      "prePos": 56.46,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 73.33
+    },
+    {
+      "url": "/alternatives/roam-research/",
+      "preImpr": 65,
+      "preClicks": 0,
+      "prePos": 60.82,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 64
+    },
+    {
+      "url": "/software/tailscale/",
+      "preImpr": 65,
+      "preClicks": 0,
+      "prePos": 61.4,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 53.33
+    },
+    {
+      "url": "/best/seo-analytics/",
+      "preImpr": 65,
+      "preClicks": 0,
+      "prePos": 87.35,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 80.75
+    },
+    {
+      "url": "/alternatives/sunsama/",
+      "preImpr": 64,
+      "preClicks": 0,
+      "prePos": 67.02,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 65.4
+    },
+    {
+      "url": "/alternatives/cold-turkey/",
+      "preImpr": 63,
+      "preClicks": 0,
+      "prePos": 55.94,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 67.33
+    },
+    {
+      "url": "/alternatives/tray-io/",
+      "preImpr": 63,
+      "preClicks": 0,
+      "prePos": 64.03,
+      "postImpr": 5,
+      "postClicks": 0,
+      "postPos": 63.8
+    },
+    {
+      "url": "/alternatives/qualtrics-xm/",
+      "preImpr": 63,
+      "preClicks": 0,
+      "prePos": 85.76,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/rb2b/",
+      "preImpr": 61,
+      "preClicks": 0,
+      "prePos": 47.93,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/jira-by-atlassian/",
+      "preImpr": 61,
+      "preClicks": 0,
+      "prePos": 54.31,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 34
+    },
+    {
+      "url": "/vs/surveymonkey-vs-alchemer-formerly-surveygizmo/",
+      "preImpr": 61,
+      "preClicks": 0,
+      "prePos": 60.95,
+      "postImpr": 4,
+      "postClicks": 0,
+      "postPos": 73.25
+    },
+    {
+      "url": "/software/verbit/",
+      "preImpr": 59,
+      "preClicks": 0,
+      "prePos": 48.53,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/fiverr/",
+      "preImpr": 57,
+      "preClicks": 0,
+      "prePos": 33.18,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 25.5
+    },
+    {
+      "url": "/alternatives/splitwise/",
+      "preImpr": 57,
+      "preClicks": 0,
+      "prePos": 64.3,
+      "postImpr": 6,
+      "postClicks": 0,
+      "postPos": 62.67
+    },
+    {
+      "url": "/software/sonix/",
+      "preImpr": 56,
+      "preClicks": 0,
+      "prePos": 45.66,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/software/dataforseo/",
+      "preImpr": 54,
+      "preClicks": 0,
+      "prePos": 41.22,
+      "postImpr": 1,
+      "postClicks": 0,
+      "postPos": 40
+    },
+    {
+      "url": "/software/15five/",
+      "preImpr": 54,
+      "preClicks": 0,
+      "prePos": 53.54,
+      "postImpr": 0,
+      "postClicks": 0,
+      "postPos": 0
+    },
+    {
+      "url": "/alternatives/userlike/",
+      "preImpr": 53,
+      "preClicks": 0,
+      "prePos": 66.25,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 63.67
+    },
+    {
+      "url": "/software/sendgrid/",
+      "preImpr": 53,
+      "preClicks": 0,
+      "prePos": 66.57,
+      "postImpr": 3,
+      "postClicks": 0,
+      "postPos": 68
+    },
+    {
+      "url": "/software/payload-cms/",
+      "preImpr": 52,
+      "preClicks": 0,
+      "prePos": 68.88,
+      "postImpr": 2,
+      "postClicks": 0,
+      "postPos": 61
+    },
+    {
+      "url": "/software/rvc-beta/",
+      "preImpr": 51,
+      "preClicks": 0,
+      "prePos": 39.8,
+      "postImpr": 7,
+      "postClicks": 0,
+      "postPos": 34.71
+    }
+  ],
+  "strikingDistancePages": [
+    {
+      "url": "/vs/elasticsearch-vs-turbopuffer/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/pocketbase/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/benthos-redpanda/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/crossplane/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/falco-runtime/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/getresponser/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/kong-gateway/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/mealie/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/category/design-creative/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/biteable/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/martez-openmetadata/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/rankiq/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/tight-studio/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/veed-io/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/gamma-vs-consensus/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/sanity-vs-zapier/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/sysdig-secure-vs-subfinder-projectdiscovery/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/trendmicro-cloud-one-vs-rapid7-insightvm/",
+      "currentPosition": 8,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/bear-blog/",
+      "currentPosition": 8.5,
+      "impressions": 2,
+      "clicks": 1,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/kobotoolbox/",
+      "currentPosition": 8.67,
+      "impressions": 3,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/surveymonkey-vs-kobotoolbox/",
+      "currentPosition": 8.73,
+      "impressions": 11,
+      "clicks": 1,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/opensearch-vs-meilisearch/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 1,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/offeo/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/woobox/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/keeper/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/apache-pinot/",
+      "currentPosition": 9,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/cloudflare/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/open-feature/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/terragrunt/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/yugabyte-db/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/creatopy-vs-foreplay/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/manageengine-pam360-vs-aws-security-hub/",
+      "currentPosition": 9,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/waymark/",
+      "currentPosition": 9.06,
+      "impressions": 17,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/trello-vs-youtrack-by-jetbrains/",
+      "currentPosition": 9.33,
+      "impressions": 3,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/basecamp-vs-planview-leankit-clarizen/",
+      "currentPosition": 9.59,
+      "impressions": 17,
+      "clicks": 3,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/headlamp-k8s/",
+      "currentPosition": 9.71,
+      "impressions": 14,
+      "clicks": 2,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/authenticator-app/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/suricata-ids/",
+      "currentPosition": 10,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/emissary-ingress/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/lucidspark-ai/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/zephyr-scale/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/adobe-commerce/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/affirm/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/atlan/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/coolify/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/excalidraw/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/growthbook/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/quickwit/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/vayu/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/billomat/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/magnet-mac/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/opal-security/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/aws-guardduty-vs-rapid7-insightvm/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/checkov-bridgecrew-vs-subfinder-projectdiscovery/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/onelogin-iam-vs-sysdig-secure/",
+      "currentPosition": 10,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/bright-manager/",
+      "currentPosition": 10.21,
+      "impressions": 56,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/joinly/",
+      "currentPosition": 10.23,
+      "impressions": 13,
+      "clicks": 2,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/telegraph/",
+      "currentPosition": 10.42,
+      "impressions": 24,
+      "clicks": 2,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/helm-sh/",
+      "currentPosition": 10.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/cognito-forms-vs-microsoft-forms/",
+      "currentPosition": 10.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/microsoft-forms-vs-alchemer-formerly-surveygizmo/",
+      "currentPosition": 11,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/hex-tech/",
+      "currentPosition": 11,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/vcluster-loft/",
+      "currentPosition": 11,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/playwright-vs-grafana-k6/",
+      "currentPosition": 11,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/semgrep-sast-vs-checkov-bridgecrew/",
+      "currentPosition": 11,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/privoxy/",
+      "currentPosition": 12.41,
+      "impressions": 17,
+      "clicks": 1,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/super-so/",
+      "currentPosition": 12.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/meshcentral/",
+      "currentPosition": 12.52,
+      "impressions": 29,
+      "clicks": 1,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/adyen/",
+      "currentPosition": 14,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/vultr/",
+      "currentPosition": 14,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/bloodhound-ad/",
+      "currentPosition": 15,
+      "impressions": 15,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/tenable-io-vs-defectdojo/",
+      "currentPosition": 15,
+      "impressions": 7,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/tackly/",
+      "currentPosition": 16,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/homarr-dashboard/",
+      "currentPosition": 16.27,
+      "impressions": 11,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/centered-app/",
+      "currentPosition": 17.29,
+      "impressions": 14,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/pipedrive-leadbooster/",
+      "currentPosition": 18,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/wiremock-net/",
+      "currentPosition": 18,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/zenhub/",
+      "currentPosition": 18,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/vocal-remover/",
+      "currentPosition": 18.19,
+      "impressions": 21,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/float/",
+      "currentPosition": 18.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/vs/upwork-vs-freelancer/",
+      "currentPosition": 19,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/pomerium/",
+      "currentPosition": 19,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/session-app/",
+      "currentPosition": 20.64,
+      "impressions": 11,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/semperis-directory/",
+      "currentPosition": 21,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/audiobookshelf/",
+      "currentPosition": 21.67,
+      "impressions": 3,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/stacksocial/",
+      "currentPosition": 21.67,
+      "impressions": 3,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/cyanite-ai/",
+      "currentPosition": 21.79,
+      "impressions": 14,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/evernote/",
+      "currentPosition": 22,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/ripx-daw/",
+      "currentPosition": 23.5,
+      "impressions": 4,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/mermaid-js/",
+      "currentPosition": 23.67,
+      "impressions": 3,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/mailster/",
+      "currentPosition": 24,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/nuwtonic/",
+      "currentPosition": 24,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/defectdojo/",
+      "currentPosition": 24.67,
+      "impressions": 3,
+      "clicks": 1,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/cypress/",
+      "currentPosition": 25,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/wireguard/",
+      "currentPosition": 25.23,
+      "impressions": 13,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/fiverr/",
+      "currentPosition": 25.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/zeek-ids/",
+      "currentPosition": 25.91,
+      "impressions": 11,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/kantata/",
+      "currentPosition": 26,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/astradb/",
+      "currentPosition": 26.27,
+      "impressions": 41,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/dashy-dashboard/",
+      "currentPosition": 26.33,
+      "impressions": 3,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/digisigner/",
+      "currentPosition": 26.43,
+      "impressions": 14,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/craft-my-pdf/",
+      "currentPosition": 26.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/gotify-server/",
+      "currentPosition": 26.67,
+      "impressions": 12,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/pitchground/",
+      "currentPosition": 27,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/upwork/",
+      "currentPosition": 27.44,
+      "impressions": 16,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/zenefits/",
+      "currentPosition": 27.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/zammad/",
+      "currentPosition": 28,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/tricount/",
+      "currentPosition": 28,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/izotope-ozone/",
+      "currentPosition": 28,
+      "impressions": 15,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/cyberhaven-data/",
+      "currentPosition": 28,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/pytest-org/",
+      "currentPosition": 28,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/carbone-io/",
+      "currentPosition": 28.06,
+      "impressions": 17,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/personio/",
+      "currentPosition": 28.43,
+      "impressions": 14,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/prefect/",
+      "currentPosition": 28.5,
+      "impressions": 4,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/yubico/",
+      "currentPosition": 29,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/gocardless/",
+      "currentPosition": 29,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/react-hook-form/",
+      "currentPosition": 29.05,
+      "impressions": 19,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/proxyman/",
+      "currentPosition": 29.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/soundtrap-storytellers/",
+      "currentPosition": 29.9,
+      "impressions": 20,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/noloco/",
+      "currentPosition": 30,
+      "impressions": 12,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/billomat/",
+      "currentPosition": 30,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/aws-security-hub/",
+      "currentPosition": 30.43,
+      "impressions": 7,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/hiveage/",
+      "currentPosition": 30.5,
+      "impressions": 12,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/fulcrum/",
+      "currentPosition": 30.6,
+      "impressions": 15,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/caldera-mitre/",
+      "currentPosition": 31.5,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/allure-report/",
+      "currentPosition": 31.5,
+      "impressions": 4,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/younium/",
+      "currentPosition": 32,
+      "impressions": 21,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/vimeo/",
+      "currentPosition": 32.25,
+      "impressions": 12,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/kuzu-db/",
+      "currentPosition": 32.67,
+      "impressions": 3,
+      "clicks": 2,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/mailtrap/",
+      "currentPosition": 33,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/sogosurvey-sogolytics/",
+      "currentPosition": 33,
+      "impressions": 16,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/clarizen-planview/",
+      "currentPosition": 33,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/orbstack/",
+      "currentPosition": 33,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/yumpu/",
+      "currentPosition": 33.09,
+      "impressions": 11,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/readymag/",
+      "currentPosition": 33.5,
+      "impressions": 12,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/pumble/",
+      "currentPosition": 33.69,
+      "impressions": 13,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/jira-by-atlassian/",
+      "currentPosition": 34,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/lago/",
+      "currentPosition": 34,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/publishdrive/",
+      "currentPosition": 34.65,
+      "impressions": 31,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/rvc-beta/",
+      "currentPosition": 34.71,
+      "impressions": 7,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/pipedrive-leadbooster/",
+      "currentPosition": 34.91,
+      "impressions": 11,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/software/gather-town/",
+      "currentPosition": 35,
+      "impressions": 2,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/weblium/",
+      "currentPosition": 35,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    },
+    {
+      "url": "/alternatives/higgsfield-ai/",
+      "currentPosition": 35,
+      "impressions": 1,
+      "clicks": 0,
+      "recommendedAction": "Optimize title snippet, add 2 internal links from parent Best Hub, and expand specification table."
+    }
+  ],
+  "newQueries": [
+    {
+      "query": "power automate",
+      "impressions": 54,
+      "clicks": 0,
+      "position": 48.83
+    },
+    {
+      "query": "rocketreach alternative",
+      "impressions": 34,
+      "clicks": 0,
+      "position": 73.44
+    },
+    {
+      "query": "invoicing software",
+      "impressions": 23,
+      "clicks": 0,
+      "position": 74.48
+    },
+    {
+      "query": "appium",
+      "impressions": 20,
+      "clicks": 0,
+      "position": 77.6
+    },
+    {
+      "query": "vimeo",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 25.22
+    },
+    {
+      "query": "all in one seo software",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 48
+    },
+    {
+      "query": "se ranking vs screaming frog",
+      "impressions": 18,
+      "clicks": 0,
+      "position": 53.78
+    },
+    {
+      "query": "invoice management software",
+      "impressions": 17,
+      "clicks": 0,
+      "position": 80.24
+    },
+    {
+      "query": "appsheet",
+      "impressions": 16,
+      "clicks": 0,
+      "position": 73.56
+    },
+    {
+      "query": "google cloud",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 26.43
+    },
+    {
+      "query": "accuranker alternatives",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 63.43
+    },
+    {
+      "query": "moz pro alternative",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 74.21
+    },
+    {
+      "query": "best invoice capture software",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 78.43
+    },
+    {
+      "query": "invoice management tool",
+      "impressions": 14,
+      "clicks": 0,
+      "position": 89.21
+    },
+    {
+      "query": "all in one seo tool",
+      "impressions": 13,
+      "clicks": 0,
+      "position": 53.23
+    },
+    {
+      "query": "sauce labs",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 47.18
+    },
+    {
+      "query": "invoice software",
+      "impressions": 11,
+      "clicks": 0,
+      "position": 77.55
+    },
+    {
+      "query": "mangools alternatives",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 64.4
+    },
+    {
+      "query": "best all in one seo tools",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 69
+    },
+    {
+      "query": "best seo ranking software",
+      "impressions": 10,
+      "clicks": 0,
+      "position": 86.7
+    },
+    {
+      "query": "what are the top alternatives to anchorclick for email automation?",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 42.78
+    },
+    {
+      "query": "formik",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 48.56
+    },
+    {
+      "query": "elasticsearch tools",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 59.44
+    },
+    {
+      "query": "majestic alternatives",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 71.78
+    },
+    {
+      "query": "all in one seo software with recommendations",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 73.33
+    },
+    {
+      "query": "screaming frog",
+      "impressions": 9,
+      "clicks": 0,
+      "position": 77.44
+    },
+    {
+      "query": "gather town",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 51.62
+    },
+    {
+      "query": "kdp",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 52.75
+    },
+    {
+      "query": "moz se ranking",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 59
+    },
+    {
+      "query": "top 100 brightlocal",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 59.38
+    },
+    {
+      "query": "klipfolio alternatives",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 59.88
+    },
+    {
+      "query": "majestic seo alternatives",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 64.25
+    },
+    {
+      "query": "perimeter 81 alternative",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 67
+    },
+    {
+      "query": "brandwatch alternatives",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 72.38
+    },
+    {
+      "query": "accuranker alternative",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 73.25
+    },
+    {
+      "query": "sprout social alternatives",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 80
+    },
+    {
+      "query": "smartsheet alternatives",
+      "impressions": 8,
+      "clicks": 0,
+      "position": 80.62
+    },
+    {
+      "query": "elasticsearch",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 26.29
+    },
+    {
+      "query": "viemo",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 27.43
+    },
+    {
+      "query": "microsoft automate",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 37.29
+    },
+    {
+      "query": "elasticsearch software",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 46.86
+    },
+    {
+      "query": "saucelabs",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 47
+    },
+    {
+      "query": "majestic alternative",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 63.71
+    },
+    {
+      "query": "helpscout alternative",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 78.86
+    },
+    {
+      "query": "seo ranking software",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 88.71
+    },
+    {
+      "query": "invoice and contract software",
+      "impressions": 7,
+      "clicks": 0,
+      "position": 90.86
+    },
+    {
+      "query": "all in one seo",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 44.67
+    },
+    {
+      "query": "all in one seo tools",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 49.33
+    },
+    {
+      "query": "feedhive alternatives",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 62.17
+    },
+    {
+      "query": "mangools alternative",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 69.5
+    },
+    {
+      "query": "hevo data alternative",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 69.83
+    },
+    {
+      "query": "mozbar alternative",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 70.17
+    },
+    {
+      "query": "dataforseo alternative",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 71.83
+    },
+    {
+      "query": "easiest all in one seo software",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 72.83
+    },
+    {
+      "query": "alternative of mozbar",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 73.33
+    },
+    {
+      "query": "moz pro alternatives",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 75.67
+    },
+    {
+      "query": "hootsuite competitors",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 82.67
+    },
+    {
+      "query": "custom gpt alternative for teams",
+      "impressions": 6,
+      "clicks": 0,
+      "position": 84
+    },
+    {
+      "query": "sap build apps pricing",
+      "impressions": 4,
+      "clicks": 1,
+      "position": 41.25
+    },
+    {
+      "query": "getresponser",
+      "impressions": 1,
+      "clicks": 1,
+      "position": 1
+    }
+  ]
+}

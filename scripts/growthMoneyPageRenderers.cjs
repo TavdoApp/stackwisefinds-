@@ -1377,6 +1377,271 @@ function renderSoftwareStackCostIndex2026Ssr() {
   `;
 }
 
+function renderPowerAutomateAlternativesSsr() {
+  return `
+  ${renderSsrNavbar('/alternatives/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <nav style="font-size:0.85rem;color:#536253;margin-bottom:20px;">
+      <a href="/" style="color:#536253;text-decoration:none;">Home</a> &rsaquo;
+      <a href="/best/automation/" style="color:#536253;text-decoration:none;">Workflow Automation</a> &rsaquo;
+      <span style="color:#141E14;font-weight:700;">Microsoft Power Automate Alternatives</span>
+    </nav>
+
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+        WORKFLOW &amp; RPA ALTERNATIVES MATRIX (2026)
+      </div>
+      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 14px 0;color:#182618;">
+        Top Microsoft Power Automate Alternatives &amp; Open-Source Competitors
+      </h1>
+      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 0 20px 0;">
+        Looking for substitutes to Microsoft Power Automate? While Power Automate excels within the Microsoft 365 ecosystem and Windows Desktop RPA, teams often struggle with complex per-user/per-flow licensing, premium connector paywalls, and cross-platform limitations. Here is the verified comparison matrix of top cloud, visual, and self-hosted automation alternatives.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.88rem;color:#5c7353;">
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">⚙ Scope: Cloud API + Desktop Automation</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">💰 Focus: Transparent Pricing &amp; Self-Hosting</span>
+      </div>
+    </header>
+
+    ${renderStackBuilderCta('automation', 'Calculate Automation Stack Pricing in Stack Builder')}
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">
+        Direct Substitute Comparison: Power Automate vs Top Competitors
+      </h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.92rem;text-align:left;">
+          <thead>
+            <tr style="background:#f4f7f2;border-bottom:2px solid #dce8d6;">
+              <th style="padding:12px 16px;font-weight:800;">Platform</th>
+              <th style="padding:12px 16px;font-weight:800;">Deployment</th>
+              <th style="padding:12px 16px;font-weight:800;">Pricing Model</th>
+              <th style="padding:12px 16px;font-weight:800;">Key Differentiator vs Power Automate</th>
+              <th style="padding:12px 16px;font-weight:800;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #eef2eb;">
+              <td style="padding:14px 16px;font-weight:800;"><a href="/software/n8n/" style="color:#182618;text-decoration:underline;">n8n</a></td>
+              <td style="padding:14px 16px;"><span style="background:#eaf8ea;color:#1b6e1b;padding:3px 8px;border-radius:6px;font-weight:700;font-size:0.8rem;">Self-Hosted / Cloud</span></td>
+              <td style="padding:14px 16px;">Fair-Code Free / $20/mo Cloud</td>
+              <td style="padding:14px 16px;">Complete self-hosted control, unlimited workflow executions, zero premium connector surcharges.</td>
+              <td style="padding:14px 16px;"><a href="/vs/n8n-vs-zapier/" style="color:#82A735;font-weight:700;">Compare &rarr;</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid #eef2eb;">
+              <td style="padding:14px 16px;font-weight:800;"><a href="/software/make/" style="color:#182618;text-decoration:underline;">Make (Integromat)</a></td>
+              <td style="padding:14px 16px;"><span style="background:#f0f4f8;color:#234a74;padding:3px 8px;border-radius:6px;font-weight:700;font-size:0.8rem;">Cloud SaaS</span></td>
+              <td style="padding:14px 16px;">Freemium (1k ops free) / $9/mo</td>
+              <td style="padding:14px 16px;">Infinite visual canvas, granular execution routers, far cheaper volume pricing than Power Automate.</td>
+              <td style="padding:14px 16px;"><a href="/vs/make-vs-zapier/" style="color:#82A735;font-weight:700;">Compare &rarr;</a></td>
+            </tr>
+            <tr style="border-bottom:1px solid #eef2eb;">
+              <td style="padding:14px 16px;font-weight:800;"><a href="/software/zapier/" style="color:#182618;text-decoration:underline;">Zapier</a></td>
+              <td style="padding:14px 16px;"><span style="background:#f0f4f8;color:#234a74;padding:3px 8px;border-radius:6px;font-weight:700;font-size:0.8rem;">Cloud SaaS</span></td>
+              <td style="padding:14px 16px;">Freemium / $19.99/mo</td>
+              <td style="padding:14px 16px;">7,000+ app ecosystem, easiest zero-code setup for marketing and non-Microsoft integrations.</td>
+              <td style="padding:14px 16px;"><a href="/alternatives/zapier/" style="color:#82A735;font-weight:700;">Explore &rarr;</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:16px;color:#182618;">
+        Why Teams Migrate from Microsoft Power Automate
+      </h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;">
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <h3 style="font-size:1.1rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">1. Premium Connector Paywalls</h3>
+          <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">Standard M365 plans restrict REST APIs, HTTP webhooks, and SQL connectors behind costly standalone Power Automate Premium licenses ($15/user/month).</p>
+        </div>
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <h3 style="font-size:1.1rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">2. Ecosystem Lock-In</h3>
+          <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">Power Automate is heavily optimized for SharePoint, Teams, and Dataverse. Connecting modern developer stacks (PostgreSQL, Supabase, Webhooks) is significantly more cumbersome than in n8n or Make.</p>
+        </div>
+        <div style="background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;padding:20px;">
+          <h3 style="font-size:1.1rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">3. Desktop RPA Resource Footprint</h3>
+          <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0;">Power Automate Desktop requires dedicated Windows VMs with attended/unattended bot licensing, making lightweight automation workflows expensive to scale.</p>
+        </div>
+      </div>
+    </section>
+
+    ${renderSourcesBox('Microsoft official licensing guide and vendor documentation.')}
+  </main>
+  `;
+}
+
+function renderCategoriesPageSsr(categories) {
+  const catList = categories || [
+    { id: 'automation', label: 'Workflow Automation', count: 48, desc: 'API integration, RPA bots, and webhook orchestration.' },
+    { id: 'crm', label: 'CRM & Sales Pipelines', count: 62, desc: 'Contact management, deal pipelines, and sales automation.' },
+    { id: 'seo-analytics', label: 'SEO & Web Analytics', count: 54, desc: 'Keyword research, rank tracking, backlink audits, and traffic analytics.' },
+    { id: 'invoicing', label: 'Invoicing & Billing', count: 32, desc: 'Recurring subscriptions, payment processing, and accounting.' },
+    { id: 'nocode-databases', label: 'No-Code Databases & Backend', count: 41, desc: 'Visual database builders, BaaS engines, and serverless backends.' },
+    { id: 'cloud-infrastructure', label: 'Cloud Infrastructure & Hosting', count: 58, desc: 'VPS servers, cloud hosting, edge computing, and auth providers.' }
+  ];
+
+  return `
+  ${renderSsrNavbar('/categories/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+        SOFTWARE TAXONOMY &amp; DIRECTORY
+      </div>
+      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 14px 0;color:#182618;">
+        Explore Software Categories &amp; Buyer Guides (2026)
+      </h1>
+      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 0 20px 0;">
+        Browse StakDock's curated SaaS and open-source software categories. Every category includes normalized pricing models, side-by-side spec comparison tables, self-hosted deployment calculators, and verified user reviews.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.88rem;color:#5c7353;">
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">📊 35 Verified Categories</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🔍 1,788 Cataloged Tools</span>
+      </div>
+    </header>
+
+    ${renderStackBuilderCta(null, 'Build Your Custom Multi-Category Stack')}
+
+    <section style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:20px;margin-bottom:32px;">
+      ${catList.map(c => `
+        <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:16px;padding:24px;box-shadow:0 2px 10px rgba(0,0,0,0.02);display:flex;flex-direction:column;justify-content:space-between;">
+          <div>
+            <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;">
+              <a href="/best/${c.id}/" style="color:#182618;text-decoration:none;">${c.label}</a>
+            </h2>
+            <p style="font-size:0.92rem;color:#45593e;line-height:1.5;margin:0 0 16px 0;">
+              ${c.desc || 'Comprehensive directory of top software platforms and alternatives.'}
+            </p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #f0f4ed;padding-top:14px;font-size:0.85rem;">
+            <span style="color:#71876a;font-weight:600;">${c.count || '20+'} Tools Audited</span>
+            <a href="/best/${c.id}/" style="color:#82A735;font-weight:800;text-decoration:none;">View Best Guide &rarr;</a>
+          </div>
+        </div>
+      `).join('')}
+    </section>
+  </main>
+  `;
+}
+
+function renderRankingsPageSsr() {
+  return `
+  ${renderSsrNavbar('/ranking/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+        STAKDOCK LEADERBOARD &amp; TRENDS
+      </div>
+      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 14px 0;color:#182618;">
+        Top Ranked SaaS &amp; Open-Source Software Tools 2026
+      </h1>
+      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 0 20px 0;">
+        Discover trending software launches, top-rated developer tools, and founder-recommended platforms ranked by real telemetry, verified user interest, and independent StakDock architecture audits.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.88rem;color:#5c7353;">
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🏆 Transparent Methodology</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🚫 Zero Pay-for-Rank Positions</span>
+      </div>
+    </header>
+
+    ${renderStackBuilderCta(null, 'Optimize Your Software Stack')}
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;">
+      <h2 style="font-size:1.5rem;font-weight:800;margin-top:0;margin-bottom:20px;color:#182618;">
+        Flagship Software Standouts (2026 Ranking Highlights)
+      </h2>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="padding:20px;background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+              <span style="background:#82A735;color:#FFFFFF;font-weight:800;font-size:0.75rem;padding:2px 8px;border-radius:6px;">#1 AI DEV</span>
+              <a href="/software/cursor-ai/" style="color:#182618;font-weight:800;font-size:1.15rem;text-decoration:none;">Cursor AI</a>
+            </div>
+            <p style="font-size:0.92rem;color:#45593e;margin:0;">Next-gen AI code editor with native Claude 3.7 Sonnet reasoning and multi-file Composer.</p>
+          </div>
+          <a href="/vs/cursor-ai-vs-github-copilot/" style="color:#82A735;font-weight:700;font-size:0.9rem;text-decoration:underline;">Compare vs Copilot &rarr;</a>
+        </div>
+
+        <div style="padding:20px;background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+              <span style="background:#82A735;color:#FFFFFF;font-weight:800;font-size:0.75rem;padding:2px 8px;border-radius:6px;">#1 AUTOMATION</span>
+              <a href="/software/n8n/" style="color:#182618;font-weight:800;font-size:1.15rem;text-decoration:none;">n8n Workflow Automation</a>
+            </div>
+            <p style="font-size:0.92rem;color:#45593e;margin:0;">Fair-code open-source automation platform with self-hosting and AI agent builder.</p>
+          </div>
+          <a href="/vs/n8n-vs-zapier/" style="color:#82A735;font-weight:700;font-size:0.9rem;text-decoration:underline;">Compare vs Zapier &rarr;</a>
+        </div>
+
+        <div style="padding:20px;background:#f9fbf8;border:1px solid #e2ede0;border-radius:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+              <span style="background:#82A735;color:#FFFFFF;font-weight:800;font-size:0.75rem;padding:2px 8px;border-radius:6px;">#1 INVOICING</span>
+              <a href="/software/invoice-ninja/" style="color:#182618;font-weight:800;font-size:1.15rem;text-decoration:none;">Invoice Ninja</a>
+            </div>
+            <p style="font-size:0.92rem;color:#45593e;margin:0;">Open-source invoicing &amp; payment gateway engine with zero platform fee surcharges.</p>
+          </div>
+          <a href="/best/invoicing/" style="color:#82A735;font-weight:700;font-size:0.9rem;text-decoration:underline;">View Invoicing Guide &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  `;
+}
+
+function renderAdvertisePageSsr() {
+  return `
+  ${renderSsrNavbar('/advertise/')}
+  <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
+        PARTNERSHIPS &amp; PROMOTION
+      </div>
+      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 14px 0;color:#182618;">
+        Reach 50,000+ Software Buyers &amp; Technical Founders on StakDock
+      </h1>
+      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 0 20px 0;">
+        Promote your software tool directly to technical decision-makers, agency founders, and software engineers actively evaluating alternatives, building modern stacks, and purchasing business software.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.88rem;color:#5c7353;">
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🎯 High-Intent Buyers</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">⚡ Native Stack Placement</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🔒 Clear Commercial Disclosure</span>
+      </div>
+    </header>
+
+    <section style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;margin-bottom:28px;">
+      <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:16px;padding:28px;">
+        <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">Featured Category Spotlight</h2>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 16px 0;">
+          Place your product at the top of high-intent Category Hubs and Alternative Guides. Transparently badged as a sponsored partner with direct do-follow links and feature callouts.
+        </p>
+        <div style="font-weight:800;color:#82A735;font-size:1.1rem;">From $99 / month</div>
+      </div>
+
+      <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:16px;padding:28px;">
+        <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">Stack Builder Verified Inclusion</h2>
+        <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 16px 0;">
+          Have your tool integrated directly into the StakDock interactive Stack Builder engine, allowing founders to dynamically add your platform to their production software architecture.
+        </p>
+        <div style="font-weight:800;color:#82A735;font-size:1.1rem;">From $149 / month</div>
+      </div>
+    </section>
+
+    <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;text-align:center;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:10px;color:#182618;">Ready to Promote Your SaaS?</h2>
+      <p style="font-size:0.95rem;color:#45593e;max-width:600px;margin:0 auto 20px auto;">
+        Contact our partnerships desk at <strong style="color:#182618;">partners@stakdock.com</strong> or submit your software tool for expedited editorial verification.
+      </p>
+      <a href="/submit/" style="display:inline-block;background:#141E14;color:#FFFFFF;padding:12px 28px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:0.95rem;">
+        Submit Software Listing &rarr;
+      </a>
+    </section>
+  </main>
+  `;
+}
+
 module.exports = {
   renderN8nVsZapierSsr,
   renderMakeVsZapierSsr,
@@ -1389,5 +1654,10 @@ module.exports = {
   renderShopifyAlternativesSsr,
   renderSupabaseAlternativesSsr,
   renderZendeskAlternativesSsr,
-  renderSoftwareStackCostIndex2026Ssr
+  renderSoftwareStackCostIndex2026Ssr,
+  renderPowerAutomateAlternativesSsr,
+  renderCategoriesPageSsr,
+  renderRankingsPageSsr,
+  renderAdvertisePageSsr
 };
+
