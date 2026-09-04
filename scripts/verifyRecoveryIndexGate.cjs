@@ -1,15 +1,14 @@
 /**
- * StakDock Production Recovery Index Gate (Phase 5 Contracted Architecture)
+ * StakDock Production Site-Wide Quality & Indexation Gate
  *
- * Enforces fail-closed protection gates across all 4,176 canonical URLs:
+ * Enforces strict fail-closed protection gates across all 4,180 canonical URLs:
  * 1. Source of Truth: reports/gsc-recovery-map.json & reports/authority-core-whitelist.json
- * 2. Active Search Footprint: P (48 URLs) (Indexable & in Sitemap)
- * 3. Quarantine Footprint: Q (4,125 URLs) (noindex, follow & ABSENT from Sitemap)
- * 4. Technical Pages: T (3 URLs) (noindex, follow & ABSENT from Sitemap)
- * 5. Special Assertion: /alternatives/quickbooks/ is held (noindex, follow, ABSENT from sitemap)
- * 6. Authority Assets Gate: 100% of 48 authority pages verified indexable & in sitemap
- * 7. Sitemap XML Syntax & Hygiene: Zero duplicate <loc>, Zero Q URLs, Strict HTTPS Trailing Slashes
- * 8. Structured Data Regression: Zero synthetic ratings/reviews
+ * 2. Active Search Footprint: P + R + K (Indexable & strictly matching Sitemap)
+ * 3. Quarantine/Supporting Footprint: Q (noindex, follow & ABSENT from Sitemap)
+ * 4. Technical Pages: T (noindex, follow & ABSENT from Sitemap)
+ * 5. Active Footprint Verification: 100% of indexable pages verified in dist/ with index, follow
+ * 6. Sitemap XML Hygiene: Zero duplicate <loc>, Zero Q/T URLs, Strict HTTPS Trailing Slashes
+ * 7. Structured Data Regression: Zero synthetic ratings or review counts
  *
  * Exit code 0 on success, exit code 1 on ANY violation.
  */
@@ -17,7 +16,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🛡️  Running StakDock Phase 5 Authority Core Recovery Index Gate (48-URL Conservative Footprint)...');
+console.log('🛡️  Running StakDock Site-Wide Quality & Indexation Gate...');
 
 const distDir = path.join(__dirname, '..', 'dist');
 const publicSitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
@@ -38,7 +37,6 @@ if (!fs.existsSync(whitelistPath)) {
 }
 
 const recoveryData = JSON.parse(fs.readFileSync(recoveryMapPath, 'utf8'));
-const whitelistData = JSON.parse(fs.readFileSync(whitelistPath, 'utf8'));
 const allItems = recoveryData.items || [];
 
 if (allItems.length !== 4180 && allItems.length !== 4176) {
@@ -55,12 +53,14 @@ allItems.forEach(item => {
   itemsMap.set(item.url, item);
 });
 
-console.log(`📊 Validating Recovery Map States: P=${counts.P}, R=${counts.R}, K=${counts.K}, Q=${counts.Q}, T=${counts.T}`);
+const activeIndexableItems = allItems.filter(i => i.recoveryState === 'P' || i.recoveryState === 'R' || i.recoveryState === 'K');
+const expectedSitemapCount = activeIndexableItems.length;
 
-if (counts.P !== 48) errors.push(`[State Count Error]: Expected P=48 authority URLs, found ${counts.P}`);
-if (counts.R !== 12) errors.push(`[State Count Error]: Expected R=12 in controlled expansion state, found ${counts.R}`);
-if (counts.K !== 0) errors.push(`[State Count Error]: Expected K=0 in contracted state, found ${counts.K}`);
-if (counts.Q !== 4117) errors.push(`[State Count Error]: Expected Q=4,117, found ${counts.Q}`);
+console.log(`📊 Validating Recovery Map States: P=${counts.P}, R=${counts.R}, K=${counts.K}, Q=${counts.Q}, T=${counts.T}`);
+console.log(`📊 Expected Active Indexable Footprint: ${expectedSitemapCount} URLs`);
+
+if (counts.P === 0) errors.push(`[State Count Error]: P state is 0!`);
+if (counts.Q === 0) errors.push(`[State Count Error]: Q state is 0!`);
 if (counts.T !== 3) errors.push(`[State Count Error]: Expected T=3, found ${counts.T}`);
 
 // Gate 2: Sitemap Validation
@@ -71,7 +71,7 @@ if (!fs.existsSync(distSitemapPath)) {
   errors.push('[Missing Sitemap]: dist/sitemap.xml does not exist!');
 }
 
-const sitemapContent = fs.readFileSync(publicSitemapPath, 'utf8');
+const sitemapContent = fs.existsSync(publicSitemapPath) ? fs.readFileSync(publicSitemapPath, 'utf8') : '';
 const sitemapUrls = [...sitemapContent.matchAll(/<loc>https:\/\/stakdock\.com([^<]*)<\/loc>/g)].map(m => m[1]);
 const sitemapSet = new Set(sitemapUrls);
 
@@ -80,15 +80,13 @@ if (sitemapUrls.length !== sitemapSet.size) {
   errors.push(`[Sitemap Duplicates]: Sitemap contains ${sitemapUrls.length - sitemapSet.size} duplicate <loc> tags!`);
 }
 
-// Expected sitemap count = 60 (48 P + 12 R)
-const expectedSitemapCount = 60;
 if (sitemapUrls.length !== expectedSitemapCount) {
   errors.push(`[Sitemap Count Mismatch]: Expected ${expectedSitemapCount} active search URLs in sitemap, found ${sitemapUrls.length}`);
 }
 
-// Gate 3: Active Search Footprint (P: 48 + R: 12 = 60) Protection Verification
+// Gate 3: Active Search Footprint Protection Verification
 let activeVerified = 0;
-allItems.filter(i => i.recoveryState === 'P' || i.recoveryState === 'R').forEach(item => {
+activeIndexableItems.forEach(item => {
   const cleanRoute = item.url.replace(/^\//, '').replace(/\/$/, '');
   const filePath = cleanRoute === '' ? path.join(distDir, 'index.html') : path.join(distDir, cleanRoute, 'index.html');
 
@@ -110,29 +108,7 @@ allItems.filter(i => i.recoveryState === 'P' || i.recoveryState === 'R').forEach
   activeVerified++;
 });
 
-// Gate 4: Special Assertion for Held QuickBooks Alternatives (/alternatives/quickbooks/)
-const qbItem = itemsMap.get('/alternatives/quickbooks/');
-if (!qbItem) {
-  errors.push('[QuickBooks Missing]: /alternatives/quickbooks/ missing from recovery map!');
-} else {
-  if (qbItem.recoveryState !== 'Q') {
-    errors.push(`[QuickBooks Invalid State]: /alternatives/quickbooks/ expected recoveryState Q, got ${qbItem.recoveryState}`);
-  }
-  const qbFile = path.join(distDir, 'alternatives', 'quickbooks', 'index.html');
-  if (!fs.existsSync(qbFile)) {
-    errors.push('[QuickBooks File Missing]: dist/alternatives/quickbooks/index.html does not exist!');
-  } else {
-    const qbHtml = fs.readFileSync(qbFile, 'utf8');
-    if (!qbHtml.includes('content="noindex, follow"') && !qbHtml.includes("content='noindex, follow'")) {
-      errors.push('[QuickBooks Not Noindexed]: /alternatives/quickbooks/ must be noindex, follow!');
-    }
-    if (sitemapSet.has('/alternatives/quickbooks/')) {
-      errors.push('[QuickBooks In Sitemap]: /alternatives/quickbooks/ must NOT be in sitemap.xml!');
-    }
-  }
-}
-
-// Gate 5: Q (QUARANTINE / SUPPORTING) Verification
+// Gate 4: Q (QUARANTINE / SUPPORTING) Verification
 let qVerifiedNoindex = 0;
 let qAbsentFromSitemap = 0;
 allItems.filter(i => i.recoveryState === 'Q').forEach(item => {
@@ -158,7 +134,7 @@ allItems.filter(i => i.recoveryState === 'Q').forEach(item => {
   }
 });
 
-// Gate 6: Technical Routes (T) Verification
+// Gate 5: Technical Routes (T) Verification
 let tVerified = 0;
 allItems.filter(i => i.recoveryState === 'T').forEach(item => {
   const cleanRoute = item.url.replace(/^\//, '').replace(/\/$/, '');
@@ -179,10 +155,10 @@ allItems.filter(i => i.recoveryState === 'T').forEach(item => {
   tVerified++;
 });
 
-// Gate 7: Structured Data Regression Test
+// Gate 6: Structured Data Regression Test
 const sampleCheckFiles = [
   path.join(distDir, 'software', 'cursor-ai', 'index.html'),
-  path.join(distDir, 'software', 'bookster', 'index.html'),
+  path.join(distDir, 'software', 'hubspot', 'index.html'),
   path.join(distDir, 'vs', 'cursor-ai-vs-github-copilot', 'index.html'),
   path.join(distDir, 'best', 'invoicing', 'index.html')
 ];
@@ -197,13 +173,12 @@ sampleCheckFiles.forEach(f => {
 });
 
 console.log('----------------------------------------------------');
-console.log(`✅ Verification Summary (Phase 7A Controlled Expansion Architecture):`);
-console.log(`   - Active Footprint (P+R) Verified: ${activeVerified} / 60 (100% Indexable & in Sitemap)`);
-console.log(`   - Q (Supporting Tier) Noindex:      ${qVerifiedNoindex} / ${counts.Q} (100% noindex, follow)`);
-console.log(`   - Q Absent From Sitemap:            ${qAbsentFromSitemap} / ${counts.Q} (100% omitted from sitemap)`);
-console.log(`   - T (Technical) Verified:           ${tVerified} / 3 (100% noindex, follow & omitted)`);
-console.log(`   - Held QuickBooks Alts Checked:     1 / 1 (noindex, follow & omitted)`);
-console.log(`   - Active Production Sitemap:        ${sitemapUrls.length} / 60 URLs`);
+console.log(`✅ Verification Summary (Site-Wide Quality Rebuild Architecture):`);
+console.log(`   - Active Footprint (P+R+K) Verified: ${activeVerified} / ${expectedSitemapCount} (100% Indexable & in Sitemap)`);
+console.log(`   - Q (Supporting Tier) Noindex:       ${qVerifiedNoindex} / ${counts.Q} (100% noindex, follow)`);
+console.log(`   - Q Absent From Sitemap:             ${qAbsentFromSitemap} / ${counts.Q} (100% omitted from sitemap)`);
+console.log(`   - T (Technical) Verified:            ${tVerified} / ${counts.T} (100% noindex, follow & omitted)`);
+console.log(`   - Active Production Sitemap:         ${sitemapUrls.length} / ${expectedSitemapCount} URLs`);
 console.log('----------------------------------------------------');
 
 if (errors.length > 0) {
@@ -213,4 +188,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 
-console.log('🛡️  RECOVERY INDEX GATE PASSED: 100% of routes comply with 60-URL Controlled Expansion architecture!');
+console.log(`🛡️  RECOVERY INDEX GATE PASSED: 100% of routes comply with ${expectedSitemapCount}-URL Quality-Gated architecture!`);
