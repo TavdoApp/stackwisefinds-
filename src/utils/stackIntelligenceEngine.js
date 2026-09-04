@@ -720,6 +720,23 @@ export function getAvailableToolsForCapability(capability, teamSize = 1, preferA
  */
 export const STACK_PRESETS = [
   {
+    id: 'automation',
+    title: 'Automation & Workflow Stack',
+    tagline: 'Compare cloud SaaS (Zapier, Make), self-hosted (n8n), and Microsoft enterprise RPA.',
+    targetAudience: 'Operations Managers, Developers & Workflow Architects',
+    startingCost: '~$0–$20/mo self-hosted or $9–$50/mo cloud',
+    statusType: 'Workflow Decision Matrix',
+    presetState: {
+      businessType: 'solo_founder',
+      teamSize: 2,
+      monthlyBudgetUsd: 50,
+      budgetConstraintType: 'soft',
+      requiredCapabilities: ['AUTOMATION', 'CRM', 'INVOICING'],
+      preferredDeployment: 'no_preference',
+      technicalSkill: 'moderate'
+    }
+  },
+  {
     id: 'solo_bootstrapper',
     title: '$0 Solo Bootstrapper Stack',
     tagline: 'Launch a lean online business with zero recurring software spend.',

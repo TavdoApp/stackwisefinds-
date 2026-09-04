@@ -1434,6 +1434,80 @@ export const seedSoftwareTools = [
       { title: 'Zapier Official Pricing', url: 'https://zapier.com/pricing', type: 'Official Pricing Page', checkedAt: '2026-08-31', confidence: 'HIGH' }
     ]
   },
+  {
+    toolId: 'microsoft-power-automate',
+    name: 'Microsoft Power Automate',
+    vendor: 'Microsoft Corporation',
+    website: 'https://powerautomate.microsoft.com',
+    category: 'automation',
+    primaryCapability: 'AUTOMATION',
+    secondaryCapabilities: [],
+    featureTags: ['microsoft_365_sync', 'desktop_rpa', 'power_apps_integration', 'ai_builder', 'scheduled_flows', 'approval_workflows', 'dataverse_connectors'],
+    commercialModel: {
+      pricingModel: PRICING_MODELS.PER_SEAT_MONTHLY,
+      freePlanAvailable: true,
+      freeTrialAvailable: true,
+      freeTierLimits: 'Free Power Automate Desktop for Windows 10/11 (local attended desktop flows only). Basic cloud flows included with Microsoft 365 plans for standard M365 connectors only.',
+      baseMonthlyPriceUsd: 15,
+      pricePerSeatMonthlyUsd: 15,
+      minimumSeats: 1,
+      annualDiscountPercent: 0,
+      transactionFeePercent: 0,
+      transactionFeeFixedUsd: 0,
+      costConfidence: COST_CONFIDENCE.HIGH,
+      pricingNotes: 'Power Automate Premium is $15/user/month for unlimited cloud flows with premium connectors and attended desktop RPA. Power Automate Process (unattended bot license) is $150/bot/month. Hosted Process is $215/bot/month.',
+      pricingSourceUrl: 'https://powerautomate.microsoft.com/en-us/pricing/',
+      pricingVerifiedAt: '2026-09-04T12:00:00Z'
+    },
+    selfHostModel: {
+      supported: false,
+      softwareLicenseCostMonthly: null,
+      minServerSpecs: null,
+      estimatedServerCostMonthlyRange: null,
+      maintenanceBurden: 'NOT_APPLICABLE',
+      tcoNotes: 'Cloud SaaS with optional Windows VM host for Desktop RPA.'
+    },
+    deployment: {
+      cloudAvailable: true,
+      selfHostedAvailable: false,
+      desktopAvailable: true,
+      mobileAvailable: true,
+      dockerAvailable: false,
+      kubernetesAvailable: false,
+      deploymentComplexity: 'low_cloud'
+    },
+    licensing: {
+      openSource: false,
+      licenseType: LICENSE_TYPES.PROPRIETARY_SAAS,
+      commercialUseAllowed: true,
+      licenseSourceUrl: 'https://www.microsoft.com/licensing/terms'
+    },
+    businessFit: {
+      businessTypes: ['growing_agency', 'midmarket_saas', 'enterprise_b2b'],
+      teamSizeMin: 5,
+      teamSizeMax: 10000,
+      technicalSkillRequired: 'low',
+      bestFor: 'Organizations heavily invested in Microsoft 365, Teams, SharePoint, Azure, and Dynamics 365 who require attended desktop RPA and enterprise governance.',
+      notRecommendedFor: 'Early-stage developers and agile startups looking for platform-neutral REST API webhooks without $15/user/month premium connector licenses.',
+      evidenceType: EVIDENCE_CLASSIFICATION.STAKDOCK_EDITORIAL_CLASSIFICATION
+    },
+    integrations: {
+      nativeIntegrations: ['hubspot', 'pipedrive', 'stripe', 'quickbooks-online', 'xero'],
+      apiAvailable: true,
+      webhooksAvailable: true,
+      automationPlatforms: ['microsoft-power-automate']
+    },
+    dataAndPortability: {
+      dataExportAvailable: true,
+      exportFormats: ['zip', 'json'],
+      migrationDifficulty: 'hard',
+      vendorLockInRisk: 'high'
+    },
+    sources: [
+      { title: 'Microsoft Power Automate Official Pricing', url: 'https://powerautomate.microsoft.com/en-us/pricing/', type: 'Official Pricing Page', checkedAt: '2026-09-04', confidence: 'HIGH' },
+      { title: 'Microsoft Licensing Terms', url: 'https://www.microsoft.com/licensing/terms', type: 'Official License Document', checkedAt: '2026-09-04', confidence: 'HIGH' }
+    ]
+  },
 
   // ==========================================
   // 7. DEVELOPER & AI CODING (2 Tools)
