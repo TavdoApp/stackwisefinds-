@@ -134,43 +134,92 @@ export default function UserProfileModal({
             <X size={18} />
           </button>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <div style={{
-              width: '56px',
-              height: '56px',
-              borderRadius: '16px',
-              background: '#82A735',
-              color: '#FFFFFF',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: '900',
-              fontSize: '1.4rem',
-              border: '2px solid rgba(255,255,255,0.2)'
-            }}>
-              {profile.avatarInitials || 'GM'}
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                borderRadius: '16px',
+                background: '#82A735',
+                color: '#FFFFFF',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: '900',
+                fontSize: '1.4rem',
+                border: '2px solid rgba(255,255,255,0.2)'
+              }}>
+                {profile.avatarInitials || 'GM'}
+              </div>
+
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                  <h2 style={{ fontSize: '1.4rem', fontWeight: '800', margin: 0, color: '#FFFFFF' }}>
+                    {profile.name || 'Guest User'}
+                  </h2>
+                  <span style={{
+                    background: profile.role === 'maker' ? '#82A735' : 'rgba(255,255,255,0.15)',
+                    color: '#FFFFFF',
+                    padding: '2px 8px',
+                    borderRadius: '9999px',
+                    fontSize: '0.72rem',
+                    fontWeight: '800',
+                    textTransform: 'uppercase'
+                  }}>
+                    {profile.role === 'maker' ? '⚡ Verified Maker' : '🚀 Software Explorer'}
+                  </span>
+                </div>
+                <p style={{ margin: '4px 0 0', fontSize: '0.84rem', color: 'rgba(255,255,255,0.75)' }}>
+                  {profile.email ? `Logged in: ${profile.email}` : 'Guest Profile • Stacks & bookmarks saved in browser'}
+                </p>
+              </div>
             </div>
 
+            {/* Quick Login / Logout Action */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                <h2 style={{ fontSize: '1.4rem', fontWeight: '800', margin: 0, color: '#FFFFFF' }}>
-                  {profile.name || 'Guest User'}
-                </h2>
-                <span style={{
-                  background: profile.role === 'maker' ? '#82A735' : 'rgba(255,255,255,0.15)',
-                  color: '#FFFFFF',
-                  padding: '2px 8px',
-                  borderRadius: '9999px',
-                  fontSize: '0.72rem',
-                  fontWeight: '800',
-                  textTransform: 'uppercase'
-                }}>
-                  {profile.role === 'maker' ? '⚡ Verified Maker' : '🚀 Software Explorer'}
-                </span>
-              </div>
-              <p style={{ margin: '4px 0 0', fontSize: '0.84rem', color: 'rgba(255,255,255,0.75)' }}>
-                {profile.email ? profile.email : 'Zero-friction profile • Stacks & bookmarks saved locally'}
-              </p>
+              {profile.isLoggedIn ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const updated = saveStoredUserProfile({ email: '', name: 'Guest Maker', role: 'buyer' });
+                    setProfile(updated);
+                    setEditName('Guest Maker');
+                    setEditEmail('');
+                  }}
+                  style={{
+                    background: 'rgba(255,255,255,0.12)',
+                    color: '#FFFFFF',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    padding: '6px 14px',
+                    borderRadius: '9999px',
+                    fontSize: '0.78rem',
+                    fontWeight: '700',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Log Out
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('settings')}
+                  style={{
+                    background: '#82A735',
+                    color: '#FFFFFF',
+                    border: 'none',
+                    padding: '6px 14px',
+                    borderRadius: '9999px',
+                    fontSize: '0.78rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
+                >
+                  <span>Sign In / Sync ⚡</span>
+                </button>
+              )}
             </div>
           </div>
 
