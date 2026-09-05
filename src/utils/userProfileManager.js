@@ -14,9 +14,41 @@ const DEFAULT_PROFILE = {
   role: 'buyer', // 'buyer' | 'maker'
   twitterHandle: '',
   avatarInitials: 'GM',
+  avatarUrl: '',
+  authProvider: 'local', // 'local' | 'google'
   isLoggedIn: false,
   joinedAt: new Date().toISOString()
 };
+
+export function parseGoogleJwt(credential) {
+  try {
+    const base64Url = credential.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+      atob(base64)
+        .split('')
+        .map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+        .join('')
+    );
+    return JSON.parse(jsonPayload);
+  } catch (e) {
+    console.error('Failed to parse Google JWT:', e);
+    return null;
+  }
+}
+
+export function handleGoogleLoginSuccess(credential) {
+  const payload = parseGoogleJwt(credential);
+  if (!payload || !payload.email) return null;
+
+  return saveStoredUserProfile({
+    name: payload.name || payload.given_name || 'Google User',
+    email: payload.email,
+    avatarUrl: payload.picture || '',
+    role: 'buyer',
+    authProvider: 'google'
+  });
+}
 
 export function getStoredUserProfile() {
   if (typeof window === 'undefined') return DEFAULT_PROFILE;

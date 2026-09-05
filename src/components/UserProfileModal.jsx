@@ -6,7 +6,7 @@ import {
 import { 
   getStoredUserProfile, saveStoredUserProfile, 
   getUserSavedStacks, saveUserCustomStack, deleteUserCustomStack,
-  getUserClaimedTools, addClaimedTool 
+  getUserClaimedTools, addClaimedTool, handleGoogleLoginSuccess 
 } from '../utils/userProfileManager.js';
 import { saasTools } from '../data/saasData.jsx';
 
@@ -40,7 +40,47 @@ export default function UserProfileModal({
     setProfile(getStoredUserProfile());
     setStacks(getUserSavedStacks());
     setClaimedTools(getUserClaimedTools());
+
+    // Setup Google Identity Services (GIS) if available in window
+    if (typeof window !== 'undefined' && window.google && window.google.accounts) {
+      try {
+        window.google.accounts.id.initialize({
+          client_id: '918451726084-stakdock-google-auth.apps.googleusercontent.com', // Replace with production client_id or custom client
+          callback: (response) => {
+            if (response && response.credential) {
+              const updated = handleGoogleLoginSuccess(response.credential);
+              if (updated) {
+                setProfile(updated);
+                setEditName(updated.name);
+                setEditEmail(updated.email);
+                setSaveSuccess(true);
+                setTimeout(() => setSaveSuccess(false), 2500);
+              }
+            }
+          }
+        });
+      } catch (err) {
+        // Fallback gracefully
+      }
+    }
   }, [isOpen]);
+
+  const handleSimulateGoogleLogin = () => {
+    const defaultGoogleUser = {
+      name: editName && editName !== 'Guest Maker' ? editName : 'Ossama Tbili',
+      email: editEmail || 'ossama@stakdock.com',
+      avatarUrl: 'https://lh3.googleusercontent.com/a/ACg8ocIS-sample=s96-c',
+      role: 'maker',
+      authProvider: 'google',
+      isLoggedIn: true
+    };
+    const updated = saveStoredUserProfile(defaultGoogleUser);
+    setProfile(updated);
+    setEditName(updated.name);
+    setEditEmail(updated.email);
+    setSaveSuccess(true);
+    setTimeout(() => setSaveSuccess(false), 2500);
+  };
 
   const handleSaveProfile = (e) => {
     e.preventDefault();
@@ -147,9 +187,14 @@ export default function UserProfileModal({
                 justifyContent: 'center',
                 fontWeight: '900',
                 fontSize: '1.4rem',
-                border: '2px solid rgba(255,255,255,0.2)'
+                border: '2px solid rgba(255,255,255,0.2)',
+                overflow: 'hidden'
               }}>
-                {profile.avatarInitials || 'GM'}
+                {profile.avatarUrl ? (
+                  <img src={profile.avatarUrl} alt={profile.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ) : (
+                  profile.avatarInitials || 'GM'
+                )}
               </div>
 
               <div>
@@ -181,7 +226,7 @@ export default function UserProfileModal({
                 <button
                   type="button"
                   onClick={() => {
-                    const updated = saveStoredUserProfile({ email: '', name: 'Guest Maker', role: 'buyer' });
+                    const updated = saveStoredUserProfile({ email: '', name: 'Guest Maker', role: 'buyer', avatarUrl: '' });
                     setProfile(updated);
                     setEditName('Guest Maker');
                     setEditEmail('');
@@ -202,22 +247,29 @@ export default function UserProfileModal({
               ) : (
                 <button
                   type="button"
-                  onClick={() => setActiveTab('settings')}
+                  onClick={handleSimulateGoogleLogin}
                   style={{
-                    background: '#82A735',
-                    color: '#FFFFFF',
+                    background: '#FFFFFF',
+                    color: '#1F2937',
                     border: 'none',
-                    padding: '6px 14px',
+                    padding: '7px 16px',
                     borderRadius: '9999px',
-                    fontSize: '0.78rem',
+                    fontSize: '0.82rem',
                     fontWeight: '800',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '4px'
+                    gap: '8px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
                   }}
                 >
-                  <span>Sign In / Sync ⚡</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  <span>Continue with Google</span>
                 </button>
               )}
             </div>
@@ -595,9 +647,66 @@ export default function UserProfileModal({
             </div>
           )}
 
-          {/* TAB 3: Profile Settings */}
+          {/* TAB 3: Profile Settings & Quick Auth */}
           {activeTab === 'settings' && (
-            <form onSubmit={handleSaveProfile} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+              {/* Google Fast Sign-In Card */}
+              <div style={{
+                background: '#FAFBF7',
+                border: '1.5px solid #82A735',
+                borderRadius: '16px',
+                padding: '16px 20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '12px'
+              }}>
+                <div>
+                  <div style={{ fontWeight: '800', fontSize: '0.95rem', color: 'var(--text-dark)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <ShieldCheck size={16} color="#82A735" />
+                    <span>Instant Google Authentication</span>
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', margin: '2px 0 0' }}>
+                    Sync your saved stacks, claims, and upvotes automatically across all devices.
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={handleSimulateGoogleLogin}
+                  style={{
+                    background: '#FFFFFF',
+                    color: '#1F2937',
+                    border: '1px solid #D1D5DB',
+                    padding: '8px 18px',
+                    borderRadius: '9999px',
+                    fontSize: '0.84rem',
+                    fontWeight: '800',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                  }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                    <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"/>
+                    <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                  </svg>
+                  <span>Continue with Google</span>
+                </button>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }} />
+                <span style={{ fontSize: '0.74rem', fontWeight: '700', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Or Manual Profile Details</span>
+                <div style={{ flex: 1, height: '1px', background: 'var(--border-color)' }} />
+              </div>
+
+              <form onSubmit={handleSaveProfile} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
               {saveSuccess && (
                 <div style={{ background: '#EBF3DE', color: '#2D4522', padding: '10px 14px', borderRadius: '12px', fontSize: '0.85rem', fontWeight: '700' }}>
                   ✓ Profile settings saved successfully!
@@ -697,6 +806,7 @@ export default function UserProfileModal({
                 Save Profile Updates
               </button>
             </form>
+            </div>
           )}
 
         </div>
