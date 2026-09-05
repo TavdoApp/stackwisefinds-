@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe, Star, Menu, X, ChevronRight, User } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
+import { getStoredUserProfile } from '../utils/userProfileManager';
 
 export default function Navbar({ 
   currentView, 
@@ -17,7 +18,21 @@ export default function Navbar({
   onChangeLang
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [userProfile, setUserProfile] = useState(() => getStoredUserProfile());
   const t = getTranslation(currentLang);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const handleProfileUpdate = () => {
+      setUserProfile(getStoredUserProfile());
+    };
+    window.addEventListener('stakdock_profile_updated', handleProfileUpdate);
+    window.addEventListener('storage', handleProfileUpdate);
+    return () => {
+      window.removeEventListener('stakdock_profile_updated', handleProfileUpdate);
+      window.removeEventListener('storage', handleProfileUpdate);
+    };
+  }, []);
 
   // Lock body scroll when drawer is open
   useEffect(() => {
@@ -210,11 +225,30 @@ export default function Navbar({
             <button 
               onClick={onOpenProfileModal}
               className="btn-pill-outline"
-              style={{ padding: '8px 12px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '5px' }}
+              style={{ 
+                padding: userProfile?.avatarUrl ? '4px 12px 4px 6px' : '8px 12px', 
+                fontSize: '0.82rem', 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: '6px',
+                borderColor: userProfile?.isLoggedIn ? '#82A735' : undefined,
+                background: userProfile?.isLoggedIn ? '#F6F9EF' : undefined
+              }}
               aria-label="My Stacks & Maker Hub"
             >
-              <User size={14} color="#82A735" />
-              <span>Profile</span>
+              {userProfile?.avatarUrl ? (
+                <img 
+                  src={userProfile.avatarUrl} 
+                  alt={userProfile.name} 
+                  style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} 
+                />
+              ) : (
+                <User size={14} color="#82A735" />
+              )}
+              <span>{userProfile?.isLoggedIn ? (userProfile.name.split(' ')[0] || 'Profile') : 'Profile'}</span>
+              {userProfile?.isLoggedIn && (
+                <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#82A735' }} />
+              )}
             </button>
 
             <button 
@@ -403,13 +437,18 @@ export default function Navbar({
                   style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
-                    background: '#FAFBF7', color: '#141E14', fontWeight: '700',
+                    background: userProfile?.isLoggedIn ? '#F6F9EF' : '#FAFBF7', 
+                    color: '#141E14', fontWeight: '700',
                     fontSize: '0.95rem', border: '1.5px solid #82A735', cursor: 'pointer',
                   }}
                   aria-label="My Profile & Maker Hub"
                 >
-                  <User size={18} color="#82A735" />
-                  <span>My Profile &amp; Maker Hub</span>
+                  {userProfile?.avatarUrl ? (
+                    <img src={userProfile.avatarUrl} alt={userProfile.name} style={{ width: '22px', height: '22px', borderRadius: '50%', objectFit: 'cover' }} />
+                  ) : (
+                    <User size={18} color="#82A735" />
+                  )}
+                  <span>{userProfile?.isLoggedIn ? `${userProfile.name} (Dashboard)` : 'My Profile & Maker Hub'}</span>
                 </button>
 
                 <button

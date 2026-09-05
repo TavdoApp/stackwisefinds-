@@ -82,6 +82,10 @@ export function saveStoredUserProfile(updates) {
 
     localStorage.setItem(PROFILE_STORAGE_KEY, JSON.stringify(updated));
 
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new CustomEvent('stakdock_profile_updated', { detail: updated }));
+    }
+
     // Optional background sync to Cloudflare D1
     if (updated.isLoggedIn) {
       syncProfileToCloud(updated);
