@@ -65,6 +65,21 @@ export default {
       return handleGetApprovedSubmissions(env, corsHeaders);
     }
 
+    // Route 4.6: POST /api/user/sync — User & Maker Profile Synchronization
+    if (url.pathname === '/api/user/sync' && request.method === 'POST') {
+      return handleUserSync(request, env, corsHeaders);
+    }
+
+    // Route 4.7: POST /api/user/claim-tool — Claim Maker Software Listing
+    if (url.pathname === '/api/user/claim-tool' && request.method === 'POST') {
+      return handleUserClaimTool(request, env, corsHeaders);
+    }
+
+    // Route 4.8: GET /api/user/profile — Get User Profile & Claimed Tools
+    if (url.pathname === '/api/user/profile' && request.method === 'GET') {
+      return handleGetUserProfile(url, env, corsHeaders);
+    }
+
     // Route 5: POST /api/admin/review-vendor — Admin-protected review updater
     if (url.pathname === '/api/admin/review-vendor' && request.method === 'POST') {
       if (!isAuthorized(request, env)) {
@@ -529,5 +544,96 @@ async function handleCreateCheckout(request, env, corsHeaders) {
     }), { status: response.ok ? 200 : 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   } catch (err) {
     return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+  }
+}
+
+async function handleUserSync(request, env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ success: true, localOnly: true }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  try {
+    const body = await request.json();
+    const email = sanitizeText(body.email);
+    const name = sanitizeText(body.name || 'Maker');
+    const handle = sanitizeText(body.handle || '');
+    const role = sanitizeText(body.role || 'buyer');
+    const twitterHandle = sanitizeText(body.twitterHandle || '');
+
+    if (!email || !isValidEmail(email)) {
+      return new Response(JSON.stringify({ error: 'Valid email required' }), { status: 400, headers: corsHeaders });
+    }
+
+    await env.DB.prepare(
+      'INSERT INTO users (email, name, handle, role, twitter_handle, updated_at) VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(email) DO UPDATE SET name = excluded.name, handle = excluded.handle, role = excluded.role, twitter_handle = excluded.twitter_handle, updated_at = CURRENT_TIMESTAMP'
+    ).bind(email, name, handle, role, twitterHandle).run();
+
+    return new Response(JSON.stringify({ success: true, message: 'Profile synced' }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500, headers: corsHeaders });
+  }
+}
+
+async function handleUserClaimTool(request, env, corsHeaders) {
+  if (!env.DB) {
+    return new Response(JSON.stringify({ success: true, message: 'Claim recorded' }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  try {
+    const body = await request.json();
+    const email = sanitizeText(body.email);
+    const toolId = sanitizeText(body.toolId);
+    const softwareName = sanitizeText(body.softwareName || toolId);
+    const domain = sanitizeText(body.domain || '');
+
+    if (!email || !isValidEmail(email) || !toolId) {
+      return new Response(JSON.stringify({ error: 'Email and toolId required' }), { status: 400, headers: corsHeaders });
+    }
+
+    await env.DB.prepare(
+      'INSERT INTO claimed_tools (user_email, tool_id, software_name, domain) VALUES (?, ?, ?, ?) ON CONFLICT(user_email, tool_id) DO NOTHING'
+    ).bind(email, toolId, softwareName, domain).run();
+
+    return new Response(JSON.stringify({ success: true, message: 'Tool claimed' }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500, headers: corsHeaders });
+  }
+}
+
+async function handleGetUserProfile(url, env, corsHeaders) {
+  const email = sanitizeText(url.searchParams.get('email'));
+  if (!email || !isValidEmail(email) || !env.DB) {
+    return new Response(JSON.stringify({ success: false, profile: null, claimedTools: [] }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  }
+
+  try {
+    const userRes = await env.DB.prepare('SELECT * FROM users WHERE email = ?').bind(email).first();
+    const claimedRes = await env.DB.prepare('SELECT * FROM claimed_tools WHERE user_email = ?').bind(email).all();
+
+    return new Response(JSON.stringify({
+      success: true,
+      profile: userRes || null,
+      claimedTools: claimedRes.results || []
+    }), {
+      status: 200,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+    });
+  } catch (err) {
+    return new Response(JSON.stringify({ success: false, error: err.message }), { status: 500, headers: corsHeaders });
   }
 }

@@ -35,6 +35,7 @@ import LegalViews from './components/LegalViews';
 import BookmarkDrawer from './components/BookmarkDrawer';
 import BadgeEmbedModal from './components/BadgeEmbedModal';
 import ClaimListingModal from './components/ClaimListingModal';
+import UserProfileModal from './components/UserProfileModal';
 import StackBuilderPage from './components/StackBuilder/StackBuilderPage';
 
 // Robust React Error Boundary to Guarantee Zero White Screens
@@ -208,6 +209,7 @@ export default function App() {
   const [vendorModalPackage, setVendorModalPackage] = useState('free');
   const [showWizardModal, setShowWizardModal] = useState(false);
   const [showBadgeModal, setShowBadgeModal] = useState(false);
+  const [showProfileModal, setShowProfileModal] = useState(false);
   const [selectedClaimTool, setSelectedClaimTool] = useState(null);
 
   const handleOpenVendorModal = (pkg = 'free') => {
@@ -646,6 +648,7 @@ export default function App() {
         compareCount={selectedCompareIds.length}
         onOpenCompareModal={() => setShowCompareModal(true)}
         onOpenVendorModal={() => setShowVendorModal(true)}
+        onOpenProfileModal={() => setShowProfileModal(true)}
         onOpenWizardModal={() => {
           setCurrentView('stack-builder');
           window.history.pushState(null, '', '/stack-builder/');
@@ -1356,6 +1359,16 @@ export default function App() {
         {showBadgeModal && (
           <BadgeEmbedModal
             onClose={() => setShowBadgeModal(false)}
+          />
+        )}
+
+        {showProfileModal && (
+          <UserProfileModal
+            isOpen={showProfileModal}
+            onClose={() => setShowProfileModal(false)}
+            bookmarkedIds={bookmarkedIds}
+            onOpenVendorModal={() => setShowVendorModal(true)}
+            onNavigateToTool={handleSelectToolDetail}
           />
         )}
 

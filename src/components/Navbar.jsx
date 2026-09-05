@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe, Star, Menu, X, ChevronRight } from 'lucide-react';
+import { Sparkles, Scale, PlusCircle, Compass, BookOpen, Wand2, Globe, Star, Menu, X, ChevronRight, User } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
 
 export default function Navbar({ 
@@ -10,6 +10,7 @@ export default function Navbar({
   onOpenCompareModal, 
   onOpenVendorModal, 
   onOpenWizardModal,
+  onOpenProfileModal,
   bookmarkCount = 0,
   onOpenBookmarkDrawer,
   currentLang = 'en',
@@ -207,6 +208,16 @@ export default function Navbar({
             )}
 
             <button 
+              onClick={onOpenProfileModal}
+              className="btn-pill-outline"
+              style={{ padding: '8px 12px', fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '5px' }}
+              aria-label="My Stacks & Maker Hub"
+            >
+              <User size={14} color="#82A735" />
+              <span>Profile</span>
+            </button>
+
+            <button 
               onClick={onOpenVendorModal}
               className="btn-pill-dark"
               style={{ padding: '8px 12px', fontSize: '0.82rem' }}
@@ -385,6 +396,20 @@ export default function Navbar({
                 >
                   <Wand2 size={18} />
                   <span>{t.navFindStack || 'Find My Stack'}</span>
+                </button>
+
+                <button
+                  onClick={() => handleMobileNav(onOpenProfileModal)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: '10px',
+                    width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
+                    background: '#FAFBF7', color: '#141E14', fontWeight: '700',
+                    fontSize: '0.95rem', border: '1.5px solid #82A735', cursor: 'pointer',
+                  }}
+                  aria-label="My Profile & Maker Hub"
+                >
+                  <User size={18} color="#82A735" />
+                  <span>My Profile &amp; Maker Hub</span>
                 </button>
 
                 <button
