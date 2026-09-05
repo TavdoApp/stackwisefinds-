@@ -163,9 +163,11 @@ async function sendTelegramAlert(env, data) {
   const text = `🚨 <b>NEW STAKDOCK SOFTWARE SUBMISSION!</b>\n\n` +
     `📦 <b>Software Name:</b> ${data.softwareName}\n` +
     `🌐 <b>Website:</b> ${data.softwareWebsite}\n` +
-    `👤 <b>Founder/Vendor:</b> ${data.vendorName}\n` +
+    `👤 <b>Founder:</b> ${data.vendorName} (${data.twitterHandle || 'N/A'})\n` +
     `✉️ <b>Email:</b> ${data.vendorEmail}\n` +
     `🏷️ <b>Category:</b> ${data.category || 'General'}\n` +
+    `🎯 <b>Best For:</b> ${data.bestFor || 'General'}\n` +
+    `📝 <b>Description:</b> ${(data.description || '').slice(0, 150)}...\n` +
     `💎 <b>Plan Selected:</b> ${planLabel}\n` +
     `✅ <b>Status:</b> Auto-Approved & Published Live\n` +
     `⏰ <b>Timestamp:</b> ${new Date().toISOString()}`;
@@ -208,6 +210,9 @@ async function handleVendorSubmission(request, env, ctx, corsHeaders) {
     const softwareName = sanitizeText(body.softwareName);
     const softwareWebsite = sanitizeText(body.softwareWebsite);
     const vendorEmail = sanitizeText(body.vendorEmail);
+    const description = sanitizeText(body.description);
+    const bestFor = sanitizeText(body.bestFor);
+    const twitterHandle = sanitizeText(body.twitterHandle);
 
     if (!vendorName || !softwareName || !softwareWebsite || !vendorEmail) {
       return new Response(JSON.stringify({ error: 'All fields are required' }), { status: 400, headers: corsHeaders });
@@ -235,6 +240,9 @@ async function handleVendorSubmission(request, env, ctx, corsHeaders) {
       softwareName,
       softwareWebsite,
       vendorEmail,
+      description,
+      bestFor,
+      twitterHandle,
       category: sanitizeText(body.category || 'ai-tools'),
       packageType: sanitizeText(body.packageType || 'free')
     };

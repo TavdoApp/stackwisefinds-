@@ -12,6 +12,12 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
   const [softwareWebsite, setSoftwareWebsite] = useState('');
   const [softwareName, setSoftwareName] = useState('');
   const [tagline, setTagline] = useState('');
+  const [description, setDescription] = useState('');
+  const [features, setFeatures] = useState('');
+  const [bestFor, setBestFor] = useState('');
+  const [competitors, setCompetitors] = useState('');
+  const [freeTierLimits, setFreeTierLimits] = useState('');
+  const [twitterHandle, setTwitterHandle] = useState('');
   const [category, setCategory] = useState('ai-content');
   const [pricing, setPricing] = useState('Freemium');
   const [startingPrice, setStartingPrice] = useState('Free Tier Available');
@@ -56,6 +62,11 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
         const data = await res.json();
         if (data.softwareName) setSoftwareName(data.softwareName);
         if (data.tagline) setTagline(data.tagline);
+        if (data.description && !description) setDescription(data.description);
+        if (data.features && !features) {
+          setFeatures(Array.isArray(data.features) ? data.features.join('\n') : data.features);
+        }
+        if (data.bestFor && !bestFor) setBestFor(data.bestFor);
         if (data.category && saasCategories.some(c => c.id === data.category)) {
           setCategory(data.category);
         }
@@ -93,6 +104,24 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
     setIsSubmitting(true);
     setErrorMsg('');
 
+    if (description.trim().length < 30) {
+      setErrorMsg('Please provide a detailed product description (minimum 30 characters) explaining what problem your software solves.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!features.trim()) {
+      setErrorMsg('Please list at least 2-3 key features or capabilities.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!bestFor.trim()) {
+      setErrorMsg('Please specify who this tool is best for (target audience).');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
       // 1. Save vendor submission in Cloudflare D1
       const response = await fetch('/api/submit-vendor', {
@@ -102,6 +131,12 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
           softwareName,
           softwareWebsite,
           tagline,
+          description,
+          features: features.split('\n').map(f => f.trim()).filter(Boolean),
+          bestFor,
+          competitors: competitors.split(',').map(c => c.trim()).filter(Boolean),
+          freeTierLimits,
+          twitterHandle,
           pricing: hasLifetimeDeal && dealPrice ? `${pricing} • LTD: ${dealPrice}` : pricing,
           startingPrice: hasLifetimeDeal && dealPrice ? `LTD ${dealPrice}` : startingPrice,
           pricingTier,
@@ -677,6 +712,22 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
               </div>
 
               {/* Step 3: Editable Metadata Fields (Pre-filled by AI) */}
+              {/* Error Message Banner */}
+              {errorMsg && (
+                <div style={{
+                  background: '#FEF2F2',
+                  border: '1px solid #F87171',
+                  color: '#991B1B',
+                  borderRadius: '12px',
+                  padding: '12px 16px',
+                  fontSize: '0.85rem',
+                  fontWeight: '600'
+                }}>
+                  ⚠️ {errorMsg}
+                </div>
+              )}
+
+              {/* Step 3: Editable Metadata & High-Value Product Specs */}
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div>
                   <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
@@ -701,7 +752,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
 
                 <div>
                   <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
-                    Category *
+                    Primary Category *
                   </label>
                   <select
                     value={category}
@@ -723,15 +774,15 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                 </div>
               </div>
 
-              {/* Tagline / Value Proposition */}
+              {/* Tagline / 1-Sentence Value Proposition */}
               <div>
                 <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
-                  Tagline / 1-Sentence Value Proposition *
+                  Tagline / 1-Sentence Value Hook *
                 </label>
                 <input
                   type="text"
                   required
-                  placeholder="e.g. AI-powered real estate CRM that automates lead follow-ups"
+                  placeholder="e.g. AI-powered CRM that automates lead qualification and follow-ups"
                   value={tagline}
                   onChange={(e) => setTagline(e.target.value)}
                   style={{
@@ -743,6 +794,103 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     outline: 'none'
                   }}
                 />
+              </div>
+
+              {/* What Problem Does This Solve? / Deep Description (Product Hunt Standard) */}
+              <div>
+                <label style={{ fontSize: '0.82rem', fontWeight: '800', color: 'var(--text-dark)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                  <span>What Problem Does This Solve? / Detailed Description *</span>
+                  <span style={{ fontSize: '0.72rem', color: description.length >= 30 ? '#16A34A' : '#DC2626', fontWeight: '700' }}>
+                    {description.length}/30 min chars
+                  </span>
+                </label>
+                <textarea
+                  required
+                  rows={3}
+                  placeholder="Explain why you built this tool, what core pain point it solves, and how it helps teams save hours or scale revenue..."
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '10px',
+                    border: '1px solid var(--border-color)',
+                    fontSize: '0.86rem',
+                    lineHeight: '1.5',
+                    outline: 'none',
+                    resize: 'vertical',
+                    fontFamily: 'inherit'
+                  }}
+                />
+              </div>
+
+              {/* Top 3 Key Features & Capabilities */}
+              <div>
+                <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                  Top 3 Key Features &amp; Capabilities * (1 per line)
+                </label>
+                <textarea
+                  required
+                  rows={3}
+                  placeholder={"1. Automated multi-channel follow-up sequences\n2. Native two-way synchronization with Stripe & Gmail\n3. AI conversational lead scoring model"}
+                  value={features}
+                  onChange={(e) => setFeatures(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '10px',
+                    border: '1px solid var(--border-color)',
+                    fontSize: '0.86rem',
+                    lineHeight: '1.5',
+                    outline: 'none',
+                    resize: 'vertical',
+                    fontFamily: 'inherit'
+                  }}
+                />
+              </div>
+
+              {/* Target Audience & Direct Competitors Replaced */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div>
+                  <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                    Target Audience / Best For *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="e.g. Solo Developers, SaaS Founders, Sales Agencies"
+                    value={bestFor}
+                    onChange={(e) => setBestFor(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 12px',
+                      borderRadius: '10px',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '0.86rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                    Direct Alternatives / Replaces (Optional)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. HubSpot CRM, Pipedrive, Zapier"
+                    value={competitors}
+                    onChange={(e) => setCompetitors(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 12px',
+                      borderRadius: '10px',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '0.86rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
               </div>
 
               {/* Pricing & Tier Details */}
@@ -817,6 +965,27 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                     <option value="$$$">$$$ (Enterprise)</option>
                   </select>
                 </div>
+              </div>
+
+              {/* Free Tier Limits / Trial details */}
+              <div>
+                <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                  Free Tier / Free Trial Limits (Optional)
+                </label>
+                <input
+                  type="text"
+                  placeholder="e.g. Free forever up to 1,000 tasks/month or 14-day free trial (no credit card required)"
+                  value={freeTierLimits}
+                  onChange={(e) => setFreeTierLimits(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '10px 12px',
+                    borderRadius: '10px',
+                    border: '1px solid var(--border-color)',
+                    fontSize: '0.86rem',
+                    outline: 'none'
+                  }}
+                />
               </div>
 
               {/* Optional Lifetime Deal / Special Promo Section */}
@@ -1028,11 +1197,11 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                 )}
               </div>
 
-              {/* Founder Information */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              {/* Founder Information & Social Links */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '10px' }}>
                 <div>
                   <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
-                    Founder / Contact Name *
+                    Founder Name *
                   </label>
                   <input
                     type="text"
@@ -1045,7 +1214,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       padding: '10px 12px',
                       borderRadius: '10px',
                       border: '1px solid var(--border-color)',
-                      fontSize: '0.88rem',
+                      fontSize: '0.86rem',
                       outline: 'none'
                     }}
                   />
@@ -1066,7 +1235,27 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                       padding: '10px 12px',
                       borderRadius: '10px',
                       border: '1px solid var(--border-color)',
-                      fontSize: '0.88rem',
+                      fontSize: '0.86rem',
+                      outline: 'none'
+                    }}
+                  />
+                </div>
+
+                <div>
+                  <label style={{ fontSize: '0.82rem', fontWeight: '700', color: 'var(--text-dark)', display: 'block', marginBottom: '4px' }}>
+                    Maker 𝕏 (Twitter)
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="@founder"
+                    value={twitterHandle}
+                    onChange={(e) => setTwitterHandle(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '10px 12px',
+                      borderRadius: '10px',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '0.86rem',
                       outline: 'none'
                     }}
                   />
