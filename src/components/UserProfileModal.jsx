@@ -42,10 +42,14 @@ export default function UserProfileModal({
     setClaimedTools(getUserClaimedTools());
 
     // Setup Google Identity Services (GIS) if available in window
+    const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '380185272128-ub8or57kpqhq9s46hikvlnm973ngvsm3.apps.googleusercontent.com';
+
     if (typeof window !== 'undefined' && window.google && window.google.accounts) {
       try {
         window.google.accounts.id.initialize({
-          client_id: '918451726084-stakdock-google-auth.apps.googleusercontent.com', // Replace with production client_id or custom client
+          client_id: GOOGLE_CLIENT_ID,
+          auto_select: false,
+          cancel_on_tap_outside: true,
           callback: (response) => {
             if (response && response.credential) {
               const updated = handleGoogleLoginSuccess(response.credential);
@@ -60,10 +64,26 @@ export default function UserProfileModal({
           }
         });
       } catch (err) {
-        // Fallback gracefully
+        console.warn('Google Identity Services init:', err);
       }
     }
   }, [isOpen]);
+
+  const handleGoogleLogin = () => {
+    if (typeof window !== 'undefined' && window.google && window.google.accounts && window.google.accounts.id) {
+      try {
+        window.google.accounts.id.prompt((notification) => {
+          if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+            handleSimulateGoogleLogin();
+          }
+        });
+        return;
+      } catch (e) {
+        console.warn('GIS Prompt error, falling back:', e);
+      }
+    }
+    handleSimulateGoogleLogin();
+  };
 
   const handleSimulateGoogleLogin = () => {
     const defaultGoogleUser = {
@@ -247,7 +267,7 @@ export default function UserProfileModal({
               ) : (
                 <button
                   type="button"
-                  onClick={handleSimulateGoogleLogin}
+                  onClick={handleGoogleLogin}
                   style={{
                     background: '#FFFFFF',
                     color: '#1F2937',
@@ -674,7 +694,7 @@ export default function UserProfileModal({
 
                 <button
                   type="button"
-                  onClick={handleSimulateGoogleLogin}
+                  onClick={handleGoogleLogin}
                   style={{
                     background: '#FFFFFF',
                     color: '#1F2937',
