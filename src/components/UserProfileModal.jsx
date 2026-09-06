@@ -69,37 +69,71 @@ export default function UserProfileModal({
     }
   }, [isOpen]);
 
+  const [authLoading, setAuthLoading] = useState(false);
+  const [authError, setAuthError] = useState('');
+
   const handleGoogleLogin = () => {
-    if (typeof window !== 'undefined' && window.google && window.google.accounts && window.google.accounts.id) {
+    setAuthError('');
+    setAuthLoading(true);
+
+    const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '380185272128-ub8or57kpqhq9s46hikvlnm973ngvsm3.apps.googleusercontent.com';
+
+    // Method 1: Google Identity Services OAuth2 Token Client (opens official Google popup)
+    if (typeof window !== 'undefined' && window.google?.accounts?.oauth2) {
       try {
-        window.google.accounts.id.prompt((notification) => {
-          if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-            handleSimulateGoogleLogin();
+        const tokenClient = window.google.accounts.oauth2.initTokenClient({
+          client_id: GOOGLE_CLIENT_ID,
+          scope: 'email profile openid',
+          callback: async (tokenResponse) => {
+            if (tokenResponse?.error) {
+              console.error('Google OAuth token error:', tokenResponse.error);
+              setAuthLoading(false);
+              setAuthError('Google sign-in was cancelled or encountered an error.');
+              return;
+            }
+
+            if (tokenResponse?.access_token) {
+              try {
+                const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+                  headers: { Authorization: `Bearer ${tokenResponse.access_token}` }
+                });
+                const user = await res.json();
+                if (user && user.email) {
+                  const updated = saveStoredUserProfile({
+                    name: user.name || user.given_name || 'Google User',
+                    email: user.email,
+                    avatarUrl: user.picture || '',
+                    role: 'buyer',
+                    authProvider: 'google'
+                  });
+                  setProfile(updated);
+                  setEditName(updated.name);
+                  setEditEmail(updated.email);
+                  setAuthLoading(false);
+                  setSaveSuccess(true);
+                  setTimeout(() => setSaveSuccess(false), 2500);
+                  return;
+                }
+              } catch (err) {
+                console.error('Failed to fetch Google profile info:', err);
+                setAuthError('Failed to load Google profile.');
+              }
+            }
+            setAuthLoading(false);
           }
         });
+
+        tokenClient.requestAccessToken({ prompt: 'select_account' });
         return;
-      } catch (e) {
-        console.warn('GIS Prompt error, falling back:', e);
+      } catch (err) {
+        console.warn('GIS Token client error, using redirect:', err);
       }
     }
-    handleSimulateGoogleLogin();
-  };
 
-  const handleSimulateGoogleLogin = () => {
-    const defaultGoogleUser = {
-      name: editName && editName !== 'Guest Maker' ? editName : 'Ossama Tbili',
-      email: editEmail || 'ossama@stakdock.com',
-      avatarUrl: 'https://lh3.googleusercontent.com/a/ACg8ocIS-sample=s96-c',
-      role: 'maker',
-      authProvider: 'google',
-      isLoggedIn: true
-    };
-    const updated = saveStoredUserProfile(defaultGoogleUser);
-    setProfile(updated);
-    setEditName(updated.name);
-    setEditEmail(updated.email);
-    setSaveSuccess(true);
-    setTimeout(() => setSaveSuccess(false), 2500);
+    // Method 2: Fallback to official Google OAuth 2.0 Web Redirect
+    const redirectUri = window.location.origin + window.location.pathname;
+    const oauthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${encodeURIComponent(GOOGLE_CLIENT_ID)}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=email%20profile%20openid&prompt=select_account`;
+    window.location.href = oauthUrl;
   };
 
   const handleSaveProfile = (e) => {

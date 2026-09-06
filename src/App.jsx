@@ -37,6 +37,7 @@ import BadgeEmbedModal from './components/BadgeEmbedModal';
 import ClaimListingModal from './components/ClaimListingModal';
 import UserProfileModal from './components/UserProfileModal';
 import StackBuilderPage from './components/StackBuilder/StackBuilderPage';
+import { saveStoredUserProfile } from './utils/userProfileManager';
 
 // Robust React Error Boundary to Guarantee Zero White Screens
 class ErrorBoundary extends React.Component {
@@ -239,6 +240,37 @@ export default function App() {
       const hash = window.location.hash.toLowerCase().replace('#', '');
       const search = window.location.search.toLowerCase();
       const pathname = window.location.pathname.toLowerCase();
+
+      // Google OAuth Redirect Handler (#access_token=...)
+      if (window.location.hash.includes('access_token=')) {
+        try {
+          const hashRaw = window.location.hash.startsWith('#') ? window.location.hash.substring(1) : window.location.hash;
+          const hashParams = new URLSearchParams(hashRaw);
+          const token = hashParams.get('access_token');
+          if (token) {
+            fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+              headers: { Authorization: `Bearer ${token}` }
+            })
+              .then(res => res.json())
+              .then(userData => {
+                if (userData && userData.email) {
+                  saveStoredUserProfile({
+                    name: userData.name || userData.given_name || 'Google User',
+                    email: userData.email,
+                    avatarUrl: userData.picture || '',
+                    role: 'buyer',
+                    authProvider: 'google'
+                  });
+                  setShowProfileModal(true);
+                }
+                window.history.replaceState(null, '', window.location.pathname);
+              })
+              .catch(err => console.error('Failed to fetch Google user info:', err));
+          }
+        } catch (e) {
+          console.warn('OAuth redirect token error:', e);
+        }
+      }
 
       if (pathname.startsWith('/software/')) {
         const toolSlug = pathname.replace('/software/', '').replace(/\/$/, '');
