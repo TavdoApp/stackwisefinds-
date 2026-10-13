@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-21T00:43:47.132Z",
+  "updatedAt": "2026-10-13T04:36:06.583Z",
   "tools": [
     {
       "id": "dmchamp",
@@ -251,6 +251,42 @@
       ],
       "bestFor": "Founders, Developers & Creators",
       "publishedAt": "2026-08-05T04:13:36.906Z"
+    },
+    {
+      "id": "curated-perplexity-ai",
+      "name": "Perplexity AI",
+      "domain": "perplexity.ai",
+      "category": "ai-content",
+      "tagline": "AI answer engine providing real-time cited web search.",
+      "description": "Perplexity AI combines search engine crawling with LLMs to deliver accurate, up-to-date answers complete with verified source citations.",
+      "rating": null,
+      "reviewsCount": 0,
+      "upvotes": 0,
+      "pricing": "Freemium",
+      "affiliateUrl": "https://perplexity.ai",
+      "website": "https://perplexity.ai",
+      "featured": false,
+      "badge": null,
+      "websiteChecked": true,
+      "founderVerified": false,
+      "isFreeTier": true,
+      "isOpenSource": false,
+      "features": [
+        "Real-Time Web Search",
+        "Source Citations",
+        "File & Document Analysis",
+        "Pro Search Deep Reasoning"
+      ],
+      "pros": [
+        "High Authority Domain",
+        "Verified Security",
+        "Active Development"
+      ],
+      "cons": [
+        "Premium Features Require Subscription"
+      ],
+      "bestFor": "Founders, Developers & Creators",
+      "publishedAt": "2026-10-13T04:36:06.583Z"
     }
   ]
 }
