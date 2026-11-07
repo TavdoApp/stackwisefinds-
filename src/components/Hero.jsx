@@ -106,7 +106,7 @@ export default function Hero({
             textTransform: 'uppercase',
             letterSpacing: '0.04em'
           }}>
-            SPONSORED
+            FEATURED TOOL
           </span>
           <span style={{ fontSize: '0.84rem', fontWeight: '700', color: 'var(--text-dark)' }}>
             {currentSponsor.name}

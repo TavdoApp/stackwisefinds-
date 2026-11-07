@@ -100,45 +100,40 @@ export default function Footer({ setCurrentView, setLegalView, setSelectedCatego
             </ul>
           </div>
 
-          {/* Col 4: Monetization & Business */}
+          {/* Col 4: For Founders & Builders */}
           <div>
             <h4 style={{ fontSize: '0.95rem', fontWeight: '800', color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
-              Sponsors & Business
+              For Founders &amp; Builders
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'rgba(255,255,255,0.75)' }}>
               <li>
-                <span onClick={onOpenBadgeModal} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer', color: '#82A735', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span>🚀 List Your Tool Free ($0)</span>
+                </span>
+              </li>
+              <li>
+                <span onClick={onOpenBadgeModal} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <span>⭐ Get Embeddable Badge</span>
                 </span>
               </li>
               <li>
                 <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
-                  Sponsor StakDock ($99)
+                  Why StakDock is 100% Free
                 </span>
               </li>
               <li>
-                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
-                  Top Banner Ad ($99/mo)
-                </span>
-              </li>
-              <li>
-                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
-                  Left Spotlight Vendor ($99/yr)
-                </span>
-              </li>
-              <li>
-                <span onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
-                  In-Feed Sponsored Badge ($49/mo)
+                <span onClick={() => { setCurrentView('ranking'); window.history.pushState(null, '', '/ranking'); window.scrollTo(0, 0); }} style={{ cursor: 'pointer' }}>
+                  Daily Leaderboard &amp; Rankings
                 </span>
               </li>
               <li style={{ marginTop: '6px', paddingTop: '8px', borderTop: '1px solid #203320' }}>
-                <a href="mailto:business@stakdock.com" style={{ color: '#82A735', textDecoration: 'none', fontWeight: '700', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  <span>💼 business@stakdock.com</span>
+                <a href="mailto:support@stakdock.com" style={{ color: '#82A735', textDecoration: 'none', fontWeight: '700', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>📬 support@stakdock.com</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:support@stakdock.com" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                  <span>✉️ support@stakdock.com</span>
+                <a href="mailto:business@stakdock.com" style={{ color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontSize: '0.82rem', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <span>💼 partnerships@stakdock.com</span>
                 </a>
               </li>
             </ul>

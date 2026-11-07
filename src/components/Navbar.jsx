@@ -153,9 +153,9 @@ export default function Navbar({
               onClick={() => { setCurrentView('advertise'); window.history.pushState(null, '', '/pricing'); window.scrollTo(0, 0); }}
               className={currentView === 'advertise' ? 'btn-pill-dark' : 'btn-pill-outline'}
               style={{ border: 'none', padding: '6px 12px', fontSize: '0.82rem' }}
-              aria-label="Advertise"
+              aria-label="List Tool for Free"
             >
-              <span>Advertise</span>
+              <span>List Tool Free ($0)</span>
             </button>
             <button 
               onClick={() => { setCurrentView('articles'); window.history.pushState(null, '', '/guides'); window.scrollTo(0, 0); }}
@@ -253,12 +253,12 @@ export default function Navbar({
 
             <button 
               onClick={onOpenVendorModal}
-              className="btn-pill-dark"
-              style={{ padding: '8px 12px', fontSize: '0.82rem' }}
-              aria-label="Submit SaaS Tool"
+              className="btn-pill-green"
+              style={{ padding: '8px 14px', fontSize: '0.82rem', fontWeight: '800' }}
+              aria-label="Submit SaaS Tool for Free"
             >
               <PlusCircle size={14} />
-              <span>{t.navSubmit || 'Submit'}</span>
+              <span>{t.navSubmit || 'Submit Tool Free ($0)'}</span>
             </button>
           </div>
 
@@ -378,7 +378,7 @@ export default function Navbar({
                   { label: t.navDirectory || 'Software Directory', icon: <Compass size={18} color="#82A735" />, view: 'directory', path: '/' },
                   { label: 'Browse Categories', icon: <Compass size={18} color="#82A735" />, view: 'category-grid', path: '/categories' },
                   { label: 'Leaderboard & Rankings', icon: <Sparkles size={18} color="#82A735" />, view: 'ranking', path: '/ranking' },
-                  { label: 'Advertise & Sponsor', icon: <PlusCircle size={18} color="#82A735" />, view: 'advertise', path: '/pricing' },
+                  { label: 'List Your Tool Free ($0)', icon: <PlusCircle size={18} color="#82A735" />, view: 'advertise', path: '/pricing' },
                   { label: t.navGuides || 'Buyer Guides', icon: <BookOpen size={18} color="#82A735" />, view: 'articles', path: '/guides' },
                 ].map(item => (
                   <button
@@ -456,13 +456,14 @@ export default function Navbar({
                   style={{
                     display: 'flex', alignItems: 'center', gap: '10px',
                     width: '100%', padding: '13px 16px', borderRadius: '12px', marginBottom: '8px',
-                    background: '#141E14', color: '#FFFFFF', fontWeight: '700',
+                    background: '#82A735', color: '#FFFFFF', fontWeight: '800',
                     fontSize: '0.95rem', border: 'none', cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(130,167,53,0.3)',
                   }}
-                  aria-label="Submit SaaS Tool"
+                  aria-label="Submit SaaS Tool for Free"
                 >
                   <PlusCircle size={18} />
-                  <span>{t.navSubmit || 'Submit Tool'} — $99/yr</span>
+                  <span>{t.navSubmit || 'Submit Tool'} — 100% Free ($0)</span>
                 </button>
 
                 {bookmarkCount > 0 && (

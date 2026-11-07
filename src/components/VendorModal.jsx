@@ -153,36 +153,7 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
         })
       });
 
-      // 2. If paid package selected, trigger Dodo Payments checkout session
-      const selectedProductId = dodoProductMap[packageType];
-      if (selectedProductId) {
-        try {
-          const checkoutRes = await fetch('/api/create-checkout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              softwareName,
-              softwareWebsite,
-              vendorEmail,
-              packageType,
-              productId: selectedProductId
-            })
-          });
-          const checkoutData = await checkoutRes.json();
-          if (checkoutData && checkoutData.checkoutUrl) {
-            window.location.href = checkoutData.checkoutUrl;
-            return;
-          } else {
-            window.location.href = `https://checkout.dodopayments.com/buy/${selectedProductId}`;
-            return;
-          }
-        } catch (ckErr) {
-          console.warn('Checkout API fallback:', ckErr.message);
-          window.location.href = `https://checkout.dodopayments.com/buy/${selectedProductId}`;
-          return;
-        }
-      }
-
+      // 2. All listings are 100% Free ($0) for founders. No paid checkout required.
       setIsSubmitted(true);
     } catch (err) {
       console.warn('Backend API fallback:', err.message);
@@ -1262,95 +1233,57 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                 </div>
               </div>
 
-              {/* Step 4: 4-Tier Launch & Sponsorship Selection Grid */}
+              {/* Step 4: 100% Free Founder Launch Guarantee */}
               <div>
                 <label style={{ fontSize: '0.85rem', fontWeight: '800', color: 'var(--text-dark)', display: 'block', marginBottom: '8px' }}>
-                  Select Launch & Indexing Tier
+                  Founder Launch Guarantee
                 </label>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '8px' }}>
-                  {/* Tier 1: Free Listing */}
-                  <div
-                    onClick={() => setPackageType('free')}
-                    style={{
-                      border: packageType === 'free' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                      background: packageType === 'free' ? '#FAFBF7' : '#FFFFFF',
-                      borderRadius: '12px',
-                      padding: '12px',
-                      cursor: 'pointer',
-                      transition: 'all 0.15s'
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>Free Listing</span>
-                      <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$0</span>
+                <div style={{
+                  border: '2px solid #82A735',
+                  background: 'linear-gradient(180deg, #F9FBF5 0%, #FFFFFF 100%)',
+                  borderRadius: '16px',
+                  padding: '16px 20px',
+                  boxShadow: '0 4px 16px rgba(130,167,53,0.08)'
+                }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <span style={{ fontSize: '1.1rem' }}>🎉</span>
+                      <span style={{ fontWeight: '800', fontSize: '0.95rem', color: 'var(--text-dark)' }}>
+                        100% Free Founder Listing ($0)
+                      </span>
                     </div>
-                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Standard queue • 48-72h review
-                    </p>
+                    <span style={{
+                      fontWeight: '800',
+                      color: '#2D4522',
+                      background: '#E2ECC8',
+                      padding: '3px 10px',
+                      borderRadius: '9999px',
+                      fontSize: '0.82rem'
+                    }}>
+                      NO FEES EVER
+                    </span>
                   </div>
-
-                  {/* Tier 2: Category Spotlight ($49/mo) */}
-                  <div
-                    onClick={() => setPackageType('in-feed')}
-                    style={{
-                      border: packageType === 'in-feed' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                      background: packageType === 'in-feed' ? '#FAFBF7' : '#FFFFFF',
-                      borderRadius: '12px',
-                      padding: '12px',
-                      cursor: 'pointer',
-                      transition: 'all 0.15s'
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>⚡ Spotlight</span>
-                      <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$49/mo</span>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: '0 0 10px', lineHeight: '1.45' }}>
+                    StakDock is built by founders, for founders. Zero listing fees, zero paid queues, and no paywalls.
+                  </p>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '8px', fontSize: '0.78rem', color: '#1F2D1F', fontWeight: '700' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Check size={14} color="#82A735" />
+                      <span>Instant AI metadata auto-enrichment</span>
                     </div>
-                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      #1 Category spot + Competitor Intercept Banner
-                    </p>
-                  </div>
-
-                  {/* Tier 3: Featured Annual Pro ($99/yr) */}
-                  <div
-                    onClick={() => setPackageType('premium')}
-                    style={{
-                      border: packageType === 'premium' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                      background: packageType === 'premium' ? '#FAFBF7' : '#FFFFFF',
-                      borderRadius: '12px',
-                      padding: '12px',
-                      cursor: 'pointer',
-                      transition: 'all 0.15s'
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>⭐ Featured</span>
-                      <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$99/yr</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Check size={14} color="#82A735" />
+                      <span>Permanent SEO profile page</span>
                     </div>
-                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Homepage spotlight + Competitor Intercept Banner + Dofollow link
-                    </p>
-                  </div>
-
-                  {/* Tier 4: Top Banner Takeover ($99/mo) */}
-                  <div
-                    onClick={() => setPackageType('top-banner')}
-                    style={{
-                      border: packageType === 'top-banner' ? '2px solid #82A735' : '1px solid var(--border-color)',
-                      background: packageType === 'top-banner' ? '#FAFBF7' : '#FFFFFF',
-                      borderRadius: '12px',
-                      padding: '12px',
-                      cursor: 'pointer',
-                      transition: 'all 0.15s'
-                    }}
-                  >
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
-                      <span style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-dark)' }}>🔥 Top Banner</span>
-                      <span style={{ fontWeight: '800', color: '#82A735', fontSize: '0.85rem' }}>$99/mo</span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Check size={14} color="#82A735" />
+                      <span>Official "Featured" embed badge</span>
                     </div>
-                    <p style={{ fontSize: '0.72rem', color: 'var(--text-muted)', margin: 0, lineHeight: '1.3' }}>
-                      Sitewide top banner • 50K+ impressions
-                    </p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Check size={14} color="#82A735" />
+                      <span>High-authority dofollow backlink</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1369,30 +1302,8 @@ export default function VendorModal({ onClose, initialPackage = 'free' }) {
                   gap: '8px'
                 }}
               >
-                {packageType === 'free' ? (
-                  <>
-                    <Check size={18} />
-                    <span>{isSubmitting ? 'Publishing Listing...' : 'Publish Free Listing ($0)'}</span>
-                  </>
-                ) : packageType === 'in-feed' ? (
-                  <>
-                    <CreditCard size={18} />
-                    <span>{isSubmitting ? 'Connecting Checkout...' : 'Proceed to Category Spotlight ($49/mo)'}</span>
-                    <ArrowRight size={16} />
-                  </>
-                ) : packageType === 'premium' ? (
-                  <>
-                    <CreditCard size={18} />
-                    <span>{isSubmitting ? 'Connecting Checkout...' : 'Proceed to Featured Pro ($99/yr)'}</span>
-                    <ArrowRight size={16} />
-                  </>
-                ) : (
-                  <>
-                    <CreditCard size={18} />
-                    <span>{isSubmitting ? 'Connecting Checkout...' : 'Proceed to Top Banner Sponsor ($99/mo)'}</span>
-                    <ArrowRight size={16} />
-                  </>
-                )}
+                <Check size={18} />
+                <span>{isSubmitting ? 'Publishing Free Listing...' : '🚀 Publish Free Listing ($0)'}</span>
               </button>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
