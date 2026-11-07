@@ -94,7 +94,7 @@ export default function App() {
     if (p === '/stack-builder' || p === '/stack-builder/') return 'stack-builder';
     if (p === '/categories') return 'category-grid';
     if (p === '/ranking') return 'ranking';
-    if (p === '/advertise' || p === '/pricing') return 'advertise';
+    if (p === '/advertise' || p === '/pricing' || p === '/submit' || p === '/list-your-tool-free') return 'advertise';
     if (p === '/privacy' || p === '/terms' || p === '/refund' || p === '/disclosure' || p === '/about' || p === '/methodology') return p.slice(1);
     return 'directory';
   });
@@ -361,7 +361,7 @@ export default function App() {
         return;
       }
 
-      if (pathname === '/pricing' || pathname === '/advertise' || hash === 'pricing' || hash === 'advertise' || search.includes('page=pricing')) {
+      if (pathname === '/pricing' || pathname === '/advertise' || pathname === '/submit' || pathname === '/list-your-tool-free' || hash === 'pricing' || hash === 'advertise' || hash === 'submit' || search.includes('page=pricing')) {
         setCurrentView('advertise');
         return;
       }

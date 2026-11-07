@@ -1594,48 +1594,49 @@ function renderAdvertisePageSsr() {
   return `
   ${renderSsrNavbar('/advertise/')}
   <main class="stakdock-ssr-main" style="max-width:1120px;margin:0 auto;padding:40px 16px;font-family:'Plus Jakarta Sans',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;color:#141E14;">
-    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);">
-      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 12px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.04em;">
-        PARTNERSHIPS &amp; PROMOTION
+    <header style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:36px;margin-bottom:28px;box-shadow:0 4px 20px rgba(0,0,0,0.03);text-align:center;">
+      <div style="display:inline-block;background:#EBF3DE;color:#2D4522;font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:9999px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.05em;">
+        🚀 100% FREE FOR FOUNDERS • ZERO LISTING FEES
       </div>
-      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:800;line-height:1.15;margin:0 0 14px 0;color:#182618;">
-        Reach 50,000+ Software Buyers &amp; Technical Founders on StakDock
+      <h1 style="font-size:clamp(1.8rem, 3.5vw, 2.6rem);font-weight:900;line-height:1.15;margin:0 0 14px 0;color:#182618;">
+        List Your SaaS &amp; AI Tools for Free ($0 Listing Fee)
       </h1>
-      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 0 20px 0;">
-        Promote your software tool directly to technical decision-makers, agency founders, and software engineers actively evaluating alternatives, building modern stacks, and purchasing business software.
+      <p style="font-size:1.1rem;color:#45593e;line-height:1.6;margin:0 auto 20px auto;max-width:740px;">
+        Join 2,100+ verified software tools on StakDock. We believe software founders and indie hackers shouldn't have to pay $99+ just to be discovered. Launch your product, get indexed by AI search engines (ChatGPT, Perplexity, Claude), and earn a high-authority backlink in under 60 seconds.
       </p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:0.88rem;color:#5c7353;">
-        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🎯 High-Intent Buyers</span>
-        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">⚡ Native Stack Placement</span>
-        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🔒 Clear Commercial Disclosure</span>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-size:0.88rem;color:#5c7353;">
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🎉 100% Free Forever ($0)</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">⚡ Instant AI Auto-Enrichment</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">🔗 High-Authority Dofollow Backlink</span>
+        <span style="background:#f4f7f2;padding:6px 14px;border-radius:10px;font-weight:700;">⭐ Verified Founder Embed Badge</span>
       </div>
     </header>
 
     <section style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:20px;margin-bottom:28px;">
       <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:16px;padding:28px;">
-        <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">Featured Category Spotlight</h2>
+        <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">100% Free Listing ($0 Forever)</h2>
         <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 16px 0;">
-          Place your product at the top of high-intent Category Hubs and Alternative Guides. Transparently badged as a sponsored partner with direct do-follow links and feature callouts.
+          Zero submission fees, zero paid queues, and no credit card required. Submit any SaaS, AI tool, or web application for free.
         </p>
-        <div style="font-weight:800;color:#82A735;font-size:1.1rem;">From $99 / month</div>
+        <div style="font-weight:800;color:#82A735;font-size:1.1rem;">Free Forever • $0</div>
       </div>
 
       <div style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:16px;padding:28px;">
-        <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">Stack Builder Verified Inclusion</h2>
+        <h2 style="font-size:1.25rem;font-weight:800;margin-top:0;margin-bottom:8px;color:#182618;">Optimized for AI Search (GEO / AIO)</h2>
         <p style="font-size:0.92rem;color:#45593e;line-height:1.6;margin:0 0 16px 0;">
-          Have your tool integrated directly into the StakDock interactive Stack Builder engine, allowing founders to dynamically add your platform to their production software architecture.
+          Your tool specs and features are published into machine-readable llms.txt and structured schemas so ChatGPT, Perplexity, and Claude cite your tool.
         </p>
-        <div style="font-weight:800;color:#82A735;font-size:1.1rem;">From $149 / month</div>
+        <div style="font-weight:800;color:#82A735;font-size:1.1rem;">Included for All Tools</div>
       </div>
     </section>
 
     <section style="background:#FFFFFF;border:1px solid #dce8d6;border-radius:20px;padding:32px;margin-bottom:28px;text-align:center;">
-      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:10px;color:#182618;">Ready to Promote Your SaaS?</h2>
+      <h2 style="font-size:1.4rem;font-weight:800;margin-top:0;margin-bottom:10px;color:#182618;">Ready to Launch Your Software for Free?</h2>
       <p style="font-size:0.95rem;color:#45593e;max-width:600px;margin:0 auto 20px auto;">
-        Contact our partnerships desk at <strong style="color:#182618;">partners@stakdock.com</strong> or submit your software tool for expedited editorial verification.
+        Submit your software tool in 60 seconds with instant domain inspection, auto-extracted logos, and immediate community upvoting.
       </p>
-      <a href="/submit/" style="display:inline-block;background:#141E14;color:#FFFFFF;padding:12px 28px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:0.95rem;">
-        Submit Software Listing &rarr;
+      <a href="/submit/" style="display:inline-block;background:#82A735;color:#FFFFFF;padding:14px 32px;border-radius:9999px;font-weight:800;text-decoration:none;font-size:1rem;box-shadow:0 6px 18px rgba(130,167,53,0.3);">
+        🚀 Submit Software Listing ($0 Free) &rarr;
       </a>
     </section>
   </main>

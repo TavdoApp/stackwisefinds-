@@ -1770,7 +1770,7 @@ officialGuides.forEach(guide => {
 const coreStaticPages = [
   { slug: 'categories', title: 'Software Categories Directory 2026', description: 'Browse all 40+ verified SaaS software categories, buyer guides, and tool comparisons on StakDock.' },
   { slug: 'ranking', title: 'Top Ranked SaaS Software & Trending Launches 2026', description: 'Leaderboard of top software, CRM platforms, AI tools, and automation engines ranked by community upvotes and telemetry on StakDock.' },
-  { slug: 'advertise', title: 'Promote Your Software & Reach 50,000+ Founders', description: 'Feature your SaaS product on StakDock to acquire qualified software buyers, founders, and marketing operators.' },
+  { slug: 'advertise', title: 'List Your SaaS & AI Tools for Free ($0 Listing Fee) | StakDock', description: 'List your software tool on StakDock directory in 60 seconds with instant domain inspection, verified profile page, and high-authority backlink.' },
   { slug: 'submit', title: 'Submit & List Your SaaS Product Free', description: 'List your software tool on StakDock directory in 60 seconds with instant domain inspection and automated competitor matching.' },
   { slug: 'terms', title: 'Terms of Service', description: 'StakDock Terms of Service and user agreements.' },
   { slug: 'privacy', title: 'Privacy Policy', description: 'StakDock Privacy Policy and data protection standards.' },
